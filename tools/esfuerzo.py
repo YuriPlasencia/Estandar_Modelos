@@ -35,6 +35,12 @@ NAT_RULES = [
 VOL_PHASES = {"DES-D1", "DES-D2", "DES-D3", "DES-D4", "CAL-C1", "CAL-C2", "CAL-C3", "CAL-C4", "PRC-P2", "PRC-P4", "PAR-R2", "PAR-R3", "PAR-R4", "PAR-R5"}
 
 
+def tier(t) -> int:
+    """Normaliza el Tier a I–III. «4» (o «IV») de versiones anteriores equivale a Tier III."""
+    t = {"I": 1, "II": 2, "III": 3, "IV": 3}.get(str(t), t)
+    return min(int(t), 3)
+
+
 def enfoque(e: str) -> str:
     """Normaliza el enfoque: «agil» o «completo» («tradicional» se acepta como alias de «completo»)."""
     return "completo" if e == "tradicional" else e
@@ -53,6 +59,7 @@ def naturaleza(r: dict) -> str:
 
 
 def aplica(r, cfg):
+    cfg = {**cfg, "tier": tier(cfg["tier"])}
     if cfg["std"] in ("Calibración", "Pricing", "Parámetros", "Seguimiento"):
         return r["estandar"] == cfg["std"] and cfg["tier"] in r["aplica_tier"]
     ok = ["Desarrollo", "Implementación"] if cfg["std"] == "Desarrollo" else ["Implementación"]

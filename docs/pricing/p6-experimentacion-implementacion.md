@@ -68,9 +68,9 @@ Ejemplo: con $p=0.30$, $\delta=0.02$, $\alpha=5\,\%$ y potencia 80 % (U-22), $n\
 
 #### 2.2 Despliegue gradual
 
-- **`PRC-P6-02.02.01`** Para Tier III–IV sin experimento, desplegar de forma escalonada por región o canal (champion/challenger) y comparar contra el grupo que mantiene el precio anterior.
+- **`PRC-P6-02.02.01`** Para Tier III sin experimento, desplegar de forma escalonada por región o canal (champion/challenger) y comparar contra el grupo que mantiene el precio anterior.
 
-  Aplica: Tier III–IV · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P4: Resultados del piloto
+  Aplica: Tier III · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P4: Resultados del piloto
 
 <!-- CATALOGO:FIN -->
 
@@ -104,13 +104,13 @@ desactualizados en un canal o descuentos acumulados. P7 cierra esa brecha con tr
 
 - **`PRC-P7-01.01.01`** Publicar el tarifario aprobado con fecha de vigencia, versión y la TCEA o TREA resultante para cada celda, según la normativa de transparencia aplicable.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Hito: Sprint 6
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Hito: Sprint 6
 
 #### 1.2 Matriz de facultades
 
 - **`PRC-P7-01.02.01`** Definir la matriz de facultades de descuento: quién puede ceder cuántos puntos básicos sobre el tarifario, hasta qué piso y con qué evidencia. Ningún nivel puede ofrecer por debajo del piso técnico sin aprobación del Comité de Precios (U-18, U-23).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Umbrales: U-18, U-23
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Umbrales: U-18, U-23
 
 ### 2 · Motor de precios
 
@@ -118,19 +118,19 @@ desactualizados en un canal o descuentos acumulados. P7 cierra esa brecha con tr
 
 - **`PRC-P7-02.01.01`** Implementar en el motor de precios las reglas del tarifario, la matriz de facultades y los controles preventivos que bloquean ofertas por encima del tope regulatorio (U-24) o por debajo del piso sin facultad, registrando cada excepción con su motivo y aprobador.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P3: Reglas del motor de precios · Umbrales: U-24
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P3: Reglas del motor de precios · Umbrales: U-24
 
 #### 2.2 Certificación
 
 - **`PRC-P7-02.02.01`** Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 
 #### 2.3 Registro de ofertas
 
 - **`PRC-P7-02.03.01`** Registrar cada oferta emitida (precio, versión del tarifario, componentes del piso, excepción y aceptación) para cerrar el ciclo de datos que alimenta el siguiente recalibrado del modelo de respuesta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
 
 #### 2.4 Habilitación comercial
 

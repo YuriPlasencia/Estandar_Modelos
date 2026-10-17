@@ -11,7 +11,7 @@ from pathlib import Path
 ORIGEN = "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
 CAB = ("# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).\n"
        "# Yuri Plasencia — Analytics Pricing & Revenue Management\n")
-T = [1, 2, 3, 4]
+T = [1, 2, 3]
 T12 = [1, 2]
 T123 = [1, 2, 3]
 

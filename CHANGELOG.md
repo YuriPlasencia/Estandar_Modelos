@@ -4,6 +4,19 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [3.0.0] — 2026-10-17
+
+### Cambiado (incompatible)
+- **Tres Tiers (I, II, III) en lugar de cuatro.** Tier III y Tier IV tenían exactamente los mismos requisitos,
+  umbrales y frecuencia de validación, así que se fusionan en Tier III en todo el estándar: `aplica_tier` del
+  catálogo, U-35 (`tier_III_anios`), SEG-S1-01.01.02, PRC-P6-02.02.01, planificador, plantillas y herramientas.
+- Se aclara que **el número de Tiers lo aprueba el comité de riesgos de modelo**: ni la Res. SBS 00053-2023 (art. 6)
+  ni SR 26-2, PRA SS1/23 u OSFI E-23 fijan un número; la práctica de mercado usa tres o cuatro niveles. Una entidad
+  con otra escala documenta su correspondencia con I–III.
+- La propuesta de puntaje de tiering (FR-02) pasa a tres cortes: I ≥ 75, II 55–74, III < 55.
+- Compatibilidad: `tools/verificar.py`, `tools/documento.py`, el modelo de esfuerzo y el planificador aceptan «4» o
+  «IV» de versiones anteriores como Tier III.
+
 ## [2.4.0] — 2026-10-17
 
 ### Cambiado

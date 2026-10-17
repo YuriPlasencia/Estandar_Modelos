@@ -9,7 +9,7 @@ actividades:
   tarea: "PD a 12 meses"
   subtarea: "Estimación y calibración"
   actividad: "Estimar la PD a 12 meses por grado o segmento, o calibrar el score aprobado a tasas de default observadas siguiendo DES-D4-08, con la definición de default de R1."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 2
   naturaleza: datos
@@ -32,7 +32,7 @@ actividades:
   tarea: "PD lifetime"
   subtarea: "Estructura temporal"
   actividad: "Estimar la curva de PD lifetime (marginal y acumulada por período) con un método documentado: supervivencia en tiempo discreto, matrices de migración (Markov) o curvas vintage, según la cartera y los datos disponibles."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 4
   nivel_automatizacion: 2
   naturaleza: datos
@@ -63,7 +63,7 @@ actividades:
   tarea: "Desempeño de la PD"
   subtarea: "Validación de la PD"
   actividad: "Evaluar discriminación por horizonte y, sobre todo, calibración: tasa observada vs. PD por grado con el test de Jeffreys (U-30), en construcción y en los períodos más recientes."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 3
   naturaleza: datos
@@ -74,7 +74,7 @@ actividades:
   tarea: "Desempeño de la PD"
   subtarea: "Validación de la PD"
   actividad: "Documentar la metodología de PD, sus supuestos y limitaciones con la estructura de DES-D4-11."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 1
   naturaleza: documentacion

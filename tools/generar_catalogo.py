@@ -10,7 +10,7 @@ from pathlib import Path
 
 CAB = ("# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).\n"
        "# Yuri Plasencia — Analytics Pricing & Revenue Management\n")
-T, T12 = [1, 2, 3, 4], [1, 2]
+T, T12 = [1, 2, 3], [1, 2]
 
 
 def escribir(fases, estandar, origen):
@@ -113,7 +113,7 @@ SEG = [
   ("Plan de seguimiento", [
     ("Indicadores y umbrales", [
       ("Definir para cada modelo los indicadores de seguimiento (estabilidad, discriminación, calibración, forzajes, calidad de datos y, para IA, sobreajuste) con umbrales y alertas aprobados por el comité de riesgos de modelo (SBS art. 21; U-37).", T, 1.5, 2, "analisis", True, ("Documento", "S1", "Plan de seguimiento"), "Sprint 0"),
-      ("Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III–IV al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño.", T, 0.5, 1, "analisis", False, ("Documento", "S1", "Plan de seguimiento"), None),
+      ("Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño.", T, 0.5, 1, "analisis", False, ("Documento", "S1", "Plan de seguimiento"), None),
       ("Asegurar los datos de seguimiento: tabla productiva con versión del modelo, scores, decisiones, forzajes y desempeño posterior; para estimadores, la muestra mínima acordada en DES-D5-01.03.01.", T, 2, 2, "datos", True, ("Tabla", "S1", "Base de seguimiento"), None),
     ]),
   ]),

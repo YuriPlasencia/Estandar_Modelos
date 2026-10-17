@@ -44,11 +44,11 @@ no siempre se reflejan en el PBI. El BCE considera mala práctica tratarlos solo
 
 - **`PAR-R6-01.01.01`** Recibir de Estudios Económicos al menos tres escenarios (base, optimista y pesimista) con sus probabilidades y su sustento, revisados como mínimo cada trimestre (U-32).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades · Hito: Sprint 4 · Umbrales: U-32
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades · Hito: Sprint 4 · Umbrales: U-32
 
 - **`PAR-R6-01.01.02`** Definir el horizonte de proyección explícito y la regla de reversión a la media de largo plazo de las variables macro y de los parámetros.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades
 
 ### 2 · Modelos satélite
 
@@ -56,11 +56,11 @@ no siempre se reflejan en el PBI. El BCE considera mala práctica tratarlos solo
 
 - **`PAR-R6-02.01.01`** Estimar los modelos satélite que vinculan las variables macro con la tasa de default (y con la LGD cuando aplique): selección de variables con sentido económico y signo esperado, rezagos, y estabilidad fuera de muestra.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R4: Modelos satélite
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R4: Modelos satélite
 
 - **`PAR-R6-02.01.02`** Probar la no linealidad: la ECL ponderada se calcula como el promedio de las ECL de cada escenario, nunca como la ECL de un escenario promedio (U-32).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Excel R5: ECL por escenario · Umbrales: U-32
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Excel R5: ECL por escenario · Umbrales: U-32
 
 - **`PAR-R6-02.01.03`** Evaluar riesgos que la macro no captura (clima, energía, cadenas de suministro, geopolítica, sectores concentrados) y decidir si requieren un ajuste del modelo o un overlay gobernado (R8).
 
@@ -72,7 +72,7 @@ no siempre se reflejan en el PBI. El BCE considera mala práctica tratarlos solo
 
 - **`PAR-R6-03.01.01`** Reunión trimestral de revisión de escenarios y probabilidades con Estudios Económicos, Riesgos y Contabilidad.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-ESC: Revisión de escenarios
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-ESC: Revisión de escenarios
 
 <!-- CATALOGO:FIN -->
 
@@ -109,7 +109,7 @@ son demasiado laxos.
 
 - **`PAR-R7-01.01.01`** Comparar la PD lifetime actual con la PD lifetime en el reconocimiento inicial, por operación, con umbrales relativos y absolutos calibrados por cartera (U-29).
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Hito: Sprint 5 · Umbrales: U-29
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Hito: Sprint 5 · Umbrales: U-29
 
 - **`PAR-R7-01.01.02`** Calibrar los umbrales SICR para que Stage 2 anticipe el default: proporción de defaults que pasaron antes por Stage 2, tiempo de permanencia y estabilidad de las transiciones.
 
@@ -119,10 +119,10 @@ son demasiado laxos.
 
 - **`PAR-R7-01.02.01`** Aplicar el backstop de 30 días de atraso para Stage 2 y el de default para Stage 3 (U-28), además de criterios cualitativos: refinanciados, lista de vigilancia y alertas tempranas.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Umbrales: U-28
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Umbrales: U-28
 
 - **`PAR-R7-01.02.02`** Definir el retorno de Stage 2 a Stage 1 y de Stage 3 a Stage 2 con períodos de prueba (U-33), y documentar el tratamiento de activos adquiridos u originados con deterioro (POCI).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento R8: Criterios de staging · Umbrales: U-33
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento R8: Criterios de staging · Umbrales: U-33
 
 <!-- CATALOGO:FIN -->

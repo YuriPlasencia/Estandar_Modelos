@@ -9,7 +9,7 @@ actividades:
   tarea: "Ciclo de aprobación"
   subtarea: "Aprobación previa"
   actividad: "Todo modelo nuevo, modificado (cambio de variables, supuestos o parámetros, incluida una recalibración) o con cambio de uso requiere validación y aprobación previa del comité antes de usarse (SBS art. 17)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -18,7 +18,7 @@ actividades:
   tarea: "Ciclo de aprobación"
   subtarea: "Manuales"
   actividad: "Mantener manuales aprobados de desarrollo, validación, uso, seguimiento, categorización, calidad de datos y contratación de proveedores de modelos (SBS art. 14); este estándar cumple esa función para los modelos analíticos."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: documentacion
@@ -27,7 +27,7 @@ actividades:
   tarea: "Ciclo de aprobación"
   subtarea: "Manuales"
   actividad: "Conservar la documentación de cada modelo (desarrollo, validación, seguimiento, actas, bases, diccionarios y código) con historial de versiones y disponible para el supervisor (SBS art. 15)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 2
   naturaleza: documentacion

@@ -10,7 +10,7 @@ actividades:
   subtarea: Estrategia de identificación
   actividad: |-
     Documentar cómo se separa el efecto del precio del efecto del riesgo y del perfil del cliente, dado que el precio histórico no fue asignado al azar: experimento aleatorio (preferido), discontinuidad en la grilla de precios, variable instrumental (por ejemplo, cambios del costo de fondos o del tarifario ajenos al cliente) o double machine learning con controles completos.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -34,7 +34,7 @@ actividades:
   subtarea: Construcción
   actividad: |-
     Estimar la probabilidad de aceptación de la oferta en función del precio relativo (precio ofrecido frente a referencia o competencia) y de las características del cliente, siguiendo DES-D4 para muestras (Train/Test/OOT), depuración y selección de variables.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 5
   nivel_automatizacion: 2
   naturaleza: datos
@@ -46,7 +46,7 @@ actividades:
   subtarea: Construcción
   actividad: |-
     Imponer la restricción de monotonicidad decreciente de la aceptación en el precio (U-20), incluso en modelos de machine learning (restricciones monotónicas en gradient boosting) y permitir elasticidades heterogéneas por segmento.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 2
   naturaleza: datos
@@ -58,7 +58,7 @@ actividades:
   subtarea: Desempeño
   actividad: |-
     Validar discriminación (Gini/AUC) y, sobre todo, calibración: aceptación observada vs. predicha por decil y por tramo de precio (U-21). En pricing un modelo descalibrado optimiza mal aunque ordene bien.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 3
   naturaleza: datos
@@ -90,7 +90,7 @@ actividades:
   tarea: Cierre del modelo de respuesta
   subtarea: Revisión
   actividad: "Reunión de revisión del modelo de respuesta con el dueño del precio: elasticidades por segmento, su sentido de negocio y sus límites de uso."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: reunion
@@ -100,7 +100,7 @@ actividades:
   tarea: Cierre del modelo de respuesta
   subtarea: Documentación
   actividad: "Documentar el modelo de respuesta con la estructura de DES-D4-11 (memoria metodológica, limitaciones, rango de precios en que la elasticidad es válida)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 1
   naturaleza: documentacion

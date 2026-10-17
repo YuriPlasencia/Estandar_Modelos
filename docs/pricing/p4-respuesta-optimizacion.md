@@ -52,7 +52,7 @@ documentado (PRC-P4-01.01.01):
 
 - **`PRC-P4-01.01.01`** Documentar cómo se separa el efecto del precio del efecto del riesgo y del perfil del cliente, dado que el precio histórico no fue asignado al azar: experimento aleatorio (preferido), discontinuidad en la grilla de precios, variable instrumental (por ejemplo, cambios del costo de fondos o del tarifario ajenos al cliente) o double machine learning con controles completos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P4: Modelo de respuesta y elasticidad · Hito: Sprint 3
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P4: Modelo de respuesta y elasticidad · Hito: Sprint 3
 
 - **`PRC-P4-01.01.02`** Pruebas de robustez de la identificación: placebo en periodos sin cambio de precio, balance de covariables entre grupos de precio, sensibilidad a variables omitidas y estabilidad de la elasticidad entre submuestras temporales.
 
@@ -64,17 +64,17 @@ documentado (PRC-P4-01.01.01):
 
 - **`PRC-P4-02.01.01`** Estimar la probabilidad de aceptación de la oferta en función del precio relativo (precio ofrecido frente a referencia o competencia) y de las características del cliente, siguiendo DES-D4 para muestras (Train/Test/OOT), depuración y selección de variables.
 
-  Aplica: Tier I–IV · Esfuerzo: 5 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta
+  Aplica: Tier I–III · Esfuerzo: 5 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta
 
 - **`PRC-P4-02.01.02`** Imponer la restricción de monotonicidad decreciente de la aceptación en el precio (U-20), incluso en modelos de machine learning (restricciones monotónicas en gradient boosting) y permitir elasticidades heterogéneas por segmento.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta · Umbrales: U-20
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta · Umbrales: U-20
 
 #### 2.2 Desempeño
 
 - **`PRC-P4-02.02.01`** Validar discriminación (Gini/AUC) y, sobre todo, calibración: aceptación observada vs. predicha por decil y por tramo de precio (U-21). En pricing un modelo descalibrado optimiza mal aunque ordene bien.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel P3: Curvas de respuesta por segmento · Umbrales: U-21
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel P3: Curvas de respuesta por segmento · Umbrales: U-21
 
 ### 3 · Comportamiento posterior
 
@@ -94,13 +94,13 @@ documentado (PRC-P4-01.01.01):
 
 - **`PRC-P4-04.01.01`** Reunión de revisión del modelo de respuesta con el dueño del precio: elasticidades por segmento, su sentido de negocio y sus límites de uso.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-ELA: Revisión del modelo de respuesta
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-ELA: Revisión del modelo de respuesta
 
 #### 4.2 Documentación
 
 - **`PRC-P4-04.02.01`** Documentar el modelo de respuesta con la estructura de DES-D4-11 (memoria metodológica, limitaciones, rango de precios en que la elasticidad es válida).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 1 · Entregable: Documento P4: Modelo de respuesta y elasticidad
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 1 · Entregable: Documento P4: Modelo de respuesta y elasticidad
 
 <!-- CATALOGO:FIN -->
 
@@ -143,11 +143,11 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-01.01.01`** Formular el problema: maximizar la función objetivo de P1 sumando, por oferta, la probabilidad de aceptación por el valor de la operación al precio propuesto, sujeto a precio ≥ piso técnico (U-18), precio ≤ tope regulatorio (U-24), metas de volumen y riesgo, monotonicidad en el riesgo (U-19) y gradualidad (U-25).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P5: Propuesta de precios · Hito: Sprint 4 · Umbrales: U-19, U-25
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P5: Propuesta de precios · Hito: Sprint 4 · Umbrales: U-19, U-25
 
 - **`PRC-P5-01.01.02`** Definir la granularidad de la decisión (celda de tarifario o precio individual) y la regla de redondeo a la grilla comercial (por ejemplo, múltiplos de 25 pb), evaluando el valor perdido por redondeo.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P5: Propuesta de precios
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P5: Propuesta de precios
 
 ### 2 · Resolución
 
@@ -155,7 +155,7 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-02.01.01`** Implementar el optimizador (búsqueda en grilla, programación no lineal o entera) con semilla y versiones fijadas, y verificar que la solución respeta todas las restricciones.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P2: Optimizador de precios
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P2: Optimizador de precios
 
 #### 2.2 Robustez
 
@@ -167,7 +167,7 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-02.03.01`** Construir escenarios para el comité: precio actual, propuesta óptima, propuesta con restricción de volumen y alternativas del negocio, con impacto en volumen, margen, RAROC, pérdida esperada, capital y provisiones a 12 meses.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: PPT P1: Escenarios de precio
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: PPT P1: Escenarios de precio
 
 ### 3 · Validación de la propuesta
 
@@ -175,13 +175,13 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-03.01.01`** Controlar la propuesta antes de llevarla a comité: 100 % de precios dentro de [piso, tope], monotonicidad, cambios mayores al umbral de gradualidad identificados, y análisis de equidad de precios por grupos: las diferencias deben explicarse por riesgo, costo, plazo o canal (PRC-P9-02.02.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Documento P5: Propuesta de precios
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Documento P5: Propuesta de precios
 
 #### 3.2 Comité de Precios
 
 - **`PRC-P5-03.02.01`** Presentar la propuesta y sus escenarios al Comité de Precios para su aprobación, con las excepciones a umbrales explícitas.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PRC-CP: Comité de Precios · Hito: Comité de Precios
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PRC-CP: Comité de Precios · Hito: Comité de Precios
 
 <!-- CATALOGO:FIN -->
 

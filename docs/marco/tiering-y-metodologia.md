@@ -14,11 +14,26 @@ orden: 2
 Cada requisito del catálogo se activa según **tres dimensiones**. Antes de empezar, el proyecto debe fijarlas
 en el Project Charter (DES-D1-01.04.04 *Definición del Tier y uso del modelo*).
 
-## 1. Tier del modelo (I – IV)
+## 1. Tier del modelo (I – III)
 
 El Tier refleja la **materialidad y criticidad** del modelo. Determina cuántas actividades son obligatorias:
-un Tier I exige el conjunto completo; los Tier III–IV permiten omitir análisis marcados como no aplicables
+un Tier I exige el conjunto completo; el Tier III permite omitir análisis marcados como no aplicables
 (por ejemplo, el análisis mensual de completitud del target o la segmentación supervisada).
+
+| Tier | Riesgo del modelo | Tratamiento |
+|---|---|---|
+| **I** | Alto | Conjunto completo de requisitos; validación periódica anual con réplica completa (U-35) |
+| **II** | Medio | Omite algunos análisis de profundidad; validación cada dos años |
+| **III** | Bajo | Solo lo necesario para sustentar el uso; validación cada tres años |
+
+> **El número de Tiers lo aprueba el comité.** La Res. SBS 00053-2023 (art. 6) exige categorizar los modelos por
+> materialidad, uso y complejidad, con criterios aprobados por el comité de riesgos de modelo (GOB-G2-02.01.01), y
+> fijar por categoría el alcance, la profundidad y la frecuencia del seguimiento y la validación. **No fija un número
+> de categorías**, como tampoco lo hacen la guía SR 26-2 (EE. UU.), la PRA SS1/23 (Reino Unido) ni la OSFI E-23
+> (Canadá). La práctica de mercado usa tres o cuatro niveles; este estándar adopta **tres**, porque cada nivel debe
+> cambiar de verdad los controles que se exigen: en la versión anterior, Tier III y Tier IV tenían exactamente los
+> mismos requisitos, umbrales y frecuencia de validación. Si el comité de una entidad aprueba otra escala, debe
+> documentar su correspondencia con I–III. Las herramientas aceptan «4» o «IV» de versiones anteriores como Tier III.
 
 - El Tier se asigna con participación del equipo desarrollador (DES-D7-01.01.03) y se aprueba con acta (VAL-M-01.13).
 - El catálogo indica, para cada actividad, en qué Tiers aplica (`aplica_tier`).

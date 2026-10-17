@@ -104,131 +104,131 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-01.01.01`** Entendimiento origen del desarrollo (entendimiento del caso de uso, necesidad del negocio, objetivo del modelo)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2–2.125 d ágil / 2.5–3.5 d completo · Automatización: 1 · Hito: Sprint 0
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2–2.125 d ágil / 2.5–3.5 d completo · Automatización: 1 · Hito: Sprint 0
 
 - **`DES-D1-01.01.02`** Evaluar la factibilidad para la construcción del modelo, analizando materialidad (universo y target), impacto en la gestión, información disponible para el desarrollo y posible uso de modelos vigentes.
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.03`** Características de la población
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.04`** Políticas actuales y anteriores
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.05`** Modelos anteriores
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.06`** Información disponible (data disponible, data nueva)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.07`** Definición de supuestos económicos que sustenten la racionalidad/sentido del modelo en su conjunto y de las variables
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 - **`DES-D1-01.01.08`** Reunión de levantamiento de expectativas: Población objetivo/cosechas (exclusiones, inclusiones).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 1: Reunión Levantamiento de Expectativas II. · Hito: Reunion 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 1: Reunión Levantamiento de Expectativas II. · Hito: Reunion 1
 
 #### 1.2 Elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad de la data input)
 
 - **`DES-D1-01.02.01`** Elaboración de base universo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Entregable: Correo 1: Petición de datos universo. · Hito: Sprint 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Entregable: Correo 1: Petición de datos universo. · Hito: Sprint 1
 
 - **`DES-D1-01.02.02`** Elaboración de evolutivos total por montos
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 1: Evolutivos por montos, tabla y gráfico.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 1: Evolutivos por montos, tabla y gráfico.
 
 - **`DES-D1-01.02.03`** Elaboración de evolutivos por cuentas de principales drivers del negocio
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 1: Evolutivos de cuentas por drivers, tablas y gráficos
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 1: Evolutivos de cuentas por drivers, tablas y gráficos
 
 - **`DES-D1-01.02.04`** Elaboración de evolutivos por montos de principales drivers del negocio
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 1: Evolutivos de montos por drivers, tablas y gráficos
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 1: Evolutivos de montos por drivers, tablas y gráficos
 
 - **`DES-D1-01.02.05`** Análisis y validación de filtros básicos para el universo de modelamiento
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Script: de filtros básicos.; Excel 1: Número de cuentas antes y despues de filtrar.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Script: de filtros básicos.; Excel 1: Número de cuentas antes y despues de filtrar.
 
 #### 1.3 Extracción de tabla única y creación de nuevas variables
 
 - **`DES-D1-01.03.01`** Reunión de levantamiento de expectativas: Fuentes, variables
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 2: Reunión Levantamiento de Expectativas II. · Hito: Reunión 2
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 2: Reunión Levantamiento de Expectativas II. · Hito: Reunión 2
 
 - **`DES-D1-01.03.02`** Pegado de las variables de los tablones
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.5–3 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Script 2: Creación de tabla única; Tabla 1: Master table inicial. · Hito: Sprint 2*
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.5–3 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Script 2: Creación de tabla única; Tabla 1: Master table inicial. · Hito: Sprint 2*
 
 - **`DES-D1-01.03.03`** Crear variables post BrainStorming
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 8.5 d ágil / 10 d completo · Automatización: 1 · Entregable: Script 3: Creación de nuevas variables. · Hito: SME 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 8.5 d ágil / 10 d completo · Automatización: 1 · Entregable: Script 3: Creación de nuevas variables. · Hito: SME 1
 
 - **`DES-D1-01.03.04`** Regla de no anticipación: toda variable del tablón de modelamiento se construye solo con información disponible antes de la fecha de observación (originación o foto). Están prohibidas las variables contemporáneas o del futuro, porque en producción el futuro no se observa (U-39).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 - **`DES-D1-01.03.05`** Documentar en el diccionario, para cada variable, su fecha de referencia y el desfase de disponibilidad de su fuente, y verificar con una prueba automática que ninguna variable usa información posterior a la fecha de observación menos ese desfase.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 #### 1.4 Requerimientos y propuesta de solución (inception)
 
 - **`DES-D1-01.04.01`** Definición población objetivo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2–2.55 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Ppt 1: Project Charter: Población. · Hito: Sprint 3
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2–2.55 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Ppt 1: Project Charter: Población. · Hito: Sprint 3
 
 - **`DES-D1-01.04.02`** Definiciones, criterios y supuestos
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición cosechas vs Aprobadas.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición cosechas vs Aprobadas.
 
 - **`DES-D1-01.04.03`** Definiciones de criterios de éxito
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: OKRs.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: OKRs.
 
 - **`DES-D1-01.04.04`** Definición del TIER y uso del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición del uso de modelo.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición del uso de modelo.
 
 - **`DES-D1-01.04.05`** Definición de alcance y limitaciones
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición de alcances, limitaciones.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición de alcances, limitaciones.
 
 - **`DES-D1-01.04.06`** En el caso se utilice una metodología corporativa, se debe alienar las principales definiciones a utilizar en el modelamiento (Universo y Target). En caso no aplique, se debería justificar el cambio en las definiciones con análisis metodológicos y/o de negocio.
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Alineamiento Corporativo
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Alineamiento Corporativo
 
 - **`DES-D1-01.04.07`** Reunión - Enriquecimiento de la propuesta y diseño funcional del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Acta: de reunión. · Hito: Reunión 3
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Acta: de reunión. · Hito: Reunión 3
 
 - **`DES-D1-01.04.08`** Documentación del project charter (ficha de nacimiento del modelo, técnicas a usar y otros)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter · Hito: Sprint 4
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter · Hito: Sprint 4
 
 #### 1.5 Sesión de ideación de variables
 
 - **`DES-D1-01.05.01`** Reuniones con los usuarios/ bancas para revisar variables sugeridas por el negocio (ideación)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y los equipos de negocio
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y los equipos de negocio
 
 #### 1.6 Evaluación de la dispobilidad de información y accesos
 
 - **`DES-D1-01.06.01`** Reuniones con los encargados de la extracción de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
 
 #### 1.7 Definir fecha de ejecución del modelo, considerando los desfases a asumir por cada fuente utilizada y en función a las expectativas de los equipos Stakeholders
 
 - **`DES-D1-01.07.01`** Reuniones con los encargados de la extracción de información y creación de variables
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
 
 ### 2 · Reunión Kick off
 
@@ -236,13 +236,13 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-02.01.01`** Presentación (PPT) del kick off
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1–2 d ágil / 1.5–3 d completo · Automatización: 1 · Entregable: Ppt 2: Kick off · Umbrales: U-40
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1–2 d ágil / 1.5–3 d completo · Automatización: 1 · Entregable: Ppt 2: Kick off · Umbrales: U-40
 
 #### 2.2 Reunión Kick off
 
 - **`DES-D1-02.02.01`** Reunión kick off
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Acta 3: Reunión Kick off · Hito: Kick Off
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Acta 3: Reunión Kick off · Hito: Kick Off
 
 ### 3 · Definición de ventana de modelación
 
@@ -250,23 +250,23 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-03.01.01`** Análisis de estabilidad de la variable objetivo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.975–3 d ágil / 3.5 d completo · Automatización: 1 · Entregable: Excel 2: Evolutivos de cuentas y montos por drivers. · Hito: Sprint 5
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.975–3 d ágil / 3.5 d completo · Automatización: 1 · Entregable: Excel 2: Evolutivos de cuentas y montos por drivers. · Hito: Sprint 5
 
 - **`DES-D1-03.01.02`** Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y, como OOT, solo el último mes con desempeño completo (U-01), esto sujeto a la disponibilidad de información en cada proyecto.
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 2: Evolutivos del promedio de la variable objetivo por segmento. · Umbrales: U-01
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 2: Evolutivos del promedio de la variable objetivo por segmento. · Umbrales: U-01
 
 - **`DES-D1-03.01.03`** Análisis de estabilidad de la ventana de modelamiento, utilizar el PSI como indicar de estabilidad población, en caso sea necesario complementar con algún análisis adicional (Intervalos de confianza)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 2: Número de cuentas por mes en la ventana de modelación · Umbrales: U-02
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 2: Número de cuentas por mes en la ventana de modelación · Umbrales: U-02
 
 - **`DES-D1-03.01.04`** Evaluar los meses con ciertas alertas de inestabilidad, con justificacion metodologica y/o negocio
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 - **`DES-D1-03.01.05`** Documentación de la generación de la población de modelamiento
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Documento 2: Pedido de datos.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Documento 2: Pedido de datos.
 
 ### 4 · Criterios de exclusión
 
@@ -274,11 +274,11 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-04.01.01`** Exclusiones por pautas duras (actuales y futuras)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de pautas duras.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de pautas duras.
 
 - **`DES-D1-04.01.02`** Exclusiones por default en foto (análisis materialidad)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de default en foto.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de default en foto.
 
 - **`DES-D1-04.01.03`** Exclusiones por operaciones con desempeño < ventana de default y mora reciente (análisis impacto)
 
@@ -286,19 +286,19 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-04.01.04`** Exclusiones por operaciones con desempeño < ventana de default y mora reciente (análisis materialidad)
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas sin desempeño.
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas sin desempeño.
 
 - **`DES-D1-04.01.05`** Exclusiones por operaciones con mora < altura del default: indeterminados (análisis materialidad)
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas de indetermindos.
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas de indetermindos.
 
 - **`DES-D1-04.01.06`** Exclusiones por cambios de gestión (Cobranzas)
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas excluidas por cambios de gestión
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas excluidas por cambios de gestión
 
 - **`DES-D1-04.01.07`** Documentación de las exclusiones
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Documento 3: Filtros y exclusiones.; Tabla 2: Master table filtrada.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Documento 3: Filtros y exclusiones.; Tabla 2: Master table filtrada.
 
 - **`DES-D1-04.01.08`** Evaluar el sesgo de selección de los modelos de originación entrenados solo con solicitudes aprobadas y documentar la estrategia de inferencia de rechazados aplicada, o por qué no aplica.
 
@@ -310,7 +310,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.01.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Umbrales: U-17
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Umbrales: U-17
 
 - **`DES-D1-05.01.02`** Análisis de incidencia de default operación en comportamiento cliente
 
@@ -320,7 +320,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.02.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Umbrales: U-17
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Umbrales: U-17
 
 - **`DES-D1-05.02.02`** Análisis de roll rates
 
@@ -330,7 +330,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.03.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1
 
 - **`DES-D1-05.03.02`** Análisis asociados a la definición de la materialidad
 
@@ -340,7 +340,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.04.01`** Documentación final definición de default
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Documento 4: Definición de default. · Umbrales: U-17
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Documento 4: Definición de default. · Umbrales: U-17
 
 ### 6 · Definición del target (continuo)
 
@@ -348,13 +348,13 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-06.01.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 1
 
 #### 6.2 Definición de materialidad
 
 - **`DES-D1-06.02.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1
 
 - **`DES-D1-06.02.02`** Análisis asociados a la definición de la materialidad
 
@@ -364,7 +364,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-06.03.01`** Documentación final definición del target
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Documento 4: Definición del target. · Hito: SME 2
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Documento 4: Definición del target. · Hito: SME 2
 
 ### 7 · Definición Metodología para modelar
 
@@ -372,6 +372,6 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-07.01.01`** Identificar la mejor metodología para modelar el target específico
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Propuestas de las metodologías para modelar el target
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Propuestas de las metodologías para modelar el target
 
 <!-- CATALOGO:FIN -->

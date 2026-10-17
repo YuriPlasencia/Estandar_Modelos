@@ -187,8 +187,8 @@ umbrales:
 # ---------------- Línea base 2.0: validación, forzajes y seguimiento.
 - id: U-35
   tema: "Frecuencia de validación por categoría"
-  regla: "Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III–IV, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I."
-  valor: {"tier_I_anios": 1, "tier_II_anios": 2, "tier_III_IV_anios": 3, "replica_tier_I": true}
+  regla: "Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I."
+  valor: {"tier_I_anios": 1, "tier_II_anios": 2, "tier_III_anios": 3, "replica_tier_I": true}
   refs: ["VAL-M-05.03", "VAL-M-05.01", "GOB-G2-02.01.01"]
   nota: "Valor de referencia de la línea base; el comité de riesgos de modelo aprueba la periodicidad definitiva."
 - id: U-36

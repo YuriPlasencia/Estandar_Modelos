@@ -41,7 +41,7 @@ Este estándar exige un backtesting anual con cinco frentes:
 
 - **`PAR-R9-01.01.01`** Backtesting anual de PD (Jeffreys por grado, U-30), LGD (estimada vs. realizada), CCF y staging (proporción de defaults que estaban en Stage 2; transiciones entre stages).
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Excel R8: Backtesting de parámetros · Hito: Sprint 7 · Umbrales: U-30
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Excel R8: Backtesting de parámetros · Hito: Sprint 7 · Umbrales: U-30
 
 - **`PAR-R9-01.01.02`** Backtesting de la ECL: comparar pérdidas realizadas con la ECL constituida por cohorte, y explicar las diferencias (escenario materializado vs. probabilidades asignadas).
 
@@ -49,7 +49,7 @@ Este estándar exige un backtesting anual con cinco frentes:
 
 - **`PAR-R9-01.01.03`** Reunión de resultados del backtesting y decisión de recalibrar o redesarrollar.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-BT: Resultados del backtesting
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-BT: Resultados del backtesting
 
 ### 2 · Gobierno de provisiones
 
@@ -57,11 +57,11 @@ Este estándar exige un backtesting anual con cinco frentes:
 
 - **`PAR-R9-02.01.01`** Presentar al comité de provisiones los parámetros, escenarios, staging, overlays y la ECL resultante, con el puente frente a las provisiones regulatorias locales cuando ambas coexistan.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PAR-CP: Comité de provisiones · Hito: Comité de provisiones
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PAR-CP: Comité de provisiones · Hito: Comité de provisiones
 
 - **`PAR-R9-02.01.02`** Mantener la documentación del ciclo de cálculo (insumos, versiones, controles, aprobaciones) para auditoría externa y supervisión, con cuadro de control de cambios.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R10: Manual del ciclo de provisiones
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R10: Manual del ciclo de provisiones
 
 <!-- CATALOGO:FIN -->
 
@@ -100,7 +100,7 @@ consume la misma PD lifetime anualizada.
 
 - **`PAR-R10-02.01.01`** Publicar los parámetros vigentes en una tabla versionada con fecha de vigencia para sus consumidores (motor de ECL, pricing PRC-P3, capital, stress testing), con el registro de qué versión usó cada proceso.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla R5: Parámetros vigentes versionados
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla R5: Parámetros vigentes versionados
 
 <!-- CATALOGO:FIN -->
 

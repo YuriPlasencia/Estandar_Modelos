@@ -9,7 +9,7 @@ actividades:
   tarea: "Terceros"
   subtarea: "Proveedores"
   actividad: "La entidad es plenamente responsable de los modelos de terceros: puede tercerizar desarrollo, validación o implementación, pero el seguimiento lo hace la propia entidad (SBS arts. 23–24)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -18,7 +18,7 @@ actividades:
   tarea: "Terceros"
   subtarea: "Proveedores"
   actividad: "Para modelos de terceros de mayor categoría, exigir réplica; si la propiedad intelectual lo impide, aplicar benchmarking u otra técnica alternativa documentada (SBS art. 25)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -35,7 +35,7 @@ actividades:
   tarea: "Sistemas de IA"
   subtarea: "IA responsable"
   actividad: "Inventariar los sistemas de IA (incluidos los de IA generativa y los agentes) y aplicarles controles proporcionales a su riesgo: los modelos de IA no generativa siguen este estándar; los generativos y agénticos, además, el estándar AGT."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 2
   naturaleza: gobierno

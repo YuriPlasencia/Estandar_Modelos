@@ -30,7 +30,7 @@ actividades:
   tarea: "Entrega a usuarios"
   subtarea: "Consumo de parámetros"
   actividad: "Publicar los parámetros vigentes en una tabla versionada con fecha de vigencia para sus consumidores (motor de ECL, pricing PRC-P3, capital, stress testing), con el registro de qué versión usó cada proceso."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 2
   naturaleza: datos

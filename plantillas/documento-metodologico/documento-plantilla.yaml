@@ -15,7 +15,7 @@ modelo:
   codigo:
   nombre:
   estandar: Desarrollo   # Desarrollo | Calibración | Parámetros | Pricing
-  tier:                  # 1 | 2 | 3 | 4
+  tier:                  # 1 | 2 | 3
   tipo_modelo:           # lineal | ml | arbol | acp
   enfoque:               # agil | completo
   uso:

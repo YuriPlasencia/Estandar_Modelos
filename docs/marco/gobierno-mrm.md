@@ -71,29 +71,29 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G1-01.01.01`** Mantener una función de riesgo de modelo independiente de las áreas que desarrollan, usan e implementan los modelos, con un responsable que reporta a la gerencia de riesgos (SBS 53-2023 arts. 12–13).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G1-01.01.02`** Los responsables de validación y seguimiento tienen al menos el mismo nivel organizacional que los de desarrollo; los desarrolladores están separados de las unidades de negocio.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G1-01.01.03`** Asignar al usuario del modelo la propiedad de su riesgo de uso y la obligación de usarlo solo para el propósito aprobado (SBS art. 19).
 
-  Aplica: Tier I–IV · Automatización: 1
+  Aplica: Tier I–III · Automatización: 1
 
 #### 1.2 Comité de riesgos de modelo
 
 - **`GOB-G1-01.02.01`** Operar un comité de riesgos de modelo con al menos un director, el jefe de riesgos y los responsables de desarrollo, validación y seguimiento, que sesione como mínimo cada trimestre (SBS arts. 10–11).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
+  Aplica: Tier I–III · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
 
 - **`GOB-G1-01.02.02`** El comité aprueba los criterios de categorización (Tier), los indicadores y umbrales de seguimiento, la periodicidad de las validaciones, los informes de validación y seguimiento y las acciones ante debilidades.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
+  Aplica: Tier I–III · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
 
 - **`GOB-G1-01.02.03`** El directorio aprueba las políticas, asigna recursos y aprueba las excepciones de uso de modelos de mayor categoría con debilidades relevantes (SBS art. 9).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 <!-- CATALOGO:FIN -->
 
@@ -108,11 +108,11 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G2-01.01.01`** Mantener un inventario completo y actualizado de modelos con sus atributos mínimos (propósito, uso, dueño, categoría, estado, versión, validaciones, debilidades), incluidas herramientas informales influyentes como hojas de cálculo y los sistemas de IA.
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
 
 - **`GOB-G2-01.01.02`** Remitir el inventario al supervisor con la periodicidad y el formato que exija la norma local (en Perú, anualmente vía SUCAVE según el Anexo A de la Res. SBS 53-2023).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
 
 ### 2 · Categorización
 
@@ -120,7 +120,7 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G2-02.01.01`** Categorizar cada modelo por materialidad, uso y complejidad con criterios aprobados por el comité (ver FR-02); la categoría determina la profundidad y frecuencia de validación y seguimiento y si se exige réplica completa (SBS art. 6; U-35).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico · Entregable: Documento G2: Criterios de categorización · Umbrales: U-35
+  Aplica: Tier I–III · Automatización: 1 · Crítico · Entregable: Documento G2: Criterios de categorización · Umbrales: U-35
 
 - **`GOB-G2-02.01.02`** Revisar periódicamente el propio esquema de categorización (que sea objetivo y que discrimine), como exige SS1/23.
 
@@ -139,17 +139,17 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G3-01.01.01`** Todo modelo nuevo, modificado (cambio de variables, supuestos o parámetros, incluida una recalibración) o con cambio de uso requiere validación y aprobación previa del comité antes de usarse (SBS art. 17).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 #### 1.2 Manuales
 
 - **`GOB-G3-01.02.01`** Mantener manuales aprobados de desarrollo, validación, uso, seguimiento, categorización, calidad de datos y contratación de proveedores de modelos (SBS art. 14); este estándar cumple esa función para los modelos analíticos.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G3-01.02.02`** Conservar la documentación de cada modelo (desarrollo, validación, seguimiento, actas, bases, diccionarios y código) con historial de versiones y disponible para el supervisor (SBS art. 15).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico
+  Aplica: Tier I–III · Automatización: 2 · Crítico
 
 <!-- CATALOGO:FIN -->
 
@@ -164,11 +164,11 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G4-01.01.01`** La entidad es plenamente responsable de los modelos de terceros: puede tercerizar desarrollo, validación o implementación, pero el seguimiento lo hace la propia entidad (SBS arts. 23–24).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G4-01.01.02`** Para modelos de terceros de mayor categoría, exigir réplica; si la propiedad intelectual lo impide, aplicar benchmarking u otra técnica alternativa documentada (SBS art. 25).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G4-01.01.03`** Contar con una estrategia de continuidad para los modelos de proveedores que soportan servicios priorizados.
 
@@ -180,7 +180,7 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G4-02.01.01`** Inventariar los sistemas de IA (incluidos los de IA generativa y los agentes) y aplicarles controles proporcionales a su riesgo: los modelos de IA no generativa siguen este estándar; los generativos y agénticos, además, el estándar AGT.
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
 
 - **`GOB-G4-02.01.02`** Adoptar principios de IA responsable (transparencia, equidad, privacidad, seguridad y supervisión humana) traducidos en métricas y controles verificables, no solo en declaraciones.
 
@@ -199,7 +199,7 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G5-01.01.01`** Registrar cada debilidad o hallazgo con severidad, responsable, plazo y estado; si no puede corregirse de inmediato, aplicar medidas temporales de mitigación (SBS art. 7).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G3: Registro de debilidades
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G3: Registro de debilidades
 
 ### 2 · Reporte
 
@@ -207,10 +207,10 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G5-02.01.01`** La unidad de riesgos emite un informe anual con el estado de las debilidades, los modelos desarrollados o modificados en los últimos 12 meses y el cronograma de los próximos 12 meses (SBS art. 8).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G4: Informe anual de riesgo de modelo
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G4: Informe anual de riesgo de modelo
 
 - **`GOB-G5-02.01.02`** Auditoría interna incluye en su plan anual la evaluación del cumplimiento de la gestión de riesgo de modelo.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 <!-- CATALOGO:FIN -->

@@ -10,7 +10,7 @@ actividades:
   subtarea: Construcción
   actividad: |-
     Construir la base a nivel de oferta o cotización, no solo de operaciones desembolsadas: precio ofrecido, precio final, aceptación (sí/no), monto, plazo, canal, ejecutivo, fecha y motivo de no aceptación. Sin las ofertas rechazadas por el cliente no se puede estimar la respuesta al precio.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 4
   nivel_automatizacion: 2
   naturaleza: datos
@@ -23,7 +23,7 @@ actividades:
   subtarea: Construcción
   actividad: |-
     Enriquecer cada oferta con los insumos del precio técnico vigentes a la fecha de la oferta: PD y LGD del modelo de riesgo aprobado (definición de default U-17), curva FTP, costo operativo y consumo de capital.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 2
   naturaleza: datos
@@ -57,7 +57,7 @@ actividades:
   subtarea: Controles
   actividad: |-
     Aplicar los controles de calidad de DES-D2 (validez, completitud, unicidad, precisión, consistencia) y los específicos de pricing: precio ofrecido registrado antes de la decisión del cliente, cotizaciones duplicadas por re-cotización, tasas fuera de rango y fechas de oferta coherentes con la de desembolso.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2.5
   nivel_automatizacion: 3
   naturaleza: datos
@@ -69,7 +69,7 @@ actividades:
   subtarea: Controles
   actividad: |-
     Medir la variación exógena del precio disponible para identificar la elasticidad: cambios de tarifario, campañas, saltos de la grilla, pruebas previas. Si no existe variación suficiente, el diseño de un experimento (P6) pasa a ser requisito previo para el modelo de respuesta.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -80,7 +80,7 @@ actividades:
   tarea: Calidad de datos de pricing
   subtarea: Controles
   actividad: "Certificar la base de pricing con acta de conformidad de las fuentes (Finanzas para FTP y costos; Riesgos para PD/LGD)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: gobierno

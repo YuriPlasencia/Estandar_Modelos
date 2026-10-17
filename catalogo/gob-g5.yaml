@@ -9,7 +9,7 @@ actividades:
   tarea: "Debilidades"
   subtarea: "Gestión de debilidades"
   actividad: "Registrar cada debilidad o hallazgo con severidad, responsable, plazo y estado; si no puede corregirse de inmediato, aplicar medidas temporales de mitigación (SBS art. 7)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 2
   naturaleza: gobierno
@@ -20,7 +20,7 @@ actividades:
   tarea: "Reporte"
   subtarea: "Informe anual"
   actividad: "La unidad de riesgos emite un informe anual con el estado de las debilidades, los modelos desarrollados o modificados en los últimos 12 meses y el cronograma de los próximos 12 meses (SBS art. 8)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 2
   naturaleza: documentacion
@@ -31,7 +31,7 @@ actividades:
   tarea: "Reporte"
   subtarea: "Informe anual"
   actividad: "Auditoría interna incluye en su plan anual la evaluación del cumplimiento de la gestión de riesgo de modelo."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno

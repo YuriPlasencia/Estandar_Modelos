@@ -10,7 +10,7 @@ actividades:
   subtarea: Objetivo y alcance
   actividad: |-
     Definir el producto (activo o pasivo), los segmentos, los canales y el tipo de decisión de precio: tarifario de lista, precio individual en originación, renovación, repricing de cartera o tasa de depósitos.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -23,7 +23,7 @@ actividades:
   subtarea: Objetivo y alcance
   actividad: |-
     Fijar la función objetivo y su horizonte: margen financiero, NIM, RAROC, valor de vida del cliente (CLV), volumen o una combinación ponderada. Documentar explícitamente el trade-off volumen–margen que acepta el negocio.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -35,7 +35,7 @@ actividades:
   subtarea: Objetivo y alcance
   actividad: |-
     Inventariar las restricciones: topes regulatorios de tasa (U-24), apetito de riesgo, metas de volumen y de colocación, política comercial, compromisos con clientes, gradualidad máxima de cambios (U-25) y restricciones de conducta.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -47,7 +47,7 @@ actividades:
   subtarea: Diagnóstico del precio actual
   actividad: |-
     Diagnosticar el esquema de precios vigente: tarifario, bandas de negociación, facultades de descuento, dispersión de tasas por segmento de riesgo, price realization (tasa efectiva vs. tasa de lista) y brecha frente a la competencia.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 2
   naturaleza: datos
@@ -70,7 +70,7 @@ actividades:
   subtarea: Clasificación y responsables
   actividad: |-
     Registrar en el inventario los modelos que intervendrán (precio técnico, respuesta, optimizador) y asignar su Tier. Un modelo de pricing es un modelo sujeto a este estándar y a Validación.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -82,7 +82,7 @@ actividades:
   subtarea: Clasificación y responsables
   actividad: |-
     Definir la matriz RACI: dueño del precio (negocio), Finanzas/ALM (costo de fondos y capital), Riesgos (PD/LGD y apetito), Analytics Pricing (modelos y optimización), Cumplimiento y Legal (conducta y transparencia), Tecnología (motor de precios).
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -92,7 +92,7 @@ actividades:
   tarea: Gobierno inicial
   subtarea: Kick off
   actividad: "Reunión de kick off del proyecto de pricing con el dueño del precio, Finanzas, Riesgos y Cumplimiento."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: reunion

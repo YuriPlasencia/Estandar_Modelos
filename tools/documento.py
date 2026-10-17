@@ -38,7 +38,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PLANT = ROOT / "plantillas" / "documento-metodologico"
 ESTILOS = PLANT / "estilos"
 CUSTODIO = build.CUSTODIO
-ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
+ROMAN = {1: "I", 2: "II", 3: "III"}
 MODELOS = {"lineal": "Lineal", "ml": "Machine learning", "arbol": "Árbol", "acp": "ACP"}
 SEAL, INK, MUTED, RULE = "7A2632", "1B2A2F", "5E6B70", "D5DBD8"
 
@@ -218,7 +218,7 @@ def renderizar_md(datos: Path, carpeta: Path) -> tuple[str, dict]:
         "graficos": {"gini": grafico_gini(d, carpeta / "grafico-gini.svg")},
         "gini_dif": abs(g_tr - g_oot) if g_tr is not None and g_oot is not None else None, "gini_oot": g_oot,
         "iv_alertas": [v["nombre"] for v in d["variables"].get("finales") or [] if (v.get("iv") or 0) > 0.5],
-        "roman": lambda t: ROMAN.get(int(t), t) if t else "—", "modelo_lbl": lambda m: MODELOS.get(m, m),
+        "roman": lambda t: ROMAN.get(esfuerzo.tier(t), t) if t else "—", "modelo_lbl": lambda m: MODELOS.get(m, m),
         "enfoque_lbl": lambda e: {"agil": "ágil", "completo": "completo", "tradicional": "completo"}.get(e, e),
         "num": num, "dec": dec, "pct": pct, "completar": completar, "lecturas": [],
     }
@@ -448,7 +448,7 @@ def cmd_nuevo(repo: Path):
         s = s.replace("evidencias: null", "evidencias: ../evidencias.yaml")
     for k, v in rep.items():
         if v:
-            v = {"I": 1, "II": 2, "III": 3, "IV": 4}.get(str(v), v) if k == "tier" else v
+            v = esfuerzo.tier(v) if k == "tier" else v
             v = v if isinstance(v, int) else json.dumps(str(v), ensure_ascii=False)
             s = re.sub(rf"^(  {k}:)[^#\n]*", lambda x: f"{x.group(1)} {v}".ljust(len(x.group(0))) + " ", s,
                        count=1, flags=re.M)

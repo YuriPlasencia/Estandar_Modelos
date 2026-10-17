@@ -83,17 +83,17 @@ anticipar el deterioro al originar. IFRS 9, en cambio, presume que el default **
 
 - **`PAR-R1-01.01.01`** Inventariar los parámetros de riesgo por cartera y uso (PD 12 meses y lifetime, LGD, LGD en default, EAD/CCF, escenarios, criterios de staging, CLV) y registrar cada modelo en el inventario con su Tier.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos · Hito: Sprint 0
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos · Hito: Sprint 0
 
 - **`PAR-R1-01.01.02`** Declarar los usos de cada parámetro (provisiones IFRS 9, provisiones regulatorias locales, capital, pricing, stress testing, CLV) y las diferencias de calibración que cada uso exige: point-in-time con forward-looking para IFRS 9, through-the-cycle o downturn para capital.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos
 
 #### 1.2 Segmentación de carteras
 
 - **`PAR-R1-01.02.01`** Definir las carteras con riesgo homogéneo (producto, segmento, garantía, canal, moneda) sobre las que se estiman los parámetros, con evidencia de homogeneidad y materialidad suficiente de defaults por segmento.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R1: Segmentación de carteras
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R1: Segmentación de carteras
 
 ### 2 · Definiciones comunes
 
@@ -101,11 +101,11 @@ anticipar el deterioro al originar. IFRS 9, en cambio, presume que el default **
 
 - **`PAR-R1-02.01.01`** Alinear la definición de default de parámetros con la gestión del riesgo y con la contabilidad: en IFRS 9 el default no puede ocurrir después de los 90 días de atraso salvo evidencia que refute la presunción (U-28). Documentar el puente con la definición de default de los scores de originación (U-17: más de 60 días) y su efecto en la calibración.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-28
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-28
 
 - **`PAR-R1-02.01.02`** Definir los criterios de salida de default y cura: período mínimo de observación y tratamiento de reestructurados (U-33), e impacto en LGD y en staging.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-33
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-33
 
 ### 3 · Gobierno inicial
 
@@ -113,7 +113,7 @@ anticipar el deterioro al originar. IFRS 9, en cambio, presume que el default **
 
 - **`PAR-R1-03.01.01`** Kick off del proyecto de parámetros con Riesgos, Finanzas/Contabilidad, Estudios Económicos y Validación.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PAR-KO: Kick off de parámetros · Hito: Kick Off
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PAR-KO: Kick off de parámetros · Hito: Kick Off
 
 <!-- CATALOGO:FIN -->
 

@@ -44,11 +44,11 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 
 - **`DES-D3-01.01.01`** Reunión stakeholder para determinar propuesta de ejes de segmentación, en caso no tenga claridad de los posibles drivers de segmentación se utilizar técnicas como árboles de decisión para la identificar de potenciales drivers, así como cortes propuestos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Acta 4: Reunión de segmentación. · Hito: Reunión 4
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Acta 4: Reunión de segmentación. · Hito: Reunión 4
 
 - **`DES-D3-01.01.02`** Análisis de ratio de default y materialidad/Análisis de target ( Estabilidad de Segmentos)
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento. · Hito: Sprint 7
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento. · Hito: Sprint 7
 
 - **`DES-D3-01.01.03`** Segmentación por metodología supervisada (modelos naive) / Modelo Segmentado VS Modelo Unisegmento
 
@@ -66,18 +66,18 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 
 - **`DES-D3-01.02.01`** Comparación del desempeño de las segmentaciones con el modelo unisegmento
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
 
 - **`DES-D3-01.02.02`** Análisis de estabilidad del target y materialidad, contraste estadístico (homogeneidad y/o heterogeneidad), contraste con el negocio
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento.
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento.
 
 - **`DES-D3-01.02.03`** Elaboración de presentación de segmentación final.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
 
 - **`DES-D3-01.02.04`** Documentación y definición de la segmentación final
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5–1.5 d ágil / 0.5–1.5 d completo · Automatización: 1 · Entregable: Documento 7: Análisis de segmentación. · Hito: SME 3
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5–1.5 d ágil / 0.5–1.5 d completo · Automatización: 1 · Entregable: Documento 7: Análisis de segmentación. · Hito: SME 3
 
 <!-- CATALOGO:FIN -->

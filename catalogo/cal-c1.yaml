@@ -10,19 +10,19 @@ actividades:
   subtarea: Entendimiento del modelo y usos
   actividad: Entendimiento del modelo actual
   dias_esfuerzo: 1.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-01.01.02
   tarea: Definición del objetivo del calibrado
   subtarea: Entendimiento del modelo y usos
   actividad: Entendimiento del uso
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-01.01.03
   tarea: Definición del objetivo del calibrado
   subtarea: Entendimiento del modelo y usos
   actividad: Status descalibrado del modelo
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-01.01.04
   tarea: Definición del objetivo del calibrado
   subtarea: Entendimiento del modelo y usos
@@ -30,7 +30,7 @@ actividades:
     definiciones a utilizar en el modelamiento (Universo y Target). En caso no aplique, se debería justificar el
     cambio en las definiciones con análisis metodológicos y/o de negocio.
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-01.01.05
   tarea: Definición del objetivo del calibrado
   subtarea: Entendimiento del modelo y usos
@@ -43,7 +43,7 @@ actividades:
 
     - Solicitud archivos de trabajo sobre los criterios definidos.'
   dias_esfuerzo: 2.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-01.01.06
   tarea: Definición del objetivo del calibrado
   subtarea: Entendimiento del modelo y usos
@@ -53,12 +53,12 @@ actividades:
     Listar y Evaluar con la gerencia y usuarios, alternativas que no requieran aplicar medidas directas en los resultados
     de los modelos.'
   dias_esfuerzo: 2.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-01.01.07
   tarea: "Definición del objetivo del calibrado"
   subtarea: "Entendimiento del modelo y usos"
   actividad: "Documentar por qué se calibra y no se redesarrolla: discriminación vigente aceptable y descalibración como causa principal, según el árbol de decisión de Seguimiento (SEG-S3-01.01.01)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -70,7 +70,7 @@ actividades:
     de la data input)
   actividad: Petición de bases de seguimiento / universo
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-01.02.02
   tarea: Definición del objetivo del calibrado
   subtarea: Petición y elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad
@@ -91,7 +91,7 @@ actividades:
   subtarea: Análisis de la población y pauta actual
   actividad: Análisis de los cambios poblacionales / quiebres de población
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C1-02.01.02
   tarea: Población y Pauta actual
   subtarea: Análisis de la población y pauta actual

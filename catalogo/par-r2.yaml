@@ -9,7 +9,7 @@ actividades:
   tarea: "Bases de estimación"
   subtarea: "Series de default"
   actividad: "Construir las cohortes de default por cartera con al menos cinco años de historia que incluyan un período de estrés (U-27): saldos, estados de atraso mensuales, defaults, curas y salidas (prepago, castigo, venta)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 4
   nivel_automatizacion: 2
   naturaleza: datos
@@ -31,7 +31,7 @@ actividades:
   tarea: "Bases de estimación"
   subtarea: "Base de recuperaciones"
   actividad: "Construir la base de recuperaciones por default: flujos de cobranza, ejecución de garantías, costos directos e indirectos y fecha de cierre del proceso. Identificar los procesos incompletos y su tratamiento."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 4
   nivel_automatizacion: 2
   naturaleza: datos
@@ -42,7 +42,7 @@ actividades:
   tarea: "Bases de estimación"
   subtarea: "Base de exposición"
   actividad: "Construir la base de exposición: cronogramas de amortización, prepagos, líneas y uso de línea 12 meses antes del default para estimar CCF."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2.5
   nivel_automatizacion: 2
   naturaleza: datos
@@ -53,7 +53,7 @@ actividades:
   tarea: "Bases de estimación"
   subtarea: "Series macroeconómicas"
   actividad: "Recopilar las series macroeconómicas candidatas (PBI, desempleo, inflación, tasas, tipo de cambio, precios de inmuebles, términos de intercambio) con la misma frecuencia y rezagos que usará Estudios Económicos en sus escenarios."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 2
   naturaleza: datos
@@ -64,7 +64,7 @@ actividades:
   tarea: "Calidad de datos"
   subtarea: "Certificación"
   actividad: "Aplicar los controles de calidad de DES-D2 y los específicos de parámetros: continuidad de cohortes, defaults sin recuperación registrada, recuperaciones mayores al saldo, y conciliación de saldos y castigos con contabilidad."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2.5
   nivel_automatizacion: 3
   naturaleza: datos
@@ -75,7 +75,7 @@ actividades:
   tarea: "Calidad de datos"
   subtarea: "Certificación"
   actividad: "Certificar las bases con acta de conformidad de las fuentes (Riesgos, Cobranzas, Contabilidad, Estudios Económicos)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: gobierno

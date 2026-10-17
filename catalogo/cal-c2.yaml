@@ -10,25 +10,25 @@ actividades:
   subtarea: Análisis de completitud y unicidad
   actividad: Cuadre de la infromación con los informes de seguimeinto (Total mensual, rd mensual y pd actual mensual)
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C2-01.01.02
   tarea: Control de Calidad y entendimiento de los datos
   subtarea: Análisis de completitud y unicidad
   actividad: '% de registros duplicados'
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C2-01.01.03
   tarea: Control de Calidad y entendimiento de los datos
   subtarea: Análisis de completitud y unicidad
   actividad: Análisis descriptivo de los posibles drivers de calibrado (global y mensual)
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C2-01.01.04
   tarea: Control de Calidad y entendimiento de los datos
   subtarea: Análisis de completitud y unicidad
   actividad: Comparación de descriptivos de la base de datos con información de negocio
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C2-01.01.05
   tarea: Control de Calidad y entendimiento de los datos
   subtarea: Análisis de completitud y unicidad

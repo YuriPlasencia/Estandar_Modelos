@@ -45,33 +45,33 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.01.01`** Garantizar la existencia de un diccionario de datos sobre la base disponible
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Excel 4: Diccionario de datos. · Hito: Sprint 6
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Excel 4: Diccionario de datos. · Hito: Sprint 6
 
 #### 1.2 Revisión del reporte de calidad de datos del proveedor
 
 - **`DES-D2-01.02.01`** Revisar detalladamente el informe de calidad de datos entregado por el proveedor de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 5: Informe de calidad de datos.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 5: Informe de calidad de datos.
 
 #### 1.3 Análisis de validez
 
 - **`DES-D2-01.03.01`** Comparar información recibida con la petición formal de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 #### 1.4 Análisis de completitud
 
 - **`DES-D2-01.04.01`** % de registros sin ninguna información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Registros sin información.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Registros sin información.
 
 - **`DES-D2-01.04.02`** % de registros sólo con información de llaves
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros con solo información de llaves.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros con solo información de llaves.
 
 - **`DES-D2-01.04.03`** % de registros sin información de la variable target (total)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros sin la variable target.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros sin la variable target.
 
 - **`DES-D2-01.04.04`** % de registros sin información de la variable target (mensual)
 
@@ -79,7 +79,7 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.04.05`** % de datos faltantes por variable independiente (total)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 5: Fill Rate (total).
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 5: Fill Rate (total).
 
 - **`DES-D2-01.04.06`** % de datos faltantes por variable independiente (mensual)
 
@@ -93,7 +93,7 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.05.01`** % de registros duplicados
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Script 6: Análisis de unicidad.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Script 6: Análisis de unicidad.
 
 #### 1.6 Análisis descriptivo de variables
 
@@ -103,11 +103,11 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.06.02`** Análisis descriptivo de las variables definidas como mínimas
 
-  Aplica: Lineal/Árbol I–II · ML I–IV · ACP III–IV · Automatización: 1 · Entregable: Excel 6: Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.
+  Aplica: Lineal/Árbol I–II · ML I–III · ACP III · Automatización: 1 · Entregable: Excel 6: Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.
 
 - **`DES-D2-01.06.03`** Análisis de estabilidad de las variables a través del PSI (incluyendo meses recientes) con un umbral minimo de aceptación del 10%; en caso dicho nivel reduzca considerablemente el set disponible de variables para el modelamiento se evaluará un nivel de aceptación mayor que no supere el 20%.
 
-  Aplica: Lineal/Árbol I–II · ML/ACP I–IV · Automatización: 1 · Entregable: Excel 6: Analisis de estabilidad · Umbrales: U-02
+  Aplica: Lineal/Árbol I–II · ML/ACP I–III · Automatización: 1 · Entregable: Excel 6: Analisis de estabilidad · Umbrales: U-02
 
 ### 2 · Control de Calidad y entendimiento de los datos
 
@@ -115,7 +115,7 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-02.01.01`** Comparación de descriptivos de la base de datos con información de negocio
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Excel 7: Comparación de evolutivos con datos del negocio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Excel 7: Comparación de evolutivos con datos del negocio.
 
 #### 2.2 Análisis de consistencia
 
@@ -127,10 +127,10 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-02.03.01`** Revisión del conjunto de análisis y decisión sobre calidad de datos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
 
 - **`DES-D2-02.03.02`** Documentación de los análisis y certificación de calidad
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Documento 6: Analisis y certificación de calidad.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Documento 6: Analisis y certificación de calidad.
 
 <!-- CATALOGO:FIN -->

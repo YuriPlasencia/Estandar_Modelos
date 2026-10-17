@@ -307,7 +307,7 @@ const UMB=Object.fromEntries(DATA.umbrales.map(u=>[u.id,u]));
 const LIT=Object.fromEntries(DATA.literatura.obras.map(o=>[o.id,o]));
 const lecturasHtml=ids=>ids&&ids.length?`<dt>Lecturas</dt><dd class="lect">${ids.map(i=>{const o=LIT[i];return `<p><span class="lit-id">${i}</span> ${marked.parseInline(o.cita)} <small>${esc(o.nivel)}</small></p>`}).join("")}</dd>`:"";
 const MODEL={lineal:"Lineal",ml:"ML",arbol:"Árbol",acp:"ACP"};
-const ROMAN={1:"I",2:"II",3:"III",4:"IV"};
+const ROMAN={1:"I",2:"II",3:"III"};
 const slug=p=>p.replace(/^docs\//,"").replace(/\.md$/,"").replace(/\//g,"--");
 const PAGES=DATA.pages.map(p=>({...p,slug:slug(p.path)}));
 const BYSLUG=Object.fromEntries(PAGES.map(p=>[p.slug,p]));
@@ -439,6 +439,7 @@ function estimar(reqs,cfg,scen){
 let scen=Object.assign({},P.escenario_base,store.get("plan.scen",{}));
 let cfg=store.get("plan.cfg",{std:"Desarrollo",tier:2,model:"ml",enf:"agil"});
 if(cfg.enf==="tradicional")cfg.enf="completo";
+if(cfg.tier>3)cfg.tier=3;
 function planKey(){return `plan.done.${cfg.std}.${cfg.tier}.${cfg.model}.${cfg.enf}`}
 function tiersTxt(ts){ts=[...ts].sort();if(!ts.length)return"—";const c=ts.every((t,i)=>i===0||t===ts[i-1]+1);return c&&ts.length>1?`${ROMAN[ts[0]]}–${ROMAN[ts.at(-1)]}`:ts.map(t=>ROMAN[t]).join(", ")}
 
@@ -457,7 +458,7 @@ function showPlanner(){
     <p>Elige el tipo de proyecto y obtén los requisitos que aplican, su esfuerzo y los entregables. Las marcas de avance se guardan en este navegador.</p></div>
     <div class="controls">
       <label class="ctl"><span>Estándar</span>${seg("std",[["Desarrollo","Desarrollo"],["Calibración","Calibración"],["Implementación","Implementación"],["Pricing","Pricing"],["Parámetros","Parámetros"],["Seguimiento","Seguimiento"]],cfg.std)}</label>
-      <label class="ctl"><span>Tier</span>${seg("tier",[[1,"I"],[2,"II"],[3,"III"],[4,"IV"]],cfg.tier)}</label>
+      <label class="ctl"><span>Tier</span>${seg("tier",[[1,"I"],[2,"II"],[3,"III"]],cfg.tier)}</label>
       <label class="ctl"><span>Tipo de modelo</span>${seg("model",[["lineal","Lineal"],["ml","ML"],["arbol","Árbol"],["acp","ACP"]],cfg.model,isCal)}</label>
       <label class="ctl"><span>Enfoque</span>${seg("enf",[["agil","Ágil"],["completo","Completo"]],isCal?"completo":cfg.enf,isCal)}</label>
     </div>

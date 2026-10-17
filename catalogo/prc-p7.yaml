@@ -9,7 +9,7 @@ actividades:
   tarea: Tarifario y facultades
   subtarea: Tarifario
   actividad: "Publicar el tarifario aprobado con fecha de vigencia, versión y la TCEA o TREA resultante para cada celda, según la normativa de transparencia aplicable."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 2
   naturaleza: documentacion
@@ -22,7 +22,7 @@ actividades:
   subtarea: Matriz de facultades
   actividad: |-
     Definir la matriz de facultades de descuento: quién puede ceder cuántos puntos básicos sobre el tarifario, hasta qué piso y con qué evidencia. Ningún nivel puede ofrecer por debajo del piso técnico sin aprobación del Comité de Precios (U-18, U-23).
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -34,7 +34,7 @@ actividades:
   subtarea: Reglas y controles preventivos
   actividad: |-
     Implementar en el motor de precios las reglas del tarifario, la matriz de facultades y los controles preventivos que bloquean ofertas por encima del tope regulatorio (U-24) o por debajo del piso sin facultad, registrando cada excepción con su motivo y aprobador.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 2
   naturaleza: datos
@@ -46,7 +46,7 @@ actividades:
   subtarea: Certificación
   actividad: |-
     Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2
   naturaleza: datos
@@ -57,7 +57,7 @@ actividades:
   tarea: Motor de precios
   subtarea: Registro de ofertas
   actividad: "Registrar cada oferta emitida (precio, versión del tarifario, componentes del piso, excepción y aceptación) para cerrar el ciclo de datos que alimenta el siguiente recalibrado del modelo de respuesta."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 2
   naturaleza: datos

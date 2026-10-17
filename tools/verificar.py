@@ -27,7 +27,7 @@ import build  # noqa: E402
 import esfuerzo  # noqa: E402
 
 ESTADOS = {"cumplido", "pendiente", "no_aplica", "excepcion"}
-ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
+ROMAN = {1: "I", 2: "II", 3: "III"}
 
 # Regla numérica de cada umbral sobre el valor que reporta el manifiesto. None = revisión manual.
 # El significado del valor reportado se indica en el texto de cada regla.
@@ -66,7 +66,7 @@ def cargar_catalogo():
 
 def cfg_de(modelo: dict) -> dict:
     std = modelo["estandar"]
-    return {"std": std, "tier": int(modelo["tier"]),
+    return {"std": std, "tier": esfuerzo.tier(modelo["tier"]),
             "model": modelo.get("tipo_modelo") or "lineal",
             "enf": "completo" if std in ("Calibración", "Pricing", "Parámetros", "Seguimiento")
             else esfuerzo.enfoque(modelo.get("enfoque") or "agil")}
@@ -82,7 +82,7 @@ def sha256(p: Path) -> str:
 
 def cmd_init(repo: Path, a):
     reqs, _ = cargar_catalogo()
-    modelo = {"codigo": a.codigo or repo.name, "estandar": a.estandar, "tier": a.tier,
+    modelo = {"codigo": a.codigo or repo.name, "estandar": a.estandar, "tier": esfuerzo.tier(a.tier),
               "tipo_modelo": a.modelo or "", "enfoque": esfuerzo.enfoque(a.enfoque) if a.enfoque else ""}
     aplicables = [r for r in reqs if esfuerzo.aplica(r, cfg_de(modelo))]
     L = ["# Manifiesto de evidencias. Generado por tools/verificar.py --init el " + date.today().isoformat(),
@@ -207,7 +207,8 @@ def main():
     g.add_argument("--plan", action="store_true", help="lista los requisitos de una fase y su estado")
     g.add_argument("--sellar", action="store_true", help="registra el sha256 de los archivos citados")
     ap.add_argument("--estandar", default="Desarrollo", choices=["Desarrollo", "Calibración", "Implementación", "Parámetros", "Pricing", "Seguimiento"])
-    ap.add_argument("--tier", type=int, default=2, choices=[1, 2, 3, 4])
+    ap.add_argument("--tier", type=int, default=2, choices=[1, 2, 3, 4],
+                    help="1 | 2 | 3 (4 se acepta como alias de 3, de versiones anteriores)")
     ap.add_argument("--modelo", default="", choices=["", "lineal", "ml", "arbol", "acp"])
     ap.add_argument("--enfoque", default="", choices=["", "agil", "completo", "tradicional"],
                     help="agil: lo esencial con la profundidad mínima suficiente · completo: análisis exhaustivo (tradicional = alias de completo)")

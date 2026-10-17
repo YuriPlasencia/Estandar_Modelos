@@ -18,7 +18,7 @@ cuando el seguimiento muestra **descalibración** pero el poder discriminante si
 ordenamiento se ha degradado, corresponde **redesarrollar** (estándar de Desarrollo).
 
 Supuesto de la estimación de esfuerzo: se usa la **base de seguimiento como base de calibración**.
-Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.4 semanas (Tier I), ≈ 3.2 semanas (Tier II), ≈ 2.5 semanas (Tier III–IV) con 2 personas<!--/DUR-->.
+Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.4 semanas (Tier I), ≈ 3.2 semanas (Tier II), ≈ 2.5 semanas (Tier III) con 2 personas<!--/DUR-->.
 
 ## C1 · Entendimiento
 
@@ -41,41 +41,41 @@ Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibraci
 
 - **`CAL-C1-01.01.01`** Entendimiento del modelo actual
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d
+  Aplica: Tier I–III · Esfuerzo: 1 d
 
 - **`CAL-C1-01.01.02`** Entendimiento del uso
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.01.03`** Status descalibrado del modelo
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.01.04`** En el caso se utilice una metodología corporativa para la calibración, se debe alienar las principales definiciones a utilizar en el modelamiento (Universo y Target). En caso no aplique, se debería justificar el cambio en las definiciones con análisis metodológicos y/o de negocio.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.01.05`** Para la inclusión de segmentos definidos por otros equipos:
   - Revision del sentido funcional de los ejes propuestas con la gerencia.
   - Evaluación en función de los resultados de la revisión, si la asignación del segmento será única o múltiple, solicitar las evidencias y respaldos de esto.
   - Solicitud archivos de trabajo sobre los criterios definidos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d
+  Aplica: Tier I–III · Esfuerzo: 2 d
 
 - **`CAL-C1-01.01.06`** Dependiendo de la necesidad del proyecto de calibración, para el caso en el que se requiere de alguna acción para estimar impactos coyunturales en la cartera y el uso de estos:  
   Listar y Evaluar con la gerencia y usuarios, alternativas que no requieran aplicar medidas directas en los resultados de los modelos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d
+  Aplica: Tier I–III · Esfuerzo: 2 d
 
 - **`CAL-C1-01.01.07`** Documentar por qué se calibra y no se redesarrolla: discriminación vigente aceptable y descalibración como causa principal, según el árbol de decisión de Seguimiento (SEG-S3-01.01.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia.
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia.
 
 #### 1.2 Petición y elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad de la data input)
 
 - **`CAL-C1-01.02.01`** Petición de bases de seguimiento / universo
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.02.02`** Elaboración de los principales drivers descalibrados proporcionados por seguimiento
 
@@ -91,7 +91,7 @@ Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibraci
 
 - **`CAL-C1-02.01.01`** Análisis de los cambios poblacionales / quiebres de población
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-02.01.02`** Conocimiento de las pauta actual
 
@@ -116,19 +116,19 @@ Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibraci
 
 - **`CAL-C2-01.01.01`** Cuadre de la infromación con los informes de seguimeinto (Total mensual, rd mensual y pd actual mensual)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.02`** % de registros duplicados
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.03`** Análisis descriptivo de los posibles drivers de calibrado (global y mensual)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.04`** Comparación de descriptivos de la base de datos con información de negocio
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.05`** Propuesta inicial de cambio de nivel en el modelo (generico)
 

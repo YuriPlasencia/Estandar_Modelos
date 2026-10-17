@@ -28,7 +28,7 @@ ROOT_MD = ["AGENTS.md", "CONTRIBUTING.md", "CHANGELOG.md", "README.md"]
 CUSTODIO = "Yuri Plasencia — Analytics Pricing & Revenue Management"
 
 MODEL_LABEL = {"lineal": "Lineal", "ml": "ML", "arbol": "Árbol", "acp": "ACP"}
-ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
+ROMAN = {1: "I", 2: "II", 3: "III"}
 ID_RE = re.compile(r"\b(?:(?:DES-D\d|CAL-C\d|PRC-P\d|PAR-R\d{1,2}|SEG-S\d|GOB-G\d)-\d{2}(?:\.\d{2}){0,2}|IMP-\d{2}(?:\.\d{2}){0,2}|VAL-[MIPR]-\d{2}(?:\.\d{2})?|U-\d{2})\b")
 MARK_RE = re.compile(r"(<!-- CATALOGO:INICIO (\S+) -->)(.*?)(<!-- CATALOGO:FIN -->)", re.S)
 
@@ -55,7 +55,7 @@ def load_catalog():
             for r in d["requisitos"]:
                 reqs.append({"id": r["id"], "estandar": d["estandar"], "fase": "VAL", "fase_nombre": d["nombre"],
                              "tarea": amb[r["ambito"]], "subtarea": r["bloque"], "actividad": r["requisito"],
-                             "killer": bool(r.get("killer", False)), "aplica_tier": [1, 2, 3, 4]})
+                             "killer": bool(r.get("killer", False)), "aplica_tier": [1, 2, 3]})
         else:
             for a in d["actividades"]:
                 if a.get("retirado"):
@@ -204,7 +204,7 @@ def block_esfuerzo(reqs, P):
     out += ["### Desarrollo (incluye Implementación y Gobierno)", "",
             "| Tier | Modelo | Personas ágil (sem.) | Personas completo (sem.) | Agente ágil (días) | Agente completo (días) | Ahorro |",
             "|---|---|---:|---:|---:|---:|---:|"]
-    for t in (1, 2, 3, 4):
+    for t in (1, 2, 3):
         for m in ("lineal", "ml", "arbol", "acp"):
             r = {e: esfuerzo.estimar(reqs, P, {"std": "Desarrollo", "tier": t, "model": m, "enf": e}) for e in ("agil", "completo")}
             if r["agil"]["dias_catalogo"] == 0:
@@ -213,9 +213,9 @@ def block_esfuerzo(reqs, P):
                        f"{dag(r['completo'])} | {r['agil']['agente']['ahorro_pct']:.0%} |")
     out += ["", "### Calibración, Parámetros, Pricing, Seguimiento e Implementación", "",
             "| Proyecto | Personas (semanas) | Con agente (días hábiles) | Ahorro |", "|---|---:|---:|---:|"]
-    filas = ([(f"Calibración Tier {ROMAN[t]}", {"std": "Calibración", "tier": t, "model": "lineal", "enf": "completo"}) for t in (1, 2, 3, 4)]
-             + [(f"Parámetros de riesgo Tier {ROMAN[t]}", {"std": "Parámetros", "tier": t, "model": "ml", "enf": "completo"}) for t in (1, 2, 3, 4)]
-             + [(f"Pricing end-to-end Tier {ROMAN[t]}", {"std": "Pricing", "tier": t, "model": "ml", "enf": "completo"}) for t in (1, 2, 3, 4)]
+    filas = ([(f"Calibración Tier {ROMAN[t]}", {"std": "Calibración", "tier": t, "model": "lineal", "enf": "completo"}) for t in (1, 2, 3)]
+             + [(f"Parámetros de riesgo Tier {ROMAN[t]}", {"std": "Parámetros", "tier": t, "model": "ml", "enf": "completo"}) for t in (1, 2, 3)]
+             + [(f"Pricing end-to-end Tier {ROMAN[t]}", {"std": "Pricing", "tier": t, "model": "ml", "enf": "completo"}) for t in (1, 2, 3)]
              + [(f"Seguimiento anual de un modelo Tier {ROMAN[t]}", {"std": "Seguimiento", "tier": t, "model": "lineal", "enf": "completo"}) for t in (1, 3)]
              + [("Implementación (proyecto independiente)", {"std": "Implementación", "tier": 1, "model": "lineal", "enf": "agil"})])
     for nombre, cfg in filas:
@@ -245,14 +245,14 @@ def _sem(x):
 
 def texto_duracion(clave, reqs, P):
     """Duraciones citadas en el texto de docs/, calculadas con el modelo de esfuerzo anclado a U-40.
-    fase:CODIGO  → rango de semanas de esa fase en Desarrollo (de Tier IV ágil a Tier I completo).
+    fase:CODIGO  → rango de semanas de esa fase en Desarrollo (de Tier III ágil a Tier I completo).
     proyecto:ESTANDAR → semanas del proyecto por Tier.  Así el texto nunca se desalinea del modelo."""
     esc = P["escenario_base"]
     fte, m = esc["fte"], esc["pct_reuniones"]
     tipo, cod = clave.split(":", 1)
     if tipo == "fase":
         vals = []
-        for t in (1, 2, 3, 4):
+        for t in (1, 2, 3):
             for mod in ("lineal", "ml", "arbol", "acp"):
                 for e in ("agil", "completo"):
                     r = esfuerzo.estimar(reqs, P, {"std": "Desarrollo", "tier": t, "model": mod, "enf": e})
@@ -263,7 +263,7 @@ def texto_duracion(clave, reqs, P):
         rango = _sem(lo) if _sem(lo) == _sem(hi) else f"{_sem(lo)}–{_sem(hi)}"
         return f"≈ {rango} semanas con {fte} personas"
     std = cod
-    cfgs = {1: None, 2: None, 3: None, 4: None}
+    cfgs = {1: None, 2: None, 3: None}
     for t in cfgs:
         mod = {"Calibración": "lineal", "Seguimiento": "lineal", "Implementación": "lineal"}.get(std, "ml")
         enf = "agil" if std == "Implementación" else "completo"
@@ -442,7 +442,7 @@ def main():
     for r in reqs:
         if r["fase"] != "VAL":
             r["naturaleza"] = esfuerzo.naturaleza(r)
-    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.4.0",
+    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "3.0.0",
             "generado": date.today().isoformat(), "n_requisitos": len(reqs),
             "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"}
     # ---- cifras del README y de CITATION.cff alineadas con el catálogo

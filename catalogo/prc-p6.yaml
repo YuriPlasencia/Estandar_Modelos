@@ -64,8 +64,8 @@ actividades:
 - id: PRC-P6-02.02.01
   tarea: Ejecución y lectura
   subtarea: Despliegue gradual
-  actividad: "Para Tier III–IV sin experimento, desplegar de forma escalonada por región o canal (champion/challenger) y comparar contra el grupo que mantiene el precio anterior."
-  aplica_tier: [3, 4]
+  actividad: "Para Tier III sin experimento, desplegar de forma escalonada por región o canal (champion/challenger) y comparar contra el grupo que mantiene el precio anterior."
+  aplica_tier: [3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 2
   naturaleza: datos

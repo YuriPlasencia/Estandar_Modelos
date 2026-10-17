@@ -9,7 +9,7 @@ actividades:
   tarea: "Criterios de staging"
   subtarea: "Criterios cuantitativos"
   actividad: "Comparar la PD lifetime actual con la PD lifetime en el reconocimiento inicial, por operación, con umbrales relativos y absolutos calibrados por cartera (U-29)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2.5
   nivel_automatizacion: 2
   naturaleza: datos
@@ -32,7 +32,7 @@ actividades:
   tarea: "Criterios de staging"
   subtarea: "Criterios cualitativos y backstops"
   actividad: "Aplicar el backstop de 30 días de atraso para Stage 2 y el de default para Stage 3 (U-28), además de criterios cualitativos: refinanciados, lista de vigilancia y alertas tempranas."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 2
   naturaleza: datos
@@ -43,7 +43,7 @@ actividades:
   tarea: "Criterios de staging"
   subtarea: "Criterios cualitativos y backstops"
   actividad: "Definir el retorno de Stage 2 a Stage 1 y de Stage 3 a Stage 2 con períodos de prueba (U-33), y documentar el tratamiento de activos adquiridos u originados con deterioro (POCI)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 1
   naturaleza: analisis

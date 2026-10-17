@@ -10,13 +10,13 @@ actividades:
   subtarea: Análisis de estabilidad y fill rate
   actividad: Análisis de tendencia de los posibles drivers de calibrado (estabilidad temporal)
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-01.01.02
   tarea: Depuración de variables
   subtarea: Análisis de estabilidad y fill rate
   actividad: Análisis de porcentaje de casos poblados para los posibles drivers de calibrado
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-01.01.03
   tarea: Depuración de variables
   subtarea: Análisis de estabilidad y fill rate
@@ -31,7 +31,7 @@ actividades:
     indicador (V-Carmer, Spearman, etc), sin embargo en el caso de superar el umbral se pueden hacer excepciones
     según las necesidades del negocio.
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-02.01.01
   tarea: Feature Engineering
   subtarea: Tratamiento de variables
@@ -51,19 +51,19 @@ actividades:
   actividad: Evaluación de la estabilidad poblacional y del poder de discriminación del score a calibrarir, aplica
     tanto para los modelos base como para los modelos calibrados previamente
   dias_esfuerzo: 3.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.01.02
   tarea: Ejecución de calibración
   subtarea: Modelo a Calibrar
   actividad: Evaluación de las ventanas de construcción de los componentes de la calibración, incluyendo al score
     base o score calibrado, verificando el performance actual para delimitar el uso de estos.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.01.03
   tarea: Ejecución de calibración
   subtarea: Modelo a Calibrar
   actividad: Para calibraciones que contemplen fases diferenciadas por las ventanas de análisis, se debe de incluir
     la información más reciente y confiable, caso contario se debe de documentar como una limitación.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.01.04
   tarea: Ejecución de calibración
   subtarea: Modelo a Calibrar
@@ -83,7 +83,7 @@ actividades:
     Sin embargo, el tener un aporte muy bajo no será determinante para excluir el driver. Llevar discucion a la
     gerencia.'
   dias_esfuerzo: 2.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.01.05
   tarea: Ejecución de calibración
   subtarea: Modelo a Calibrar
@@ -91,7 +91,7 @@ actividades:
 
     Evaluación y esclarecimiento en la documentación el tratamiento de valores missing y especiales.'
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.01.06
   tarea: Ejecución de calibración
   subtarea: Modelo a Calibrar
@@ -100,42 +100,42 @@ actividades:
     - Evaluación de la materialidad de los ejes de segmentación, en el caso que no tengan materialidad superior
     a 5%, revisar la inclusión con los usuarios de negocio y la gerencia.'
   dias_esfuerzo: 2.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.02.01
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 1era iteración
   actividad: Ejecución del calibrado para validar significancia e ingreso de los drivers del backlog al calibrado
   dias_esfuerzo: 1.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.02.02
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 1era iteración
   actividad: Revisión por sentido económico
   dias_esfuerzo: 1.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.02.03
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 1era iteración
   actividad: Análisis de correlación según el tipo de transformación de la variable.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.02.04
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 1era iteración
   actividad: Matriz de migración / performance del modelo por driver / granularidad
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.02.05
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 1era iteración
   actividad: Entendimiento inicial de los resultados
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.03.01
   tarea: Ejecución de calibración
   subtarea: 1era renión preliminar de resultados
   actividad: Reunión y elaboración de acta
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.04.01
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 2da iteración
@@ -152,7 +152,7 @@ actividades:
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 2da iteración
   actividad: Análisis de correlación según el tipo de transformación de la variable.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-03.04.04
   tarea: Ejecución de calibración
   subtarea: Calibrado con drivers - 2da iteración
@@ -188,34 +188,34 @@ actividades:
   subtarea: Ejecución del modelo final
   actividad: Ejecución final del calibrado
   dias_esfuerzo: 1.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-04.01.04
   tarea: Calibrado final
   subtarea: Ejecución del modelo final
   actividad: Bootstrap driver finales / Matriz de migración / performance del modelo por driver(general y mensual)
     / granularidad (rangos de pd, rangos de ventas)
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-04.01.05
   tarea: Calibrado final
   subtarea: Ejecución del modelo final
   actividad: Envio de tabla puntuada al equipo de seguimiento
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-04.02.01
   tarea: Calibrado final
   subtarea: Analisis previos a la reunión de cierre
   actividad: Elaboración de la PPT
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-05.01.01
   tarea: Reunión presentación del calibrado
   subtarea: Reunión presentación de calibrado
   actividad: Reunión calibrado final
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C4-05.01.02
   tarea: Reunión presentación del calibrado
   subtarea: Reunión presentación de calibrado
   actividad: Acta del cirre del calibrado
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]

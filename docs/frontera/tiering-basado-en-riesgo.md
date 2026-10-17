@@ -14,7 +14,7 @@ orden: 52
 > **Línea base 2.0:** la Res. SBS 00053-2023 (art. 6) exige categorizar por materialidad, uso y complejidad con
 > criterios aprobados por el comité (GOB-G2-02.01.01). Esta propuesta es un punto de partida para esos criterios.
 
-**Problema:** el estándar usa Tier I–IV para activar requisitos, pero no define cómo se asigna el Tier.
+**Problema:** el estándar usa Tier I–III para activar requisitos, pero no define cómo se asigna el Tier.
 Eso produce asignaciones inconsistentes entre equipos.
 
 **Propuesta:** un puntaje transparente de 0 a 100 con cuatro dimensiones.
@@ -32,8 +32,7 @@ $$\text{Puntaje}=20\sum_{d}w_d\cdot s_d,\qquad s_d\in\{1,\dots,5\}$$
 |---|---|
 | ≥ 75 | I |
 | 55 – 74 | II |
-| 35 – 54 | III |
-| < 35 | IV |
+| < 55 | III |
 
 **Regla de piso:** todo modelo regulatorio o contable (capital, IFRS 9) es **mínimo Tier II**; todo modelo
 de decisión automática sobre personas naturales con ML es **mínimo Tier II**.

@@ -10,30 +10,30 @@ actividades:
   subtarea: Documento del calibrado
   actividad: Elaboración del manual metodológico de calibardo
   dias_esfuerzo: 2.75
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.01.02
   tarea: Implementación
   subtarea: Documento del calibrado
   actividad: Elaboración del manual de implementación
   dias_esfuerzo: 2.75
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.01.03
   tarea: Implementación
   subtarea: Documento del calibrado
   actividad: Envío de manual de implementación al equipo implementador
   dias_esfuerzo: 0.25
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.01.04
   tarea: Implementación
   subtarea: Documento del calibrado
   actividad: Revisión con área de implementación y acta de entrega
   dias_esfuerzo: 0.25
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.01.05
   tarea: "Implementación"
   subtarea: "Documento del calibrado"
   actividad: "Una recalibración es una modificación del modelo: requiere validación y aprobación previa del comité de riesgos de modelo antes de su uso."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.25
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -43,42 +43,42 @@ actividades:
   tarea: Implementación
   subtarea: Desarrollo de implementación
   actividad: Desarrollo de script de implementación
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.03.01
   tarea: Implementación
   subtarea: Calidad de datos
   actividad: Desarrollo de controles de calidad de datos para variables input
   dias_esfuerzo: 2.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.04.01
   tarea: Implementación
   subtarea: Pruebas de certificación
   actividad: Definición de pruebas sobre el modelo a implementar
   dias_esfuerzo: 1.0
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.04.02
   tarea: Implementación
   subtarea: Pruebas de certificación
   actividad: Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia
     mínima para obtener conformidad)
   dias_esfuerzo: 1.25
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.04.03
   tarea: Implementación
   subtarea: Pruebas de certificación
   actividad: Constancia de pruebas de control sobre el modelo
   dias_esfuerzo: 0.25
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.04.04
   tarea: Implementación
   subtarea: Pruebas de certificación
   actividad: Solicitar conformidad de los resultados al líder del proyecto de implementación (en caso la implementación
     sea realizada por el equipo modelador, la aprobación será brindada por el Sub Gerente de Modelos de Riesgos)
   dias_esfuerzo: 0.25
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.05.01
   tarea: Implementación
   subtarea: Presentación del proceso de implementación al equipo usuario
   actividad: Reunión y elaboración de acta
   dias_esfuerzo: 0.5
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]

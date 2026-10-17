@@ -10,7 +10,7 @@ actividades:
   subtarea: Indicadores
   actividad: |-
     Construir el tablero mensual: conversión por tramo de precio, price realization, margen y RAROC realizados vs. esperados, mix de riesgo de lo colocado, excepciones de precio y margen cedido, brecha con la competencia y cumplimiento de topes.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 3
   naturaleza: datos
@@ -33,7 +33,7 @@ actividades:
   subtarea: Alertas
   actividad: |-
     Activar alertas: margen realizado fuera de ±15 % del esperado por dos meses (U-26), excepciones por encima del umbral de leakage (U-23), deriva de la elasticidad (calibración del modelo de respuesta fuera de U-21) y cualquier oferta sobre el tope regulatorio (U-24).
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 3
   naturaleza: datos
@@ -44,7 +44,7 @@ actividades:
   tarea: Revisión post-implementación
   subtarea: Revisión
   actividad: "Revisión post-implementación entre 3 y 6 meses después del lanzamiento: valor capturado frente al caso de negocio de P1, aprendizajes y decisión de recalibrar el precio técnico, el modelo de respuesta o ambos."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2
   naturaleza: analisis
@@ -54,7 +54,7 @@ actividades:
   tarea: Revisión post-implementación
   subtarea: Revisión
   actividad: "Reunión de revisión post-implementación con el dueño del precio y Finanzas."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.25
   nivel_automatizacion: 1
   naturaleza: reunion
@@ -64,7 +64,7 @@ actividades:
   tarea: Revisión post-implementación
   subtarea: Ciclo de recalibrado
   actividad: "Actualizar los insumos del precio técnico cuando cambian FTP, costos, capital o PD/LGD (al menos trimestralmente), y recalibrar el modelo de respuesta al menos una vez al año o ante alerta."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 3
   naturaleza: datos

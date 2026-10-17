@@ -66,25 +66,25 @@ Se cumple $\mathrm{RAROC}(r_{\min}) = h$.
 
 - **`PRC-P3-01.01.01`** Asignar el costo de fondos con la curva de precios de transferencia (FTP) de Finanzas/ALM según plazo y perfil de amortización (duración equivalente), incluyendo la prima de liquidez. Para depósitos, el FTP es el valor del fondeo que aporta el producto.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Hito: Sprint 2
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Hito: Sprint 2
 
 #### 1.2 Pérdida esperada
 
 - **`PRC-P3-01.02.01`** Calcular la pérdida esperada anualizada con los modelos de riesgo aprobados: PD ajustada al horizonte de la operación (lifetime o promedio anual sobre la vida esperada, no solo la PD a 12 meses de U-17), LGD y EAD con su perfil de amortización y uso de línea.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico
 
 #### 1.3 Costos operativos y de adquisición
 
 - **`PRC-P3-01.03.01`** Asignar costos operativos (originación, mantenimiento, cobranza) y de adquisición por canal, con su driver (por operación o por saldo), conciliados con Finanzas.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
 
 #### 1.4 Costo de capital
 
 - **`PRC-P3-01.04.01`** Calcular el cargo por capital: capital económico o regulatorio consumido por la operación por la tasa de retorno mínima (hurdle) antes de impuestos, neto del beneficio de fondear con capital.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
 
 #### 1.5 Opcionalidad
 
@@ -98,20 +98,20 @@ Se cumple $\mathrm{RAROC}(r_{\min}) = h$.
 
 - **`PRC-P3-02.01.01`** Calcular el precio técnico mínimo (tasa piso con RAROC igual al hurdle) por celda de producto × plazo × canal × tramo de riesgo, y el RAROC de cada operación al precio vigente. Ninguna oferta por debajo del piso salvo excepción dentro de facultades (U-18).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-18
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-18
 
 - **`PRC-P3-02.01.02`** Verificar la monotonicidad del precio técnico respecto del riesgo dentro de cada celda (U-19) y la coherencia de la estructura por plazo.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-19
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-19
 
 - **`PRC-P3-02.01.03`** Conciliar el precio técnico con Finanzas (FTP, costos, capital) y con Riesgos (PD, LGD); diferencias mayores a 5 pb por celda se explican por escrito.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
 
 #### 2.2 Documentación
 
 - **`PRC-P3-02.02.01`** Documentar la metodología de precio técnico, sus supuestos, fuentes y fecha de vigencia de cada insumo, con cuadro de control de cambios.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
 
 <!-- CATALOGO:FIN -->

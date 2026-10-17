@@ -20,7 +20,7 @@ number-sections: true
 | Estándar aplicado | Desarrollo · Tier II · Machine learning · enfoque ágil |
 | Versión y estado | 1.0 · Para Comité de Modelos |
 | Clasificación | Uso interno |
-| Versión del estándar | Estándares de Modelos en Banca v2.4.0 |
+| Versión del estándar | Estándares de Modelos en Banca v3.0.0 |
 
 **Control de cambios** (DES-D4-11.01.03)
 

@@ -34,21 +34,21 @@ decir a costa de cuánto volumen lleva a una propuesta que el negocio rechaza en
 
 - **`PRC-P1-01.01.01`** Definir el producto (activo o pasivo), los segmentos, los canales y el tipo de decisión de precio: tarifario de lista, precio individual en originación, renovación, repricing de cartera o tasa de depósitos.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Hito: Sprint 0
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Hito: Sprint 0
 
 - **`PRC-P1-01.01.02`** Fijar la función objetivo y su horizonte: margen financiero, NIM, RAROC, valor de vida del cliente (CLV), volumen o una combinación ponderada. Documentar explícitamente el trade-off volumen–margen que acepta el negocio.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
 
 - **`PRC-P1-01.01.03`** Inventariar las restricciones: topes regulatorios de tasa (U-24), apetito de riesgo, metas de volumen y de colocación, política comercial, compromisos con clientes, gradualidad máxima de cambios (U-25) y restricciones de conducta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Umbrales: U-25
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Umbrales: U-25
 
 #### 1.2 Diagnóstico del precio actual
 
 - **`PRC-P1-01.02.01`** Diagnosticar el esquema de precios vigente: tarifario, bandas de negociación, facultades de descuento, dispersión de tasas por segmento de riesgo, price realization (tasa efectiva vs. tasa de lista) y brecha frente a la competencia.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Entregable: Excel P1: Diagnóstico del precio actual · Hito: Sprint 1
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Entregable: Excel P1: Diagnóstico del precio actual · Hito: Sprint 1
 
 - **`PRC-P1-01.02.02`** Estimar el valor en juego: margen cedido por excepciones (leakage), clientes con precio por debajo del piso técnico (U-18) y oportunidad por segmento. Es la base para priorizar el proyecto y medir su éxito.
 
@@ -60,17 +60,17 @@ decir a costa de cuánto volumen lleva a una propuesta que el negocio rechaza en
 
 - **`PRC-P1-02.01.01`** Registrar en el inventario los modelos que intervendrán (precio técnico, respuesta, optimizador) y asignar su Tier. Un modelo de pricing es un modelo sujeto a este estándar y a Validación.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
 
 - **`PRC-P1-02.01.02`** Definir la matriz RACI: dueño del precio (negocio), Finanzas/ALM (costo de fondos y capital), Riesgos (PD/LGD y apetito), Analytics Pricing (modelos y optimización), Cumplimiento y Legal (conducta y transparencia), Tecnología (motor de precios).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P1: Ficha del caso de pricing
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P1: Ficha del caso de pricing
 
 #### 2.2 Kick off
 
 - **`PRC-P1-02.02.01`** Reunión de kick off del proyecto de pricing con el dueño del precio, Finanzas, Riesgos y Cumplimiento.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-KO: Kick off de pricing · Hito: Kick Off
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-KO: Kick off de pricing · Hito: Kick Off
 
 <!-- CATALOGO:FIN -->
 
@@ -102,11 +102,11 @@ identificación posible. Entonces el experimento (P6) es un **requisito previo**
 
 - **`PRC-P2-01.01.01`** Construir la base a nivel de oferta o cotización, no solo de operaciones desembolsadas: precio ofrecido, precio final, aceptación (sí/no), monto, plazo, canal, ejecutivo, fecha y motivo de no aceptación. Sin las ofertas rechazadas por el cliente no se puede estimar la respuesta al precio.
 
-  Aplica: Tier I–IV · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones · Hito: Sprint 1
+  Aplica: Tier I–III · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones · Hito: Sprint 1
 
 - **`PRC-P2-01.01.02`** Enriquecer cada oferta con los insumos del precio técnico vigentes a la fecha de la oferta: PD y LGD del modelo de riesgo aprobado (definición de default U-17), curva FTP, costo operativo y consumo de capital.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
 
 - **`PRC-P2-01.01.03`** Incorporar variables de contexto: tasas de la competencia por producto y plazo, tasa de referencia de política monetaria, campañas vigentes, estacionalidad y saturación del canal.
 
@@ -122,14 +122,14 @@ identificación posible. Entonces el experimento (P6) es un **requisito previo**
 
 - **`PRC-P2-02.01.01`** Aplicar los controles de calidad de DES-D2 (validez, completitud, unicidad, precisión, consistencia) y los específicos de pricing: precio ofrecido registrado antes de la decisión del cliente, cotizaciones duplicadas por re-cotización, tasas fuera de rango y fechas de oferta coherentes con la de desembolso.
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 3 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 3 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
 
 - **`PRC-P2-02.01.02`** Medir la variación exógena del precio disponible para identificar la elasticidad: cambios de tarifario, campañas, saltos de la grilla, pruebas previas. Si no existe variación suficiente, el diseño de un experimento (P6) pasa a ser requisito previo para el modelo de respuesta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
 
 - **`PRC-P2-02.01.03`** Certificar la base de pricing con acta de conformidad de las fuentes (Finanzas para FTP y costos; Riesgos para PD/LGD).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P2: Diccionario y certificación de datos de pricing
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P2: Diccionario y certificación de datos de pricing
 
 <!-- CATALOGO:FIN -->

@@ -9,7 +9,7 @@ actividades:
   tarea: "Cálculo de la ECL"
   subtarea: "Motor de cálculo"
   actividad: "Calcular la ECL por operación como la suma, período a período, de PD marginal × LGD × EAD descontada a la tasa de interés efectiva: 12 meses para Stage 1, lifetime para Stage 2 y LGD en default para Stage 3; ponderar por escenario (U-32)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 2
   naturaleza: datos
@@ -21,7 +21,7 @@ actividades:
   tarea: "Cálculo de la ECL"
   subtarea: "Motor de cálculo"
   actividad: "Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2
   naturaleza: datos
@@ -32,7 +32,7 @@ actividades:
   tarea: "Cálculo de la ECL"
   subtarea: "Análisis de resultados"
   actividad: "Explicar los movimientos de la ECL entre períodos (originaciones, bajas, cambios de stage, cambios de parámetros, escenarios, castigos) para Contabilidad y para las revelaciones de IFRS 7."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 3
   naturaleza: datos
@@ -43,7 +43,7 @@ actividades:
   tarea: "Cálculo de la ECL"
   subtarea: "Análisis de resultados"
   actividad: "Calcular sensibilidades de la ECL: 100 % en cada escenario, cambios en ponderaciones y en umbrales SICR."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 3
   naturaleza: datos
@@ -53,7 +53,7 @@ actividades:
   tarea: "Overlays y ajustes post-modelo"
   subtarea: "Gobierno de overlays"
   actividad: "Todo overlay o ajuste post-modelo debe tener causa identificada (riesgo no capturado por el modelo), cuantificación reproducible, cartera afectada, fecha de revisión o expiración y aprobación en comité (U-31)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -64,7 +64,7 @@ actividades:
   tarea: "Overlays y ajustes post-modelo"
   subtarea: "Gobierno de overlays"
   actividad: "Reunión de aprobación de overlays y de los resultados de la ECL del período."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.25
   nivel_automatizacion: 1
   naturaleza: reunion

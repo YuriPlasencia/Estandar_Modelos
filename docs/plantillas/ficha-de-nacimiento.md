@@ -19,7 +19,7 @@ codigo_inventario: ""          # IMP-01.05.03
 nombre: ""
 version: "1.0.0"
 tipo_estandar: Desarrollo      # Desarrollo | Calibración
-tier: ""                       # I | II | III | IV  (acta: VAL-M-01.13)
+tier: ""                       # I | II | III  (acta: VAL-M-01.13)
 tipo_modelo: ""                # lineal | ml | arbol | acp
 enfoque: ""                    # agil | completo
 uso: ""                        # originación | comportamiento | cobranza | estimador | PD/LGD/EAD | otro

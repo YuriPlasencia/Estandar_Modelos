@@ -53,11 +53,11 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-01.01.01`** Análisis de tendencia de los posibles drivers de calibrado (estabilidad temporal)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-01.01.02`** Análisis de porcentaje de casos poblados para los posibles drivers de calibrado
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-01.01.03`** Análisis de tendencias y quiebres
 
@@ -67,7 +67,7 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-01.02.01`** Análisis de la correlación de los drivers objeto de análisis, para el caso de variables continuas se medirá el indicador de correlación pearson, y para el caso de variables cualitativas se evaluaran diferentes indicador (V-Carmer, Spearman, etc), sin embargo en el caso de superar el umbral se pueden hacer excepciones según las necesidades del negocio.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 ### 2 · Feature Engineering
 
@@ -87,15 +87,15 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-03.01.01`** Evaluación de la estabilidad poblacional y del poder de discriminación del score a calibrarir, aplica tanto para los modelos base como para los modelos calibrados previamente
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d
+  Aplica: Tier I–III · Esfuerzo: 3 d
 
 - **`CAL-C4-03.01.02`** Evaluación de las ventanas de construcción de los componentes de la calibración, incluyendo al score base o score calibrado, verificando el performance actual para delimitar el uso de estos.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.01.03`** Para calibraciones que contemplen fases diferenciadas por las ventanas de análisis, se debe de incluir la información más reciente y confiable, caso contario se debe de documentar como una limitación.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.01.04`** Para la inclusion de los drivers:
   - Trameado (bucketización) del driver por cortes recomendados u objetos de interés de negocio.
@@ -105,45 +105,45 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
   - Verificación de la significancia de los coeficientes añadidos
   - Evaluación del aporte marginal en la discriminación del modelo por la inclusión de los drivers de calibración. Sin embargo, el tener un aporte muy bajo no será determinante para excluir el driver. Llevar discucion a la gerencia.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Umbrales: U-14
+  Aplica: Tier I–III · Esfuerzo: 2 d · Umbrales: U-14
 
 - **`CAL-C4-03.01.05`** Dependiendo del tipo de calibración e inclusión de los drivers:  
   Evaluación y esclarecimiento en la documentación el tratamiento de valores missing y especiales.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-03.01.06`** Dependiendo de la necesidad del proyecto de calibración:
   - Evaluación de la materialidad de los ejes de segmentación, en el caso que no tengan materialidad superior a 5%, revisar la inclusión con los usuarios de negocio y la gerencia.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Umbrales: U-13
+  Aplica: Tier I–III · Esfuerzo: 2 d · Umbrales: U-13
 
 #### 3.2 Calibrado con drivers - 1era iteración
 
 - **`CAL-C4-03.02.01`** Ejecución del calibrado para validar significancia e ingreso de los drivers del backlog al calibrado
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d
+  Aplica: Tier I–III · Esfuerzo: 1.5 d
 
 - **`CAL-C4-03.02.02`** Revisión por sentido económico
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d
+  Aplica: Tier I–III · Esfuerzo: 1.5 d
 
 - **`CAL-C4-03.02.03`** Análisis de correlación según el tipo de transformación de la variable.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.02.04`** Matriz de migración / performance del modelo por driver / granularidad
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-03.02.05`** Entendimiento inicial de los resultados
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 #### 3.3 1era renión preliminar de resultados
 
 - **`CAL-C4-03.03.01`** Reunión y elaboración de acta
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 #### 3.4 Calibrado con drivers - 2da iteración
 
@@ -157,7 +157,7 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-03.04.03`** Análisis de correlación según el tipo de transformación de la variable.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.04.04`** Matriz de migración / performance del modelo por driver / granularidad
 
@@ -187,21 +187,21 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-04.01.03`** Ejecución final del calibrado
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d
+  Aplica: Tier I–III · Esfuerzo: 1 d
 
 - **`CAL-C4-04.01.04`** Bootstrap driver finales / Matriz de migración / performance del modelo por driver(general y mensual) / granularidad (rangos de pd, rangos de ventas)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-04.01.05`** Envio de tabla puntuada al equipo de seguimiento
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 #### 4.2 Analisis previos a la reunión de cierre
 
 - **`CAL-C4-04.02.01`** Elaboración de la PPT
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 ### 5 · Reunión presentación del calibrado
 
@@ -209,10 +209,10 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-05.01.01`** Reunión calibrado final
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-05.01.02`** Acta del cirre del calibrado
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 <!-- CATALOGO:FIN -->

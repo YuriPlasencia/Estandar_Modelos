@@ -9,7 +9,7 @@ actividades:
   tarea: "Plan de seguimiento"
   subtarea: "Indicadores y umbrales"
   actividad: "Definir para cada modelo los indicadores de seguimiento (estabilidad, discriminación, calibración, forzajes, calidad de datos y, para IA, sobreajuste) con umbrales y alertas aprobados por el comité de riesgos de modelo (SBS art. 21; U-37)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 2
   naturaleza: analisis
@@ -20,8 +20,8 @@ actividades:
 - id: SEG-S1-01.01.02
   tarea: "Plan de seguimiento"
   subtarea: "Indicadores y umbrales"
-  actividad: "Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III–IV al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño."
-  aplica_tier: [1, 2, 3, 4]
+  actividad: "Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño."
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -31,7 +31,7 @@ actividades:
   tarea: "Plan de seguimiento"
   subtarea: "Indicadores y umbrales"
   actividad: "Asegurar los datos de seguimiento: tabla productiva con versión del modelo, scores, decisiones, forzajes y desempeño posterior; para estimadores, la muestra mínima acordada en DES-D5-01.03.01."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2
   naturaleza: datos

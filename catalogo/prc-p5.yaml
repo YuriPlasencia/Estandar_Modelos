@@ -10,7 +10,7 @@ actividades:
   subtarea: Problema de optimización
   actividad: |-
     Formular el problema: maximizar la función objetivo de P1 sumando, por oferta, la probabilidad de aceptación por el valor de la operación al precio propuesto, sujeto a precio ≥ piso técnico (U-18), precio ≤ tope regulatorio (U-24), metas de volumen y riesgo, monotonicidad en el riesgo (U-19) y gradualidad (U-25).
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -23,7 +23,7 @@ actividades:
   subtarea: Problema de optimización
   actividad: |-
     Definir la granularidad de la decisión (celda de tarifario o precio individual) y la regla de redondeo a la grilla comercial (por ejemplo, múltiplos de 25 pb), evaluando el valor perdido por redondeo.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -33,7 +33,7 @@ actividades:
   tarea: Resolución
   subtarea: Optimizador
   actividad: "Implementar el optimizador (búsqueda en grilla, programación no lineal o entera) con semilla y versiones fijadas, y verificar que la solución respeta todas las restricciones."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 2
   naturaleza: datos
@@ -56,7 +56,7 @@ actividades:
   subtarea: Escenarios
   actividad: |-
     Construir escenarios para el comité: precio actual, propuesta óptima, propuesta con restricción de volumen y alternativas del negocio, con impacto en volumen, margen, RAROC, pérdida esperada, capital y provisiones a 12 meses.
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2
   naturaleza: datos
@@ -68,7 +68,7 @@ actividades:
   subtarea: Controles
   actividad: |-
     Controlar la propuesta antes de llevarla a comité: 100 % de precios dentro de [piso, tope], monotonicidad, cambios mayores al umbral de gradualidad identificados, y análisis de equidad de precios por grupos: las diferencias deben explicarse por riesgo, costo, plazo o canal (PRC-P9-02.02.01).
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1.5
   nivel_automatizacion: 3
   naturaleza: datos
@@ -79,7 +79,7 @@ actividades:
   tarea: Validación de la propuesta
   subtarea: Comité de Precios
   actividad: "Presentar la propuesta y sus escenarios al Comité de Precios para su aprobación, con las excepciones a umbrales explícitas."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: reunion

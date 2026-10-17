@@ -9,7 +9,7 @@ actividades:
   tarea: "Informes"
   subtarea: "Informe periódico"
   actividad: "Emitir el informe de seguimiento al menos una vez al año (más frecuente según categoría) con desviaciones de indicadores, backtesting, sensibilidad, forzajes, cumplimiento de acciones y, para IA, sobreajuste; aprobarlo en el comité (SBS art. 22)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2
   naturaleza: documentacion
@@ -20,7 +20,7 @@ actividades:
   tarea: "Informes"
   subtarea: "Informe periódico"
   actividad: "Actualizar el inventario con el estado del modelo y sus debilidades abiertas después de cada informe (GOB-G2-01.01.01)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.25
   nivel_automatizacion: 2
   naturaleza: gobierno

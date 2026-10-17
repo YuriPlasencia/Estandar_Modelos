@@ -17,7 +17,7 @@ actividades:
     ml: {agil: 0.1875, completo: 0.25}
     acp: {agil: 0.1875, completo: 0.25}
     arbol: {agil: 0.1875, completo: 0.25}
-  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], acp: [1, 2, 3], arbol: [1, 2, 3]}
 - id: DES-D7-01.01.02
   tarea: Gobierno
   subtarea: Gobierno
@@ -30,7 +30,7 @@ actividades:
     ml: {agil: 0.25, completo: 0.25}
     acp: {agil: 0.25, completo: 0.25}
     arbol: {agil: 0.25, completo: 0.25}
-  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], acp: [1, 2, 3], arbol: [1, 2, 3]}
 - id: DES-D7-01.01.03
   tarea: Gobierno
   subtarea: Gobierno
@@ -43,7 +43,7 @@ actividades:
     ml: {agil: 0.185, completo: 0.25}
     acp: {agil: 0.185, completo: 0.25}
     arbol: {agil: 0.185, completo: 0.25}
-  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], acp: [1, 2, 3], arbol: [1, 2, 3]}
 - id: DES-D7-01.01.04
   tarea: Gobierno
   subtarea: Gobierno
@@ -56,7 +56,7 @@ actividades:
     ml: {agil: 0.25, completo: 0.25}
     acp: {agil: 0.25, completo: 0.25}
     arbol: {agil: 0.25, completo: 0.25}
-  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], acp: [1, 2, 3], arbol: [1, 2, 3]}
 - id: DES-D7-01.01.05
   tarea: Gobierno
   subtarea: Gobierno
@@ -69,7 +69,7 @@ actividades:
     ml: {agil: 0.125, completo: 0.25}
     acp: {agil: 0.125, completo: 0.25}
     arbol: {agil: 0.125, completo: 0.25}
-  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], acp: [1, 2, 3], arbol: [1, 2, 3]}
 - id: DES-D7-01.01.06
   tarea: Gobierno
   subtarea: Gobierno
@@ -82,12 +82,12 @@ actividades:
     ml: {agil: 0.25, completo: 0.25}
     acp: {agil: 0.25, completo: 0.25}
     arbol: {agil: 0.25, completo: 0.25}
-  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], acp: [1, 2, 3], arbol: [1, 2, 3]}
 - id: DES-D7-01.01.07
   tarea: "Gobierno"
   subtarea: "Gobierno"
   actividad: "Obtener la aprobación previa del comité de riesgos de modelo antes de usar todo modelo nuevo, modificado o con cambio de uso (GOB-G3-01.01.01)."
-  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3], acp: [1, 2, 3]}
   dias_esfuerzo:
     lineal: {agil: 0.25, completo: 0.25}
     ml: {agil: 0.25, completo: 0.25}

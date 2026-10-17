@@ -90,10 +90,6 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | III | ML | 9.6 | 10.5 | 11 | 12 | 77% |
 | III | Árbol | 9.0 | 9.8 | 10 | 11 | 77% |
 | III | ACP | 7.0 | 7.7 | 8 | 9 | 78% |
-| IV | Lineal | 9.8 | 10.6 | 11 | 12 | 77% |
-| IV | ML | 9.6 | 10.5 | 11 | 12 | 77% |
-| IV | Árbol | 9.0 | 9.8 | 10 | 11 | 77% |
-| IV | ACP | 7.0 | 7.7 | 8 | 9 | 78% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
@@ -102,15 +98,12 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | Calibración Tier I | 3.4 | 4 | 77% |
 | Calibración Tier II | 3.2 | 4 | 76% |
 | Calibración Tier III | 2.5 | 3 | 77% |
-| Calibración Tier IV | 2.5 | 3 | 77% |
 | Parámetros de riesgo Tier I | 6.8 | 7 | 78% |
 | Parámetros de riesgo Tier II | 6.8 | 7 | 78% |
 | Parámetros de riesgo Tier III | 5.3 | 6 | 78% |
-| Parámetros de riesgo Tier IV | 5.2 | 6 | 78% |
 | Pricing end-to-end Tier I | 6.6 | 8 | 77% |
 | Pricing end-to-end Tier II | 6.6 | 8 | 77% |
 | Pricing end-to-end Tier III | 5.2 | 6 | 77% |
-| Pricing end-to-end Tier IV | 4.9 | 6 | 77% |
 | Seguimiento anual de un modelo Tier I | 0.8 | 1 | 76% |
 | Seguimiento anual de un modelo Tier III | 0.8 | 1 | 76% |
 | Implementación (proyecto independiente) | 0.9 | 1 | 74% |

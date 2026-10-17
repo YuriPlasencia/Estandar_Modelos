@@ -9,7 +9,7 @@ actividades:
   tarea: "Estructura"
   subtarea: "Roles e independencia"
   actividad: "Mantener una función de riesgo de modelo independiente de las áreas que desarrollan, usan e implementan los modelos, con un responsable que reporta a la gerencia de riesgos (SBS 53-2023 arts. 12–13)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -18,7 +18,7 @@ actividades:
   tarea: "Estructura"
   subtarea: "Roles e independencia"
   actividad: "Los responsables de validación y seguimiento tienen al menos el mismo nivel organizacional que los de desarrollo; los desarrolladores están separados de las unidades de negocio."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -27,7 +27,7 @@ actividades:
   tarea: "Estructura"
   subtarea: "Roles e independencia"
   actividad: "Asignar al usuario del modelo la propiedad de su riesgo de uso y la obligación de usarlo solo para el propósito aprobado (SBS art. 19)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -35,7 +35,7 @@ actividades:
   tarea: "Estructura"
   subtarea: "Comité de riesgos de modelo"
   actividad: "Operar un comité de riesgos de modelo con al menos un director, el jefe de riesgos y los responsables de desarrollo, validación y seguimiento, que sesione como mínimo cada trimestre (SBS arts. 10–11)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -46,7 +46,7 @@ actividades:
   tarea: "Estructura"
   subtarea: "Comité de riesgos de modelo"
   actividad: "El comité aprueba los criterios de categorización (Tier), los indicadores y umbrales de seguimiento, la periodicidad de las validaciones, los informes de validación y seguimiento y las acciones ante debilidades."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -57,7 +57,7 @@ actividades:
   tarea: "Estructura"
   subtarea: "Comité de riesgos de modelo"
   actividad: "El directorio aprueba las políticas, asigna recursos y aprueba las excepciones de uso de modelos de mayor categoría con debilidades relevantes (SBS art. 9)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0
   nivel_automatizacion: 1
   naturaleza: gobierno

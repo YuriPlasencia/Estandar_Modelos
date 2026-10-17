@@ -9,7 +9,7 @@ actividades:
   tarea: "Escenarios"
   subtarea: "Diseño y probabilidades"
   actividad: "Recibir de Estudios Económicos al menos tres escenarios (base, optimista y pesimista) con sus probabilidades y su sustento, revisados como mínimo cada trimestre (U-32)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 1
   naturaleza: gobierno
@@ -21,7 +21,7 @@ actividades:
   tarea: "Escenarios"
   subtarea: "Diseño y probabilidades"
   actividad: "Definir el horizonte de proyección explícito y la regla de reversión a la media de largo plazo de las variables macro y de los parámetros."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 1
   naturaleza: analisis
@@ -32,7 +32,7 @@ actividades:
   tarea: "Modelos satélite"
   subtarea: "Vínculo macro–parámetros"
   actividad: "Estimar los modelos satélite que vinculan las variables macro con la tasa de default (y con la LGD cuando aplique): selección de variables con sentido económico y signo esperado, rezagos, y estabilidad fuera de muestra."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 3
   nivel_automatizacion: 2
   naturaleza: datos
@@ -43,7 +43,7 @@ actividades:
   tarea: "Modelos satélite"
   subtarea: "Vínculo macro–parámetros"
   actividad: "Probar la no linealidad: la ECL ponderada se calcula como el promedio de las ECL de cada escenario, nunca como la ECL de un escenario promedio (U-32)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 3
   naturaleza: datos
@@ -64,7 +64,7 @@ actividades:
   tarea: "Gobierno de escenarios"
   subtarea: "Revisión trimestral"
   actividad: "Reunión trimestral de revisión de escenarios y probabilidades con Estudios Económicos, Riesgos y Contabilidad."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.25
   nivel_automatizacion: 1
   naturaleza: reunion

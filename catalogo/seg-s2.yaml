@@ -9,7 +9,7 @@ actividades:
   tarea: "Indicadores"
   subtarea: "Estabilidad y datos"
   actividad: "Medir el PSI del score y de cada variable frente a la población de construcción, y los controles de calidad de los datos productivos (missings, duplicados, fuentes desactualizadas)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 4
   naturaleza: datos
@@ -20,7 +20,7 @@ actividades:
   tarea: "Indicadores"
   subtarea: "Desempeño"
   actividad: "Medir la discriminación (Gini, KS) por cosecha madura, global y por segmento, frente a la de construcción (U-37)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 4
   naturaleza: datos
@@ -31,7 +31,7 @@ actividades:
   tarea: "Indicadores"
   subtarea: "Desempeño"
   actividad: "Medir la calibración: tasa observada vs. PD por tramo con intervalos binomiales o de Jeffreys; para estimadores, el % de casos dentro de ±25 % y ±50 % (U-12)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 4
   naturaleza: datos
@@ -42,7 +42,7 @@ actividades:
   tarea: "Indicadores"
   subtarea: "Desempeño"
   actividad: "Para modelos de IA, medir el sobreajuste en producción: brecha de desempeño entre construcción y los meses recientes (SBS art. 22)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 3
   naturaleza: datos
@@ -52,7 +52,7 @@ actividades:
   tarea: "Indicadores"
   subtarea: "Uso y forzajes"
   actividad: "Medir el volumen de forzajes (overrides) y el desempeño de los casos forzados frente a los no forzados, por motivo y por nivel que forzó (U-36)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 1
   nivel_automatizacion: 3
   naturaleza: datos
@@ -63,7 +63,7 @@ actividades:
   tarea: "Indicadores"
   subtarea: "Uso y forzajes"
   actividad: "Verificar que el modelo se usa solo para el propósito y la población aprobados; un uso nuevo es un cambio de uso que requiere aprobación (GOB-G3-01.01.01)."
-  aplica_tier: [1, 2, 3, 4]
+  aplica_tier: [1, 2, 3]
   dias_esfuerzo: 0.5
   nivel_automatizacion: 1
   naturaleza: gobierno

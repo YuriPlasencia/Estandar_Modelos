@@ -47,7 +47,7 @@ SCHEMA = {
         "numero": {"type": "string", "description": "Ej.: ACTA-MOD-ORI-001-05"},
         "estado": {"enum": ESTADOS}, "version": {"type": "integer", "minimum": 1},
         "modelo": {"type": "object", "required": ["codigo", "nombre"], "properties": {
-            "codigo": _str, "nombre": _str, "tier": {"enum": ["I", "II", "III", "IV", ""]},
+            "codigo": _str, "nombre": _str, "tier": {"enum": ["I", "II", "III", ""]},
             "tipo_modelo": {"enum": list(MODELOS) + [""]}}},
         "fecha": {"type": "string", "format": "date"}, "hora_inicio": _str, "hora_fin": _str,
         "modalidad": {"enum": ["Presencial", "Virtual", "Mixta", ""]}, "lugar": _str, "secretario": _str,
@@ -356,7 +356,7 @@ def main():
     n.add_argument("--tipo", required=True)
     n.add_argument("--codigo", required=True, help="código de inventario del modelo")
     n.add_argument("--nombre", required=True)
-    n.add_argument("--tier", default="", choices=["", "I", "II", "III", "IV"])
+    n.add_argument("--tier", default="", choices=["", "I", "II", "III"])
     n.add_argument("--modelo", default="", choices=[""] + list(MODELOS))
     n.add_argument("--fecha")
     n.add_argument("--n", type=int, default=1, help="correlativo del acta dentro del modelo")

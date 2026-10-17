@@ -60,15 +60,15 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S1-01.01.01`** Definir para cada modelo los indicadores de seguimiento (estabilidad, discriminación, calibración, forzajes, calidad de datos y, para IA, sobreajuste) con umbrales y alertas aprobados por el comité de riesgos de modelo (SBS art. 21; U-37).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento S1: Plan de seguimiento · Hito: Sprint 0 · Umbrales: U-37
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento S1: Plan de seguimiento · Hito: Sprint 0 · Umbrales: U-37
 
-- **`SEG-S1-01.01.02`** Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III–IV al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño.
+- **`SEG-S1-01.01.02`** Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento S1: Plan de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento S1: Plan de seguimiento
 
 - **`SEG-S1-01.01.03`** Asegurar los datos de seguimiento: tabla productiva con versión del modelo, scores, decisiones, forzajes y desempeño posterior; para estimadores, la muestra mínima acordada en DES-D5-01.03.01.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Tabla S1: Base de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Tabla S1: Base de seguimiento
 
 <!-- CATALOGO:FIN -->
 
@@ -83,31 +83,31 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S2-01.01.01`** Medir el PSI del score y de cada variable frente a la población de construcción, y los controles de calidad de los datos productivos (missings, duplicados, fuentes desactualizadas).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
 
 #### 1.2 Desempeño
 
 - **`SEG-S2-01.02.01`** Medir la discriminación (Gini, KS) por cosecha madura, global y por segmento, frente a la de construcción (U-37).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-37
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-37
 
 - **`SEG-S2-01.02.02`** Medir la calibración: tasa observada vs. PD por tramo con intervalos binomiales o de Jeffreys; para estimadores, el % de casos dentro de ±25 % y ±50 % (U-12).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
 
 - **`SEG-S2-01.02.03`** Para modelos de IA, medir el sobreajuste en producción: brecha de desempeño entre construcción y los meses recientes (SBS art. 22).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Dashboard S1: Tablero de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Dashboard S1: Tablero de seguimiento
 
 #### 1.3 Uso y forzajes
 
 - **`SEG-S2-01.03.01`** Medir el volumen de forzajes (overrides) y el desempeño de los casos forzados frente a los no forzados, por motivo y por nivel que forzó (U-36).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-36
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-36
 
 - **`SEG-S2-01.03.02`** Verificar que el modelo se usa solo para el propósito y la población aprobados; un uso nuevo es un cambio de uso que requiere aprobación (GOB-G3-01.01.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico
 
 <!-- CATALOGO:FIN -->
 
@@ -122,11 +122,11 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S3-01.01.01`** Aplicar el árbol de decisión: verde, continuar; ámbar, análisis de causa raíz en un mes; rojo en calibración con discriminación aceptable, calibrar (CAL); rojo en discriminación, redesarrollar (DES); rojo en datos, plan de contingencia (IMP-01.02.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento S2: Informe de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento S2: Informe de seguimiento
 
 - **`SEG-S3-01.01.02`** Escalar al comité un rojo que persista tres períodos o un cambio material de política o de población, con medidas temporales de mitigación mientras se corrige (SBS art. 7).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
 
 <!-- CATALOGO:FIN -->
 
@@ -141,11 +141,11 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S4-01.01.01`** Emitir el informe de seguimiento al menos una vez al año (más frecuente según categoría) con desviaciones de indicadores, backtesting, sensibilidad, forzajes, cumplimiento de acciones y, para IA, sobreajuste; aprobarlo en el comité (SBS art. 22).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento S2: Informe de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento S2: Informe de seguimiento
 
 - **`SEG-S4-01.01.02`** Actualizar el inventario con el estado del modelo y sus debilidades abiertas después de cada informe (GOB-G2-01.01.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 2
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 2
 
 <!-- CATALOGO:FIN -->
 

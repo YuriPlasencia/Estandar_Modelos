@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Si usas este estándar, por favor cítalo así."
 title: "Estándares de Modelos en Banca"
-version: 2.4.0
+version: 3.0.0
 date-released: 2026-10-17
 license: CC-BY-4.0
 repository-code: "https://github.com/YuriPlasencia/Estandar_Modelos"

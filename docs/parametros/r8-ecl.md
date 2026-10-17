@@ -62,21 +62,21 @@ Este estándar lo traduce en reglas (U-31):
 
 - **`PAR-R8-01.01.01`** Calcular la ECL por operación como la suma, período a período, de PD marginal × LGD × EAD descontada a la tasa de interés efectiva: 12 meses para Stage 1, lifetime para Stage 2 y LGD en default para Stage 3; ponderar por escenario (U-32).
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R5: Motor de ECL · Hito: Sprint 6 · Umbrales: U-32
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R5: Motor de ECL · Hito: Sprint 6 · Umbrales: U-32
 
 - **`PAR-R8-01.01.02`** Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 
 #### 1.2 Análisis de resultados
 
 - **`PAR-R8-01.02.01`** Explicar los movimientos de la ECL entre períodos (originaciones, bajas, cambios de stage, cambios de parámetros, escenarios, castigos) para Contabilidad y para las revelaciones de IFRS 7.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel R7: Movimiento de la ECL
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel R7: Movimiento de la ECL
 
 - **`PAR-R8-01.02.02`** Calcular sensibilidades de la ECL: 100 % en cada escenario, cambios en ponderaciones y en umbrales SICR.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel R7: Movimiento de la ECL
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel R7: Movimiento de la ECL
 
 ### 2 · Overlays y ajustes post-modelo
 
@@ -84,11 +84,11 @@ Este estándar lo traduce en reglas (U-31):
 
 - **`PAR-R8-02.01.01`** Todo overlay o ajuste post-modelo debe tener causa identificada (riesgo no capturado por el modelo), cuantificación reproducible, cartera afectada, fecha de revisión o expiración y aprobación en comité (U-31).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R9: Registro de overlays · Umbrales: U-31
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R9: Registro de overlays · Umbrales: U-31
 
 - **`PAR-R8-02.01.02`** Reunión de aprobación de overlays y de los resultados de la ECL del período.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-OVL: Aprobación de overlays
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-OVL: Aprobación de overlays
 
 - **`PAR-R8-02.01.03`** Planificar la absorción de cada overlay recurrente dentro del modelo en el siguiente ciclo de recalibrado, para que no se vuelva permanente.
 

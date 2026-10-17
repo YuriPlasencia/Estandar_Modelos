@@ -46,7 +46,7 @@ Los cuatro efectos suman exactamente la variación del margen.
 
 - **`PRC-P8-01.01.01`** Construir el tablero mensual: conversión por tramo de precio, price realization, margen y RAROC realizados vs. esperados, mix de riesgo de lo colocado, excepciones de precio y margen cedido, brecha con la competencia y cumplimiento de topes.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Hito: Sprint 7
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Hito: Sprint 7
 
 #### 1.2 Descomposición de resultados
 
@@ -58,7 +58,7 @@ Los cuatro efectos suman exactamente la variación del margen.
 
 - **`PRC-P8-01.03.01`** Activar alertas: margen realizado fuera de ±15 % del esperado por dos meses (U-26), excepciones por encima del umbral de leakage (U-23), deriva de la elasticidad (calibración del modelo de respuesta fuera de U-21) y cualquier oferta sobre el tope regulatorio (U-24).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Umbrales: U-21, U-23, U-26
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Umbrales: U-21, U-23, U-26
 
 ### 2 · Revisión post-implementación
 
@@ -66,17 +66,17 @@ Los cuatro efectos suman exactamente la variación del margen.
 
 - **`PRC-P8-02.01.01`** Revisión post-implementación entre 3 y 6 meses después del lanzamiento: valor capturado frente al caso de negocio de P1, aprendizajes y decisión de recalibrar el precio técnico, el modelo de respuesta o ambos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Entregable: Documento P8: Revisión post-implementación
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Entregable: Documento P8: Revisión post-implementación
 
 - **`PRC-P8-02.01.02`** Reunión de revisión post-implementación con el dueño del precio y Finanzas.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PRC-PIR: Revisión post-implementación
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PRC-PIR: Revisión post-implementación
 
 #### 2.2 Ciclo de recalibrado
 
 - **`PRC-P8-02.02.01`** Actualizar los insumos del precio técnico cuando cambian FTP, costos, capital o PD/LGD (al menos trimestralmente), y recalibrar el modelo de respuesta al menos una vez al año o ante alerta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico
 
 <!-- CATALOGO:FIN -->
 
@@ -112,13 +112,13 @@ técnica. Cada sesión deja acta (tipo **PRC-CP** del [editor de actas](../plant
 
 - **`PRC-P9-01.01.01`** Operar un Comité de Precios con mandato escrito: aprueba tarifarios, pisos, matrices de facultades, experimentos y excepciones a umbrales de pricing. Integra al dueño del precio, Finanzas/ALM, Riesgos y Cumplimiento; cada sesión deja acta (PRC-CP).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P9: Política de precios y conducta
 
 #### 1.2 Política de precios
 
 - **`PRC-P9-01.02.01`** Mantener una política de precios aprobada que establezca principios, metodología de piso técnico, gradualidad, facultades, uso de modelos y de agentes de IA, y frecuencia de revisión.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P9: Política de precios y conducta
 
 ### 2 · Conducta y regulación
 
@@ -126,13 +126,13 @@ técnica. Cada sesión deja acta (tipo **PRC-CP** del [editor de actas](../plant
 
 - **`PRC-P9-02.01.01`** Verificar el cumplimiento de la normativa vigente de tasas y transparencia: topes de tasa donde existan (U-24), cálculo y publicación de TCEA/TREA, comunicación de cambios de condiciones con la anticipación exigida y prohibición de cobros no permitidos.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta · Umbrales: U-24
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta · Umbrales: U-24
 
 #### 2.2 Trato justo
 
 - **`PRC-P9-02.02.01`** Asegurar que el precio se explique por riesgo, costo, plazo, canal y relación comercial, y no por atributos protegidos o por la vulnerabilidad del cliente. Prohibido usar como palanca de precio la baja sensibilidad de clientes vulnerables (p.ej. menor alfabetización financiera). Probar proxies como en FR-06.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
 
 #### 2.3 Explicabilidad al cliente
 
@@ -146,6 +146,6 @@ técnica. Cada sesión deja acta (tipo **PRC-CP** del [editor de actas](../plant
 
 - **`PRC-P9-03.01.01`** Si se usan agentes de IA en el ciclo de pricing, registrar cada agente (rol, herramientas permitidas, datos a los que accede), conservar el log de sus acciones y asegurar que ningún agente fije, publique ni apruebe precios: toda decisión de precio la toma y firma una persona con facultad.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
 
 <!-- CATALOGO:FIN -->

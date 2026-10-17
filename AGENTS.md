@@ -31,7 +31,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
   explícitamente: "el estándar no fija un umbral para X".
 - **No confundas estados:** nunca presentes una propuesta de `frontera/` como exigencia vigente.
 - **Aplicabilidad:** un requisito aplica a un modelo si `aplica_tier[<tipo_modelo>]` contiene su Tier.
-  En los estándares sin tipo de modelo (Calibración, Parámetros, Pricing, Seguimiento), `aplica_tier` es una lista de Tiers.
+  En los estándares sin tipo de modelo (Calibración, Parámetros, Pricing, Seguimiento), `aplica_tier` es una lista de Tiers (1 a 3; ver `docs/marco/tiering-y-metodologia.md`).
 - **En pricing no fijas precios.** Recalculas pisos, estimas respuesta y preparas escenarios; la decisión es del Comité de Precios (PRC-P9-03.01.01).
 - **No apruebas nada.** Puedes preparar checklists, borradores y revisiones previas; la conformidad la da una persona.
 - **Confidencialidad:** no copies datos de clientes ni nombres de tablas productivas en salidas que salgan del banco.
@@ -59,7 +59,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
   "actividad": "Opt de HP por generación aleatoria (min 50 combinaciones)...",
   "critico": false, "eficiencia": false, "nivel_automatizacion": 2,
   "dias_esfuerzo": {"ml": {"agil": 2.5, "completo": 2.5}},
-  "aplica_tier": {"lineal": [], "ml": [1,2,3,4], "arbol": [1,2,3,4], "acp": []},
+  "aplica_tier": {"lineal": [], "ml": [1,2,3], "arbol": [1,2,3], "acp": []},
   "entregables": [{"tipo": "Excel", "numero": 16, "descripcion": "Optimización de Hiperparámetros."}],
   "hito": null,
   "umbrales": ["U-10"]

@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.4.0 · 2026-10-17
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v3.0.0 · 2026-10-17
 
 
 ========== docs/index.md [Vigente] ==========
@@ -265,29 +265,29 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G1-01.01.01`** Mantener una función de riesgo de modelo independiente de las áreas que desarrollan, usan e implementan los modelos, con un responsable que reporta a la gerencia de riesgos (SBS 53-2023 arts. 12–13).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G1-01.01.02`** Los responsables de validación y seguimiento tienen al menos el mismo nivel organizacional que los de desarrollo; los desarrolladores están separados de las unidades de negocio.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G1-01.01.03`** Asignar al usuario del modelo la propiedad de su riesgo de uso y la obligación de usarlo solo para el propósito aprobado (SBS art. 19).
 
-  Aplica: Tier I–IV · Automatización: 1
+  Aplica: Tier I–III · Automatización: 1
 
 #### 1.2 Comité de riesgos de modelo
 
 - **`GOB-G1-01.02.01`** Operar un comité de riesgos de modelo con al menos un director, el jefe de riesgos y los responsables de desarrollo, validación y seguimiento, que sesione como mínimo cada trimestre (SBS arts. 10–11).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
+  Aplica: Tier I–III · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
 
 - **`GOB-G1-01.02.02`** El comité aprueba los criterios de categorización (Tier), los indicadores y umbrales de seguimiento, la periodicidad de las validaciones, los informes de validación y seguimiento y las acciones ante debilidades.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
+  Aplica: Tier I–III · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
 
 - **`GOB-G1-01.02.03`** El directorio aprueba las políticas, asigna recursos y aprueba las excepciones de uso de modelos de mayor categoría con debilidades relevantes (SBS art. 9).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 <!-- CATALOGO:FIN -->
 
@@ -302,11 +302,11 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G2-01.01.01`** Mantener un inventario completo y actualizado de modelos con sus atributos mínimos (propósito, uso, dueño, categoría, estado, versión, validaciones, debilidades), incluidas herramientas informales influyentes como hojas de cálculo y los sistemas de IA.
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
 
 - **`GOB-G2-01.01.02`** Remitir el inventario al supervisor con la periodicidad y el formato que exija la norma local (en Perú, anualmente vía SUCAVE según el Anexo A de la Res. SBS 53-2023).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
 
 ### 2 · Categorización
 
@@ -314,7 +314,7 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G2-02.01.01`** Categorizar cada modelo por materialidad, uso y complejidad con criterios aprobados por el comité (ver FR-02); la categoría determina la profundidad y frecuencia de validación y seguimiento y si se exige réplica completa (SBS art. 6; U-35).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico · Entregable: Documento G2: Criterios de categorización · Umbrales: U-35
+  Aplica: Tier I–III · Automatización: 1 · Crítico · Entregable: Documento G2: Criterios de categorización · Umbrales: U-35
 
 - **`GOB-G2-02.01.02`** Revisar periódicamente el propio esquema de categorización (que sea objetivo y que discrimine), como exige SS1/23.
 
@@ -333,17 +333,17 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G3-01.01.01`** Todo modelo nuevo, modificado (cambio de variables, supuestos o parámetros, incluida una recalibración) o con cambio de uso requiere validación y aprobación previa del comité antes de usarse (SBS art. 17).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 #### 1.2 Manuales
 
 - **`GOB-G3-01.02.01`** Mantener manuales aprobados de desarrollo, validación, uso, seguimiento, categorización, calidad de datos y contratación de proveedores de modelos (SBS art. 14); este estándar cumple esa función para los modelos analíticos.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G3-01.02.02`** Conservar la documentación de cada modelo (desarrollo, validación, seguimiento, actas, bases, diccionarios y código) con historial de versiones y disponible para el supervisor (SBS art. 15).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico
+  Aplica: Tier I–III · Automatización: 2 · Crítico
 
 <!-- CATALOGO:FIN -->
 
@@ -358,11 +358,11 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G4-01.01.01`** La entidad es plenamente responsable de los modelos de terceros: puede tercerizar desarrollo, validación o implementación, pero el seguimiento lo hace la propia entidad (SBS arts. 23–24).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G4-01.01.02`** Para modelos de terceros de mayor categoría, exigir réplica; si la propiedad intelectual lo impide, aplicar benchmarking u otra técnica alternativa documentada (SBS art. 25).
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 - **`GOB-G4-01.01.03`** Contar con una estrategia de continuidad para los modelos de proveedores que soportan servicios priorizados.
 
@@ -374,7 +374,7 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G4-02.01.01`** Inventariar los sistemas de IA (incluidos los de IA generativa y los agentes) y aplicarles controles proporcionales a su riesgo: los modelos de IA no generativa siguen este estándar; los generativos y agénticos, además, el estándar AGT.
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G1: Inventario de modelos
 
 - **`GOB-G4-02.01.02`** Adoptar principios de IA responsable (transparencia, equidad, privacidad, seguridad y supervisión humana) traducidos en métricas y controles verificables, no solo en declaraciones.
 
@@ -393,7 +393,7 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G5-01.01.01`** Registrar cada debilidad o hallazgo con severidad, responsable, plazo y estado; si no puede corregirse de inmediato, aplicar medidas temporales de mitigación (SBS art. 7).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G3: Registro de debilidades
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G3: Registro de debilidades
 
 ### 2 · Reporte
 
@@ -401,11 +401,11 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 
 - **`GOB-G5-02.01.01`** La unidad de riesgos emite un informe anual con el estado de las debilidades, los modelos desarrollados o modificados en los últimos 12 meses y el cronograma de los próximos 12 meses (SBS art. 8).
 
-  Aplica: Tier I–IV · Automatización: 2 · Crítico · Entregable: Documento G4: Informe anual de riesgo de modelo
+  Aplica: Tier I–III · Automatización: 2 · Crítico · Entregable: Documento G4: Informe anual de riesgo de modelo
 
 - **`GOB-G5-02.01.02`** Auditoría interna incluye en su plan anual la evaluación del cumplimiento de la gestión de riesgo de modelo.
 
-  Aplica: Tier I–IV · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Automatización: 1 · Crítico
 
 <!-- CATALOGO:FIN -->
 
@@ -417,11 +417,26 @@ Detalle y fuentes en [Línea base 2.0](linea-base.md).
 Cada requisito del catálogo se activa según **tres dimensiones**. Antes de empezar, el proyecto debe fijarlas
 en el Project Charter (DES-D1-01.04.04 *Definición del Tier y uso del modelo*).
 
-## 1. Tier del modelo (I – IV)
+## 1. Tier del modelo (I – III)
 
 El Tier refleja la **materialidad y criticidad** del modelo. Determina cuántas actividades son obligatorias:
-un Tier I exige el conjunto completo; los Tier III–IV permiten omitir análisis marcados como no aplicables
+un Tier I exige el conjunto completo; el Tier III permite omitir análisis marcados como no aplicables
 (por ejemplo, el análisis mensual de completitud del target o la segmentación supervisada).
+
+| Tier | Riesgo del modelo | Tratamiento |
+|---|---|---|
+| **I** | Alto | Conjunto completo de requisitos; validación periódica anual con réplica completa (U-35) |
+| **II** | Medio | Omite algunos análisis de profundidad; validación cada dos años |
+| **III** | Bajo | Solo lo necesario para sustentar el uso; validación cada tres años |
+
+> **El número de Tiers lo aprueba el comité.** La Res. SBS 00053-2023 (art. 6) exige categorizar los modelos por
+> materialidad, uso y complejidad, con criterios aprobados por el comité de riesgos de modelo (GOB-G2-02.01.01), y
+> fijar por categoría el alcance, la profundidad y la frecuencia del seguimiento y la validación. **No fija un número
+> de categorías**, como tampoco lo hacen la guía SR 26-2 (EE. UU.), la PRA SS1/23 (Reino Unido) ni la OSFI E-23
+> (Canadá). La práctica de mercado usa tres o cuatro niveles; este estándar adopta **tres**, porque cada nivel debe
+> cambiar de verdad los controles que se exigen: en la versión anterior, Tier III y Tier IV tenían exactamente los
+> mismos requisitos, umbrales y frecuencia de validación. Si el comité de una entidad aprueba otra escala, debe
+> documentar su correspondencia con I–III. Las herramientas aceptan «4» o «IV» de versiones anteriores como Tier III.
 
 - El Tier se asigna con participación del equipo desarrollador (DES-D7-01.01.03) y se aprueba con acta (VAL-M-01.13).
 - El catálogo indica, para cada actividad, en qué Tiers aplica (`aplica_tier`).
@@ -523,7 +538,7 @@ Las desviaciones se sustentan por escrito; cuando el requisito lo indica (p.ej. 
 | **U-32** | Escenarios y ponderación de la ECL | Al menos tres escenarios (base, optimista y pesimista) con probabilidades sustentadas, revisados como mínimo cada trimestre. La ECL ponderada es la suma de las ECL de cada escenario por su probabilidad, nunca la ECL de un escenario promedio. | [`PAR-R6-01.01.01`](../parametros/r6-escenarios-staging.md), [`PAR-R6-02.01.02`](../parametros/r6-escenarios-staging.md), [`PAR-R8-01.01.01`](../parametros/r8-ecl.md) |
 | **U-33** | Períodos de prueba para salir de default o de Stage 2 | Salida de default tras al menos 3 meses sin condiciones de default y 12 meses para reestructuraciones por dificultades financieras. El retorno de Stage 2 a Stage 1 exige un período de prueba documentado por cartera (referencia: 3 meses). | [`PAR-R1-02.01.02`](../parametros/r0-marco.md), [`PAR-R7-01.02.02`](../parametros/r6-escenarios-staging.md) |
 | **U-34** | Cálculo de la LGD workout | Las recuperaciones se descuentan a la tasa de interés efectiva, netas de costos directos e indirectos, y los procesos incompletos se incluyen con un método documentado (no se excluyen). | [`PAR-R4-01.01.01`](../parametros/r4-lgd-ead.md), [`PAR-R4-01.01.02`](../parametros/r4-lgd-ead.md) |
-| **U-35** | Frecuencia de validación por categoría | Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III–IV, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I. *Nota: Valor de referencia de la línea base; el comité de riesgos de modelo aprueba la periodicidad definitiva.* | [`VAL-M-05.03`](../validacion/validacion.md), [`VAL-M-05.01`](../validacion/validacion.md), [`GOB-G2-02.01.01`](../marco/gobierno-mrm.md) |
+| **U-35** | Frecuencia de validación por categoría | Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I. *Nota: Valor de referencia de la línea base; el comité de riesgos de modelo aprueba la periodicidad definitiva.* | [`VAL-M-05.03`](../validacion/validacion.md), [`VAL-M-05.01`](../validacion/validacion.md), [`GOB-G2-02.01.01`](../marco/gobierno-mrm.md) |
 | **U-36** | Forzajes (overrides) | Alerta si los forzajes superan el 5 % de las decisiones del período o si los casos forzados tienen una tasa de default significativamente mayor que los no forzados del mismo tramo. *Nota: Valor de referencia inicial; calibrar por producto en el primer ciclo.* | [`DES-D5-01.01.02`](../desarrollo/d5-integracion-gestion.md), [`SEG-S2-01.03.01`](../seguimiento/seguimiento.md) |
 | **U-37** | Semáforo de seguimiento | PSI del score: verde ≤ 10 %, ámbar entre 10 % y 25 %, rojo > 25 %. Discriminación: rojo si el Gini cae más de 10 pts frente a construcción. Calibración: rojo si un tramo sale del intervalo al 99 %. *Nota: Valor de referencia de la línea base; el comité aprueba los umbrales por modelo.* | [`SEG-S1-01.01.01`](../seguimiento/seguimiento.md), [`SEG-S2-01.02.01`](../seguimiento/seguimiento.md) |
 | **U-38** | Rango de IV y sospecha de fuga | IV menor a 0.02: la variable no aporta poder predictivo y se excluye salvo sustento de negocio. IV mayor a 0.50: sospecha de fuga de información; se excluye salvo una investigación documentada que la descarte. | [`DES-D4-03.03.03`](../desarrollo/d4-modelamiento.md), [`DES-D4-03.03.04`](../desarrollo/d4-modelamiento.md) |
@@ -616,10 +631,6 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | III | ML | 9.6 | 10.5 | 11 | 12 | 77% |
 | III | Árbol | 9.0 | 9.8 | 10 | 11 | 77% |
 | III | ACP | 7.0 | 7.7 | 8 | 9 | 78% |
-| IV | Lineal | 9.8 | 10.6 | 11 | 12 | 77% |
-| IV | ML | 9.6 | 10.5 | 11 | 12 | 77% |
-| IV | Árbol | 9.0 | 9.8 | 10 | 11 | 77% |
-| IV | ACP | 7.0 | 7.7 | 8 | 9 | 78% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
@@ -628,15 +639,12 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | Calibración Tier I | 3.4 | 4 | 77% |
 | Calibración Tier II | 3.2 | 4 | 76% |
 | Calibración Tier III | 2.5 | 3 | 77% |
-| Calibración Tier IV | 2.5 | 3 | 77% |
 | Parámetros de riesgo Tier I | 6.8 | 7 | 78% |
 | Parámetros de riesgo Tier II | 6.8 | 7 | 78% |
 | Parámetros de riesgo Tier III | 5.3 | 6 | 78% |
-| Parámetros de riesgo Tier IV | 5.2 | 6 | 78% |
 | Pricing end-to-end Tier I | 6.6 | 8 | 77% |
 | Pricing end-to-end Tier II | 6.6 | 8 | 77% |
 | Pricing end-to-end Tier III | 5.2 | 6 | 77% |
-| Pricing end-to-end Tier IV | 4.9 | 6 | 77% |
 | Seguimiento anual de un modelo Tier I | 0.8 | 1 | 76% |
 | Seguimiento anual de un modelo Tier III | 0.8 | 1 | 76% |
 | Implementación (proyecto independiente) | 0.9 | 1 | 74% |
@@ -1295,131 +1303,131 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-01.01.01`** Entendimiento origen del desarrollo (entendimiento del caso de uso, necesidad del negocio, objetivo del modelo)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2–2.125 d ágil / 2.5–3.5 d completo · Automatización: 1 · Hito: Sprint 0
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2–2.125 d ágil / 2.5–3.5 d completo · Automatización: 1 · Hito: Sprint 0
 
 - **`DES-D1-01.01.02`** Evaluar la factibilidad para la construcción del modelo, analizando materialidad (universo y target), impacto en la gestión, información disponible para el desarrollo y posible uso de modelos vigentes.
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.03`** Características de la población
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.04`** Políticas actuales y anteriores
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.05`** Modelos anteriores
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.06`** Información disponible (data disponible, data nueva)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D1-01.01.07`** Definición de supuestos económicos que sustenten la racionalidad/sentido del modelo en su conjunto y de las variables
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 - **`DES-D1-01.01.08`** Reunión de levantamiento de expectativas: Población objetivo/cosechas (exclusiones, inclusiones).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 1: Reunión Levantamiento de Expectativas II. · Hito: Reunion 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 1: Reunión Levantamiento de Expectativas II. · Hito: Reunion 1
 
 #### 1.2 Elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad de la data input)
 
 - **`DES-D1-01.02.01`** Elaboración de base universo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Entregable: Correo 1: Petición de datos universo. · Hito: Sprint 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Entregable: Correo 1: Petición de datos universo. · Hito: Sprint 1
 
 - **`DES-D1-01.02.02`** Elaboración de evolutivos total por montos
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 1: Evolutivos por montos, tabla y gráfico.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 1: Evolutivos por montos, tabla y gráfico.
 
 - **`DES-D1-01.02.03`** Elaboración de evolutivos por cuentas de principales drivers del negocio
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 1: Evolutivos de cuentas por drivers, tablas y gráficos
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 1: Evolutivos de cuentas por drivers, tablas y gráficos
 
 - **`DES-D1-01.02.04`** Elaboración de evolutivos por montos de principales drivers del negocio
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 1: Evolutivos de montos por drivers, tablas y gráficos
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 1: Evolutivos de montos por drivers, tablas y gráficos
 
 - **`DES-D1-01.02.05`** Análisis y validación de filtros básicos para el universo de modelamiento
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Script: de filtros básicos.; Excel 1: Número de cuentas antes y despues de filtrar.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Script: de filtros básicos.; Excel 1: Número de cuentas antes y despues de filtrar.
 
 #### 1.3 Extracción de tabla única y creación de nuevas variables
 
 - **`DES-D1-01.03.01`** Reunión de levantamiento de expectativas: Fuentes, variables
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 2: Reunión Levantamiento de Expectativas II. · Hito: Reunión 2
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Entregable: Acta 2: Reunión Levantamiento de Expectativas II. · Hito: Reunión 2
 
 - **`DES-D1-01.03.02`** Pegado de las variables de los tablones
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.5–3 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Script 2: Creación de tabla única; Tabla 1: Master table inicial. · Hito: Sprint 2*
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.5–3 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Script 2: Creación de tabla única; Tabla 1: Master table inicial. · Hito: Sprint 2*
 
 - **`DES-D1-01.03.03`** Crear variables post BrainStorming
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 8.5 d ágil / 10 d completo · Automatización: 1 · Entregable: Script 3: Creación de nuevas variables. · Hito: SME 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 8.5 d ágil / 10 d completo · Automatización: 1 · Entregable: Script 3: Creación de nuevas variables. · Hito: SME 1
 
 - **`DES-D1-01.03.04`** Regla de no anticipación: toda variable del tablón de modelamiento se construye solo con información disponible antes de la fecha de observación (originación o foto). Están prohibidas las variables contemporáneas o del futuro, porque en producción el futuro no se observa (U-39).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 - **`DES-D1-01.03.05`** Documentar en el diccionario, para cada variable, su fecha de referencia y el desfase de disponibilidad de su fuente, y verificar con una prueba automática que ninguna variable usa información posterior a la fecha de observación menos ese desfase.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 #### 1.4 Requerimientos y propuesta de solución (inception)
 
 - **`DES-D1-01.04.01`** Definición población objetivo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2–2.55 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Ppt 1: Project Charter: Población. · Hito: Sprint 3
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2–2.55 d ágil / 2.5–3 d completo · Automatización: 1 · Entregable: Ppt 1: Project Charter: Población. · Hito: Sprint 3
 
 - **`DES-D1-01.04.02`** Definiciones, criterios y supuestos
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición cosechas vs Aprobadas.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición cosechas vs Aprobadas.
 
 - **`DES-D1-01.04.03`** Definiciones de criterios de éxito
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: OKRs.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: OKRs.
 
 - **`DES-D1-01.04.04`** Definición del TIER y uso del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición del uso de modelo.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición del uso de modelo.
 
 - **`DES-D1-01.04.05`** Definición de alcance y limitaciones
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición de alcances, limitaciones.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Definición de alcances, limitaciones.
 
 - **`DES-D1-01.04.06`** En el caso se utilice una metodología corporativa, se debe alienar las principales definiciones a utilizar en el modelamiento (Universo y Target). En caso no aplique, se debería justificar el cambio en las definiciones con análisis metodológicos y/o de negocio.
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter: Alineamiento Corporativo
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter: Alineamiento Corporativo
 
 - **`DES-D1-01.04.07`** Reunión - Enriquecimiento de la propuesta y diseño funcional del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Acta: de reunión. · Hito: Reunión 3
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Acta: de reunión. · Hito: Reunión 3
 
 - **`DES-D1-01.04.08`** Documentación del project charter (ficha de nacimiento del modelo, técnicas a usar y otros)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Ppt 1: Project Charter · Hito: Sprint 4
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter · Hito: Sprint 4
 
 #### 1.5 Sesión de ideación de variables
 
 - **`DES-D1-01.05.01`** Reuniones con los usuarios/ bancas para revisar variables sugeridas por el negocio (ideación)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y los equipos de negocio
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y los equipos de negocio
 
 #### 1.6 Evaluación de la dispobilidad de información y accesos
 
 - **`DES-D1-01.06.01`** Reuniones con los encargados de la extracción de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
 
 #### 1.7 Definir fecha de ejecución del modelo, considerando los desfases a asumir por cada fuente utilizada y en función a las expectativas de los equipos Stakeholders
 
 - **`DES-D1-01.07.01`** Reuniones con los encargados de la extracción de información y creación de variables
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2 d ágil / 3 d completo · Automatización: 1 · Entregable: Acta: de reunión entre el equipo de modelos y el equipo de tecnología y datos
 
 ### 2 · Reunión Kick off
 
@@ -1427,13 +1435,13 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-02.01.01`** Presentación (PPT) del kick off
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1–2 d ágil / 1.5–3 d completo · Automatización: 1 · Entregable: Ppt 2: Kick off · Umbrales: U-40
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1–2 d ágil / 1.5–3 d completo · Automatización: 1 · Entregable: Ppt 2: Kick off · Umbrales: U-40
 
 #### 2.2 Reunión Kick off
 
 - **`DES-D1-02.02.01`** Reunión kick off
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Acta 3: Reunión Kick off · Hito: Kick Off
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Entregable: Acta 3: Reunión Kick off · Hito: Kick Off
 
 ### 3 · Definición de ventana de modelación
 
@@ -1441,23 +1449,23 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-03.01.01`** Análisis de estabilidad de la variable objetivo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.975–3 d ágil / 3.5 d completo · Automatización: 1 · Entregable: Excel 2: Evolutivos de cuentas y montos por drivers. · Hito: Sprint 5
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.975–3 d ágil / 3.5 d completo · Automatización: 1 · Entregable: Excel 2: Evolutivos de cuentas y montos por drivers. · Hito: Sprint 5
 
 - **`DES-D1-03.01.02`** Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y, como OOT, solo el último mes con desempeño completo (U-01), esto sujeto a la disponibilidad de información en cada proyecto.
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 2: Evolutivos del promedio de la variable objetivo por segmento. · Umbrales: U-01
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 2: Evolutivos del promedio de la variable objetivo por segmento. · Umbrales: U-01
 
 - **`DES-D1-03.01.03`** Análisis de estabilidad de la ventana de modelamiento, utilizar el PSI como indicar de estabilidad población, en caso sea necesario complementar con algún análisis adicional (Intervalos de confianza)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 2: Número de cuentas por mes en la ventana de modelación · Umbrales: U-02
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 2: Número de cuentas por mes en la ventana de modelación · Umbrales: U-02
 
 - **`DES-D1-03.01.04`** Evaluar los meses con ciertas alertas de inestabilidad, con justificacion metodologica y/o negocio
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 - **`DES-D1-03.01.05`** Documentación de la generación de la población de modelamiento
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Documento 2: Pedido de datos.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Documento 2: Pedido de datos.
 
 ### 4 · Criterios de exclusión
 
@@ -1465,11 +1473,11 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-04.01.01`** Exclusiones por pautas duras (actuales y futuras)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de pautas duras.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de pautas duras.
 
 - **`DES-D1-04.01.02`** Exclusiones por default en foto (análisis materialidad)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de default en foto.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio antes y después de default en foto.
 
 - **`DES-D1-04.01.03`** Exclusiones por operaciones con desempeño < ventana de default y mora reciente (análisis impacto)
 
@@ -1477,19 +1485,19 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-04.01.04`** Exclusiones por operaciones con desempeño < ventana de default y mora reciente (análisis materialidad)
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas sin desempeño.
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas sin desempeño.
 
 - **`DES-D1-04.01.05`** Exclusiones por operaciones con mora < altura del default: indeterminados (análisis materialidad)
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas de indetermindos.
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas de indetermindos.
 
 - **`DES-D1-04.01.06`** Exclusiones por cambios de gestión (Cobranzas)
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas excluidas por cambios de gestión
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Excel 3: Número de cuentas y promedio del target de las cuentas excluidas por cambios de gestión
 
 - **`DES-D1-04.01.07`** Documentación de las exclusiones
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Documento 3: Filtros y exclusiones.; Tabla 2: Master table filtrada.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Documento 3: Filtros y exclusiones.; Tabla 2: Master table filtrada.
 
 - **`DES-D1-04.01.08`** Evaluar el sesgo de selección de los modelos de originación entrenados solo con solicitudes aprobadas y documentar la estrategia de inferencia de rechazados aplicada, o por qué no aplica.
 
@@ -1501,7 +1509,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.01.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Umbrales: U-17
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 5 d ágil / 5 d completo · Automatización: 1 · Umbrales: U-17
 
 - **`DES-D1-05.01.02`** Análisis de incidencia de default operación en comportamiento cliente
 
@@ -1511,7 +1519,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.02.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Umbrales: U-17
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Umbrales: U-17
 
 - **`DES-D1-05.02.02`** Análisis de roll rates
 
@@ -1521,7 +1529,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.03.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1
 
 - **`DES-D1-05.03.02`** Análisis asociados a la definición de la materialidad
 
@@ -1531,7 +1539,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-05.04.01`** Documentación final definición de default
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1 · Entregable: Documento 4: Definición de default. · Umbrales: U-17
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1 · Entregable: Documento 4: Definición de default. · Umbrales: U-17
 
 ### 6 · Definición del target (continuo)
 
@@ -1539,13 +1547,13 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-06.01.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 1
 
 #### 6.2 Definición de materialidad
 
 - **`DES-D1-06.02.01`** Adopción de definición del estándar
 
-  Aplica: Lineal/ML/Árbol I–IV · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Automatización: 1
 
 - **`DES-D1-06.02.02`** Análisis asociados a la definición de la materialidad
 
@@ -1555,7 +1563,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-06.03.01`** Documentación final definición del target
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Documento 4: Definición del target. · Hito: SME 2
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Documento 4: Definición del target. · Hito: SME 2
 
 ### 7 · Definición Metodología para modelar
 
@@ -1563,7 +1571,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
 - **`DES-D1-07.01.01`** Identificar la mejor metodología para modelar el target específico
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Propuestas de las metodologías para modelar el target
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Propuestas de las metodologías para modelar el target
 
 <!-- CATALOGO:FIN -->
 
@@ -1606,33 +1614,33 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.01.01`** Garantizar la existencia de un diccionario de datos sobre la base disponible
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Excel 4: Diccionario de datos. · Hito: Sprint 6
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Excel 4: Diccionario de datos. · Hito: Sprint 6
 
 #### 1.2 Revisión del reporte de calidad de datos del proveedor
 
 - **`DES-D2-01.02.01`** Revisar detalladamente el informe de calidad de datos entregado por el proveedor de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 5: Informe de calidad de datos.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 5: Informe de calidad de datos.
 
 #### 1.3 Análisis de validez
 
 - **`DES-D2-01.03.01`** Comparar información recibida con la petición formal de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 #### 1.4 Análisis de completitud
 
 - **`DES-D2-01.04.01`** % de registros sin ninguna información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Registros sin información.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Registros sin información.
 
 - **`DES-D2-01.04.02`** % de registros sólo con información de llaves
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros con solo información de llaves.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros con solo información de llaves.
 
 - **`DES-D2-01.04.03`** % de registros sin información de la variable target (total)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros sin la variable target.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Análisis de registros sin la variable target.
 
 - **`DES-D2-01.04.04`** % de registros sin información de la variable target (mensual)
 
@@ -1640,7 +1648,7 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.04.05`** % de datos faltantes por variable independiente (total)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 5: Fill Rate (total).
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Excel 5: Fill Rate (total).
 
 - **`DES-D2-01.04.06`** % de datos faltantes por variable independiente (mensual)
 
@@ -1654,7 +1662,7 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.05.01`** % de registros duplicados
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Script 6: Análisis de unicidad.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Script 6: Análisis de unicidad.
 
 #### 1.6 Análisis descriptivo de variables
 
@@ -1664,11 +1672,11 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.06.02`** Análisis descriptivo de las variables definidas como mínimas
 
-  Aplica: Lineal/Árbol I–II · ML I–IV · ACP III–IV · Automatización: 1 · Entregable: Excel 6: Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.
+  Aplica: Lineal/Árbol I–II · ML I–III · ACP III · Automatización: 1 · Entregable: Excel 6: Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.
 
 - **`DES-D2-01.06.03`** Análisis de estabilidad de las variables a través del PSI (incluyendo meses recientes) con un umbral minimo de aceptación del 10%; en caso dicho nivel reduzca considerablemente el set disponible de variables para el modelamiento se evaluará un nivel de aceptación mayor que no supere el 20%.
 
-  Aplica: Lineal/Árbol I–II · ML/ACP I–IV · Automatización: 1 · Entregable: Excel 6: Analisis de estabilidad · Umbrales: U-02
+  Aplica: Lineal/Árbol I–II · ML/ACP I–III · Automatización: 1 · Entregable: Excel 6: Analisis de estabilidad · Umbrales: U-02
 
 ### 2 · Control de Calidad y entendimiento de los datos
 
@@ -1676,7 +1684,7 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-02.01.01`** Comparación de descriptivos de la base de datos con información de negocio
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Excel 7: Comparación de evolutivos con datos del negocio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Excel 7: Comparación de evolutivos con datos del negocio.
 
 #### 2.2 Análisis de consistencia
 
@@ -1688,11 +1696,11 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-02.03.01`** Revisión del conjunto de análisis y decisión sobre calidad de datos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
 
 - **`DES-D2-02.03.02`** Documentación de los análisis y certificación de calidad
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Documento 6: Analisis y certificación de calidad.
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Documento 6: Analisis y certificación de calidad.
 
 <!-- CATALOGO:FIN -->
 
@@ -1734,11 +1742,11 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 
 - **`DES-D3-01.01.01`** Reunión stakeholder para determinar propuesta de ejes de segmentación, en caso no tenga claridad de los posibles drivers de segmentación se utilizar técnicas como árboles de decisión para la identificar de potenciales drivers, así como cortes propuestos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Acta 4: Reunión de segmentación. · Hito: Reunión 4
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.85 d ágil / 1 d completo · Automatización: 1 · Entregable: Acta 4: Reunión de segmentación. · Hito: Reunión 4
 
 - **`DES-D3-01.01.02`** Análisis de ratio de default y materialidad/Análisis de target ( Estabilidad de Segmentos)
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento. · Hito: Sprint 7
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento. · Hito: Sprint 7
 
 - **`DES-D3-01.01.03`** Segmentación por metodología supervisada (modelos naive) / Modelo Segmentado VS Modelo Unisegmento
 
@@ -1756,19 +1764,19 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 
 - **`DES-D3-01.02.01`** Comparación del desempeño de las segmentaciones con el modelo unisegmento
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
 
 - **`DES-D3-01.02.02`** Análisis de estabilidad del target y materialidad, contraste estadístico (homogeneidad y/o heterogeneidad), contraste con el negocio
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento.
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Excel 8: Analisis de materialidad y target por segmento.
 
 - **`DES-D3-01.02.03`** Elaboración de presentación de segmentación final.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Ppt 3: Análisis de segmentación.
 
 - **`DES-D3-01.02.04`** Documentación y definición de la segmentación final
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5–1.5 d ágil / 0.5–1.5 d completo · Automatización: 1 · Entregable: Documento 7: Análisis de segmentación. · Hito: SME 3
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5–1.5 d ágil / 0.5–1.5 d completo · Automatización: 1 · Entregable: Documento 7: Análisis de segmentación. · Hito: SME 3
 
 <!-- CATALOGO:FIN -->
 
@@ -1865,7 +1873,7 @@ del documento metodológico.
 
 - **`DES-D4-01.01.01`** Excluir outliers del target por percentiles
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 0.25 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Script 8: Exclusión de outliers del target. · Hito: Sprint 8 · Umbrales: U-04
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Script 8: Exclusión de outliers del target. · Hito: Sprint 8 · Umbrales: U-04
 
 ### 2 · Muestreo y estratificación
 
@@ -1873,7 +1881,7 @@ del documento metodológico.
 
 - **`DES-D4-02.01.01`** Examinar la materialidad para definir el porcentaje de exclusión.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Script 9: Muestreo y Estratificación
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Script 9: Muestreo y Estratificación
 
 #### 2.2 Análisis de representatividad de la muestra
 
@@ -1881,13 +1889,13 @@ del documento metodológico.
   95%<=TM/TG<=105%  
   En caso la muestra no sea representativa ponderar la muestra. La ponderación de la muestra será utilizada para el modelamiento y todos los análisis posteriores incluyendo el cálculo de pesos.
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Gráficos: resultado de representatividad · Umbrales: U-03
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Gráficos: resultado de representatividad · Umbrales: U-03
 
 #### 2.3 Selección de muestras
 
 - **`DES-D4-02.03.01`** Selección train, test y OOT (secuencial / estrat por target y mes)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Tabla 4: Master table por muestra.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Tabla 4: Master table por muestra.
 
 ### 3 · Depuración de variables
 
@@ -1895,35 +1903,35 @@ del documento metodológico.
 
 - **`DES-D4-03.01.01`** Análisis de tendencia de las variables independientes calculando el indicador PSI (estabilidad temporal) incluyendo meses recientes, justificación de la permanencia o depuración de variables inestables.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-02
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-02
 
 #### 3.2 Fill rate
 
 - **`DES-D4-03.02.01`** Análisis de porcentaje de casos poblados (global/por mes)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Entregable: Excel 10: Univariate analysis I
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Entregable: Excel 10: Univariate analysis I
 
 - **`DES-D4-03.02.02`** Análisis univariado de cada variable sobre la muestra de entrenamiento: distribución, valores especiales y faltantes, categorías raras y valores extremos. Es requisito previo del análisis bivariado.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 #### 3.3 Gini por variables
 
 - **`DES-D4-03.03.01`** Análisis de discriminación por variables (global/por mes)
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Hito: SME 4
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Hito: SME 4
 
 - **`DES-D4-03.03.02`** Análisis bivariado de cada variable frente al target: WOE e IV por tramo, tendencia y monotonicidad del riesgo, y estabilidad del IV entre períodos.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 - **`DES-D4-03.03.03`** Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Crítico · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-38 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Crítico · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-38 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 - **`DES-D4-03.03.04`** Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Tabla 1: Base de variables finalistas. · Umbrales: U-38, U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Tabla 1: Base de variables finalistas. · Umbrales: U-38, U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 ### 4 · Feature engineering
 
@@ -1939,7 +1947,7 @@ del documento metodológico.
 
 - **`DES-D4-04.01.03`** Análisis de percentiles automático / experto (1%-5%-95%-99%)
 
-  Aplica: Lineal/Árbol/ACP III–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 4 · Umbrales: U-04
+  Aplica: Lineal/Árbol/ACP III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 4 · Umbrales: U-04
 
 #### 4.2 Transformación de variables categóricas
 
@@ -1953,7 +1961,7 @@ del documento metodológico.
 
 - **`DES-D4-04.02.03`** Transformación a media / mediana del target / One hot encoder / class / WOE
 
-  Aplica: Lineal/Árbol/ACP III–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 4
+  Aplica: Lineal/Árbol/ACP III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 4
 
 #### 4.3 Transformación de variables continuas
 
@@ -1963,21 +1971,21 @@ del documento metodológico.
 
 - **`DES-D4-04.03.02`** Estandarizacion de variables/normalizacion
 
-  Aplica: ACP I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1
+  Aplica: ACP I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1
 
 - **`DES-D4-04.03.03`** Tranformación WOE
 
-  Aplica: Lineal/ACP III–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1
+  Aplica: Lineal/ACP III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1
 
 #### 4.4 Imputación de missings
 
 - **`DES-D4-04.04.01`** Imputación por target equivalente
 
-  Aplica: Lineal/Árbol I–IV · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 4 · Entregable: Excel 11: Univariate analysis III
+  Aplica: Lineal/Árbol I–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 4 · Entregable: Excel 11: Univariate analysis III
 
 - **`DES-D4-04.04.02`** Imputación por mediana/media poblacional (para variables con materialidad de missing <1%/ 30 casos / defaults) (opcional)
 
-  Aplica: Lineal/Árbol/ACP I–IV · Esfuerzo: 0–1 d ágil / 0–1.5 d completo · Automatización: 4 · Umbrales: U-05
+  Aplica: Lineal/Árbol/ACP I–III · Esfuerzo: 0–1 d ágil / 0–1.5 d completo · Automatización: 4 · Umbrales: U-05
 
 - **`DES-D4-04.04.03`** Probar técnica de imputación multivariada en variables core (opcional)
 
@@ -1991,11 +1999,11 @@ del documento metodológico.
 
 - **`DES-D4-04.05.02`** Preselección por correlaciones (<60%) para variables continuas
 
-  Aplica: Lineal/ML/Árbol II–IV · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 4 · Umbrales: U-06
+  Aplica: Lineal/ML/Árbol II–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 4 · Umbrales: U-06
 
 - **`DES-D4-04.05.03`** Preselección por asociaciones para variables categóricas (se acepta variables categóricas según prueba chi cuadrado >=0.0001 o la V de cramer sea menor a 0.4).
 
-  Aplica: Lineal/ML/Árbol II–IV · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 4 · Hito: SME 5 · Umbrales: U-07
+  Aplica: Lineal/ML/Árbol II–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 4 · Hito: SME 5 · Umbrales: U-07
 
 #### 4.6 Convolución de variables
 
@@ -2009,29 +2017,29 @@ del documento metodológico.
 
 - **`DES-D4-04.06.03`** Convoluciones basado en bitácora de convolución de variables (5 convoluciones por segmento).
 
-  Aplica: Lineal/ML/ACP III–IV · Esfuerzo: 1.7 d ágil / 2 d completo · Automatización: 1
+  Aplica: Lineal/ML/ACP III · Esfuerzo: 1.7 d ágil / 2 d completo · Automatización: 1
 
 - **`DES-D4-04.06.04`** Creación de interacciones XGBFir (opcional)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.7 d ágil / 2 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.7 d ágil / 2 d completo · Automatización: 1
 
 - **`DES-D4-04.06.05`** Detección interacciones Friedman's H Statistic (opcional)
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 #### 4.7 Construcción de la base final
 
 - **`DES-D4-04.07.01`** Elaboración de matriz final de correlaciones
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 4 · Entregable: Excel 12: Model Parameters.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 4 · Entregable: Excel 12: Model Parameters.
 
 - **`DES-D4-04.07.02`** Entrega de la base final
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Tabla 1: Base de variables finalistas.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Tabla 1: Base de variables finalistas.
 
 - **`DES-D4-04.07.03`** Documentación de los procedimientos realizados y las decisiones finales
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Documento 8: Feature Engenieering.; Tabla 5: Master table final · Hito: SME 6
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Documento 8: Feature Engenieering.; Tabla 5: Master table final · Hito: SME 6
 
 ### 5 · Entrenamiento de modelos
 
@@ -2039,17 +2047,17 @@ del documento metodológico.
 
 - **`DES-D4-05.01.01`** Ejecución de un modelo incial para primeros insights
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Entregable: Excel 13: Importancia de variables modelo Inicial. · Hito: Sprint 11
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Entregable: Excel 13: Importancia de variables modelo Inicial. · Hito: Sprint 11
 
 #### 5.2 Selección de variables
 
 - **`DES-D4-05.02.01`** Revisión por sentido económico
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.275–2.55 d ágil / 1.5–3 d completo · Automatización: 1 · Entregable: Excel 14: Revisión de Sentido Económico.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.275–2.55 d ágil / 1.5–3 d completo · Automatización: 1 · Entregable: Excel 14: Revisión de Sentido Económico.
 
 - **`DES-D4-05.02.02`** Reunión con usuario para revisión de sentido económico / depuración de variables
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Excel 15: Selección de variables.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Excel 15: Selección de variables.
 
 - **`DES-D4-05.02.03`** Selección de variables: Boruta (opcional)
 
@@ -2061,67 +2069,67 @@ del documento metodológico.
 
 - **`DES-D4-05.02.05`** Selección de variables: Top 150 variables / 80% del gain.
 
-  Aplica: ML III–IV · Árbol I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Umbrales: U-08
+  Aplica: ML III · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Umbrales: U-08
 
 - **`DES-D4-05.02.06`** Los pesos de las variables en la construcción de modelos tradicionales se calcularán según la lógica de la herramienta estandarizada: toolkit de modelamiento, con un peso maximo recomendado del 25%. En la construcción de modelos machine learning utilizarán para el cálculo de pesos el gain, con un peso recomendado del 10%. Para calibraciones se utiliza la métrica de Chi-Wald
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 2 · Umbrales: U-09
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 2 · Umbrales: U-09
 
 - **`DES-D4-05.02.07`** Elaboración del reporte de estabilidad de los indicadores de discriminación por variable.  
   Sin embargo en el caso de que las variables cuyos indicadores no sean estables , no será determinante para su exclusión. Llevar discusion a gerencia.
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1–2 d completo · Automatización: 3
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1–2 d completo · Automatización: 3
 
 #### 5.3 Entrenamiento
 
 - **`DES-D4-05.03.01`** Entrenamiento de posibles modelos con las variables preseleccionadas
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 4 · Entregable: Excel 12: Model Parameters. · Hito: SME 7
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 4 · Entregable: Excel 12: Model Parameters. · Hito: SME 7
 
 - **`DES-D4-05.03.02`** Para modelos de ML, construir un benchmark interpretable (logística con WOE, GAM/EBM o árbol óptimo) y justificar el modelo elegido si no lo supera en al menos 3 pts de Gini OOT.
 
-  Aplica: ML/Árbol I–IV · Esfuerzo: 1.5 d ágil / 2 d completo · Automatización: 2 · Crítico · Entregable: Excel 12: Model Parameters. · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16; Gunnarsson et al. (2021); Rudin (2019).
+  Aplica: ML/Árbol I–III · Esfuerzo: 1.5 d ágil / 2 d completo · Automatización: 2 · Crítico · Entregable: Excel 12: Model Parameters. · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16; Gunnarsson et al. (2021); Rudin (2019).
 
 - **`DES-D4-05.03.03`** Ajustar los modelos de ML con validación cruzada (temporal cuando exista dependencia en el tiempo) y reportar la brecha esperada entre entrenamiento y validación.
 
-  Aplica: ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Excel 16: Optimización de Hiperparámetros. · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16; EBA/REP/2023/28.
+  Aplica: ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Excel 16: Optimización de Hiperparámetros. · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16; EBA/REP/2023/28.
 
 #### 5.4 Optimización
 
 - **`DES-D4-05.04.01`** Opt de HP por generación aleatoria (min 50 combinaciones), en caso de no completar el mínimo combinaciones se darán los sustentos necesarios.  
   Ejecución con HP óptimos (eta, max_depth, subsample, colsample, gamma, alpha, lambda, scale_pos_weight y otros parámetros), Además de agregar una semilla para su replica
 
-  Aplica: ML/Árbol I–IV · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 2 · Entregable: Excel 16: Optimización de Hiperparámetros. · Umbrales: U-10
+  Aplica: ML/Árbol I–III · Esfuerzo: 3 d ágil / 3 d completo · Automatización: 2 · Entregable: Excel 16: Optimización de Hiperparámetros. · Umbrales: U-10
 
 - **`DES-D4-05.04.02`** Opt de HP Grid search (opcional)
 
-  Aplica: ML/Árbol I–IV · Automatización: 2
+  Aplica: ML/Árbol I–III · Automatización: 2
 
 - **`DES-D4-05.04.03`** Opt de HP Random Search (opcional)
 
-  Aplica: ML/Árbol I–IV · Automatización: 2
+  Aplica: ML/Árbol I–III · Automatización: 2
 
 - **`DES-D4-05.04.04`** Opt de HP Bayesian Search (opcional)
 
-  Aplica: Todos los tipos, Tier I–IV · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Automatización: 1
 
 - **`DES-D4-05.04.05`** Ejecución con HP óptimos
 
-  Aplica: ML/Árbol I–IV · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 1 · Entregable: Script 11: Ejecución del modelo final.
+  Aplica: ML/Árbol I–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 1 · Entregable: Script 11: Ejecución del modelo final.
 
 - **`DES-D4-05.04.06`** Analisis diferencias en gini train vs gini test/gini oot
 
-  Aplica: ML/Árbol I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
+  Aplica: ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
 
 #### 5.5 Bootstrap
 
 - **`DES-D4-05.05.01`** Tratamiento de variables en OOT, generación de scripts.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5–2 d ágil / 0.5–2 d completo · Automatización: 3 · Entregable: Script 12: Script de Implementación.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5–2 d ágil / 0.5–2 d completo · Automatización: 3 · Entregable: Script 12: Script de Implementación.
 
 - **`DES-D4-05.05.02`** Bootstrap.
 
-  Aplica: Lineal/ACP I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Entregable: Excel 17: Analisis Bootstrap.
+  Aplica: Lineal/ACP I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Entregable: Excel 17: Analisis Bootstrap.
 
 ### 6 · Selección del modelo final
 
@@ -2129,11 +2137,11 @@ del documento metodológico.
 
 - **`DES-D4-06.01.01`** AUC/Gini/R2 (Global/por mes/segmento) - Default (binario) / Dichas métricas deben ser evaluadas en meses de construcción del modelo y en meses recientes / Analizar posibles alertas de inestabilidad comparando variaciones de desempeño |Gini Construcción - Gini Último Mes Con Desempeño|
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Entregable: Ppt 9: Resumen de indicadores del modelo final.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Entregable: Ppt 9: Resumen de indicadores del modelo final.
 
 - **`DES-D4-06.01.02`** R2, % de real entre proyectado +/-25%, +/- 50%, Error cuadrático medio - Target (continuo) / Dichas métricas deben ser evaluadas en meses de construcción del modelo y en meses recientes / Analizar posibles alertas de inestabilidad comparando variaciones de desempeño |R2 Construcción – R2 Último Mes Con Desempeño|
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Umbrales: U-12
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Umbrales: U-12
 
 - **`DES-D4-06.01.03`** Para Tier I–II, reportar junto al Gini una métrica de evaluación basada en rentabilidad (por ejemplo, la máxima ganancia esperada, EMP) que refleje el costo asimétrico de los errores.
 
@@ -2143,25 +2151,25 @@ del documento metodológico.
 
 - **`DES-D4-06.02.01`** Comparación con modelo vigente en cosechas / solicitudes aprobadas (por mes).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Entregable: Ppt 10: Comparación con el modelo vigente.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Entregable: Ppt 10: Comparación con el modelo vigente.
 
 #### 6.3 Selección del modelo final
 
 - **`DES-D4-06.03.01`** Selección del modelo final (reunión con usuario)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 0 · Entregable: Acta 5: Selección del modelo final. · Hito: Reunión 5
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 0 · Entregable: Acta 5: Selección del modelo final. · Hito: Reunión 5
 
 - **`DES-D4-06.03.02`** El modelo elegido debe tener una diferencia máxima de 10 puntos de performance entre la base de Train y OOT. En caso se tenga una diferencia mayor, se deberá sustentar en la documentación y presentar el caso en comité de modelos.
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 0 · Entregable: Documento 9: Entrenamiento y selección de modelos. · Hito: Sprint 13 · Umbrales: U-11
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 0 · Entregable: Documento 9: Entrenamiento y selección de modelos. · Hito: Sprint 13 · Umbrales: U-11
 
 - **`DES-D4-06.03.03`** En caso el modelo sea construido utilizando un muestreo, se deberá evaluar la consistencia del performance del moldeo ( Gini Muestra vs Gini Población), a través de un ejercicio de bootstrapping
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 - **`DES-D4-06.03.04`** Documentación del modelo final
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.125 d ágil / 2.5 d completo · Automatización: 1 · Entregable: Documento 9: Entrenamiento y selección de modelos.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.125 d ágil / 2.5 d completo · Automatización: 1 · Entregable: Documento 9: Entrenamiento y selección de modelos.
 
 ### 7 · Interpretación del modelo de ordenamiento
 
@@ -2173,7 +2181,7 @@ del documento metodológico.
 
 - **`DES-D4-07.01.02`** Evaluar la estabilidad de las explicaciones (SHAP o LIME) ante remuestreo y desbalance de clases, y documentar las variables cuya contribución es inestable.
 
-  Aplica: ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Chen, Calabrese y Martin-Barragan (2024).
+  Aplica: ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Chen, Calabrese y Martin-Barragan (2024).
 
 ### 8 · Calibración y regla de transición de scores
 
@@ -2181,11 +2189,11 @@ del documento metodológico.
 
 - **`DES-D4-08.01.01`** Extracción de base de calibración
 
-  Aplica: Lineal/ML I–IV · Esfuerzo: 2 d ágil / 2 d completo · Automatización: 1 · Entregable: Script 13: Análisis de calibración. · Hito: SME 8
+  Aplica: Lineal/ML I–III · Esfuerzo: 2 d ágil / 2 d completo · Automatización: 1 · Entregable: Script 13: Análisis de calibración. · Hito: SME 8
 
 - **`DES-D4-08.01.02`** Definición de drivers micro
 
-  Aplica: Lineal/ML I–IV · Esfuerzo: 1.7 d ágil / 2 d completo · Automatización: 1 · Hito: Sprint 14
+  Aplica: Lineal/ML I–III · Esfuerzo: 1.7 d ágil / 2 d completo · Automatización: 1 · Hito: Sprint 14
 
 - **`DES-D4-08.01.03`** Análisis de variables macro
 
@@ -2193,35 +2201,35 @@ del documento metodológico.
 
 - **`DES-D4-08.01.04`** Calibración
 
-  Aplica: Lineal/ML I–IV · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 1
+  Aplica: Lineal/ML I–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 1
 
 - **`DES-D4-08.01.05`** Reunión con usuario para presentación del calibrado
 
-  Aplica: Lineal/ML I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 6: de reunión. · Hito: Reunión 6
+  Aplica: Lineal/ML I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 6: de reunión. · Hito: Reunión 6
 
 - **`DES-D4-08.01.06`** Puntuación de base calibrada
 
-  Aplica: Lineal/ML I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 14: Implementación del calibrado.; Tabla 6: Base puntuada (oracle). · Hito: Sprint 15
+  Aplica: Lineal/ML I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 14: Implementación del calibrado.; Tabla 6: Base puntuada (oracle). · Hito: Sprint 15
 
 #### 8.2 Análisis de transición applicant-behavior
 
 - **`DES-D4-08.02.01`** Matriz de transición applicant / behavior
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Entregable: Excel 19: Matriz de transición
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Entregable: Excel 19: Matriz de transición
 
 - **`DES-D4-08.02.02`** Temporalidad del applicant/behavior (gini por mes de maduración)
 
-  Aplica: Lineal/ML/Árbol I–IV · Entregable: Excel 19: Gini por mes de maduración.
+  Aplica: Lineal/ML/Árbol I–III · Entregable: Excel 19: Gini por mes de maduración.
 
 - **`DES-D4-08.02.03`** Regla de transición de score
 
-  Aplica: Lineal/ML/Árbol I–IV · Entregable: Script 15: Implementación de la regla de transición.
+  Aplica: Lineal/ML/Árbol I–III · Entregable: Script 15: Implementación de la regla de transición.
 
 #### 8.3 Documentación
 
 - **`DES-D4-08.03.01`** Documento final de calibración
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Documento 10: Calibración.
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Documento 10: Calibración.
 
 ### 9 · Evaluación del performance por drivers
 
@@ -2229,11 +2237,11 @@ del documento metodológico.
 
 - **`DES-D4-09.01.01`** Ejecución del performance del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 4 · Entregable: Script 16: Performance del modelo.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 4 · Entregable: Script 16: Performance del modelo.
 
 - **`DES-D4-09.01.02`** Reporte del seguimiento del modelo y acciones a desarrollar
 
-  Aplica: Todos los tipos, Tier I–IV · Entregable: Ppt 13: Presentación del performance del modelo. · Hito: SME 9
+  Aplica: Todos los tipos, Tier I–III · Entregable: Ppt 13: Presentación del performance del modelo. · Hito: SME 9
 
 ### 10 · Limitaciones del modelo
 
@@ -2241,27 +2249,27 @@ del documento metodológico.
 
 - **`DES-D4-10.01.01`** Debilidades de discriminación
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 4.25 d ágil / 5 d completo · Automatización: 1 · Entregable: Ppt 14: Debilidades del modelo. · Hito: Sprint 16
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 4.25 d ágil / 5 d completo · Automatización: 1 · Entregable: Ppt 14: Debilidades del modelo. · Hito: Sprint 16
 
 - **`DES-D4-10.01.02`** Debilidades de calibración.
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 - **`DES-D4-10.01.03`** Debilidades de estabilidad / Matriz de migración temporal
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 - **`DES-D4-10.01.04`** En en caso el modelo se utilice en subpoblaciones distintas a la de modelamiento se debera evaluar el performece (Gini) en dichas subpoblacion.
 
-  Aplica: Lineal/ML/Árbol I–IV
+  Aplica: Lineal/ML/Árbol I–III
 
 - **`DES-D4-10.01.05`** Reporte de debilidades del modelo
 
-  Aplica: Lineal/ML/Árbol I–IV · Hito: SME 10
+  Aplica: Lineal/ML/Árbol I–III · Hito: SME 10
 
 - **`DES-D4-10.01.06`** Realizar un análisis de sensibilidad del score ante variaciones de sus variables principales y de los supuestos del modelo.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16.
 
 - **`DES-D4-10.01.07`** Para modelos sobre personas naturales Tier I–II, analizar la equidad: variables sensibles y sus proxies, métricas por grupo (separación) y decisión documentada sobre el criterio priorizado y su costo (FR-06).
 
@@ -2273,37 +2281,37 @@ del documento metodológico.
 
 - **`DES-D4-11.01.01`** Documentación funcional
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.275 d ágil / 1.5 d completo · Automatización: 1 · Entregable: Documento 11: Memoria metodológica del modelo. · Hito: Sprint 17
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.275 d ágil / 1.5 d completo · Automatización: 1 · Entregable: Documento 11: Memoria metodológica del modelo. · Hito: Sprint 17
 
 - **`DES-D4-11.01.02`** Documentación técnica
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.55 d ágil / 3 d completo · Automatización: 1 · Entregable: Documento 12: Manual de extracción.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.55 d ágil / 3 d completo · Automatización: 1 · Entregable: Documento 12: Manual de extracción.
 
 - **`DES-D4-11.01.03`** Agregar un registo al cuadro de control de cambios con cada modificación
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: En caso exista algun cambio en el documento metodológico se agregará un registro al cuadro de control de cambios.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: En caso exista algun cambio en el documento metodológico se agregará un registro al cuadro de control de cambios.
 
 - **`DES-D4-11.01.04`** Agregar un cápitulo que detalle el reporte debilidades encontradas en el modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1
 
 - **`DES-D4-11.01.05`** Agregar un cápitulo que detalle los usos del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1
 
 - **`DES-D4-11.01.06`** Especificar las versiones y rutas de las herramientas de procesamiento estadístico usadas y la funcionalidad de estas en cuanto al uso dado, así como las rutas productivas deonde se almacenará todo el desarrollo del proyecto
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1
 
 - **`DES-D4-11.01.07`** Elaborar el documento metodológico con la plantilla dinámica del estándar: registrar los datos del modelo en docs/documento.yaml y generar el documento con tools/documento.py (Markdown, HTML, Word y PDF desde la misma fuente). El documento evalúa los umbrales obtenidos, incluye la matriz de cumplimiento tomada de evidencias.yaml y no se presenta a Comité ni a Validación con secciones «Completar» pendientes.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 3 · Eficiencia · Entregable: Documento 11: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf). · Nota: Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 3 · Eficiencia · Entregable: Documento 11: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf). · Nota: Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos.
 
 #### 11.2 Consolidación
 
 - **`DES-D4-11.02.01`** Documentación consolidada
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.425 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Ppt 15: Cierre del modelo. · Umbrales: U-40
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.425 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Ppt 15: Cierre del modelo. · Umbrales: U-40
 
 ### 12 · Cierre Cuantitativo
 
@@ -2311,7 +2319,7 @@ del documento metodológico.
 
 - **`DES-D4-12.01.01`** Reunión de resultados del modelo final cuantitativo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 7: Reunión de resultados del modelo final. · Hito: Reunión 7
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 7: Reunión de resultados del modelo final. · Hito: Reunión 7
 
 ### 13 · Cierre Cualitativo
 
@@ -2319,25 +2327,25 @@ del documento metodológico.
 
 - **`DES-D4-13.01.01`** Reunión con la banca para revisión del enfoque cualitativo
 
-  Aplica: Lineal/ML I–IV · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 8: Acta de reunión con la banca · Hito: Reunión 8
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 8: Acta de reunión con la banca · Hito: Reunión 8
 
 - **`DES-D4-13.01.02`** Revisión, análisis y actualización de dimensiones en caso amerite
 
-  Aplica: Lineal/ML I–IV · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D4-13.01.03`** Revisión, análisis y actualización de preguntas en caso amerite
 
-  Aplica: Lineal/ML I–IV · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D4-13.01.04`** Revisión, análisis y actualización de pesos en caso amerite
 
-  Aplica: Lineal/ML I–IV · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 #### 13.2 Documentación cualitativa
 
 - **`DES-D4-13.02.01`** Documentación consolidado Cualitativo
 
-  Aplica: Lineal/ML I–IV · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 11: Memoria metodológica del modelo.
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 11: Memoria metodológica del modelo.
 
 ### 14 · Presentación en CM
 
@@ -2345,7 +2353,7 @@ del documento metodológico.
 
 - **`DES-D4-14.01.01`** Presentación en Reunión de Aprobación
 
-  Aplica: Lineal/ML/Árbol I–IV · ACP I–II · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Acta 8: Acta del comité de modelos. · Hito: Comité de modelos
+  Aplica: Lineal/ML/Árbol I–III · ACP I–II · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Acta 8: Acta del comité de modelos. · Hito: Comité de modelos
 
 <!-- CATALOGO:FIN -->
 
@@ -2388,17 +2396,17 @@ reales por estrato necesaria para un seguimiento confiable (DES-D5-01.03.01).
 
 - **`DES-D5-01.01.01`** Definición de punto de corte teórico / segmentos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Entregable: Excel: Curvas de especificidad y sensibilidad. · Hito: Sprint 18
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Entregable: Excel: Curvas de especificidad y sensibilidad. · Hito: Sprint 18
 
 - **`DES-D5-01.01.02`** Definir la política de forzajes (overrides): quién puede forzar, motivos válidos, registro obligatorio y límite de materialidad; el seguimiento medirá su volumen y desempeño (U-36).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Umbrales: U-36 · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 arts. 19 y 22.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Umbrales: U-36 · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 arts. 19 y 22.
 
 #### 1.2 Evaluación de impactos en el negocio y valorización de ganancias del modelo
 
 - **`DES-D5-01.02.01`** Impacto en variación de leads (cobertura).
 
-  Aplica: Lineal/ML/Árbol I · ACP I–IV · Esfuerzo: 1.5–2 d ágil / 2–3 d completo · Automatización: -1 · Entregable: Excel 20: Análisis de Impactos en error tipo I y II · Hito: SME 11
+  Aplica: Lineal/ML/Árbol I · ACP I–III · Esfuerzo: 1.5–2 d ágil / 2–3 d completo · Automatización: -1 · Entregable: Excel 20: Análisis de Impactos en error tipo I y II · Hito: SME 11
 
 - **`DES-D5-01.02.02`** Impacto en los indicadores de riesgo según tipo modelo (ej. Cosecha mora)
 
@@ -2406,7 +2414,7 @@ reales por estrato necesaria para un seguimiento confiable (DES-D5-01.03.01).
 
 - **`DES-D5-01.02.03`** Impacto en pricing (solo para estimadores de ingresos).
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1.5 d ágil / 2 d completo · Automatización: 0 · Entregable: Excel 20: Análisis de Impactos en Pricing.
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1.5 d ágil / 2 d completo · Automatización: 0 · Entregable: Excel 20: Análisis de Impactos en Pricing.
 
 - **`DES-D5-01.02.04`** Impacto en provisiones. (provisión/saldo, provisión/margen)
 
@@ -2414,25 +2422,25 @@ reales por estrato necesaria para un seguimiento confiable (DES-D5-01.03.01).
 
 - **`DES-D5-01.02.05`** Impacto en asignación de capital económico.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 1: Impactos en CE.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 1: Impactos en CE.
 
 - **`DES-D5-01.02.06`** Impacto en IFRS.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 2: Impactos en IFRS. · Hito: SME 12
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 2: Impactos en IFRS. · Hito: SME 12
 
 - **`DES-D5-01.02.07`** Coordinar la construcción/ calibración/ ajuste con PD/ LGD/ EAD, armonizando los crieterios y/o supuestos
 
-  Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 2: Impactos en IFRS.
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 2: Impactos en IFRS.
 
 #### 1.3 (estimadores) Definición de muestra mínima de ingresos/ventas reales para el seguimiento
 
 - **`DES-D5-01.03.01`** Coordinar con el equipo de seguimiento la muestra mínima de ingresos/ventas por estratos que serán necesarias mensualmente para asegurar la confiabilidad del seguimiento de cada modelo de estimador. Esta será compartida al usuario encargado de disponibilizar la información.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Documentacion metodológica y de implementación · Hito: Sprint 19
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Documentacion metodológica y de implementación · Hito: Sprint 19
 
 - **`DES-D5-01.03.02`** ñ
 
-  Aplica: Todos los tipos, Tier I–IV
+  Aplica: Todos los tipos, Tier I–III
 
 <!-- CATALOGO:FIN -->
 
@@ -2468,31 +2476,31 @@ modelo está dado de alta en el inventario con su Tier.
 
 - **`DES-D7-01.01.01`** Revisar la aplicación los estándares de construcción (responsable lider del proyecto)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.1875 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Eficiencia
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.1875 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Eficiencia
 
 - **`DES-D7-01.01.02`** Evidenciar correos, actas, documentación, conformidades u otros medios
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Eficiencia
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Eficiencia
 
 - **`DES-D7-01.01.03`** Participar en la asignación de Tier de un modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.185 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.185 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.04`** Cooperar en el alta/ baja de un modelo (ficha de nacimiento del modelo)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.05`** Presentaciones de aprobación/ ratificación
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.125 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.125 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.06`** Evidenciar el cumpliento de la documentación y reglamentación de variables críticas
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.07`** Obtener la aprobación previa del comité de riesgos de modelo antes de usar todo modelo nuevo, modificado o con cambio de uso (GOB-G3-01.01.01).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 17.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 17.
 
 <!-- CATALOGO:FIN -->
 
@@ -2508,7 +2516,7 @@ cuando el seguimiento muestra **descalibración** pero el poder discriminante si
 ordenamiento se ha degradado, corresponde **redesarrollar** (estándar de Desarrollo).
 
 Supuesto de la estimación de esfuerzo: se usa la **base de seguimiento como base de calibración**.
-Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.4 semanas (Tier I), ≈ 3.2 semanas (Tier II), ≈ 2.5 semanas (Tier III–IV) con 2 personas<!--/DUR-->.
+Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.4 semanas (Tier I), ≈ 3.2 semanas (Tier II), ≈ 2.5 semanas (Tier III) con 2 personas<!--/DUR-->.
 
 ## C1 · Entendimiento
 
@@ -2531,41 +2539,41 @@ Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibraci
 
 - **`CAL-C1-01.01.01`** Entendimiento del modelo actual
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d
+  Aplica: Tier I–III · Esfuerzo: 1 d
 
 - **`CAL-C1-01.01.02`** Entendimiento del uso
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.01.03`** Status descalibrado del modelo
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.01.04`** En el caso se utilice una metodología corporativa para la calibración, se debe alienar las principales definiciones a utilizar en el modelamiento (Universo y Target). En caso no aplique, se debería justificar el cambio en las definiciones con análisis metodológicos y/o de negocio.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.01.05`** Para la inclusión de segmentos definidos por otros equipos:
   - Revision del sentido funcional de los ejes propuestas con la gerencia.
   - Evaluación en función de los resultados de la revisión, si la asignación del segmento será única o múltiple, solicitar las evidencias y respaldos de esto.
   - Solicitud archivos de trabajo sobre los criterios definidos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d
+  Aplica: Tier I–III · Esfuerzo: 2 d
 
 - **`CAL-C1-01.01.06`** Dependiendo de la necesidad del proyecto de calibración, para el caso en el que se requiere de alguna acción para estimar impactos coyunturales en la cartera y el uso de estos:  
   Listar y Evaluar con la gerencia y usuarios, alternativas que no requieran aplicar medidas directas en los resultados de los modelos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d
+  Aplica: Tier I–III · Esfuerzo: 2 d
 
 - **`CAL-C1-01.01.07`** Documentar por qué se calibra y no se redesarrolla: discriminación vigente aceptable y descalibración como causa principal, según el árbol de decisión de Seguimiento (SEG-S3-01.01.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia.
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia.
 
 #### 1.2 Petición y elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad de la data input)
 
 - **`CAL-C1-01.02.01`** Petición de bases de seguimiento / universo
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-01.02.02`** Elaboración de los principales drivers descalibrados proporcionados por seguimiento
 
@@ -2581,7 +2589,7 @@ Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibraci
 
 - **`CAL-C1-02.01.01`** Análisis de los cambios poblacionales / quiebres de población
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C1-02.01.02`** Conocimiento de las pauta actual
 
@@ -2606,19 +2614,19 @@ Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibraci
 
 - **`CAL-C2-01.01.01`** Cuadre de la infromación con los informes de seguimeinto (Total mensual, rd mensual y pd actual mensual)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.02`** % de registros duplicados
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.03`** Análisis descriptivo de los posibles drivers de calibrado (global y mensual)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.04`** Comparación de descriptivos de la base de datos con información de negocio
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C2-01.01.05`** Propuesta inicial de cambio de nivel en el modelo (generico)
 
@@ -2716,11 +2724,11 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-01.01.01`** Análisis de tendencia de los posibles drivers de calibrado (estabilidad temporal)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-01.01.02`** Análisis de porcentaje de casos poblados para los posibles drivers de calibrado
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-01.01.03`** Análisis de tendencias y quiebres
 
@@ -2730,7 +2738,7 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-01.02.01`** Análisis de la correlación de los drivers objeto de análisis, para el caso de variables continuas se medirá el indicador de correlación pearson, y para el caso de variables cualitativas se evaluaran diferentes indicador (V-Carmer, Spearman, etc), sin embargo en el caso de superar el umbral se pueden hacer excepciones según las necesidades del negocio.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 ### 2 · Feature Engineering
 
@@ -2750,15 +2758,15 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-03.01.01`** Evaluación de la estabilidad poblacional y del poder de discriminación del score a calibrarir, aplica tanto para los modelos base como para los modelos calibrados previamente
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d
+  Aplica: Tier I–III · Esfuerzo: 3 d
 
 - **`CAL-C4-03.01.02`** Evaluación de las ventanas de construcción de los componentes de la calibración, incluyendo al score base o score calibrado, verificando el performance actual para delimitar el uso de estos.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.01.03`** Para calibraciones que contemplen fases diferenciadas por las ventanas de análisis, se debe de incluir la información más reciente y confiable, caso contario se debe de documentar como una limitación.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.01.04`** Para la inclusion de los drivers:
   - Trameado (bucketización) del driver por cortes recomendados u objetos de interés de negocio.
@@ -2768,45 +2776,45 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
   - Verificación de la significancia de los coeficientes añadidos
   - Evaluación del aporte marginal en la discriminación del modelo por la inclusión de los drivers de calibración. Sin embargo, el tener un aporte muy bajo no será determinante para excluir el driver. Llevar discucion a la gerencia.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Umbrales: U-14
+  Aplica: Tier I–III · Esfuerzo: 2 d · Umbrales: U-14
 
 - **`CAL-C4-03.01.05`** Dependiendo del tipo de calibración e inclusión de los drivers:  
   Evaluación y esclarecimiento en la documentación el tratamiento de valores missing y especiales.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-03.01.06`** Dependiendo de la necesidad del proyecto de calibración:
   - Evaluación de la materialidad de los ejes de segmentación, en el caso que no tengan materialidad superior a 5%, revisar la inclusión con los usuarios de negocio y la gerencia.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Umbrales: U-13
+  Aplica: Tier I–III · Esfuerzo: 2 d · Umbrales: U-13
 
 #### 3.2 Calibrado con drivers - 1era iteración
 
 - **`CAL-C4-03.02.01`** Ejecución del calibrado para validar significancia e ingreso de los drivers del backlog al calibrado
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d
+  Aplica: Tier I–III · Esfuerzo: 1.5 d
 
 - **`CAL-C4-03.02.02`** Revisión por sentido económico
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d
+  Aplica: Tier I–III · Esfuerzo: 1.5 d
 
 - **`CAL-C4-03.02.03`** Análisis de correlación según el tipo de transformación de la variable.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.02.04`** Matriz de migración / performance del modelo por driver / granularidad
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-03.02.05`** Entendimiento inicial de los resultados
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 #### 3.3 1era renión preliminar de resultados
 
 - **`CAL-C4-03.03.01`** Reunión y elaboración de acta
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 #### 3.4 Calibrado con drivers - 2da iteración
 
@@ -2820,7 +2828,7 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-03.04.03`** Análisis de correlación según el tipo de transformación de la variable.
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 - **`CAL-C4-03.04.04`** Matriz de migración / performance del modelo por driver / granularidad
 
@@ -2850,21 +2858,21 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-04.01.03`** Ejecución final del calibrado
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d
+  Aplica: Tier I–III · Esfuerzo: 1 d
 
 - **`CAL-C4-04.01.04`** Bootstrap driver finales / Matriz de migración / performance del modelo por driver(general y mensual) / granularidad (rangos de pd, rangos de ventas)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-04.01.05`** Envio de tabla puntuada al equipo de seguimiento
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 #### 4.2 Analisis previos a la reunión de cierre
 
 - **`CAL-C4-04.02.01`** Elaboración de la PPT
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 ### 5 · Reunión presentación del calibrado
 
@@ -2872,11 +2880,11 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 
 - **`CAL-C4-05.01.01`** Reunión calibrado final
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 - **`CAL-C4-05.01.02`** Acta del cirre del calibrado
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 <!-- CATALOGO:FIN -->
 
@@ -2906,59 +2914,59 @@ Las actividades específicas del calibrado son:
 
 - **`CAL-C5-01.01.01`** Elaboración del manual metodológico de calibardo
 
-  Aplica: Tier I–IV · Esfuerzo: 2.75 d
+  Aplica: Tier I–III · Esfuerzo: 2.75 d
 
 - **`CAL-C5-01.01.02`** Elaboración del manual de implementación
 
-  Aplica: Tier I–IV · Esfuerzo: 2.75 d
+  Aplica: Tier I–III · Esfuerzo: 2.75 d
 
 - **`CAL-C5-01.01.03`** Envío de manual de implementación al equipo implementador
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d
+  Aplica: Tier I–III · Esfuerzo: 0.25 d
 
 - **`CAL-C5-01.01.04`** Revisión con área de implementación y acta de entrega
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d
+  Aplica: Tier I–III · Esfuerzo: 0.25 d
 
 - **`CAL-C5-01.01.05`** Una recalibración es una modificación del modelo: requiere validación y aprobación previa del comité de riesgos de modelo antes de su uso.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 17.
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 17.
 
 #### 1.2 Desarrollo de implementación
 
 - **`CAL-C5-01.02.01`** Desarrollo de script de implementación
 
-  Aplica: Tier I–IV
+  Aplica: Tier I–III
 
 #### 1.3 Calidad de datos
 
 - **`CAL-C5-01.03.01`** Desarrollo de controles de calidad de datos para variables input
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d
+  Aplica: Tier I–III · Esfuerzo: 2.5 d
 
 #### 1.4 Pruebas de certificación
 
 - **`CAL-C5-01.04.01`** Definición de pruebas sobre el modelo a implementar
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d
+  Aplica: Tier I–III · Esfuerzo: 1 d
 
 - **`CAL-C5-01.04.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)
 
-  Aplica: Tier I–IV · Esfuerzo: 1.25 d · Umbrales: U-15
+  Aplica: Tier I–III · Esfuerzo: 1.25 d · Umbrales: U-15
 
 - **`CAL-C5-01.04.03`** Constancia de pruebas de control sobre el modelo
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d
+  Aplica: Tier I–III · Esfuerzo: 0.25 d
 
 - **`CAL-C5-01.04.04`** Solicitar conformidad de los resultados al líder del proyecto de implementación (en caso la implementación sea realizada por el equipo modelador, la aprobación será brindada por el Sub Gerente de Modelos de Riesgos)
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d
+  Aplica: Tier I–III · Esfuerzo: 0.25 d
 
 #### 1.5 Presentación del proceso de implementación al equipo usuario
 
 - **`CAL-C5-01.05.01`** Reunión y elaboración de acta
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d
+  Aplica: Tier I–III · Esfuerzo: 0.5 d
 
 <!-- CATALOGO:FIN -->
 
@@ -3073,21 +3081,21 @@ decir a costa de cuánto volumen lleva a una propuesta que el negocio rechaza en
 
 - **`PRC-P1-01.01.01`** Definir el producto (activo o pasivo), los segmentos, los canales y el tipo de decisión de precio: tarifario de lista, precio individual en originación, renovación, repricing de cartera o tasa de depósitos.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Hito: Sprint 0
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Hito: Sprint 0
 
 - **`PRC-P1-01.01.02`** Fijar la función objetivo y su horizonte: margen financiero, NIM, RAROC, valor de vida del cliente (CLV), volumen o una combinación ponderada. Documentar explícitamente el trade-off volumen–margen que acepta el negocio.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
 
 - **`PRC-P1-01.01.03`** Inventariar las restricciones: topes regulatorios de tasa (U-24), apetito de riesgo, metas de volumen y de colocación, política comercial, compromisos con clientes, gradualidad máxima de cambios (U-25) y restricciones de conducta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Umbrales: U-25
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing · Umbrales: U-25
 
 #### 1.2 Diagnóstico del precio actual
 
 - **`PRC-P1-01.02.01`** Diagnosticar el esquema de precios vigente: tarifario, bandas de negociación, facultades de descuento, dispersión de tasas por segmento de riesgo, price realization (tasa efectiva vs. tasa de lista) y brecha frente a la competencia.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Entregable: Excel P1: Diagnóstico del precio actual · Hito: Sprint 1
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Entregable: Excel P1: Diagnóstico del precio actual · Hito: Sprint 1
 
 - **`PRC-P1-01.02.02`** Estimar el valor en juego: margen cedido por excepciones (leakage), clientes con precio por debajo del piso técnico (U-18) y oportunidad por segmento. Es la base para priorizar el proyecto y medir su éxito.
 
@@ -3099,17 +3107,17 @@ decir a costa de cuánto volumen lleva a una propuesta que el negocio rechaza en
 
 - **`PRC-P1-02.01.01`** Registrar en el inventario los modelos que intervendrán (precio técnico, respuesta, optimizador) y asignar su Tier. Un modelo de pricing es un modelo sujeto a este estándar y a Validación.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P1: Ficha del caso de pricing
 
 - **`PRC-P1-02.01.02`** Definir la matriz RACI: dueño del precio (negocio), Finanzas/ALM (costo de fondos y capital), Riesgos (PD/LGD y apetito), Analytics Pricing (modelos y optimización), Cumplimiento y Legal (conducta y transparencia), Tecnología (motor de precios).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P1: Ficha del caso de pricing
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P1: Ficha del caso de pricing
 
 #### 2.2 Kick off
 
 - **`PRC-P1-02.02.01`** Reunión de kick off del proyecto de pricing con el dueño del precio, Finanzas, Riesgos y Cumplimiento.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-KO: Kick off de pricing · Hito: Kick Off
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-KO: Kick off de pricing · Hito: Kick Off
 
 <!-- CATALOGO:FIN -->
 
@@ -3141,11 +3149,11 @@ identificación posible. Entonces el experimento (P6) es un **requisito previo**
 
 - **`PRC-P2-01.01.01`** Construir la base a nivel de oferta o cotización, no solo de operaciones desembolsadas: precio ofrecido, precio final, aceptación (sí/no), monto, plazo, canal, ejecutivo, fecha y motivo de no aceptación. Sin las ofertas rechazadas por el cliente no se puede estimar la respuesta al precio.
 
-  Aplica: Tier I–IV · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones · Hito: Sprint 1
+  Aplica: Tier I–III · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones · Hito: Sprint 1
 
 - **`PRC-P2-01.01.02`** Enriquecer cada oferta con los insumos del precio técnico vigentes a la fecha de la oferta: PD y LGD del modelo de riesgo aprobado (definición de default U-17), curva FTP, costo operativo y consumo de capital.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
 
 - **`PRC-P2-01.01.03`** Incorporar variables de contexto: tasas de la competencia por producto y plazo, tasa de referencia de política monetaria, campañas vigentes, estacionalidad y saturación del canal.
 
@@ -3161,15 +3169,15 @@ identificación posible. Entonces el experimento (P6) es un **requisito previo**
 
 - **`PRC-P2-02.01.01`** Aplicar los controles de calidad de DES-D2 (validez, completitud, unicidad, precisión, consistencia) y los específicos de pricing: precio ofrecido registrado antes de la decisión del cliente, cotizaciones duplicadas por re-cotización, tasas fuera de rango y fechas de oferta coherentes con la de desembolso.
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 3 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 3 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
 
 - **`PRC-P2-02.01.02`** Medir la variación exógena del precio disponible para identificar la elasticidad: cambios de tarifario, campañas, saltos de la grilla, pruebas previas. Si no existe variación suficiente, el diseño de un experimento (P6) pasa a ser requisito previo para el modelo de respuesta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento P2: Diccionario y certificación de datos de pricing
 
 - **`PRC-P2-02.01.03`** Certificar la base de pricing con acta de conformidad de las fuentes (Finanzas para FTP y costos; Riesgos para PD/LGD).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P2: Diccionario y certificación de datos de pricing
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento P2: Diccionario y certificación de datos de pricing
 
 <!-- CATALOGO:FIN -->
 
@@ -3233,25 +3241,25 @@ Se cumple $\mathrm{RAROC}(r_{\min}) = h$.
 
 - **`PRC-P3-01.01.01`** Asignar el costo de fondos con la curva de precios de transferencia (FTP) de Finanzas/ALM según plazo y perfil de amortización (duración equivalente), incluyendo la prima de liquidez. Para depósitos, el FTP es el valor del fondeo que aporta el producto.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Hito: Sprint 2
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Hito: Sprint 2
 
 #### 1.2 Pérdida esperada
 
 - **`PRC-P3-01.02.01`** Calcular la pérdida esperada anualizada con los modelos de riesgo aprobados: PD ajustada al horizonte de la operación (lifetime o promedio anual sobre la vida esperada, no solo la PD a 12 meses de U-17), LGD y EAD con su perfil de amortización y uso de línea.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel P2: Calculadora de precio técnico
 
 #### 1.3 Costos operativos y de adquisición
 
 - **`PRC-P3-01.03.01`** Asignar costos operativos (originación, mantenimiento, cobranza) y de adquisición por canal, con su driver (por operación o por saldo), conciliados con Finanzas.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
 
 #### 1.4 Costo de capital
 
 - **`PRC-P3-01.04.01`** Calcular el cargo por capital: capital económico o regulatorio consumido por la operación por la tasa de retorno mínima (hurdle) antes de impuestos, neto del beneficio de fondear con capital.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P2: Calculadora de precio técnico
 
 #### 1.5 Opcionalidad
 
@@ -3265,21 +3273,21 @@ Se cumple $\mathrm{RAROC}(r_{\min}) = h$.
 
 - **`PRC-P3-02.01.01`** Calcular el precio técnico mínimo (tasa piso con RAROC igual al hurdle) por celda de producto × plazo × canal × tramo de riesgo, y el RAROC de cada operación al precio vigente. Ninguna oferta por debajo del piso salvo excepción dentro de facultades (U-18).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-18
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-18
 
 - **`PRC-P3-02.01.02`** Verificar la monotonicidad del precio técnico respecto del riesgo dentro de cada celda (U-19) y la coherencia de la estructura por plazo.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-19
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico · Umbrales: U-19
 
 - **`PRC-P3-02.01.03`** Conciliar el precio técnico con Finanzas (FTP, costos, capital) y con Riesgos (PD, LGD); diferencias mayores a 5 pb por celda se explican por escrito.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
 
 #### 2.2 Documentación
 
 - **`PRC-P3-02.02.01`** Documentar la metodología de precio técnico, sus supuestos, fuentes y fecha de vigencia de cada insumo, con cuadro de control de cambios.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento P3: Metodología de precio técnico
 
 <!-- CATALOGO:FIN -->
 
@@ -3329,7 +3337,7 @@ documentado (PRC-P4-01.01.01):
 
 - **`PRC-P4-01.01.01`** Documentar cómo se separa el efecto del precio del efecto del riesgo y del perfil del cliente, dado que el precio histórico no fue asignado al azar: experimento aleatorio (preferido), discontinuidad en la grilla de precios, variable instrumental (por ejemplo, cambios del costo de fondos o del tarifario ajenos al cliente) o double machine learning con controles completos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P4: Modelo de respuesta y elasticidad · Hito: Sprint 3
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P4: Modelo de respuesta y elasticidad · Hito: Sprint 3
 
 - **`PRC-P4-01.01.02`** Pruebas de robustez de la identificación: placebo en periodos sin cambio de precio, balance de covariables entre grupos de precio, sensibilidad a variables omitidas y estabilidad de la elasticidad entre submuestras temporales.
 
@@ -3341,17 +3349,17 @@ documentado (PRC-P4-01.01.01):
 
 - **`PRC-P4-02.01.01`** Estimar la probabilidad de aceptación de la oferta en función del precio relativo (precio ofrecido frente a referencia o competencia) y de las características del cliente, siguiendo DES-D4 para muestras (Train/Test/OOT), depuración y selección de variables.
 
-  Aplica: Tier I–IV · Esfuerzo: 5 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta
+  Aplica: Tier I–III · Esfuerzo: 5 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta
 
 - **`PRC-P4-02.01.02`** Imponer la restricción de monotonicidad decreciente de la aceptación en el precio (U-20), incluso en modelos de machine learning (restricciones monotónicas en gradient boosting) y permitir elasticidades heterogéneas por segmento.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta · Umbrales: U-20
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Script P1: Modelo de respuesta · Umbrales: U-20
 
 #### 2.2 Desempeño
 
 - **`PRC-P4-02.02.01`** Validar discriminación (Gini/AUC) y, sobre todo, calibración: aceptación observada vs. predicha por decil y por tramo de precio (U-21). En pricing un modelo descalibrado optimiza mal aunque ordene bien.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel P3: Curvas de respuesta por segmento · Umbrales: U-21
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel P3: Curvas de respuesta por segmento · Umbrales: U-21
 
 ### 3 · Comportamiento posterior
 
@@ -3371,13 +3379,13 @@ documentado (PRC-P4-01.01.01):
 
 - **`PRC-P4-04.01.01`** Reunión de revisión del modelo de respuesta con el dueño del precio: elasticidades por segmento, su sentido de negocio y sus límites de uso.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-ELA: Revisión del modelo de respuesta
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PRC-ELA: Revisión del modelo de respuesta
 
 #### 4.2 Documentación
 
 - **`PRC-P4-04.02.01`** Documentar el modelo de respuesta con la estructura de DES-D4-11 (memoria metodológica, limitaciones, rango de precios en que la elasticidad es válida).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 1 · Entregable: Documento P4: Modelo de respuesta y elasticidad
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 1 · Entregable: Documento P4: Modelo de respuesta y elasticidad
 
 <!-- CATALOGO:FIN -->
 
@@ -3420,11 +3428,11 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-01.01.01`** Formular el problema: maximizar la función objetivo de P1 sumando, por oferta, la probabilidad de aceptación por el valor de la operación al precio propuesto, sujeto a precio ≥ piso técnico (U-18), precio ≤ tope regulatorio (U-24), metas de volumen y riesgo, monotonicidad en el riesgo (U-19) y gradualidad (U-25).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P5: Propuesta de precios · Hito: Sprint 4 · Umbrales: U-19, U-25
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 1 · Crítico · Entregable: Documento P5: Propuesta de precios · Hito: Sprint 4 · Umbrales: U-19, U-25
 
 - **`PRC-P5-01.01.02`** Definir la granularidad de la decisión (celda de tarifario o precio individual) y la regla de redondeo a la grilla comercial (por ejemplo, múltiplos de 25 pb), evaluando el valor perdido por redondeo.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P5: Propuesta de precios
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P5: Propuesta de precios
 
 ### 2 · Resolución
 
@@ -3432,7 +3440,7 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-02.01.01`** Implementar el optimizador (búsqueda en grilla, programación no lineal o entera) con semilla y versiones fijadas, y verificar que la solución respeta todas las restricciones.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P2: Optimizador de precios
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P2: Optimizador de precios
 
 #### 2.2 Robustez
 
@@ -3444,7 +3452,7 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-02.03.01`** Construir escenarios para el comité: precio actual, propuesta óptima, propuesta con restricción de volumen y alternativas del negocio, con impacto en volumen, margen, RAROC, pérdida esperada, capital y provisiones a 12 meses.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: PPT P1: Escenarios de precio
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: PPT P1: Escenarios de precio
 
 ### 3 · Validación de la propuesta
 
@@ -3452,13 +3460,13 @@ Es decir, el margen óptimo sobre el piso es inversamente proporcional a la sens
 
 - **`PRC-P5-03.01.01`** Controlar la propuesta antes de llevarla a comité: 100 % de precios dentro de [piso, tope], monotonicidad, cambios mayores al umbral de gradualidad identificados, y análisis de equidad de precios por grupos: las diferencias deben explicarse por riesgo, costo, plazo o canal (PRC-P9-02.02.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Documento P5: Propuesta de precios
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Documento P5: Propuesta de precios
 
 #### 3.2 Comité de Precios
 
 - **`PRC-P5-03.02.01`** Presentar la propuesta y sus escenarios al Comité de Precios para su aprobación, con las excepciones a umbrales explícitas.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PRC-CP: Comité de Precios · Hito: Comité de Precios
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PRC-CP: Comité de Precios · Hito: Comité de Precios
 
 <!-- CATALOGO:FIN -->
 
@@ -3532,9 +3540,9 @@ Ejemplo: con $p=0.30$, $\delta=0.02$, $\alpha=5\,\%$ y potencia 80 % (U-22), $n\
 
 #### 2.2 Despliegue gradual
 
-- **`PRC-P6-02.02.01`** Para Tier III–IV sin experimento, desplegar de forma escalonada por región o canal (champion/challenger) y comparar contra el grupo que mantiene el precio anterior.
+- **`PRC-P6-02.02.01`** Para Tier III sin experimento, desplegar de forma escalonada por región o canal (champion/challenger) y comparar contra el grupo que mantiene el precio anterior.
 
-  Aplica: Tier III–IV · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P4: Resultados del piloto
+  Aplica: Tier III · Esfuerzo: 1.5 d · Automatización: 2 · Entregable: Excel P4: Resultados del piloto
 
 <!-- CATALOGO:FIN -->
 
@@ -3568,13 +3576,13 @@ desactualizados en un canal o descuentos acumulados. P7 cierra esa brecha con tr
 
 - **`PRC-P7-01.01.01`** Publicar el tarifario aprobado con fecha de vigencia, versión y la TCEA o TREA resultante para cada celda, según la normativa de transparencia aplicable.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Hito: Sprint 6
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Hito: Sprint 6
 
 #### 1.2 Matriz de facultades
 
 - **`PRC-P7-01.02.01`** Definir la matriz de facultades de descuento: quién puede ceder cuántos puntos básicos sobre el tarifario, hasta qué piso y con qué evidencia. Ningún nivel puede ofrecer por debajo del piso técnico sin aprobación del Comité de Precios (U-18, U-23).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Umbrales: U-18, U-23
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento P7: Tarifario y matriz de facultades · Umbrales: U-18, U-23
 
 ### 2 · Motor de precios
 
@@ -3582,19 +3590,19 @@ desactualizados en un canal o descuentos acumulados. P7 cierra esa brecha con tr
 
 - **`PRC-P7-02.01.01`** Implementar en el motor de precios las reglas del tarifario, la matriz de facultades y los controles preventivos que bloquean ofertas por encima del tope regulatorio (U-24) o por debajo del piso sin facultad, registrando cada excepción con su motivo y aprobador.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P3: Reglas del motor de precios · Umbrales: U-24
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script P3: Reglas del motor de precios · Umbrales: U-24
 
 #### 2.2 Certificación
 
 - **`PRC-P7-02.02.01`** Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 
 #### 2.3 Registro de ofertas
 
 - **`PRC-P7-02.03.01`** Registrar cada oferta emitida (precio, versión del tarifario, componentes del piso, excepción y aceptación) para cerrar el ciclo de datos que alimenta el siguiente recalibrado del modelo de respuesta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla P1: Base de cotizaciones
 
 #### 2.4 Habilitación comercial
 
@@ -3644,7 +3652,7 @@ Los cuatro efectos suman exactamente la variación del margen.
 
 - **`PRC-P8-01.01.01`** Construir el tablero mensual: conversión por tramo de precio, price realization, margen y RAROC realizados vs. esperados, mix de riesgo de lo colocado, excepciones de precio y margen cedido, brecha con la competencia y cumplimiento de topes.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Hito: Sprint 7
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Hito: Sprint 7
 
 #### 1.2 Descomposición de resultados
 
@@ -3656,7 +3664,7 @@ Los cuatro efectos suman exactamente la variación del margen.
 
 - **`PRC-P8-01.03.01`** Activar alertas: margen realizado fuera de ±15 % del esperado por dos meses (U-26), excepciones por encima del umbral de leakage (U-23), deriva de la elasticidad (calibración del modelo de respuesta fuera de U-21) y cualquier oferta sobre el tope regulatorio (U-24).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Umbrales: U-21, U-23, U-26
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard P1: Seguimiento de precios · Umbrales: U-21, U-23, U-26
 
 ### 2 · Revisión post-implementación
 
@@ -3664,17 +3672,17 @@ Los cuatro efectos suman exactamente la variación del margen.
 
 - **`PRC-P8-02.01.01`** Revisión post-implementación entre 3 y 6 meses después del lanzamiento: valor capturado frente al caso de negocio de P1, aprendizajes y decisión de recalibrar el precio técnico, el modelo de respuesta o ambos.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Entregable: Documento P8: Revisión post-implementación
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Entregable: Documento P8: Revisión post-implementación
 
 - **`PRC-P8-02.01.02`** Reunión de revisión post-implementación con el dueño del precio y Finanzas.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PRC-PIR: Revisión post-implementación
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PRC-PIR: Revisión post-implementación
 
 #### 2.2 Ciclo de recalibrado
 
 - **`PRC-P8-02.02.01`** Actualizar los insumos del precio técnico cuando cambian FTP, costos, capital o PD/LGD (al menos trimestralmente), y recalibrar el modelo de respuesta al menos una vez al año o ante alerta.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel P2: Calculadora de precio técnico
 
 <!-- CATALOGO:FIN -->
 
@@ -3710,13 +3718,13 @@ técnica. Cada sesión deja acta (tipo **PRC-CP** del [editor de actas](../plant
 
 - **`PRC-P9-01.01.01`** Operar un Comité de Precios con mandato escrito: aprueba tarifarios, pisos, matrices de facultades, experimentos y excepciones a umbrales de pricing. Integra al dueño del precio, Finanzas/ALM, Riesgos y Cumplimiento; cada sesión deja acta (PRC-CP).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Documento P9: Política de precios y conducta
 
 #### 1.2 Política de precios
 
 - **`PRC-P9-01.02.01`** Mantener una política de precios aprobada que establezca principios, metodología de piso técnico, gradualidad, facultades, uso de modelos y de agentes de IA, y frecuencia de revisión.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento P9: Política de precios y conducta
 
 ### 2 · Conducta y regulación
 
@@ -3724,13 +3732,13 @@ técnica. Cada sesión deja acta (tipo **PRC-CP** del [editor de actas](../plant
 
 - **`PRC-P9-02.01.01`** Verificar el cumplimiento de la normativa vigente de tasas y transparencia: topes de tasa donde existan (U-24), cálculo y publicación de TCEA/TREA, comunicación de cambios de condiciones con la anticipación exigida y prohibición de cobros no permitidos.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta · Umbrales: U-24
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta · Umbrales: U-24
 
 #### 2.2 Trato justo
 
 - **`PRC-P9-02.02.01`** Asegurar que el precio se explique por riesgo, costo, plazo, canal y relación comercial, y no por atributos protegidos o por la vulnerabilidad del cliente. Prohibido usar como palanca de precio la baja sensibilidad de clientes vulnerables (p.ej. menor alfabetización financiera). Probar proxies como en FR-06.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
 
 #### 2.3 Explicabilidad al cliente
 
@@ -3744,7 +3752,7 @@ técnica. Cada sesión deja acta (tipo **PRC-CP** del [editor de actas](../plant
 
 - **`PRC-P9-03.01.01`** Si se usan agentes de IA en el ciclo de pricing, registrar cada agente (rol, herramientas permitidas, datos a los que accede), conservar el log de sus acciones y asegurar que ningún agente fije, publique ni apruebe precios: toda decisión de precio la toma y firma una persona con facultad.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento P9: Política de precios y conducta
 
 <!-- CATALOGO:FIN -->
 
@@ -3817,39 +3825,39 @@ Con cuadro de control de cambios. Debe contener:
   - Proceso de control de Calidad de Datos. El cual consta del análisis de estabilidad poblacional de las variables cuyas umbrales son definidos corportaivamente.
   - Detalle del plan de Acción cuando existan alertas en el control de Calidad de Datos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.75 d ágil / 2.75 d completo · Automatización: 1 · Entregable: Documento 13: Guia de implementación · Hito: Sprint 20
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.75 d ágil / 2.75 d completo · Automatización: 1 · Entregable: Documento 13: Guia de implementación · Hito: Sprint 20
 
 - **`IMP-01.01.02`** Documentación y reglamentación de variables críticas del modelo. Luego de la implementación, realizar controles para alarmas sobre cambios relevantes en variables originales y transformadas.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`IMP-01.01.03`** Documentar variables que deben ser modificadas en el tiempo, por nuevas versiones u otros
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`IMP-01.01.04`** Documentar la existencia de dependencia de variables inputs y/o otros modelos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`IMP-01.01.05`** Envío de manual de implementación al equipo implementador
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Acta 9: Reunión con el equipo implementador.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Acta 9: Reunión con el equipo implementador.
 
 - **`IMP-01.01.06`** Bitácora de cambios para variables, tablas empleada en modelo a implementar, tanto la versión del modelador como la versión final de data (ya que ellos cambian algunas fuentes)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`IMP-01.01.07`** En caso la implementación no la realice el modelador se realizará una revisión con área de implementación y acta de entrega
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`IMP-01.01.08`** Registrar modelo en el inventario de modelos e incluir el código de modelo en el documento de implementación.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil · Automatización: 1
 
 - **`IMP-01.01.09`** Documentar un plan de contingencia, para variables erradas y/o caidas de herramientas como datalake/ sas
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 #### 1.2 Documento de Lineamientos
 
@@ -3865,21 +3873,21 @@ Con cuadro de control de cambios. Debe contener:
   - Evidencia de los backups de los docuemnto, archivos de ejecución e información procesada.
   - Detalles de las herramientas o medios de comunicación por la cual se comparte información del modelo a validación y la normativa en el cual se rigen para que la transferencia sea bajo los lineamientos indicados por seguridad
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.75 d ágil / 2.75 d completo · Automatización: 1 · Entregable: Documento 14: Documento de Lineamientos
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.75 d ágil / 2.75 d completo · Automatización: 1 · Entregable: Documento 14: Documento de Lineamientos
 
 #### 1.3 Desarrollo de implementación
 
 - **`IMP-01.03.01`** Desarrollo de script de implementación, el cual debe contar con un proceso de almacenamiento de Logs de ejecución y errores durante el proceso
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1 · Entregable: Proceso Productivo
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1 · Entregable: Proceso Productivo
 
 - **`IMP-01.03.02`** Construir la tabla productiva del modelo, la cual debe de contar con el código de inventario del modelo y fecha de ejecución
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1
 
 - **`IMP-01.03.03`** Garantizar que la información final se encuentre resguardada y en caso contrario generar un archivo plano y almacenar en la ruta productiva del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1
 
 #### 1.4 Calidad de datos
 
@@ -3888,11 +3896,11 @@ Con cuadro de control de cambios. Debe contener:
   - Control de unicidad de registros.
   - Control de valores missing.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Excel: de Control de Calidad de Datos
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Excel: de Control de Calidad de Datos
 
 - **`IMP-01.04.02`** Definición de umbrales de PSI con los cuales se evaluará el control de calidad
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
 
 - **`IMP-01.04.03`** Solicitud de controles de calidad en caso la información provenga de un proveedor externo.
   - Reportes de ejecución correcta (Logs)
@@ -3900,61 +3908,61 @@ Con cuadro de control de cambios. Debe contener:
   - Unicidad de Resgistros.
   - Fechas de Actualización de la información.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
 
 #### 1.5 Entorno Tecnológico
 
 - **`IMP-01.05.01`** Definición de la ruta productiva en la cual se almacenará el proceso de implementació.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
 
 - **`IMP-01.05.02`** Solicitar al equipo de servidores la evidencia del resguardo de la ruta productiva del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
 
 - **`IMP-01.05.03`** Solicitud de un código único del modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
 
 - **`IMP-01.05.04`** Solicitud del listado de usuarios que tienen acceso a la ruta productiva del modelo y a la ubicación del resultado final
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
 
 - **`IMP-01.05.05`** Solicitud de evidencia del resguardo de información en caso la información provenga de un proveedor externo.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.3 d ágil / 0.3 d completo · Automatización: 1
 
 #### 1.6 Pruebas de certificación
 
 - **`IMP-01.06.01`** Definición de pruebas sobre el modelo a implementar
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 3: Pruebas a realizar.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 3: Pruebas a realizar.
 
 - **`IMP-01.06.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.0625 d ágil / 1.25 d completo · Automatización: 1 · Umbrales: U-15
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.0625 d ágil / 1.25 d completo · Automatización: 1 · Umbrales: U-15
 
 - **`IMP-01.06.03`** Constancia de pruebas de control sobre el modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 14: Certificación del modelo. · Hito: SME 13
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 14: Certificación del modelo. · Hito: SME 13
 
 - **`IMP-01.06.04`** Solicitar conformidad de los resultados al líder del proyecto de implementación (en caso la implementación sea realizada por el equipo modelador, la aprobación será brindada por el Sub Gerente de Modelos de Riesgos)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`IMP-01.06.05`** Probar escenarios de error (datos faltantes, valores fuera de rango, caída de fuentes) y verificar el manejo de excepciones y el control de accesos del proceso productivo.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 18.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 2 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 18.
 
 - **`IMP-01.06.06`** Registrar en cada resultado productivo la versión del modelo y del código que lo generó, para trazabilidad y seguimiento.
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia; FR-07.
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia; FR-07.
 
 #### 1.7 Presentación del proceso de implementación al equipo usuario
 
 - **`IMP-01.07.01`** Reunión y elaboración de acta
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 10: Reunión de cierre · Hito: SME 13
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Acta 10: Reunión de cierre · Hito: SME 13
 
 <!-- CATALOGO:FIN -->
 
@@ -4093,17 +4101,17 @@ anticipar el deterioro al originar. IFRS 9, en cambio, presume que el default **
 
 - **`PAR-R1-01.01.01`** Inventariar los parámetros de riesgo por cartera y uso (PD 12 meses y lifetime, LGD, LGD en default, EAD/CCF, escenarios, criterios de staging, CLV) y registrar cada modelo en el inventario con su Tier.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos · Hito: Sprint 0
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos · Hito: Sprint 0
 
 - **`PAR-R1-01.01.02`** Declarar los usos de cada parámetro (provisiones IFRS 9, provisiones regulatorias locales, capital, pricing, stress testing, CLV) y las diferencias de calibración que cada uso exige: point-in-time con forward-looking para IFRS 9, through-the-cycle o downturn para capital.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R1: Mapa de parámetros y usos
 
 #### 1.2 Segmentación de carteras
 
 - **`PAR-R1-01.02.01`** Definir las carteras con riesgo homogéneo (producto, segmento, garantía, canal, moneda) sobre las que se estiman los parámetros, con evidencia de homogeneidad y materialidad suficiente de defaults por segmento.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R1: Segmentación de carteras
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R1: Segmentación de carteras
 
 ### 2 · Definiciones comunes
 
@@ -4111,11 +4119,11 @@ anticipar el deterioro al originar. IFRS 9, en cambio, presume que el default **
 
 - **`PAR-R1-02.01.01`** Alinear la definición de default de parámetros con la gestión del riesgo y con la contabilidad: en IFRS 9 el default no puede ocurrir después de los 90 días de atraso salvo evidencia que refute la presunción (U-28). Documentar el puente con la definición de default de los scores de originación (U-17: más de 60 días) y su efecto en la calibración.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-28
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-28
 
 - **`PAR-R1-02.01.02`** Definir los criterios de salida de default y cura: período mínimo de observación y tratamiento de reestructurados (U-33), e impacto en LGD y en staging.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-33
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R2: Definiciones de default, cura y unidad · Umbrales: U-33
 
 ### 3 · Gobierno inicial
 
@@ -4123,7 +4131,7 @@ anticipar el deterioro al originar. IFRS 9, en cambio, presume que el default **
 
 - **`PAR-R1-03.01.01`** Kick off del proyecto de parámetros con Riesgos, Finanzas/Contabilidad, Estudios Económicos y Validación.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PAR-KO: Kick off de parámetros · Hito: Kick Off
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Acta PAR-KO: Kick off de parámetros · Hito: Kick Off
 
 <!-- CATALOGO:FIN -->
 
@@ -4169,7 +4177,7 @@ datos internos de carteras similares, datos de buró o externos y un margen de c
 
 - **`PAR-R2-01.01.01`** Construir las cohortes de default por cartera con al menos cinco años de historia que incluyan un período de estrés (U-27): saldos, estados de atraso mensuales, defaults, curas y salidas (prepago, castigo, venta).
 
-  Aplica: Tier I–IV · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla R1: Cohortes de default · Hito: Sprint 1 · Umbrales: U-27
+  Aplica: Tier I–III · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla R1: Cohortes de default · Hito: Sprint 1 · Umbrales: U-27
 
 - **`PAR-R2-01.01.02`** Reconstruir la historia de calificaciones o scores en una escala estable para estimar matrices de migración, corrigiendo cambios de modelo con un mapeo documentado.
 
@@ -4179,19 +4187,19 @@ datos internos de carteras similares, datos de buró o externos y un margen de c
 
 - **`PAR-R2-01.02.01`** Construir la base de recuperaciones por default: flujos de cobranza, ejecución de garantías, costos directos e indirectos y fecha de cierre del proceso. Identificar los procesos incompletos y su tratamiento.
 
-  Aplica: Tier I–IV · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla R2: Base de recuperaciones (workout)
+  Aplica: Tier I–III · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Tabla R2: Base de recuperaciones (workout)
 
 #### 1.3 Base de exposición
 
 - **`PAR-R2-01.03.01`** Construir la base de exposición: cronogramas de amortización, prepagos, líneas y uso de línea 12 meses antes del default para estimar CCF.
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Tabla R3: Base de exposición y uso de línea
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Tabla R3: Base de exposición y uso de línea
 
 #### 1.4 Series macroeconómicas
 
 - **`PAR-R2-01.04.01`** Recopilar las series macroeconómicas candidatas (PBI, desempleo, inflación, tasas, tipo de cambio, precios de inmuebles, términos de intercambio) con la misma frecuencia y rezagos que usará Estudios Económicos en sus escenarios.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla R4: Series macroeconómicas
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla R4: Series macroeconómicas
 
 ### 2 · Calidad de datos
 
@@ -4199,11 +4207,11 @@ datos internos de carteras similares, datos de buró o externos y un margen de c
 
 - **`PAR-R2-02.01.01`** Aplicar los controles de calidad de DES-D2 y los específicos de parámetros: continuidad de cohortes, defaults sin recuperación registrada, recuperaciones mayores al saldo, y conciliación de saldos y castigos con contabilidad.
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 3 · Crítico · Entregable: Documento R3: Certificación de datos de parámetros
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 3 · Crítico · Entregable: Documento R3: Certificación de datos de parámetros
 
 - **`PAR-R2-02.01.02`** Certificar las bases con acta de conformidad de las fuentes (Riesgos, Cobranzas, Contabilidad, Estudios Económicos).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento R3: Certificación de datos de parámetros
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento R3: Certificación de datos de parámetros
 
 <!-- CATALOGO:FIN -->
 
@@ -4258,7 +4266,7 @@ $\mathrm{Beta}(d+\tfrac12,\;n-d+\tfrac12)$ evaluada en la PD. Valores bajos indi
 
 - **`PAR-R3-01.01.01`** Estimar la PD a 12 meses por grado o segmento, o calibrar el score aprobado a tasas de default observadas siguiendo DES-D4-08, con la definición de default de R1.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R1: Modelos de PD · Hito: Sprint 2
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R1: Modelos de PD · Hito: Sprint 2
 
 - **`PAR-R3-01.01.02`** Separar el componente through-the-cycle (tendencia de largo plazo) del point-in-time (ciclo), y documentar cómo se ancla la PD al promedio de largo plazo.
 
@@ -4270,7 +4278,7 @@ $\mathrm{Beta}(d+\tfrac12,\;n-d+\tfrac12)$ evaluada en la PD. Valores bajos indi
 
 - **`PAR-R3-02.01.01`** Estimar la curva de PD lifetime (marginal y acumulada por período) con un método documentado: supervivencia en tiempo discreto, matrices de migración (Markov) o curvas vintage, según la cartera y los datos disponibles.
 
-  Aplica: Tier I–IV · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Script R1: Modelos de PD
+  Aplica: Tier I–III · Esfuerzo: 4 d · Automatización: 2 · Crítico · Entregable: Script R1: Modelos de PD
 
 - **`PAR-R3-02.01.02`** Tratar los riesgos competitivos (prepago, cancelación, castigo) para no sobreestimar la PD acumulada de operaciones que salen del portafolio antes de su vencimiento.
 
@@ -4286,11 +4294,11 @@ $\mathrm{Beta}(d+\tfrac12,\;n-d+\tfrac12)$ evaluada en la PD. Valores bajos indi
 
 - **`PAR-R3-03.01.01`** Evaluar discriminación por horizonte y, sobre todo, calibración: tasa observada vs. PD por grado con el test de Jeffreys (U-30), en construcción y en los períodos más recientes.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel R2: Desempeño y calibración de PD · Umbrales: U-30
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel R2: Desempeño y calibración de PD · Umbrales: U-30
 
 - **`PAR-R3-03.01.02`** Documentar la metodología de PD, sus supuestos y limitaciones con la estructura de DES-D4-11.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento R4: Metodología de PD
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento R4: Metodología de PD
 
 <!-- CATALOGO:FIN -->
 
@@ -4329,11 +4337,11 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-01.01.01`** Calcular la LGD realizada por default como 1 menos el valor presente de las recuperaciones netas de costos sobre la EAD, descontadas a la tasa de interés efectiva (U-34).
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Hito: Sprint 3 · Umbrales: U-34
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Hito: Sprint 3 · Umbrales: U-34
 
 - **`PAR-R4-01.01.02`** Tratar los procesos de recuperación incompletos con un método documentado (proyección de recuperaciones remanentes, curvas de recuperación) en lugar de excluirlos, para no sesgar la LGD hacia los casos que se cierran rápido.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Umbrales: U-34
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Umbrales: U-34
 
 - **`PAR-R4-01.01.03`** Separar la LGD en sus componentes cuando aporte precisión: probabilidad de cura y severidad dado que no hay cura (modelo de dos etapas).
 
@@ -4343,7 +4351,7 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-01.02.01`** Estimar el modelo de LGD respetando su soporte acotado y su distribución bimodal (regresión fraccional, beta, dos etapas o métodos de ML con calibración), con drivers de garantía (LTV actual), producto y antigüedad del default.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
 
 - **`PAR-R4-01.02.02`** Incorporar el forward-looking en la LGD cuando la recuperación dependa del ciclo (por ejemplo, precios de inmuebles para hipotecarios), con el mismo marco de escenarios de R6.
 
@@ -4355,7 +4363,7 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-02.01.01`** Estimar la LGD para exposiciones ya en default (mejor estimación de la pérdida, ELBE) en función del tiempo en default y del estado de la cobranza, para el cálculo de Stage 3.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
 
 ### 3 · Validación y documentación
 
@@ -4363,11 +4371,11 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-03.01.01`** Comparar LGD estimada vs. realizada por segmento y por año de default, incluido el período de estrés, y evaluar el poder de ordenamiento.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel R4: Desempeño de LGD
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel R4: Desempeño de LGD
 
 - **`PAR-R4-03.01.02`** Documentar la metodología de LGD (descuento, costos, incompletos, garantías, LGD en default).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento R5: Metodología de LGD
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento R5: Metodología de LGD
 
 <!-- CATALOGO:FIN -->
 
@@ -4398,7 +4406,7 @@ Para **amortizables**, la exposición sigue el cronograma ajustado por prepagos 
 
 - **`PAR-R5-01.01.01`** Proyectar la exposición de cada período con el cronograma contractual ajustado por prepagos y cancelaciones esperadas, consistente con la tasa de interés efectiva.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF · Hito: Sprint 3
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF · Hito: Sprint 3
 
 ### 2 · Exposición de productos revolventes
 
@@ -4406,11 +4414,11 @@ Para **amortizables**, la exposición sigue el cronograma ajustado por prepagos 
 
 - **`PAR-R5-02.01.01`** Estimar el factor de conversión (CCF) del monto no utilizado a 12 meses antes del default, con el uso de línea, la antigüedad y el estado de atraso como drivers.
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF
 
 - **`PAR-R5-02.01.02`** Para revolventes (tarjetas, líneas), estimar el período de exposición conductual más allá del plazo contractual, durante el que el banco está expuesto porque no gestiona la línea en la práctica; documentar el horizonte usado para la ECL lifetime.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento R6: Metodología de EAD y vida conductual
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento R6: Metodología de EAD y vida conductual
 
 <!-- CATALOGO:FIN -->
 
@@ -4452,11 +4460,11 @@ no siempre se reflejan en el PBI. El BCE considera mala práctica tratarlos solo
 
 - **`PAR-R6-01.01.01`** Recibir de Estudios Económicos al menos tres escenarios (base, optimista y pesimista) con sus probabilidades y su sustento, revisados como mínimo cada trimestre (U-32).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades · Hito: Sprint 4 · Umbrales: U-32
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades · Hito: Sprint 4 · Umbrales: U-32
 
 - **`PAR-R6-01.01.02`** Definir el horizonte de proyección explícito y la regla de reversión a la media de largo plazo de las variables macro y de los parámetros.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento R7: Escenarios y probabilidades
 
 ### 2 · Modelos satélite
 
@@ -4464,11 +4472,11 @@ no siempre se reflejan en el PBI. El BCE considera mala práctica tratarlos solo
 
 - **`PAR-R6-02.01.01`** Estimar los modelos satélite que vinculan las variables macro con la tasa de default (y con la LGD cuando aplique): selección de variables con sentido económico y signo esperado, rezagos, y estabilidad fuera de muestra.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R4: Modelos satélite
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R4: Modelos satélite
 
 - **`PAR-R6-02.01.02`** Probar la no linealidad: la ECL ponderada se calcula como el promedio de las ECL de cada escenario, nunca como la ECL de un escenario promedio (U-32).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Excel R5: ECL por escenario · Umbrales: U-32
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Excel R5: ECL por escenario · Umbrales: U-32
 
 - **`PAR-R6-02.01.03`** Evaluar riesgos que la macro no captura (clima, energía, cadenas de suministro, geopolítica, sectores concentrados) y decidir si requieren un ajuste del modelo o un overlay gobernado (R8).
 
@@ -4480,7 +4488,7 @@ no siempre se reflejan en el PBI. El BCE considera mala práctica tratarlos solo
 
 - **`PAR-R6-03.01.01`** Reunión trimestral de revisión de escenarios y probabilidades con Estudios Económicos, Riesgos y Contabilidad.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-ESC: Revisión de escenarios
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-ESC: Revisión de escenarios
 
 <!-- CATALOGO:FIN -->
 
@@ -4517,7 +4525,7 @@ son demasiado laxos.
 
 - **`PAR-R7-01.01.01`** Comparar la PD lifetime actual con la PD lifetime en el reconocimiento inicial, por operación, con umbrales relativos y absolutos calibrados por cartera (U-29).
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Hito: Sprint 5 · Umbrales: U-29
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Hito: Sprint 5 · Umbrales: U-29
 
 - **`PAR-R7-01.01.02`** Calibrar los umbrales SICR para que Stage 2 anticipe el default: proporción de defaults que pasaron antes por Stage 2, tiempo de permanencia y estabilidad de las transiciones.
 
@@ -4527,11 +4535,11 @@ son demasiado laxos.
 
 - **`PAR-R7-01.02.01`** Aplicar el backstop de 30 días de atraso para Stage 2 y el de default para Stage 3 (U-28), además de criterios cualitativos: refinanciados, lista de vigilancia y alertas tempranas.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Umbrales: U-28
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R8: Criterios de staging · Umbrales: U-28
 
 - **`PAR-R7-01.02.02`** Definir el retorno de Stage 2 a Stage 1 y de Stage 3 a Stage 2 con períodos de prueba (U-33), y documentar el tratamiento de activos adquiridos u originados con deterioro (POCI).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento R8: Criterios de staging · Umbrales: U-33
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Entregable: Documento R8: Criterios de staging · Umbrales: U-33
 
 <!-- CATALOGO:FIN -->
 
@@ -4589,15 +4597,15 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S1-01.01.01`** Definir para cada modelo los indicadores de seguimiento (estabilidad, discriminación, calibración, forzajes, calidad de datos y, para IA, sobreajuste) con umbrales y alertas aprobados por el comité de riesgos de modelo (SBS art. 21; U-37).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento S1: Plan de seguimiento · Hito: Sprint 0 · Umbrales: U-37
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento S1: Plan de seguimiento · Hito: Sprint 0 · Umbrales: U-37
 
-- **`SEG-S1-01.01.02`** Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III–IV al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño.
+- **`SEG-S1-01.01.02`** Fijar la periodicidad por categoría (Tier I mensual o trimestral; Tier III al menos semestral) y la fecha en que cada cosecha madura lo suficiente para medir desempeño.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento S1: Plan de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Entregable: Documento S1: Plan de seguimiento
 
 - **`SEG-S1-01.01.03`** Asegurar los datos de seguimiento: tabla productiva con versión del modelo, scores, decisiones, forzajes y desempeño posterior; para estimadores, la muestra mínima acordada en DES-D5-01.03.01.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Tabla S1: Base de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Tabla S1: Base de seguimiento
 
 <!-- CATALOGO:FIN -->
 
@@ -4612,31 +4620,31 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S2-01.01.01`** Medir el PSI del score y de cada variable frente a la población de construcción, y los controles de calidad de los datos productivos (missings, duplicados, fuentes desactualizadas).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
 
 #### 1.2 Desempeño
 
 - **`SEG-S2-01.02.01`** Medir la discriminación (Gini, KS) por cosecha madura, global y por segmento, frente a la de construcción (U-37).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-37
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-37
 
 - **`SEG-S2-01.02.02`** Medir la calibración: tasa observada vs. PD por tramo con intervalos binomiales o de Jeffreys; para estimadores, el % de casos dentro de ±25 % y ±50 % (U-12).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 4 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento
 
 - **`SEG-S2-01.02.03`** Para modelos de IA, medir el sobreajuste en producción: brecha de desempeño entre construcción y los meses recientes (SBS art. 22).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Dashboard S1: Tablero de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Dashboard S1: Tablero de seguimiento
 
 #### 1.3 Uso y forzajes
 
 - **`SEG-S2-01.03.01`** Medir el volumen de forzajes (overrides) y el desempeño de los casos forzados frente a los no forzados, por motivo y por nivel que forzó (U-36).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-36
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Crítico · Entregable: Dashboard S1: Tablero de seguimiento · Umbrales: U-36
 
 - **`SEG-S2-01.03.02`** Verificar que el modelo se usa solo para el propósito y la población aprobados; un uso nuevo es un cambio de uso que requiere aprobación (GOB-G3-01.01.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico
 
 <!-- CATALOGO:FIN -->
 
@@ -4651,11 +4659,11 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S3-01.01.01`** Aplicar el árbol de decisión: verde, continuar; ámbar, análisis de causa raíz en un mes; rojo en calibración con discriminación aceptable, calibrar (CAL); rojo en discriminación, redesarrollar (DES); rojo en datos, plan de contingencia (IMP-01.02.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento S2: Informe de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 1 · Crítico · Entregable: Documento S2: Informe de seguimiento
 
 - **`SEG-S3-01.01.02`** Escalar al comité un rojo que persista tres períodos o un cambio material de política o de población, con medidas temporales de mitigación mientras se corrige (SBS art. 7).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta CRM: Comité de riesgos de modelo
 
 <!-- CATALOGO:FIN -->
 
@@ -4670,11 +4678,11 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 
 - **`SEG-S4-01.01.01`** Emitir el informe de seguimiento al menos una vez al año (más frecuente según categoría) con desviaciones de indicadores, backtesting, sensibilidad, forzajes, cumplimiento de acciones y, para IA, sobreajuste; aprobarlo en el comité (SBS art. 22).
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento S2: Informe de seguimiento
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento S2: Informe de seguimiento
 
 - **`SEG-S4-01.01.02`** Actualizar el inventario con el estado del modelo y sus debilidades abiertas después de cada informe (GOB-G2-01.01.01).
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 2
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 2
 
 <!-- CATALOGO:FIN -->
 
@@ -4739,21 +4747,21 @@ Este estándar lo traduce en reglas (U-31):
 
 - **`PAR-R8-01.01.01`** Calcular la ECL por operación como la suma, período a período, de PD marginal × LGD × EAD descontada a la tasa de interés efectiva: 12 meses para Stage 1, lifetime para Stage 2 y LGD en default para Stage 3; ponderar por escenario (U-32).
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R5: Motor de ECL · Hito: Sprint 6 · Umbrales: U-32
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R5: Motor de ECL · Hito: Sprint 6 · Umbrales: U-32
 
 - **`PAR-R8-01.01.02`** Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 
 #### 1.2 Análisis de resultados
 
 - **`PAR-R8-01.02.01`** Explicar los movimientos de la ECL entre períodos (originaciones, bajas, cambios de stage, cambios de parámetros, escenarios, castigos) para Contabilidad y para las revelaciones de IFRS 7.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel R7: Movimiento de la ECL
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 3 · Crítico · Entregable: Excel R7: Movimiento de la ECL
 
 - **`PAR-R8-01.02.02`** Calcular sensibilidades de la ECL: 100 % en cada escenario, cambios en ponderaciones y en umbrales SICR.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel R7: Movimiento de la ECL
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 3 · Entregable: Excel R7: Movimiento de la ECL
 
 ### 2 · Overlays y ajustes post-modelo
 
@@ -4761,11 +4769,11 @@ Este estándar lo traduce en reglas (U-31):
 
 - **`PAR-R8-02.01.01`** Todo overlay o ajuste post-modelo debe tener causa identificada (riesgo no capturado por el modelo), cuantificación reproducible, cartera afectada, fecha de revisión o expiración y aprobación en comité (U-31).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R9: Registro de overlays · Umbrales: U-31
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Crítico · Entregable: Documento R9: Registro de overlays · Umbrales: U-31
 
 - **`PAR-R8-02.01.02`** Reunión de aprobación de overlays y de los resultados de la ECL del período.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-OVL: Aprobación de overlays
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-OVL: Aprobación de overlays
 
 - **`PAR-R8-02.01.03`** Planificar la absorción de cada overlay recurrente dentro del modelo en el siguiente ciclo de recalibrado, para que no se vuelva permanente.
 
@@ -4808,7 +4816,7 @@ Este estándar exige un backtesting anual con cinco frentes:
 
 - **`PAR-R9-01.01.01`** Backtesting anual de PD (Jeffreys por grado, U-30), LGD (estimada vs. realizada), CCF y staging (proporción de defaults que estaban en Stage 2; transiciones entre stages).
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Excel R8: Backtesting de parámetros · Hito: Sprint 7 · Umbrales: U-30
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 3 · Crítico · Entregable: Excel R8: Backtesting de parámetros · Hito: Sprint 7 · Umbrales: U-30
 
 - **`PAR-R9-01.01.02`** Backtesting de la ECL: comparar pérdidas realizadas con la ECL constituida por cohorte, y explicar las diferencias (escenario materializado vs. probabilidades asignadas).
 
@@ -4816,7 +4824,7 @@ Este estándar exige un backtesting anual con cinco frentes:
 
 - **`PAR-R9-01.01.03`** Reunión de resultados del backtesting y decisión de recalibrar o redesarrollar.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-BT: Resultados del backtesting
+  Aplica: Tier I–III · Esfuerzo: 0.25 d · Automatización: 1 · Entregable: Acta PAR-BT: Resultados del backtesting
 
 ### 2 · Gobierno de provisiones
 
@@ -4824,11 +4832,11 @@ Este estándar exige un backtesting anual con cinco frentes:
 
 - **`PAR-R9-02.01.01`** Presentar al comité de provisiones los parámetros, escenarios, staging, overlays y la ECL resultante, con el puente frente a las provisiones regulatorias locales cuando ambas coexistan.
 
-  Aplica: Tier I–IV · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PAR-CP: Comité de provisiones · Hito: Comité de provisiones
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 1 · Crítico · Entregable: Acta PAR-CP: Comité de provisiones · Hito: Comité de provisiones
 
 - **`PAR-R9-02.01.02`** Mantener la documentación del ciclo de cálculo (insumos, versiones, controles, aprobaciones) para auditoría externa y supervisión, con cuadro de control de cambios.
 
-  Aplica: Tier I–IV · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R10: Manual del ciclo de provisiones
+  Aplica: Tier I–III · Esfuerzo: 1 d · Automatización: 2 · Crítico · Entregable: Documento R10: Manual del ciclo de provisiones
 
 <!-- CATALOGO:FIN -->
 
@@ -4867,7 +4875,7 @@ consume la misma PD lifetime anualizada.
 
 - **`PAR-R10-02.01.01`** Publicar los parámetros vigentes en una tabla versionada con fecha de vigencia para sus consumidores (motor de ECL, pricing PRC-P3, capital, stress testing), con el registro de qué versión usó cada proceso.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla R5: Parámetros vigentes versionados
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Tabla R5: Parámetros vigentes versionados
 
 <!-- CATALOGO:FIN -->
 
@@ -5347,7 +5355,7 @@ que permita generar automáticamente una matriz de cumplimiento.
 > **Línea base 2.0:** la Res. SBS 00053-2023 (art. 6) exige categorizar por materialidad, uso y complejidad con
 > criterios aprobados por el comité (GOB-G2-02.01.01). Esta propuesta es un punto de partida para esos criterios.
 
-**Problema:** el estándar usa Tier I–IV para activar requisitos, pero no define cómo se asigna el Tier.
+**Problema:** el estándar usa Tier I–III para activar requisitos, pero no define cómo se asigna el Tier.
 Eso produce asignaciones inconsistentes entre equipos.
 
 **Propuesta:** un puntaje transparente de 0 a 100 con cuatro dimensiones.
@@ -5365,8 +5373,7 @@ $$\text{Puntaje}=20\sum_{d}w_d\cdot s_d,\qquad s_d\in\{1,\dots,5\}$$
 |---|---|
 | ≥ 75 | I |
 | 55 – 74 | II |
-| 35 – 54 | III |
-| < 35 | IV |
+| < 55 | III |
 
 **Regla de piso:** todo modelo regulatorio o contable (capital, IFRS 9) es **mínimo Tier II**; todo modelo
 de decisión automática sobre personas naturales con ML es **mínimo Tier II**.
@@ -5545,7 +5552,7 @@ codigo_inventario: ""          # IMP-01.05.03
 nombre: ""
 version: "1.0.0"
 tipo_estandar: Desarrollo      # Desarrollo | Calibración
-tier: ""                       # I | II | III | IV  (acta: VAL-M-01.13)
+tier: ""                       # I | II | III  (acta: VAL-M-01.13)
 tipo_modelo: ""                # lineal | ml | arbol | acp
 enfoque: ""                    # agil | completo
 uso: ""                        # originación | comportamiento | cobranza | estimador | PD/LGD/EAD | otro
@@ -5804,7 +5811,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
   explícitamente: "el estándar no fija un umbral para X".
 - **No confundas estados:** nunca presentes una propuesta de `frontera/` como exigencia vigente.
 - **Aplicabilidad:** un requisito aplica a un modelo si `aplica_tier[<tipo_modelo>]` contiene su Tier.
-  En los estándares sin tipo de modelo (Calibración, Parámetros, Pricing, Seguimiento), `aplica_tier` es una lista de Tiers.
+  En los estándares sin tipo de modelo (Calibración, Parámetros, Pricing, Seguimiento), `aplica_tier` es una lista de Tiers (1 a 3; ver `docs/marco/tiering-y-metodologia.md`).
 - **En pricing no fijas precios.** Recalculas pisos, estimas respuesta y preparas escenarios; la decisión es del Comité de Precios (PRC-P9-03.01.01).
 - **No apruebas nada.** Puedes preparar checklists, borradores y revisiones previas; la conformidad la da una persona.
 - **Confidencialidad:** no copies datos de clientes ni nombres de tablas productivas en salidas que salgan del banco.
@@ -5832,7 +5839,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
   "actividad": "Opt de HP por generación aleatoria (min 50 combinaciones)...",
   "critico": false, "eficiencia": false, "nivel_automatizacion": 2,
   "dias_esfuerzo": {"ml": {"agil": 2.5, "completo": 2.5}},
-  "aplica_tier": {"lineal": [], "ml": [1,2,3,4], "arbol": [1,2,3,4], "acp": []},
+  "aplica_tier": {"lineal": [], "ml": [1,2,3], "arbol": [1,2,3], "acp": []},
   "entregables": [{"tipo": "Excel", "numero": 16, "descripcion": "Optimización de Hiperparámetros."}],
   "hito": null,
   "umbrales": ["U-10"]
@@ -5847,6 +5854,19 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
+
+## [3.0.0] — 2026-10-17
+
+### Cambiado (incompatible)
+- **Tres Tiers (I, II, III) en lugar de cuatro.** Tier III y Tier IV tenían exactamente los mismos requisitos,
+  umbrales y frecuencia de validación, así que se fusionan en Tier III en todo el estándar: `aplica_tier` del
+  catálogo, U-35 (`tier_III_anios`), SEG-S1-01.01.02, PRC-P6-02.02.01, planificador, plantillas y herramientas.
+- Se aclara que **el número de Tiers lo aprueba el comité de riesgos de modelo**: ni la Res. SBS 00053-2023 (art. 6)
+  ni SR 26-2, PRA SS1/23 u OSFI E-23 fijan un número; la práctica de mercado usa tres o cuatro niveles. Una entidad
+  con otra escala documenta su correspondencia con I–III.
+- La propuesta de puntaje de tiering (FR-02) pasa a tres cortes: I ≥ 75, II 55–74, III < 55.
+- Compatibilidad: `tools/verificar.py`, `tools/documento.py`, el modelo de esfuerzo y el planificador aceptan «4» o
+  «IV» de versiones anteriores como Tier III.
 
 ## [2.4.0] — 2026-10-17
 
@@ -5988,7 +6008,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.4.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **3.0.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 

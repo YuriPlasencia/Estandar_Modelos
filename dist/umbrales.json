@@ -2,7 +2,7 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "2.4.0",
+  "version": "3.0.0",
   "generado": "2026-10-17",
   "n_requisitos": 541,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
@@ -680,11 +680,11 @@
   {
    "id": "U-35",
    "tema": "Frecuencia de validación por categoría",
-   "regla": "Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III–IV, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I.",
+   "regla": "Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I.",
    "valor": {
     "tier_I_anios": 1,
     "tier_II_anios": 2,
-    "tier_III_IV_anios": 3,
+    "tier_III_anios": 3,
     "replica_tier_I": true
    },
    "refs": [

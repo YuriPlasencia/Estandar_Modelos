@@ -41,11 +41,11 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-01.01.01`** Calcular la LGD realizada por default como 1 menos el valor presente de las recuperaciones netas de costos sobre la EAD, descontadas a la tasa de interés efectiva (U-34).
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Hito: Sprint 3 · Umbrales: U-34
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Hito: Sprint 3 · Umbrales: U-34
 
 - **`PAR-R4-01.01.02`** Tratar los procesos de recuperación incompletos con un método documentado (proyección de recuperaciones remanentes, curvas de recuperación) en lugar de excluirlos, para no sesgar la LGD hacia los casos que se cierran rápido.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Umbrales: U-34
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Excel R3: LGD realizada · Umbrales: U-34
 
 - **`PAR-R4-01.01.03`** Separar la LGD en sus componentes cuando aporte precisión: probabilidad de cura y severidad dado que no hay cura (modelo de dos etapas).
 
@@ -55,7 +55,7 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-01.02.01`** Estimar el modelo de LGD respetando su soporte acotado y su distribución bimodal (regresión fraccional, beta, dos etapas o métodos de ML con calibración), con drivers de garantía (LTV actual), producto y antigüedad del default.
 
-  Aplica: Tier I–IV · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
+  Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
 
 - **`PAR-R4-01.02.02`** Incorporar el forward-looking en la LGD cuando la recuperación dependa del ciclo (por ejemplo, precios de inmuebles para hipotecarios), con el mismo marco de escenarios de R6.
 
@@ -67,7 +67,7 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-02.01.01`** Estimar la LGD para exposiciones ya en default (mejor estimación de la pérdida, ELBE) en función del tiempo en default y del estado de la cobranza, para el cálculo de Stage 3.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R2: Modelos de LGD
 
 ### 3 · Validación y documentación
 
@@ -75,11 +75,11 @@ $$\mathrm{LGD}=p_{\text{cura}}\cdot \mathrm{LGD}_{\text{cura}}+(1-p_{\text{cura}
 
 - **`PAR-R4-03.01.01`** Comparar LGD estimada vs. realizada por segmento y por año de default, incluido el período de estrés, y evaluar el poder de ordenamiento.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel R4: Desempeño de LGD
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 3 · Crítico · Entregable: Excel R4: Desempeño de LGD
 
 - **`PAR-R4-03.01.02`** Documentar la metodología de LGD (descuento, costos, incompletos, garantías, LGD en default).
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento R5: Metodología de LGD
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 1 · Entregable: Documento R5: Metodología de LGD
 
 <!-- CATALOGO:FIN -->
 
@@ -110,7 +110,7 @@ Para **amortizables**, la exposición sigue el cronograma ajustado por prepagos 
 
 - **`PAR-R5-01.01.01`** Proyectar la exposición de cada período con el cronograma contractual ajustado por prepagos y cancelaciones esperadas, consistente con la tasa de interés efectiva.
 
-  Aplica: Tier I–IV · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF · Hito: Sprint 3
+  Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF · Hito: Sprint 3
 
 ### 2 · Exposición de productos revolventes
 
@@ -118,10 +118,10 @@ Para **amortizables**, la exposición sigue el cronograma ajustado por prepagos 
 
 - **`PAR-R5-02.01.01`** Estimar el factor de conversión (CCF) del monto no utilizado a 12 meses antes del default, con el uso de línea, la antigüedad y el estado de atraso como drivers.
 
-  Aplica: Tier I–IV · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF
+  Aplica: Tier I–III · Esfuerzo: 2.5 d · Automatización: 2 · Crítico · Entregable: Script R3: Modelos de EAD y CCF
 
 - **`PAR-R5-02.01.02`** Para revolventes (tarjetas, líneas), estimar el período de exposición conductual más allá del plazo contractual, durante el que el banco está expuesto porque no gestiona la línea en la práctica; documentar el horizonte usado para la ECL lifetime.
 
-  Aplica: Tier I–IV · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento R6: Metodología de EAD y vida conductual
+  Aplica: Tier I–III · Esfuerzo: 1.5 d · Automatización: 2 · Crítico · Entregable: Documento R6: Metodología de EAD y vida conductual
 
 <!-- CATALOGO:FIN -->
