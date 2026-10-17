@@ -14,8 +14,8 @@ orden: 30
 ## Objetivo
 
 Llevar el modelo aprobado a producción de forma **fiel, controlada, recuperable y auditable**. Aplica igual a
-desarrollos nuevos (fase D6) y calibraciones (C5). Duración de referencia: ≈ 2 semanas dentro de un desarrollo
-y ≈ 5–6 semanas como proyecto independiente.
+desarrollos nuevos (fase D6) y calibraciones (C5). Duración de referencia: <!--DUR:fase:IMP-->≈ 0.1–1.0 semanas con 2 personas<!--/DUR--> dentro de un desarrollo
+y <!--DUR:proyecto:Implementación-->≈ 0.9 semanas con 2 personas<!--/DUR--> como proyecto independiente.
 
 ## Los dos documentos obligatorios
 

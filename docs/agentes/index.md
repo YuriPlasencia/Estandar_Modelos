@@ -23,6 +23,10 @@ estables, umbrales cerrados, catálogo en JSON y esquemas. Le faltaban cuatro co
 3. **Puntos de control humanos.** Ningún agente cruza un hito sin la conformidad de una persona.
 4. **Evidencia trazable.** Un manifiesto que une cada requisito con su archivo, y un verificador que lo comprueba (`tools/verificar.py`).
 
+Con agentes, el estándar espera que un desarrollo termine en **15 días hábiles** con 2 personas (U-40). El plazo se
+logra acelerando el trabajo de datos y de documentación, nunca saltando puntos de control humanos: si la agenda de
+una aprobación compromete el plazo, el agente lo escala; no la omite.
+
 ## Principios
 
 | # | Principio | En la práctica |

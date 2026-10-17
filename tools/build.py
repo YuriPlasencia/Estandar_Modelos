@@ -236,6 +236,50 @@ def block_esfuerzo(reqs, P):
     return "\n".join(out)
 
 
+DUR_RE = re.compile(r"(<!--DUR:(\S+?)-->).*?(<!--/DUR-->)", re.S)
+
+
+def _sem(x):
+    return f"{x:.1f}" if x < 10 else f"{x:.0f}"
+
+
+def texto_duracion(clave, reqs, P):
+    """Duraciones citadas en el texto de docs/, calculadas con el modelo de esfuerzo anclado a U-40.
+    fase:CODIGO  → rango de semanas de esa fase en Desarrollo (de Tier IV ágil a Tier I completo).
+    proyecto:ESTANDAR → semanas del proyecto por Tier.  Así el texto nunca se desalinea del modelo."""
+    esc = P["escenario_base"]
+    fte, m = esc["fte"], esc["pct_reuniones"]
+    tipo, cod = clave.split(":", 1)
+    if tipo == "fase":
+        vals = []
+        for t in (1, 2, 3, 4):
+            for mod in ("lineal", "ml", "arbol", "acp"):
+                for e in ("agil", "completo"):
+                    r = esfuerzo.estimar(reqs, P, {"std": "Desarrollo", "tier": t, "model": mod, "enf": e})
+                    f = next((x for x in r["fases"] if x["fase"] == cod), None)
+                    if f and f["trabajo"]:
+                        vals.append(f["trabajo"] / (1 - m) / fte / 5)
+        lo, hi = min(vals), max(vals)
+        rango = _sem(lo) if _sem(lo) == _sem(hi) else f"{_sem(lo)}–{_sem(hi)}"
+        return f"≈ {rango} semanas con {fte} personas"
+    std = cod
+    cfgs = {1: None, 2: None, 3: None, 4: None}
+    for t in cfgs:
+        mod = {"Calibración": "lineal", "Seguimiento": "lineal", "Implementación": "lineal"}.get(std, "ml")
+        enf = "agil" if std == "Implementación" else "completo"
+        cfgs[t] = esfuerzo.estimar(reqs, P, {"std": std, "tier": t, "model": mod, "enf": enf})["personas"]["semanas_calendario"]
+    grupos = []
+    for t, v in cfgs.items():
+        if grupos and _sem(grupos[-1][1]) == _sem(v):
+            grupos[-1][0].append(t)
+        else:
+            grupos.append(([t], v))
+    if len(grupos) == 1:
+        return f"≈ {_sem(grupos[0][1])} semanas con {fte} personas"
+    partes = [f"≈ {_sem(v)} semanas (Tier {ROMAN[ts[0]]}{'–' + ROMAN[ts[-1]] if len(ts) > 1 else ''})" for ts, v in grupos]
+    return ", ".join(partes) + f" con {fte} personas"
+
+
 def block_literatura(lit):
     out = [f"{len(lit['obras'])} obras en {len(lit['temas'])} temas.", ""]
     for t in lit["temas"]:
@@ -347,6 +391,7 @@ def main():
                 return m.group(0)
             return f"{m.group(1)}\n{body}\n{m.group(4)}"
         new = MARK_RE.sub(repl, txt)
+        new = DUR_RE.sub(lambda m: f"{m.group(1)}{texto_duracion(m.group(2), reqs, P)}{m.group(3)}", new)
         if new != txt:
             p.write_text(new, encoding="utf-8")
 
@@ -397,9 +442,23 @@ def main():
     for r in reqs:
         if r["fase"] != "VAL":
             r["naturaleza"] = esfuerzo.naturaleza(r)
-    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.3.0",
+    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.3.1",
             "generado": date.today().isoformat(), "n_requisitos": len(reqs),
             "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"}
+    # ---- cifras del README y de CITATION.cff alineadas con el catálogo
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    for patron, valor, que in ((r"\*\*(\d+) requisitos\*\*", len(reqs), "requisitos"),
+                               (r"\*\*(\d+) umbrales\*\*", len(umb), "umbrales")):
+        m = re.search(patron, readme)
+        if m and int(m.group(1)) != valor:
+            errors.append(f"README.md dice {m.group(1)} {que}; el catálogo tiene {valor}")
+    for archivo, patron in (("README.md", r"Versión \*\*([\d.]+)\*\*"), ("CITATION.cff", r"^version: ([\d.]+)")):
+        m = re.search(patron, (ROOT / archivo).read_text(encoding="utf-8"), re.M)
+        if m and m.group(1) != meta["version"]:
+            errors.append(f"{archivo} dice versión {m.group(1)}; el estándar es {meta['version']}")
+    if errors:
+        print("ERRORES:\n  - " + "\n  - ".join(errors))
+        sys.exit(1)
     for r in reqs:
         r["doc"] = "docs/" + req_doc[r["id"]] if r["id"] in req_doc else None
     (DIST / "catalogo.json").write_text(json.dumps({"meta": meta, "fases": fases, "requisitos": reqs},

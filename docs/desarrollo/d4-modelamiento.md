@@ -14,7 +14,7 @@ orden: 13
 ## Objetivo
 
 Construir, seleccionar, calibrar y documentar el modelo final, y llevarlo a aprobación del Comité de Modelos.
-Es la fase con más requisitos del estándar (≈ 9–11 semanas).
+Es la fase con más requisitos del estándar (<!--DUR:fase:DES-D4-->≈ 2.9–5.5 semanas con 2 personas<!--/DUR-->).
 
 ## Flujo
 

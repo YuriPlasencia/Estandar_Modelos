@@ -146,7 +146,7 @@ def matriz_cumplimiento(d, base: Path):
         f[ev.get(r["id"], "pendiente") if ev.get(r["id"], "pendiente") in f else "pendiente"] += 1
     tot = {k: sum(f[k] for f in fases.values()) for k in ("total", "cumplido", "excepcion", "no_aplica", "pendiente")}
     desc = (f"Requisitos aplicables a un modelo {m.get('estandar') or 'Desarrollo'} Tier {ROMAN.get(cfg['tier'], cfg['tier'])}"
-            + (f", {MODELOS.get(cfg['model'], cfg['model'])}, enfoque {cfg['enf']}" if cfg["std"] in ("Desarrollo", "Implementación") else "")
+            + (f", {MODELOS.get(cfg['model'], cfg['model'])}, enfoque {'ágil' if cfg['enf'] == 'agil' else 'completo'}" if cfg["std"] in ("Desarrollo", "Implementación") else "")
             + (f". Estado tomado de `{ruta}`." if ev else ". Sin manifiesto de evidencias: todos figuran como pendientes "
                "(ver `tools/verificar.py --init`)."))
     if supuesto:
@@ -219,6 +219,7 @@ def renderizar_md(datos: Path, carpeta: Path) -> tuple[str, dict]:
         "gini_dif": abs(g_tr - g_oot) if g_tr is not None and g_oot is not None else None, "gini_oot": g_oot,
         "iv_alertas": [v["nombre"] for v in d["variables"].get("finales") or [] if (v.get("iv") or 0) > 0.5],
         "roman": lambda t: ROMAN.get(int(t), t) if t else "—", "modelo_lbl": lambda m: MODELOS.get(m, m),
+        "enfoque_lbl": lambda e: {"agil": "ágil", "completo": "completo", "tradicional": "completo"}.get(e, e),
         "num": num, "dec": dec, "pct": pct, "completar": completar, "lecturas": [],
     }
     env = Environment(loader=FileSystemLoader(str(PLANT)), undefined=Vacio, trim_blocks=True, lstrip_blocks=True,

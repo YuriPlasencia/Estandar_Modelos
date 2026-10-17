@@ -14,7 +14,7 @@ orden: 10
 ## Objetivo
 
 Entender el problema de negocio, decidir si un modelo es la solución adecuada y fijar **qué se modela, sobre
-quién y con qué datos**. Es la fase de mayor esfuerzo relativo (≈ 8 semanas en enfoque ágil) porque aquí se
+quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.2–4.1 semanas con 2 personas<!--/DUR-->) porque aquí se
 cierran las definiciones que, si cambian después, obligan a rehacer el modelo.
 
 ## Entradas

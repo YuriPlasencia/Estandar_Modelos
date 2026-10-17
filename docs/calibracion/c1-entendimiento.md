@@ -18,7 +18,7 @@ cuando el seguimiento muestra **descalibración** pero el poder discriminante si
 ordenamiento se ha degradado, corresponde **redesarrollar** (estándar de Desarrollo).
 
 Supuesto de la estimación de esfuerzo: se usa la **base de seguimiento como base de calibración**.
-Duración de referencia: ≈ 10 semanas (Tier 1), ≈ 9 (Tier 2), ≈ 7 (Tier 3–4).
+Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.4 semanas (Tier I), ≈ 3.2 semanas (Tier II), ≈ 2.5 semanas (Tier III–IV) con 2 personas<!--/DUR-->.
 
 ## C1 · Entendimiento
 

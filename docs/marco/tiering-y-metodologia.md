@@ -43,8 +43,9 @@ aplica a ML; la transformación WOE de continuas (DES-D4-04.03.02) sólo a model
 El catálogo estima el esfuerzo (días-persona) para dos enfoques:
 
 - **Ágil:** cubre lo esencial. Se ejecutan todas las actividades aplicables, pero con la profundidad mínima suficiente
-  para sustentar cada decisión: análisis acotados a lo material, iteraciones cortas y entregables incrementales. Requiere
-  en torno a un 15 % menos de esfuerzo (ver [Estimación](estimacion.md)).
+  para sustentar cada decisión: análisis acotados a lo material, iteraciones cortas y entregables incrementales. Cada
+  actividad requiere en torno a un 15 % menos de esfuerzo, lo que acorta la duración total en cerca de un 10 % (ver
+  [Estimación](estimacion.md)).
 - **Completo:** análisis exhaustivo y documentación detallada de cada actividad: más alternativas evaluadas, pruebas de
   sensibilidad y robustez más amplias y entregables cerrados al final de cada etapa.
 

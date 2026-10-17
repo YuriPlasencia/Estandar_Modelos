@@ -43,6 +43,7 @@ REGLAS = {
     "U-16": ("Meses de certificación con proveedor externo ≥ 3", lambda v: v >= 3),
     "U-38": ("IV máximo de las variables del modelo ≤ 0.50 (salvo investigación de fuga documentada)", lambda v: v <= 0.50),
     "U-39": ("Variables con información posterior a la observación = 0", lambda v: v == 0),
+    "U-40": ("Duración del desarrollo con 2 personas ≤ 13 semanas (con agentes de IA ≤ 15 días hábiles)", lambda v: v <= 13),
     "U-21": ("Desvío relativo máximo de la aceptación por decil ≤ 0.10", lambda v: abs(v) <= 0.10),
     "U-22": ("Potencia del experimento ≥ 0.80", lambda v: v >= 0.80),
     "U-23": ("Proporción de operaciones con excepción de precio ≤ 0.15", lambda v: v <= 0.15),
@@ -157,7 +158,7 @@ def cmd_verificar(repo: Path, a):
     cuenta = {s: sum(1 for i in aplicables if ev.get(i, {}).get("estado") == s) for s in ESTADOS}
     pend = [i for i in aplicables if ev.get(i, {}).get("estado", "pendiente") == "pendiente"]
     m = man["modelo"]
-    tipo = f" · {m.get('tipo_modelo')} · {m.get('enfoque')}" if cfg["std"] in ("Desarrollo", "Implementación") else ""
+    tipo = f" · {m.get('tipo_modelo')} · {cfg['enf']}" if cfg["std"] in ("Desarrollo", "Implementación") else ""
     L = [f"# Verificación de evidencias · {m['codigo']}", "",
          f"{m['estandar']} · Tier {ROMAN.get(cfg['tier'], cfg['tier'])}{tipo} · {date.today().isoformat()}", "",
          "| Estado | Requisitos |", "|---|---:|"]

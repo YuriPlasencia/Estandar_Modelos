@@ -138,6 +138,7 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
   con ≥ 64 GB de RAM, o un motor distribuido. Para la exploración se puede trabajar sobre una muestra
   si cumple la representatividad (U-03).
 - **Tiempo de máquina:** con ML, ~120 ajustes por segmento (≥ 50 de hiperparámetros, U-10), 4 segmentos y
-  150 variables, son unas 36 horas de cómputo. Corren de noche, pero conviene planificarlas por sprint.
+  150 variables, son unas 36 horas de cómputo. Corren de noche, pero conviene planificarlas desde el inicio para no
+  comprometer el plazo de U-40.
 - **Cumplir 15 días con agentes exige acortar ceremonias:** actas preparadas por el agente, decisiones por escrito y
   reuniones de hito cortas. Las aprobaciones formales no se aceleran; se agendan desde el kick-off.

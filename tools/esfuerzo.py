@@ -7,7 +7,7 @@ Pasos, para un proyecto (estándar, Tier, tipo de modelo, enfoque) y un escenari
      (su tiempo queda dentro del % de reuniones).
   2. Tiempo de máquina K (horas) y la parte que bloquea a quien trabaja.
   3. Personas:  T = (W + bloqueo) / (1 − %reuniones).  Reuniones R = %reuniones × T.
-  4. Agente:    T = W × factor_agente × (1 + supervisión) + bloqueo_agente + R   (mismas reuniones).
+  4. Agente:    T = W × factor_agente × (1 + supervisión) + bloqueo_agente + R   (mismas reuniones antes del anclaje).
   5. Anclaje a la meta de plazo (U-40): los días del catálogo son pesos relativos; el nivel absoluto se fija para que
      el caso de referencia (el más exigente de Desarrollo) dure exactamente la meta con el escenario base:
      k_personas = meta_personas / T_personas(ref) y k_agente = meta_agente / T_agente(ref). Todos los casos y

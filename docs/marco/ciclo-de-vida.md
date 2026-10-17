@@ -30,7 +30,10 @@ orden: 1
 
 ## Hitos y ceremonias
 
-El estándar se ejecuta en **sprints** (Sprint 0 a Sprint 20) con reuniones formales que dejan **acta**:
+El estándar se ejecuta en **sprints** (Sprint 0 a Sprint 20) con reuniones formales que dejan **acta**. Los sprints
+marcan la **secuencia** de los paquetes de trabajo, no una duración fija: para cumplir el plazo máximo de U-40
+(13 semanas con 2 personas), cada sprint dura en promedio unos 3 días hábiles, y las revisiones SME 1–13 son semanales.
+Con agentes de IA, la misma secuencia se recorre en 15 días hábiles.
 
 > Cada acta se crea en el sitio (**Herramientas › Actas de reunión**) o con `tools/acta.py`, ya precargada para su hito.
 > Ver [Plantilla · Acta de reunión](../plantillas/acta-de-reunion.md).

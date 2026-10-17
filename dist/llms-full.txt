@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.3.0 · 2026-10-17
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.3.1 · 2026-10-17
 
 
 ========== docs/index.md [Vigente] ==========
@@ -87,7 +87,10 @@ que pueden consultar tanto los analistas como los agentes de IA.
 
 ## Hitos y ceremonias
 
-El estándar se ejecuta en **sprints** (Sprint 0 a Sprint 20) con reuniones formales que dejan **acta**:
+El estándar se ejecuta en **sprints** (Sprint 0 a Sprint 20) con reuniones formales que dejan **acta**. Los sprints
+marcan la **secuencia** de los paquetes de trabajo, no una duración fija: para cumplir el plazo máximo de U-40
+(13 semanas con 2 personas), cada sprint dura en promedio unos 3 días hábiles, y las revisiones SME 1–13 son semanales.
+Con agentes de IA, la misma secuencia se recorre en 15 días hábiles.
 
 > Cada acta se crea en el sitio (**Herramientas › Actas de reunión**) o con `tools/acta.py`, ya precargada para su hito.
 > Ver [Plantilla · Acta de reunión](../plantillas/acta-de-reunion.md).
@@ -443,8 +446,9 @@ aplica a ML; la transformación WOE de continuas (DES-D4-04.03.02) sólo a model
 El catálogo estima el esfuerzo (días-persona) para dos enfoques:
 
 - **Ágil:** cubre lo esencial. Se ejecutan todas las actividades aplicables, pero con la profundidad mínima suficiente
-  para sustentar cada decisión: análisis acotados a lo material, iteraciones cortas y entregables incrementales. Requiere
-  en torno a un 15 % menos de esfuerzo (ver [Estimación](estimacion.md)).
+  para sustentar cada decisión: análisis acotados a lo material, iteraciones cortas y entregables incrementales. Cada
+  actividad requiere en torno a un 15 % menos de esfuerzo, lo que acorta la duración total en cerca de un 10 % (ver
+  [Estimación](estimacion.md)).
 - **Completo:** análisis exhaustivo y documentación detallada de cada actividad: más alternativas evaluadas, pruebas de
   sensibilidad y robustez más amplias y entregables cerrados al final de cada etapa.
 
@@ -660,7 +664,8 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
   con ≥ 64 GB de RAM, o un motor distribuido. Para la exploración se puede trabajar sobre una muestra
   si cumple la representatividad (U-03).
 - **Tiempo de máquina:** con ML, ~120 ajustes por segmento (≥ 50 de hiperparámetros, U-10), 4 segmentos y
-  150 variables, son unas 36 horas de cómputo. Corren de noche, pero conviene planificarlas por sprint.
+  150 variables, son unas 36 horas de cómputo. Corren de noche, pero conviene planificarlas desde el inicio para no
+  comprometer el plazo de U-40.
 - **Cumplir 15 días con agentes exige acortar ceremonias:** actas preparadas por el agente, decisiones por escrito y
   reuniones de hito cortas. Las aprobaciones formales no se aceleran; se agendan desde el kick-off.
 
@@ -1200,7 +1205,7 @@ edición y paginación en la fuente.
 ## Objetivo
 
 Entender el problema de negocio, decidir si un modelo es la solución adecuada y fijar **qué se modela, sobre
-quién y con qué datos**. Es la fase de mayor esfuerzo relativo (≈ 8 semanas en enfoque ágil) porque aquí se
+quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.2–4.1 semanas con 2 personas<!--/DUR-->) porque aquí se
 cierran las definiciones que, si cambian después, obligan a rehacer el modelo.
 
 ## Entradas
@@ -1773,7 +1778,7 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 ## Objetivo
 
 Construir, seleccionar, calibrar y documentar el modelo final, y llevarlo a aprobación del Comité de Modelos.
-Es la fase con más requisitos del estándar (≈ 9–11 semanas).
+Es la fase con más requisitos del estándar (<!--DUR:fase:DES-D4-->≈ 2.9–5.5 semanas con 2 personas<!--/DUR-->).
 
 ## Flujo
 
@@ -2501,7 +2506,7 @@ cuando el seguimiento muestra **descalibración** pero el poder discriminante si
 ordenamiento se ha degradado, corresponde **redesarrollar** (estándar de Desarrollo).
 
 Supuesto de la estimación de esfuerzo: se usa la **base de seguimiento como base de calibración**.
-Duración de referencia: ≈ 10 semanas (Tier 1), ≈ 9 (Tier 2), ≈ 7 (Tier 3–4).
+Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.4 semanas (Tier I), ≈ 3.2 semanas (Tier II), ≈ 2.5 semanas (Tier III–IV) con 2 personas<!--/DUR-->.
 
 ## C1 · Entendimiento
 
@@ -3749,8 +3754,8 @@ técnica. Cada sesión deja acta (tipo **PRC-CP** del [editor de actas](../plant
 ## Objetivo
 
 Llevar el modelo aprobado a producción de forma **fiel, controlada, recuperable y auditable**. Aplica igual a
-desarrollos nuevos (fase D6) y calibraciones (C5). Duración de referencia: ≈ 2 semanas dentro de un desarrollo
-y ≈ 5–6 semanas como proyecto independiente.
+desarrollos nuevos (fase D6) y calibraciones (C5). Duración de referencia: <!--DUR:fase:IMP-->≈ 0.1–1.0 semanas con 2 personas<!--/DUR--> dentro de un desarrollo
+y <!--DUR:proyecto:Implementación-->≈ 0.9 semanas con 2 personas<!--/DUR--> como proyecto independiente.
 
 ## Los dos documentos obligatorios
 
@@ -5095,6 +5100,10 @@ estables, umbrales cerrados, catálogo en JSON y esquemas. Le faltaban cuatro co
 3. **Puntos de control humanos.** Ningún agente cruza un hito sin la conformidad de una persona.
 4. **Evidencia trazable.** Un manifiesto que une cada requisito con su archivo, y un verificador que lo comprueba (`tools/verificar.py`).
 
+Con agentes, el estándar espera que un desarrollo termine en **15 días hábiles** con 2 personas (U-40). El plazo se
+logra acelerando el trabajo de datos y de documentación, nunca saltando puntos de control humanos: si la agenda de
+una aprobación compromete el plazo, el agente lo escala; no la omite.
+
 ## Principios
 
 | # | Principio | En la práctica |
@@ -5837,6 +5846,19 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.3.1] — 2026-10-17
+
+### Corregido
+- Las duraciones citadas en el texto (D1, D4, Implementación y Calibración) se calculan ahora con el modelo de esfuerzo
+  anclado a U-40 durante el build (`<!--DUR:...-->`), en lugar de escribirse a mano; quedaban con el modelo anterior.
+- D1 ya no se describe como la fase de mayor esfuerzo: lo es Modelamiento (D4).
+- Los sprints (Sprint 0 a Sprint 20) se definen como secuencia de paquetes de trabajo de unos 3 días hábiles para
+  caber en las 13 semanas de U-40; las revisiones SME 1–13 son semanales.
+- README con 541 requisitos y 40 umbrales. El build falla si el README o CITATION.cff no coinciden con el catálogo
+  o con la versión.
+- `tools/verificar.py` y el documento metodológico evalúan U-40; el documento muestra el enfoque como ágil o completo.
+- El estándar de agentes de IA cita la meta de 15 días hábiles y cómo no lograrla saltando controles.
+
 ## [2.3.0] — 2026-10-17
 
 ### Nuevo
@@ -5955,7 +5977,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.3.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.3.1** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 
@@ -5968,7 +5990,7 @@ para agentes de IA (JSON y `llms.txt`).
 
 | | |
 |---|---|
-| **540 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **39 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
+| **541 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **40 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
 | **103 obras** de literatura enlazadas a los requisitos que fundamentan | **27 tipos de acta**, con editor en línea y exportación a Word y Markdown |
 | Mapeo artículo por artículo a la **Res. SBS 00053-2023** y alineado con **SR 26-2**, **PRA SS1/23**, IFRS 9 y el **EU AI Act** | **Estándar operativo para agentes de IA** con verificador automático de evidencias |
 

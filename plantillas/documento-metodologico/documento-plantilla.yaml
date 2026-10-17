@@ -57,7 +57,7 @@ seguimiento: {}          # plan
 
 gobierno: {}             # actas [{numero, hito, fecha, estado}]
 
-umbrales: {}             # valores obtenidos, p. ej. U-11: 1.9 · U-38: 0.41 · U-39: 0
+umbrales: {}             # valores obtenidos, p. ej. U-11: 1.9 · U-38: 0.41 · U-39: 0 · U-40: 11 (semanas)
 
 excepciones: []          # - {umbral: U-11, justificacion: ..., acta: ...}
 

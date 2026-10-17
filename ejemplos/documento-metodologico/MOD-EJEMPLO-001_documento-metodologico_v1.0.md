@@ -17,10 +17,10 @@ number-sections: true
 |---|---|
 | Código de modelo | MOD-EJEMPLO-001 |
 | Nombre | Score de originación TC — ejemplo |
-| Estándar aplicado | Desarrollo · Tier II · Machine learning · enfoque agil |
+| Estándar aplicado | Desarrollo · Tier II · Machine learning · enfoque ágil |
 | Versión y estado | 1.0 · Para Comité de Modelos |
 | Clasificación | Uso interno |
-| Versión del estándar | Estándares de Modelos en Banca v2.2.0 |
+| Versión del estándar | Estándares de Modelos en Banca v2.3.1 |
 
 **Control de cambios** (DES-D4-11.01.03)
 
@@ -198,10 +198,11 @@ Seguimiento mensual de PSI y forzajes; discriminación y calibración trimestral
 | U-11 | Sobreajuste Train vs OOT | 1.9 | \|Gini Train − Gini OOT\| ≤ 10 pts | **Cumple** |
 | U-38 | Rango de IV y sospecha de fuga | 0.41 | IV máximo de las variables del modelo ≤ 0.50 (salvo investigación de fuga documentada) | **Cumple** |
 | U-39 | No anticipación temporal de las variables | 0 | Variables con información posterior a la observación = 0 | **Cumple** |
+| U-40 | Plazo máximo de desarrollo de un modelo | 11 | Duración del desarrollo con 2 personas ≤ 13 semanas (con agentes de IA ≤ 15 días hábiles) | **Cumple** |
 
 ## Matriz de requisitos
 
-Requisitos aplicables a un modelo Desarrollo Tier II, Machine learning, enfoque agil. Sin manifiesto de evidencias: todos figuran como pendientes (ver `tools/verificar.py --init`).
+Requisitos aplicables a un modelo Desarrollo Tier II, Machine learning, enfoque ágil. Sin manifiesto de evidencias: todos figuran como pendientes (ver `tools/verificar.py --init`).
 
 | Fase | Aplicables | Cumplidos | Excepción | No aplica | Pendientes |
 |----------------------------------------|------:|------:|------:|------:|------:|

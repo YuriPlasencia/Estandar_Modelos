@@ -4,6 +4,19 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.3.1] — 2026-10-17
+
+### Corregido
+- Las duraciones citadas en el texto (D1, D4, Implementación y Calibración) se calculan ahora con el modelo de esfuerzo
+  anclado a U-40 durante el build (`<!--DUR:...-->`), en lugar de escribirse a mano; quedaban con el modelo anterior.
+- D1 ya no se describe como la fase de mayor esfuerzo: lo es Modelamiento (D4).
+- Los sprints (Sprint 0 a Sprint 20) se definen como secuencia de paquetes de trabajo de unos 3 días hábiles para
+  caber en las 13 semanas de U-40; las revisiones SME 1–13 son semanales.
+- README con 541 requisitos y 40 umbrales. El build falla si el README o CITATION.cff no coinciden con el catálogo
+  o con la versión.
+- `tools/verificar.py` y el documento metodológico evalúan U-40; el documento muestra el enfoque como ágil o completo.
+- El estándar de agentes de IA cita la meta de 15 días hábiles y cómo no lograrla saltando controles.
+
 ## [2.3.0] — 2026-10-17
 
 ### Nuevo

@@ -45,7 +45,8 @@ agente:
     analisis: 0.60            # sentido económico, segmentación, elección de modelo: criterio humano
     gobierno: 1.00            # aprobaciones, solicitudes y evidencias formales no se aceleran
   supervision: 0.15           # tiempo extra sobre el trabajo restante para instruir y verificar al agente
-  # Las reuniones con negocio, validación y comité se mantienen: mismas horas que en el escenario con personas.
+  # Antes del anclaje, las reuniones se mantienen; el anclaje a U-40 (bloque anclaje) acorta también las reuniones,
+  # porque el proyecto dura menos.
 
 # Anclaje a la meta de plazo (U-40). Los días del catálogo se usan como pesos relativos entre actividades; el nivel
 # absoluto se fija para que el caso de referencia (el más exigente de Desarrollo) dure exactamente la meta con el

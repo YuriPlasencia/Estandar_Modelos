@@ -149,6 +149,7 @@ umbrales:              # valores obtenidos; el documento los evalúa contra el e
   U-11: 1.9            # |Gini Train − Gini OOT|
   U-38: 0.41           # IV máximo de las variables finales
   U-39: 0              # variables con información posterior a la observación
+  U-40: 11             # semanas de desarrollo con 2 personas, del kick-off al Comité
 
 excepciones: []
 

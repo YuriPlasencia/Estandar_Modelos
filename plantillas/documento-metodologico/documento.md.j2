@@ -19,7 +19,7 @@ number-sections: true
 |---|---|
 | Código de modelo | {{ d.modelo.codigo }} |
 | Nombre | {{ d.modelo.nombre }} |
-| Estándar aplicado | {{ d.modelo.estandar }} · Tier {{ roman(d.modelo.tier) }}{% if d.modelo.tipo_modelo %} · {{ modelo_lbl(d.modelo.tipo_modelo) }}{% endif %}{% if d.modelo.enfoque %} · enfoque {{ d.modelo.enfoque }}{% endif %} |
+| Estándar aplicado | {{ d.modelo.estandar }} · Tier {{ roman(d.modelo.tier) }}{% if d.modelo.tipo_modelo %} · {{ modelo_lbl(d.modelo.tipo_modelo) }}{% endif %}{% if d.modelo.enfoque %} · enfoque {{ enfoque_lbl(d.modelo.enfoque) }}{% endif %} |
 | Versión y estado | {{ d.documento.version }} · {{ d.documento.estado }} |
 | Clasificación | {{ d.documento.clasificacion or 'Uso interno' }} |
 | Versión del estándar | Estándares de Modelos en Banca v{{ version_estandar }} |
