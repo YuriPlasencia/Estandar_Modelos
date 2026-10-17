@@ -1,4 +1,4 @@
-# Ficha de nacimiento del modelo
+# Ficha técnica del modelo (Model Card)
 
 ```yaml
 codigo_inventario: ""          # IMP-01.05.03

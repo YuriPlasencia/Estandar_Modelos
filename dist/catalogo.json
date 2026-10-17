@@ -2,7 +2,7 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "generado": "2026-10-17",
   "n_requisitos": 541,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
@@ -2859,7 +2859,7 @@
    "fase_nombre": "Definición, alcance, diseño y extracción",
    "tarea": "Definición del objetivo del modelo",
    "subtarea": "Requerimientos y propuesta de solución (inception)",
-   "actividad": "Documentación del project charter (ficha de nacimiento del modelo, técnicas a usar y otros)",
+   "actividad": "Documentación del project charter (ficha técnica del modelo, técnicas a usar y otros)",
    "critico": false,
    "eficiencia": false,
    "nivel_automatizacion": 1,
@@ -11986,7 +11986,7 @@
    "fase_nombre": "Gobierno",
    "tarea": "Gobierno",
    "subtarea": "Gobierno",
-   "actividad": "Cooperar en el alta/ baja de un modelo (ficha de nacimiento del modelo)",
+   "actividad": "Cooperar en el registro y la baja del modelo en el inventario (ficha técnica del modelo)",
    "critico": false,
    "eficiencia": false,
    "nivel_automatizacion": 1,

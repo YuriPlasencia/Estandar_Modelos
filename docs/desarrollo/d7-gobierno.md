@@ -22,8 +22,8 @@ modelo está dado de alta en el inventario con su Tier.
 
 - El **líder del proyecto** revisa la aplicación del estándar de construcción.
 - El equipo **evidencia** correos, actas, documentación y conformidades.
-- El equipo participa en la **asignación del Tier** y en el **alta/baja** del modelo (ficha de nacimiento — ver
-  [plantilla](../plantillas/ficha-de-nacimiento.md)).
+- El equipo participa en la **asignación del Tier** y en el **registro y la baja** del modelo en el inventario (ficha técnica —
+  ver [plantilla](../plantillas/ficha-tecnica.md)).
 - Se preparan las presentaciones de **aprobación y ratificación**.
 - Se evidencia la documentación y reglamentación de **variables críticas**.
 
@@ -48,7 +48,7 @@ modelo está dado de alta en el inventario con su Tier.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.185 d ágil / 0.25 d completo · Automatización: 1
 
-- **`DES-D7-01.01.04`** Cooperar en el alta/ baja de un modelo (ficha de nacimiento del modelo)
+- **`DES-D7-01.01.04`** Cooperar en el registro y la baja del modelo en el inventario (ficha técnica del modelo)
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 

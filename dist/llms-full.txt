@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v3.0.0 · 2026-10-17
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v3.0.1 · 2026-10-17
 
 
 ========== docs/index.md [Vigente] ==========
@@ -1114,7 +1114,7 @@ edición y paginación en la fuente.
 
 - **LIT-090** · *Canon* — Mitchell, M. et al. (2019). Model Cards for Model Reporting. *Proceedings of FAT\* 2019*, 220–229.
 
-  Origen de las model cards; base de la ficha de nacimiento del modelo. Fundamenta: `DES-D1-01.04.08`, `DES-D7-01.01`.
+  Origen de las model cards; base de la ficha técnica del modelo. Fundamenta: `DES-D1-01.04.08`, `DES-D7-01.01`.
 
 - **LIT-091** · *Práctica* — Gebru, T. et al. (2021). Datasheets for Datasets. *Communications of the ACM*, 64(12), 86–92.
 
@@ -1407,7 +1407,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
   Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Acta: de reunión. · Hito: Reunión 3
 
-- **`DES-D1-01.04.08`** Documentación del project charter (ficha de nacimiento del modelo, técnicas a usar y otros)
+- **`DES-D1-01.04.08`** Documentación del project charter (ficha técnica del modelo, técnicas a usar y otros)
 
   Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter · Hito: Sprint 4
 
@@ -2460,8 +2460,8 @@ modelo está dado de alta en el inventario con su Tier.
 
 - El **líder del proyecto** revisa la aplicación del estándar de construcción.
 - El equipo **evidencia** correos, actas, documentación y conformidades.
-- El equipo participa en la **asignación del Tier** y en el **alta/baja** del modelo (ficha de nacimiento — ver
-  [plantilla](../plantillas/ficha-de-nacimiento.md)).
+- El equipo participa en la **asignación del Tier** y en el **registro y la baja** del modelo en el inventario (ficha técnica —
+  ver [plantilla](../plantillas/ficha-tecnica.md)).
 - Se preparan las presentaciones de **aprobación y ratificación**.
 - Se evidencia la documentación y reglamentación de **variables críticas**.
 
@@ -2486,7 +2486,7 @@ modelo está dado de alta en el inventario con su Tier.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.185 d ágil / 0.25 d completo · Automatización: 1
 
-- **`DES-D7-01.01.04`** Cooperar en el alta/ baja de un modelo (ficha de nacimiento del modelo)
+- **`DES-D7-01.01.04`** Cooperar en el registro y la baja del modelo en el inventario (ficha técnica del modelo)
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
@@ -5228,7 +5228,7 @@ entiende en minutos, y Validación encuentra cada evidencia sin pedirla. La plan
 
 ```text
 MOD-ORI-001/
-├── MODEL_CARD.md        ficha de nacimiento (DES-D1-01.04.08)
+├── MODEL_CARD.md        ficha técnica del modelo (DES-D1-01.04.08)
 ├── evidencias.yaml      manifiesto: requisito → estado → archivos → acta
 ├── Makefile             `make datos`, `make modelo`, `make reportes`, `make verificar`
 ├── environment.yml      entorno fijado (versiones exactas)
@@ -5497,7 +5497,7 @@ coincidencia en implementación. La validación de implementación pide capturas
 | Código en **Git** con revisión por pares (PR) | Scripts en carpetas compartidas | Trazabilidad línea a línea; el "cuadro de control de cambios" sale del historial |
 | **Entorno fijado** (`requirements.txt`/`environment.yml`, contenedor) | "Versiones de herramientas" en Word | Reproducir el modelo en otra máquina |
 | **Versionado de datos** (hash de Train/Test/OOT, snapshot o DVC) | Copias de tablas | Probar que el modelo validado usa exactamente esos datos |
-| **Registro de modelos** (artefacto + métricas + código de inventario) | Ficha de nacimiento manual | Alta/baja automática en inventario |
+| **Registro de modelos** (artefacto + métricas + código de inventario) | Ficha técnica manual | Registro y baja automáticos en el inventario |
 | **Pruebas automáticas** en CI: unicidad, missing, PSI, coincidencia vs. modelo de referencia | Certificación manual | La certificación del 95 % (U-15) se ejecuta en cada cambio |
 | **Champion / challenger** en producción | Comparación puntual con modelo vigente | Evidencia continua para recalibrar o redesarrollar |
 
@@ -5540,9 +5540,18 @@ Este repositorio está preparado para eso (ver `AGENTS.md`). Usos de alto valor 
 **Reglas:** el agente cita IDs, no inventa umbrales, no aprueba nada, y su salida la firma una persona.
 
 
-========== docs/plantillas/ficha-de-nacimiento.md [Vigente] ==========
+========== docs/plantillas/ficha-tecnica.md [Vigente] ==========
 
-# Plantilla · Ficha de nacimiento del modelo (Model Card)
+# Plantilla · Ficha técnica del modelo (Model Card)
+
+La ficha técnica es el resumen estructurado de un modelo: qué hace, para quién, con qué datos, con qué Tier y bajo
+qué limitaciones. Sigue el formato de las *model cards* (Mitchell et al., 2019) y reúne los campos que pide el
+inventario de modelos (Res. SBS 00053-2023, art. 5 y Anexo A).
+
+**Cuándo se crea y se actualiza.** Se crea al cerrar el *project charter* en D1 (DES-D1-01.04.08) y sustenta el
+**registro inicial del modelo en el inventario**. Se actualiza en cada hito que cambie sus datos (Tier, uso,
+versión, limitaciones) y con la **baja** del modelo (DES-D7-01.01.04). Una sola fuente alimenta el inventario,
+el documento metodológico (`tools/documento.py nuevo`) y a los agentes.
 
 > Copiar este bloque al repositorio del modelo como `MODEL_CARD.md`. Los campos en YAML permiten que el
 > inventario y los agentes lean la ficha sin intervención manual. Cumple DES-D1-01.04.08 y DES-D7-01.01.04.
@@ -5855,6 +5864,13 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [3.0.1] — 2026-10-17
+
+### Corregido
+- «Ficha de nacimiento» pasa a **Ficha técnica del modelo (Model Card)**, el término de la literatura y de la banca;
+  su creación se describe como el **registro inicial en el inventario de modelos** (Res. SBS 00053-2023, art. 5).
+  La página se mueve a `docs/plantillas/ficha-tecnica.md`.
+
 ## [3.0.0] — 2026-10-17
 
 ### Cambiado (incompatible)
@@ -6008,7 +6024,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **3.0.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **3.0.1** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 

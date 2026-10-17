@@ -347,7 +347,7 @@ actividades:
 - id: DES-D1-01.04.08
   tarea: Definición del objetivo del modelo
   subtarea: Requerimientos y propuesta de solución (inception)
-  actividad: Documentación del project charter (ficha de nacimiento del modelo, técnicas a usar y otros)
+  actividad: Documentación del project charter (ficha técnica del modelo, técnicas a usar y otros)
   critico: false
   eficiencia: false
   nivel_automatizacion: 1

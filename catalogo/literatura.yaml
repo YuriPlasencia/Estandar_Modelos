@@ -370,7 +370,7 @@ obras:
   tema: agentes
   nivel: Canon
   cita: "Mitchell, M. et al. (2019). Model Cards for Model Reporting. *Proceedings of FAT\\* 2019*, 220–229."
-  por_que: "Origen de las model cards; base de la ficha de nacimiento del modelo."
+  por_que: "Origen de las model cards; base de la ficha técnica del modelo."
   aplica: [DES-D1-01.04.08, DES-D7-01.01]
 - id: LIT-091
   tema: agentes

@@ -16,7 +16,7 @@ entiende en minutos, y Validación encuentra cada evidencia sin pedirla. La plan
 
 ```text
 MOD-ORI-001/
-├── MODEL_CARD.md        ficha de nacimiento (DES-D1-01.04.08)
+├── MODEL_CARD.md        ficha técnica del modelo (DES-D1-01.04.08)
 ├── evidencias.yaml      manifiesto: requisito → estado → archivos → acta
 ├── Makefile             `make datos`, `make modelo`, `make reportes`, `make verificar`
 ├── environment.yml      entorno fijado (versiones exactas)

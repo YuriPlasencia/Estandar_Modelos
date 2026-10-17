@@ -1,15 +1,24 @@
 ---
 id: PLT-FICHA
-titulo: "Plantilla · Ficha de nacimiento del modelo (Model Card)"
+titulo: "Plantilla · Ficha técnica del modelo (Model Card)"
 estandar: Plantillas
 estado: Vigente
-version: 1.0.0
+version: 3.0.1
 custodio: Yuri Plasencia — Analytics Pricing & Revenue Management
 actualizado: 2026-10-17
 orden: 60
 ---
 
-# Plantilla · Ficha de nacimiento del modelo (Model Card)
+# Plantilla · Ficha técnica del modelo (Model Card)
+
+La ficha técnica es el resumen estructurado de un modelo: qué hace, para quién, con qué datos, con qué Tier y bajo
+qué limitaciones. Sigue el formato de las *model cards* (Mitchell et al., 2019) y reúne los campos que pide el
+inventario de modelos (Res. SBS 00053-2023, art. 5 y Anexo A).
+
+**Cuándo se crea y se actualiza.** Se crea al cerrar el *project charter* en D1 (DES-D1-01.04.08) y sustenta el
+**registro inicial del modelo en el inventario**. Se actualiza en cada hito que cambie sus datos (Tier, uso,
+versión, limitaciones) y con la **baja** del modelo (DES-D7-01.01.04). Una sola fuente alimenta el inventario,
+el documento metodológico (`tools/documento.py nuevo`) y a los agentes.
 
 > Copiar este bloque al repositorio del modelo como `MODEL_CARD.md`. Los campos en YAML permiten que el
 > inventario y los agentes lean la ficha sin intervención manual. Cumple DES-D1-01.04.08 y DES-D7-01.01.04.

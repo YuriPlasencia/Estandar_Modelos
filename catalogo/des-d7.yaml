@@ -47,7 +47,7 @@ actividades:
 - id: DES-D7-01.01.04
   tarea: Gobierno
   subtarea: Gobierno
-  actividad: Cooperar en el alta/ baja de un modelo (ficha de nacimiento del modelo)
+  actividad: Cooperar en el registro y la baja del modelo en el inventario (ficha técnica del modelo)
   critico: false
   eficiencia: false
   nivel_automatizacion: 1

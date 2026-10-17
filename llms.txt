@@ -57,6 +57,6 @@
 - [FR-06 · Equidad y sesgo](docs/frontera/equidad-y-sesgo.md): Propuesta
 - [FR-07 · Reproducibilidad y MLOps](docs/frontera/mlops-reproducibilidad.md): Propuesta
 - [FR-08 · IA generativa y agentes en el ciclo de vida](docs/frontera/ia-generativa.md): Propuesta
-- [Plantilla · Ficha de nacimiento del modelo (Model Card)](docs/plantillas/ficha-de-nacimiento.md): Vigente
+- [Plantilla · Ficha técnica del modelo (Model Card)](docs/plantillas/ficha-tecnica.md): Vigente
 - [Plantilla · Acta de reunión](docs/plantillas/acta-de-reunion.md): Vigente
 - [Plantilla · Documento metodológico](docs/plantillas/documento-metodologico.md): Vigente

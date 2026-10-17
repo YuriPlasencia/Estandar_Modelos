@@ -21,7 +21,7 @@ coincidencia en implementación. La validación de implementación pide capturas
 | Código en **Git** con revisión por pares (PR) | Scripts en carpetas compartidas | Trazabilidad línea a línea; el "cuadro de control de cambios" sale del historial |
 | **Entorno fijado** (`requirements.txt`/`environment.yml`, contenedor) | "Versiones de herramientas" en Word | Reproducir el modelo en otra máquina |
 | **Versionado de datos** (hash de Train/Test/OOT, snapshot o DVC) | Copias de tablas | Probar que el modelo validado usa exactamente esos datos |
-| **Registro de modelos** (artefacto + métricas + código de inventario) | Ficha de nacimiento manual | Alta/baja automática en inventario |
+| **Registro de modelos** (artefacto + métricas + código de inventario) | Ficha técnica manual | Registro y baja automáticos en el inventario |
 | **Pruebas automáticas** en CI: unicidad, missing, PSI, coincidencia vs. modelo de referencia | Certificación manual | La certificación del 95 % (U-15) se ejecuta en cada cambio |
 | **Champion / challenger** en producción | Comparación puntual con modelo vigente | Evidencia continua para recalibrar o redesarrollar |
 

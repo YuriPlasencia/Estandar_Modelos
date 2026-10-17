@@ -208,7 +208,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
   Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Acta: de reunión. · Hito: Reunión 3
 
-- **`DES-D1-01.04.08`** Documentación del project charter (ficha de nacimiento del modelo, técnicas a usar y otros)
+- **`DES-D1-01.04.08`** Documentación del project charter (ficha técnica del modelo, técnicas a usar y otros)
 
   Aplica: Todos los tipos, Tier I–III · Automatización: 1 · Entregable: Ppt 1: Project Charter · Hito: Sprint 4
 

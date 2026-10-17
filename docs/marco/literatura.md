@@ -385,7 +385,7 @@ edición y paginación en la fuente.
 
 - **LIT-090** · *Canon* — Mitchell, M. et al. (2019). Model Cards for Model Reporting. *Proceedings of FAT\* 2019*, 220–229.
 
-  Origen de las model cards; base de la ficha de nacimiento del modelo. Fundamenta: `DES-D1-01.04.08`, `DES-D7-01.01`.
+  Origen de las model cards; base de la ficha técnica del modelo. Fundamenta: `DES-D1-01.04.08`, `DES-D7-01.01`.
 
 - **LIT-091** · *Práctica* — Gebru, T. et al. (2021). Datasheets for Datasets. *Communications of the ACM*, 64(12), 86–92.
 

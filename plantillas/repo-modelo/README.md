@@ -9,7 +9,7 @@ python ../estandares-modelos/tools/verificar.py --init . --estandar Desarrollo -
 make verificar
 ```
 
-1. Completa `MODEL_CARD.md` (ficha de nacimiento).
+1. Completa `MODEL_CARD.md` (ficha técnica del modelo); sustenta su registro en el inventario.
 2. Trabaja fase por fase; al cerrar cada requisito, actualiza su entrada en `evidencias.yaml`.
 3. Crea las actas con `python ../estandares-modelos/tools/acta.py nueva --tipo R1 ... -o actas/acta-01.json`.
 4. Crea el documento metodológico con `python ../estandares-modelos/tools/documento.py nuevo .`, completa

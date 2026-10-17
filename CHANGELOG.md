@@ -4,6 +4,13 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [3.0.1] — 2026-10-17
+
+### Corregido
+- «Ficha de nacimiento» pasa a **Ficha técnica del modelo (Model Card)**, el término de la literatura y de la banca;
+  su creación se describe como el **registro inicial en el inventario de modelos** (Res. SBS 00053-2023, art. 5).
+  La página se mueve a `docs/plantillas/ficha-tecnica.md`.
+
 ## [3.0.0] — 2026-10-17
 
 ### Cambiado (incompatible)
