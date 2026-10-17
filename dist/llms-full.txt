@@ -5735,7 +5735,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.0.0** (línea base) · Octubre 2026
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.0.0** (línea base) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 
@@ -5814,6 +5814,15 @@ Este estándar recoge buenas prácticas y referencias públicas. No es asesoría
 aprobadas de ninguna entidad. Los umbrales marcados como *valor de referencia* deben calibrarse con datos propios, y
 las normas citadas deben verificarse en su versión vigente. Los nombres de entidades se citan solo a partir de
 información pública.
+
+## Licencia
+
+- **Documentación, catálogo y datos** (`catalogo/`, `docs/`, `dist/`, `site/`, plantillas y ejemplos):
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Puedes usarlos y adaptarlos, incluso con fines
+  comerciales, citando al autor.
+- **Código** (`tools/`): [MIT](tools/LICENSE).
+
+Detalle en [`LICENSE`](LICENSE).
 
 ## Cómo citar
 

@@ -4,7 +4,8 @@
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
   "version": "2.0.0",
   "generado": "2026-10-17",
-  "n_requisitos": 533
+  "n_requisitos": 533,
+  "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
  },
  "fases": [
   {

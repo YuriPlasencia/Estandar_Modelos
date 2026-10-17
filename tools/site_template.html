@@ -552,6 +552,6 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#drawer").classLi
 $("#menuBtn").onclick=()=>$("#side").classList.toggle("open");
 let qt;$("#q").addEventListener("input",e=>{clearTimeout(qt);const q=e.target.value.trim();qt=setTimeout(()=>{if(q.length>=2){showSearch(q);setActive("")}else route()},180)});
 window.addEventListener("hashchange",()=>{$("#q").value="";route()});
-$("#foot").innerHTML=`${esc(DATA.meta.nombre)} · v${esc(DATA.meta.version)} · ${DATA.meta.n_requisitos} requisitos · Generado ${esc(DATA.meta.generado)} · <b>${esc(DATA.meta.custodio)}</b>`;
+$("#foot").innerHTML=`${esc(DATA.meta.nombre)} · v${esc(DATA.meta.version)} · ${DATA.meta.n_requisitos} requisitos · Generado ${esc(DATA.meta.generado)} · <b>${esc(DATA.meta.custodio)}</b> · Contenido CC BY 4.0 · Código MIT`;
 buildNav();route();
 </script>

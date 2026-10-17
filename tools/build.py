@@ -397,7 +397,8 @@ def main():
         if r["fase"] != "VAL":
             r["naturaleza"] = esfuerzo.naturaleza(r)
     meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.0.0",
-            "generado": date.today().isoformat(), "n_requisitos": len(reqs)}
+            "generado": date.today().isoformat(), "n_requisitos": len(reqs),
+            "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"}
     for r in reqs:
         r["doc"] = "docs/" + req_doc[r["id"]] if r["id"] in req_doc else None
     (DIST / "catalogo.json").write_text(json.dumps({"meta": meta, "fases": fases, "requisitos": reqs},

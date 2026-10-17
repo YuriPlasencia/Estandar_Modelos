@@ -1,0 +1,29 @@
+Estándares de Modelos en Banca
+Copyright (c) 2026 Yuri Plasencia — Analytics Pricing & Revenue Management
+
+Este repositorio usa dos licencias, según el tipo de contenido.
+
+1. Documentación, catálogo y datos — Creative Commons Attribution 4.0 International (CC BY 4.0)
+   SPDX-License-Identifier: CC-BY-4.0
+
+   Aplica a todo el contenido salvo lo indicado en el punto 2, en particular:
+     catalogo/, docs/, dist/, site/, plantillas/, ejemplos/, llms.txt,
+     README.md, AGENTS.md, CONTRIBUTING.md, CHANGELOG.md y CITATION.cff.
+
+   Puedes compartir y adaptar este material para cualquier fin, incluso comercial, siempre que
+   des el crédito correspondiente al autor, enlaces la licencia e indiques si hiciste cambios.
+   Texto legal completo: https://creativecommons.org/licenses/by/4.0/legalcode
+   Resumen: https://creativecommons.org/licenses/by/4.0/
+
+   Atribución sugerida:
+     "Estándares de Modelos en Banca" por Yuri Plasencia (Analytics Pricing & Revenue Management),
+     CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+
+2. Código — MIT License
+   SPDX-License-Identifier: MIT
+
+   Aplica al código fuente de tools/ (scripts de Python, plantilla y recursos del sitio).
+   Texto completo en tools/LICENSE.
+
+Las normas, guías y publicaciones de terceros citadas en el estándar pertenecen a sus respectivos
+autores y se rigen por sus propias condiciones; este repositorio solo las referencia.
