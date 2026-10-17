@@ -22,7 +22,7 @@ obras:
   nivel: Canon
   cita: "Siddiqi, N. (2017). *Intelligent Credit Scoring: Building and Implementing Better Credit Risk Scorecards* (2.ª ed.). Wiley."
   por_que: "El manual práctico de referencia para construir scorecards: definición de malos, exclusiones, WOE, segmentación e implementación."
-  aplica: [DES-D1-04, DES-D1-05, DES-D3, DES-D4-04, DES-D4-11]
+  aplica: [DES-D1-04, DES-D1-05, DES-D3, DES-D4-04, DES-D4-11, U-38, DES-D4-03.03]
 - id: LIT-002
   tema: credito
   nivel: Canon
@@ -161,7 +161,7 @@ obras:
   nivel: Práctica
   cita: "Kapoor, S. y Narayanan, A. (2023). Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*, 4(9)."
   por_que: "Taxonomía de fugas de información (data leakage) que explica muchos Gini \"demasiado buenos\"."
-  aplica: [DES-D4-02, DES-D4-06.03.02, U-11]
+  aplica: [DES-D4-02, DES-D4-06.03.02, U-11, U-39, DES-D1-01.03]
 # ---------------------------------------------------------------- calibración
 - id: LIT-040
   tema: calibracion

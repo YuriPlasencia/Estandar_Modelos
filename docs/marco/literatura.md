@@ -45,7 +45,7 @@ edición y paginación en la fuente.
 
 - **LIT-001** · *Canon* — Siddiqi, N. (2017). *Intelligent Credit Scoring: Building and Implementing Better Credit Risk Scorecards* (2.ª ed.). Wiley.
 
-  El manual práctico de referencia para construir scorecards: definición de malos, exclusiones, WOE, segmentación e implementación. Fundamenta: `DES-D1-04`, `DES-D1-05`, `DES-D3`, `DES-D4-04`, `DES-D4-11`.
+  El manual práctico de referencia para construir scorecards: definición de malos, exclusiones, WOE, segmentación e implementación. Fundamenta: `DES-D1-04`, `DES-D1-05`, `DES-D3`, `DES-D4-04`, `DES-D4-11`, `U-38`, `DES-D4-03.03`.
 
 - **LIT-002** · *Canon* — Thomas, L. C., Crook, J. y Edelman, D. (2017). *Credit Scoring and Its Applications* (2.ª ed.). SIAM.
 
@@ -147,7 +147,7 @@ edición y paginación en la fuente.
 
 - **LIT-031** · *Práctica* — Kapoor, S. y Narayanan, A. (2023). Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*, 4(9).
 
-  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`.
+  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`, `U-39`, `DES-D1-01.03`.
 
 - **LIT-135** · *Práctica* — Gunnarsson, B. R., vanden Broucke, S., Baesens, B., Óskarsdóttir, M. y Lemahieu, W. (2021). Deep learning for credit scoring: Do or don't? *European Journal of Operational Research*, 295(1), 292–305.
 

@@ -42,7 +42,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 <!-- CATALOGO:INICIO VAL -->
 ## Catálogo de requisitos · Validación
 
-> Bloque generado desde `catalogo/val.yaml` (94 requisitos).
+> Bloque generado desde `catalogo/val.yaml` (95 requisitos).
 
 ### Validación metodológica
 
@@ -207,6 +207,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 - [ ] **`VAL-M-05.04`** **KILLER** Hallazgos clasificados por severidad (alta, media, baja) con responsable, plazo y seguimiento hasta su cierre; los de severidad alta exigen mitigación temporal hasta corregirse.
 - [ ] **`VAL-M-05.05`** Para modelos de IA: evaluación de interpretabilidad (incluida la estabilidad de las explicaciones), optimización de hiperparámetros, validación cruzada y nivel de sobreajuste.
 - [ ] **`VAL-M-05.06`** Modelos de terceros: réplica o, si la propiedad intelectual lo impide, benchmarking u otra técnica alternativa documentada.
+- [ ] **`VAL-M-05.07`** **KILLER** Verificación independiente de la no anticipación temporal de las variables (U-39) y de la ausencia de fuga de información: revisión de variables con IV mayor a 0.50 (U-38) y del embudo de filtros previo al entrenamiento.
 
 
 <!-- CATALOGO:FIN -->

@@ -467,3 +467,8 @@ requisitos:
   bloque: Alcance y profundidad de la validación
   killer: false
   requisito: "Modelos de terceros: réplica o, si la propiedad intelectual lo impide, benchmarking u otra técnica alternativa documentada."
+- id: VAL-M-05.07
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: true
+  requisito: "Verificación independiente de la no anticipación temporal de las variables (U-39) y de la ausencia de fuga de información: revisión de variables con IV mayor a 0.50 (U-38) y del embudo de filtros previo al entrenamiento."

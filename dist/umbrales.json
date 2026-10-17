@@ -2,9 +2,9 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "generado": "2026-10-17",
-  "n_requisitos": 533,
+  "n_requisitos": 540,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
  },
  "umbrales": [
@@ -736,6 +736,40 @@
    "nota": "Valor de referencia de la línea base; el comité aprueba los umbrales por modelo.",
    "lecturas": [
     "LIT-131"
+   ]
+  },
+  {
+   "id": "U-38",
+   "tema": "Rango de IV y sospecha de fuga",
+   "regla": "IV menor a 0.02: la variable no aporta poder predictivo y se excluye salvo sustento de negocio. IV mayor a 0.50: sospecha de fuga de información; se excluye salvo una investigación documentada que la descarte.",
+   "valor": {
+    "iv_min": 0.02,
+    "iv_max_sin_investigacion": 0.5
+   },
+   "refs": [
+    "DES-D4-03.03.03",
+    "DES-D4-03.03.04"
+   ],
+   "lecturas": [
+    "LIT-001"
+   ]
+  },
+  {
+   "id": "U-39",
+   "tema": "No anticipación temporal de las variables",
+   "regla": "Cero variables contemporáneas o futuras: cada variable se mide con información disponible antes de la fecha de observación menos el desfase de su fuente.",
+   "valor": {
+    "variables_futuras_permitidas": 0
+   },
+   "refs": [
+    "DES-D1-01.03.04",
+    "DES-D1-01.03.05",
+    "DES-D4-03.03.04"
+   ],
+   "lecturas": [
+    "LIT-001",
+    "LIT-003",
+    "LIT-031"
    ]
   }
  ]

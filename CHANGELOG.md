@@ -4,6 +4,17 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.1.0] — 2026-10-17
+
+### Nuevo
+- **No anticipación temporal del tablón** (U-39): toda variable se construye solo con información anterior a la fecha
+  de observación; cada variable documenta su fecha de referencia y el desfase de su fuente, con prueba automática
+  (DES-D1-01.03.04, DES-D1-01.03.05).
+- **Orden obligatorio antes de entrenar**: análisis univariado (DES-D4-03.02.02) y bivariado con WOE/IV (DES-D4-03.03.02),
+  sospecha de fuga para variables con IV mayor a 0.50 (DES-D4-03.03.03, U-38) y filtro de variables confiables con
+  embudo documentado (DES-D4-03.03.04).
+- Validación verifica no anticipación y fuga (VAL-M-05.07, bloqueante). `tools/verificar.py` comprueba U-38 y U-39.
+
 ## [2.0.0] — 2026-10-17 · Línea base (primera versión pública)
 
 Primera publicación del estándar como documentación como código. Constituye la **línea base** contra la que se

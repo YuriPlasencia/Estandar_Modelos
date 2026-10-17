@@ -26,10 +26,37 @@ Exclusiones del target ─▶ Muestreo (representatividad) ─▶ Train/Test/OOT
       ─▶ Performance por drivers ─▶ Limitaciones ─▶ Documentación ─▶ Cierre cuanti/cuali ─▶ Comité
 ```
 
+## Antes de entrenar: el orden es obligatorio
+
+Ningún modelo se entrena sobre variables que no hayan pasado, en este orden, por:
+
+```text
+ 1 No anticipación        cada variable usa solo información anterior a la observación      U-39 · DES-D1-01.03.04
+ 2 Univariado             distribución, faltantes, especiales, categorías raras, extremos   DES-D4-03.02.02
+ 3 Fill rate y PSI        poblamiento global y mensual; estabilidad temporal                DES-D4-03.02.01 · U-02
+ 4 Bivariado              WOE e IV por tramo, tendencia y monotonicidad del riesgo          DES-D4-03.03.02
+ 5 Sospecha de fuga       IV > 0.50 no entra salvo investigación que descarte leakage       U-38 · DES-D4-03.03.03
+ 6 Filtro de confiables   IV entre 0.02 y 0.50, fill rate del plan, PSI; luego correlación  DES-D4-03.03.04 · U-06 · U-07
+ ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Embudo de variables documentado ─▶ Feature engineering ─▶ Entrenamiento
+```
+
+**Por qué la no anticipación es la regla número uno.** En producción el modelo decide con lo que se sabe *antes*
+de la fecha de observación. Una variable contemporánea o del futuro (un saldo de fin de mes posterior a la
+originación, una marca de cobranza o un campo que se actualiza tras el default) no existe en el momento de decidir.
+Infla el Gini en construcción y hace que el modelo falle al implementarse. Cada variable documenta su fecha de
+referencia y el desfase de su fuente (DES-D1-01.03.05).
+
+**Por qué un IV demasiado alto es una alarma.** En crédito, un IV mayor a 0.50 casi siempre indica que la variable
+contiene información del target (fuga) y no poder predictivo genuino. Es la regla clásica de la práctica de scoring
+(LIT-001). Antes de usarla hay que demostrar lo contrario.
+
 ## Reglas clave (resumen de umbrales)
 
 | Tema | Regla | Umbral |
 |---|---|---|
+| No anticipación | Cero variables contemporáneas o futuras | U-39 |
+| Poder predictivo y fuga | IV entre 0.02 y 0.50; IV > 0.50 solo con investigación de fuga | U-38 |
 | Representatividad | $0.95 \le TM/TG \le 1.05$; si no, ponderar | U-03 |
 | Estabilidad de variables | PSI ≤ 10 % (≤ 20 % excepción) | U-02 |
 | Outliers | Percentiles 1-5-95-99 | U-04 |
@@ -64,7 +91,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (92 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (96 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -110,11 +137,27 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Entregable: Excel 10: Univariate analysis I
 
+- **`DES-D4-03.02.02`** Análisis univariado de cada variable sobre la muestra de entrenamiento: distribución, valores especiales y faltantes, categorías raras y valores extremos. Es requisito previo del análisis bivariado.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
 #### 3.3 Gini por variables
 
 - **`DES-D4-03.03.01`** Análisis de discriminación por variables (global/por mes)
 
   Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Hito: SME 4
+
+- **`DES-D4-03.03.02`** Análisis bivariado de cada variable frente al target: WOE e IV por tramo, tendencia y monotonicidad del riesgo, y estabilidad del IV entre períodos.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.5 d ágil / 1.5 d trad. · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
+- **`DES-D4-03.03.03`** Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38).
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d trad. · Automatización: 2 · Crítico · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-38 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
+- **`DES-D4-03.03.04`** Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Crítico · Entregable: Tabla 1: Base de variables finalistas. · Umbrales: U-38, U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 ### 4 · Feature engineering
 

@@ -113,6 +113,22 @@ actividades:
   - tipo: Excel
     numero: 10
     descripcion: Univariate analysis I
+- id: DES-D4-03.02.02
+  tarea: "Depuración de variables"
+  subtarea: "Fill rate"
+  actividad: "Análisis univariado de cada variable sobre la muestra de entrenamiento: distribución, valores especiales y faltantes, categorías raras y valores extremos. Es requisito previo del análisis bivariado."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 1, tradicional: 1}
+    ml: {agil: 1, tradicional: 1}
+    arbol: {agil: 1, tradicional: 1}
+    acp: {agil: 1, tradicional: 1}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: 10, descripcion: "Univariate analysis I"}
+  nota_origen: "Línea base 2.1 (2026-10-17): criterio del custodio."
 - id: DES-D4-03.03.01
   tarea: Depuración de variables
   subtarea: Gini por variables
@@ -126,6 +142,54 @@ actividades:
     arbol: {agil: 1.0, tradicional: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   hito: SME 4
+- id: DES-D4-03.03.02
+  tarea: "Depuración de variables"
+  subtarea: "Gini por variables"
+  actividad: "Análisis bivariado de cada variable frente al target: WOE e IV por tramo, tendencia y monotonicidad del riesgo, y estabilidad del IV entre períodos."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 1.5, tradicional: 1.5}
+    ml: {agil: 1.5, tradicional: 1.5}
+    arbol: {agil: 1.5, tradicional: 1.5}
+    acp: {agil: 1.5, tradicional: 1.5}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: 10, descripcion: "Univariate analysis I"}
+  nota_origen: "Línea base 2.1 (2026-10-17): criterio del custodio."
+- id: DES-D4-03.03.03
+  tarea: "Depuración de variables"
+  subtarea: "Gini por variables"
+  actividad: "Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38)."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  nivel_automatizacion: 2
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: 9, descripcion: "Resultados del test de estabilidad"}
+  nota_origen: "Línea base 2.1 (2026-10-17): criterio del custodio."
+- id: DES-D4-03.03.04
+  tarea: "Depuración de variables"
+  subtarea: "Gini por variables"
+  actividad: "Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué)."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 1, tradicional: 1}
+    ml: {agil: 1, tradicional: 1}
+    arbol: {agil: 1, tradicional: 1}
+    acp: {agil: 1, tradicional: 1}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: 1, descripcion: "Base de variables finalistas."}
+  nota_origen: "Línea base 2.1 (2026-10-17): criterio del custodio."
 - id: DES-D4-04.01.01
   tarea: Feature engineering
   subtarea: Detección y tratamiento de outliers

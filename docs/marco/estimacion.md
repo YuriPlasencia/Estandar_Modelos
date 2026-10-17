@@ -61,22 +61,22 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Tier | Modelo | Personas ágil | Personas trad. | Con agente ágil | Con agente trad. | Ahorro |
 |---|---|---:|---:|---:|---:|---:|
-| I | Lineal | 35.1 | 38.3 | 20.6 | 22.8 | 41% |
-| I | ML | 31.7 | 35.3 | 18.9 | 21.2 | 40% |
-| I | Árbol | 29.9 | 33.2 | 17.8 | 20.0 | 40% |
-| I | ACP | 22.9 | 25.5 | 13.3 | 14.8 | 42% |
-| II | Lineal | 32.4 | 35.1 | 19.2 | 20.9 | 41% |
-| II | ML | 29.7 | 32.8 | 17.8 | 19.7 | 40% |
-| II | Árbol | 27.9 | 30.6 | 16.7 | 18.4 | 40% |
-| II | ACP | 21.5 | 23.9 | 12.6 | 14.1 | 41% |
-| III | Lineal | 28.5 | 30.9 | 16.9 | 18.3 | 41% |
-| III | ML | 28.0 | 30.7 | 16.5 | 18.2 | 41% |
-| III | Árbol | 26.2 | 28.6 | 15.6 | 17.0 | 41% |
-| III | ACP | 19.9 | 22.1 | 11.5 | 12.8 | 42% |
-| IV | Lineal | 28.5 | 30.9 | 16.9 | 18.3 | 41% |
-| IV | ML | 28.0 | 30.7 | 16.5 | 18.2 | 41% |
-| IV | Árbol | 26.0 | 28.4 | 15.4 | 16.9 | 41% |
-| IV | ACP | 19.9 | 22.1 | 11.5 | 12.8 | 42% |
+| I | Lineal | 36.6 | 40.0 | 21.5 | 23.7 | 41% |
+| I | ML | 33.3 | 37.0 | 19.7 | 22.1 | 41% |
+| I | Árbol | 31.4 | 34.9 | 18.7 | 20.9 | 41% |
+| I | ACP | 24.5 | 27.2 | 14.1 | 15.7 | 42% |
+| II | Lineal | 33.9 | 36.8 | 20.0 | 21.8 | 41% |
+| II | ML | 31.3 | 34.5 | 18.6 | 20.6 | 40% |
+| II | Árbol | 29.4 | 32.3 | 17.5 | 19.3 | 40% |
+| II | ACP | 23.0 | 25.6 | 13.4 | 15.0 | 42% |
+| III | Lineal | 30.1 | 32.6 | 17.7 | 19.2 | 41% |
+| III | ML | 29.5 | 32.4 | 17.4 | 19.1 | 41% |
+| III | Árbol | 27.8 | 30.3 | 16.4 | 17.9 | 41% |
+| III | ACP | 21.5 | 23.8 | 12.4 | 13.8 | 42% |
+| IV | Lineal | 30.1 | 32.6 | 17.7 | 19.2 | 41% |
+| IV | ML | 29.5 | 32.4 | 17.4 | 19.1 | 41% |
+| IV | Árbol | 27.6 | 30.1 | 16.3 | 17.8 | 41% |
+| IV | ACP | 21.5 | 23.8 | 12.4 | 13.8 | 42% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
@@ -102,17 +102,17 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Fase | Catálogo | Reuniones del catálogo (\*) | Trabajo ajustado por volumen | Trabajo con agente |
 |---|---:|---:|---:|---:|
-| DES-D1 · Definición, alcance, diseño y extracción | 42.8 | 8.0 | 56.7 | 22.5 |
+| DES-D1 · Definición, alcance, diseño y extracción | 44.3 | 8.0 | 58.8 | 23.3 |
 | DES-D2 · Preparación, calidad y entendimiento de los datos | 4.2 | 0.0 | 6.3 | 2.8 |
 | DES-D3 · Segmentación | 2.4 | 0.8 | 2.1 | 0.7 |
-| DES-D4 · Modelamiento | 57.4 | 1.2 | 71.6 | 27.1 |
+| DES-D4 · Modelamiento | 61.4 | 1.2 | 77.7 | 29.1 |
 | DES-D5 · Integración a la gestión | 12.5 | 0.0 | 12.5 | 8.0 |
 | DES-D7 · Gobierno | 1.5 | 0.0 | 1.5 | 1.5 |
 | IMP · Implementación | 14.6 | 0.5 | 14.1 | 7.5 |
 | Bloqueo por tiempo de máquina (36.0 h) | | | 1.8 | 0.5 |
-| Reuniones (30 % del tiempo de las personas) | | | 71.4 | 71.4 |
-| **Total días-persona** | **135.4** | | **237.9** | **141.8** |
-| **Semanas de calendario con 1.5 personas** | | | **31.7** | **18.9** |
+| Reuniones (30 % del tiempo de las personas) | | | 74.9 | 74.9 |
+| **Total días-persona** | **140.9** | | **249.6** | **148.1** |
+| **Semanas de calendario con 1.5 personas** | | | **33.3** | **19.7** |
 
 (\*) Se excluyen del trabajo directo porque su tiempo ya está dentro del % de reuniones.
 

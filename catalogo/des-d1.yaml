@@ -219,6 +219,38 @@ actividades:
     numero: 3
     descripcion: Creación de nuevas variables.
   hito: SME 1
+- id: DES-D1-01.03.04
+  tarea: "Definición del objetivo del modelo"
+  subtarea: "Extracción de tabla única y creación de nuevas variables"
+  actividad: "Regla de no anticipación: toda variable del tablón de modelamiento se construye solo con información disponible antes de la fecha de observación (originación o foto). Están prohibidas las variables contemporáneas o del futuro, porque en producción el futuro no se observa (U-39)."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Script, numero: 2, descripcion: "Creación de tabla única"}
+  nota_origen: "Línea base 2.1 (2026-10-17): criterio del custodio."
+- id: DES-D1-01.03.05
+  tarea: "Definición del objetivo del modelo"
+  subtarea: "Extracción de tabla única y creación de nuevas variables"
+  actividad: "Documentar en el diccionario, para cada variable, su fecha de referencia y el desfase de disponibilidad de su fuente, y verificar con una prueba automática que ninguna variable usa información posterior a la fecha de observación menos ese desfase."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 1, tradicional: 1.5}
+    ml: {agil: 1, tradicional: 1.5}
+    arbol: {agil: 1, tradicional: 1.5}
+    acp: {agil: 1, tradicional: 1.5}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: 2, descripcion: "Creación de tabla única"}
+  nota_origen: "Línea base 2.1 (2026-10-17): criterio del custodio."
 - id: DES-D1-01.04.01
   tarea: Definición del objetivo del modelo
   subtarea: Requerimientos y propuesta de solución (inception)

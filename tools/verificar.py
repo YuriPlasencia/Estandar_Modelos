@@ -41,6 +41,8 @@ REGLAS = {
     "U-13": ("Materialidad mínima de los ejes de segmentación > 0.05", lambda v: v > 0.05),
     "U-15": ("Coincidencia modelamiento vs. implementación ≥ 0.95", lambda v: v >= 0.95),
     "U-16": ("Meses de certificación con proveedor externo ≥ 3", lambda v: v >= 3),
+    "U-38": ("IV máximo de las variables del modelo ≤ 0.50 (salvo investigación de fuga documentada)", lambda v: v <= 0.50),
+    "U-39": ("Variables con información posterior a la observación = 0", lambda v: v == 0),
     "U-21": ("Desvío relativo máximo de la aceptación por decil ≤ 0.10", lambda v: abs(v) <= 0.10),
     "U-22": ("Potencia del experimento ≥ 0.80", lambda v: v >= 0.80),
     "U-23": ("Proporción de operaciones con excepción de precio ≤ 0.15", lambda v: v <= 0.15),

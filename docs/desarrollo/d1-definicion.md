@@ -23,6 +23,22 @@ cierran las definiciones que, si cambian después, obligan a rehacer el modelo.
 - Políticas de crédito actuales y anteriores; modelos vigentes o previos.
 - Acceso a las fuentes (universo de cosechas, buró/RCC, tablones internos).
 
+## Regla de no anticipación del tablón
+
+El tablón de modelamiento se arma **solo con información del pasado** respecto de la fecha de observación
+(originación en admisión, foto en comportamiento o buró). No se admiten variables contemporáneas ni del futuro,
+porque el futuro no se observa al momento de decidir (U-39, DES-D1-01.03.04).
+
+| Situación | ¿Admitida? |
+|---|---|
+| Atraso máximo de los 6 meses **previos** a la originación | Sí |
+| Saldo del cierre del mes de la originación, si ese cierre es posterior a la fecha de decisión | No (contemporánea) |
+| Marca de gestión de cobranza o refinanciación posterior a la observación | No (futura) |
+| Variable de buró con desfase de 1 mes, usada con su fecha real de disponibilidad | Sí, documentando el desfase |
+
+Cada variable registra en el diccionario su **fecha de referencia** y el **desfase de disponibilidad** de su fuente, y
+una prueba automática verifica que ninguna usa información posterior (DES-D1-01.03.05).
+
 ## Decisiones que deben quedar cerradas al salir
 
 1. **Población objetivo** y definición cosechas vs. aprobadas (Project Charter).
@@ -78,7 +94,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 <!-- CATALOGO:INICIO DES-D1 -->
 ## Catálogo de requisitos · Definición, alcance, diseño y extracción
 
-> Bloque generado desde `catalogo/des-d1.yaml` (54 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d1.yaml` (56 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Definición del objetivo del modelo
 
@@ -151,6 +167,14 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 - **`DES-D1-01.03.03`** Crear variables post BrainStorming
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 8.5 d ágil / 10 d trad. · Automatización: 1 · Entregable: Script 3: Creación de nuevas variables. · Hito: SME 1
+
+- **`DES-D1-01.03.04`** Regla de no anticipación: toda variable del tablón de modelamiento se construye solo con información disponible antes de la fecha de observación (originación o foto). Están prohibidas las variables contemporáneas o del futuro, porque en producción el futuro no se observa (U-39).
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d trad. · Automatización: 1 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
+- **`DES-D1-01.03.05`** Documentar en el diccionario, para cada variable, su fecha de referencia y el desfase de disponibilidad de su fuente, y verificar con una prueba automática que ninguna variable usa información posterior a la fecha de observación menos ese desfase.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1.5 d trad. · Automatización: 3 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 #### 1.4 Requerimientos y propuesta de solución (inception)
 

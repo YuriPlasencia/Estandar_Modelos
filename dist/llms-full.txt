@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.0.0 · 2026-10-17
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.1.0 · 2026-10-17
 
 
 ========== docs/index.md [Vigente] ==========
@@ -515,6 +515,8 @@ Las desviaciones se sustentan por escrito; cuando el requisito lo indica (p.ej. 
 | **U-35** | Frecuencia de validación por categoría | Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III–IV, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I. *Nota: Valor de referencia de la línea base; el comité de riesgos de modelo aprueba la periodicidad definitiva.* | [`VAL-M-05.03`](../validacion/validacion.md), [`VAL-M-05.01`](../validacion/validacion.md), [`GOB-G2-02.01.01`](../marco/gobierno-mrm.md) |
 | **U-36** | Forzajes (overrides) | Alerta si los forzajes superan el 5 % de las decisiones del período o si los casos forzados tienen una tasa de default significativamente mayor que los no forzados del mismo tramo. *Nota: Valor de referencia inicial; calibrar por producto en el primer ciclo.* | [`DES-D5-01.01.02`](../desarrollo/d5-integracion-gestion.md), [`SEG-S2-01.03.01`](../seguimiento/seguimiento.md) |
 | **U-37** | Semáforo de seguimiento | PSI del score: verde ≤ 10 %, ámbar entre 10 % y 25 %, rojo > 25 %. Discriminación: rojo si el Gini cae más de 10 pts frente a construcción. Calibración: rojo si un tramo sale del intervalo al 99 %. *Nota: Valor de referencia de la línea base; el comité aprueba los umbrales por modelo.* | [`SEG-S1-01.01.01`](../seguimiento/seguimiento.md), [`SEG-S2-01.02.01`](../seguimiento/seguimiento.md) |
+| **U-38** | Rango de IV y sospecha de fuga | IV menor a 0.02: la variable no aporta poder predictivo y se excluye salvo sustento de negocio. IV mayor a 0.50: sospecha de fuga de información; se excluye salvo una investigación documentada que la descarte. | [`DES-D4-03.03.03`](../desarrollo/d4-modelamiento.md), [`DES-D4-03.03.04`](../desarrollo/d4-modelamiento.md) |
+| **U-39** | No anticipación temporal de las variables | Cero variables contemporáneas o futuras: cada variable se mide con información disponible antes de la fecha de observación menos el desfase de su fuente. | [`DES-D1-01.03.04`](../desarrollo/d1-definicion.md), [`DES-D1-01.03.05`](../desarrollo/d1-definicion.md), [`DES-D4-03.03.04`](../desarrollo/d4-modelamiento.md) |
 
 <!-- CATALOGO:FIN -->
 
@@ -573,22 +575,22 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Tier | Modelo | Personas ágil | Personas trad. | Con agente ágil | Con agente trad. | Ahorro |
 |---|---|---:|---:|---:|---:|---:|
-| I | Lineal | 35.1 | 38.3 | 20.6 | 22.8 | 41% |
-| I | ML | 31.7 | 35.3 | 18.9 | 21.2 | 40% |
-| I | Árbol | 29.9 | 33.2 | 17.8 | 20.0 | 40% |
-| I | ACP | 22.9 | 25.5 | 13.3 | 14.8 | 42% |
-| II | Lineal | 32.4 | 35.1 | 19.2 | 20.9 | 41% |
-| II | ML | 29.7 | 32.8 | 17.8 | 19.7 | 40% |
-| II | Árbol | 27.9 | 30.6 | 16.7 | 18.4 | 40% |
-| II | ACP | 21.5 | 23.9 | 12.6 | 14.1 | 41% |
-| III | Lineal | 28.5 | 30.9 | 16.9 | 18.3 | 41% |
-| III | ML | 28.0 | 30.7 | 16.5 | 18.2 | 41% |
-| III | Árbol | 26.2 | 28.6 | 15.6 | 17.0 | 41% |
-| III | ACP | 19.9 | 22.1 | 11.5 | 12.8 | 42% |
-| IV | Lineal | 28.5 | 30.9 | 16.9 | 18.3 | 41% |
-| IV | ML | 28.0 | 30.7 | 16.5 | 18.2 | 41% |
-| IV | Árbol | 26.0 | 28.4 | 15.4 | 16.9 | 41% |
-| IV | ACP | 19.9 | 22.1 | 11.5 | 12.8 | 42% |
+| I | Lineal | 36.6 | 40.0 | 21.5 | 23.7 | 41% |
+| I | ML | 33.3 | 37.0 | 19.7 | 22.1 | 41% |
+| I | Árbol | 31.4 | 34.9 | 18.7 | 20.9 | 41% |
+| I | ACP | 24.5 | 27.2 | 14.1 | 15.7 | 42% |
+| II | Lineal | 33.9 | 36.8 | 20.0 | 21.8 | 41% |
+| II | ML | 31.3 | 34.5 | 18.6 | 20.6 | 40% |
+| II | Árbol | 29.4 | 32.3 | 17.5 | 19.3 | 40% |
+| II | ACP | 23.0 | 25.6 | 13.4 | 15.0 | 42% |
+| III | Lineal | 30.1 | 32.6 | 17.7 | 19.2 | 41% |
+| III | ML | 29.5 | 32.4 | 17.4 | 19.1 | 41% |
+| III | Árbol | 27.8 | 30.3 | 16.4 | 17.9 | 41% |
+| III | ACP | 21.5 | 23.8 | 12.4 | 13.8 | 42% |
+| IV | Lineal | 30.1 | 32.6 | 17.7 | 19.2 | 41% |
+| IV | ML | 29.5 | 32.4 | 17.4 | 19.1 | 41% |
+| IV | Árbol | 27.6 | 30.1 | 16.3 | 17.8 | 41% |
+| IV | ACP | 21.5 | 23.8 | 12.4 | 13.8 | 42% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
@@ -614,17 +616,17 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Fase | Catálogo | Reuniones del catálogo (\*) | Trabajo ajustado por volumen | Trabajo con agente |
 |---|---:|---:|---:|---:|
-| DES-D1 · Definición, alcance, diseño y extracción | 42.8 | 8.0 | 56.7 | 22.5 |
+| DES-D1 · Definición, alcance, diseño y extracción | 44.3 | 8.0 | 58.8 | 23.3 |
 | DES-D2 · Preparación, calidad y entendimiento de los datos | 4.2 | 0.0 | 6.3 | 2.8 |
 | DES-D3 · Segmentación | 2.4 | 0.8 | 2.1 | 0.7 |
-| DES-D4 · Modelamiento | 57.4 | 1.2 | 71.6 | 27.1 |
+| DES-D4 · Modelamiento | 61.4 | 1.2 | 77.7 | 29.1 |
 | DES-D5 · Integración a la gestión | 12.5 | 0.0 | 12.5 | 8.0 |
 | DES-D7 · Gobierno | 1.5 | 0.0 | 1.5 | 1.5 |
 | IMP · Implementación | 14.6 | 0.5 | 14.1 | 7.5 |
 | Bloqueo por tiempo de máquina (36.0 h) | | | 1.8 | 0.5 |
-| Reuniones (30 % del tiempo de las personas) | | | 71.4 | 71.4 |
-| **Total días-persona** | **135.4** | | **237.9** | **141.8** |
-| **Semanas de calendario con 1.5 personas** | | | **31.7** | **18.9** |
+| Reuniones (30 % del tiempo de las personas) | | | 74.9 | 74.9 |
+| **Total días-persona** | **140.9** | | **249.6** | **148.1** |
+| **Semanas de calendario con 1.5 personas** | | | **33.3** | **19.7** |
 
 (\*) Se excluyen del trabajo directo porque su tiempo ya está dentro del % de reuniones.
 
@@ -737,7 +739,7 @@ edición y paginación en la fuente.
 
 - **LIT-001** · *Canon* — Siddiqi, N. (2017). *Intelligent Credit Scoring: Building and Implementing Better Credit Risk Scorecards* (2.ª ed.). Wiley.
 
-  El manual práctico de referencia para construir scorecards: definición de malos, exclusiones, WOE, segmentación e implementación. Fundamenta: `DES-D1-04`, `DES-D1-05`, `DES-D3`, `DES-D4-04`, `DES-D4-11`.
+  El manual práctico de referencia para construir scorecards: definición de malos, exclusiones, WOE, segmentación e implementación. Fundamenta: `DES-D1-04`, `DES-D1-05`, `DES-D3`, `DES-D4-04`, `DES-D4-11`, `U-38`, `DES-D4-03.03`.
 
 - **LIT-002** · *Canon* — Thomas, L. C., Crook, J. y Edelman, D. (2017). *Credit Scoring and Its Applications* (2.ª ed.). SIAM.
 
@@ -839,7 +841,7 @@ edición y paginación en la fuente.
 
 - **LIT-031** · *Práctica* — Kapoor, S. y Narayanan, A. (2023). Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*, 4(9).
 
-  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`.
+  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`, `U-39`, `DES-D1-01.03`.
 
 - **LIT-135** · *Práctica* — Gunnarsson, B. R., vanden Broucke, S., Baesens, B., Óskarsdóttir, M. y Lemahieu, W. (2021). Deep learning for credit scoring: Do or don't? *European Journal of Operational Research*, 295(1), 292–305.
 
@@ -1185,6 +1187,22 @@ cierran las definiciones que, si cambian después, obligan a rehacer el modelo.
 - Políticas de crédito actuales y anteriores; modelos vigentes o previos.
 - Acceso a las fuentes (universo de cosechas, buró/RCC, tablones internos).
 
+## Regla de no anticipación del tablón
+
+El tablón de modelamiento se arma **solo con información del pasado** respecto de la fecha de observación
+(originación en admisión, foto en comportamiento o buró). No se admiten variables contemporáneas ni del futuro,
+porque el futuro no se observa al momento de decidir (U-39, DES-D1-01.03.04).
+
+| Situación | ¿Admitida? |
+|---|---|
+| Atraso máximo de los 6 meses **previos** a la originación | Sí |
+| Saldo del cierre del mes de la originación, si ese cierre es posterior a la fecha de decisión | No (contemporánea) |
+| Marca de gestión de cobranza o refinanciación posterior a la observación | No (futura) |
+| Variable de buró con desfase de 1 mes, usada con su fecha real de disponibilidad | Sí, documentando el desfase |
+
+Cada variable registra en el diccionario su **fecha de referencia** y el **desfase de disponibilidad** de su fuente, y
+una prueba automática verifica que ninguna usa información posterior (DES-D1-01.03.05).
+
 ## Decisiones que deben quedar cerradas al salir
 
 1. **Población objetivo** y definición cosechas vs. aprobadas (Project Charter).
@@ -1240,7 +1258,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 <!-- CATALOGO:INICIO DES-D1 -->
 ## Catálogo de requisitos · Definición, alcance, diseño y extracción
 
-> Bloque generado desde `catalogo/des-d1.yaml` (54 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d1.yaml` (56 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Definición del objetivo del modelo
 
@@ -1313,6 +1331,14 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 - **`DES-D1-01.03.03`** Crear variables post BrainStorming
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 8.5 d ágil / 10 d trad. · Automatización: 1 · Entregable: Script 3: Creación de nuevas variables. · Hito: SME 1
+
+- **`DES-D1-01.03.04`** Regla de no anticipación: toda variable del tablón de modelamiento se construye solo con información disponible antes de la fecha de observación (originación o foto). Están prohibidas las variables contemporáneas o del futuro, porque en producción el futuro no se observa (U-39).
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d trad. · Automatización: 1 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
+- **`DES-D1-01.03.05`** Documentar en el diccionario, para cada variable, su fecha de referencia y el desfase de disponibilidad de su fuente, y verificar con una prueba automática que ninguna variable usa información posterior a la fecha de observación menos ese desfase.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1.5 d trad. · Automatización: 3 · Crítico · Entregable: Script 2: Creación de tabla única · Umbrales: U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 #### 1.4 Requerimientos y propuesta de solución (inception)
 
@@ -1737,10 +1763,37 @@ Exclusiones del target ─▶ Muestreo (representatividad) ─▶ Train/Test/OOT
       ─▶ Performance por drivers ─▶ Limitaciones ─▶ Documentación ─▶ Cierre cuanti/cuali ─▶ Comité
 ```
 
+## Antes de entrenar: el orden es obligatorio
+
+Ningún modelo se entrena sobre variables que no hayan pasado, en este orden, por:
+
+```text
+ 1 No anticipación        cada variable usa solo información anterior a la observación      U-39 · DES-D1-01.03.04
+ 2 Univariado             distribución, faltantes, especiales, categorías raras, extremos   DES-D4-03.02.02
+ 3 Fill rate y PSI        poblamiento global y mensual; estabilidad temporal                DES-D4-03.02.01 · U-02
+ 4 Bivariado              WOE e IV por tramo, tendencia y monotonicidad del riesgo          DES-D4-03.03.02
+ 5 Sospecha de fuga       IV > 0.50 no entra salvo investigación que descarte leakage       U-38 · DES-D4-03.03.03
+ 6 Filtro de confiables   IV entre 0.02 y 0.50, fill rate del plan, PSI; luego correlación  DES-D4-03.03.04 · U-06 · U-07
+ ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Embudo de variables documentado ─▶ Feature engineering ─▶ Entrenamiento
+```
+
+**Por qué la no anticipación es la regla número uno.** En producción el modelo decide con lo que se sabe *antes*
+de la fecha de observación. Una variable contemporánea o del futuro (un saldo de fin de mes posterior a la
+originación, una marca de cobranza o un campo que se actualiza tras el default) no existe en el momento de decidir.
+Infla el Gini en construcción y hace que el modelo falle al implementarse. Cada variable documenta su fecha de
+referencia y el desfase de su fuente (DES-D1-01.03.05).
+
+**Por qué un IV demasiado alto es una alarma.** En crédito, un IV mayor a 0.50 casi siempre indica que la variable
+contiene información del target (fuga) y no poder predictivo genuino. Es la regla clásica de la práctica de scoring
+(LIT-001). Antes de usarla hay que demostrar lo contrario.
+
 ## Reglas clave (resumen de umbrales)
 
 | Tema | Regla | Umbral |
 |---|---|---|
+| No anticipación | Cero variables contemporáneas o futuras | U-39 |
+| Poder predictivo y fuga | IV entre 0.02 y 0.50; IV > 0.50 solo con investigación de fuga | U-38 |
 | Representatividad | $0.95 \le TM/TG \le 1.05$; si no, ponderar | U-03 |
 | Estabilidad de variables | PSI ≤ 10 % (≤ 20 % excepción) | U-02 |
 | Outliers | Percentiles 1-5-95-99 | U-04 |
@@ -1775,7 +1828,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (92 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (96 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -1821,11 +1874,27 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Entregable: Excel 10: Univariate analysis I
 
+- **`DES-D4-03.02.02`** Análisis univariado de cada variable sobre la muestra de entrenamiento: distribución, valores especiales y faltantes, categorías raras y valores extremos. Es requisito previo del análisis bivariado.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
 #### 3.3 Gini por variables
 
 - **`DES-D4-03.03.01`** Análisis de discriminación por variables (global/por mes)
 
   Aplica: Lineal/ML/Árbol I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Hito: SME 4
+
+- **`DES-D4-03.03.02`** Análisis bivariado de cada variable frente al target: WOE e IV por tramo, tendencia y monotonicidad del riesgo, y estabilidad del IV entre períodos.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1.5 d ágil / 1.5 d trad. · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
+- **`DES-D4-03.03.03`** Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38).
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d trad. · Automatización: 2 · Crítico · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-38 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
+
+- **`DES-D4-03.03.04`** Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 3 · Crítico · Entregable: Tabla 1: Base de variables finalistas. · Umbrales: U-38, U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
 ### 4 · Feature engineering
 
@@ -4813,7 +4882,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 <!-- CATALOGO:INICIO VAL -->
 ## Catálogo de requisitos · Validación
 
-> Bloque generado desde `catalogo/val.yaml` (94 requisitos).
+> Bloque generado desde `catalogo/val.yaml` (95 requisitos).
 
 ### Validación metodológica
 
@@ -4978,6 +5047,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 - [ ] **`VAL-M-05.04`** **KILLER** Hallazgos clasificados por severidad (alta, media, baja) con responsable, plazo y seguimiento hasta su cierre; los de severidad alta exigen mitigación temporal hasta corregirse.
 - [ ] **`VAL-M-05.05`** Para modelos de IA: evaluación de interpretabilidad (incluida la estabilidad de las explicaciones), optimización de hiperparámetros, validación cruzada y nivel de sobreajuste.
 - [ ] **`VAL-M-05.06`** Modelos de terceros: réplica o, si la propiedad intelectual lo impide, benchmarking u otra técnica alternativa documentada.
+- [ ] **`VAL-M-05.07`** **KILLER** Verificación independiente de la no anticipación temporal de las variables (U-39) y de la ausencia de fuga de información: revisión de variables con IV mayor a 0.50 (U-38) y del embudo de filtros previo al entrenamiento.
 
 
 <!-- CATALOGO:FIN -->
@@ -5043,7 +5113,7 @@ estables, umbrales cerrados, catálogo en JSON y esquemas. Le faltaban cuatro co
 El agente **no sigue adelante** y pide decisión humana, por escrito, cuando:
 
 1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 > 10 pts, U-20 con elasticidad positiva, U-24 sobre el tope).
-2. Sospecha **fuga de información**: una variable posterior a la fecha de observación, un Gini OOT mayor que el de construcción, o una variable con importancia anómala.
+2. Sospecha **fuga de información**: una variable posterior a la fecha de observación (U-39), una variable con IV mayor a 0.50 (U-38), un Gini OOT mayor que el de construcción, o una variable con importancia anómala.
 3. La definición de default o de target es ambigua, o difiere de U-17.
 4. Encuentra datos sensibles o atributos protegidos que no deberían estar en la base.
 5. Una instrucción contradice el estándar ("usa el OOT para elegir hiperparámetros", "baja el precio de este segmento por debajo del piso").
@@ -5072,7 +5142,7 @@ contrato:
     - data/tabla_maestra_v3.parquet  # sha256: 9f2c…
     - evidencias.yaml                # estado de las fases previas (G1 y G2 conformes)
   requisitos: aplicables            # el agente los obtiene con `python tools/verificar.py --plan`
-  umbrales_bloqueantes: [U-03, U-06, U-07, U-10, U-11]
+  umbrales_bloqueantes: [U-39, U-38, U-03, U-06, U-07, U-10, U-11]
   herramientas_permitidas: [python, lectura de data/, escritura en src/ reports/ docs/]
   prohibido: [escribir fuera del repo, acceso a producción, aprobar actas]
   entregables:
@@ -5661,6 +5731,17 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.1.0] — 2026-10-17
+
+### Nuevo
+- **No anticipación temporal del tablón** (U-39): toda variable se construye solo con información anterior a la fecha
+  de observación; cada variable documenta su fecha de referencia y el desfase de su fuente, con prueba automática
+  (DES-D1-01.03.04, DES-D1-01.03.05).
+- **Orden obligatorio antes de entrenar**: análisis univariado (DES-D4-03.02.02) y bivariado con WOE/IV (DES-D4-03.03.02),
+  sospecha de fuga para variables con IV mayor a 0.50 (DES-D4-03.03.03, U-38) y filtro de variables confiables con
+  embudo documentado (DES-D4-03.03.04).
+- Validación verifica no anticipación y fuga (VAL-M-05.07, bloqueante). `tools/verificar.py` comprueba U-38 y U-39.
+
 ## [2.0.0] — 2026-10-17 · Línea base (primera versión pública)
 
 Primera publicación del estándar como documentación como código. Constituye la **línea base** contra la que se
@@ -5735,7 +5816,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.0.0** (línea base) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.1.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 
@@ -5748,7 +5829,7 @@ para agentes de IA (JSON y `llms.txt`).
 
 | | |
 |---|---|
-| **533 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **37 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
+| **539 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **39 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
 | **103 obras** de literatura enlazadas a los requisitos que fundamentan | **27 tipos de acta**, con editor en línea y exportación a Word y Markdown |
 | Mapeo artículo por artículo a la **Res. SBS 00053-2023** y alineado con **SR 26-2**, **PRA SS1/23**, IFRS 9 y el **EU AI Act** | **Estándar operativo para agentes de IA** con verificador automático de evidencias |
 

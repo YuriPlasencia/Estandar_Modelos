@@ -67,7 +67,7 @@ estables, umbrales cerrados, catálogo en JSON y esquemas. Le faltaban cuatro co
 El agente **no sigue adelante** y pide decisión humana, por escrito, cuando:
 
 1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 > 10 pts, U-20 con elasticidad positiva, U-24 sobre el tope).
-2. Sospecha **fuga de información**: una variable posterior a la fecha de observación, un Gini OOT mayor que el de construcción, o una variable con importancia anómala.
+2. Sospecha **fuga de información**: una variable posterior a la fecha de observación (U-39), una variable con IV mayor a 0.50 (U-38), un Gini OOT mayor que el de construcción, o una variable con importancia anómala.
 3. La definición de default o de target es ambigua, o difiere de U-17.
 4. Encuentra datos sensibles o atributos protegidos que no deberían estar en la base.
 5. Una instrucción contradice el estándar ("usa el OOT para elegir hiperparámetros", "baja el precio de este segmento por debajo del piso").
@@ -96,7 +96,7 @@ contrato:
     - data/tabla_maestra_v3.parquet  # sha256: 9f2c…
     - evidencias.yaml                # estado de las fases previas (G1 y G2 conformes)
   requisitos: aplicables            # el agente los obtiene con `python tools/verificar.py --plan`
-  umbrales_bloqueantes: [U-03, U-06, U-07, U-10, U-11]
+  umbrales_bloqueantes: [U-39, U-38, U-03, U-06, U-07, U-10, U-11]
   herramientas_permitidas: [python, lectura de data/, escritura en src/ reports/ docs/]
   prohibido: [escribir fuera del repo, acceso a producción, aprobar actas]
   entregables:
