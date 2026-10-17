@@ -1,0 +1,82 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R8
+nombre: "Pérdida crediticia esperada (ECL) y overlays"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R8-01.01.01
+  tarea: "Cálculo de la ECL"
+  subtarea: "Motor de cálculo"
+  actividad: "Calcular la ECL por operación como la suma, período a período, de PD marginal × LGD × EAD descontada a la tasa de interés efectiva: 12 meses para Stage 1, lifetime para Stage 2 y LGD en default para Stage 3; ponderar por escenario (U-32)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R5", descripcion: "Motor de ECL"}
+  hito: "Sprint 6"
+- id: PAR-R8-01.01.02
+  tarea: "Cálculo de la ECL"
+  subtarea: "Motor de cálculo"
+  actividad: "Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "14", descripcion: "Certificación del modelo"}
+- id: PAR-R8-01.02.01
+  tarea: "Cálculo de la ECL"
+  subtarea: "Análisis de resultados"
+  actividad: "Explicar los movimientos de la ECL entre períodos (originaciones, bajas, cambios de stage, cambios de parámetros, escenarios, castigos) para Contabilidad y para las revelaciones de IFRS 7."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R7", descripcion: "Movimiento de la ECL"}
+- id: PAR-R8-01.02.02
+  tarea: "Cálculo de la ECL"
+  subtarea: "Análisis de resultados"
+  actividad: "Calcular sensibilidades de la ECL: 100 % en cada escenario, cambios en ponderaciones y en umbrales SICR."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 3
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: "R7", descripcion: "Movimiento de la ECL"}
+- id: PAR-R8-02.01.01
+  tarea: "Overlays y ajustes post-modelo"
+  subtarea: "Gobierno de overlays"
+  actividad: "Todo overlay o ajuste post-modelo debe tener causa identificada (riesgo no capturado por el modelo), cuantificación reproducible, cartera afectada, fecha de revisión o expiración y aprobación en comité (U-31)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R9", descripcion: "Registro de overlays"}
+- id: PAR-R8-02.01.02
+  tarea: "Overlays y ajustes post-modelo"
+  subtarea: "Gobierno de overlays"
+  actividad: "Reunión de aprobación de overlays y de los resultados de la ECL del período."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.25
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  entregables:
+  - {tipo: Acta, numero: "PAR-OVL", descripcion: "Aprobación de overlays"}
+- id: PAR-R8-02.01.03
+  tarea: "Overlays y ajustes post-modelo"
+  subtarea: "Gobierno de overlays"
+  actividad: "Planificar la absorción de cada overlay recurrente dentro del modelo en el siguiente ciclo de recalibrado, para que no se vuelva permanente."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  entregables:
+  - {tipo: Documento, numero: "R9", descripcion: "Registro de overlays"}

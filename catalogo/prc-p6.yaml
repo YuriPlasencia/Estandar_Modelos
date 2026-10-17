@@ -1,0 +1,73 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PRC-P6
+nombre: Experimentación y piloto
+estandar: Pricing
+origen: Estándar de Pricing Analítico v1.0 (nuevo, 2026-10-17)
+actividades:
+- id: PRC-P6-01.01.01
+  tarea: Diseño del experimento
+  subtarea: Protocolo
+  actividad: |-
+    Pre-registrar el experimento antes de lanzarlo: hipótesis, métrica primaria (margen esperado por oferta o conversión), métricas de resguardo (riesgo de cosecha, quejas), unidad de aleatorización, tamaño muestral con potencia y MDE (U-22), duración y regla de parada.
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P6, descripcion: Diseño del experimento}
+  hito: Sprint 5
+- id: PRC-P6-01.01.02
+  tarea: Diseño del experimento
+  subtarea: Protocolo
+  actividad: |-
+    Revisar el experimento con Cumplimiento y Legal: los precios de prueba respetan topes y transparencia, no discriminan por atributos protegidos y se aplican por reglas objetivas comunicables.
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P6, descripcion: Diseño del experimento}
+- id: PRC-P6-01.02.01
+  tarea: Diseño del experimento
+  subtarea: Aprobación
+  actividad: "Aprobación del piloto o experimento por el dueño del precio y Riesgos, con el grupo de control y los límites de exposición definidos."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 0.25
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  entregables:
+  - {tipo: Acta, numero: PRC-PIL, descripcion: Aprobación del piloto}
+- id: PRC-P6-02.01.01
+  tarea: Ejecución y lectura
+  subtarea: Lectura de resultados
+  actividad: |-
+    Ejecutar el piloto con control aleatorio y monitorear diariamente asignación, balance entre grupos y métricas de resguardo. Leer resultados solo al cumplir el tamaño muestral pre-registrado (sin "espiar" para decidir antes).
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: P4, descripcion: Resultados del piloto}
+- id: PRC-P6-02.01.02
+  tarea: Ejecución y lectura
+  subtarea: Lectura de resultados
+  actividad: "Estimar el efecto con intervalo de confianza, actualizar la elasticidad del modelo de respuesta con la evidencia experimental y documentar la decisión (escalar, ajustar o descartar)."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: P4, descripcion: Resultados del piloto}
+- id: PRC-P6-02.02.01
+  tarea: Ejecución y lectura
+  subtarea: Despliegue gradual
+  actividad: "Para Tier III–IV sin experimento, desplegar de forma escalonada por región o canal (champion/challenger) y comparar contra el grupo que mantiene el precio anterior."
+  aplica_tier: [3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: P4, descripcion: Resultados del piloto}

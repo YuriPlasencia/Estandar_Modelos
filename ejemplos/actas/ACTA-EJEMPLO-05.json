@@ -1,0 +1,110 @@
+{
+  "tipo": "R5",
+  "numero": "ACTA-MOD-EJEMPLO-001-05",
+  "estado": "Aprobada",
+  "version": 1,
+  "modelo": {
+    "codigo": "MOD-EJEMPLO-001",
+    "nombre": "Score de originación — ejemplo",
+    "tier": "II",
+    "tipo_modelo": "ml"
+  },
+  "fecha": "2026-10-20",
+  "hora_inicio": "10:00",
+  "hora_fin": "11:15",
+  "modalidad": "Virtual",
+  "lugar": "Sala virtual del equipo",
+  "secretario": "Analista de modelos (ejemplo)",
+  "objetivo": "Seleccionar el modelo final a partir de su desempeño, estabilidad y sentido económico.",
+  "agenda": [
+    "Indicadores del modelo final (global, por mes, por segmento, meses recientes)",
+    "Diferencia de desempeño Train vs. OOT",
+    "Comparación con el modelo vigente",
+    "Sentido económico de las variables finales"
+  ],
+  "resumen": "Se presentaron tres modelos candidatos (XGBoost, LightGBM y logística WOE como benchmark). El XGBoost obtuvo Gini OOT de 52.1 frente a 54.0 en Train (diferencia de 1.9 pts, dentro de U-11) y supera al modelo vigente en 6.4 pts en las cosechas aprobadas de los últimos seis meses.\n\nNegocio revisó el sentido económico de las 24 variables finales; se pidió retirar una variable de canal por riesgo de sesgo operativo.",
+  "asistentes": [
+    {
+      "nombre": "Gerente de producto (ejemplo)",
+      "area": "Negocio / banca usuaria",
+      "rol": "Decide",
+      "asistio": true
+    },
+    {
+      "nombre": "Jefe de modelos (ejemplo)",
+      "area": "Jefatura de modelos",
+      "rol": "Aprueba",
+      "asistio": true
+    },
+    {
+      "nombre": "Analista de modelos (ejemplo)",
+      "area": "Equipo de modelos",
+      "rol": "Secretario",
+      "asistio": true
+    }
+  ],
+  "decisiones": [
+    {
+      "texto": "Modelo final seleccionado",
+      "ref": "DES-D4-06.03.01",
+      "responsable": "Gerente de producto (ejemplo)",
+      "estado": "Acordada"
+    },
+    {
+      "texto": "Diferencia de Gini Train–OOT ≤ 10 pts (o excepción sustentada)",
+      "ref": "U-11",
+      "responsable": "Jefe de modelos (ejemplo)",
+      "estado": "Acordada"
+    },
+    {
+      "texto": "Variables finales con sentido económico validado",
+      "ref": "DES-D4-05.02.02",
+      "responsable": "Jefe de modelos (ejemplo)",
+      "estado": "Acordada"
+    }
+  ],
+  "excepciones": [],
+  "acuerdos": [
+    {
+      "accion": "Reentrenar sin la variable de canal y confirmar Gini OOT",
+      "responsable": "Analista de modelos (ejemplo)",
+      "fecha": "2026-10-24",
+      "estado": "Abierto"
+    }
+  ],
+  "evidencias": [
+    "PPT 9 · Indicadores del modelo final",
+    "PPT 10 · Comparación con el modelo vigente"
+  ],
+  "conformidad": [
+    {
+      "nombre": "Gerente de producto (ejemplo)",
+      "area": "Negocio / banca usuaria",
+      "estado": "Conforme",
+      "fecha": "2026-10-21",
+      "medio": "Correo"
+    },
+    {
+      "nombre": "Jefe de modelos (ejemplo)",
+      "area": "Jefatura de modelos",
+      "estado": "Conforme",
+      "fecha": "2026-10-21",
+      "medio": "Correo"
+    }
+  ],
+  "historial": [
+    {
+      "fecha": "2026-10-20",
+      "version": 1,
+      "cambio": "Creación del acta",
+      "por": null
+    },
+    {
+      "fecha": "2026-10-21",
+      "version": 1,
+      "cambio": "Aprobada",
+      "por": null
+    }
+  ],
+  "estandar_version": "1.2.0"
+}

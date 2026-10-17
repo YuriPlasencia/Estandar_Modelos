@@ -1,0 +1,1208 @@
+{
+ "version": 1,
+ "roles": [
+  "Decide",
+  "Aprueba",
+  "Consultado",
+  "Informado",
+  "Secretario"
+ ],
+ "estados": [
+  "Borrador",
+  "En revisión",
+  "Aprobada"
+ ],
+ "tipos": [
+  {
+   "id": "R1",
+   "nombre": "Reunión 1 · Levantamiento de expectativas: población objetivo",
+   "acta": "Acta 1",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D1-01.01.08",
+   "objetivo": "Levantar las expectativas del área usuaria sobre la población objetivo, las cosechas y las exclusiones e inclusiones del modelo.",
+   "agenda": [
+    "Caso de uso, necesidad de negocio y objetivo del modelo",
+    "Población objetivo y cosechas a considerar",
+    "Exclusiones e inclusiones preliminares",
+    "Definición de default a adoptar",
+    "Próximos pasos y responsables"
+   ],
+   "decisiones": [
+    {
+     "texto": "Población objetivo preliminar",
+     "ref": "DES-D1-01.04.01"
+    },
+    {
+     "texto": "Criterios de exclusión preliminares",
+     "ref": "DES-D1-04.01.01"
+    },
+    {
+     "texto": "Definición de default: atraso > 60 días al menos una vez en 12 meses",
+     "ref": "U-17"
+    }
+   ],
+   "entregables": [],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Riesgos – políticas de crédito"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "R2",
+   "nombre": "Reunión 2 · Levantamiento de expectativas: fuentes y variables",
+   "acta": "Acta 2",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D1-01.03.01",
+   "objetivo": "Acordar las fuentes de información, las variables candidatas, sus desfases y los accesos necesarios.",
+   "agenda": [
+    "Fuentes disponibles y nuevas (internas, buró, proveedores)",
+    "Variables candidatas propuestas por el negocio",
+    "Desfases de cada fuente y fecha de ejecución del modelo",
+    "Accesos y responsables de extracción"
+   ],
+   "decisiones": [
+    {
+     "texto": "Fuentes aprobadas para el desarrollo",
+     "ref": "DES-D1-01.06.01"
+    },
+    {
+     "texto": "Fecha de ejecución y desfases asumidos",
+     "ref": "DES-D1-01.07.01"
+    }
+   ],
+   "entregables": [
+    "Tabla 1 · Master table inicial"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Tecnología y datos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "R3",
+   "nombre": "Reunión 3 · Enriquecimiento de la propuesta y diseño funcional",
+   "acta": "Acta de reunión",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D1-01.04.07",
+   "objetivo": "Validar el Project Charter y el diseño funcional del modelo.",
+   "agenda": [
+    "Población objetivo y definición cosechas vs. aprobadas",
+    "Tier, uso, alcance y limitaciones",
+    "Criterios de éxito (OKRs)",
+    "Alineamiento con la metodología corporativa"
+   ],
+   "decisiones": [
+    {
+     "texto": "Tier y uso del modelo",
+     "ref": "DES-D1-01.04.04"
+    },
+    {
+     "texto": "Alcance y limitaciones",
+     "ref": "DES-D1-01.04.05"
+    },
+    {
+     "texto": "Criterios de éxito (OKRs)",
+     "ref": "DES-D1-01.04.03"
+    },
+    {
+     "texto": "Alineamiento de universo y target con la metodología corporativa",
+     "ref": "DES-D1-01.04.06"
+    }
+   ],
+   "entregables": [
+    "PPT 1 · Project Charter"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Jefatura de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "KO",
+   "nombre": "Kick off del desarrollo",
+   "acta": "Acta 3",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D1-02.02.01",
+   "objetivo": "Arrancar formalmente el proyecto con los stakeholders y confirmar alcance, cronograma y responsables.",
+   "agenda": [
+    "Presentación del Project Charter y del Kick off",
+    "Ventana de modelamiento y cronograma de sprints",
+    "Roles, responsables y canales de comunicación",
+    "Riesgos y dependencias"
+   ],
+   "decisiones": [
+    {
+     "texto": "Aprobación del Project Charter",
+     "ref": "DES-D1-01.04.08"
+    },
+    {
+     "texto": "Ventana de modelamiento (≥ 12 meses Train/Test + 6 OOT)",
+     "ref": "U-01"
+    }
+   ],
+   "entregables": [
+    "PPT 1 · Project Charter",
+    "PPT 2 · Kick off"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Jefatura de modelos"
+    },
+    {
+     "rol": "Informado",
+     "area": "Validación de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "R4",
+   "nombre": "Reunión 4 · Segmentación",
+   "acta": "Acta 4",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D3-01.01.01",
+   "objetivo": "Acordar los ejes de segmentación y la segmentación final del modelo.",
+   "agenda": [
+    "Ejes de segmentación propuestos y drivers identificados",
+    "Materialidad y estabilidad del target por segmento",
+    "Modelo segmentado vs. unisegmento"
+   ],
+   "decisiones": [
+    {
+     "texto": "Segmentación final",
+     "ref": "DES-D3-01.02.04"
+    }
+   ],
+   "entregables": [
+    "PPT 3 · Análisis de segmentación",
+    "Excel 8 · Materialidad y target por segmento"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Riesgos – políticas de crédito"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "R5",
+   "nombre": "Reunión 5 · Selección del modelo final",
+   "acta": "Acta 5",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D4-06.03.01",
+   "objetivo": "Seleccionar el modelo final a partir de su desempeño, estabilidad y sentido económico.",
+   "agenda": [
+    "Indicadores del modelo final (global, por mes, por segmento, meses recientes)",
+    "Diferencia de desempeño Train vs. OOT",
+    "Comparación con el modelo vigente",
+    "Sentido económico de las variables finales"
+   ],
+   "decisiones": [
+    {
+     "texto": "Modelo final seleccionado",
+     "ref": "DES-D4-06.03.01"
+    },
+    {
+     "texto": "Diferencia de Gini Train–OOT ≤ 10 pts (o excepción sustentada)",
+     "ref": "U-11"
+    },
+    {
+     "texto": "Variables finales con sentido económico validado",
+     "ref": "DES-D4-05.02.02"
+    }
+   ],
+   "entregables": [
+    "PPT 9 · Indicadores del modelo final",
+    "PPT 10 · Comparación con el modelo vigente"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Jefatura de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "R6",
+   "nombre": "Reunión 6 · Presentación del calibrado",
+   "acta": "Acta 6",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D4-08.01.05",
+   "objetivo": "Presentar la calibración del score y su regla de transición applicant–behavior.",
+   "agenda": [
+    "Drivers micro y variables macro",
+    "Resultado de la calibración y precisión por tramo",
+    "Regla de transición de score"
+   ],
+   "decisiones": [
+    {
+     "texto": "Calibración aprobada para puntuar la base",
+     "ref": "DES-D4-08.01.06"
+    }
+   ],
+   "entregables": [
+    "Script 13 · Análisis de calibración"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "R7",
+   "nombre": "Reunión 7 · Resultados del modelo final",
+   "acta": "Acta 7",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D4-12.01.01",
+   "objetivo": "Cerrar cuantitativamente el modelo y presentar sus debilidades.",
+   "agenda": [
+    "Performance del modelo por drivers",
+    "Debilidades de discriminación, calibración y estabilidad",
+    "Documentación metodológica consolidada"
+   ],
+   "decisiones": [
+    {
+     "texto": "Cierre cuantitativo del modelo",
+     "ref": "DES-D4-12.01.01"
+    },
+    {
+     "texto": "Reporte de debilidades conocido y aceptado",
+     "ref": "DES-D4-10.01.05"
+    }
+   ],
+   "entregables": [
+    "PPT 13 · Performance del modelo",
+    "PPT 14 · Debilidades del modelo",
+    "PPT 15 · Cierre del modelo"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Jefatura de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "R8",
+   "nombre": "Reunión 8 · Enfoque cualitativo con la banca",
+   "acta": "Acta 8",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D4-13.01.01",
+   "objetivo": "Revisar y actualizar el enfoque cualitativo (matriz CAR) que complementa al score.",
+   "agenda": [
+    "Dimensiones de la matriz",
+    "Preguntas",
+    "Pesos"
+   ],
+   "decisiones": [
+    {
+     "texto": "Dimensiones",
+     "ref": "DES-D4-13.01.02"
+    },
+    {
+     "texto": "Preguntas",
+     "ref": "DES-D4-13.01.03"
+    },
+    {
+     "texto": "Pesos",
+     "ref": "DES-D4-13.01.04"
+    }
+   ],
+   "entregables": [
+    "Documento 11 · Memoria metodológica"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Banca"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "CM",
+   "nombre": "Comité de Modelos · Aprobación",
+   "acta": "ACTA-CM",
+   "estandar": "Desarrollo",
+   "requisito": "DES-D4-14.01.01",
+   "objetivo": "Presentar el modelo al Comité de Modelos para su aprobación.",
+   "agenda": [
+    "Resumen del modelo, uso y Tier",
+    "Desempeño, limitaciones y excepciones a umbrales",
+    "Impactos en la gestión",
+    "Plan de implementación y seguimiento"
+   ],
+   "decisiones": [
+    {
+     "texto": "Aprobación del modelo (aprobado / aprobado con condiciones / no aprobado)",
+     "ref": "DES-D4-14.01.01"
+    },
+    {
+     "texto": "Excepciones a umbrales aceptadas",
+     "ref": "U-11"
+    }
+   ],
+   "entregables": [
+    "Documento 11 · Memoria metodológica",
+    "PPT 15 · Cierre del modelo"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Comité de Modelos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Validación de modelos"
+    },
+    {
+     "rol": "Informado",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Secretaría del comité"
+    }
+   ]
+  },
+  {
+   "id": "IMP-E",
+   "nombre": "Entrega al equipo implementador",
+   "acta": "Acta 9",
+   "estandar": "Implementación",
+   "requisito": "IMP-01.01.05",
+   "objetivo": "Entregar el manual de implementación y revisar el proceso con el equipo implementador.",
+   "agenda": [
+    "Guía de implementación y lineamientos de ejecución",
+    "Variables críticas, dependencias y bitácora de cambios",
+    "Pruebas de certificación a realizar"
+   ],
+   "decisiones": [
+    {
+     "texto": "Revisión con el área de implementación y acta de entrega",
+     "ref": "IMP-01.01.07"
+    }
+   ],
+   "entregables": [
+    "Documento 13 · Guía de implementación",
+    "Documento 14 · Lineamientos"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Equipo implementador"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "IMP-C",
+   "nombre": "Cierre de la implementación",
+   "acta": "Acta 10",
+   "estandar": "Implementación",
+   "requisito": "IMP-01.07.01",
+   "objetivo": "Presentar el proceso implementado al equipo usuario y dejar constancia de la certificación.",
+   "agenda": [
+    "Resultado de las pruebas de certificación (≥ 95 % de coincidencia)",
+    "Tabla productiva, controles de calidad y logs",
+    "Plan de contingencia y responsables de ejecución"
+   ],
+   "decisiones": [
+    {
+     "texto": "Certificación con coincidencia ≥ 95 %",
+     "ref": "U-15"
+    },
+    {
+     "texto": "Conformidad del líder de implementación",
+     "ref": "IMP-01.06.04"
+    }
+   ],
+   "entregables": [
+    "Documento 14 · Certificación del modelo"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Negocio / banca usuaria"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Líder de implementación"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "CAL-KO",
+   "nombre": "Kick off de la calibración",
+   "acta": "Acta de kick off",
+   "estandar": "Calibración",
+   "requisito": "CAL-C2-02.01.01",
+   "objetivo": "Arrancar la calibración con el área solicitante y acordar la propuesta inicial de cambio de nivel.",
+   "agenda": [
+    "Status de descalibración del modelo",
+    "Drivers candidatos (seguimiento y negocio)",
+    "Propuesta inicial y cronograma"
+   ],
+   "decisiones": [
+    {
+     "texto": "Alcance de la calibración y drivers a evaluar",
+     "ref": "CAL-C1-01.02.02"
+    }
+   ],
+   "entregables": [],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Área solicitante"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Seguimiento de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "CAL-PR",
+   "nombre": "Reunión preliminar de resultados de calibración",
+   "acta": "Acta preliminar",
+   "estandar": "Calibración",
+   "requisito": "CAL-C4-03.03.01",
+   "objetivo": "Revisar los resultados de una iteración del calibrado.",
+   "agenda": [
+    "Significancia e ingreso de drivers",
+    "Sentido económico de los coeficientes",
+    "Matriz de migración y granularidad"
+   ],
+   "decisiones": [
+    {
+     "texto": "Drivers que continúan a la siguiente iteración",
+     "ref": "CAL-C4-04.01.01"
+    },
+    {
+     "texto": "Precisión por tramo con intervalos de Vasicek",
+     "ref": "U-14"
+    }
+   ],
+   "entregables": [],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Área solicitante"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "CAL-CI",
+   "nombre": "Cierre del calibrado",
+   "acta": "Acta de cierre del calibrado",
+   "estandar": "Calibración",
+   "requisito": "CAL-C4-05.01.01",
+   "objetivo": "Presentar y aprobar el calibrado final.",
+   "agenda": [
+    "Drivers finales y sentido de los coeficientes",
+    "Bootstrap, migración y performance por driver",
+    "Envío de la tabla puntuada a seguimiento"
+   ],
+   "decisiones": [
+    {
+     "texto": "Calibrado final aprobado",
+     "ref": "CAL-C4-05.01.02"
+    }
+   ],
+   "entregables": [],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Área solicitante"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Jefatura de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "PRC-KO",
+   "nombre": "Kick off del proyecto de pricing",
+   "acta": "Acta PRC-KO",
+   "estandar": "Pricing",
+   "requisito": "PRC-P1-02.02.01",
+   "objetivo": "Arrancar el proyecto de pricing y acordar la decisión de precio, la función objetivo y las restricciones.",
+   "agenda": [
+    "Decisión de precio, producto, segmentos y canales",
+    "Función objetivo y trade-off volumen–margen",
+    "Restricciones regulatorias, de riesgo y comerciales",
+    "Valor en juego y diagnóstico del precio actual",
+    "RACI y cronograma"
+   ],
+   "decisiones": [
+    {
+     "texto": "Función objetivo y su horizonte",
+     "ref": "PRC-P1-01.01.02"
+    },
+    {
+     "texto": "Restricciones del caso",
+     "ref": "PRC-P1-01.01.03"
+    },
+    {
+     "texto": "Inventario y Tier de los modelos de pricing",
+     "ref": "PRC-P1-02.01.01"
+    }
+   ],
+   "entregables": [
+    "Documento P1 · Ficha del caso de pricing",
+    "Excel P1 · Diagnóstico del precio actual"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Dueño del precio (negocio)"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Finanzas / ALM"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Riesgos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Cumplimiento"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Analytics Pricing"
+    }
+   ]
+  },
+  {
+   "id": "PRC-ELA",
+   "nombre": "Revisión del modelo de respuesta al precio",
+   "acta": "Acta PRC-ELA",
+   "estandar": "Pricing",
+   "requisito": "PRC-P4-04.01.01",
+   "objetivo": "Revisar con el dueño del precio las elasticidades estimadas, su identificación y sus límites de uso.",
+   "agenda": [
+    "Estrategia de identificación causal y robustez",
+    "Elasticidades por segmento y su sentido de negocio",
+    "Calibración de la aceptación por tramo de precio",
+    "Rango de precios en que la curva es válida"
+   ],
+   "decisiones": [
+    {
+     "texto": "Estrategia de identificación aceptada",
+     "ref": "PRC-P4-01.01.01"
+    },
+    {
+     "texto": "Elasticidad negativa en todos los segmentos",
+     "ref": "U-20"
+    },
+    {
+     "texto": "Calibración por decil y tramo de precio",
+     "ref": "U-21"
+    }
+   ],
+   "entregables": [
+    "Script P1 · Modelo de respuesta",
+    "Excel P3 · Curvas de respuesta por segmento"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Dueño del precio (negocio)"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Jefatura de Analytics Pricing"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Analytics Pricing"
+    }
+   ]
+  },
+  {
+   "id": "PRC-CP",
+   "nombre": "Comité de Precios · Aprobación de la propuesta",
+   "acta": "Acta PRC-CP",
+   "estandar": "Pricing",
+   "requisito": "PRC-P5-03.02.01",
+   "objetivo": "Aprobar la propuesta de precios, sus escenarios y las excepciones a umbrales de pricing.",
+   "agenda": [
+    "Precio técnico por celda y RAROC actual",
+    "Escenarios: actual, óptimo, con restricción de volumen y alternativas",
+    "Impacto en volumen, margen, RAROC, pérdida esperada, capital y provisiones",
+    "Cumplimiento regulatorio, equidad y gradualidad",
+    "Plan de piloto e implementación"
+   ],
+   "decisiones": [
+    {
+     "texto": "Escenario de precios aprobado",
+     "ref": "PRC-P5-03.02.01"
+    },
+    {
+     "texto": "Celdas bajo el piso técnico aprobadas como excepción",
+     "ref": "U-18"
+    },
+    {
+     "texto": "Cambios mayores a la gradualidad aprobados",
+     "ref": "U-25"
+    },
+    {
+     "texto": "Matriz de facultades de descuento",
+     "ref": "PRC-P7-01.02.01"
+    }
+   ],
+   "entregables": [
+    "PPT P1 · Escenarios de precio",
+    "Documento P5 · Propuesta de precios",
+    "Excel P2 · Calculadora de precio técnico"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Comité de Precios"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Finanzas / ALM"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Riesgos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Cumplimiento"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Analytics Pricing"
+    }
+   ]
+  },
+  {
+   "id": "PRC-PIL",
+   "nombre": "Aprobación del piloto o experimento de precio",
+   "acta": "Acta PRC-PIL",
+   "estandar": "Pricing",
+   "requisito": "PRC-P6-01.02.01",
+   "objetivo": "Aprobar el diseño del experimento de precio, su grupo de control y sus límites de exposición.",
+   "agenda": [
+    "Hipótesis, métrica primaria y métricas de resguardo",
+    "Tamaño muestral, potencia y duración",
+    "Revisión de Cumplimiento y Legal",
+    "Límites de exposición y regla de parada"
+   ],
+   "decisiones": [
+    {
+     "texto": "Diseño pre-registrado (potencia ≥ 80 %, control ≥ 10 %)",
+     "ref": "U-22"
+    },
+    {
+     "texto": "Conformidad de Cumplimiento y Legal",
+     "ref": "PRC-P6-01.01.02"
+    }
+   ],
+   "entregables": [
+    "Documento P6 · Diseño del experimento"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Dueño del precio (negocio)"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Riesgos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Cumplimiento"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Analytics Pricing"
+    }
+   ]
+  },
+  {
+   "id": "PRC-PIR",
+   "nombre": "Revisión post-implementación de precios",
+   "acta": "Acta PRC-PIR",
+   "estandar": "Pricing",
+   "requisito": "PRC-P8-02.01.02",
+   "objetivo": "Medir el valor capturado frente al caso de negocio y decidir recalibraciones.",
+   "agenda": [
+    "Descomposición del margen: precio, mix, costo de fondos y volumen",
+    "Margen y RAROC realizados vs. esperados",
+    "Excepciones y margen cedido",
+    "Calibración del modelo de respuesta en producción"
+   ],
+   "decisiones": [
+    {
+     "texto": "Desvío de margen dentro de ±15 % o plan de recalibrado",
+     "ref": "U-26"
+    },
+    {
+     "texto": "Recalibrar precio técnico o modelo de respuesta",
+     "ref": "PRC-P8-02.02.01"
+    }
+   ],
+   "entregables": [
+    "Dashboard P1 · Seguimiento de precios",
+    "Documento P8 · Revisión post-implementación"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Dueño del precio (negocio)"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Finanzas / ALM"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Analytics Pricing"
+    }
+   ]
+  },
+  {
+   "id": "PAR-KO",
+   "nombre": "Kick off del proyecto de parámetros",
+   "acta": "Acta PAR-KO",
+   "estandar": "Parámetros",
+   "requisito": "PAR-R1-03.01.01",
+   "objetivo": "Acordar alcance, carteras, usos y definiciones del proyecto de parámetros de riesgo.",
+   "agenda": [
+    "Parámetros y usos (IFRS 9, provisiones locales, capital, pricing, CLV)",
+    "Segmentación de carteras",
+    "Definición de default, cura y unidad de análisis",
+    "Datos disponibles y profundidad histórica",
+    "Cronograma y RACI"
+   ],
+   "decisiones": [
+    {
+     "texto": "Mapa de parámetros y usos",
+     "ref": "PAR-R1-01.01.02"
+    },
+    {
+     "texto": "Definición de default para parámetros (presunción de 90 días)",
+     "ref": "U-28"
+    },
+    {
+     "texto": "Carteras homogéneas",
+     "ref": "PAR-R1-01.02.01"
+    }
+   ],
+   "entregables": [
+    "Documento R1 · Mapa de parámetros y usos",
+    "Documento R2 · Definiciones de default, cura y unidad"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Gerencia de Riesgos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Contabilidad / Finanzas"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Estudios Económicos"
+    },
+    {
+     "rol": "Informado",
+     "area": "Validación de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de Parámetros"
+    }
+   ]
+  },
+  {
+   "id": "PAR-ESC",
+   "nombre": "Revisión trimestral de escenarios macroeconómicos",
+   "acta": "Acta PAR-ESC",
+   "estandar": "Parámetros",
+   "requisito": "PAR-R6-03.01.01",
+   "objetivo": "Aprobar los escenarios macroeconómicos y sus probabilidades para la ECL del trimestre.",
+   "agenda": [
+    "Escenarios base, optimista y pesimista",
+    "Probabilidades y su sustento",
+    "Riesgos no capturados por la macro",
+    "Impacto en la ECL por escenario"
+   ],
+   "decisiones": [
+    {
+     "texto": "Escenarios y probabilidades del trimestre",
+     "ref": "U-32"
+    },
+    {
+     "texto": "Riesgos que requieren ajuste u overlay",
+     "ref": "PAR-R6-02.01.03"
+    }
+   ],
+   "entregables": [
+    "Documento R7 · Escenarios y probabilidades",
+    "Excel R5 · ECL por escenario"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Estudios Económicos"
+    },
+    {
+     "rol": "Aprueba",
+     "area": "Gerencia de Riesgos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Contabilidad / Finanzas"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de Parámetros"
+    }
+   ]
+  },
+  {
+   "id": "PAR-OVL",
+   "nombre": "Aprobación de overlays y de la ECL del período",
+   "acta": "Acta PAR-OVL",
+   "estandar": "Parámetros",
+   "requisito": "PAR-R8-02.01.02",
+   "objetivo": "Aprobar los overlays vigentes y los resultados de la ECL del período.",
+   "agenda": [
+    "Movimiento de la ECL del período",
+    "Overlays nuevos, vigentes y por liberar",
+    "Sensibilidades",
+    "Plan de absorción de overlays en los modelos"
+   ],
+   "decisiones": [
+    {
+     "texto": "Overlays aprobados con fecha de expiración",
+     "ref": "U-31"
+    },
+    {
+     "texto": "ECL del período",
+     "ref": "PAR-R8-01.01.01"
+    }
+   ],
+   "entregables": [
+    "Documento R9 · Registro de overlays",
+    "Excel R7 · Movimiento de la ECL"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Comité de provisiones"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Contabilidad / Finanzas"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Validación de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de Parámetros"
+    }
+   ]
+  },
+  {
+   "id": "PAR-BT",
+   "nombre": "Resultados del backtesting de parámetros",
+   "acta": "Acta PAR-BT",
+   "estandar": "Parámetros",
+   "requisito": "PAR-R9-01.01.03",
+   "objetivo": "Revisar el backtesting anual y decidir recalibraciones o redesarrollos.",
+   "agenda": [
+    "Backtesting de PD por grado (Jeffreys)",
+    "LGD estimada vs. realizada",
+    "CCF y staging",
+    "ECL vs. pérdidas realizadas"
+   ],
+   "decisiones": [
+    {
+     "texto": "Grados en rojo y plan de recalibrado",
+     "ref": "U-30"
+    },
+    {
+     "texto": "Acciones sobre LGD, CCF y staging",
+     "ref": "PAR-R9-01.01.01"
+    }
+   ],
+   "entregables": [
+    "Excel R8 · Backtesting de parámetros"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Gerencia de Riesgos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Validación de modelos"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de Parámetros"
+    }
+   ]
+  },
+  {
+   "id": "PAR-CP",
+   "nombre": "Comité de provisiones · Aprobación de parámetros",
+   "acta": "Acta PAR-CP",
+   "estandar": "Parámetros",
+   "requisito": "PAR-R9-02.01.01",
+   "objetivo": "Aprobar parámetros, escenarios, staging, overlays y la ECL resultante.",
+   "agenda": [
+    "Parámetros nuevos o recalibrados",
+    "Escenarios y probabilidades",
+    "Criterios de staging",
+    "Overlays",
+    "ECL y puente con provisiones regulatorias locales"
+   ],
+   "decisiones": [
+    {
+     "texto": "Aprobación de parámetros y criterios de staging",
+     "ref": "PAR-R9-02.01.01"
+    },
+    {
+     "texto": "Escenarios y ponderación",
+     "ref": "U-32"
+    },
+    {
+     "texto": "Overlays",
+     "ref": "U-31"
+    }
+   ],
+   "entregables": [
+    "Documento R10 · Manual del ciclo de provisiones",
+    "Excel R7 · Movimiento de la ECL"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Comité de provisiones"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Contabilidad / Finanzas"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Validación de modelos"
+    },
+    {
+     "rol": "Informado",
+     "area": "Auditoría interna"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de Parámetros"
+    }
+   ]
+  },
+  {
+   "id": "CRM",
+   "nombre": "Comité de riesgos de modelo (sesión trimestral)",
+   "acta": "Acta CRM",
+   "estandar": "Gobierno",
+   "requisito": "GOB-G1-01.02.01",
+   "objetivo": "Aprobar modelos nuevos o modificados, informes de validación y seguimiento, categorías y acciones ante debilidades.",
+   "agenda": [
+    "Modelos nuevos, modificados o con cambio de uso para aprobación",
+    "Informes de validación y estado de hallazgos",
+    "Informes de seguimiento y alertas (semáforo)",
+    "Cambios de categoría e inventario",
+    "Debilidades abiertas y mitigaciones temporales"
+   ],
+   "decisiones": [
+    {
+     "texto": "Modelos aprobados para uso",
+     "ref": "GOB-G3-01.01.01"
+    },
+    {
+     "texto": "Informes de validación aprobados",
+     "ref": "GOB-G1-01.02.02"
+    },
+    {
+     "texto": "Acciones ante alertas de seguimiento",
+     "ref": "SEG-S3-01.01.02"
+    },
+    {
+     "texto": "Periodicidad de validación por categoría",
+     "ref": "U-35"
+    }
+   ],
+   "entregables": [
+    "Documento G1 · Inventario de modelos",
+    "Documento G3 · Registro de debilidades",
+    "Documento S2 · Informe de seguimiento"
+   ],
+   "participantes": [
+    {
+     "rol": "Decide",
+     "area": "Comité de riesgos de modelo"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Validación de modelos"
+    },
+    {
+     "rol": "Consultado",
+     "area": "Seguimiento de modelos"
+    },
+    {
+     "rol": "Informado",
+     "area": "Auditoría interna"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Unidad de riesgo de modelo"
+    }
+   ]
+  },
+  {
+   "id": "SME",
+   "nombre": "Revisión con experto de negocio (SME)",
+   "acta": "Acta SME",
+   "estandar": "Desarrollo",
+   "requisito": null,
+   "objetivo": "Revisar con el experto de negocio los resultados parciales de la fase en curso.",
+   "agenda": [
+    "Avance de la fase",
+    "Hallazgos y validación del experto",
+    "Ajustes acordados"
+   ],
+   "decisiones": [],
+   "entregables": [],
+   "participantes": [
+    {
+     "rol": "Consultado",
+     "area": "Experto de negocio (SME)"
+    },
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  },
+  {
+   "id": "LIBRE",
+   "nombre": "Otra reunión del proyecto",
+   "acta": "Acta de reunión",
+   "estandar": "Desarrollo",
+   "requisito": null,
+   "objetivo": "",
+   "agenda": [],
+   "decisiones": [],
+   "entregables": [],
+   "participantes": [
+    {
+     "rol": "Secretario",
+     "area": "Equipo de modelos"
+    }
+   ]
+  }
+ ]
+}

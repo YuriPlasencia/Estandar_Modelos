@@ -1,0 +1,62 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R9
+nombre: "Backtesting, seguimiento y gobierno"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R9-01.01.01
+  tarea: "Backtesting"
+  subtarea: "Backtesting de parámetros"
+  actividad: "Backtesting anual de PD (Jeffreys por grado, U-30), LGD (estimada vs. realizada), CCF y staging (proporción de defaults que estaban en Stage 2; transiciones entre stages)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R8", descripcion: "Backtesting de parámetros"}
+  hito: "Sprint 7"
+- id: PAR-R9-01.01.02
+  tarea: "Backtesting"
+  subtarea: "Backtesting de parámetros"
+  actividad: "Backtesting de la ECL: comparar pérdidas realizadas con la ECL constituida por cohorte, y explicar las diferencias (escenario materializado vs. probabilidades asignadas)."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 3
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: "R8", descripcion: "Backtesting de parámetros"}
+- id: PAR-R9-01.01.03
+  tarea: "Backtesting"
+  subtarea: "Backtesting de parámetros"
+  actividad: "Reunión de resultados del backtesting y decisión de recalibrar o redesarrollar."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.25
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  entregables:
+  - {tipo: Acta, numero: "PAR-BT", descripcion: "Resultados del backtesting"}
+- id: PAR-R9-02.01.01
+  tarea: "Gobierno de provisiones"
+  subtarea: "Comité de provisiones"
+  actividad: "Presentar al comité de provisiones los parámetros, escenarios, staging, overlays y la ECL resultante, con el puente frente a las provisiones regulatorias locales cuando ambas coexistan."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  critico: true
+  entregables:
+  - {tipo: Acta, numero: "PAR-CP", descripcion: "Comité de provisiones"}
+  hito: "Comité de provisiones"
+- id: PAR-R9-02.01.02
+  tarea: "Gobierno de provisiones"
+  subtarea: "Comité de provisiones"
+  actividad: "Mantener la documentación del ciclo de cálculo (insumos, versiones, controles, aprobaciones) para auditoría externa y supervisión, con cuadro de control de cambios."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 2
+  naturaleza: documentacion
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R10", descripcion: "Manual del ciclo de provisiones"}

@@ -1,0 +1,82 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R3
+nombre: "Probabilidad de default (PD)"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R3-01.01.01
+  tarea: "PD a 12 meses"
+  subtarea: "Estimación y calibración"
+  actividad: "Estimar la PD a 12 meses por grado o segmento, o calibrar el score aprobado a tasas de default observadas siguiendo DES-D4-08, con la definición de default de R1."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R1", descripcion: "Modelos de PD"}
+  hito: "Sprint 2"
+- id: PAR-R3-01.01.02
+  tarea: "PD a 12 meses"
+  subtarea: "Estimación y calibración"
+  actividad: "Separar el componente through-the-cycle (tendencia de largo plazo) del point-in-time (ciclo), y documentar cómo se ancla la PD al promedio de largo plazo."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R4", descripcion: "Metodología de PD"}
+- id: PAR-R3-02.01.01
+  tarea: "PD lifetime"
+  subtarea: "Estructura temporal"
+  actividad: "Estimar la curva de PD lifetime (marginal y acumulada por período) con un método documentado: supervivencia en tiempo discreto, matrices de migración (Markov) o curvas vintage, según la cartera y los datos disponibles."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 4
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R1", descripcion: "Modelos de PD"}
+- id: PAR-R3-02.01.02
+  tarea: "PD lifetime"
+  subtarea: "Estructura temporal"
+  actividad: "Tratar los riesgos competitivos (prepago, cancelación, castigo) para no sobreestimar la PD acumulada de operaciones que salen del portafolio antes de su vencimiento."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Script, numero: "R1", descripcion: "Modelos de PD"}
+- id: PAR-R3-02.01.03
+  tarea: "PD lifetime"
+  subtarea: "Estructura temporal"
+  actividad: "Para matrices de migración: verificar monotonicidad (mayor PD en peores grados), estado absorbente de default y estabilidad de la matriz; si se condiciona al ciclo (factor Z de Vasicek u otro), documentar la estimación del factor."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Script, numero: "R1", descripcion: "Modelos de PD"}
+- id: PAR-R3-03.01.01
+  tarea: "Desempeño de la PD"
+  subtarea: "Validación de la PD"
+  actividad: "Evaluar discriminación por horizonte y, sobre todo, calibración: tasa observada vs. PD por grado con el test de Jeffreys (U-30), en construcción y en los períodos más recientes."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R2", descripcion: "Desempeño y calibración de PD"}
+- id: PAR-R3-03.01.02
+  tarea: "Desempeño de la PD"
+  subtarea: "Validación de la PD"
+  actividad: "Documentar la metodología de PD, sus supuestos y limitaciones con la estructura de DES-D4-11."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: documentacion
+  entregables:
+  - {tipo: Documento, numero: "R4", descripcion: "Metodología de PD"}

@@ -1,0 +1,105 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PRC-P3
+nombre: Precio técnico y rentabilidad ajustada por riesgo
+estandar: Pricing
+origen: Estándar de Pricing Analítico v1.0 (nuevo, 2026-10-17)
+actividades:
+- id: PRC-P3-01.01.01
+  tarea: Componentes del precio técnico
+  subtarea: Costo de fondos
+  actividad: |-
+    Asignar el costo de fondos con la curva de precios de transferencia (FTP) de Finanzas/ALM según plazo y perfil de amortización (duración equivalente), incluyendo la prima de liquidez. Para depósitos, el FTP es el valor del fondeo que aporta el producto.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: P2, descripcion: Calculadora de precio técnico}
+  hito: Sprint 2
+- id: PRC-P3-01.02.01
+  tarea: Componentes del precio técnico
+  subtarea: Pérdida esperada
+  actividad: |-
+    Calcular la pérdida esperada anualizada con los modelos de riesgo aprobados: PD ajustada al horizonte de la operación (lifetime o promedio anual sobre la vida esperada, no solo la PD a 12 meses de U-17), LGD y EAD con su perfil de amortización y uso de línea.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: P2, descripcion: Calculadora de precio técnico}
+- id: PRC-P3-01.03.01
+  tarea: Componentes del precio técnico
+  subtarea: Costos operativos y de adquisición
+  actividad: "Asignar costos operativos (originación, mantenimiento, cobranza) y de adquisición por canal, con su driver (por operación o por saldo), conciliados con Finanzas."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: P2, descripcion: Calculadora de precio técnico}
+- id: PRC-P3-01.04.01
+  tarea: Componentes del precio técnico
+  subtarea: Costo de capital
+  actividad: |-
+    Calcular el cargo por capital: capital económico o regulatorio consumido por la operación por la tasa de retorno mínima (hurdle) antes de impuestos, neto del beneficio de fondear con capital.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: P2, descripcion: Calculadora de precio técnico}
+- id: PRC-P3-01.05.01
+  tarea: Componentes del precio técnico
+  subtarea: Opcionalidad
+  actividad: "Valorar la opcionalidad del cliente (prepago sin penalidad, cancelación anticipada de depósitos, uso de línea) e incorporarla como prima o como ajuste del valor esperado."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  entregables:
+  - {tipo: Excel, numero: P2, descripcion: Calculadora de precio técnico}
+- id: PRC-P3-02.01.01
+  tarea: Precio técnico y RAROC
+  subtarea: Cálculo y grilla
+  actividad: |-
+    Calcular el precio técnico mínimo (tasa piso con RAROC igual al hurdle) por celda de producto × plazo × canal × tramo de riesgo, y el RAROC de cada operación al precio vigente. Ninguna oferta por debajo del piso salvo excepción dentro de facultades (U-18).
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: P2, descripcion: Calculadora de precio técnico}
+- id: PRC-P3-02.01.02
+  tarea: Precio técnico y RAROC
+  subtarea: Cálculo y grilla
+  actividad: "Verificar la monotonicidad del precio técnico respecto del riesgo dentro de cada celda (U-19) y la coherencia de la estructura por plazo."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 3
+  naturaleza: datos
+  entregables:
+  - {tipo: Excel, numero: P2, descripcion: Calculadora de precio técnico}
+- id: PRC-P3-02.01.03
+  tarea: Precio técnico y RAROC
+  subtarea: Cálculo y grilla
+  actividad: "Conciliar el precio técnico con Finanzas (FTP, costos, capital) y con Riesgos (PD, LGD); diferencias mayores a 5 pb por celda se explican por escrito."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  entregables:
+  - {tipo: Documento, numero: P3, descripcion: Metodología de precio técnico}
+- id: PRC-P3-02.02.01
+  tarea: Precio técnico y RAROC
+  subtarea: Documentación
+  actividad: "Documentar la metodología de precio técnico, sus supuestos, fuentes y fecha de vigencia de cada insumo, con cuadro de control de cambios."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: documentacion
+  entregables:
+  - {tipo: Documento, numero: P3, descripcion: Metodología de precio técnico}

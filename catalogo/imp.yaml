@@ -1,0 +1,446 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: IMP
+nombre: Implementación
+estandar: Implementación
+origen: Estándar de Implementación v1.0
+actividades:
+- id: IMP-01.01.01
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: "Preparación del documento de implementación (Agregar un registo al cuadro de control de cambios con\
+    \ cada modificación ), este documento debe contener:\n- Proceso de Implementación. El cual debe detallar:\n\
+    \ - Cuadro resumen de las versiones del modelo y código del modelo.\n - Descripción funcional de las variables\
+    \ input\n - Descripción a detalle de la generación del universo.\n - Descripción de las llaves y desfases a\
+    \ usar.\n - Descripción a detalle de todo el proceso de implementación.\n - Descripción funcional de las variables\
+    \ del output.\n - Descripción de los aplicativos necesarios para la ejecución del proceso..\n- Proceso de control\
+    \ de Calidad de Datos. El cual consta del análisis de estabilidad poblacional de las variables cuyas umbrales\
+    \ son definidos corportaivamente.\n- Detalle del plan de Acción cuando existan alertas en el control de Calidad\
+    \ de Datos"
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.75, tradicional: 2.75}
+    ml: {agil: 1.75, tradicional: 2.75}
+    arbol: {agil: 1.75, tradicional: 2.75}
+    acp: {agil: 1.75, tradicional: 2.75}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 13
+    descripcion: Guia de implementación
+  hito: Sprint 20
+- id: IMP-01.01.02
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: Documentación y reglamentación de variables críticas del modelo. Luego de la implementación, realizar
+    controles para alarmas sobre cambios relevantes en variables originales y transformadas.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.01.03
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: Documentar variables que deben ser modificadas en el tiempo, por nuevas versiones u otros
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.01.04
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: Documentar la existencia de dependencia de variables inputs y/o otros modelos
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.01.05
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: Envío de manual de implementación al equipo implementador
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.0, tradicional: 0.0}
+    ml: {agil: 0.0, tradicional: 0.0}
+    arbol: {agil: 0.0, tradicional: 0.0}
+    acp: {agil: 0.0, tradicional: 0.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: 9
+    descripcion: Reunión con el equipo implementador.
+- id: IMP-01.01.06
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: Bitácora de cambios para variables, tablas empleada en modelo a implementar, tanto la versión del modelador
+    como la versión final de data (ya que ellos cambian algunas fuentes)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.01.07
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: En caso la implementación no la realice el modelador se realizará una revisión con área de implementación
+    y acta de entrega
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.01.08
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: Registrar modelo en el inventario de modelos e incluir el código de modelo en el documento de implementación.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.0, tradicional: null}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: IMP-01.01.09
+  tarea: Implementación tecnológica
+  subtarea: Documento de implementación
+  actividad: Documentar un plan de contingencia, para variables erradas y/o caidas de herramientas como datalake/
+    sas
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: IMP-01.02.01
+  tarea: Implementación tecnológica
+  subtarea: Documento de Lineamientos
+  actividad: "Preparación del documento de Lineamientos del proceso de Implementación. (Agregar un registo al cuadro\
+    \ de control de cambios con cada modificación ), este documento debe precisar:\n- Responsables de la Ejecución\
+    \ Periódica.\n- Ubicación del documento de implementación y archivos de ejecución\n- Planes de Contingencia:\n\
+    \ - En caso el responsable de la ejecución no se encuentre disponible..\n - En caso los servidores y/o aplicaciones\
+    \ donde se ejecute el modelo no se encuentren disponibles.\n - En caso la información no se encuentre disponible.\n\
+    \ - En caso se tengan alertas de calidad de datos.\n- Evidencias de disponibilidad de los usaurios que tienen\
+    \ accesos a los ambientes productivos del modelo.\n- Evidencia de los backups de los docuemnto, archivos de\
+    \ ejecución e información procesada.\n- Detalles de las herramientas o medios de comunicación por la cual se\
+    \ comparte información del modelo a validación y la normativa en el cual se rigen para que la transferencia\
+    \ sea bajo los lineamientos indicados por seguridad"
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.75, tradicional: 2.75}
+    ml: {agil: 1.75, tradicional: 2.75}
+    arbol: {agil: 1.75, tradicional: 2.75}
+    acp: {agil: 1.75, tradicional: 2.75}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 14
+    descripcion: Documento de Lineamientos
+- id: IMP-01.03.01
+  tarea: Implementación tecnológica
+  subtarea: Desarrollo de implementación
+  actividad: Desarrollo de script de implementación, el cual debe contar con un proceso de almacenamiento de Logs
+    de ejecución y errores durante el proceso
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.8333, tradicional: 0.8333}
+    ml: {agil: 0.8333, tradicional: 0.8333}
+    arbol: {agil: 0.8333, tradicional: 0.8333}
+    acp: {agil: 0.8333, tradicional: 0.8333}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Otro
+    numero: null
+    descripcion: Proceso Productivo
+- id: IMP-01.03.02
+  tarea: Implementación tecnológica
+  subtarea: Desarrollo de implementación
+  actividad: Construir la tabla productiva del modelo, la cual debe de contar con el código de inventario del modelo
+    y fecha de ejecución
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.8333, tradicional: 0.8333}
+    ml: {agil: 0.8333, tradicional: 0.8333}
+    arbol: {agil: 0.8333, tradicional: 0.8333}
+    acp: {agil: 0.8333, tradicional: 0.8333}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.03.03
+  tarea: Implementación tecnológica
+  subtarea: Desarrollo de implementación
+  actividad: Garantizar que la información final se encuentre resguardada y en caso contrario generar un archivo
+    plano y almacenar en la ruta productiva del modelo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.8333, tradicional: 0.8333}
+    ml: {agil: 0.8333, tradicional: 0.8333}
+    arbol: {agil: 0.8333, tradicional: 0.8333}
+    acp: {agil: 0.8333, tradicional: 0.8333}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.04.01
+  tarea: Implementación tecnológica
+  subtarea: Calidad de datos
+  actividad: 'Desarrollo de controles de calidad de datos para variables input y output:
+
+    - Evolutivos de distribución y calculo de PSI en función de un periodo de referencia.
+
+    - Control de unicidad de registros.
+
+    - Control de valores missing.'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: null
+    descripcion: de Control de Calidad de Datos
+- id: IMP-01.04.02
+  tarea: Implementación tecnológica
+  subtarea: Calidad de datos
+  actividad: Definición de umbrales de PSI con los cuales se evaluará el control de calidad
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.04.03
+  tarea: Implementación tecnológica
+  subtarea: Calidad de datos
+  actividad: 'Solicitud de controles de calidad en caso la información provenga de un proveedor externo.
+
+    - Reportes de ejecución correcta (Logs)
+
+    - Estabilidad Poblacional
+
+    - Unicidad de Resgistros.
+
+    - Fechas de Actualización de la información.'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.05.01
+  tarea: Implementación tecnológica
+  subtarea: Entorno Tecnológico
+  actividad: Definición de la ruta productiva en la cual se almacenará el proceso de implementació.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.3, tradicional: 0.3}
+    ml: {agil: 0.3, tradicional: 0.3}
+    arbol: {agil: 0.3, tradicional: 0.3}
+    acp: {agil: 0.3, tradicional: 0.3}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.05.02
+  tarea: Implementación tecnológica
+  subtarea: Entorno Tecnológico
+  actividad: Solicitar al equipo de servidores la evidencia del resguardo de la ruta productiva del modelo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.3, tradicional: 0.3}
+    ml: {agil: 0.3, tradicional: 0.3}
+    arbol: {agil: 0.3, tradicional: 0.3}
+    acp: {agil: 0.3, tradicional: 0.3}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.05.03
+  tarea: Implementación tecnológica
+  subtarea: Entorno Tecnológico
+  actividad: Solicitud de un código único del modelo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.3, tradicional: 0.3}
+    ml: {agil: 0.3, tradicional: 0.3}
+    arbol: {agil: 0.3, tradicional: 0.3}
+    acp: {agil: 0.3, tradicional: 0.3}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.05.04
+  tarea: Implementación tecnológica
+  subtarea: Entorno Tecnológico
+  actividad: Solicitud del listado de usuarios que tienen acceso a la ruta productiva del modelo y a la ubicación
+    del resultado final
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.3, tradicional: 0.3}
+    ml: {agil: 0.3, tradicional: 0.3}
+    arbol: {agil: 0.3, tradicional: 0.3}
+    acp: {agil: 0.3, tradicional: 0.3}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.05.05
+  tarea: Implementación tecnológica
+  subtarea: Entorno Tecnológico
+  actividad: Solicitud de evidencia del resguardo de información en caso la información provenga de un proveedor
+    externo.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.3, tradicional: 0.3}
+    ml: {agil: 0.3, tradicional: 0.3}
+    arbol: {agil: 0.3, tradicional: 0.3}
+    acp: {agil: 0.3, tradicional: 0.3}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.06.01
+  tarea: Implementación tecnológica
+  subtarea: Pruebas de certificación
+  actividad: Definición de pruebas sobre el modelo a implementar
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.0}
+    ml: {agil: 1.0, tradicional: 1.0}
+    arbol: {agil: 1.0, tradicional: 1.0}
+    acp: {agil: 1.0, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Correo
+    numero: 3
+    descripcion: Pruebas a realizar.
+- id: IMP-01.06.02
+  tarea: Implementación tecnológica
+  subtarea: Pruebas de certificación
+  actividad: Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia
+    mínima para obtener conformidad)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0625, tradicional: 1.25}
+    ml: {agil: 1.0625, tradicional: 1.25}
+    arbol: {agil: 1.0625, tradicional: 1.25}
+    acp: {agil: 1.0625, tradicional: 1.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.06.03
+  tarea: Implementación tecnológica
+  subtarea: Pruebas de certificación
+  actividad: Constancia de pruebas de control sobre el modelo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 14
+    descripcion: Certificación del modelo.
+  hito: SME 13
+- id: IMP-01.06.04
+  tarea: Implementación tecnológica
+  subtarea: Pruebas de certificación
+  actividad: Solicitar conformidad de los resultados al líder del proyecto de implementación (en caso la implementación
+    sea realizada por el equipo modelador, la aprobación será brindada por el Sub Gerente de Modelos de Riesgos)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: IMP-01.06.05
+  tarea: "Implementación tecnológica"
+  subtarea: "Pruebas de certificación"
+  actividad: "Probar escenarios de error (datos faltantes, valores fuera de rango, caída de fuentes) y verificar el manejo de excepciones y el control de accesos del proceso productivo."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 1, tradicional: 1}
+    ml: {agil: 1, tradicional: 1}
+    arbol: {agil: 1, tradicional: 1}
+    acp: {agil: 1, tradicional: 1}
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  nota_origen: "Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 18."
+- id: IMP-01.06.06
+  tarea: "Implementación tecnológica"
+  subtarea: "Pruebas de certificación"
+  actividad: "Registrar en cada resultado productivo la versión del modelo y del código que lo generó, para trazabilidad y seguimiento."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  nivel_automatizacion: 2
+  naturaleza: datos
+  nota_origen: "Línea base 2.0 (2026-10-17). Práctica de bancos de referencia; FR-07."
+- id: IMP-01.07.01
+  tarea: Implementación tecnológica
+  subtarea: Presentación del proceso de implementación al equipo usuario
+  actividad: Reunión y elaboración de acta
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: 10
+    descripcion: Reunión de cierre
+  hito: SME 13

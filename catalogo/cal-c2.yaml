@@ -1,0 +1,57 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: CAL-C2
+nombre: Preparación y calidad de datos
+estandar: Calibración
+origen: Estándar de Calibración v1.0
+actividades:
+- id: CAL-C2-01.01.01
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis de completitud y unicidad
+  actividad: Cuadre de la infromación con los informes de seguimeinto (Total mensual, rd mensual y pd actual mensual)
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2, 3, 4]
+- id: CAL-C2-01.01.02
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis de completitud y unicidad
+  actividad: '% de registros duplicados'
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2, 3, 4]
+- id: CAL-C2-01.01.03
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis de completitud y unicidad
+  actividad: Análisis descriptivo de los posibles drivers de calibrado (global y mensual)
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2, 3, 4]
+- id: CAL-C2-01.01.04
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis de completitud y unicidad
+  actividad: Comparación de descriptivos de la base de datos con información de negocio
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2, 3, 4]
+- id: CAL-C2-01.01.05
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis de completitud y unicidad
+  actividad: Propuesta inicial de cambio de nivel en el modelo (generico)
+  dias_esfuerzo: 1.0
+  aplica_tier: [1, 2]
+- id: CAL-C2-01.02.01
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis previos al kick off
+  actividad: Elaboración de la PPT
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2]
+- id: CAL-C2-02.01.01
+  tarea: Reunión Kick off
+  subtarea: Reunión Kick off
+  actividad: 'Reunión kick off
+
+    (Se tiene que convocar al area Solicitante)'
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2]
+- id: CAL-C2-02.01.02
+  tarea: Reunión Kick off
+  subtarea: Reunión Kick off
+  actividad: Acta de la reunión
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2]

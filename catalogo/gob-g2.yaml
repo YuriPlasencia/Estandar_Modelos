@@ -1,0 +1,50 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: GOB-G2
+nombre: "Inventario y categorización"
+estandar: Gobierno
+origen: "Línea base 2.0 (2026-10-17): Res. SBS 00053-2023, SR 26-2, PRA SS1/23 y práctica pública de bancos de referencia"
+actividades:
+- id: GOB-G2-01.01.01
+  tarea: "Inventario"
+  subtarea: "Registro de modelos"
+  actividad: "Mantener un inventario completo y actualizado de modelos con sus atributos mínimos (propósito, uso, dueño, categoría, estado, versión, validaciones, debilidades), incluidas herramientas informales influyentes como hojas de cálculo y los sistemas de IA."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 2
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "G1", descripcion: "Inventario de modelos"}
+- id: GOB-G2-01.01.02
+  tarea: "Inventario"
+  subtarea: "Registro de modelos"
+  actividad: "Remitir el inventario al supervisor con la periodicidad y el formato que exija la norma local (en Perú, anualmente vía SUCAVE según el Anexo A de la Res. SBS 53-2023)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 2
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "G1", descripcion: "Inventario de modelos"}
+- id: GOB-G2-02.01.01
+  tarea: "Categorización"
+  subtarea: "Criterios de categoría"
+  actividad: "Categorizar cada modelo por materialidad, uso y complejidad con criterios aprobados por el comité (ver FR-02); la categoría determina la profundidad y frecuencia de validación y seguimiento y si se exige réplica completa (SBS art. 6; U-35)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "G2", descripcion: "Criterios de categorización"}
+- id: GOB-G2-02.01.02
+  tarea: "Categorización"
+  subtarea: "Criterios de categoría"
+  actividad: "Revisar periódicamente el propio esquema de categorización (que sea objetivo y que discrimine), como exige SS1/23."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  entregables:
+  - {tipo: Documento, numero: "G2", descripcion: "Criterios de categorización"}

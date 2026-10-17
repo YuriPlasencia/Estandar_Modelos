@@ -1,0 +1,712 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: DES-D1
+nombre: Definición, alcance, diseño y extracción
+estandar: Desarrollo
+origen: Estándar de Desarrollo v1.0
+actividades:
+- id: DES-D1-01.01.01
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: Entendimiento origen del desarrollo (entendimiento del caso de uso, necesidad del negocio, objetivo
+    del modelo)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 2.0, tradicional: 2.5}
+    ml: {agil: 2.0, tradicional: 2.5}
+    arbol: {agil: 2.0, tradicional: 2.5}
+    acp: {agil: 2.125, tradicional: 3.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  hito: Sprint 0
+- id: DES-D1-01.01.02
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: Evaluar la factibilidad para la construcción del modelo, analizando materialidad (universo y target),
+    impacto en la gestión, información disponible para el desarrollo y posible uso de modelos vigentes.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D1-01.01.03
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: Características de la población
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D1-01.01.04
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: Políticas actuales y anteriores
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D1-01.01.05
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: Modelos anteriores
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D1-01.01.06
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: Información disponible (data disponible, data nueva)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D1-01.01.07
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: Definición de supuestos económicos que sustenten la racionalidad/sentido del modelo en su conjunto
+    y de las variables
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: null
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D1-01.01.08
+  tarea: Definición del objetivo del modelo
+  subtarea: Entendimiento del problema de negocio
+  actividad: 'Reunión de levantamiento de expectativas: Población objetivo/cosechas (exclusiones, inclusiones).'
+  critico: true
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: 1
+    descripcion: Reunión Levantamiento de Expectativas II.
+  hito: Reunion 1
+- id: DES-D1-01.02.01
+  tarea: Definición del objetivo del modelo
+  subtarea: Elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad
+    de la data input)
+  actividad: Elaboración de base universo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 5.0, tradicional: 5.0}
+    ml: {agil: 5.0, tradicional: 5.0}
+    arbol: {agil: 5.0, tradicional: 5.0}
+    acp: {agil: 5.0, tradicional: 5.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Correo
+    numero: 1
+    descripcion: Petición de datos universo.
+  hito: Sprint 1
+- id: DES-D1-01.02.02
+  tarea: Definición del objetivo del modelo
+  subtarea: Elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad
+    de la data input)
+  actividad: Elaboración de evolutivos total por montos
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 1
+    descripcion: Evolutivos por montos, tabla y gráfico.
+- id: DES-D1-01.02.03
+  tarea: Definición del objetivo del modelo
+  subtarea: Elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad
+    de la data input)
+  actividad: Elaboración de evolutivos por cuentas de principales drivers del negocio
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 1
+    descripcion: Evolutivos de cuentas por drivers, tablas y gráficos
+- id: DES-D1-01.02.04
+  tarea: Definición del objetivo del modelo
+  subtarea: Elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad
+    de la data input)
+  actividad: Elaboración de evolutivos por montos de principales drivers del negocio
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 1
+    descripcion: Evolutivos de montos por drivers, tablas y gráficos
+- id: DES-D1-01.02.05
+  tarea: Definición del objetivo del modelo
+  subtarea: Elaboración de la base universo y filtros básicos (todas estas actividades asumen la disponibilidad
+    de la data input)
+  actividad: Análisis y validación de filtros básicos para el universo de modelamiento
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Script
+    numero: null
+    descripcion: de filtros básicos.
+  - tipo: Excel
+    numero: 1
+    descripcion: Número de cuentas antes y despues de filtrar.
+- id: DES-D1-01.03.01
+  tarea: Definición del objetivo del modelo
+  subtarea: Extracción de tabla única y creación de nuevas variables
+  actividad: 'Reunión de levantamiento de expectativas: Fuentes, variables'
+  critico: true
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: 2
+    descripcion: Reunión Levantamiento de Expectativas II.
+  hito: Reunión 2
+- id: DES-D1-01.03.02
+  tarea: Definición del objetivo del modelo
+  subtarea: Extracción de tabla única y creación de nuevas variables
+  actividad: Pegado de las variables de los tablones
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 2.5, tradicional: 2.5}
+    ml: {agil: 2.5, tradicional: 2.5}
+    arbol: {agil: 2.5, tradicional: 2.5}
+    acp: {agil: 3.0, tradicional: 3.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Script
+    numero: 2
+    descripcion: Creación de tabla única
+  - tipo: Tabla
+    numero: 1
+    descripcion: Master table inicial.
+  hito: Sprint 2*
+- id: DES-D1-01.03.03
+  tarea: Definición del objetivo del modelo
+  subtarea: Extracción de tabla única y creación de nuevas variables
+  actividad: Crear variables post BrainStorming
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 8.5, tradicional: 10.0}
+    ml: {agil: 8.5, tradicional: 10.0}
+    arbol: {agil: 8.5, tradicional: 10.0}
+    acp: {agil: 8.5, tradicional: 10.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Script
+    numero: 3
+    descripcion: Creación de nuevas variables.
+  hito: SME 1
+- id: DES-D1-01.04.01
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: Definición población objetivo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 2.0, tradicional: 2.5}
+    ml: {agil: 2.0, tradicional: 2.5}
+    arbol: {agil: 2.0, tradicional: 2.5}
+    acp: {agil: 2.55, tradicional: 3.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 1
+    descripcion: 'Project Charter: Población.'
+  hito: Sprint 3
+- id: DES-D1-01.04.02
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: Definiciones, criterios y supuestos
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 1
+    descripcion: 'Project Charter: Definición cosechas vs Aprobadas.'
+- id: DES-D1-01.04.03
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: Definiciones de criterios de éxito
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 1
+    descripcion: 'Project Charter: OKRs.'
+- id: DES-D1-01.04.04
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: Definición del TIER y uso del modelo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 1
+    descripcion: 'Project Charter: Definición del uso de modelo.'
+- id: DES-D1-01.04.05
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: Definición de alcance y limitaciones
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 1
+    descripcion: 'Project Charter: Definición de alcances, limitaciones.'
+- id: DES-D1-01.04.06
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: En el caso se utilice una metodología corporativa, se debe alienar las principales definiciones a utilizar
+    en el modelamiento (Universo y Target). En caso no aplique, se debería justificar el cambio en las definiciones
+    con análisis metodológicos y/o de negocio.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 1
+    descripcion: 'Project Charter: Alineamiento Corporativo'
+- id: DES-D1-01.04.07
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: Reunión - Enriquecimiento de la propuesta y diseño funcional del modelo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: null
+    descripcion: de reunión.
+  hito: Reunión 3
+- id: DES-D1-01.04.08
+  tarea: Definición del objetivo del modelo
+  subtarea: Requerimientos y propuesta de solución (inception)
+  actividad: Documentación del project charter (ficha de nacimiento del modelo, técnicas a usar y otros)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 1
+    descripcion: Project Charter
+  hito: Sprint 4
+- id: DES-D1-01.05.01
+  tarea: Definición del objetivo del modelo
+  subtarea: Sesión de ideación de variables
+  actividad: Reuniones con los usuarios/ bancas para revisar variables sugeridas por el negocio (ideación)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 2.0, tradicional: 3.0}
+    ml: {agil: 2.0, tradicional: 3.0}
+    arbol: {agil: 2.0, tradicional: 3.0}
+    acp: {agil: 2.0, tradicional: 3.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: null
+    descripcion: de reunión entre el equipo de modelos y los equipos de negocio
+- id: DES-D1-01.06.01
+  tarea: Definición del objetivo del modelo
+  subtarea: Evaluación de la dispobilidad de información y accesos
+  actividad: Reuniones con los encargados de la extracción de información
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 2.0, tradicional: 3.0}
+    ml: {agil: 2.0, tradicional: 3.0}
+    arbol: {agil: 2.0, tradicional: 3.0}
+    acp: {agil: 2.0, tradicional: 3.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: null
+    descripcion: de reunión entre el equipo de modelos y el equipo de tecnología y datos
+- id: DES-D1-01.07.01
+  tarea: Definición del objetivo del modelo
+  subtarea: Definir fecha de ejecución del modelo, considerando los desfases a asumir por cada fuente utilizada
+    y en función a las expectativas de los equipos Stakeholders
+  actividad: Reuniones con los encargados de la extracción de información y creación de variables
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 2.0, tradicional: 3.0}
+    ml: {agil: 2.0, tradicional: 3.0}
+    arbol: {agil: 2.0, tradicional: 3.0}
+    acp: {agil: 2.0, tradicional: 3.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: null
+    descripcion: de reunión entre el equipo de modelos y el equipo de tecnología y datos
+- id: DES-D1-02.01.01
+  tarea: Reunión Kick off
+  subtarea: Análisis pendientes previos al kick off
+  actividad: Presentación (PPT) del kick off
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.5}
+    ml: {agil: 1.0, tradicional: 1.5}
+    arbol: {agil: 1.0, tradicional: 1.5}
+    acp: {agil: 2.0, tradicional: 3.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 2
+    descripcion: Kick off
+- id: DES-D1-02.02.01
+  tarea: Reunión Kick off
+  subtarea: Reunión Kick off
+  actividad: Reunión kick off
+  critico: true
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: 3
+    descripcion: Reunión Kick off
+  hito: Kick Off
+- id: DES-D1-03.01.01
+  tarea: Definición de ventana de modelación
+  subtarea: Ventana Modelamiento - Definición de la ventana histórica de modelación
+  actividad: Análisis de estabilidad de la variable objetivo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 3.0, tradicional: 3.5}
+    ml: {agil: 2.975, tradicional: 3.5}
+    arbol: {agil: 2.975, tradicional: 3.5}
+    acp: {agil: 2.975, tradicional: 3.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 2
+    descripcion: Evolutivos de cuentas y montos por drivers.
+  hito: Sprint 5
+- id: DES-D1-03.01.02
+  tarea: Definición de ventana de modelación
+  subtarea: Ventana Modelamiento - Definición de la ventana histórica de modelación
+  actividad: Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales
+    y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y 6 meses para el OOT, esto sujeto
+    a la disponibilidad de información en cada proyecto.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 2
+    descripcion: Evolutivos del promedio de la variable objetivo por segmento.
+- id: DES-D1-03.01.03
+  tarea: Definición de ventana de modelación
+  subtarea: Ventana Modelamiento - Definición de la ventana histórica de modelación
+  actividad: Análisis de estabilidad de la ventana de modelamiento, utilizar el PSI como indicar de estabilidad
+    población, en caso sea necesario complementar con algún análisis adicional (Intervalos de confianza)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 2
+    descripcion: Número de cuentas por mes en la ventana de modelación
+- id: DES-D1-03.01.04
+  tarea: Definición de ventana de modelación
+  subtarea: Ventana Modelamiento - Definición de la ventana histórica de modelación
+  actividad: Evaluar los meses con ciertas alertas de inestabilidad, con justificacion metodologica y/o negocio
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: null
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D1-03.01.05
+  tarea: Definición de ventana de modelación
+  subtarea: Ventana Modelamiento - Definición de la ventana histórica de modelación
+  actividad: Documentación de la generación de la población de modelamiento
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 2
+    descripcion: Pedido de datos.
+- id: DES-D1-04.01.01
+  tarea: Criterios de exclusión
+  subtarea: Definición de exclusiones
+  actividad: Exclusiones por pautas duras (actuales y futuras)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.85, tradicional: 1.0}
+    ml: {agil: 0.85, tradicional: 1.0}
+    arbol: {agil: 0.85, tradicional: 1.0}
+    acp: {agil: 0.85, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 3
+    descripcion: Número de cuentas y promedio antes y después de pautas duras.
+- id: DES-D1-04.01.02
+  tarea: Criterios de exclusión
+  subtarea: Definición de exclusiones
+  actividad: Exclusiones por default en foto (análisis materialidad)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 3
+    descripcion: Número de cuentas y promedio antes y después de default en foto.
+- id: DES-D1-04.01.03
+  tarea: Criterios de exclusión
+  subtarea: Definición de exclusiones
+  actividad: Exclusiones por operaciones con desempeño < ventana de default y mora reciente (análisis impacto)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
+  entregables:
+  - tipo: Script
+    numero: 4
+    descripcion: 'Análisis filtros: Operaciones sin desempeño completo.'
+- id: DES-D1-04.01.04
+  tarea: Criterios de exclusión
+  subtarea: Definición de exclusiones
+  actividad: Exclusiones por operaciones con desempeño < ventana de default y mora reciente (análisis materialidad)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+  entregables:
+  - tipo: Excel
+    numero: 3
+    descripcion: Número de cuentas y promedio del target de las cuentas sin desempeño.
+- id: DES-D1-04.01.05
+  tarea: Criterios de exclusión
+  subtarea: Definición de exclusiones
+  actividad: 'Exclusiones por operaciones con mora < altura del default: indeterminados (análisis materialidad)'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+  entregables:
+  - tipo: Excel
+    numero: 3
+    descripcion: Número de cuentas y promedio del target de las cuentas de indetermindos.
+- id: DES-D1-04.01.06
+  tarea: Criterios de exclusión
+  subtarea: Definición de exclusiones
+  actividad: Exclusiones por cambios de gestión (Cobranzas)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+  entregables:
+  - tipo: Excel
+    numero: 3
+    descripcion: Número de cuentas y promedio del target de las cuentas excluidas por cambios de gestión
+- id: DES-D1-04.01.07
+  tarea: Criterios de exclusión
+  subtarea: Definición de exclusiones
+  actividad: Documentación de las exclusiones
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 3
+    descripcion: Filtros y exclusiones.
+  - tipo: Tabla
+    numero: 2
+    descripcion: Master table filtrada.
+- id: DES-D1-04.01.08
+  tarea: "Criterios de exclusión"
+  subtarea: "Definición de exclusiones"
+  actividad: "Evaluar el sesgo de selección de los modelos de originación entrenados solo con solicitudes aprobadas y documentar la estrategia de inferencia de rechazados aplicada, o por qué no aplica."
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: []}
+  dias_esfuerzo:
+    lineal: {agil: 1.5, tradicional: 2}
+    ml: {agil: 1.5, tradicional: 2}
+    arbol: {agil: 1.5, tradicional: 2}
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  entregables:
+  - {tipo: Documento, numero: 3, descripcion: "Filtros y exclusiones."}
+  nota_origen: "Línea base 2.0 (2026-10-17). Thomas et al. (2017); Kozodoi et al. (2019)."
+- id: DES-D1-05.01.01
+  tarea: Definición del default (binario)
+  subtarea: Definición de cliente - operación
+  actividad: Adopción de definición del estándar
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 5.0, tradicional: 5.0}
+    ml: {agil: 5.0, tradicional: 5.0}
+    arbol: {agil: 5.0, tradicional: 5.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+- id: DES-D1-05.01.02
+  tarea: Definición del default (binario)
+  subtarea: Definición de cliente - operación
+  actividad: Análisis de incidencia de default operación en comportamiento cliente
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: []}
+- id: DES-D1-05.02.01
+  tarea: Definición del default (binario)
+  subtarea: Definición altura y temporalidad
+  actividad: Adopción de definición del estándar
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+- id: DES-D1-05.02.02
+  tarea: Definición del default (binario)
+  subtarea: Definición altura y temporalidad
+  actividad: Análisis de roll rates
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: []}
+- id: DES-D1-05.03.01
+  tarea: Definición del default (binario)
+  subtarea: Definición de materialidad
+  actividad: Adopción de definición del estándar
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+- id: DES-D1-05.03.02
+  tarea: Definición del default (binario)
+  subtarea: Definición de materialidad
+  actividad: Análisis asociados a la definición de la materialidad
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: []}
+- id: DES-D1-05.04.01
+  tarea: Definición del default (binario)
+  subtarea: Documentación final
+  actividad: Documentación final definición de default
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+  entregables:
+  - tipo: Documento
+    numero: 4
+    descripcion: Definición de default.
+- id: DES-D1-06.01.01
+  tarea: Definición del target (continuo)
+  subtarea: Definición altura y temporalidad
+  actividad: Adopción de definición del estándar
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 3.0, tradicional: 3.0}
+    ml: {agil: 3.0, tradicional: 3.0}
+    arbol: {agil: 3.0, tradicional: 3.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+- id: DES-D1-06.02.01
+  tarea: Definición del target (continuo)
+  subtarea: Definición de materialidad
+  actividad: Adopción de definición del estándar
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+- id: DES-D1-06.02.02
+  tarea: Definición del target (continuo)
+  subtarea: Definición de materialidad
+  actividad: Análisis asociados a la definición de la materialidad
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: []}
+- id: DES-D1-06.03.01
+  tarea: Definición del target (continuo)
+  subtarea: Documentación final
+  actividad: Documentación final definición del target
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 4
+    descripcion: Definición del target.
+  hito: SME 2
+- id: DES-D1-07.01.01
+  tarea: Definición Metodología para modelar
+  subtarea: Identificar la mejor metodología para modelar el target específico
+  actividad: Identificar la mejor metodología para modelar el target específico
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.0}
+    ml: {agil: 1.0, tradicional: 1.0}
+    arbol: {agil: 1.0, tradicional: 1.0}
+    acp: {agil: 1.0, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Otro
+    numero: null
+    descripcion: Propuestas de las metodologías para modelar el target

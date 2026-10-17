@@ -1,0 +1,52 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: GOB-G4
+nombre: "Modelos de terceros y sistemas de IA"
+estandar: Gobierno
+origen: "Línea base 2.0 (2026-10-17): Res. SBS 00053-2023, SR 26-2, PRA SS1/23 y práctica pública de bancos de referencia"
+actividades:
+- id: GOB-G4-01.01.01
+  tarea: "Terceros"
+  subtarea: "Proveedores"
+  actividad: "La entidad es plenamente responsable de los modelos de terceros: puede tercerizar desarrollo, validación o implementación, pero el seguimiento lo hace la propia entidad (SBS arts. 23–24)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+- id: GOB-G4-01.01.02
+  tarea: "Terceros"
+  subtarea: "Proveedores"
+  actividad: "Para modelos de terceros de mayor categoría, exigir réplica; si la propiedad intelectual lo impide, aplicar benchmarking u otra técnica alternativa documentada (SBS art. 25)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+- id: GOB-G4-01.01.03
+  tarea: "Terceros"
+  subtarea: "Proveedores"
+  actividad: "Contar con una estrategia de continuidad para los modelos de proveedores que soportan servicios priorizados."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+- id: GOB-G4-02.01.01
+  tarea: "Sistemas de IA"
+  subtarea: "IA responsable"
+  actividad: "Inventariar los sistemas de IA (incluidos los de IA generativa y los agentes) y aplicarles controles proporcionales a su riesgo: los modelos de IA no generativa siguen este estándar; los generativos y agénticos, además, el estándar AGT."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 2
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "G1", descripcion: "Inventario de modelos"}
+- id: GOB-G4-02.01.02
+  tarea: "Sistemas de IA"
+  subtarea: "IA responsable"
+  actividad: "Adoptar principios de IA responsable (transparencia, equidad, privacidad, seguridad y supervisión humana) traducidos en métricas y controles verificables, no solo en declaraciones."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno

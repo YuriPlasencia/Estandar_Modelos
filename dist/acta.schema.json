@@ -1,0 +1,264 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "acta.schema.json",
+ "title": "Acta de reunión — Estándares de Modelos en Banca",
+ "type": "object",
+ "required": [
+  "tipo",
+  "numero",
+  "estado",
+  "version",
+  "modelo",
+  "fecha",
+  "objetivo"
+ ],
+ "properties": {
+  "id": {
+   "type": "string"
+  },
+  "tipo": {
+   "type": "string",
+   "description": "id del tipo en catalogo/actas.yaml"
+  },
+  "numero": {
+   "type": "string",
+   "description": "Ej.: ACTA-MOD-ORI-001-05"
+  },
+  "estado": {
+   "enum": [
+    "Borrador",
+    "En revisión",
+    "Aprobada"
+   ]
+  },
+  "version": {
+   "type": "integer",
+   "minimum": 1
+  },
+  "modelo": {
+   "type": "object",
+   "required": [
+    "codigo",
+    "nombre"
+   ],
+   "properties": {
+    "codigo": {
+     "type": "string"
+    },
+    "nombre": {
+     "type": "string"
+    },
+    "tier": {
+     "enum": [
+      "I",
+      "II",
+      "III",
+      "IV",
+      ""
+     ]
+    },
+    "tipo_modelo": {
+     "enum": [
+      "lineal",
+      "ml",
+      "arbol",
+      "acp",
+      ""
+     ]
+    }
+   }
+  },
+  "fecha": {
+   "type": "string",
+   "format": "date"
+  },
+  "hora_inicio": {
+   "type": "string"
+  },
+  "hora_fin": {
+   "type": "string"
+  },
+  "modalidad": {
+   "enum": [
+    "Presencial",
+    "Virtual",
+    "Mixta",
+    ""
+   ]
+  },
+  "lugar": {
+   "type": "string"
+  },
+  "secretario": {
+   "type": "string"
+  },
+  "objetivo": {
+   "type": "string"
+  },
+  "agenda": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "resumen": {
+   "type": "string"
+  },
+  "asistentes": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "nombre": {
+      "type": "string"
+     },
+     "area": {
+      "type": "string"
+     },
+     "rol": {
+      "enum": [
+       "Decide",
+       "Aprueba",
+       "Consultado",
+       "Informado",
+       "Secretario",
+       ""
+      ]
+     },
+     "asistio": {
+      "type": "boolean"
+     }
+    }
+   }
+  },
+  "decisiones": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "texto": {
+      "type": "string"
+     },
+     "ref": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "responsable": {
+      "type": "string"
+     },
+     "estado": {
+      "enum": [
+       "Acordada",
+       "Pendiente de aprobación",
+       "Rechazada"
+      ]
+     }
+    }
+   }
+  },
+  "excepciones": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "umbral": {
+      "type": "string"
+     },
+     "valor": {
+      "type": "string"
+     },
+     "justificacion": {
+      "type": "string"
+     },
+     "comite": {
+      "type": "boolean"
+     }
+    }
+   }
+  },
+  "acuerdos": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "accion": {
+      "type": "string"
+     },
+     "responsable": {
+      "type": "string"
+     },
+     "fecha": {
+      "type": "string"
+     },
+     "estado": {
+      "enum": [
+       "Abierto",
+       "Cerrado"
+      ]
+     }
+    }
+   }
+  },
+  "evidencias": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   }
+  },
+  "conformidad": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "nombre": {
+      "type": "string"
+     },
+     "area": {
+      "type": "string"
+     },
+     "estado": {
+      "enum": [
+       "Pendiente",
+       "Conforme",
+       "Observado"
+      ]
+     },
+     "fecha": {
+      "type": "string"
+     },
+     "medio": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "historial": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "properties": {
+     "fecha": {
+      "type": "string"
+     },
+     "version": {
+      "type": "integer"
+     },
+     "cambio": {
+      "type": "string"
+     },
+     "por": {
+      "type": [
+       "string",
+       "null"
+      ]
+     }
+    }
+   }
+  },
+  "estandar_version": {
+   "type": "string"
+  }
+ }
+}

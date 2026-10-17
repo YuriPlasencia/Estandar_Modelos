@@ -1,0 +1,741 @@
+{
+ "meta": {
+  "nombre": "Estándares de Modelos en Banca",
+  "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
+  "version": "2.0.0",
+  "generado": "2026-10-17",
+  "n_requisitos": 533
+ },
+ "umbrales": [
+  {
+   "id": "U-01",
+   "tema": "Ventana de modelamiento",
+   "regla": "Mínimo 12 meses para Train/Test y 6 meses para OOT (originación, comportamiento y cobranzas), sujeto a disponibilidad de información.",
+   "valor": {
+    "train_test_meses_min": 12,
+    "oot_meses_min": 6
+   },
+   "refs": [
+    "DES-D1-03.01.02"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-003"
+   ]
+  },
+  {
+   "id": "U-02",
+   "tema": "Estabilidad poblacional / de variables (PSI)",
+   "regla": "PSI ≤ 10 % para aceptar una variable. Si ese nivel reduce considerablemente el set de variables, se puede evaluar un nivel mayor que no supere el 20 %.",
+   "valor": {
+    "psi_max": 0.1,
+    "psi_max_excepcion": 0.2
+   },
+   "refs": [
+    "DES-D2-01.06.03",
+    "DES-D1-03.01.03",
+    "DES-D4-03.01.01"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-003",
+    "LIT-050",
+    "LIT-051",
+    "LIT-056"
+   ]
+  },
+  {
+   "id": "U-03",
+   "tema": "Representatividad de la muestra",
+   "regla": "95 % ≤ TM/TG ≤ 105 % (target en muestra vs. target en población). Si no se cumple, ponderar la muestra y usar los pesos en todos los análisis posteriores.",
+   "valor": {
+    "ratio_min": 0.95,
+    "ratio_max": 1.05
+   },
+   "refs": [
+    "DES-D4-02.02.01"
+   ],
+   "lecturas": [
+    "LIT-031"
+   ]
+  },
+  {
+   "id": "U-04",
+   "tema": "Tratamiento de outliers",
+   "regla": "Revisión por percentiles 1 %, 5 %, 95 % y 99 % (automática / experta).",
+   "valor": {
+    "percentiles": [
+     1,
+     5,
+     95,
+     99
+    ]
+   },
+   "refs": [
+    "DES-D4-04.01.03",
+    "DES-D4-01.01.01"
+   ],
+   "lecturas": [
+    "LIT-001",
+    "LIT-020"
+   ]
+  },
+  {
+   "id": "U-05",
+   "tema": "Imputación simple de missings",
+   "regla": "Imputación por media/mediana sólo para variables con materialidad de missing < 1 % o < 30 casos / defaults.",
+   "valor": {
+    "missing_pct_max": 0.01,
+    "casos_max": 30
+   },
+   "refs": [
+    "DES-D4-04.04.02"
+   ],
+   "lecturas": [
+    "LIT-001",
+    "LIT-020"
+   ]
+  },
+  {
+   "id": "U-06",
+   "tema": "Correlación entre variables continuas",
+   "regla": "Preselección con correlación < 60 % (tolerancia hasta < 95 % evaluando el tradeoff con el poder predictivo).",
+   "valor": {
+    "corr_max": 0.6,
+    "corr_max_tradeoff": 0.95
+   },
+   "refs": [
+    "DES-D4-04.05.01",
+    "DES-D4-04.05.02"
+   ],
+   "lecturas": [
+    "LIT-001",
+    "LIT-020"
+   ]
+  },
+  {
+   "id": "U-07",
+   "tema": "Asociación entre variables categóricas",
+   "regla": "Se aceptan variables categóricas si el p-valor de la prueba chi-cuadrado ≥ 0.0001 o la V de Cramér < 0.4.",
+   "valor": {
+    "chi2_pvalor_min": 0.0001,
+    "v_cramer_max": 0.4
+   },
+   "refs": [
+    "DES-D4-04.05.03"
+   ],
+   "lecturas": [
+    "LIT-001",
+    "LIT-020"
+   ]
+  },
+  {
+   "id": "U-08",
+   "tema": "Selección de variables en ML",
+   "regla": "Top 150 variables o las que acumulen el 80 % del gain.",
+   "valor": {
+    "top_n": 150,
+    "gain_acumulado": 0.8
+   },
+   "refs": [
+    "DES-D4-05.02.05"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-009",
+    "LIT-010",
+    "LIT-011",
+    "LIT-020",
+    "LIT-021",
+    "LIT-024",
+    "LIT-132",
+    "LIT-135"
+   ]
+  },
+  {
+   "id": "U-09",
+   "tema": "Concentración de pesos de variables",
+   "regla": "Modelos tradicionales — peso máximo recomendado 25 % por variable (toolkit). Modelos ML — peso por gain, máximo recomendado 10 %. Calibraciones — métrica Chi-Wald.",
+   "valor": {
+    "peso_max_tradicional": 0.25,
+    "peso_max_ml": 0.1
+   },
+   "refs": [
+    "DES-D4-05.02.06"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-009",
+    "LIT-010",
+    "LIT-011",
+    "LIT-020",
+    "LIT-021",
+    "LIT-024",
+    "LIT-132",
+    "LIT-135"
+   ]
+  },
+  {
+   "id": "U-10",
+   "tema": "Optimización de hiperparámetros",
+   "regla": "Mínimo 50 combinaciones en búsqueda aleatoria; si no se completa, sustentar. Fijar semilla para replicabilidad.",
+   "valor": {
+    "combinaciones_min": 50
+   },
+   "refs": [
+    "DES-D4-05.04.01"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-009",
+    "LIT-010",
+    "LIT-011",
+    "LIT-020",
+    "LIT-021",
+    "LIT-023",
+    "LIT-132",
+    "LIT-135"
+   ]
+  },
+  {
+   "id": "U-11",
+   "tema": "Sobreajuste Train vs OOT",
+   "regla": "Diferencia máxima de 10 puntos de performance (Gini) entre Train y OOT. Si es mayor, sustentar en la documentación y presentar el caso en Comité de Modelos.",
+   "valor": {
+    "dif_gini_max_pts": 10
+   },
+   "refs": [
+    "DES-D4-06.03.02"
+   ],
+   "lecturas": [
+    "LIT-008",
+    "LIT-010",
+    "LIT-027",
+    "LIT-030",
+    "LIT-031"
+   ]
+  },
+  {
+   "id": "U-12",
+   "tema": "Precisión de estimadores (target continuo)",
+   "regla": "Reportar R², % de casos con real dentro de ±25 % y ±50 % del proyectado, y error cuadrático medio, en construcción y meses recientes.",
+   "valor": {
+    "bandas": [
+     0.25,
+     0.5
+    ]
+   },
+   "refs": [
+    "DES-D4-06.01.02"
+   ],
+   "lecturas": [
+    "LIT-008",
+    "LIT-010",
+    "LIT-027",
+    "LIT-044",
+    "LIT-045",
+    "LIT-046",
+    "LIT-138"
+   ]
+  },
+  {
+   "id": "U-13",
+   "tema": "Materialidad de ejes de segmentación (calibración)",
+   "regla": "Si un eje de segmentación no tiene materialidad superior al 5 %, revisar su inclusión con usuarios de negocio y gerencia.",
+   "valor": {
+    "materialidad_min": 0.05
+   },
+   "refs": [
+    "CAL-C4-03.01.06"
+   ],
+   "lecturas": [
+    "LIT-004"
+   ]
+  },
+  {
+   "id": "U-14",
+   "tema": "Precisión por bucket (calibración)",
+   "regla": "Evaluar la precisión de cada tramo del driver con intervalos de Vasicek. Buckets en semáforo rojo deben incluirse en la calibración; los que estén dentro de límites rojos se evalúan y aprueban por gerencia.",
+   "valor": {
+    "metodo": "intervalos_vasicek"
+   },
+   "refs": [
+    "CAL-C4-03.01.04"
+   ],
+   "lecturas": [
+    "LIT-004",
+    "LIT-006",
+    "LIT-007",
+    "LIT-043",
+    "LIT-105"
+   ]
+  },
+  {
+   "id": "U-15",
+   "tema": "Certificación de implementación",
+   "regla": "Coincidencia mínima del 95 % entre el proceso de modelamiento y el implementado para obtener conformidad.",
+   "valor": {
+    "coincidencia_min": 0.95
+   },
+   "refs": [
+    "IMP-01.06.02",
+    "CAL-C5-01.04.02"
+   ],
+   "lecturas": [
+    "LIT-003",
+    "LIT-053",
+    "LIT-054"
+   ]
+  },
+  {
+   "id": "U-16",
+   "tema": "Certificación con datos de proveedor externo",
+   "regla": "Si el modelo consume datos de un proveedor externo, la certificación debe ser integral y cubrir un periodo mínimo de 3 meses.",
+   "valor": {
+    "meses_min": 3
+   },
+   "refs": [
+    "VAL-I-01.09"
+   ],
+   "lecturas": [
+    "LIT-100",
+    "LIT-101",
+    "LIT-107",
+    "LIT-130"
+   ]
+  },
+  {
+   "id": "U-17",
+   "tema": "Definición de default",
+   "regla": "Un cliente/operación es default (malo) si registra un atraso mayor a 60 días al menos una vez en los 12 meses siguientes a la fecha de observación. Aplica a modelos de admisión (la fecha de observación es la originación del crédito) y a modelos de buró (clientes activos en la fecha de observación).",
+   "valor": {
+    "atraso_dias_mayor_a": 60,
+    "ventana_desempeno_meses": 12,
+    "criterio": "al menos una vez en la ventana",
+    "aplica_a": [
+     "admision",
+     "buro"
+    ]
+   },
+   "refs": [
+    "DES-D1-05.01.01",
+    "DES-D1-05.02.01",
+    "DES-D1-05.04.01"
+   ],
+   "nota": "Las operaciones que no completan los 12 meses de desempeño se excluyen (DES-D1-04.01.03, DES-D1-04.01.04). Los indeterminados, con mora menor a la altura de default pero cercana a ella, se analizan y excluyen según DES-D1-04.01.05. El rango exacto se sustenta con roll rates (DES-D1-05.02.02). La materialidad (monto mínimo vencido) se fija en el Documento 4.",
+   "lecturas": [
+    "LIT-001",
+    "LIT-002",
+    "LIT-003",
+    "LIT-009"
+   ]
+  },
+  {
+   "id": "U-18",
+   "tema": "Precio piso técnico (pricing)",
+   "regla": "Ninguna oferta por debajo del precio técnico mínimo, definido como la tasa con RAROC igual al hurdle de la entidad. Las excepciones solo se otorgan dentro de la matriz de facultades y por debajo del piso requieren Comité de Precios.",
+   "valor": {
+    "raroc_min": "hurdle_corporativo"
+   },
+   "refs": [
+    "PRC-P3-02.01.01",
+    "PRC-P7-01.02.01"
+   ],
+   "lecturas": [
+    "LIT-071",
+    "LIT-075"
+   ]
+  },
+  {
+   "id": "U-19",
+   "tema": "Monotonicidad del precio en el riesgo (pricing)",
+   "regla": "Dentro de una misma celda (producto, plazo, canal), la tasa no puede disminuir cuando aumenta la PD o empeora el tramo de riesgo.",
+   "valor": {
+    "monotonia": "no_decreciente_en_pd"
+   },
+   "refs": [
+    "PRC-P3-02.01.02",
+    "PRC-P5-01.01.01"
+   ],
+   "lecturas": [
+    "LIT-070",
+    "LIT-071",
+    "LIT-072",
+    "LIT-073",
+    "LIT-074",
+    "LIT-075",
+    "LIT-138"
+   ]
+  },
+  {
+   "id": "U-20",
+   "tema": "Signo de la respuesta al precio (pricing)",
+   "regla": "La probabilidad de aceptación debe ser monótona decreciente en el precio en todos los segmentos (elasticidad-precio negativa). Un segmento con elasticidad positiva o nula invalida su curva para optimizar.",
+   "valor": {
+    "elasticidad": "< 0"
+   },
+   "refs": [
+    "PRC-P4-02.01.02"
+   ],
+   "lecturas": [
+    "LIT-063",
+    "LIT-070",
+    "LIT-071",
+    "LIT-073",
+    "LIT-074",
+    "LIT-077"
+   ]
+  },
+  {
+   "id": "U-21",
+   "tema": "Calibración del modelo de respuesta (pricing)",
+   "regla": "Por decil de probabilidad y por tramo de precio, la aceptación observada debe estar dentro de ±10 % relativo de la predicha o dentro del intervalo binomial al 95 %.",
+   "valor": {
+    "desvio_relativo_max": 0.1,
+    "ic": 0.95
+   },
+   "refs": [
+    "PRC-P4-02.02.01",
+    "PRC-P8-01.03.01"
+   ],
+   "nota": "Valor de referencia inicial; calibrar en el primer ciclo.",
+   "lecturas": [
+    "LIT-040",
+    "LIT-042",
+    "LIT-043",
+    "LIT-052",
+    "LIT-070",
+    "LIT-071",
+    "LIT-073",
+    "LIT-074",
+    "LIT-077"
+   ]
+  },
+  {
+   "id": "U-22",
+   "tema": "Diseño de experimentos de precio (pricing)",
+   "regla": "Potencia ≥ 80 % y α = 5 % para el efecto mínimo detectable pre-registrado; grupo de control ≥ 10 % del tráfico elegible; duración mínima de un ciclo comercial completo (4 semanas).",
+   "valor": {
+    "potencia_min": 0.8,
+    "alfa": 0.05,
+    "control_min": 0.1,
+    "semanas_min": 4
+   },
+   "refs": [
+    "PRC-P6-01.01.01"
+   ],
+   "lecturas": [
+    "LIT-061",
+    "LIT-064",
+    "LIT-071",
+    "LIT-077",
+    "LIT-078"
+   ]
+  },
+  {
+   "id": "U-23",
+   "tema": "Excepciones de precio y margen cedido (pricing)",
+   "regla": "Alerta si las operaciones con precio fuera de tarifario superan el 15 % de las colocaciones del segmento en el mes, o si el margen cedido por excepciones supera el 10 % del margen esperado.",
+   "valor": {
+    "excepciones_max": 0.15,
+    "margen_cedido_max": 0.1
+   },
+   "refs": [
+    "PRC-P7-01.02.01",
+    "PRC-P8-01.03.01"
+   ],
+   "nota": "Valor de referencia inicial; calibrar en el primer ciclo.",
+   "lecturas": [
+    "LIT-052",
+    "LIT-071"
+   ]
+  },
+  {
+   "id": "U-24",
+   "tema": "Topes regulatorios de tasa (pricing)",
+   "regla": "El 100 % de las ofertas debe respetar la tasa máxima vigente donde la regulación la fije (medida como la exige la norma, p.ej. TCEA). El motor de precios lo controla antes de emitir la oferta.",
+   "valor": {
+    "cumplimiento": 1.0
+   },
+   "refs": [
+    "PRC-P7-02.01.01",
+    "PRC-P9-02.01.01"
+   ],
+   "lecturas": [
+    "LIT-053",
+    "LIT-071",
+    "LIT-102",
+    "LIT-108"
+   ]
+  },
+  {
+   "id": "U-25",
+   "tema": "Gradualidad de cambios de precio (pricing)",
+   "regla": "Un cambio de tasa de lista mayor a 100 pb, o mayor al 15 % relativo, en un mismo ciclo requiere aprobación del Comité de Precios.",
+   "valor": {
+    "cambio_max_pb": 100,
+    "cambio_max_relativo": 0.15
+   },
+   "refs": [
+    "PRC-P1-01.01.03",
+    "PRC-P5-01.01.01"
+   ],
+   "nota": "Valor de referencia inicial; calibrar en el primer ciclo.",
+   "lecturas": [
+    "LIT-070",
+    "LIT-071",
+    "LIT-072",
+    "LIT-073",
+    "LIT-074",
+    "LIT-138"
+   ]
+  },
+  {
+   "id": "U-26",
+   "tema": "Margen realizado vs. esperado (pricing)",
+   "regla": "Si el margen realizado del segmento se desvía más de ±15 % del esperado durante dos meses consecutivos, se revisan el precio técnico y el modelo de respuesta.",
+   "valor": {
+    "desvio_max": 0.15,
+    "meses": 2
+   },
+   "refs": [
+    "PRC-P8-01.03.01"
+   ],
+   "nota": "Valor de referencia inicial; calibrar en el primer ciclo.",
+   "lecturas": [
+    "LIT-052",
+    "LIT-071"
+   ]
+  },
+  {
+   "id": "U-27",
+   "tema": "Profundidad histórica de parámetros",
+   "regla": "Al menos cinco años de datos de default por cartera, que incluyan un período de estrés o recesión; si no existen, se documenta la limitación y se compensa con conservadurismo o datos externos.",
+   "valor": {
+    "anios_min": 5,
+    "incluye_estres": true
+   },
+   "refs": [
+    "PAR-R2-01.01.01"
+   ],
+   "lecturas": [
+    "LIT-110",
+    "LIT-115"
+   ]
+  },
+  {
+   "id": "U-28",
+   "tema": "Presunciones de IFRS 9 (staging y default)",
+   "regla": "Más de 30 días de atraso implica aumento significativo del riesgo (Stage 2) y el default no ocurre después de los 90 días de atraso. Ambas presunciones solo se refutan con evidencia razonable y sustentable documentada.",
+   "valor": {
+    "stage2_dias": 30,
+    "default_dias_max": 90
+   },
+   "refs": [
+    "PAR-R1-02.01.01",
+    "PAR-R7-01.02.01"
+   ],
+   "lecturas": [
+    "LIT-103",
+    "LIT-110",
+    "LIT-111",
+    "LIT-112",
+    "LIT-116",
+    "LIT-122"
+   ]
+  },
+  {
+   "id": "U-29",
+   "tema": "Umbrales SICR cuantitativos",
+   "regla": "El aumento significativo del riesgo se mide comparando la PD lifetime actual con la de origen, con un umbral relativo y uno absoluto calibrados por cartera. Referencia inicial: PD lifetime al menos 2 veces la de origen y al menos 50 pb por encima.",
+   "valor": {
+    "relativo_min": 2.0,
+    "absoluto_min_pb": 50
+   },
+   "refs": [
+    "PAR-R7-01.01.01",
+    "PAR-R7-01.01.02"
+   ],
+   "nota": "Valor de referencia inicial; calibrar por cartera en el primer ciclo.",
+   "lecturas": [
+    "LIT-103",
+    "LIT-110",
+    "LIT-112",
+    "LIT-122"
+   ]
+  },
+  {
+   "id": "U-30",
+   "tema": "Backtesting de PD por grado (Jeffreys)",
+   "regla": "Por grado o tramo, la tasa de default observada se contrasta con la PD con el test de Jeffreys: p-valor < 0.05 es alerta ámbar y p-valor < 0.01 es rojo (subestimación); un rojo exige plan de recalibrado.",
+   "valor": {
+    "ambar": 0.05,
+    "rojo": 0.01
+   },
+   "refs": [
+    "PAR-R3-03.01.01",
+    "PAR-R9-01.01.01"
+   ],
+   "lecturas": [
+    "LIT-006",
+    "LIT-043",
+    "LIT-104",
+    "LIT-105",
+    "LIT-110",
+    "LIT-111",
+    "LIT-113",
+    "LIT-115"
+   ]
+  },
+  {
+   "id": "U-31",
+   "tema": "Gobierno de overlays y ajustes post-modelo",
+   "regla": "Cada overlay tiene causa, cuantificación reproducible, cartera afectada, fecha de revisión o expiración y aprobación en comité. Alerta si los overlays superan el 10 % de la ECL de la cartera o siguen vigentes más de 4 trimestres sin plan de absorción en el modelo.",
+   "valor": {
+    "peso_max": 0.1,
+    "trimestres_max": 4
+   },
+   "refs": [
+    "PAR-R8-02.01.01",
+    "PAR-R8-02.01.03"
+   ],
+   "nota": "Valor de referencia inicial; calibrar en el primer ciclo.",
+   "lecturas": [
+    "LIT-005",
+    "LIT-103",
+    "LIT-110",
+    "LIT-111",
+    "LIT-112",
+    "LIT-113",
+    "LIT-114"
+   ]
+  },
+  {
+   "id": "U-32",
+   "tema": "Escenarios y ponderación de la ECL",
+   "regla": "Al menos tres escenarios (base, optimista y pesimista) con probabilidades sustentadas, revisados como mínimo cada trimestre. La ECL ponderada es la suma de las ECL de cada escenario por su probabilidad, nunca la ECL de un escenario promedio.",
+   "valor": {
+    "escenarios_min": 3,
+    "revision": "trimestral"
+   },
+   "refs": [
+    "PAR-R6-01.01.01",
+    "PAR-R6-02.01.02",
+    "PAR-R8-01.01.01"
+   ],
+   "lecturas": [
+    "LIT-005",
+    "LIT-103",
+    "LIT-110",
+    "LIT-111",
+    "LIT-112",
+    "LIT-117",
+    "LIT-122"
+   ]
+  },
+  {
+   "id": "U-33",
+   "tema": "Períodos de prueba para salir de default o de Stage 2",
+   "regla": "Salida de default tras al menos 3 meses sin condiciones de default y 12 meses para reestructuraciones por dificultades financieras. El retorno de Stage 2 a Stage 1 exige un período de prueba documentado por cartera (referencia: 3 meses).",
+   "valor": {
+    "salida_default_meses": 3,
+    "reestructurados_meses": 12,
+    "stage2_a_1_meses_ref": 3
+   },
+   "refs": [
+    "PAR-R1-02.01.02",
+    "PAR-R7-01.02.02"
+   ],
+   "lecturas": [
+    "LIT-103",
+    "LIT-110",
+    "LIT-111",
+    "LIT-112",
+    "LIT-116",
+    "LIT-122"
+   ]
+  },
+  {
+   "id": "U-34",
+   "tema": "Cálculo de la LGD workout",
+   "regla": "Las recuperaciones se descuentan a la tasa de interés efectiva, netas de costos directos e indirectos, y los procesos incompletos se incluyen con un método documentado (no se excluyen).",
+   "valor": {
+    "descuento": "tasa_interes_efectiva",
+    "incompletos": "incluidos"
+   },
+   "refs": [
+    "PAR-R4-01.01.01",
+    "PAR-R4-01.01.02"
+   ],
+   "lecturas": [
+    "LIT-006",
+    "LIT-104",
+    "LIT-110",
+    "LIT-115",
+    "LIT-119"
+   ]
+  },
+  {
+   "id": "U-35",
+   "tema": "Frecuencia de validación por categoría",
+   "regla": "Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III–IV, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I.",
+   "valor": {
+    "tier_I_anios": 1,
+    "tier_II_anios": 2,
+    "tier_III_IV_anios": 3,
+    "replica_tier_I": true
+   },
+   "refs": [
+    "VAL-M-05.03",
+    "VAL-M-05.01",
+    "GOB-G2-02.01.01"
+   ],
+   "nota": "Valor de referencia de la línea base; el comité de riesgos de modelo aprueba la periodicidad definitiva.",
+   "lecturas": [
+    "LIT-100",
+    "LIT-101",
+    "LIT-107",
+    "LIT-122",
+    "LIT-130",
+    "LIT-131",
+    "LIT-133"
+   ]
+  },
+  {
+   "id": "U-36",
+   "tema": "Forzajes (overrides)",
+   "regla": "Alerta si los forzajes superan el 5 % de las decisiones del período o si los casos forzados tienen una tasa de default significativamente mayor que los no forzados del mismo tramo.",
+   "valor": {
+    "forzajes_max": 0.05
+   },
+   "refs": [
+    "DES-D5-01.01.02",
+    "SEG-S2-01.03.01"
+   ],
+   "nota": "Valor de referencia inicial; calibrar por producto en el primer ciclo.",
+   "lecturas": [
+    "LIT-003",
+    "LIT-131"
+   ]
+  },
+  {
+   "id": "U-37",
+   "tema": "Semáforo de seguimiento",
+   "regla": "PSI del score: verde ≤ 10 %, ámbar entre 10 % y 25 %, rojo > 25 %. Discriminación: rojo si el Gini cae más de 10 pts frente a construcción. Calibración: rojo si un tramo sale del intervalo al 99 %.",
+   "valor": {
+    "psi_verde": 0.1,
+    "psi_rojo": 0.25,
+    "caida_gini_pts_rojo": 10,
+    "ic_calibracion": 0.99
+   },
+   "refs": [
+    "SEG-S1-01.01.01",
+    "SEG-S2-01.02.01"
+   ],
+   "nota": "Valor de referencia de la línea base; el comité aprueba los umbrales por modelo.",
+   "lecturas": [
+    "LIT-131"
+   ]
+  }
+ ]
+}

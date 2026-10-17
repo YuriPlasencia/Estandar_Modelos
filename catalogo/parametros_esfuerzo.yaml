@@ -1,0 +1,56 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+# Parámetros del modelo de esfuerzo v2 (ver docs/marco/estimacion.md). Todos los supuestos son editables.
+version: 2
+
+escenario_base:
+  registros: 3000000          # filas de la master table de modelamiento
+  columnas: 1000              # variables candidatas
+  segmentos: 4                # supuesto original: máximo 4-5 segmentos
+  fte: 1.5                    # personas asignadas (supuesto original: 1.5 recursos)
+  pct_reuniones: 0.30         # fracción del tiempo de las personas dedicada a reuniones
+  horas_dia: 8
+
+# Volumen de referencia al que corresponden los días del catálogo ("esfuerzo a volumen típico").
+volumen_referencia:
+  registros: 1000000
+  columnas: 300
+
+# Cuánto crece el esfuerzo humano de una actividad de datos cuando crece el volumen:
+#   factor = (columnas / columnas_ref) ^ e_col  ×  (registros / registros_ref) ^ e_reg
+# Revisar 1000 variables no cuesta 3.3 veces más que revisar 300 si el análisis es automático.
+elasticidad:
+  columnas_manual: 0.50       # actividades con nivel de automatización 0-2
+  columnas_automatizado: 0.25 # actividades con nivel de automatización 3-4
+  registros: 0.15             # más filas = más tiempo de proceso y de cuadre, efecto pequeño
+
+# Desde el entrenamiento (DES-D4 tarea 05 en adelante) se trabaja con las variables preseleccionadas (U-08).
+columnas_modelo: 150
+
+# Tiempo de máquina. Minutos por ajuste con 1 M de filas y 100 columnas, en un servidor de 16 núcleos.
+computo:
+  minutos_por_ajuste_ref: {lineal: 0.2, ml: 1.0, arbol: 0.3, acp: 0.1}
+  ajustes_por_segmento: {lineal: 30, ml: 120, arbol: 40, acp: 10}   # incluye HP (>=50, U-10), selección y bootstrap
+  ajustes_calibracion: 20
+  ajustes_parametros: 200     # PD lifetime, LGD, CCF, modelos satélite y ECL por escenario
+  ajustes_pricing: 150        # modelo de respuesta, bootstrap de elasticidad y corridas del optimizador
+  # Fracción del tiempo de máquina que bloquea a quien trabaja (el resto se solapa con otras tareas)
+  bloqueo: {personas: 0.40, agente: 0.10}
+
+# Escenario con agente de IA: fracción del esfuerzo humano que queda (revisión, criterio, firma).
+agente:
+  factor_trabajo:
+    datos: 0.25               # el agente escribe y ejecuta scripts; la persona revisa resultados
+    documentacion: 0.30       # el agente redacta desde logs y salidas; la persona corrige y firma
+    analisis: 0.60            # sentido económico, segmentación, elección de modelo: criterio humano
+    gobierno: 1.00            # aprobaciones, solicitudes y evidencias formales no se aceleran
+  supervision: 0.15           # tiempo extra sobre el trabajo restante para instruir y verificar al agente
+  # Las reuniones con negocio, validación y comité se mantienen: mismas horas que en el escenario con personas.
+
+# Escala del campo nivel_automatizacion de cada requisito.
+niveles_automatizacion:
+  - {nivel: 0, descripcion: El análisis no se ha realizado previamente}
+  - {nivel: 1, descripcion: No se cuenta con códigos}
+  - {nivel: 2, descripcion: Scripts particulares}
+  - {nivel: 3, descripcion: Scripts estándar}
+  - {nivel: 4, descripcion: Procesos industrializados dentro del toolkit}

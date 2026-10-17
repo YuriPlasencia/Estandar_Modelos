@@ -1,0 +1,88 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PRC-P2
+nombre: Datos de pricing y calidad
+estandar: Pricing
+origen: Estándar de Pricing Analítico v1.0 (nuevo, 2026-10-17)
+actividades:
+- id: PRC-P2-01.01.01
+  tarea: Base de cotizaciones
+  subtarea: Construcción
+  actividad: |-
+    Construir la base a nivel de oferta o cotización, no solo de operaciones desembolsadas: precio ofrecido, precio final, aceptación (sí/no), monto, plazo, canal, ejecutivo, fecha y motivo de no aceptación. Sin las ofertas rechazadas por el cliente no se puede estimar la respuesta al precio.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 4
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: P1, descripcion: Base de cotizaciones}
+  hito: Sprint 1
+- id: PRC-P2-01.01.02
+  tarea: Base de cotizaciones
+  subtarea: Construcción
+  actividad: |-
+    Enriquecer cada oferta con los insumos del precio técnico vigentes a la fecha de la oferta: PD y LGD del modelo de riesgo aprobado (definición de default U-17), curva FTP, costo operativo y consumo de capital.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: P1, descripcion: Base de cotizaciones}
+- id: PRC-P2-01.01.03
+  tarea: Base de cotizaciones
+  subtarea: Construcción
+  actividad: |-
+    Incorporar variables de contexto: tasas de la competencia por producto y plazo, tasa de referencia de política monetaria, campañas vigentes, estacionalidad y saturación del canal.
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Tabla, numero: P1, descripcion: Base de cotizaciones}
+- id: PRC-P2-01.01.04
+  tarea: Base de cotizaciones
+  subtarea: Construcción
+  actividad: |-
+    Para productos con comportamiento posterior (TC, consumo, hipotecario, depósitos), unir el desempeño: prepago, cancelación, uso de línea, saldo promedio y default, para calcular el valor de la operación y no solo su aceptación.
+  aplica_tier: [1, 2, 3]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Tabla, numero: P1, descripcion: Base de cotizaciones}
+- id: PRC-P2-02.01.01
+  tarea: Calidad de datos de pricing
+  subtarea: Controles
+  actividad: |-
+    Aplicar los controles de calidad de DES-D2 (validez, completitud, unicidad, precisión, consistencia) y los específicos de pricing: precio ofrecido registrado antes de la decisión del cliente, cotizaciones duplicadas por re-cotización, tasas fuera de rango y fechas de oferta coherentes con la de desembolso.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2.5
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P2, descripcion: Diccionario y certificación de datos de pricing}
+- id: PRC-P2-02.01.02
+  tarea: Calidad de datos de pricing
+  subtarea: Controles
+  actividad: |-
+    Medir la variación exógena del precio disponible para identificar la elasticidad: cambios de tarifario, campañas, saltos de la grilla, pruebas previas. Si no existe variación suficiente, el diseño de un experimento (P6) pasa a ser requisito previo para el modelo de respuesta.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P2, descripcion: Diccionario y certificación de datos de pricing}
+- id: PRC-P2-02.01.03
+  tarea: Calidad de datos de pricing
+  subtarea: Controles
+  actividad: "Certificar la base de pricing con acta de conformidad de las fuentes (Finanzas para FTP y costos; Riesgos para PD/LGD)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  entregables:
+  - {tipo: Documento, numero: P2, descripcion: Diccionario y certificación de datos de pricing}

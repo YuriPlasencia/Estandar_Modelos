@@ -1,0 +1,469 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: VAL
+nombre: Validación
+estandar: Validación
+origen: Estándar de Validación v1.0
+ambitos_validacion:
+  - id: VAL-M
+    nombre: Validación metodológica
+    descripcion: >-
+      Revisión independiente (segunda línea) de la construcción o calibración del modelo. Aplica a los
+      tres tipos de entrega: documentación y gobierno, modelo/calibración, y calibración vía seguimiento.
+  - id: VAL-I
+    nombre: Validación de implementación
+    descripcion: >-
+      Revisión de que el modelo implementado en producción replica el modelo aprobado y opera bajo
+      controles de calidad, accesos y respaldo. Los requisitos marcados como KILLER bloquean la conformidad.
+  - id: VAL-P
+    nombre: Validación de modelos de pricing
+    descripcion: >-
+      Revisión independiente de los modelos del estándar de Pricing (precio técnico, respuesta al precio y optimizador)
+      y de sus controles de implementación y conducta.
+  - id: VAL-R
+    nombre: Validación de parámetros de riesgo
+    descripcion: >-
+      Revisión independiente de los parámetros IFRS 9 y de gestión (PD, LGD, EAD/CCF, escenarios, staging y ECL)
+      y de su motor de cálculo, overlays y backtesting.
+requisitos:
+# ---------------- VALIDACIÓN METODOLÓGICA
+- id: VAL-M-01.01
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Documento de extracción de datos.
+- id: VAL-M-01.02
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Documento metodológico de construcción / calibración.
+- id: VAL-M-01.03
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Actas de coordinación con los equipos de negocio sobre el inicio, coordinación y aprobación del modelo.
+- id: VAL-M-01.04
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Actas de coordinación y aprobación de definición de población, filtros y target.
+- id: VAL-M-01.05
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Actas de criterios, supuestos específicos y segmentación/perfilamiento.
+- id: VAL-M-01.06
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Documento de extracción y selección de variables/drivers.
+- id: VAL-M-01.07
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Documento de extracción y selección de variables de segmentación/perfilamiento.
+- id: VAL-M-01.08
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Actas de coordinación con los equipos de negocio sobre la elección de variables/drivers seleccionados.
+- id: VAL-M-01.09
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Actas de coordinación con los equipos de negocio sobre la elección de segmentos/perfiles.
+- id: VAL-M-01.10
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Actas de coordinación con los equipos de negocio sobre la aprobación de variables/drivers finalistas.
+- id: VAL-M-01.11
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Acta de conformidad de las BBDD extraídas para la construcción de los modelos.
+- id: VAL-M-01.12
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Verificar que el modelo se encuentre registrado en el inventario de modelos.
+- id: VAL-M-01.13
+  ambito: VAL-M
+  bloque: Documentación y gobierno
+  requisito: Análisis y actas de aprobación del Tier del modelo.
+- id: VAL-M-02.01
+  ambito: VAL-M
+  bloque: Calidad de datos
+  requisito: Programas usados para la extracción de datos, ordenados y comentados según la documentación de extracción de datos.
+- id: VAL-M-02.02
+  ambito: VAL-M
+  bloque: Calidad de datos
+  requisito: Reportes con los controles e incidencias de calidad de datos en la extracción de datos.
+- id: VAL-M-02.03
+  ambito: VAL-M
+  bloque: Calidad de datos
+  requisito: Programas usados para la extracción de variables/drivers, ordenados según su documentación.
+- id: VAL-M-02.04
+  ambito: VAL-M
+  bloque: Calidad de datos
+  requisito: Reportes con los controles e incidencias de calidad de datos en la extracción de variables/drivers.
+- id: VAL-M-02.05
+  ambito: VAL-M
+  bloque: Calidad de datos
+  requisito: Programas usados para la construcción de perfiles/segmentos, ordenados según su documentación.
+- id: VAL-M-02.06
+  ambito: VAL-M
+  bloque: Calidad de datos
+  requisito: Reportes con los controles e incidencias de calidad de datos en la construcción de perfiles/segmentos.
+- id: VAL-M-03.01
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Programas usados para la construcción/calibración del modelo, ordenados y comentados según la documentación metodológica.
+- id: VAL-M-03.02
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Reportes utilizados para la construcción/calibración del modelo, ordenados según la documentación metodológica.
+- id: VAL-M-03.03
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Estándar metodológico aplicado en la construcción/calibración, con los entregables según el estándar.
+- id: VAL-M-03.04
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Archivos de trabajo de los controles, análisis y conclusiones de primera línea.
+- id: VAL-M-03.05
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Definición y estabilidad de la población.
+- id: VAL-M-03.06
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Definición y estabilidad del target.
+- id: VAL-M-03.07
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Bondad de ajuste del modelo.
+- id: VAL-M-03.08
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Análisis por subpoblaciones (precisión / discriminación).
+- id: VAL-M-03.09
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Mix de riesgos, granularidad y monotonicidad del score.
+- id: VAL-M-03.10
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Archivos de trabajo de las pruebas de selección de variables/drivers que justifiquen su elección.
+- id: VAL-M-03.11
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Archivos de trabajo de las pruebas de selección de segmentos/perfiles que justifiquen su elección.
+- id: VAL-M-03.12
+  ambito: VAL-M
+  bloque: Metodología
+  requisito: Análisis del performance del modelo a nivel global, mensual (hasta periodos recientes) y por drivers principales de negocio.
+- id: VAL-M-04.01
+  ambito: VAL-M
+  bloque: Integración a la gestión
+  requisito: Definición de los usos que tiene/tendrá el modelo y análisis de desempeño en la población de uso.
+- id: VAL-M-04.02
+  ambito: VAL-M
+  bloque: Integración a la gestión
+  requisito: Análisis de impacto en la gestión por los usos del modelo.
+- id: VAL-M-04.03
+  ambito: VAL-M
+  bloque: Integración a la gestión
+  requisito: Evidencias del seguimiento del modelo o de su planificación.
+# ---------------- VALIDACIÓN DE IMPLEMENTACIÓN
+- id: VAL-I-01.01
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: El documento de implementación cubre el proceso completo hasta la generación de la tabla final productiva.
+- id: VAL-I-01.02
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: El manual de implementación detalla la fórmula o ecuación del modelo.
+- id: VAL-I-01.03
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: El manual de implementación detalla la definición funcional de las variables utilizadas en el cálculo.
+- id: VAL-I-01.04
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: El documento de lineamientos identifica al responsable del proceso de backup.
+- id: VAL-I-01.05
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: El documento de lineamientos describe la tabla final del modelo y adjunta el flujo de ejecución.
+- id: VAL-I-01.06
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: La tabla productiva incluye un campo con el código de inventario del modelo (con evidencia).
+- id: VAL-I-01.07
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: La ruta de documentación (manuales, scripts, certificación, control de calidad) es correcta y se evidencia su contenido.
+- id: VAL-I-01.08
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: Se evidencia el proceso de log de la implementación y su ubicación.
+- id: VAL-I-01.09
+  ambito: VAL-I
+  bloque: Documentación
+  killer: true
+  requisito: Documento de certificación de la tabla final, con aprobación de la jefatura evidenciada por correo de conformidad. Si el modelo consume datos de un proveedor externo (p.ej. buró), la certificación debe ser integral y cubrir un mínimo de 3 meses.
+- id: VAL-I-01.10
+  ambito: VAL-I
+  bloque: Documentación
+  killer: true
+  requisito: Control de calidad de datos (missings, duplicados) sobre las variables del modelo.
+- id: VAL-I-01.11
+  ambito: VAL-I
+  bloque: Documentación
+  killer: false
+  requisito: Evidencia (correo o acta) de coordinación con los equipos consumidores de la tabla productiva, incluyendo fecha de inicio de consumo.
+- id: VAL-I-02.01
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a documentación
+  killer: false
+  requisito: Rutas donde se almacena la documentación del modelo.
+- id: VAL-I-02.02
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a documentación
+  killer: false
+  requisito: Rutas donde se almacenan los scripts del modelo.
+- id: VAL-I-02.03
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a documentación
+  killer: false
+  requisito: Capturas de pantalla de cada ruta mostrando su contenido.
+- id: VAL-I-02.04
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a documentación
+  killer: false
+  requisito: Propietario de la ruta principal de documentación.
+- id: VAL-I-02.05
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a documentación
+  killer: false
+  requisito: Personas con acceso a la ruta principal de documentación.
+- id: VAL-I-02.06
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a documentación
+  killer: false
+  requisito: Flujo para solicitar acceso a la información y conformidades necesarias.
+- id: VAL-I-03.01
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a datos
+  killer: false
+  requisito: Acceso del validador a todas las tablas input del modelo y a la tabla final productiva.
+- id: VAL-I-03.02
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a datos
+  killer: false
+  requisito: Listado de equipos y owners de cada tabla input.
+- id: VAL-I-03.03
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a datos
+  killer: false
+  requisito: Rutas donde se almacenan las bases input y output del proceso.
+- id: VAL-I-03.04
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a datos
+  killer: false
+  requisito: Propietario del sandbox o de la tabla productiva.
+- id: VAL-I-03.05
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a datos
+  killer: false
+  requisito: Personas con acceso al sandbox o tabla productiva (el acceso debe estar restringido a ellas).
+- id: VAL-I-03.06
+  ambito: VAL-I
+  bloque: Entorno tecnológico - Accesos a datos
+  killer: false
+  requisito: Flujo para solicitar acceso a los datos y conformidades necesarias.
+- id: VAL-I-04.01
+  ambito: VAL-I
+  bloque: Backup de documentación
+  killer: false
+  requisito: Rutas de respaldo de la documentación.
+- id: VAL-I-04.02
+  ambito: VAL-I
+  bloque: Backup de documentación
+  killer: false
+  requisito: Rutas de respaldo de los scripts.
+- id: VAL-I-04.03
+  ambito: VAL-I
+  bloque: Backup de documentación
+  killer: false
+  requisito: Capturas de pantalla de cada ruta de respaldo mostrando su contenido.
+- id: VAL-I-04.04
+  ambito: VAL-I
+  bloque: Backup de documentación
+  killer: false
+  requisito: Responsable de administrar los respaldos de la documentación.
+- id: VAL-I-04.05
+  ambito: VAL-I
+  bloque: Backup de documentación
+  killer: false
+  requisito: Responsable de administrar los respaldos de los scripts.
+- id: VAL-I-04.06
+  ambito: VAL-I
+  bloque: Backup de documentación
+  killer: false
+  requisito: Flujo para solicitar la restauración de la información y conformidades necesarias.
+- id: VAL-I-05.01
+  ambito: VAL-I
+  bloque: Backup de datos
+  killer: true
+  requisito: Ruta de backup de las bases input y output del proceso, o evidencia de los respaldos.
+- id: VAL-I-05.02
+  ambito: VAL-I
+  bloque: Backup de datos
+  killer: true
+  requisito: Nombre del servidor, base de datos, sandbox y tabla de respaldo.
+- id: VAL-I-05.03
+  ambito: VAL-I
+  bloque: Backup de datos
+  killer: true
+  requisito: Responsable de administrar la ruta de respaldo y periodicidad del proceso.
+- id: VAL-I-05.04
+  ambito: VAL-I
+  bloque: Backup de datos
+  killer: true
+  requisito: Flujo para restaurar la información y conformidades necesarias.
+# ---------------- VALIDACIÓN DE MODELOS DE PRICING
+- id: VAL-P-01.01
+  ambito: VAL-P
+  bloque: Precio técnico
+  killer: false
+  requisito: "Conciliación del precio técnico con Finanzas (FTP, costos, capital) y Riesgos (PD, LGD), con fecha de vigencia de cada insumo y diferencias por celda explicadas."
+- id: VAL-P-01.02
+  ambito: VAL-P
+  bloque: Precio técnico
+  killer: false
+  requisito: "Uso de una PD coherente con el horizonte de la operación (lifetime o anualizada sobre la vida esperada) y sustento de la elección."
+- id: VAL-P-01.03
+  ambito: VAL-P
+  bloque: Precio técnico
+  killer: true
+  requisito: "Ninguna celda del tarifario aprobado por debajo del piso técnico sin acta del Comité de Precios (U-18) y monotonicidad del precio en el riesgo (U-19)."
+- id: VAL-P-02.01
+  ambito: VAL-P
+  bloque: Modelo de respuesta
+  killer: true
+  requisito: "Estrategia de identificación causal documentada y pruebas de robustez; un modelo de respuesta estimado solo sobre operaciones desembolsadas no es válido."
+- id: VAL-P-02.02
+  ambito: VAL-P
+  bloque: Modelo de respuesta
+  killer: false
+  requisito: "Elasticidad negativa y aceptación monótona en todos los segmentos (U-20), con el rango de precios en que la curva es válida."
+- id: VAL-P-02.03
+  ambito: VAL-P
+  bloque: Modelo de respuesta
+  killer: false
+  requisito: "Calibración de la aceptación por decil y por tramo de precio en OOT y meses recientes (U-21)."
+- id: VAL-P-03.01
+  ambito: VAL-P
+  bloque: Optimizador
+  killer: false
+  requisito: "Reproducción independiente de la propuesta con el mismo código, semilla y datos, y verificación de que respeta todas las restricciones."
+- id: VAL-P-03.02
+  ambito: VAL-P
+  bloque: Optimizador
+  killer: false
+  requisito: "Sensibilidad de la propuesta a la incertidumbre de la elasticidad y a los supuestos de valor (prepago, fuga, venta cruzada)."
+- id: VAL-P-04.01
+  ambito: VAL-P
+  bloque: Implementación y conducta
+  killer: true
+  requisito: "Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 95 % (U-15)."
+- id: VAL-P-04.02
+  ambito: VAL-P
+  bloque: Implementación y conducta
+  killer: false
+  requisito: "Análisis de equidad del precio y de proxies de atributos protegidos (PRC-P9-02.02.01)."
+- id: VAL-P-04.03
+  ambito: VAL-P
+  bloque: Implementación y conducta
+  killer: false
+  requisito: "Registro y log de los agentes de IA usados en el ciclo de pricing, sin facultad para fijar ni aprobar precios (PRC-P9-03.01.01)."
+# ---------------- VALIDACIÓN DE PARÁMETROS DE RIESGO
+- id: VAL-R-01.01
+  ambito: VAL-R
+  bloque: Definiciones y datos
+  killer: false
+  requisito: "Definición de default consistente con la gestión del riesgo y la contabilidad, con la presunción de 90 días (U-28) y el puente documentado con la definición de los scores (U-17)."
+- id: VAL-R-01.02
+  ambito: VAL-R
+  bloque: Definiciones y datos
+  killer: false
+  requisito: "Profundidad y representatividad de los datos (U-27) y conciliación de saldos, defaults y castigos con contabilidad."
+- id: VAL-R-02.01
+  ambito: VAL-R
+  bloque: PD
+  killer: false
+  requisito: "Calibración de la PD por grado con el test de Jeffreys (U-30) y PD lifetime con tratamiento de riesgos competitivos (prepago, cancelación)."
+- id: VAL-R-02.02
+  ambito: VAL-R
+  bloque: LGD
+  killer: false
+  requisito: "LGD workout descontada a la tasa de interés efectiva, con costos y procesos incompletos incluidos (U-34), y LGD en default para Stage 3."
+- id: VAL-R-02.03
+  ambito: VAL-R
+  bloque: EAD
+  killer: false
+  requisito: "Perfil de exposición consistente con prepagos, CCF de revolventes y sustento del período de exposición conductual."
+- id: VAL-R-03.01
+  ambito: VAL-R
+  bloque: Escenarios y staging
+  killer: true
+  requisito: "Al menos tres escenarios con probabilidades sustentadas y ECL ponderada como promedio de las ECL por escenario (U-32)."
+- id: VAL-R-03.02
+  ambito: VAL-R
+  bloque: Escenarios y staging
+  killer: false
+  requisito: "Umbrales SICR calibrados (U-29), backstops de 30 y 90 días (U-28) y evidencia de que Stage 2 anticipa el default."
+- id: VAL-R-04.01
+  ambito: VAL-R
+  bloque: ECL y gobierno
+  killer: true
+  requisito: "Overlays con causa, cuantificación, expiración y aprobación (U-31), y plan de absorción en el modelo."
+- id: VAL-R-04.02
+  ambito: VAL-R
+  bloque: ECL y gobierno
+  killer: true
+  requisito: "Motor de ECL certificado con coincidencia ≥ 95 % (U-15) y conciliado con contabilidad."
+- id: VAL-R-04.03
+  ambito: VAL-R
+  bloque: ECL y gobierno
+  killer: false
+  requisito: "Backtesting anual de PD, LGD, CCF, staging y ECL, con acciones documentadas."
+# ---------------- LÍNEA BASE 2.0 · alcance y profundidad de la validación (Res. SBS 00053-2023 arts. 7, 16, 20 y 25)
+- id: VAL-M-05.01
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: false
+  requisito: "Réplica completa e independiente del modelo para los modelos de mayor categoría (Tier I), incluida la reconstrucción de la base y del entrenamiento."
+- id: VAL-M-05.02
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: false
+  requisito: "Benchmarking con un modelo alternativo (challenger) construido o seleccionado por Validación."
+- id: VAL-M-05.03
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: false
+  requisito: "Validación periódica según la categoría (U-35) que revise el uso real del modelo, la categoría asignada y los forzajes."
+- id: VAL-M-05.04
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: true
+  requisito: "Hallazgos clasificados por severidad (alta, media, baja) con responsable, plazo y seguimiento hasta su cierre; los de severidad alta exigen mitigación temporal hasta corregirse."
+- id: VAL-M-05.05
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: false
+  requisito: "Para modelos de IA: evaluación de interpretabilidad (incluida la estabilidad de las explicaciones), optimización de hiperparámetros, validación cruzada y nivel de sobreajuste."
+- id: VAL-M-05.06
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: false
+  requisito: "Modelos de terceros: réplica o, si la propiedad intelectual lo impide, benchmarking u otra técnica alternativa documentada."

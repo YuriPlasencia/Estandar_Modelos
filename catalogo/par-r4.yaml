@@ -1,0 +1,93 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R4
+nombre: "Severidad (LGD)"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R4-01.01.01
+  tarea: "LGD de operaciones vigentes"
+  subtarea: "LGD workout"
+  actividad: "Calcular la LGD realizada por default como 1 menos el valor presente de las recuperaciones netas de costos sobre la EAD, descontadas a la tasa de interés efectiva (U-34)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R3", descripcion: "LGD realizada"}
+  hito: "Sprint 3"
+- id: PAR-R4-01.01.02
+  tarea: "LGD de operaciones vigentes"
+  subtarea: "LGD workout"
+  actividad: "Tratar los procesos de recuperación incompletos con un método documentado (proyección de recuperaciones remanentes, curvas de recuperación) en lugar de excluirlos, para no sesgar la LGD hacia los casos que se cierran rápido."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R3", descripcion: "LGD realizada"}
+- id: PAR-R4-01.01.03
+  tarea: "LGD de operaciones vigentes"
+  subtarea: "LGD workout"
+  actividad: "Separar la LGD en sus componentes cuando aporte precisión: probabilidad de cura y severidad dado que no hay cura (modelo de dos etapas)."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Script, numero: "R2", descripcion: "Modelos de LGD"}
+- id: PAR-R4-01.02.01
+  tarea: "LGD de operaciones vigentes"
+  subtarea: "Modelo de LGD"
+  actividad: "Estimar el modelo de LGD respetando su soporte acotado y su distribución bimodal (regresión fraccional, beta, dos etapas o métodos de ML con calibración), con drivers de garantía (LTV actual), producto y antigüedad del default."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R2", descripcion: "Modelos de LGD"}
+- id: PAR-R4-01.02.02
+  tarea: "LGD de operaciones vigentes"
+  subtarea: "Modelo de LGD"
+  actividad: "Incorporar el forward-looking en la LGD cuando la recuperación dependa del ciclo (por ejemplo, precios de inmuebles para hipotecarios), con el mismo marco de escenarios de R6."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Script, numero: "R2", descripcion: "Modelos de LGD"}
+- id: PAR-R4-02.01.01
+  tarea: "LGD en default"
+  subtarea: "Exposiciones en default"
+  actividad: "Estimar la LGD para exposiciones ya en default (mejor estimación de la pérdida, ELBE) en función del tiempo en default y del estado de la cobranza, para el cálculo de Stage 3."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R2", descripcion: "Modelos de LGD"}
+- id: PAR-R4-03.01.01
+  tarea: "Validación y documentación"
+  subtarea: "Desempeño de la LGD"
+  actividad: "Comparar LGD estimada vs. realizada por segmento y por año de default, incluido el período de estrés, y evaluar el poder de ordenamiento."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R4", descripcion: "Desempeño de LGD"}
+- id: PAR-R4-03.01.02
+  tarea: "Validación y documentación"
+  subtarea: "Desempeño de la LGD"
+  actividad: "Documentar la metodología de LGD (descuento, costos, incompletos, garantías, LGD en default)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: documentacion
+  entregables:
+  - {tipo: Documento, numero: "R5", descripcion: "Metodología de LGD"}

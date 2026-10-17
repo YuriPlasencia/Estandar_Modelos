@@ -1,0 +1,75 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PRC-P9
+nombre: Gobierno, conducta y regulación de precios
+estandar: Pricing
+origen: Estándar de Pricing Analítico v1.0 (nuevo, 2026-10-17)
+actividades:
+- id: PRC-P9-01.01.01
+  tarea: Gobierno de precios
+  subtarea: Comité de Precios
+  actividad: |-
+    Operar un Comité de Precios con mandato escrito: aprueba tarifarios, pisos, matrices de facultades, experimentos y excepciones a umbrales de pricing. Integra al dueño del precio, Finanzas/ALM, Riesgos y Cumplimiento; cada sesión deja acta (PRC-CP).
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P9, descripcion: Política de precios y conducta}
+- id: PRC-P9-01.02.01
+  tarea: Gobierno de precios
+  subtarea: Política de precios
+  actividad: "Mantener una política de precios aprobada que establezca principios, metodología de piso técnico, gradualidad, facultades, uso de modelos y de agentes de IA, y frecuencia de revisión."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: documentacion
+  entregables:
+  - {tipo: Documento, numero: P9, descripcion: Política de precios y conducta}
+- id: PRC-P9-02.01.01
+  tarea: Conducta y regulación
+  subtarea: Cumplimiento regulatorio
+  actividad: |-
+    Verificar el cumplimiento de la normativa vigente de tasas y transparencia: topes de tasa donde existan (U-24), cálculo y publicación de TCEA/TREA, comunicación de cambios de condiciones con la anticipación exigida y prohibición de cobros no permitidos.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 2
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P9, descripcion: Política de precios y conducta}
+- id: PRC-P9-02.02.01
+  tarea: Conducta y regulación
+  subtarea: Trato justo
+  actividad: |-
+    Asegurar que el precio se explique por riesgo, costo, plazo, canal y relación comercial, y no por atributos protegidos o por la vulnerabilidad del cliente. Prohibido usar como palanca de precio la baja sensibilidad de clientes vulnerables (p.ej. menor alfabetización financiera). Probar proxies como en FR-06.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P9, descripcion: Política de precios y conducta}
+- id: PRC-P9-02.03.01
+  tarea: Conducta y regulación
+  subtarea: Explicabilidad al cliente
+  actividad: "Poder explicar a un cliente, a un ejecutivo o al supervisor por qué una oferta tiene ese precio, a partir de los componentes del piso técnico y de los ajustes comerciales registrados."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 2
+  naturaleza: documentacion
+  entregables:
+  - {tipo: Documento, numero: P9, descripcion: Política de precios y conducta}
+- id: PRC-P9-03.01.01
+  tarea: Agentes de IA en pricing
+  subtarea: Controles
+  actividad: |-
+    Si se usan agentes de IA en el ciclo de pricing, registrar cada agente (rol, herramientas permitidas, datos a los que accede), conservar el log de sus acciones y asegurar que ningún agente fije, publique ni apruebe precios: toda decisión de precio la toma y firma una persona con facultad.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 2
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P9, descripcion: Política de precios y conducta}

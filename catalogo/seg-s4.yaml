@@ -1,0 +1,26 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: SEG-S4
+nombre: "Reporte del seguimiento"
+estandar: Seguimiento
+origen: "Línea base 2.0 (2026-10-17): consolidación de requisitos vigentes, Res. SBS 00053-2023 y práctica de bancos de referencia"
+actividades:
+- id: SEG-S4-01.01.01
+  tarea: "Informes"
+  subtarea: "Informe periódico"
+  actividad: "Emitir el informe de seguimiento al menos una vez al año (más frecuente según categoría) con desviaciones de indicadores, backtesting, sensibilidad, forzajes, cumplimiento de acciones y, para IA, sobreajuste; aprobarlo en el comité (SBS art. 22)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: documentacion
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "S2", descripcion: "Informe de seguimiento"}
+- id: SEG-S4-01.01.02
+  tarea: "Informes"
+  subtarea: "Informe periódico"
+  actividad: "Actualizar el inventario con el estado del modelo y sus debilidades abiertas después de cada informe (GOB-G2-01.01.01)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.25
+  nivel_automatizacion: 2
+  naturaleza: gobierno

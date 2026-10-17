@@ -1,0 +1,64 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: GOB-G1
+nombre: "Organización y comité de riesgos de modelo"
+estandar: Gobierno
+origen: "Línea base 2.0 (2026-10-17): Res. SBS 00053-2023, SR 26-2, PRA SS1/23 y práctica pública de bancos de referencia"
+actividades:
+- id: GOB-G1-01.01.01
+  tarea: "Estructura"
+  subtarea: "Roles e independencia"
+  actividad: "Mantener una función de riesgo de modelo independiente de las áreas que desarrollan, usan e implementan los modelos, con un responsable que reporta a la gerencia de riesgos (SBS 53-2023 arts. 12–13)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+- id: GOB-G1-01.01.02
+  tarea: "Estructura"
+  subtarea: "Roles e independencia"
+  actividad: "Los responsables de validación y seguimiento tienen al menos el mismo nivel organizacional que los de desarrollo; los desarrolladores están separados de las unidades de negocio."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+- id: GOB-G1-01.01.03
+  tarea: "Estructura"
+  subtarea: "Roles e independencia"
+  actividad: "Asignar al usuario del modelo la propiedad de su riesgo de uso y la obligación de usarlo solo para el propósito aprobado (SBS art. 19)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+- id: GOB-G1-01.02.01
+  tarea: "Estructura"
+  subtarea: "Comité de riesgos de modelo"
+  actividad: "Operar un comité de riesgos de modelo con al menos un director, el jefe de riesgos y los responsables de desarrollo, validación y seguimiento, que sesione como mínimo cada trimestre (SBS arts. 10–11)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Acta, numero: "CRM", descripcion: "Comité de riesgos de modelo"}
+- id: GOB-G1-01.02.02
+  tarea: "Estructura"
+  subtarea: "Comité de riesgos de modelo"
+  actividad: "El comité aprueba los criterios de categorización (Tier), los indicadores y umbrales de seguimiento, la periodicidad de las validaciones, los informes de validación y seguimiento y las acciones ante debilidades."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Acta, numero: "CRM", descripcion: "Comité de riesgos de modelo"}
+- id: GOB-G1-01.02.03
+  tarea: "Estructura"
+  subtarea: "Comité de riesgos de modelo"
+  actividad: "El directorio aprueba las políticas, asigna recursos y aprueba las excepciones de uso de modelos de mayor categoría con debilidades relevantes (SBS art. 9)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true

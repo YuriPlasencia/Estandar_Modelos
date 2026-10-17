@@ -1,0 +1,39 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R10
+nombre: "Valor de vida del cliente (CLV) y usos de gestión"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R10-01.01.01
+  tarea: "CLV"
+  subtarea: "Modelo de valor"
+  actividad: "Construir el valor de vida del cliente con los mismos parámetros lifetime (supervivencia por default, prepago y fuga, margen esperado, costo de riesgo y costo de capital) para que gestión, pricing y provisiones usen una sola visión del riesgo."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Script, numero: "R6", descripcion: "Modelo de CLV"}
+  hito: "Sprint 8"
+- id: PAR-R10-01.01.02
+  tarea: "CLV"
+  subtarea: "Modelo de valor"
+  actividad: "Documentar las diferencias entre los parámetros contables (PIT con forward-looking) y los de gestión (por ejemplo, TTC para pricing de largo plazo) y en qué uso aplica cada uno."
+  aplica_tier: [1, 2, 3]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: documentacion
+  entregables:
+  - {tipo: Documento, numero: "R1", descripcion: "Mapa de parámetros y usos"}
+- id: PAR-R10-02.01.01
+  tarea: "Entrega a usuarios"
+  subtarea: "Consumo de parámetros"
+  actividad: "Publicar los parámetros vigentes en una tabla versionada con fecha de vigencia para sus consumidores (motor de ECL, pricing PRC-P3, capital, stress testing), con el registro de qué versión usó cada proceso."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: "R5", descripcion: "Parámetros vigentes versionados"}

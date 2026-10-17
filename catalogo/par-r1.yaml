@@ -1,0 +1,74 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R1
+nombre: "Marco, alcance y gobierno de parámetros"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R1-01.01.01
+  tarea: "Alcance y usos"
+  subtarea: "Inventario de parámetros"
+  actividad: "Inventariar los parámetros de riesgo por cartera y uso (PD 12 meses y lifetime, LGD, LGD en default, EAD/CCF, escenarios, criterios de staging, CLV) y registrar cada modelo en el inventario con su Tier."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R1", descripcion: "Mapa de parámetros y usos"}
+  hito: "Sprint 0"
+- id: PAR-R1-01.01.02
+  tarea: "Alcance y usos"
+  subtarea: "Inventario de parámetros"
+  actividad: "Declarar los usos de cada parámetro (provisiones IFRS 9, provisiones regulatorias locales, capital, pricing, stress testing, CLV) y las diferencias de calibración que cada uso exige: point-in-time con forward-looking para IFRS 9, through-the-cycle o downturn para capital."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R1", descripcion: "Mapa de parámetros y usos"}
+- id: PAR-R1-01.02.01
+  tarea: "Alcance y usos"
+  subtarea: "Segmentación de carteras"
+  actividad: "Definir las carteras con riesgo homogéneo (producto, segmento, garantía, canal, moneda) sobre las que se estiman los parámetros, con evidencia de homogeneidad y materialidad suficiente de defaults por segmento."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R1", descripcion: "Segmentación de carteras"}
+- id: PAR-R1-02.01.01
+  tarea: "Definiciones comunes"
+  subtarea: "Default y unidad de análisis"
+  actividad: "Alinear la definición de default de parámetros con la gestión del riesgo y con la contabilidad: en IFRS 9 el default no puede ocurrir después de los 90 días de atraso salvo evidencia que refute la presunción (U-28). Documentar el puente con la definición de default de los scores de originación (U-17: más de 60 días) y su efecto en la calibración."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R2", descripcion: "Definiciones de default, cura y unidad"}
+- id: PAR-R1-02.01.02
+  tarea: "Definiciones comunes"
+  subtarea: "Default y unidad de análisis"
+  actividad: "Definir los criterios de salida de default y cura: período mínimo de observación y tratamiento de reestructurados (U-33), e impacto en LGD y en staging."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R2", descripcion: "Definiciones de default, cura y unidad"}
+- id: PAR-R1-03.01.01
+  tarea: "Gobierno inicial"
+  subtarea: "Kick off"
+  actividad: "Kick off del proyecto de parámetros con Riesgos, Finanzas/Contabilidad, Estudios Económicos y Validación."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  entregables:
+  - {tipo: Acta, numero: "PAR-KO", descripcion: "Kick off de parámetros"}
+  hito: "Kick Off"

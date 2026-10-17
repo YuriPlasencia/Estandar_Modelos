@@ -1,0 +1,83 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R2
+nombre: "Datos y reconstrucción histórica"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R2-01.01.01
+  tarea: "Bases de estimación"
+  subtarea: "Series de default"
+  actividad: "Construir las cohortes de default por cartera con al menos cinco años de historia que incluyan un período de estrés (U-27): saldos, estados de atraso mensuales, defaults, curas y salidas (prepago, castigo, venta)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 4
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: "R1", descripcion: "Cohortes de default"}
+  hito: "Sprint 1"
+- id: PAR-R2-01.01.02
+  tarea: "Bases de estimación"
+  subtarea: "Series de default"
+  actividad: "Reconstruir la historia de calificaciones o scores en una escala estable para estimar matrices de migración, corrigiendo cambios de modelo con un mapeo documentado."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Tabla, numero: "R1", descripcion: "Cohortes de default"}
+- id: PAR-R2-01.02.01
+  tarea: "Bases de estimación"
+  subtarea: "Base de recuperaciones"
+  actividad: "Construir la base de recuperaciones por default: flujos de cobranza, ejecución de garantías, costos directos e indirectos y fecha de cierre del proceso. Identificar los procesos incompletos y su tratamiento."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 4
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: "R2", descripcion: "Base de recuperaciones (workout)"}
+- id: PAR-R2-01.03.01
+  tarea: "Bases de estimación"
+  subtarea: "Base de exposición"
+  actividad: "Construir la base de exposición: cronogramas de amortización, prepagos, líneas y uso de línea 12 meses antes del default para estimar CCF."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: "R3", descripcion: "Base de exposición y uso de línea"}
+- id: PAR-R2-01.04.01
+  tarea: "Bases de estimación"
+  subtarea: "Series macroeconómicas"
+  actividad: "Recopilar las series macroeconómicas candidatas (PBI, desempleo, inflación, tasas, tipo de cambio, precios de inmuebles, términos de intercambio) con la misma frecuencia y rezagos que usará Estudios Económicos en sus escenarios."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: "R4", descripcion: "Series macroeconómicas"}
+- id: PAR-R2-02.01.01
+  tarea: "Calidad de datos"
+  subtarea: "Certificación"
+  actividad: "Aplicar los controles de calidad de DES-D2 y los específicos de parámetros: continuidad de cohortes, defaults sin recuperación registrada, recuperaciones mayores al saldo, y conciliación de saldos y castigos con contabilidad."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2.5
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R3", descripcion: "Certificación de datos de parámetros"}
+- id: PAR-R2-02.01.02
+  tarea: "Calidad de datos"
+  subtarea: "Certificación"
+  actividad: "Certificar las bases con acta de conformidad de las fuentes (Riesgos, Cobranzas, Contabilidad, Estudios Económicos)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  entregables:
+  - {tipo: Documento, numero: "R3", descripcion: "Certificación de datos de parámetros"}

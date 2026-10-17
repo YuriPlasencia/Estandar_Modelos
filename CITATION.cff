@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Si usas este estándar, por favor cítalo así."
+title: "Estándares de Modelos en Banca"
+version: 2.0.0
+date-released: 2026-10-17
+authors:
+  - family-names: Plasencia
+    given-names: Yuri
+    affiliation: "Analytics Pricing & Revenue Management"
+abstract: >-
+  Estándar abierto, versionado y legible por máquinas para el ciclo de vida de los modelos en banca: gobierno,
+  desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
+  y trabajo con agentes de IA.
+keywords:
+  - model risk management
+  - credit scoring
+  - IFRS 9
+  - pricing
+  - AI agents
+  - banking

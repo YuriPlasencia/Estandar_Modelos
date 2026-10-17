@@ -1,0 +1,76 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PRC-P7
+nombre: Implementación en el motor de precios
+estandar: Pricing
+origen: Estándar de Pricing Analítico v1.0 (nuevo, 2026-10-17)
+actividades:
+- id: PRC-P7-01.01.01
+  tarea: Tarifario y facultades
+  subtarea: Tarifario
+  actividad: "Publicar el tarifario aprobado con fecha de vigencia, versión y la TCEA o TREA resultante para cada celda, según la normativa de transparencia aplicable."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 2
+  naturaleza: documentacion
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P7, descripcion: Tarifario y matriz de facultades}
+  hito: Sprint 6
+- id: PRC-P7-01.02.01
+  tarea: Tarifario y facultades
+  subtarea: Matriz de facultades
+  actividad: |-
+    Definir la matriz de facultades de descuento: quién puede ceder cuántos puntos básicos sobre el tarifario, hasta qué piso y con qué evidencia. Ningún nivel puede ofrecer por debajo del piso técnico sin aprobación del Comité de Precios (U-18, U-23).
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P7, descripcion: Tarifario y matriz de facultades}
+- id: PRC-P7-02.01.01
+  tarea: Motor de precios
+  subtarea: Reglas y controles preventivos
+  actividad: |-
+    Implementar en el motor de precios las reglas del tarifario, la matriz de facultades y los controles preventivos que bloquean ofertas por encima del tope regulatorio (U-24) o por debajo del piso sin facultad, registrando cada excepción con su motivo y aprobador.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: P3, descripcion: Reglas del motor de precios}
+- id: PRC-P7-02.02.01
+  tarea: Motor de precios
+  subtarea: Certificación
+  actividad: |-
+    Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: 14, descripcion: Certificación del modelo}
+- id: PRC-P7-02.03.01
+  tarea: Motor de precios
+  subtarea: Registro de ofertas
+  actividad: "Registrar cada oferta emitida (precio, versión del tarifario, componentes del piso, excepción y aceptación) para cerrar el ciclo de datos que alimenta el siguiente recalibrado del modelo de respuesta."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Tabla, numero: P1, descripcion: Base de cotizaciones}
+- id: PRC-P7-02.04.01
+  tarea: Motor de precios
+  subtarea: Habilitación comercial
+  actividad: "Capacitar a la fuerza de ventas en el nuevo tarifario, las facultades y la argumentación al cliente; dejar evidencia de la capacitación."
+  aplica_tier: [1, 2, 3]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  entregables:
+  - {tipo: Documento, numero: P7, descripcion: Tarifario y matriz de facultades}

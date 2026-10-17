@@ -1,0 +1,108 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PRC-P4
+nombre: Modelos de respuesta al precio
+estandar: Pricing
+origen: Estándar de Pricing Analítico v1.0 (nuevo, 2026-10-17)
+actividades:
+- id: PRC-P4-01.01.01
+  tarea: Identificación causal
+  subtarea: Estrategia de identificación
+  actividad: |-
+    Documentar cómo se separa el efecto del precio del efecto del riesgo y del perfil del cliente, dado que el precio histórico no fue asignado al azar: experimento aleatorio (preferido), discontinuidad en la grilla de precios, variable instrumental (por ejemplo, cambios del costo de fondos o del tarifario ajenos al cliente) o double machine learning con controles completos.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P4, descripcion: Modelo de respuesta y elasticidad}
+  hito: Sprint 3
+- id: PRC-P4-01.01.02
+  tarea: Identificación causal
+  subtarea: Estrategia de identificación
+  actividad: |-
+    Pruebas de robustez de la identificación: placebo en periodos sin cambio de precio, balance de covariables entre grupos de precio, sensibilidad a variables omitidas y estabilidad de la elasticidad entre submuestras temporales.
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Documento, numero: P4, descripcion: Modelo de respuesta y elasticidad}
+- id: PRC-P4-02.01.01
+  tarea: Modelo de aceptación
+  subtarea: Construcción
+  actividad: |-
+    Estimar la probabilidad de aceptación de la oferta en función del precio relativo (precio ofrecido frente a referencia o competencia) y de las características del cliente, siguiendo DES-D4 para muestras (Train/Test/OOT), depuración y selección de variables.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: P1, descripcion: Modelo de respuesta}
+- id: PRC-P4-02.01.02
+  tarea: Modelo de aceptación
+  subtarea: Construcción
+  actividad: |-
+    Imponer la restricción de monotonicidad decreciente de la aceptación en el precio (U-20), incluso en modelos de machine learning (restricciones monotónicas en gradient boosting) y permitir elasticidades heterogéneas por segmento.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: P1, descripcion: Modelo de respuesta}
+- id: PRC-P4-02.02.01
+  tarea: Modelo de aceptación
+  subtarea: Desempeño
+  actividad: |-
+    Validar discriminación (Gini/AUC) y, sobre todo, calibración: aceptación observada vs. predicha por decil y por tramo de precio (U-21). En pricing un modelo descalibrado optimiza mal aunque ordene bien.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: P3, descripcion: Curvas de respuesta por segmento}
+- id: PRC-P4-03.01.01
+  tarea: Comportamiento posterior
+  subtarea: Modelos de valor
+  actividad: |-
+    Estimar los modelos que determinan el valor de la operación según el precio: prepago y cancelación (activos), sensibilidad de saldo y fuga ante cambios de tasa (depósitos: beta de traslado y elasticidad de saldos), uso de línea (TC).
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 4
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Script, numero: P1, descripcion: Modelo de respuesta}
+- id: PRC-P4-03.01.02
+  tarea: Comportamiento posterior
+  subtarea: Modelos de valor
+  actividad: "Evaluar si el precio afecta el riesgo (selección adversa); si la PD observada cambia con el precio para un mismo score, incorporarlo en el valor esperado."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: analisis
+  entregables:
+  - {tipo: Documento, numero: P4, descripcion: Modelo de respuesta y elasticidad}
+- id: PRC-P4-04.01.01
+  tarea: Cierre del modelo de respuesta
+  subtarea: Revisión
+  actividad: "Reunión de revisión del modelo de respuesta con el dueño del precio: elasticidades por segmento, su sentido de negocio y sus límites de uso."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  entregables:
+  - {tipo: Acta, numero: PRC-ELA, descripcion: Revisión del modelo de respuesta}
+- id: PRC-P4-04.02.01
+  tarea: Cierre del modelo de respuesta
+  subtarea: Documentación
+  actividad: "Documentar el modelo de respuesta con la estructura de DES-D4-11 (memoria metodológica, limitaciones, rango de precios en que la elasticidad es válida)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 1
+  naturaleza: documentacion
+  entregables:
+  - {tipo: Documento, numero: P4, descripcion: Modelo de respuesta y elasticidad}

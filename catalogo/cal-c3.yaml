@@ -1,0 +1,20 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: CAL-C3
+nombre: Segmentación
+estandar: Calibración
+origen: Estándar de Calibración v1.0
+actividades:
+- id: CAL-C3-01.01.01
+  tarea: Segmentación
+  subtarea: Segmentación a probar
+  actividad: Análisis de ratio de default y materialidad para posibles segmentos de calibrado
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2]
+- id: CAL-C3-01.01.02
+  tarea: Segmentación
+  subtarea: Segmentación a probar
+  actividad: Performance del modelo actual según los los segmentos para el calibrado (12 ulitmos meses con desempeño
+    y/o según disponibilidad de información)
+  dias_esfuerzo: 0.5
+  aplica_tier: [1, 2]

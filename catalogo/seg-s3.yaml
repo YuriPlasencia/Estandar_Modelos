@@ -1,0 +1,29 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: SEG-S3
+nombre: "Acciones ante alertas"
+estandar: Seguimiento
+origen: "Línea base 2.0 (2026-10-17): consolidación de requisitos vigentes, Res. SBS 00053-2023 y práctica de bancos de referencia"
+actividades:
+- id: SEG-S3-01.01.01
+  tarea: "Respuesta"
+  subtarea: "Árbol de decisión"
+  actividad: "Aplicar el árbol de decisión: verde, continuar; ámbar, análisis de causa raíz en un mes; rojo en calibración con discriminación aceptable, calibrar (CAL); rojo en discriminación, redesarrollar (DES); rojo en datos, plan de contingencia (IMP-01.02.01)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "S2", descripcion: "Informe de seguimiento"}
+- id: SEG-S3-01.01.02
+  tarea: "Respuesta"
+  subtarea: "Árbol de decisión"
+  actividad: "Escalar al comité un rojo que persista tres períodos o un cambio material de política o de población, con medidas temporales de mitigación mientras se corrige (SBS art. 7)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Acta, numero: "CRM", descripcion: "Comité de riesgos de modelo"}

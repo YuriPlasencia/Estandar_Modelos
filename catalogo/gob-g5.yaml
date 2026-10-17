@@ -1,0 +1,38 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: GOB-G5
+nombre: "Reporte, debilidades y auditoría"
+estandar: Gobierno
+origen: "Línea base 2.0 (2026-10-17): Res. SBS 00053-2023, SR 26-2, PRA SS1/23 y práctica pública de bancos de referencia"
+actividades:
+- id: GOB-G5-01.01.01
+  tarea: "Debilidades"
+  subtarea: "Gestión de debilidades"
+  actividad: "Registrar cada debilidad o hallazgo con severidad, responsable, plazo y estado; si no puede corregirse de inmediato, aplicar medidas temporales de mitigación (SBS art. 7)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 2
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "G3", descripcion: "Registro de debilidades"}
+- id: GOB-G5-02.01.01
+  tarea: "Reporte"
+  subtarea: "Informe anual"
+  actividad: "La unidad de riesgos emite un informe anual con el estado de las debilidades, los modelos desarrollados o modificados en los últimos 12 meses y el cronograma de los próximos 12 meses (SBS art. 8)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 2
+  naturaleza: documentacion
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "G4", descripcion: "Informe anual de riesgo de modelo"}
+- id: GOB-G5-02.01.02
+  tarea: "Reporte"
+  subtarea: "Informe anual"
+  actividad: "Auditoría interna incluye en su plan anual la evaluación del cumplimiento de la gestión de riesgo de modelo."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true

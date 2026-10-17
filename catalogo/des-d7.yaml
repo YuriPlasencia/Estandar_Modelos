@@ -1,0 +1,99 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: DES-D7
+nombre: Gobierno
+estandar: Desarrollo
+origen: Estándar de Desarrollo v1.0
+actividades:
+- id: DES-D7-01.01.01
+  tarea: Gobierno
+  subtarea: Gobierno
+  actividad: Revisar la aplicación los estándares de construcción (responsable lider del proyecto)
+  critico: true
+  eficiencia: true
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.1875, tradicional: 0.25}
+    ml: {agil: 0.1875, tradicional: 0.25}
+    acp: {agil: 0.1875, tradicional: 0.25}
+    arbol: {agil: 0.1875, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: DES-D7-01.01.02
+  tarea: Gobierno
+  subtarea: Gobierno
+  actividad: Evidenciar correos, actas, documentación, conformidades u otros medios
+  critico: true
+  eficiencia: true
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: DES-D7-01.01.03
+  tarea: Gobierno
+  subtarea: Gobierno
+  actividad: Participar en la asignación de Tier de un modelo
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.185, tradicional: 0.25}
+    ml: {agil: 0.185, tradicional: 0.25}
+    acp: {agil: 0.185, tradicional: 0.25}
+    arbol: {agil: 0.185, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: DES-D7-01.01.04
+  tarea: Gobierno
+  subtarea: Gobierno
+  actividad: Cooperar en el alta/ baja de un modelo (ficha de nacimiento del modelo)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: DES-D7-01.01.05
+  tarea: Gobierno
+  subtarea: Gobierno
+  actividad: Presentaciones de aprobación/ ratificación
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.125, tradicional: 0.25}
+    ml: {agil: 0.125, tradicional: 0.25}
+    acp: {agil: 0.125, tradicional: 0.25}
+    arbol: {agil: 0.125, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: DES-D7-01.01.06
+  tarea: Gobierno
+  subtarea: Gobierno
+  actividad: Evidenciar el cumpliento de la documentación y reglamentación de variables críticas
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], acp: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
+- id: DES-D7-01.01.07
+  tarea: "Gobierno"
+  subtarea: "Gobierno"
+  actividad: "Obtener la aprobación previa del comité de riesgos de modelo antes de usar todo modelo nuevo, modificado o con cambio de uso (GOB-G3-01.01.01)."
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  nota_origen: "Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 17."

@@ -1,0 +1,72 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R6
+nombre: "Escenarios macroeconómicos y forward-looking"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R6-01.01.01
+  tarea: "Escenarios"
+  subtarea: "Diseño y probabilidades"
+  actividad: "Recibir de Estudios Económicos al menos tres escenarios (base, optimista y pesimista) con sus probabilidades y su sustento, revisados como mínimo cada trimestre (U-32)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: gobierno
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R7", descripcion: "Escenarios y probabilidades"}
+  hito: "Sprint 4"
+- id: PAR-R6-01.01.02
+  tarea: "Escenarios"
+  subtarea: "Diseño y probabilidades"
+  actividad: "Definir el horizonte de proyección explícito y la regla de reversión a la media de largo plazo de las variables macro y de los parámetros."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R7", descripcion: "Escenarios y probabilidades"}
+- id: PAR-R6-02.01.01
+  tarea: "Modelos satélite"
+  subtarea: "Vínculo macro–parámetros"
+  actividad: "Estimar los modelos satélite que vinculan las variables macro con la tasa de default (y con la LGD cuando aplique): selección de variables con sentido económico y signo esperado, rezagos, y estabilidad fuera de muestra."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R4", descripcion: "Modelos satélite"}
+- id: PAR-R6-02.01.02
+  tarea: "Modelos satélite"
+  subtarea: "Vínculo macro–parámetros"
+  actividad: "Probar la no linealidad: la ECL ponderada se calcula como el promedio de las ECL de cada escenario, nunca como la ECL de un escenario promedio (U-32)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R5", descripcion: "ECL por escenario"}
+- id: PAR-R6-02.01.03
+  tarea: "Modelos satélite"
+  subtarea: "Vínculo macro–parámetros"
+  actividad: "Evaluar riesgos que la macro no captura (clima, energía, cadenas de suministro, geopolítica, sectores concentrados) y decidir si requieren un ajuste del modelo o un overlay gobernado (R8)."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  entregables:
+  - {tipo: Documento, numero: "R7", descripcion: "Escenarios y probabilidades"}
+- id: PAR-R6-03.01.01
+  tarea: "Gobierno de escenarios"
+  subtarea: "Revisión trimestral"
+  actividad: "Reunión trimestral de revisión de escenarios y probabilidades con Estudios Económicos, Riesgos y Contabilidad."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.25
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  entregables:
+  - {tipo: Acta, numero: "PAR-ESC", descripcion: "Revisión de escenarios"}

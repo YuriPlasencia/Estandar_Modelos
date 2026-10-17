@@ -1,0 +1,89 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PRC-P5
+nombre: Optimización y propuesta de precios
+estandar: Pricing
+origen: Estándar de Pricing Analítico v1.0 (nuevo, 2026-10-17)
+actividades:
+- id: PRC-P5-01.01.01
+  tarea: Formulación
+  subtarea: Problema de optimización
+  actividad: |-
+    Formular el problema: maximizar la función objetivo de P1 sumando, por oferta, la probabilidad de aceptación por el valor de la operación al precio propuesto, sujeto a precio ≥ piso técnico (U-18), precio ≤ tope regulatorio (U-24), metas de volumen y riesgo, monotonicidad en el riesgo (U-19) y gradualidad (U-25).
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P5, descripcion: Propuesta de precios}
+  hito: Sprint 4
+- id: PRC-P5-01.01.02
+  tarea: Formulación
+  subtarea: Problema de optimización
+  actividad: |-
+    Definir la granularidad de la decisión (celda de tarifario o precio individual) y la regla de redondeo a la grilla comercial (por ejemplo, múltiplos de 25 pb), evaluando el valor perdido por redondeo.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  entregables:
+  - {tipo: Documento, numero: P5, descripcion: Propuesta de precios}
+- id: PRC-P5-02.01.01
+  tarea: Resolución
+  subtarea: Optimizador
+  actividad: "Implementar el optimizador (búsqueda en grilla, programación no lineal o entera) con semilla y versiones fijadas, y verificar que la solución respeta todas las restricciones."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 3
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: P2, descripcion: Optimizador de precios}
+- id: PRC-P5-02.02.01
+  tarea: Resolución
+  subtarea: Robustez
+  actividad: |-
+    Optimizar con incertidumbre: propagar el intervalo de la elasticidad (bootstrap o posterior) a la propuesta y preferir precios cuyo resultado sea bueno en todo el rango plausible, no solo en el punto central.
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  entregables:
+  - {tipo: Script, numero: P2, descripcion: Optimizador de precios}
+- id: PRC-P5-02.03.01
+  tarea: Resolución
+  subtarea: Escenarios
+  actividad: |-
+    Construir escenarios para el comité: precio actual, propuesta óptima, propuesta con restricción de volumen y alternativas del negocio, con impacto en volumen, margen, RAROC, pérdida esperada, capital y provisiones a 12 meses.
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: PPT, numero: P1, descripcion: Escenarios de precio}
+- id: PRC-P5-03.01.01
+  tarea: Validación de la propuesta
+  subtarea: Controles
+  actividad: |-
+    Controlar la propuesta antes de llevarla a comité: 100 % de precios dentro de [piso, tope], monotonicidad, cambios mayores al umbral de gradualidad identificados, y análisis de equidad de precios por grupos: las diferencias deben explicarse por riesgo, costo, plazo o canal (PRC-P9-02.02.01).
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: P5, descripcion: Propuesta de precios}
+- id: PRC-P5-03.02.01
+  tarea: Validación de la propuesta
+  subtarea: Comité de Precios
+  actividad: "Presentar la propuesta y sus escenarios al Comité de Precios para su aprobación, con las excepciones a umbrales explícitas."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 1
+  naturaleza: reunion
+  critico: true
+  entregables:
+  - {tipo: Acta, numero: PRC-CP, descripcion: Comité de Precios}
+  hito: Comité de Precios

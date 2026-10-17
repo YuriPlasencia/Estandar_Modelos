@@ -1,0 +1,75 @@
+{
+ "parametros_esfuerzo": {
+  "version": 2,
+  "escenario_base": {
+   "registros": 3000000,
+   "columnas": 1000,
+   "segmentos": 4,
+   "fte": 1.5,
+   "pct_reuniones": 0.3,
+   "horas_dia": 8
+  },
+  "volumen_referencia": {
+   "registros": 1000000,
+   "columnas": 300
+  },
+  "elasticidad": {
+   "columnas_manual": 0.5,
+   "columnas_automatizado": 0.25,
+   "registros": 0.15
+  },
+  "columnas_modelo": 150,
+  "computo": {
+   "minutos_por_ajuste_ref": {
+    "lineal": 0.2,
+    "ml": 1.0,
+    "arbol": 0.3,
+    "acp": 0.1
+   },
+   "ajustes_por_segmento": {
+    "lineal": 30,
+    "ml": 120,
+    "arbol": 40,
+    "acp": 10
+   },
+   "ajustes_calibracion": 20,
+   "ajustes_parametros": 200,
+   "ajustes_pricing": 150,
+   "bloqueo": {
+    "personas": 0.4,
+    "agente": 0.1
+   }
+  },
+  "agente": {
+   "factor_trabajo": {
+    "datos": 0.25,
+    "documentacion": 0.3,
+    "analisis": 0.6,
+    "gobierno": 1.0
+   },
+   "supervision": 0.15
+  },
+  "niveles_automatizacion": [
+   {
+    "nivel": 0,
+    "descripcion": "El análisis no se ha realizado previamente"
+   },
+   {
+    "nivel": 1,
+    "descripcion": "No se cuenta con códigos"
+   },
+   {
+    "nivel": 2,
+    "descripcion": "Scripts particulares"
+   },
+   {
+    "nivel": 3,
+    "descripcion": "Scripts estándar"
+   },
+   {
+    "nivel": 4,
+    "descripcion": "Procesos industrializados dentro del toolkit"
+   }
+  ]
+ }
+}

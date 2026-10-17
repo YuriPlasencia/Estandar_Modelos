@@ -1,0 +1,51 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R7
+nombre: "Staging y aumento significativo del riesgo (SICR)"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R7-01.01.01
+  tarea: "Criterios de staging"
+  subtarea: "Criterios cuantitativos"
+  actividad: "Comparar la PD lifetime actual con la PD lifetime en el reconocimiento inicial, por operación, con umbrales relativos y absolutos calibrados por cartera (U-29)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R8", descripcion: "Criterios de staging"}
+  hito: "Sprint 5"
+- id: PAR-R7-01.01.02
+  tarea: "Criterios de staging"
+  subtarea: "Criterios cuantitativos"
+  actividad: "Calibrar los umbrales SICR para que Stage 2 anticipe el default: proporción de defaults que pasaron antes por Stage 2, tiempo de permanencia y estabilidad de las transiciones."
+  aplica_tier: [1, 2]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Excel, numero: "R6", descripcion: "Calibración de umbrales SICR"}
+- id: PAR-R7-01.02.01
+  tarea: "Criterios de staging"
+  subtarea: "Criterios cualitativos y backstops"
+  actividad: "Aplicar el backstop de 30 días de atraso para Stage 2 y el de default para Stage 3 (U-28), además de criterios cualitativos: refinanciados, lista de vigilancia y alertas tempranas."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R8", descripcion: "Criterios de staging"}
+- id: PAR-R7-01.02.02
+  tarea: "Criterios de staging"
+  subtarea: "Criterios cualitativos y backstops"
+  actividad: "Definir el retorno de Stage 2 a Stage 1 y de Stage 3 a Stage 2 con períodos de prueba (U-33), y documentar el tratamiento de activos adquiridos u originados con deterioro (POCI)."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1
+  nivel_automatizacion: 1
+  naturaleza: analisis
+  entregables:
+  - {tipo: Documento, numero: "R8", descripcion: "Criterios de staging"}

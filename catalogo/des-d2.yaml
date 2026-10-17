@@ -1,0 +1,264 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: DES-D2
+nombre: Preparación, calidad y entendimiento de los datos
+estandar: Desarrollo
+origen: Estándar de Desarrollo v1.0
+actividades:
+- id: DES-D2-01.01.01
+  tarea: Revisión documental y control review
+  subtarea: Revisión del diccionario de datos
+  actividad: Garantizar la existencia de un diccionario de datos sobre la base disponible
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.0, tradicional: 0.0}
+    ml: {agil: 0.0, tradicional: 0.0}
+    arbol: {agil: 0.0, tradicional: 0.0}
+    acp: {agil: 0.0, tradicional: 0.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 4
+    descripcion: Diccionario de datos.
+  hito: Sprint 6
+- id: DES-D2-01.02.01
+  tarea: Revisión documental y control review
+  subtarea: Revisión del reporte de calidad de datos del proveedor
+  actividad: Revisar detalladamente el informe de calidad de datos entregado por el proveedor de información
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 5
+    descripcion: Informe de calidad de datos.
+- id: DES-D2-01.03.01
+  tarea: Revisión documental y control review
+  subtarea: Análisis de validez
+  actividad: Comparar información recibida con la petición formal de información
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D2-01.04.01
+  tarea: Revisión documental y control review
+  subtarea: Análisis de completitud
+  actividad: '% de registros sin ninguna información'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.0}
+    ml: {agil: 1.0, tradicional: 1.0}
+    arbol: {agil: 1.0, tradicional: 1.0}
+    acp: {agil: 1.0, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Script
+    numero: 5
+    descripcion: 'Análisis de completitud: Registros sin información.'
+- id: DES-D2-01.04.02
+  tarea: Revisión documental y control review
+  subtarea: Análisis de completitud
+  actividad: '% de registros sólo con información de llaves'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Script
+    numero: 5
+    descripcion: 'Análisis de completitud: Análisis de registros con solo información de llaves.'
+- id: DES-D2-01.04.03
+  tarea: Revisión documental y control review
+  subtarea: Análisis de completitud
+  actividad: '% de registros sin información de la variable target (total)'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Script
+    numero: 5
+    descripcion: 'Análisis de completitud: Análisis de registros sin la variable target.'
+- id: DES-D2-01.04.04
+  tarea: Revisión documental y control review
+  subtarea: Análisis de completitud
+  actividad: '% de registros sin información de la variable target (mensual)'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
+  entregables:
+  - tipo: Script
+    numero: 5
+    descripcion: 'Análisis de completitud: Análisis de registros sin la variable target mensual.'
+- id: DES-D2-01.04.05
+  tarea: Revisión documental y control review
+  subtarea: Análisis de completitud
+  actividad: '% de datos faltantes por variable independiente (total)'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 5
+    descripcion: Fill Rate (total).
+- id: DES-D2-01.04.06
+  tarea: Revisión documental y control review
+  subtarea: Análisis de completitud
+  actividad: '% de datos faltantes por variable independiente (mensual)'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
+  entregables:
+  - tipo: Excel
+    numero: 5
+    descripcion: Fill Rate (mensual).
+- id: DES-D2-01.04.07
+  tarea: Revisión documental y control review
+  subtarea: Análisis de completitud
+  actividad: Análisis de estabilidad de valores faltantes en cada variable
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
+  entregables:
+  - tipo: Excel
+    numero: 5
+    descripcion: Resultados del test de Mann-Kendall de tendencia para % de missing por mes.
+- id: DES-D2-01.05.01
+  tarea: Revisión documental y control review
+  subtarea: Análisis de Unicidad
+  actividad: '% de registros duplicados'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Script
+    numero: 6
+    descripcion: Análisis de unicidad.
+- id: DES-D2-01.06.01
+  tarea: Revisión documental y control review
+  subtarea: Análisis descriptivo de variables
+  actividad: Análisis descriptivo de todas las variables (automático)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
+  entregables:
+  - tipo: Excel
+    numero: 6
+    descripcion: 'Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.'
+- id: DES-D2-01.06.02
+  tarea: Revisión documental y control review
+  subtarea: Análisis descriptivo de variables
+  actividad: Análisis descriptivo de las variables definidas como mínimas
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2, 3, 4], arbol: [1, 2], acp: [3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 6
+    descripcion: 'Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.'
+- id: DES-D2-01.06.03
+  tarea: Revisión documental y control review
+  subtarea: Análisis descriptivo de variables
+  actividad: Análisis de estabilidad de las variables a través del PSI (incluyendo meses recientes) con un umbral
+    minimo de aceptación del 10%; en caso dicho nivel reduzca considerablemente el set disponible de variables para
+    el modelamiento se evaluará un nivel de aceptación mayor que no supere el 20%.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2], ml: [1, 2, 3, 4], arbol: [1, 2], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 6
+    descripcion: Analisis de estabilidad
+- id: DES-D2-02.01.01
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis de Precisión
+  actividad: Comparación de descriptivos de la base de datos con información de negocio
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, tradicional: 0.25}
+    arbol: {agil: 0.25, tradicional: 0.25}
+    acp: {agil: 0.25, tradicional: 0.25}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Excel
+    numero: 7
+    descripcion: Comparación de evolutivos con datos del negocio.
+- id: DES-D2-02.02.01
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Análisis de consistencia
+  actividad: Consistencia y coherencia interna y externa con criterios funcionales o de negocio (criterios y def
+    de segmentación)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.4875, tradicional: 1.75}
+    ml: {agil: 1.4875, tradicional: 1.75}
+    arbol: {agil: 1.4875, tradicional: 1.75}
+    acp: {agil: 1.4875, tradicional: 1.75}
+  aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
+  entregables:
+  - tipo: Script
+    numero: 7
+    descripcion: 'Analisis de consistencia: Criterios funcionales y de negocio.'
+- id: DES-D2-02.03.01
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Reporte final de caildad de datos
+  actividad: Revisión del conjunto de análisis y decisión sobre calidad de datos
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D2-02.03.02
+  tarea: Control de Calidad y entendimiento de los datos
+  subtarea: Reporte final de caildad de datos
+  actividad: Documentación de los análisis y certificación de calidad
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 6
+    descripcion: Analisis y certificación de calidad.

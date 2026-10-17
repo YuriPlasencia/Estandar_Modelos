@@ -1,0 +1,41 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: PAR-R5
+nombre: "Exposición (EAD y CCF)"
+estandar: Parámetros
+origen: "Estándar de Parámetros de riesgo v1.0 (nuevo, 2026-10-17)"
+actividades:
+- id: PAR-R5-01.01.01
+  tarea: "Exposición de productos amortizables"
+  subtarea: "Perfil de exposición"
+  actividad: "Proyectar la exposición de cada período con el cronograma contractual ajustado por prepagos y cancelaciones esperadas, consistente con la tasa de interés efectiva."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R3", descripcion: "Modelos de EAD y CCF"}
+  hito: "Sprint 3"
+- id: PAR-R5-02.01.01
+  tarea: "Exposición de productos revolventes"
+  subtarea: "CCF y vida conductual"
+  actividad: "Estimar el factor de conversión (CCF) del monto no utilizado a 12 meses antes del default, con el uso de línea, la antigüedad y el estado de atraso como drivers."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 2.5
+  nivel_automatizacion: 2
+  naturaleza: datos
+  critico: true
+  entregables:
+  - {tipo: Script, numero: "R3", descripcion: "Modelos de EAD y CCF"}
+- id: PAR-R5-02.01.02
+  tarea: "Exposición de productos revolventes"
+  subtarea: "CCF y vida conductual"
+  actividad: "Para revolventes (tarjetas, líneas), estimar el período de exposición conductual más allá del plazo contractual, durante el que el banco está expuesto porque no gestiona la línea en la práctica; documentar el horizonte usado para la ECL lifetime."
+  aplica_tier: [1, 2, 3, 4]
+  dias_esfuerzo: 1.5
+  nivel_automatizacion: 2
+  naturaleza: analisis
+  critico: true
+  entregables:
+  - {tipo: Documento, numero: "R6", descripcion: "Metodología de EAD y vida conductual"}

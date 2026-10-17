@@ -1,0 +1,6 @@
+data/*
+!data/.gitkeep
+!data/*.sha256
+__pycache__/
+*.pyc
+.env

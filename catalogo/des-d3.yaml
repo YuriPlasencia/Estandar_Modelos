@@ -1,0 +1,155 @@
+# Fuente de verdad del catálogo normativo. Editar vía control de cambios (ver CONTRIBUTING.md).
+# Yuri Plasencia — Analytics Pricing & Revenue Management
+fase: DES-D3
+nombre: Segmentación
+estandar: Desarrollo
+origen: Estándar de Desarrollo v1.0
+actividades:
+- id: DES-D3-01.01.01
+  tarea: Segmentación
+  subtarea: Brainstorming sobre propuestas de segmentación y análisis
+  actividad: Reunión stakeholder para determinar propuesta de ejes de segmentación, en caso no tenga claridad de
+    los posibles drivers de segmentación se utilizar técnicas como árboles de decisión para la identificar de potenciales
+    drivers, así como cortes propuestos
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.85, tradicional: 1.0}
+    ml: {agil: 0.85, tradicional: 1.0}
+    arbol: {agil: 0.85, tradicional: 1.0}
+    acp: {agil: 0.85, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Acta
+    numero: 4
+    descripcion: Reunión de segmentación.
+  hito: Reunión 4
+- id: DES-D3-01.01.02
+  tarea: Segmentación
+  subtarea: Brainstorming sobre propuestas de segmentación y análisis
+  actividad: Análisis de ratio de default y materialidad/Análisis de target ( Estabilidad de Segmentos)
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+  entregables:
+  - tipo: Excel
+    numero: 8
+    descripcion: Analisis de materialidad y target por segmento.
+  hito: Sprint 7
+- id: DES-D3-01.01.03
+  tarea: Segmentación
+  subtarea: Brainstorming sobre propuestas de segmentación y análisis
+  actividad: Segmentación por metodología supervisada (modelos naive) / Modelo Segmentado VS Modelo Unisegmento
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 2.0, tradicional: 2.0}
+  aplica_tier: {lineal: [1, 2], ml: [], arbol: [], acp: []}
+  entregables:
+  - tipo: Excel
+    numero: 8
+    descripcion: Analisis comparativo entre modelos.
+- id: DES-D3-01.01.04
+  tarea: Segmentación
+  subtarea: Brainstorming sobre propuestas de segmentación y análisis
+  actividad: Segmentación con ejes adicionales
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.0}
+    acp: {agil: 1.0, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2], ml: [], arbol: [], acp: [1, 2]}
+  entregables:
+  - tipo: Tabla
+    numero: 3
+    descripcion: Master table por segmento.
+- id: DES-D3-01.01.05
+  tarea: Segmentación
+  subtarea: Brainstorming sobre propuestas de segmentación y análisis
+  actividad: 'Segmentación por metodología no supervisada (opcional): Evaluar diversos tipos de clustering de acuerdo
+    con el tipo de datos utilizados (k-medias, k-modas, k-medoids, clustering jerárquico, CLARA, PAM). Definir el
+    número óptimo de clusters mediante gráfico de sedimentación.'
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2], ml: [], arbol: [], acp: []}
+  entregables:
+  - tipo: Tabla
+    numero: 3
+    descripcion: Master table por segmento.
+- id: DES-D3-01.02.01
+  tarea: Segmentación
+  subtarea: Análisis final y Documentación
+  actividad: Comparación del desempeño de las segmentaciones con el modelo unisegmento
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.0}
+    acp: {agil: 1.0, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 3
+    descripcion: Análisis de segmentación.
+- id: DES-D3-01.02.02
+  tarea: Segmentación
+  subtarea: Análisis final y Documentación
+  actividad: Análisis de estabilidad del target y materialidad, contraste estadístico (homogeneidad y/o heterogeneidad),
+    contraste con el negocio
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.0, tradicional: 1.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
+  entregables:
+  - tipo: Excel
+    numero: 8
+    descripcion: Analisis de materialidad y target por segmento.
+- id: DES-D3-01.02.03
+  tarea: Segmentación
+  subtarea: Análisis final y Documentación
+  actividad: Elaboración de presentación de segmentación final.
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Ppt
+    numero: 3
+    descripcion: Análisis de segmentación.
+- id: DES-D3-01.02.04
+  tarea: Segmentación
+  subtarea: Análisis final y Documentación
+  actividad: Documentación y definición de la segmentación final
+  critico: false
+  eficiencia: false
+  nivel_automatizacion: 1
+  dias_esfuerzo:
+    lineal: {agil: 1.5, tradicional: 1.5}
+    ml: {agil: 0.5, tradicional: 0.5}
+    arbol: {agil: 0.5, tradicional: 0.5}
+    acp: {agil: 0.5, tradicional: 0.5}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 7
+    descripcion: Análisis de segmentación.
+  hito: SME 3
