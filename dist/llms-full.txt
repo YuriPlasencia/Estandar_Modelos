@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.3.1 · 2026-10-17
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.4.0 · 2026-10-17
 
 
 ========== docs/index.md [Vigente] ==========
@@ -489,7 +489,7 @@ Las desviaciones se sustentan por escrito; cuando el requisito lo indica (p.ej. 
 <!-- CATALOGO:INICIO UMBRALES -->
 | ID | Tema | Regla | Establecido en |
 |---|---|---|---|
-| **U-01** | Ventana de modelamiento | Mínimo 12 meses para Train/Test y 6 meses para OOT (originación, comportamiento y cobranzas), sujeto a disponibilidad de información. | [`DES-D1-03.01.02`](../desarrollo/d1-definicion.md) |
+| **U-01** | Ventana de modelamiento | Mínimo 12 meses para Train/Test. El OOT es solo el último mes con desempeño completo (la cosecha más reciente que ya cumple los 12 meses de desempeño de U-17), posterior a la ventana de Train/Test; no se acumulan meses en el OOT. Aplica a originación, comportamiento y cobranzas, sujeto a disponibilidad de información. *Nota: El OOT mide el desempeño en el dato más reciente disponible. La estabilidad en el tiempo se evalúa mes a mes dentro de Train/Test y, después, en el seguimiento (SEG). Cambiado en la versión 2.4.0: antes exigía 6 meses de OOT.* | [`DES-D1-03.01.02`](../desarrollo/d1-definicion.md) |
 | **U-02** | Estabilidad poblacional / de variables (PSI) | PSI ≤ 10 % para aceptar una variable. Si ese nivel reduce considerablemente el set de variables, se puede evaluar un nivel mayor que no supere el 20 %. | [`DES-D2-01.06.03`](../desarrollo/d2-calidad-datos.md), [`DES-D1-03.01.03`](../desarrollo/d1-definicion.md), [`DES-D4-03.01.01`](../desarrollo/d4-modelamiento.md) |
 | **U-03** | Representatividad de la muestra | 95 % ≤ TM/TG ≤ 105 % (target en muestra vs. target en población). Si no se cumple, ponderar la muestra y usar los pesos en todos los análisis posteriores. | [`DES-D4-02.02.01`](../desarrollo/d4-modelamiento.md) |
 | **U-04** | Tratamiento de outliers | Revisión por percentiles 1 %, 5 %, 95 % y 99 % (automática / experta). | [`DES-D4-04.01.03`](../desarrollo/d4-modelamiento.md), [`DES-D4-01.01.01`](../desarrollo/d4-modelamiento.md) |
@@ -683,7 +683,7 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | **Target** | Variable objetivo. Binaria (default) o continua (p.ej. ingreso estimado). |
 | **Default** | Evento de incumplimiento definido por altura (días de atraso), temporalidad (ventana de desempeño) y materialidad (monto mínimo). |
 | **Indeterminado** | Operación con mora menor a la altura de default al cierre de la ventana; se excluye del entrenamiento. |
-| **Train / Test / OOT** | Muestra de entrenamiento, de prueba (mismo periodo) y *out-of-time* (periodo posterior). |
+| **Train / Test / OOT** | Muestra de entrenamiento, de prueba (mismo periodo) y *out-of-time*: el último mes con desempeño completo, posterior al periodo de entrenamiento (U-01). |
 | **Roll rate** | Probabilidad de transitar de un tramo de mora al siguiente; sustenta la altura de default. |
 | **Driver** | Variable explicativa, en especial las usadas para calibrar. |
 | **Convolución** | Variable construida combinando otras (interacciones, ratios) con criterio de negocio. |
@@ -1233,7 +1233,8 @@ una prueba automática verifica que ninguna usa información posterior (DES-D1-0
 ## Decisiones que deben quedar cerradas al salir
 
 1. **Población objetivo** y definición cosechas vs. aprobadas (Project Charter).
-2. **Ventana histórica**: mínimo 12 meses Train/Test + 6 meses OOT (U-01), estable según PSI (U-02).
+2. **Ventana histórica**: mínimo 12 meses Train/Test y, como OOT, solo el **último mes con desempeño completo** (U-01);
+   estable según PSI (U-02).
 3. **Exclusiones**: pautas duras, default en foto, desempeño incompleto, indeterminados y cambios de gestión — cada una con su análisis de materialidad (Documento 3).
 4. **Default (binario)**: se adopta la definición del estándar (U-17, ver abajo). El proyecto documenta la unidad (cliente u operación) y la materialidad (Documento 4).
 5. **Target (continuo)**, cuando aplique: altura, temporalidad y materialidad.
@@ -1263,7 +1264,8 @@ $$y_i=\mathbb{1}\left[\max_{t\in(t_0,\;t_0+12]}\ \text{días de atraso}_{i,t} > 
   **indeterminados** (mora cercana pero menor a la altura de default), según DES-D1-04.01.05.
 - En buró se excluye quien ya está en default en la foto (*default en foto*, DES-D1-04.01.02).
 - Con 12 meses de desempeño, la última cosecha utilizable es la de hace 12 meses. Esto condiciona
-  la ventana de modelamiento (U-01): Train/Test y OOT deben caer en cosechas ya maduras.
+  la ventana de modelamiento (U-01): el OOT es justamente esa cosecha, la última madura, y Train/Test son las
+  anteriores.
 - Cualquier variante (otra altura u otra ventana) es una desviación del estándar: se sustenta con roll rates y la
   curva acumulada de defaults, y se aprueba con acta.
 
@@ -1441,7 +1443,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.975–3 d ágil / 3.5 d completo · Automatización: 1 · Entregable: Excel 2: Evolutivos de cuentas y montos por drivers. · Hito: Sprint 5
 
-- **`DES-D1-03.01.02`** Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y 6 meses para el OOT, esto sujeto a la disponibilidad de información en cada proyecto.
+- **`DES-D1-03.01.02`** Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y, como OOT, solo el último mes con desempeño completo (U-01), esto sujeto a la disponibilidad de información en cada proyecto.
 
   Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 2: Evolutivos del promedio de la variable objetivo por segmento. · Umbrales: U-01
 
@@ -5556,7 +5558,7 @@ target:
   materialidad: ""             # monto mínimo vencido (Documento 4)
 ventana:
   train_test: ""               # >= 12 meses (U-01)
-  oot: ""                      # >= 6 meses (U-01)
+  oot: ""                      # último mes con desempeño completo (U-01)
 segmentos: []
 metricas_construccion: {gini_train: null, gini_test: null, gini_oot: null}
 modelo_reemplazado: ""
@@ -5846,6 +5848,15 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.4.0] — 2026-10-17
+
+### Cambiado
+- **Ventana OOT (U-01):** el OOT es solo el **último mes con desempeño completo** (la cosecha más reciente que ya
+  cumple los 12 meses de U-17), posterior a Train/Test; ya no se acumulan 6 meses. Train/Test sigue con un mínimo de
+  12 meses. La estabilidad en el tiempo se evalúa mes a mes dentro de Train/Test y luego en el seguimiento.
+- Alineados DES-D1-03.01.02, el acta de ventana, D1, el glosario, la ficha de nacimiento, el MODEL_CARD y el
+  documento metodológico (evaluación de U-01, plantilla, gráfico de estabilidad y ejemplo).
+
 ## [2.3.1] — 2026-10-17
 
 ### Corregido
@@ -5977,7 +5988,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.3.1** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.4.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 

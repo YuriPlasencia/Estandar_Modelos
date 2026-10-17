@@ -104,8 +104,8 @@ def evaluar_umbrales(d, umbrales_cat):
             out.append({"id": uid, "tema": "No existe en el estándar", "valor": val, "regla": "—", "resultado": "Revisar"})
             continue
         if uid == "U-01" and v:
-            ok = (v.get("meses_train_test") or 0) >= 12 and (v.get("meses_oot") or 0) >= 6
-            regla = "≥ 12 meses entrenamiento/prueba y ≥ 6 OOT"
+            ok = (v.get("meses_train_test") or 0) >= 12 and v.get("meses_oot") == 1
+            regla = "≥ 12 meses entrenamiento/prueba; OOT = último mes con desempeño (1 mes)"
         elif uid in verificar.REGLAS and isinstance(val, (int, float)):
             regla, f = verificar.REGLAS[uid]
             ok = f(val)
@@ -184,7 +184,7 @@ def grafico_gini(d, destino: Path):
     for i, x in enumerate(meses):
         s += [f'<circle cx="{sx(i):.1f}" cy="{sy(x["gini"]):.1f}" r="3.6" fill="#{SEAL}"/>',
               f'<text x="{sx(i):.1f}" y="{H - B + 18}" font-size="11" fill="#{MUTED}" text-anchor="middle">{x["mes"]}</text>']
-    s += [f'<text x="{L}" y="16" font-size="12" font-weight="600" fill="#{INK}">Gini OOT por mes</text>', "</svg>"]
+    s += [f'<text x="{L}" y="16" font-size="12" font-weight="600" fill="#{INK}">Gini por mes: construcción y mes OOT</text>', "</svg>"]
     destino.write_text("\n".join(s), encoding="utf-8")
     return destino.name
 

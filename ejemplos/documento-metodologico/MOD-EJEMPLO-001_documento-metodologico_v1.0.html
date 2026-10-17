@@ -100,7 +100,7 @@ MOD-EJEMPLO-001</p>
 </tr>
 <tr>
 <td>Versión del estándar</td>
-<td>Estándares de Modelos en Banca v2.3.1</td>
+<td>Estándares de Modelos en Banca v2.4.0</td>
 </tr>
 </tbody>
 </table>
@@ -133,9 +133,9 @@ MOD-EJEMPLO-001</p>
 <p>El modelo es un gradient boosting con restricciones monotónicas sobre
 24 variables de buró, de relación con el banco y de la solicitud.
 Alcanza un Gini OOT de 52.1 (54.0 en entrenamiento; diferencia de 1.9
-pts) y supera en 6.4 pts al modelo vigente en las cosechas aprobadas de
-los últimos seis meses. Su uso propuesto reduce en 0.8 pp la mora a 12
-meses de la cosecha manteniendo el volumen de aprobación.</p>
+pts) y supera en 6.4 pts al modelo vigente en el mes OOT, la última
+cosecha con desempeño completo. Su uso propuesto reduce en 0.8 pp la
+mora a 12 meses de la cosecha manteniendo el volumen de aprobación.</p>
 <h1 id="propósito-uso-y-alcance">Propósito, uso y alcance</h1>
 <p><strong>Propósito.</strong> Ordenar por riesgo las solicitudes de
 tarjeta de crédito para sustentar la decisión de aprobación y el tramo
@@ -215,8 +215,13 @@ posterior a la fecha de solicitud.</p>
 <h2 id="universo-ventana-y-definición-de-default">Universo, ventana y
 definición de default</h2>
 <p><strong>Universo.</strong> Solicitudes aprobadas de tarjeta de
-crédito de personas naturales, enero 2023 a diciembre 2024.</p>
+crédito de personas naturales, enero 2023 a julio 2024.</p>
 <table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 30%" />
+<col style="width: 40%" />
+</colgroup>
 <thead>
 <tr>
 <th>Muestra</th>
@@ -232,8 +237,8 @@ crédito de personas naturales, enero 2023 a diciembre 2024.</p>
 </tr>
 <tr>
 <td>Fuera de tiempo (OOT)</td>
-<td>julio a diciembre 2024</td>
-<td style="text-align: right;">6</td>
+<td>julio 2024 (última cosecha con 12 meses de desempeño)</td>
+<td style="text-align: right;">1</td>
 </tr>
 </tbody>
 </table>
@@ -460,7 +465,7 @@ variables.</td>
 </tr>
 <tr>
 <td>OOT</td>
-<td style="text-align: right;">96 450</td>
+<td style="text-align: right;">16 080</td>
 <td style="text-align: right;">7.6 %</td>
 <td style="text-align: right;">52.1</td>
 <td style="text-align: right;">39.2</td>
@@ -472,9 +477,9 @@ pts</strong> — cumple U-11 (máximo 10 pts). El modelo vigente tiene un
 Gini OOT de 45.7: mejora de <strong>6.4 pts</strong>.</p>
 <h2 id="estabilidad-mensual">Estabilidad mensual</h2>
 <figure>
-<img role="img" aria-label="Gini OOT por mes frente al de construcción" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzAwIiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjMwMCIgZm9udC1mYW1pbHk9IlNlZ29lIFVJLCBDYWxpYnJpLCBzYW5zLXNlcmlmIj4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmZmZmYiLz4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMjIxLjciIHkyPSIyMjEuNyIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMjI1LjciIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjQ0PC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSIxODkuNCIgeTI9IjE4OS40IiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSIxOTMuNCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NDY8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjE1Ny4xIiB5Mj0iMTU3LjEiIHN0cm9rZT0iI0Q1REJEOCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KPHRleHQgeD0iNDgiIHk9IjE2MS4xIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj40ODwvdGV4dD4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMTI0LjkiIHkyPSIxMjQuOSIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMTI4LjkiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjUwPC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI5Mi42IiB5Mj0iOTIuNiIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iOTYuNiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NTI8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjYwLjMiIHkyPSI2MC4zIiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI2NC4zIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj41NDwvdGV4dD4KPHJlY3QgeD0iNTYiIHk9IjYwLjMiIHdpZHRoPSI1NjQiIGhlaWdodD0iMTYxLjQiIGZpbGw9IiM3QTI2MzIiIGZpbGwtb3BhY2l0eT0iMC4wNiIvPgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI2MC4zIiB5Mj0iNjAuMyIgc3Ryb2tlPSIjMUIyQTJGIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIHN0cm9rZS13aWR0aD0iMS4yIi8+Cjx0ZXh0IHg9IjYyMCIgeT0iNTQuMyIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzFCMkEyRiIgdGV4dC1hbmNob3I9ImVuZCI+RW50cmVuYW1pZW50byA1NC4wPC90ZXh0Pgo8dGV4dCB4PSI2MjAiIHk9IjIxNS43IiBmb250LXNpemU9IjExIiBmaWxsPSIjN0EyNjMyIiB0ZXh0LWFuY2hvcj0iZW5kIj5Mw61taXRlIFUtMTEgKOKIkjEwIHB0cyk8L3RleHQ+Cjxwb2x5bGluZSBwb2ludHM9IjU2LjAsNzkuNyAxNjguOCw5NC4yIDI4MS42LDg2LjEgMzk0LjQsOTkuMCA1MDcuMiw5Mi42IDYyMC4wLDk1LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdBMjYzMiIgc3Ryb2tlLXdpZHRoPSIyLjQiLz4KPGNpcmNsZSBjeD0iNTYuMCIgY3k9Ijc5LjciIHI9IjMuNiIgZmlsbD0iIzdBMjYzMiIvPgo8dGV4dCB4PSI1Ni4wIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMDc8L3RleHQ+CjxjaXJjbGUgY3g9IjE2OC44IiBjeT0iOTQuMiIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjE2OC44IiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMDg8L3RleHQ+CjxjaXJjbGUgY3g9IjI4MS42IiBjeT0iODYuMSIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjI4MS42IiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMDk8L3RleHQ+CjxjaXJjbGUgY3g9IjM5NC40IiBjeT0iOTkuMCIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjM5NC40IiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMTA8L3RleHQ+CjxjaXJjbGUgY3g9IjUwNy4yIiBjeT0iOTIuNiIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjUwNy4yIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMTE8L3RleHQ+CjxjaXJjbGUgY3g9IjYyMC4wIiBjeT0iOTUuOCIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjYyMC4wIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMTI8L3RleHQ+Cjx0ZXh0IHg9IjU2IiB5PSIxNiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iIzFCMkEyRiI+R2luaSBPT1QgcG9yIG1lczwvdGV4dD4KPC9zdmc+" style="width:85.0%" alt="Gini OOT por mes frente al de construcción" />
-<figcaption aria-hidden="true">Gini OOT por mes frente al de
-construcción</figcaption>
+<img role="img" aria-label="Gini por mes del periodo de construcción y del mes OOT, frente al de entrenamiento" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzAwIiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjMwMCIgZm9udC1mYW1pbHk9IlNlZ29lIFVJLCBDYWxpYnJpLCBzYW5zLXNlcmlmIj4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmZmZmYiLz4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMjIxLjciIHkyPSIyMjEuNyIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMjI1LjciIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjQ0PC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSIxODkuNCIgeTI9IjE4OS40IiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSIxOTMuNCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NDY8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjE1Ny4xIiB5Mj0iMTU3LjEiIHN0cm9rZT0iI0Q1REJEOCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KPHRleHQgeD0iNDgiIHk9IjE2MS4xIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj40ODwvdGV4dD4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMTI0LjkiIHkyPSIxMjQuOSIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMTI4LjkiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjUwPC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI5Mi42IiB5Mj0iOTIuNiIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iOTYuNiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NTI8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjYwLjMiIHkyPSI2MC4zIiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI2NC4zIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj41NDwvdGV4dD4KPHJlY3QgeD0iNTYiIHk9IjYwLjMiIHdpZHRoPSI1NjQiIGhlaWdodD0iMTYxLjQiIGZpbGw9IiM3QTI2MzIiIGZpbGwtb3BhY2l0eT0iMC4wNiIvPgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI2MC4zIiB5Mj0iNjAuMyIgc3Ryb2tlPSIjMUIyQTJGIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIHN0cm9rZS13aWR0aD0iMS4yIi8+Cjx0ZXh0IHg9IjYyMCIgeT0iNTQuMyIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzFCMkEyRiIgdGV4dC1hbmNob3I9ImVuZCI+RW50cmVuYW1pZW50byA1NC4wPC90ZXh0Pgo8dGV4dCB4PSI2MjAiIHk9IjIxNS43IiBmb250LXNpemU9IjExIiBmaWxsPSIjN0EyNjMyIiB0ZXh0LWFuY2hvcj0iZW5kIj5Mw61taXRlIFUtMTEgKOKIkjEwIHB0cyk8L3RleHQ+Cjxwb2x5bGluZSBwb2ludHM9IjU2LjAsNjYuNyAxNTAuMCw3OC4wIDI0NC4wLDcwLjAgMzM4LjAsODIuOSA0MzIuMCw3NC44IDUyNi4wLDc5LjcgNjIwLjAsOTEuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN0EyNjMyIiBzdHJva2Utd2lkdGg9IjIuNCIvPgo8Y2lyY2xlIGN4PSI1Ni4wIiBjeT0iNjYuNyIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjU2LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wMTwvdGV4dD4KPGNpcmNsZSBjeD0iMTUwLjAiIGN5PSI3OC4wIiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iMTUwLjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wMjwvdGV4dD4KPGNpcmNsZSBjeD0iMjQ0LjAiIGN5PSI3MC4wIiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iMjQ0LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wMzwvdGV4dD4KPGNpcmNsZSBjeD0iMzM4LjAiIGN5PSI4Mi45IiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iMzM4LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNDwvdGV4dD4KPGNpcmNsZSBjeD0iNDMyLjAiIGN5PSI3NC44IiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iNDMyLjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNTwvdGV4dD4KPGNpcmNsZSBjeD0iNTI2LjAiIGN5PSI3OS43IiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iNTI2LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNjwvdGV4dD4KPGNpcmNsZSBjeD0iNjIwLjAiIGN5PSI5MS4wIiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iNjIwLjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNyAoT09UKTwvdGV4dD4KPHRleHQgeD0iNTYiIHk9IjE2IiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjMUIyQTJGIj5HaW5pIHBvciBtZXM6IGNvbnN0cnVjY2nDs24geSBtZXMgT09UPC90ZXh0Pgo8L3N2Zz4=" style="width:85.0%" alt="Gini por mes del periodo de construcción y del mes OOT, frente al de entrenamiento" />
+<figcaption aria-hidden="true">Gini por mes del periodo de construcción
+y del mes OOT, frente al de entrenamiento</figcaption>
 </figure>
 <h2 id="calibración">Calibración</h2>
 <table>
@@ -490,42 +495,42 @@ construcción</figcaption>
 <tbody>
 <tr>
 <td>1</td>
-<td style="text-align: right;">9 640</td>
+<td style="text-align: right;">2 680</td>
 <td style="text-align: right;">1.2 %</td>
 <td style="text-align: right;">1.1 %</td>
 <td style="text-align: right;">−8.3 %</td>
 </tr>
 <tr>
 <td>2</td>
-<td style="text-align: right;">9 650</td>
+<td style="text-align: right;">2 680</td>
 <td style="text-align: right;">2.4 %</td>
 <td style="text-align: right;">2.6 %</td>
 <td style="text-align: right;">+8.3 %</td>
 </tr>
 <tr>
 <td>3</td>
-<td style="text-align: right;">9 645</td>
+<td style="text-align: right;">2 680</td>
 <td style="text-align: right;">4.1 %</td>
 <td style="text-align: right;">3.9 %</td>
 <td style="text-align: right;">−4.9 %</td>
 </tr>
 <tr>
 <td>4</td>
-<td style="text-align: right;">9 640</td>
+<td style="text-align: right;">2 680</td>
 <td style="text-align: right;">6.8 %</td>
 <td style="text-align: right;">7.1 %</td>
 <td style="text-align: right;">+4.4 %</td>
 </tr>
 <tr>
 <td>5</td>
-<td style="text-align: right;">9 650</td>
+<td style="text-align: right;">2 680</td>
 <td style="text-align: right;">11.2 %</td>
 <td style="text-align: right;">10.8 %</td>
 <td style="text-align: right;">−3.6 %</td>
 </tr>
 <tr>
 <td>6</td>
-<td style="text-align: right;">9 645</td>
+<td style="text-align: right;">2 680</td>
 <td style="text-align: right;">19.8 %</td>
 <td style="text-align: right;">20.4 %</td>
 <td style="text-align: right;">+3.0 %</td>
@@ -604,8 +609,9 @@ trimestral con cosechas maduras (SEG-S1).</p>
 <tr>
 <td>U-01</td>
 <td>Ventana de modelamiento</td>
-<td style="text-align: right;">18 + 6</td>
-<td>≥ 12 meses entrenamiento/prueba y ≥ 6 OOT</td>
+<td style="text-align: right;">18 + 1</td>
+<td>≥ 12 meses entrenamiento/prueba; OOT = último mes con desempeño (1
+mes)</td>
 <td><strong>Cumple</strong></td>
 </tr>
 <tr>
@@ -803,6 +809,6 @@ Bulletin 2026-13; FDIC FIL-15-2026).</li>
 <li>Superintendencia de Banca, Seguros y AFP (2023). <em>Reglamento de
 Gestión de Riesgos de Modelo</em> (Resolución SBS n.º 00053-2023).</li>
 </ul>
-<footer class="pie">Yuri Plasencia — Analytics Pricing &amp; Revenue Management · Estándares de Modelos en Banca v2.3.1</footer>
+<footer class="pie">Yuri Plasencia — Analytics Pricing &amp; Revenue Management · Estándares de Modelos en Banca v2.4.0</footer>
 </body>
 </html>

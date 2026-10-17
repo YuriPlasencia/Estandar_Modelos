@@ -34,7 +34,7 @@ modelo:
 resumen: >-
   El modelo es un gradient boosting con restricciones monotónicas sobre 24 variables de buró, de relación con el
   banco y de la solicitud. Alcanza un Gini OOT de 52.1 (54.0 en entrenamiento; diferencia de 1.9 pts) y supera
-  en 6.4 pts al modelo vigente en las cosechas aprobadas de los últimos seis meses. Su uso propuesto reduce en
+  en 6.4 pts al modelo vigente en el mes OOT, la última cosecha con desempeño completo. Su uso propuesto reduce en
   0.8 pp la mora a 12 meses de la cosecha manteniendo el volumen de aprobación.
 
 datos:
@@ -42,12 +42,12 @@ datos:
     - {nombre: Buró de crédito, descripcion: Endeudamiento y comportamiento en el sistema, desfase: 1 mes}
     - {nombre: Relación con el banco, descripcion: "Productos, saldos y comportamiento de pago interno", desfase: 0 meses}
     - {nombre: Solicitud, descripcion: Datos declarados y del canal al momento de la solicitud, desfase: 0 meses}
-  universo: Solicitudes aprobadas de tarjeta de crédito de personas naturales, enero 2023 a diciembre 2024.
+  universo: Solicitudes aprobadas de tarjeta de crédito de personas naturales, enero 2023 a julio 2024.
   ventana:
     train_test: enero 2023 a junio 2024
     meses_train_test: 18
-    oot: julio a diciembre 2024
-    meses_oot: 6
+    oot: julio 2024 (última cosecha con 12 meses de desempeño)
+    meses_oot: 1
   default:
     definicion: Atraso mayor a 60 días al menos una vez en los 12 meses siguientes a la originación (U-17).
   exclusiones:
@@ -95,22 +95,23 @@ desempeno:
   muestras:
     - {muestra: Entrenamiento, n: 412300, tasa: 0.071, gini: 54.0, ks: 40.8}
     - {muestra: Prueba, n: 103080, tasa: 0.070, gini: 52.9, ks: 39.9}
-    - {muestra: OOT, n: 96450, tasa: 0.076, gini: 52.1, ks: 39.2}
+    - {muestra: OOT, n: 16080, tasa: 0.076, gini: 52.1, ks: 39.2}
   mensual:
-    - {mes: 2024-07, gini: 52.8}
-    - {mes: 2024-08, gini: 51.9}
-    - {mes: 2024-09, gini: 52.4}
-    - {mes: 2024-10, gini: 51.6}
-    - {mes: 2024-11, gini: 52.0}
-    - {mes: 2024-12, gini: 51.8}
+    - {mes: 2024-01, gini: 53.6}
+    - {mes: 2024-02, gini: 52.9}
+    - {mes: 2024-03, gini: 53.4}
+    - {mes: 2024-04, gini: 52.6}
+    - {mes: 2024-05, gini: 53.1}
+    - {mes: 2024-06, gini: 52.8}
+    - {mes: 2024-07 (OOT), gini: 52.1}
   vigente: {gini_oot: 45.7}
   calibracion:
-    - {tramo: "1", n: 9640, pd: 0.012, tasa_obs: 0.011}
-    - {tramo: "2", n: 9650, pd: 0.024, tasa_obs: 0.026}
-    - {tramo: "3", n: 9645, pd: 0.041, tasa_obs: 0.039}
-    - {tramo: "4", n: 9640, pd: 0.068, tasa_obs: 0.071}
-    - {tramo: "5", n: 9650, pd: 0.112, tasa_obs: 0.108}
-    - {tramo: "6", n: 9645, pd: 0.198, tasa_obs: 0.204}
+    - {tramo: "1", n: 2680, pd: 0.012, tasa_obs: 0.011}
+    - {tramo: "2", n: 2680, pd: 0.024, tasa_obs: 0.026}
+    - {tramo: "3", n: 2680, pd: 0.041, tasa_obs: 0.039}
+    - {tramo: "4", n: 2680, pd: 0.068, tasa_obs: 0.071}
+    - {tramo: "5", n: 2680, pd: 0.112, tasa_obs: 0.108}
+    - {tramo: "6", n: 2680, pd: 0.198, tasa_obs: 0.204}
 
 interpretabilidad:
   explicacion: >-

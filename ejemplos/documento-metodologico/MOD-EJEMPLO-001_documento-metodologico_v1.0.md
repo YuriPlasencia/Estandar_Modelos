@@ -20,7 +20,7 @@ number-sections: true
 | Estándar aplicado | Desarrollo · Tier II · Machine learning · enfoque ágil |
 | Versión y estado | 1.0 · Para Comité de Modelos |
 | Clasificación | Uso interno |
-| Versión del estándar | Estándares de Modelos en Banca v2.3.1 |
+| Versión del estándar | Estándares de Modelos en Banca v2.4.0 |
 
 **Control de cambios** (DES-D4-11.01.03)
 
@@ -30,7 +30,7 @@ number-sections: true
 
 # Resumen ejecutivo
 
-El modelo es un gradient boosting con restricciones monotónicas sobre 24 variables de buró, de relación con el banco y de la solicitud. Alcanza un Gini OOT de 52.1 (54.0 en entrenamiento; diferencia de 1.9 pts) y supera en 6.4 pts al modelo vigente en las cosechas aprobadas de los últimos seis meses. Su uso propuesto reduce en 0.8 pp la mora a 12 meses de la cosecha manteniendo el volumen de aprobación.
+El modelo es un gradient boosting con restricciones monotónicas sobre 24 variables de buró, de relación con el banco y de la solicitud. Alcanza un Gini OOT de 52.1 (54.0 en entrenamiento; diferencia de 1.9 pts) y supera en 6.4 pts al modelo vigente en el mes OOT, la última cosecha con desempeño completo. Su uso propuesto reduce en 0.8 pp la mora a 12 meses de la cosecha manteniendo el volumen de aprobación.
 
 # Propósito, uso y alcance
 
@@ -63,12 +63,12 @@ Las 412 variables candidatas tienen fecha de referencia y desfase documentados; 
 
 ## Universo, ventana y definición de default
 
-**Universo.** Solicitudes aprobadas de tarjeta de crédito de personas naturales, enero 2023 a diciembre 2024.
+**Universo.** Solicitudes aprobadas de tarjeta de crédito de personas naturales, enero 2023 a julio 2024.
 
 | Muestra | Período | Meses |
 |---|---|---:|
 | Entrenamiento y prueba | enero 2023 a junio 2024 | 18 |
-| Fuera de tiempo (OOT) | julio a diciembre 2024 | 6 |
+| Fuera de tiempo (OOT) | julio 2024 (última cosecha con 12 meses de desempeño) | 1 |
 
 **Default.** Atraso mayor a 60 días al menos una vez en los 12 meses siguientes a la originación (U-17).
 
@@ -138,23 +138,23 @@ sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
 |---|---:|---:|---:|---:|
 | Entrenamiento | 412 300 | 7.1 % | 54.0 | 40.8 |
 | Prueba | 103 080 | 7.0 % | 52.9 | 39.9 |
-| OOT | 96 450 | 7.6 % | 52.1 | 39.2 |
+| OOT | 16 080 | 7.6 % | 52.1 | 39.2 |
 Diferencia de Gini entre entrenamiento y OOT: **1.9 pts** — cumple U-11 (máximo 10 pts). El modelo vigente tiene un Gini OOT de 45.7: mejora de **6.4 pts**.
 
 ## Estabilidad mensual
 
-![Gini OOT por mes frente al de construcción](grafico-gini.svg){ width=85% }
+![Gini por mes del periodo de construcción y del mes OOT, frente al de entrenamiento](grafico-gini.svg){ width=85% }
 
 ## Calibración
 
 | Tramo | Registros | PD estimada | Tasa observada | Desvío relativo |
 |---|---:|---:|---:|---:|
-| 1 | 9 640 | 1.2 % | 1.1 % | −8.3 % |
-| 2 | 9 650 | 2.4 % | 2.6 % | +8.3 % |
-| 3 | 9 645 | 4.1 % | 3.9 % | −4.9 % |
-| 4 | 9 640 | 6.8 % | 7.1 % | +4.4 % |
-| 5 | 9 650 | 11.2 % | 10.8 % | −3.6 % |
-| 6 | 9 645 | 19.8 % | 20.4 % | +3.0 % |
+| 1 | 2 680 | 1.2 % | 1.1 % | −8.3 % |
+| 2 | 2 680 | 2.4 % | 2.6 % | +8.3 % |
+| 3 | 2 680 | 4.1 % | 3.9 % | −4.9 % |
+| 4 | 2 680 | 6.8 % | 7.1 % | +4.4 % |
+| 5 | 2 680 | 11.2 % | 10.8 % | −3.6 % |
+| 6 | 2 680 | 19.8 % | 20.4 % | +3.0 % |
 
 # Interpretabilidad, sensibilidad y equidad
 
@@ -190,7 +190,7 @@ Seguimiento mensual de PSI y forzajes; discriminación y calibración trimestral
 
 | Umbral | Tema | Valor obtenido | Regla | Resultado |
 |------|--------------------------|-------:|------------------------------------|-------------|
-| U-01 | Ventana de modelamiento | 18 + 6 | ≥ 12 meses entrenamiento/prueba y ≥ 6 OOT | **Cumple** |
+| U-01 | Ventana de modelamiento | 18 + 1 | ≥ 12 meses entrenamiento/prueba; OOT = último mes con desempeño (1 mes) | **Cumple** |
 | U-02 | Estabilidad poblacional / de variables (PSI) | 0.06 | PSI máximo de las variables del modelo ≤ 0.10 (≤ 0.20 con excepción) | **Cumple** |
 | U-03 | Representatividad de la muestra | 1.01 | Ratio TM/TG entre 0.95 y 1.05 | **Cumple** |
 | U-06 | Correlación entre variables continuas | 0.57 | Correlación máxima entre continuas < 0.60 (≤ 0.95 con sustento) | **Cumple** |

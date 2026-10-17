@@ -18,7 +18,7 @@ target:
   materialidad: ""             # monto mínimo vencido (Documento 4)
 ventana:
   train_test: ""               # >= 12 meses (U-01)
-  oot: ""                      # >= 6 meses (U-01)
+  oot: ""                      # último mes con desempeño completo (U-01)
 segmentos: []
 metricas_construccion: {gini_train: null, gini_test: null, gini_oot: null}
 modelo_reemplazado: ""

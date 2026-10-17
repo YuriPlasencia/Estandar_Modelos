@@ -29,7 +29,7 @@ resumen:
 datos:
   fuentes: []            # - {nombre: ..., descripcion: ..., desfase: 1 mes}
   universo:
-  ventana: {}            # train_test, meses_train_test, oot, meses_oot
+  ventana: {}            # train_test, meses_train_test (>= 12), oot (último mes con desempeño), meses_oot: 1
   default: {}            # definicion
   exclusiones: []        # - {criterio: ..., registros: ..., pct: 0.05}
   calidad:
@@ -45,7 +45,7 @@ variables:
 
 metodologia: {}          # algoritmo, benchmark {algoritmo, gini_oot}, validacion_cruzada, combinaciones_hp, semilla, hiperparametros
 
-desempeno: {}            # muestras [{muestra, n, tasa, gini, ks}], mensual [{mes, gini}], vigente {gini_oot}, calibracion [{tramo, n, pd, tasa_obs}]
+desempeno: {}            # muestras [{muestra, n, tasa, gini, ks}], mensual [{mes, gini}] (Train/Test por mes y el mes OOT), vigente {gini_oot}, calibracion [{tramo, n, pd, tasa_obs}]
 
 interpretabilidad: {}    # explicacion, sensibilidad, equidad
 

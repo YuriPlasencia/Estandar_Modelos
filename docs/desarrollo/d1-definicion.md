@@ -42,7 +42,8 @@ una prueba automática verifica que ninguna usa información posterior (DES-D1-0
 ## Decisiones que deben quedar cerradas al salir
 
 1. **Población objetivo** y definición cosechas vs. aprobadas (Project Charter).
-2. **Ventana histórica**: mínimo 12 meses Train/Test + 6 meses OOT (U-01), estable según PSI (U-02).
+2. **Ventana histórica**: mínimo 12 meses Train/Test y, como OOT, solo el **último mes con desempeño completo** (U-01);
+   estable según PSI (U-02).
 3. **Exclusiones**: pautas duras, default en foto, desempeño incompleto, indeterminados y cambios de gestión — cada una con su análisis de materialidad (Documento 3).
 4. **Default (binario)**: se adopta la definición del estándar (U-17, ver abajo). El proyecto documenta la unidad (cliente u operación) y la materialidad (Documento 4).
 5. **Target (continuo)**, cuando aplique: altura, temporalidad y materialidad.
@@ -72,7 +73,8 @@ $$y_i=\mathbb{1}\left[\max_{t\in(t_0,\;t_0+12]}\ \text{días de atraso}_{i,t} > 
   **indeterminados** (mora cercana pero menor a la altura de default), según DES-D1-04.01.05.
 - En buró se excluye quien ya está en default en la foto (*default en foto*, DES-D1-04.01.02).
 - Con 12 meses de desempeño, la última cosecha utilizable es la de hace 12 meses. Esto condiciona
-  la ventana de modelamiento (U-01): Train/Test y OOT deben caer en cosechas ya maduras.
+  la ventana de modelamiento (U-01): el OOT es justamente esa cosecha, la última madura, y Train/Test son las
+  anteriores.
 - Cualquier variante (otra altura u otra ventana) es una desviación del estándar: se sustenta con roll rates y la
   curva acumulada de defaults, y se aprueba con acta.
 
@@ -250,7 +252,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 2.975–3 d ágil / 3.5 d completo · Automatización: 1 · Entregable: Excel 2: Evolutivos de cuentas y montos por drivers. · Hito: Sprint 5
 
-- **`DES-D1-03.01.02`** Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y 6 meses para el OOT, esto sujeto a la disponibilidad de información en cada proyecto.
+- **`DES-D1-03.01.02`** Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y, como OOT, solo el último mes con desempeño completo (U-01), esto sujeto a la disponibilidad de información en cada proyecto.
 
   Aplica: Todos los tipos, Tier I–IV · Automatización: 1 · Entregable: Excel 2: Evolutivos del promedio de la variable objetivo por segmento. · Umbrales: U-01
 

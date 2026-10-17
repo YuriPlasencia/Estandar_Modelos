@@ -2,7 +2,7 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "generado": "2026-10-17",
   "n_requisitos": 541,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
@@ -3472,7 +3472,7 @@
    "fase_nombre": "Definición, alcance, diseño y extracción",
    "tarea": "Definición de ventana de modelación",
    "subtarea": "Ventana Modelamiento - Definición de la ventana histórica de modelación",
-   "actividad": "Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y 6 meses para el OOT, esto sujeto a la disponibilidad de información en cada proyecto.",
+   "actividad": "Selección de la ventana histórica de modelación, en caso de modelos de originación, comportamentales y cobranzas, considerar como mínimo 12 meses para el modelamiento (Train/Test) y, como OOT, solo el último mes con desempeño completo (U-01), esto sujeto a la disponibilidad de información en cada proyecto.",
    "critico": false,
    "eficiencia": false,
    "nivel_automatizacion": 1,

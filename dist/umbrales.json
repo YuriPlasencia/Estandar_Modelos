@@ -2,7 +2,7 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "generado": "2026-10-17",
   "n_requisitos": 541,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
@@ -11,11 +11,12 @@
   {
    "id": "U-01",
    "tema": "Ventana de modelamiento",
-   "regla": "Mínimo 12 meses para Train/Test y 6 meses para OOT (originación, comportamiento y cobranzas), sujeto a disponibilidad de información.",
+   "regla": "Mínimo 12 meses para Train/Test. El OOT es solo el último mes con desempeño completo (la cosecha más reciente que ya cumple los 12 meses de desempeño de U-17), posterior a la ventana de Train/Test; no se acumulan meses en el OOT. Aplica a originación, comportamiento y cobranzas, sujeto a disponibilidad de información.",
    "valor": {
     "train_test_meses_min": 12,
-    "oot_meses_min": 6
+    "oot_meses": 1
    },
+   "nota": "El OOT mide el desempeño en el dato más reciente disponible. La estabilidad en el tiempo se evalúa mes a mes dentro de Train/Test y, después, en el seguimiento (SEG). Cambiado en la versión 2.4.0: antes exigía 6 meses de OOT.",
    "refs": [
     "DES-D1-03.01.02"
    ],

@@ -166,7 +166,7 @@
      "ref": "DES-D1-01.04.08"
     },
     {
-     "texto": "Ventana de modelamiento (≥ 12 meses Train/Test + 6 OOT)",
+     "texto": "Ventana de modelamiento (≥ 12 meses Train/Test + OOT = último mes con desempeño)",
      "ref": "U-01"
     }
    ],

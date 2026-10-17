@@ -4,6 +4,15 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.4.0] — 2026-10-17
+
+### Cambiado
+- **Ventana OOT (U-01):** el OOT es solo el **último mes con desempeño completo** (la cosecha más reciente que ya
+  cumple los 12 meses de U-17), posterior a Train/Test; ya no se acumulan 6 meses. Train/Test sigue con un mínimo de
+  12 meses. La estabilidad en el tiempo se evalúa mes a mes dentro de Train/Test y luego en el seguimiento.
+- Alineados DES-D1-03.01.02, el acta de ventana, D1, el glosario, la ficha de nacimiento, el MODEL_CARD y el
+  documento metodológico (evaluación de U-01, plantilla, gráfico de estabilidad y ejemplo).
+
 ## [2.3.1] — 2026-10-17
 
 ### Corregido

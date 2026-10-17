@@ -20,7 +20,7 @@ orden: 5
 | **Target** | Variable objetivo. Binaria (default) o continua (p.ej. ingreso estimado). |
 | **Default** | Evento de incumplimiento definido por altura (días de atraso), temporalidad (ventana de desempeño) y materialidad (monto mínimo). |
 | **Indeterminado** | Operación con mora menor a la altura de default al cierre de la ventana; se excluye del entrenamiento. |
-| **Train / Test / OOT** | Muestra de entrenamiento, de prueba (mismo periodo) y *out-of-time* (periodo posterior). |
+| **Train / Test / OOT** | Muestra de entrenamiento, de prueba (mismo periodo) y *out-of-time*: el último mes con desempeño completo, posterior al periodo de entrenamiento (U-01). |
 | **Roll rate** | Probabilidad de transitar de un tramo de mora al siguiente; sustenta la altura de default. |
 | **Driver** | Variable explicativa, en especial las usadas para calibrar. |
 | **Convolución** | Variable construida combinando otras (interacciones, ratios) con criterio de negocio. |
