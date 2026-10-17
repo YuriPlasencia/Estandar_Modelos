@@ -8,7 +8,11 @@ Pasos, para un proyecto (estándar, Tier, tipo de modelo, enfoque) y un escenari
   2. Tiempo de máquina K (horas) y la parte que bloquea a quien trabaja.
   3. Personas:  T = (W + bloqueo) / (1 − %reuniones).  Reuniones R = %reuniones × T.
   4. Agente:    T = W × factor_agente × (1 + supervisión) + bloqueo_agente + R   (mismas reuniones).
-  5. Duración en semanas = T / FTE / 5.
+  5. Anclaje a la meta de plazo (U-40): los días del catálogo son pesos relativos; el nivel absoluto se fija para que
+     el caso de referencia (el más exigente de Desarrollo) dure exactamente la meta con el escenario base:
+     k_personas = meta_personas / T_personas(ref) y k_agente = meta_agente / T_agente(ref). Todos los casos y
+     estándares se multiplican por esos factores, así que conservan sus proporciones y quedan por debajo de la meta.
+  6. Duración en semanas = T / FTE / 5.
 """
 from __future__ import annotations
 
@@ -29,6 +33,11 @@ NAT_RULES = [
                          r"hp |interacci|dummies|encoder|categor", re.I)),
 ]
 VOL_PHASES = {"DES-D1", "DES-D2", "DES-D3", "DES-D4", "CAL-C1", "CAL-C2", "CAL-C3", "CAL-C4", "PRC-P2", "PRC-P4", "PAR-R2", "PAR-R3", "PAR-R4", "PAR-R5"}
+
+
+def enfoque(e: str) -> str:
+    """Normaliza el enfoque: «agil» o «completo» («tradicional» se acepta como alias de «completo»)."""
+    return "completo" if e == "tradicional" else e
 
 
 def naturaleza(r: dict) -> str:
@@ -57,7 +66,7 @@ def dias_base(r, cfg):
     if isinstance(d, (int, float)):
         return float(d)
     v = d.get(cfg["model"]) or {}
-    return float(v.get(cfg["enf"]) or 0)
+    return float(v.get(enfoque(cfg["enf"])) or 0)
 
 
 def factor_volumen(r, P, esc):
@@ -88,7 +97,7 @@ def horas_maquina(P, esc, cfg):
     return esc["segmentos"] * c["ajustes_por_segmento"][m] * c["minutos_por_ajuste_ref"][m] * escala / 60
 
 
-def estimar(reqs, P, cfg, esc=None):
+def _crudo(reqs, P, cfg, esc=None):
     esc = {**P["escenario_base"], **(esc or {})}
     g, sup = P["agente"]["factor_trabajo"], P["agente"]["supervision"]
     fases: dict[str, dict] = {}
@@ -124,3 +133,50 @@ def estimar(reqs, P, cfg, esc=None):
         "agente": {"dias_persona": T_a, "semanas_calendario": sem(T_a), "meses": sem(T_a) / 4.33,
                    "ahorro_pct": 1 - T_a / T_p if T_p else 0},
     }
+
+
+_ANCLAJE: dict = {}
+
+
+def anclaje(reqs, P) -> dict:
+    """Factores que llevan el caso de referencia a la meta de plazo (U-40). Sin bloque `anclaje`, factores 1."""
+    a = P.get("anclaje")
+    if not a:
+        return {"k_personas": 1.0, "k_agente": 1.0}
+    clave = (id(P), len(reqs))
+    if clave not in _ANCLAJE:
+        ref = _crudo(reqs, P, a["caso_referencia"])
+        fte, meta = a["fte"], a["meta"]
+        _ANCLAJE[clave] = {
+            "k_personas": meta["semanas_personas"] * 5 * fte / ref["personas"]["dias_persona"],
+            "k_agente": meta["dias_habiles_agente"] * fte / ref["agente"]["dias_persona"],
+        }
+    return _ANCLAJE[clave]
+
+
+def estimar(reqs, P, cfg, esc=None):
+    r = _crudo(reqs, P, cfg, esc)
+    k = anclaje(reqs, P)
+    kp, ka = k["k_personas"], k["k_agente"]
+    esc = r["escenario"]
+    for f in r["fases"]:
+        f["base"] *= kp
+        f["reuniones_catalogo"] *= kp
+        f["trabajo"] *= kp
+        f["trabajo_agente"] *= ka
+    r["dias_catalogo"] *= kp
+    r["trabajo_directo"] *= kp
+    r["dias_reuniones"] *= kp
+    sem = lambda t: t / esc["fte"] / 5
+    tp, ta = r["personas"]["dias_persona"] * kp, r["agente"]["dias_persona"] * ka
+    r["personas"] = {"dias_persona": tp, "semanas_calendario": sem(tp), "meses": sem(tp) / 4.33}
+    r["agente"] = {"dias_persona": ta, "semanas_calendario": sem(ta), "meses": sem(ta) / 4.33,
+                   "dias_habiles": ta / esc["fte"], "ahorro_pct": 1 - ta / tp if tp else 0}
+    r["anclaje"] = k
+    a = P.get("anclaje")
+    if a and cfg.get("std") == "Desarrollo":
+        r["meta"] = {"semanas_personas": a["meta"]["semanas_personas"], "dias_habiles_agente": a["meta"]["dias_habiles_agente"],
+                     "fte": a["fte"],
+                     "cumple_personas": tp / a["fte"] / 5 <= a["meta"]["semanas_personas"] + 1e-9,
+                     "cumple_agente": ta / a["fte"] <= a["meta"]["dias_habiles_agente"] + 1e-9}
+    return r

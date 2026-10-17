@@ -2,7 +2,7 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "generado": "2026-10-17",
   "n_requisitos": 541,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
@@ -770,6 +770,25 @@
     "LIT-001",
     "LIT-003",
     "LIT-031"
+   ]
+  },
+  {
+   "id": "U-40",
+   "tema": "Plazo máximo de desarrollo de un modelo",
+   "regla": "Un modelo de Desarrollo, de cualquier Tier, tipo y enfoque, se termina con 2 personas en un máximo de 13 semanas (3 meses) desde el kick-off hasta la presentación al Comité de Modelos. Con agentes de IA, en un máximo de 15 días hábiles. Superar el plazo requiere sustento y su presentación al Comité.",
+   "valor": {
+    "personas": 2,
+    "semanas_max_personas": 13,
+    "dias_habiles_max_agente": 15
+   },
+   "refs": [
+    "DES-D1-02.01.01",
+    "DES-D4-11.02.01"
+   ],
+   "nota": "El modelo de esfuerzo (catalogo/parametros_esfuerzo.yaml, bloque anclaje) se calibra con esta meta.",
+   "lecturas": [
+    "LIT-001",
+    "LIT-003"
    ]
   }
  ]

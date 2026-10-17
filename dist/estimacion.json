@@ -5,7 +5,7 @@
    "registros": 3000000,
    "columnas": 1000,
    "segmentos": 4,
-   "fte": 1.5,
+   "fte": 2,
    "pct_reuniones": 0.3,
    "horas_dia": 8
   },
@@ -48,6 +48,19 @@
     "gobierno": 1.0
    },
    "supervision": 0.15
+  },
+  "anclaje": {
+   "caso_referencia": {
+    "std": "Desarrollo",
+    "tier": 1,
+    "model": "lineal",
+    "enf": "completo"
+   },
+   "fte": 2,
+   "meta": {
+    "semanas_personas": 13,
+    "dias_habiles_agente": 15
+   }
   },
   "niveles_automatizacion": [
    {

@@ -13,9 +13,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.5}
-    ml: {agil: 0.25, tradicional: 0.5}
-    arbol: {agil: 0.25, tradicional: 0.5}
+    lineal: {agil: 0.25, completo: 0.5}
+    ml: {agil: 0.25, completo: 0.5}
+    arbol: {agil: 0.25, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Script
@@ -30,10 +30,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Script
@@ -53,9 +53,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Gráficos
@@ -69,10 +69,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Tabla
@@ -87,10 +87,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -104,10 +104,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -119,10 +119,10 @@ actividades:
   actividad: "Análisis univariado de cada variable sobre la muestra de entrenamiento: distribución, valores especiales y faltantes, categorías raras y valores extremos. Es requisito previo del análisis bivariado."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 1, tradicional: 1}
-    ml: {agil: 1, tradicional: 1}
-    arbol: {agil: 1, tradicional: 1}
-    acp: {agil: 1, tradicional: 1}
+    lineal: {agil: 1, completo: 1}
+    ml: {agil: 1, completo: 1}
+    arbol: {agil: 1, completo: 1}
+    acp: {agil: 1, completo: 1}
   nivel_automatizacion: 3
   naturaleza: datos
   critico: true
@@ -137,9 +137,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   hito: SME 4
 - id: DES-D4-03.03.02
@@ -148,10 +148,10 @@ actividades:
   actividad: "Análisis bivariado de cada variable frente al target: WOE e IV por tramo, tendencia y monotonicidad del riesgo, y estabilidad del IV entre períodos."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
-    ml: {agil: 1.5, tradicional: 1.5}
-    arbol: {agil: 1.5, tradicional: 1.5}
-    acp: {agil: 1.5, tradicional: 1.5}
+    lineal: {agil: 1.5, completo: 1.5}
+    ml: {agil: 1.5, completo: 1.5}
+    arbol: {agil: 1.5, completo: 1.5}
+    acp: {agil: 1.5, completo: 1.5}
   nivel_automatizacion: 3
   naturaleza: datos
   critico: true
@@ -164,10 +164,10 @@ actividades:
   actividad: "Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38)."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   nivel_automatizacion: 2
   naturaleza: analisis
   critico: true
@@ -180,10 +180,10 @@ actividades:
   actividad: "Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué)."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 1, tradicional: 1}
-    ml: {agil: 1, tradicional: 1}
-    arbol: {agil: 1, tradicional: 1}
-    acp: {agil: 1, tradicional: 1}
+    lineal: {agil: 1, completo: 1}
+    ml: {agil: 1, completo: 1}
+    arbol: {agil: 1, completo: 1}
+    acp: {agil: 1, completo: 1}
   nivel_automatizacion: 3
   naturaleza: datos
   critico: true
@@ -199,9 +199,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 2.0}
-    arbol: {agil: 2.0, tradicional: 2.0}
-    acp: {agil: 2.0, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 2.0}
+    arbol: {agil: 2.0, completo: 2.0}
+    acp: {agil: 2.0, completo: 2.0}
   aplica_tier: {lineal: [1], ml: [], arbol: [1], acp: [1]}
   entregables:
   - tipo: Excel
@@ -216,9 +216,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
-    arbol: {agil: 1.5, tradicional: 1.5}
-    acp: {agil: 1.5, tradicional: 1.5}
+    lineal: {agil: 1.5, completo: 1.5}
+    arbol: {agil: 1.5, completo: 1.5}
+    acp: {agil: 1.5, completo: 1.5}
   aplica_tier: {lineal: [2], ml: [], arbol: [2], acp: [2]}
 - id: DES-D4-04.01.03
   tarea: Feature engineering
@@ -228,9 +228,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [3, 4], ml: [], arbol: [3, 4], acp: [3, 4]}
 - id: DES-D4-04.02.01
   tarea: Feature engineering
@@ -240,9 +240,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 2.0}
-    arbol: {agil: 2.0, tradicional: 2.0}
-    acp: {agil: 2.0, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 2.0}
+    arbol: {agil: 2.0, completo: 2.0}
+    acp: {agil: 2.0, completo: 2.0}
   aplica_tier: {lineal: [1], ml: [], arbol: [1], acp: [1]}
   entregables:
   - tipo: Script
@@ -256,9 +256,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
-    arbol: {agil: 1.5, tradicional: 1.5}
-    acp: {agil: 1.5, tradicional: 1.5}
+    lineal: {agil: 1.5, completo: 1.5}
+    arbol: {agil: 1.5, completo: 1.5}
+    acp: {agil: 1.5, completo: 1.5}
   aplica_tier: {lineal: [2], ml: [], arbol: [2], acp: [2]}
 - id: DES-D4-04.02.03
   tarea: Feature engineering
@@ -268,9 +268,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [3, 4], ml: [], arbol: [3, 4], acp: [3, 4]}
 - id: DES-D4-04.03.01
   tarea: Feature engineering
@@ -280,7 +280,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 2.0}
   aplica_tier: {lineal: [1, 2], ml: [], arbol: [], acp: []}
   entregables:
   - tipo: Ppt
@@ -294,7 +294,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    acp: {agil: 1.0, tradicional: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [], ml: [], arbol: [], acp: [1, 2, 3, 4]}
 - id: DES-D4-04.03.03
   tarea: Feature engineering
@@ -304,8 +304,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [3, 4], ml: [], arbol: [], acp: [3, 4]}
 - id: DES-D4-04.04.01
   tarea: Feature engineering
@@ -315,7 +315,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
+    lineal: {agil: 1.5, completo: 1.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Excel
@@ -330,9 +330,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 1.0, tradicional: 1.5}
-    acp: {agil: 1.0, tradicional: 1.5}
+    lineal: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 1.0, completo: 1.5}
+    acp: {agil: 1.0, completo: 1.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
 - id: DES-D4-04.04.03
   tarea: Feature engineering
@@ -342,8 +342,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.5}
+    lineal: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.5}
   aplica_tier: {lineal: [1], ml: [], arbol: [1], acp: [1]}
   entregables:
   - tipo: Ppt
@@ -357,9 +357,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 2.0}
-    ml: {agil: 2.0, tradicional: 2.0}
-    arbol: {agil: 2.0, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 2.0}
+    ml: {agil: 2.0, completo: 2.0}
+    arbol: {agil: 2.0, completo: 2.0}
   aplica_tier: {lineal: [1], ml: [1], arbol: [1], acp: []}
   entregables:
   - tipo: Ppt
@@ -373,9 +373,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
-    ml: {agil: 1.5, tradicional: 1.5}
-    arbol: {agil: 1.5, tradicional: 1.5}
+    lineal: {agil: 1.5, completo: 1.5}
+    ml: {agil: 1.5, completo: 1.5}
+    arbol: {agil: 1.5, completo: 1.5}
   aplica_tier: {lineal: [2, 3, 4], ml: [2, 3, 4], arbol: [2, 3, 4], acp: []}
 - id: DES-D4-04.05.03
   tarea: Feature engineering
@@ -386,9 +386,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
-    ml: {agil: 1.5, tradicional: 1.5}
-    arbol: {agil: 1.5, tradicional: 1.5}
+    lineal: {agil: 1.5, completo: 1.5}
+    ml: {agil: 1.5, completo: 1.5}
+    arbol: {agil: 1.5, completo: 1.5}
   aplica_tier: {lineal: [2, 3, 4], ml: [2, 3, 4], arbol: [2, 3, 4], acp: []}
   hito: SME 5
 - id: DES-D4-04.06.01
@@ -399,9 +399,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 3.4, tradicional: 4.0}
-    ml: {agil: 3.4, tradicional: 4.0}
-    acp: {agil: 3.4, tradicional: 4.0}
+    lineal: {agil: 3.4, completo: 4.0}
+    ml: {agil: 3.4, completo: 4.0}
+    acp: {agil: 3.4, completo: 4.0}
   aplica_tier: {lineal: [1], ml: [1], arbol: [], acp: [1]}
   entregables:
   - tipo: Ppt
@@ -416,9 +416,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 2.55, tradicional: 3.0}
-    ml: {agil: 2.55, tradicional: 3.0}
-    acp: {agil: 2.55, tradicional: 3.0}
+    lineal: {agil: 2.55, completo: 3.0}
+    ml: {agil: 2.55, completo: 3.0}
+    acp: {agil: 2.55, completo: 3.0}
   aplica_tier: {lineal: [2], ml: [2], arbol: [], acp: [2]}
 - id: DES-D4-04.06.03
   tarea: Feature engineering
@@ -428,9 +428,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.7, tradicional: 2.0}
-    ml: {agil: 1.7, tradicional: 2.0}
-    acp: {agil: 1.7, tradicional: 2.0}
+    lineal: {agil: 1.7, completo: 2.0}
+    ml: {agil: 1.7, completo: 2.0}
+    acp: {agil: 1.7, completo: 2.0}
   aplica_tier: {lineal: [3, 4], ml: [3, 4], arbol: [], acp: [3, 4]}
 - id: DES-D4-04.06.04
   tarea: Feature engineering
@@ -440,9 +440,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.7, tradicional: 2.0}
-    ml: {agil: 1.7, tradicional: 2.0}
-    acp: {agil: 1.7, tradicional: 2.0}
+    lineal: {agil: 1.7, completo: 2.0}
+    ml: {agil: 1.7, completo: 2.0}
+    acp: {agil: 1.7, completo: 2.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
 - id: DES-D4-04.06.05
   tarea: Feature engineering
@@ -460,10 +460,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -477,10 +477,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Tabla
@@ -494,10 +494,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -515,9 +515,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Excel
@@ -532,10 +532,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.275, tradicional: 1.5}
-    ml: {agil: 1.275, tradicional: 1.5}
-    arbol: {agil: 1.275, tradicional: 1.5}
-    acp: {agil: 2.55, tradicional: 3.0}
+    lineal: {agil: 1.275, completo: 1.5}
+    ml: {agil: 1.275, completo: 1.5}
+    arbol: {agil: 1.275, completo: 1.5}
+    acp: {agil: 2.55, completo: 3.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -549,10 +549,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -566,8 +566,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [], ml: [1], arbol: [1], acp: []}
 - id: DES-D4-05.02.04
   tarea: Entrenamiento de modelos
@@ -577,7 +577,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    ml: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [], ml: [2], arbol: [2], acp: []}
 - id: DES-D4-05.02.05
   tarea: Entrenamiento de modelos
@@ -587,8 +587,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [], ml: [3, 4], arbol: [1, 2, 3, 4], acp: []}
 - id: DES-D4-05.02.06
   tarea: Entrenamiento de modelos
@@ -601,9 +601,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
 - id: DES-D4-05.02.07
   tarea: Entrenamiento de modelos
@@ -616,9 +616,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 2.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 2.0}
+    arbol: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
 - id: DES-D4-05.03.01
   tarea: Entrenamiento de modelos
@@ -628,10 +628,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 3.0, tradicional: 3.0}
-    ml: {agil: 3.0, tradicional: 3.0}
-    arbol: {agil: 3.0, tradicional: 3.0}
-    acp: {agil: 3.0, tradicional: 3.0}
+    lineal: {agil: 3.0, completo: 3.0}
+    ml: {agil: 3.0, completo: 3.0}
+    arbol: {agil: 3.0, completo: 3.0}
+    acp: {agil: 3.0, completo: 3.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -644,8 +644,8 @@ actividades:
   actividad: "Para modelos de ML, construir un benchmark interpretable (logística con WOE, GAM/EBM o árbol óptimo) y justificar el modelo elegido si no lo supera en al menos 3 pts de Gini OOT."
   aplica_tier: {lineal: [], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   dias_esfuerzo:
-    ml: {agil: 1.5, tradicional: 2}
-    arbol: {agil: 1.5, tradicional: 2}
+    ml: {agil: 1.5, completo: 2}
+    arbol: {agil: 1.5, completo: 2}
   nivel_automatizacion: 2
   naturaleza: datos
   critico: true
@@ -658,8 +658,8 @@ actividades:
   actividad: "Ajustar los modelos de ML con validación cruzada (temporal cuando exista dependencia en el tiempo) y reportar la brecha esperada entre entrenamiento y validación."
   aplica_tier: {lineal: [], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   dias_esfuerzo:
-    ml: {agil: 1, tradicional: 1}
-    arbol: {agil: 1, tradicional: 1}
+    ml: {agil: 1, completo: 1}
+    arbol: {agil: 1, completo: 1}
   nivel_automatizacion: 3
   naturaleza: datos
   critico: true
@@ -678,8 +678,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    ml: {agil: 3.0, tradicional: 3.0}
-    arbol: {agil: 3.0, tradicional: 3.0}
+    ml: {agil: 3.0, completo: 3.0}
+    arbol: {agil: 3.0, completo: 3.0}
   aplica_tier: {lineal: [], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Excel
@@ -717,8 +717,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    ml: {agil: 1.5, tradicional: 1.5}
-    arbol: {agil: 1.5, tradicional: 1.5}
+    ml: {agil: 1.5, completo: 1.5}
+    arbol: {agil: 1.5, completo: 1.5}
   aplica_tier: {lineal: [], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Script
@@ -732,8 +732,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
 - id: DES-D4-05.05.01
   tarea: Entrenamiento de modelos
@@ -743,10 +743,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 2.0}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 2.0, completo: 2.0}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Script
@@ -760,8 +760,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [], arbol: [], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -777,9 +777,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Ppt
@@ -795,9 +795,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
 - id: DES-D4-06.01.03
   tarea: "Selección del modelo final"
@@ -805,10 +805,10 @@ actividades:
   actividad: "Para Tier I–II, reportar junto al Gini una métrica de evaluación basada en rentabilidad (por ejemplo, la máxima ganancia esperada, EMP) que refleje el costo asimétrico de los errores."
   aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   nivel_automatizacion: 2
   naturaleza: datos
   nota_origen: "Línea base 2.0 (2026-10-17). Verbraken et al. (2014)."
@@ -820,10 +820,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Ppt
@@ -837,10 +837,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 0
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Acta
@@ -857,9 +857,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 0
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Documento
@@ -883,10 +883,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 2.125, tradicional: 2.5}
-    ml: {agil: 2.125, tradicional: 2.5}
-    arbol: {agil: 2.125, tradicional: 2.5}
-    acp: {agil: 2.125, tradicional: 2.5}
+    lineal: {agil: 2.125, completo: 2.5}
+    ml: {agil: 2.125, completo: 2.5}
+    arbol: {agil: 2.125, completo: 2.5}
+    acp: {agil: 2.125, completo: 2.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -900,7 +900,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    ml: {agil: 0.5, tradicional: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [], ml: [1], arbol: [], acp: []}
   entregables:
   - tipo: Excel
@@ -912,8 +912,8 @@ actividades:
   actividad: "Evaluar la estabilidad de las explicaciones (SHAP o LIME) ante remuestreo y desbalance de clases, y documentar las variables cuya contribución es inestable."
   aplica_tier: {lineal: [], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   dias_esfuerzo:
-    ml: {agil: 1, tradicional: 1}
-    arbol: {agil: 1, tradicional: 1}
+    ml: {agil: 1, completo: 1}
+    arbol: {agil: 1, completo: 1}
   nivel_automatizacion: 2
   naturaleza: datos
   nota_origen: "Línea base 2.0 (2026-10-17). Chen, Calabrese y Martin-Barragan (2024)."
@@ -925,8 +925,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 2.0}
-    ml: {agil: 2.0, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 2.0}
+    ml: {agil: 2.0, completo: 2.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [], acp: []}
   entregables:
   - tipo: Script
@@ -941,8 +941,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.7, tradicional: 2.0}
-    ml: {agil: 1.7, tradicional: 2.0}
+    lineal: {agil: 1.7, completo: 2.0}
+    ml: {agil: 1.7, completo: 2.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [], acp: []}
   hito: Sprint 14
 - id: DES-D4-08.01.03
@@ -953,8 +953,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [], acp: []}
 - id: DES-D4-08.01.04
   tarea: Calibración y regla de transición de scores
@@ -964,8 +964,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
-    ml: {agil: 1.5, tradicional: 1.5}
+    lineal: {agil: 1.5, completo: 1.5}
+    ml: {agil: 1.5, completo: 1.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [], acp: []}
 - id: DES-D4-08.01.05
   tarea: Calibración y regla de transición de scores
@@ -975,8 +975,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [], acp: []}
   entregables:
   - tipo: Acta
@@ -991,8 +991,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [], acp: []}
   entregables:
   - tipo: Script
@@ -1010,9 +1010,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 2
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Excel
@@ -1050,10 +1050,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Documento
@@ -1067,10 +1067,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 4
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Script
@@ -1097,10 +1097,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 4.25, tradicional: 5.0}
-    ml: {agil: 4.25, tradicional: 5.0}
-    arbol: {agil: 4.25, tradicional: 5.0}
-    acp: {agil: 4.25, tradicional: 5.0}
+    lineal: {agil: 4.25, completo: 5.0}
+    ml: {agil: 4.25, completo: 5.0}
+    arbol: {agil: 4.25, completo: 5.0}
+    acp: {agil: 4.25, completo: 5.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Ppt
@@ -1147,10 +1147,10 @@ actividades:
   actividad: "Realizar un análisis de sensibilidad del score ante variaciones de sus variables principales y de los supuestos del modelo."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 1, tradicional: 1}
-    ml: {agil: 1, tradicional: 1}
-    arbol: {agil: 1, tradicional: 1}
-    acp: {agil: 1, tradicional: 1}
+    lineal: {agil: 1, completo: 1}
+    ml: {agil: 1, completo: 1}
+    arbol: {agil: 1, completo: 1}
+    acp: {agil: 1, completo: 1}
   nivel_automatizacion: 2
   naturaleza: datos
   critico: true
@@ -1161,10 +1161,10 @@ actividades:
   actividad: "Para modelos sobre personas naturales Tier I–II, analizar la equidad: variables sensibles y sus proxies, métricas por grupo (separación) y decisión documentada sobre el criterio priorizado y su costo (FR-06)."
   aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 2}
-    ml: {agil: 1.5, tradicional: 2}
-    arbol: {agil: 1.5, tradicional: 2}
-    acp: {agil: 1.5, tradicional: 2}
+    lineal: {agil: 1.5, completo: 2}
+    ml: {agil: 1.5, completo: 2}
+    arbol: {agil: 1.5, completo: 2}
+    acp: {agil: 1.5, completo: 2}
   nivel_automatizacion: 2
   naturaleza: analisis
   nota_origen: "Línea base 2.0 (2026-10-17). Kozodoi, Jacob y Lessmann (2022); Barocas et al. (2023)."
@@ -1176,10 +1176,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.275, tradicional: 1.5}
-    ml: {agil: 1.275, tradicional: 1.5}
-    arbol: {agil: 1.275, tradicional: 1.5}
-    acp: {agil: 1.275, tradicional: 1.5}
+    lineal: {agil: 1.275, completo: 1.5}
+    ml: {agil: 1.275, completo: 1.5}
+    arbol: {agil: 1.275, completo: 1.5}
+    acp: {agil: 1.275, completo: 1.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -1194,10 +1194,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 2.55, tradicional: 3.0}
-    ml: {agil: 2.55, tradicional: 3.0}
-    arbol: {agil: 2.55, tradicional: 3.0}
-    acp: {agil: 2.55, tradicional: 3.0}
+    lineal: {agil: 2.55, completo: 3.0}
+    ml: {agil: 2.55, completo: 3.0}
+    arbol: {agil: 2.55, completo: 3.0}
+    acp: {agil: 2.55, completo: 3.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -1211,10 +1211,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Otro
@@ -1229,10 +1229,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
 - id: DES-D4-11.01.05
   tarea: Documentación Metodológica
@@ -1242,10 +1242,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
 - id: DES-D4-11.01.06
   tarea: Documentación Metodológica
@@ -1256,10 +1256,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
 - id: DES-D4-11.01.07
   tarea: Documentación Metodológica
@@ -1269,10 +1269,10 @@ actividades:
   eficiencia: true
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -1287,10 +1287,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.425, tradicional: 0.5}
-    ml: {agil: 0.425, tradicional: 0.5}
-    arbol: {agil: 0.425, tradicional: 0.5}
-    acp: {agil: 0.425, tradicional: 0.5}
+    lineal: {agil: 0.425, completo: 0.5}
+    ml: {agil: 0.425, completo: 0.5}
+    arbol: {agil: 0.425, completo: 0.5}
+    acp: {agil: 0.425, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Ppt
@@ -1304,9 +1304,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Acta
@@ -1321,9 +1321,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3], acp: []}
   entregables:
   - tipo: Acta
@@ -1338,9 +1338,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3], acp: []}
 - id: DES-D4-13.01.03
   tarea: Cierre Cualitativo
@@ -1350,9 +1350,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3], acp: []}
 - id: DES-D4-13.01.04
   tarea: Cierre Cualitativo
@@ -1362,9 +1362,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3], acp: []}
 - id: DES-D4-13.02.01
   tarea: Cierre Cualitativo
@@ -1374,9 +1374,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3], acp: []}
   entregables:
   - tipo: Documento
@@ -1390,10 +1390,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2]}
   entregables:
   - tipo: Acta

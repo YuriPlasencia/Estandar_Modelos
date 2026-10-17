@@ -103,7 +103,7 @@ def esfuerzo_txt(r):
     if isinstance(d, (int, float)):
         return f"{fmt_n(d)} d" if d else None
     ag = sorted({v["agil"] for v in d.values() if v.get("agil") is not None})
-    tr = sorted({v["tradicional"] for v in d.values() if v.get("tradicional") is not None})
+    tr = sorted({v["completo"] for v in d.values() if v.get("completo") is not None})
 
     def rng(vs):
         return fmt_n(vs[0]) if len(vs) == 1 else f"{fmt_n(vs[0])}–{fmt_n(vs[-1])}"
@@ -111,7 +111,7 @@ def esfuerzo_txt(r):
     if ag:
         parts.append(f"{rng(ag)} d ágil")
     if tr:
-        parts.append(f"{rng(tr)} d trad.")
+        parts.append(f"{rng(tr)} d completo")
     return " / ".join(parts) or None
 
 
@@ -188,50 +188,51 @@ def block_umbrales(umb, req_doc):
 
 def block_esfuerzo(reqs, P):
     esc = P["escenario_base"]
+    an = P.get("anclaje") or {}
     f1 = lambda x: f"{x:.1f}"
-    out = [f"**Escenario:** {esc['registros']:,} registros × {esc['columnas']:,} columnas · {esc['segmentos']} segmentos · "
-           f"{esc['fte']} personas · {int(esc['pct_reuniones'] * 100)} % del tiempo en reuniones. "
-           f"Semanas de **calendario** (esfuerzo ÷ personas ÷ 5 días).".replace(",", "."), "",
-           "### Desarrollo (incluye Implementación y Gobierno)", "",
-           "| Tier | Modelo | Personas ágil | Personas trad. | Con agente ágil | Con agente trad. | Ahorro |",
-           "|---|---|---:|---:|---:|---:|---:|"]
+    f0 = lambda x: f"{x:.0f}"
+    sem = lambda r: f1(r["personas"]["semanas_calendario"])
+    dag = lambda r: f0(r["agente"]["dias_habiles"])
+    out = [f"**Escenario:** {esc['registros']:,} registros × {esc['columnas']:,} columnas".replace(",", ".")
+           + f" · {esc['segmentos']} segmentos · {esc['fte']} personas · {int(esc['pct_reuniones'] * 100)} % del tiempo en reuniones. "
+           "Con personas, semanas de **calendario**; con agentes, **días hábiles** con las mismas personas.", ""]
+    if an:
+        c = an["caso_referencia"]
+        out += [f"**Meta U-40:** {an['fte']} personas, máximo {an['meta']['semanas_personas']} semanas; con agentes, máximo "
+                f"{an['meta']['dias_habiles_agente']} días hábiles. Caso de referencia del anclaje: {c['std']} Tier {ROMAN[c['tier']]}, "
+                f"{MODEL_LABEL[c['model']]}, {'ágil' if c['enf'] == 'agil' else 'completo'}.", ""]
+    out += ["### Desarrollo (incluye Implementación y Gobierno)", "",
+            "| Tier | Modelo | Personas ágil (sem.) | Personas completo (sem.) | Agente ágil (días) | Agente completo (días) | Ahorro |",
+            "|---|---|---:|---:|---:|---:|---:|"]
     for t in (1, 2, 3, 4):
         for m in ("lineal", "ml", "arbol", "acp"):
-            r = {e: esfuerzo.estimar(reqs, P, {"std": "Desarrollo", "tier": t, "model": m, "enf": e}) for e in ("agil", "tradicional")}
+            r = {e: esfuerzo.estimar(reqs, P, {"std": "Desarrollo", "tier": t, "model": m, "enf": e}) for e in ("agil", "completo")}
             if r["agil"]["dias_catalogo"] == 0:
                 continue
-            out.append(f"| {ROMAN[t]} | {MODEL_LABEL[m]} | {f1(r['agil']['personas']['semanas_calendario'])} | "
-                       f"{f1(r['tradicional']['personas']['semanas_calendario'])} | {f1(r['agil']['agente']['semanas_calendario'])} | "
-                       f"{f1(r['tradicional']['agente']['semanas_calendario'])} | {r['agil']['agente']['ahorro_pct']:.0%} |")
-    out += ["", "### Calibración, Parámetros, Pricing, Seguimiento e Implementación", "", "| Proyecto | Personas | Con agente | Ahorro |", "|---|---:|---:|---:|"]
-    for t in (1, 2, 3, 4):
-        r = esfuerzo.estimar(reqs, P, {"std": "Calibración", "tier": t, "model": "lineal", "enf": "tradicional"})
-        out.append(f"| Calibración Tier {ROMAN[t]} | {f1(r['personas']['semanas_calendario'])} | {f1(r['agente']['semanas_calendario'])} | {r['agente']['ahorro_pct']:.0%} |")
-    for t in (1, 2, 3, 4):
-        r = esfuerzo.estimar(reqs, P, {"std": "Parámetros", "tier": t, "model": "ml", "enf": "tradicional"})
-        out.append(f"| Parámetros de riesgo Tier {ROMAN[t]} | {f1(r['personas']['semanas_calendario'])} | {f1(r['agente']['semanas_calendario'])} | {r['agente']['ahorro_pct']:.0%} |")
-    for t in (1, 2, 3, 4):
-        r = esfuerzo.estimar(reqs, P, {"std": "Pricing", "tier": t, "model": "ml", "enf": "tradicional"})
-        out.append(f"| Pricing end-to-end Tier {ROMAN[t]} | {f1(r['personas']['semanas_calendario'])} | {f1(r['agente']['semanas_calendario'])} | {r['agente']['ahorro_pct']:.0%} |")
-    for t in (1, 3):
-        r = esfuerzo.estimar(reqs, P, {"std": "Seguimiento", "tier": t, "model": "lineal", "enf": "tradicional"})
-        out.append(f"| Seguimiento anual de un modelo Tier {ROMAN[t]} | {f1(r['personas']['semanas_calendario'])} | {f1(r['agente']['semanas_calendario'])} | {r['agente']['ahorro_pct']:.0%} |")
-    r = esfuerzo.estimar(reqs, P, {"std": "Implementación", "tier": 1, "model": "lineal", "enf": "agil"})
-    out.append(f"| Implementación (proyecto independiente) | {f1(r['personas']['semanas_calendario'])} | {f1(r['agente']['semanas_calendario'])} | {r['agente']['ahorro_pct']:.0%} |")
+            out.append(f"| {ROMAN[t]} | {MODEL_LABEL[m]} | {sem(r['agil'])} | {sem(r['completo'])} | {dag(r['agil'])} | "
+                       f"{dag(r['completo'])} | {r['agil']['agente']['ahorro_pct']:.0%} |")
+    out += ["", "### Calibración, Parámetros, Pricing, Seguimiento e Implementación", "",
+            "| Proyecto | Personas (semanas) | Con agente (días hábiles) | Ahorro |", "|---|---:|---:|---:|"]
+    filas = ([(f"Calibración Tier {ROMAN[t]}", {"std": "Calibración", "tier": t, "model": "lineal", "enf": "completo"}) for t in (1, 2, 3, 4)]
+             + [(f"Parámetros de riesgo Tier {ROMAN[t]}", {"std": "Parámetros", "tier": t, "model": "ml", "enf": "completo"}) for t in (1, 2, 3, 4)]
+             + [(f"Pricing end-to-end Tier {ROMAN[t]}", {"std": "Pricing", "tier": t, "model": "ml", "enf": "completo"}) for t in (1, 2, 3, 4)]
+             + [(f"Seguimiento anual de un modelo Tier {ROMAN[t]}", {"std": "Seguimiento", "tier": t, "model": "lineal", "enf": "completo"}) for t in (1, 3)]
+             + [("Implementación (proyecto independiente)", {"std": "Implementación", "tier": 1, "model": "lineal", "enf": "agil"})])
+    for nombre, cfg in filas:
+        r = esfuerzo.estimar(reqs, P, cfg)
+        out.append(f"| {nombre} | {sem(r)} | {dag(r)} | {r['agente']['ahorro_pct']:.0%} |")
     # desglose de referencia
     cfg = {"std": "Desarrollo", "tier": 1, "model": "ml", "enf": "agil"}
     r = esfuerzo.estimar(reqs, P, cfg)
     out += ["", "### Desglose de referencia · Tier I, ML, ágil (días-persona)", "",
-            "| Fase | Catálogo | Reuniones del catálogo (\\*) | Trabajo ajustado por volumen | Trabajo con agente |", "|---|---:|---:|---:|---:|"]
+            "| Fase | Trabajo con personas | Trabajo con agente |", "|---|---:|---:|"]
     for f in r["fases"]:
-        out.append(f"| {f['fase']} · {f['nombre']} | {f1(f['base'])} | {f1(f['reuniones_catalogo'])} | {f1(f['trabajo'])} | {f1(f['trabajo_agente'])} |")
-    bl = P["computo"]["bloqueo"]
-    hd = esc["horas_dia"]
-    out += [f"| Bloqueo por tiempo de máquina ({f1(r['horas_maquina'])} h) | | | {f1(r['horas_maquina'] * bl['personas'] / hd)} | {f1(r['horas_maquina'] * bl['agente'] / hd)} |",
-            f"| Reuniones ({int(esc['pct_reuniones'] * 100)} % del tiempo de las personas) | | | {f1(r['dias_reuniones'])} | {f1(r['dias_reuniones'])} |",
-            f"| **Total días-persona** | **{f1(r['dias_catalogo'])}** | | **{f1(r['personas']['dias_persona'])}** | **{f1(r['agente']['dias_persona'])}** |",
-            f"| **Semanas de calendario con {esc['fte']} personas** | | | **{f1(r['personas']['semanas_calendario'])}** | **{f1(r['agente']['semanas_calendario'])}** |",
-            "", "(\\*) Se excluyen del trabajo directo porque su tiempo ya está dentro del % de reuniones.", ""]
+        out.append(f"| {f['fase']} · {f['nombre']} | {f1(f['trabajo'])} | {f1(f['trabajo_agente'])} |")
+    tp, ta = r["personas"]["dias_persona"], r["agente"]["dias_persona"]
+    out += [f"| Reuniones y bloqueo por tiempo de máquina ({f1(r['horas_maquina'])} h) | {f1(tp - sum(f['trabajo'] for f in r['fases']))} | "
+            f"{f1(ta - sum(f['trabajo_agente'] for f in r['fases']))} |",
+            f"| **Total días-persona** | **{f1(tp)}** | **{f1(ta)}** |",
+            f"| **Duración con {esc['fte']} personas** | **{sem(r)} semanas** | **{dag(r)} días hábiles** |", ""]
     return "\n".join(out)
 
 
@@ -396,7 +397,7 @@ def main():
     for r in reqs:
         if r["fase"] != "VAL":
             r["naturaleza"] = esfuerzo.naturaleza(r)
-    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.2.0",
+    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.3.0",
             "generado": date.today().isoformat(), "n_requisitos": len(reqs),
             "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"}
     for r in reqs:

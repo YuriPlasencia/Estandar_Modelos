@@ -38,13 +38,20 @@ un Tier I exige el conjunto completo; los Tier III–IV permiten omitir análisi
 Algunas actividades son exclusivas de un tipo. Por ejemplo, la optimización de hiperparámetros (DES-D4-05.04) sólo
 aplica a ML; la transformación WOE de continuas (DES-D4-04.03.02) sólo a modelos lineales.
 
-## 3. Enfoque de trabajo: Ágil vs Tradicional
+## 3. Enfoque de trabajo: Ágil vs Completo
 
 El catálogo estima el esfuerzo (días-persona) para dos enfoques:
 
-- **Ágil:** sprints cortos, revisiones SME frecuentes, entregables incrementales. En el catálogo, el enfoque ágil requiere en torno a un 10 % menos de esfuerzo
-  (ver [Estimación](estimacion.md)).
-- **Tradicional:** fases secuenciales con entregables al cierre de cada etapa.
+- **Ágil:** cubre lo esencial. Se ejecutan todas las actividades aplicables, pero con la profundidad mínima suficiente
+  para sustentar cada decisión: análisis acotados a lo material, iteraciones cortas y entregables incrementales. Requiere
+  en torno a un 15 % menos de esfuerzo (ver [Estimación](estimacion.md)).
+- **Completo:** análisis exhaustivo y documentación detallada de cada actividad: más alternativas evaluadas, pruebas de
+  sensibilidad y robustez más amplias y entregables cerrados al final de cada etapa.
+
+Los dos enfoques aplican **los mismos requisitos y umbrales**; cambia la profundidad, no lo que se exige. Los requisitos
+críticos y los umbrales nunca se relajan por elegir el enfoque ágil. Calibración, Parámetros, Pricing y Seguimiento se
+estiman siempre con el enfoque completo. En versiones anteriores, el enfoque completo se llamaba *tradicional*; las
+herramientas aceptan ambos nombres.
 
 ## 4. Nivel de automatización
 

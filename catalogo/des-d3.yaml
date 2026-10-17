@@ -15,10 +15,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.85, tradicional: 1.0}
-    ml: {agil: 0.85, tradicional: 1.0}
-    arbol: {agil: 0.85, tradicional: 1.0}
-    acp: {agil: 0.85, tradicional: 1.0}
+    lineal: {agil: 0.85, completo: 1.0}
+    ml: {agil: 0.85, completo: 1.0}
+    arbol: {agil: 0.85, completo: 1.0}
+    acp: {agil: 0.85, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Acta
@@ -33,10 +33,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Excel
@@ -51,7 +51,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 2.0}
   aplica_tier: {lineal: [1, 2], ml: [], arbol: [], acp: []}
   entregables:
   - tipo: Excel
@@ -65,8 +65,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2], ml: [], arbol: [], acp: [1, 2]}
   entregables:
   - tipo: Tabla
@@ -82,7 +82,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2], ml: [], arbol: [], acp: []}
   entregables:
   - tipo: Tabla
@@ -96,8 +96,8 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Ppt
@@ -112,7 +112,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Excel
@@ -126,10 +126,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Ppt
@@ -143,10 +143,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 1.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 1.5, completo: 1.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento

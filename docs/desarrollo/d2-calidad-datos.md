@@ -45,25 +45,25 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.01.01`** Garantizar la existencia de un diccionario de datos sobre la base disponible
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d trad. · Automatización: 1 · Entregable: Excel 4: Diccionario de datos. · Hito: Sprint 6
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Excel 4: Diccionario de datos. · Hito: Sprint 6
 
 #### 1.2 Revisión del reporte de calidad de datos del proveedor
 
 - **`DES-D2-01.02.01`** Revisar detalladamente el informe de calidad de datos entregado por el proveedor de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1 · Entregable: Documento 5: Informe de calidad de datos.
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Documento 5: Informe de calidad de datos.
 
 #### 1.3 Análisis de validez
 
 - **`DES-D2-01.03.01`** Comparar información recibida con la petición formal de información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 #### 1.4 Análisis de completitud
 
 - **`DES-D2-01.04.01`** % de registros sin ninguna información
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d trad. · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Registros sin información.
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 5: Análisis de completitud: Registros sin información.
 
 - **`DES-D2-01.04.02`** % de registros sólo con información de llaves
 
@@ -93,13 +93,13 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-01.05.01`** % de registros duplicados
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1 · Entregable: Script 6: Análisis de unicidad.
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Script 6: Análisis de unicidad.
 
 #### 1.6 Análisis descriptivo de variables
 
 - **`DES-D2-01.06.01`** Análisis descriptivo de todas las variables (automático)
 
-  Aplica: Todos los tipos, Tier I–II · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1 · Entregable: Excel 6: Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.
+  Aplica: Todos los tipos, Tier I–II · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Excel 6: Análisis descriptivo de variables: Máximo, mínimo, promedio, mediana, percentiles.
 
 - **`DES-D2-01.06.02`** Análisis descriptivo de las variables definidas como mínimas
 
@@ -115,19 +115,19 @@ El resultado es la *certificación de calidad de datos* (Documento 6): sin ella 
 
 - **`DES-D2-02.01.01`** Comparación de descriptivos de la base de datos con información de negocio
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1 · Entregable: Excel 7: Comparación de evolutivos con datos del negocio.
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Entregable: Excel 7: Comparación de evolutivos con datos del negocio.
 
 #### 2.2 Análisis de consistencia
 
 - **`DES-D2-02.02.01`** Consistencia y coherencia interna y externa con criterios funcionales o de negocio (criterios y def de segmentación)
 
-  Aplica: Todos los tipos, Tier I–II · Esfuerzo: 1.4875 d ágil / 1.75 d trad. · Automatización: 1 · Entregable: Script 7: Analisis de consistencia: Criterios funcionales y de negocio.
+  Aplica: Todos los tipos, Tier I–II · Esfuerzo: 1.4875 d ágil / 1.75 d completo · Automatización: 1 · Entregable: Script 7: Analisis de consistencia: Criterios funcionales y de negocio.
 
 #### 2.3 Reporte final de caildad de datos
 
 - **`DES-D2-02.03.01`** Revisión del conjunto de análisis y decisión sobre calidad de datos
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d trad. · Automatización: 1
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1
 
 - **`DES-D2-02.03.02`** Documentación de los análisis y certificación de calidad
 

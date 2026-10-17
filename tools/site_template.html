@@ -119,6 +119,7 @@ math[display=block]{display:block;overflow-x:auto;margin:1em 0;font-size:1.08em}
 .scen input{font:inherit;font-variant-numeric:tabular-nums;width:9.5rem;max-width:100%;padding:7px 9px;border:1px solid var(--rule);border-radius:3px;background:var(--paper);color:var(--ink)}
 .summary .ai b{color:var(--seal)}
 .note-est{font-size:12.5px;color:var(--ink-2);margin:-6px 0 14px}
+.meta-est{font-size:13px;margin:0 0 10px;padding:8px 12px;border-radius:10px}.meta-est.ok{color:var(--ok);background:var(--ok-wash)}.meta-est.ko{color:var(--warn);background:var(--warn-wash)}
 .ph .bar{position:relative}
 .ph .bar i{position:absolute;left:0;top:0}
 .ph .bar i.p{background:var(--ink-2);opacity:.35}
@@ -410,7 +411,7 @@ function horasMaquina(scen,cfg){
   if(cfg.std==="Parámetros")return c.ajustes_parametros*c.minutos_por_ajuste_ref.ml*k/60;
   return scen.segmentos*c.ajustes_por_segmento[cfg.model]*c.minutos_por_ajuste_ref[cfg.model]*k/60;
 }
-function estimar(reqs,cfg,scen){
+function estimarCrudo(reqs,cfg,scen){
   const g=P.agente.factor_trabajo,sup=P.agente.supervision;const fases={};
   for(const r of reqs){const b=days(r,cfg),nat=DATA.naturaleza[r.id];
     const f=fases[r.fase]??={name:r.fase_nombre,base:0,trabajo:0,agente:0};f.base+=b;
@@ -420,8 +421,24 @@ function estimar(reqs,cfg,scen){
   const Tp=(W+K*bl.personas/hd)/(1-m),R=m*Tp,Ta=Wa+K*bl.agente/hd+R,sem=t=>t/scen.fte/5;
   return {fases,W,K,R,Tp,Ta,semP:sem(Tp),semA:sem(Ta),ahorro:Tp?1-Ta/Tp:0};
 }
+// Anclaje a la meta de plazo (U-40): el caso de referencia dura exactamente la meta con el escenario base.
+let ANCLA=null;
+function anclaje(){
+  if(ANCLA)return ANCLA;const a=P.anclaje;if(!a)return ANCLA={kp:1,ka:1};
+  const c={...a.caso_referencia},r=estimarCrudo(DATA.requisitos.filter(x=>applicable(x,c)),c,P.escenario_base);
+  return ANCLA={kp:a.meta.semanas_personas*5*a.fte/r.Tp,ka:a.meta.dias_habiles_agente*a.fte/r.Ta};
+}
+function estimar(reqs,cfg,scen){
+  const e=estimarCrudo(reqs,cfg,scen),{kp,ka}=anclaje(),a=P.anclaje,sem=t=>t/scen.fte/5;
+  Object.values(e.fases).forEach(f=>{f.base*=kp;f.trabajo*=kp;f.agente*=ka});
+  const Tp=e.Tp*kp,Ta=e.Ta*ka;
+  const meta=a&&cfg.std==="Desarrollo"?{sem:a.meta.semanas_personas,dias:a.meta.dias_habiles_agente,fte:a.fte,
+    okP:Tp/a.fte/5<=a.meta.semanas_personas+1e-9,okA:Ta/a.fte<=a.meta.dias_habiles_agente+1e-9}:null;
+  return {fases:e.fases,W:e.W*kp,K:e.K,R:e.R*kp,Tp,Ta,semP:sem(Tp),semA:sem(Ta),diasA:Ta/scen.fte,ahorro:Tp?1-Ta/Tp:0,meta};
+}
 let scen=Object.assign({},P.escenario_base,store.get("plan.scen",{}));
 let cfg=store.get("plan.cfg",{std:"Desarrollo",tier:2,model:"ml",enf:"agil"});
+if(cfg.enf==="tradicional")cfg.enf="completo";
 function planKey(){return `plan.done.${cfg.std}.${cfg.tier}.${cfg.model}.${cfg.enf}`}
 function tiersTxt(ts){ts=[...ts].sort();if(!ts.length)return"—";const c=ts.every((t,i)=>i===0||t===ts[i-1]+1);return c&&ts.length>1?`${ROMAN[ts[0]]}–${ROMAN[ts.at(-1)]}`:ts.map(t=>ROMAN[t]).join(", ")}
 
@@ -430,7 +447,7 @@ function showPlanner(){
   const isCal=["Calibración","Pricing","Parámetros","Seguimiento"].includes(cfg.std);
   const reqs=DATA.requisitos.filter(r=>applicable(r,cfg));
   const done=new Set(store.get(planKey(),[]));
-  const est=estimar(reqs,isCal?{...cfg,enf:"tradicional"}:cfg,scen);
+  const est=estimar(reqs,isCal?{...cfg,enf:"completo"}:cfg,scen);
   const ents=new Set();reqs.forEach(r=>(r.entregables||[]).forEach(e=>ents.add(e.tipo+(e.numero?" "+e.numero:"")+": "+e.descripcion)));
   const byPhase={};reqs.forEach(r=>(byPhase[r.fase]??={name:r.fase_nombre,items:[]}).items.push(r));
   const maxW=Math.max(1,...Object.values(est.fases).map(f=>f.trabajo));
@@ -442,7 +459,7 @@ function showPlanner(){
       <label class="ctl"><span>Estándar</span>${seg("std",[["Desarrollo","Desarrollo"],["Calibración","Calibración"],["Implementación","Implementación"],["Pricing","Pricing"],["Parámetros","Parámetros"],["Seguimiento","Seguimiento"]],cfg.std)}</label>
       <label class="ctl"><span>Tier</span>${seg("tier",[[1,"I"],[2,"II"],[3,"III"],[4,"IV"]],cfg.tier)}</label>
       <label class="ctl"><span>Tipo de modelo</span>${seg("model",[["lineal","Lineal"],["ml","ML"],["arbol","Árbol"],["acp","ACP"]],cfg.model,isCal)}</label>
-      <label class="ctl"><span>Enfoque</span>${seg("enf",[["agil","Ágil"],["tradicional","Tradicional"]],isCal?"tradicional":cfg.enf,isCal)}</label>
+      <label class="ctl"><span>Enfoque</span>${seg("enf",[["agil","Ágil"],["completo","Completo"]],isCal?"completo":cfg.enf,isCal)}</label>
     </div>
     <div class="controls scen" aria-label="Escenario">
       <label class="ctl" for="e-reg"><span>Registros</span><input id="e-reg" data-e="registros" type="number" min="10000" step="100000" value="${scen.registros}"></label>
@@ -455,10 +472,11 @@ function showPlanner(){
     <div class="summary">
       <div><b>${reqs.length}</b><span>requisitos aplicables · ${pct}% marcado</span></div>
       <div><b>${est.semP.toFixed(1)}</b><span>semanas con personas (${(est.semP/4.33).toFixed(1)} meses)</span></div>
-      <div class="ai"><b>${est.semA.toFixed(1)}</b><span>semanas con agente de IA (−${Math.round(est.ahorro*100)}%)</span></div>
+      <div class="ai"><b>${est.diasA.toFixed(0)}</b><span>días hábiles con agente de IA (${est.semA.toFixed(1)} semanas, −${Math.round(est.ahorro*100)}%)</span></div>
       <div><b>${est.R.toFixed(0)}</b><span>días-persona en reuniones · ${est.K.toFixed(0)} h de máquina</span></div>
     </div>
-    <p class="note-est">Semanas de calendario = días-persona ÷ personas ÷ 5. Con agente se mantienen las mismas reuniones. <a href="#marco--estimacion">Cómo se calcula</a>.</p>
+    ${est.meta?`<p class="meta-est ${est.meta.okP&&est.meta.okA?"ok":"ko"}"><b>Meta U-40</b> · con ${est.meta.fte} personas: ${est.meta.sem} semanas máximo (este caso: ${(est.Tp/est.meta.fte/5).toFixed(1)}) · con agentes: ${est.meta.dias} días hábiles máximo (este caso: ${(est.Ta/est.meta.fte).toFixed(0)}) · ${est.meta.okP&&est.meta.okA?"Cumple":"Excede: requiere sustento y presentación al Comité"}</p>`:""}
+    <p class="note-est">Semanas de calendario = días-persona ÷ personas ÷ 5. El modelo está anclado a la meta de plazo U-40. <a href="#marco--estimacion">Cómo se calcula</a>.</p>
     <div class="phases" aria-label="Trabajo directo por fase">
       <div class="ph legend"><span>Trabajo directo por fase (días-persona)</span><span class="lg"><i class="p"></i>Personas <i class="a"></i>Con agente</span><span></span></div>`+Object.entries(est.fases).map(([k,f])=>
       `<div class="ph"><span>${esc(k)} · ${esc(f.name)}</span><div class="bar"><i class="p" style="width:${(100*f.trabajo/maxW).toFixed(1)}%"></i><i class="a" style="width:${(100*f.agente/maxW).toFixed(1)}%"></i></div><span class="n">${f.trabajo.toFixed(1)} · ${f.agente.toFixed(1)}</span></div>`).join("")+`</div>
@@ -478,7 +496,7 @@ function showPlanner(){
     h+=`</section>`;
   }
   $("#view").innerHTML=h+`</div>`;
-  $("#view").querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{const k=b.dataset.k;cfg[k]=k==="tier"?+b.dataset.val:b.dataset.val;if(["Calibración","Pricing","Parámetros","Seguimiento"].includes(cfg.std))cfg.enf="tradicional";store.set("plan.cfg",cfg);showPlanner()});
+  $("#view").querySelectorAll(".seg button").forEach(b=>b.onclick=()=>{const k=b.dataset.k;cfg[k]=k==="tier"?+b.dataset.val:b.dataset.val;if(["Calibración","Pricing","Parámetros","Seguimiento"].includes(cfg.std))cfg.enf="completo";store.set("plan.cfg",cfg);showPlanner()});
   $("#view").querySelectorAll(".ck input").forEach(c=>c.onchange=()=>{const s=new Set(store.get(planKey(),[]));c.checked?s.add(c.dataset.id):s.delete(c.dataset.id);store.set(planKey(),[...s]);c.closest(".ck").classList.toggle("done",c.checked)});
   $("#view").querySelectorAll(".scen input").forEach(i=>i.onchange=()=>{let v=+i.value;if(!(v>0)&&i.dataset.e!=="pct_reuniones")return;
     if(i.dataset.e==="pct_reuniones")v=Math.min(70,Math.max(0,v))/100;scen[i.dataset.e]=v;store.set("plan.esc",scen);showPlanner();const n=$("#"+i.id);if(n)n.focus()});
@@ -486,7 +504,7 @@ function showPlanner(){
   $("#clearDone").onclick=()=>{store.set(planKey(),[]);showPlanner()};
   $("#copyMd").onclick=()=>{
     const ds=new Set(store.get(planKey(),[]));
-    let md=`# Checklist · ${cfg.std} · Tier ${ROMAN[cfg.tier]}${isCal?"":" · "+MODEL[cfg.model]+" · "+(cfg.enf==="agil"?"Ágil":"Tradicional")}\n\n> Generado desde los Estándares de Modelos en Banca v${DATA.meta.version} · ${DATA.meta.custodio}\n`;
+    let md=`# Checklist · ${cfg.std} · Tier ${ROMAN[cfg.tier]}${isCal?"":" · "+MODEL[cfg.model]+" · "+(cfg.enf==="agil"?"Ágil":"Completo")}\n\n> Generado desde los Estándares de Modelos en Banca v${DATA.meta.version} · ${DATA.meta.custodio}\n`;
     for(const [k,p] of Object.entries(byPhase)){md+=`\n## ${k} · ${p.name}\n\n`;for(const r of p.items){const e=(r.entregables||[]).map(x=>x.tipo+(x.numero?" "+x.numero:"")).join(", ");md+=`- [${ds.has(r.id)?"x":" "}] \`${r.id}\` ${r.actividad.split("\n")[0]}${e?" — "+e:""}\n`}}
     md+=`\n## Entregables\n\n`+[...ents].map(e=>"- "+e).join("\n")+"\n";
     const fallback=()=>{$("#copyWrap").innerHTML=`<textarea class="copybox" id="copyBox" aria-label="Checklist en Markdown"></textarea>`;const t=$("#copyBox");t.value=md;t.select();$("#copyNote").textContent="No se pudo copiar automáticamente: el texto está seleccionado abajo."};
@@ -518,7 +536,7 @@ function openReq(id){
   }else{
     const r=REQ[id]||DATA.requisitos.find(x=>x.id.startsWith(id+"."));if(!r)return;
     const ap=Array.isArray(r.aplica_tier)?`Tier ${tiersTxt(r.aplica_tier)}`:Object.entries(r.aplica_tier).filter(([,t])=>t.length).map(([m,t])=>`${MODEL[m]} ${tiersTxt(t)}`).join(" · ");
-    const dd=r.dias_esfuerzo==null?"—":typeof r.dias_esfuerzo==="number"?r.dias_esfuerzo+" d":Object.entries(r.dias_esfuerzo).map(([m,v])=>`${MODEL[m]}: ${v.agil??"—"} ágil / ${v.tradicional??"—"} trad.`).join("<br>");
+    const dd=r.dias_esfuerzo==null?"—":typeof r.dias_esfuerzo==="number"?r.dias_esfuerzo+" d":Object.entries(r.dias_esfuerzo).map(([m,v])=>`${MODEL[m]}: ${v.agil??"—"} ágil / ${v.completo??"—"} completo`).join("<br>");
     const doc=r.doc&&BYPATH[r.doc];
     d.innerHTML=`<button class="close" type="button">Cerrar</button><h3>${r.id}${r.id!==id?" (primer requisito de "+id+")":""}</h3><h4>${esc(r.tarea)} › ${esc(r.subtarea)}</h4><p class="txt">${esc(r.actividad)}</p>
     <dl><dt>Estándar</dt><dd>${esc(r.estandar)} · ${esc(r.fase)} ${esc(r.fase_nombre)}</dd><dt>Aplica</dt><dd>${esc(ap)}</dd>

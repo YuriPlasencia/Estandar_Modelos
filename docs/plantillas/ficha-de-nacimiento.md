@@ -21,7 +21,7 @@ version: "1.0.0"
 tipo_estandar: Desarrollo      # Desarrollo | Calibración
 tier: ""                       # I | II | III | IV  (acta: VAL-M-01.13)
 tipo_modelo: ""                # lineal | ml | arbol | acp
-enfoque: ""                    # agil | tradicional
+enfoque: ""                    # agil | completo
 uso: ""                        # originación | comportamiento | cobranza | estimador | PD/LGD/EAD | otro
 decision_automatica: false
 poblacion_objetivo: ""

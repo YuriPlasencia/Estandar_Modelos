@@ -17,7 +17,7 @@ modelo:
   estandar: Desarrollo   # Desarrollo | Calibración | Parámetros | Pricing
   tier:                  # 1 | 2 | 3 | 4
   tipo_modelo:           # lineal | ml | arbol | acp
-  enfoque:               # agil | tradicional
+  enfoque:               # agil | completo
   uso:
   proposito:
   usos_no_permitidos: []

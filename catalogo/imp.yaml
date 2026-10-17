@@ -21,10 +21,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.75, tradicional: 2.75}
-    ml: {agil: 1.75, tradicional: 2.75}
-    arbol: {agil: 1.75, tradicional: 2.75}
-    acp: {agil: 1.75, tradicional: 2.75}
+    lineal: {agil: 1.75, completo: 2.75}
+    ml: {agil: 1.75, completo: 2.75}
+    arbol: {agil: 1.75, completo: 2.75}
+    acp: {agil: 1.75, completo: 2.75}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -40,10 +40,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.01.03
   tarea: Implementación tecnológica
@@ -53,10 +53,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.01.04
   tarea: Implementación tecnológica
@@ -66,10 +66,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.01.05
   tarea: Implementación tecnológica
@@ -79,10 +79,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: 0.0}
-    ml: {agil: 0.0, tradicional: 0.0}
-    arbol: {agil: 0.0, tradicional: 0.0}
-    acp: {agil: 0.0, tradicional: 0.0}
+    lineal: {agil: 0.0, completo: 0.0}
+    ml: {agil: 0.0, completo: 0.0}
+    arbol: {agil: 0.0, completo: 0.0}
+    acp: {agil: 0.0, completo: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Acta
@@ -97,10 +97,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.01.07
   tarea: Implementación tecnológica
@@ -111,10 +111,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.01.08
   tarea: Implementación tecnológica
@@ -124,7 +124,7 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.0, tradicional: null}
+    lineal: {agil: 0.0, completo: null}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
 - id: IMP-01.01.09
   tarea: Implementación tecnológica
@@ -135,10 +135,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
 - id: IMP-01.02.01
   tarea: Implementación tecnológica
@@ -157,10 +157,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.75, tradicional: 2.75}
-    ml: {agil: 1.75, tradicional: 2.75}
-    arbol: {agil: 1.75, tradicional: 2.75}
-    acp: {agil: 1.75, tradicional: 2.75}
+    lineal: {agil: 1.75, completo: 2.75}
+    ml: {agil: 1.75, completo: 2.75}
+    arbol: {agil: 1.75, completo: 2.75}
+    acp: {agil: 1.75, completo: 2.75}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -175,10 +175,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.8333, tradicional: 0.8333}
-    ml: {agil: 0.8333, tradicional: 0.8333}
-    arbol: {agil: 0.8333, tradicional: 0.8333}
-    acp: {agil: 0.8333, tradicional: 0.8333}
+    lineal: {agil: 0.8333, completo: 0.8333}
+    ml: {agil: 0.8333, completo: 0.8333}
+    arbol: {agil: 0.8333, completo: 0.8333}
+    acp: {agil: 0.8333, completo: 0.8333}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Otro
@@ -193,10 +193,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.8333, tradicional: 0.8333}
-    ml: {agil: 0.8333, tradicional: 0.8333}
-    arbol: {agil: 0.8333, tradicional: 0.8333}
-    acp: {agil: 0.8333, tradicional: 0.8333}
+    lineal: {agil: 0.8333, completo: 0.8333}
+    ml: {agil: 0.8333, completo: 0.8333}
+    arbol: {agil: 0.8333, completo: 0.8333}
+    acp: {agil: 0.8333, completo: 0.8333}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.03.03
   tarea: Implementación tecnológica
@@ -207,10 +207,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.8333, tradicional: 0.8333}
-    ml: {agil: 0.8333, tradicional: 0.8333}
-    arbol: {agil: 0.8333, tradicional: 0.8333}
-    acp: {agil: 0.8333, tradicional: 0.8333}
+    lineal: {agil: 0.8333, completo: 0.8333}
+    ml: {agil: 0.8333, completo: 0.8333}
+    arbol: {agil: 0.8333, completo: 0.8333}
+    acp: {agil: 0.8333, completo: 0.8333}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.04.01
   tarea: Implementación tecnológica
@@ -226,10 +226,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -243,10 +243,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.04.03
   tarea: Implementación tecnológica
@@ -264,10 +264,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.05.01
   tarea: Implementación tecnológica
@@ -277,10 +277,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.3, tradicional: 0.3}
-    ml: {agil: 0.3, tradicional: 0.3}
-    arbol: {agil: 0.3, tradicional: 0.3}
-    acp: {agil: 0.3, tradicional: 0.3}
+    lineal: {agil: 0.3, completo: 0.3}
+    ml: {agil: 0.3, completo: 0.3}
+    arbol: {agil: 0.3, completo: 0.3}
+    acp: {agil: 0.3, completo: 0.3}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.05.02
   tarea: Implementación tecnológica
@@ -290,10 +290,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.3, tradicional: 0.3}
-    ml: {agil: 0.3, tradicional: 0.3}
-    arbol: {agil: 0.3, tradicional: 0.3}
-    acp: {agil: 0.3, tradicional: 0.3}
+    lineal: {agil: 0.3, completo: 0.3}
+    ml: {agil: 0.3, completo: 0.3}
+    arbol: {agil: 0.3, completo: 0.3}
+    acp: {agil: 0.3, completo: 0.3}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.05.03
   tarea: Implementación tecnológica
@@ -303,10 +303,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.3, tradicional: 0.3}
-    ml: {agil: 0.3, tradicional: 0.3}
-    arbol: {agil: 0.3, tradicional: 0.3}
-    acp: {agil: 0.3, tradicional: 0.3}
+    lineal: {agil: 0.3, completo: 0.3}
+    ml: {agil: 0.3, completo: 0.3}
+    arbol: {agil: 0.3, completo: 0.3}
+    acp: {agil: 0.3, completo: 0.3}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.05.04
   tarea: Implementación tecnológica
@@ -317,10 +317,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.3, tradicional: 0.3}
-    ml: {agil: 0.3, tradicional: 0.3}
-    arbol: {agil: 0.3, tradicional: 0.3}
-    acp: {agil: 0.3, tradicional: 0.3}
+    lineal: {agil: 0.3, completo: 0.3}
+    ml: {agil: 0.3, completo: 0.3}
+    arbol: {agil: 0.3, completo: 0.3}
+    acp: {agil: 0.3, completo: 0.3}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.05.05
   tarea: Implementación tecnológica
@@ -331,10 +331,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.3, tradicional: 0.3}
-    ml: {agil: 0.3, tradicional: 0.3}
-    arbol: {agil: 0.3, tradicional: 0.3}
-    acp: {agil: 0.3, tradicional: 0.3}
+    lineal: {agil: 0.3, completo: 0.3}
+    ml: {agil: 0.3, completo: 0.3}
+    arbol: {agil: 0.3, completo: 0.3}
+    acp: {agil: 0.3, completo: 0.3}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.06.01
   tarea: Implementación tecnológica
@@ -344,10 +344,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Correo
@@ -362,10 +362,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0625, tradicional: 1.25}
-    ml: {agil: 1.0625, tradicional: 1.25}
-    arbol: {agil: 1.0625, tradicional: 1.25}
-    acp: {agil: 1.0625, tradicional: 1.25}
+    lineal: {agil: 1.0625, completo: 1.25}
+    ml: {agil: 1.0625, completo: 1.25}
+    arbol: {agil: 1.0625, completo: 1.25}
+    acp: {agil: 1.0625, completo: 1.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.06.03
   tarea: Implementación tecnológica
@@ -375,10 +375,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Documento
@@ -394,10 +394,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
 - id: IMP-01.06.05
   tarea: "Implementación tecnológica"
@@ -405,10 +405,10 @@ actividades:
   actividad: "Probar escenarios de error (datos faltantes, valores fuera de rango, caída de fuentes) y verificar el manejo de excepciones y el control de accesos del proceso productivo."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 1, tradicional: 1}
-    ml: {agil: 1, tradicional: 1}
-    arbol: {agil: 1, tradicional: 1}
-    acp: {agil: 1, tradicional: 1}
+    lineal: {agil: 1, completo: 1}
+    ml: {agil: 1, completo: 1}
+    arbol: {agil: 1, completo: 1}
+    acp: {agil: 1, completo: 1}
   nivel_automatizacion: 2
   naturaleza: datos
   critico: true
@@ -419,10 +419,10 @@ actividades:
   actividad: "Registrar en cada resultado productivo la versión del modelo y del código que lo generó, para trazabilidad y seguimiento."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   nivel_automatizacion: 2
   naturaleza: datos
   nota_origen: "Línea base 2.0 (2026-10-17). Práctica de bancos de referencia; FR-07."
@@ -434,10 +434,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 0.25, tradicional: 0.25}
-    ml: {agil: 0.25, tradicional: 0.25}
-    arbol: {agil: 0.25, tradicional: 0.25}
-    acp: {agil: 0.25, tradicional: 0.25}
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4]}
   entregables:
   - tipo: Acta

@@ -13,10 +13,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 3
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -29,10 +29,10 @@ actividades:
   actividad: "Definir la política de forzajes (overrides): quién puede forzar, motivos válidos, registro obligatorio y límite de materialidad; el seguimiento medirá su volumen y desempeño (U-36)."
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   dias_esfuerzo:
-    lineal: {agil: 0.5, tradicional: 0.5}
-    ml: {agil: 0.5, tradicional: 0.5}
-    arbol: {agil: 0.5, tradicional: 0.5}
-    acp: {agil: 0.5, tradicional: 0.5}
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
   nivel_automatizacion: 1
   naturaleza: gobierno
   critico: true
@@ -45,10 +45,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: -1
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 3.0}
-    ml: {agil: 2.0, tradicional: 3.0}
-    arbol: {agil: 2.0, tradicional: 3.0}
-    acp: {agil: 1.5, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 3.0}
+    ml: {agil: 2.0, completo: 3.0}
+    arbol: {agil: 2.0, completo: 3.0}
+    acp: {agil: 1.5, completo: 2.0}
   aplica_tier: {lineal: [1], ml: [1], arbol: [1], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Excel
@@ -63,10 +63,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: -1
   dias_esfuerzo:
-    lineal: {agil: 2.0, tradicional: 3.0}
-    ml: {agil: 2.0, tradicional: 3.0}
-    arbol: {agil: 2.0, tradicional: 3.0}
-    acp: {agil: 1.5, tradicional: 2.0}
+    lineal: {agil: 2.0, completo: 3.0}
+    ml: {agil: 2.0, completo: 3.0}
+    arbol: {agil: 2.0, completo: 3.0}
+    acp: {agil: 1.5, completo: 2.0}
   aplica_tier: {lineal: [1], ml: [1], arbol: [1], acp: []}
   entregables:
   - tipo: Excel
@@ -80,9 +80,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 0
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 2.0}
-    ml: {agil: 1.5, tradicional: 2.0}
-    arbol: {agil: 1.5, tradicional: 2.0}
+    lineal: {agil: 1.5, completo: 2.0}
+    ml: {agil: 1.5, completo: 2.0}
+    arbol: {agil: 1.5, completo: 2.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Excel
@@ -96,10 +96,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 0
   dias_esfuerzo:
-    lineal: {agil: 1.5, tradicional: 2.0}
-    ml: {agil: 1.5, tradicional: 2.0}
-    arbol: {agil: 1.5, tradicional: 2.0}
-    acp: {agil: 1.5, tradicional: 2.0}
+    lineal: {agil: 1.5, completo: 2.0}
+    ml: {agil: 1.5, completo: 2.0}
+    arbol: {agil: 1.5, completo: 2.0}
+    acp: {agil: 1.5, completo: 2.0}
   aplica_tier: {lineal: [1, 2], ml: [1, 2], arbol: [1, 2], acp: [1, 2]}
   entregables:
   - tipo: Excel
@@ -113,10 +113,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Correo
@@ -130,10 +130,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Correo
@@ -148,9 +148,9 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: []}
   entregables:
   - tipo: Correo
@@ -166,10 +166,10 @@ actividades:
   eficiencia: false
   nivel_automatizacion: 1
   dias_esfuerzo:
-    lineal: {agil: 1.0, tradicional: 1.0}
-    ml: {agil: 1.0, tradicional: 1.0}
-    arbol: {agil: 1.0, tradicional: 1.0}
-    acp: {agil: 1.0, tradicional: 1.0}
+    lineal: {agil: 1.0, completo: 1.0}
+    ml: {agil: 1.0, completo: 1.0}
+    arbol: {agil: 1.0, completo: 1.0}
+    acp: {agil: 1.0, completo: 1.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
   entregables:
   - tipo: Otro

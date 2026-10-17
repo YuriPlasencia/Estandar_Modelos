@@ -213,3 +213,10 @@ umbrales:
   regla: "Cero variables contemporáneas o futuras: cada variable se mide con información disponible antes de la fecha de observación menos el desfase de su fuente."
   valor: {variables_futuras_permitidas: 0}
   refs: ["DES-D1-01.03.04", "DES-D1-01.03.05", "DES-D4-03.03.04"]
+# ---------------- Versión 2.3: plazo máximo de desarrollo.
+- id: U-40
+  tema: "Plazo máximo de desarrollo de un modelo"
+  regla: "Un modelo de Desarrollo, de cualquier Tier, tipo y enfoque, se termina con 2 personas en un máximo de 13 semanas (3 meses) desde el kick-off hasta la presentación al Comité de Modelos. Con agentes de IA, en un máximo de 15 días hábiles. Superar el plazo requiere sustento y su presentación al Comité."
+  valor: {personas: 2, semanas_max_personas: 13, dias_habiles_max_agente: 15}
+  refs: ["DES-D1-02.01.01", "DES-D4-11.02.01"]
+  nota: "El modelo de esfuerzo (catalogo/parametros_esfuerzo.yaml, bloque anclaje) se calibra con esta meta."

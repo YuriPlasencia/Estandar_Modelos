@@ -67,7 +67,8 @@ def cfg_de(modelo: dict) -> dict:
     std = modelo["estandar"]
     return {"std": std, "tier": int(modelo["tier"]),
             "model": modelo.get("tipo_modelo") or "lineal",
-            "enf": "tradicional" if std in ("Calibración", "Pricing", "Parámetros", "Seguimiento") else (modelo.get("enfoque") or "agil")}
+            "enf": "completo" if std in ("Calibración", "Pricing", "Parámetros", "Seguimiento")
+            else esfuerzo.enfoque(modelo.get("enfoque") or "agil")}
 
 
 def sha256(p: Path) -> str:
@@ -81,7 +82,7 @@ def sha256(p: Path) -> str:
 def cmd_init(repo: Path, a):
     reqs, _ = cargar_catalogo()
     modelo = {"codigo": a.codigo or repo.name, "estandar": a.estandar, "tier": a.tier,
-              "tipo_modelo": a.modelo or "", "enfoque": a.enfoque or ""}
+              "tipo_modelo": a.modelo or "", "enfoque": esfuerzo.enfoque(a.enfoque) if a.enfoque else ""}
     aplicables = [r for r in reqs if esfuerzo.aplica(r, cfg_de(modelo))]
     L = ["# Manifiesto de evidencias. Generado por tools/verificar.py --init el " + date.today().isoformat(),
          "# Estados: cumplido | pendiente | no_aplica | excepcion (con justificación y acta).",
@@ -207,7 +208,8 @@ def main():
     ap.add_argument("--estandar", default="Desarrollo", choices=["Desarrollo", "Calibración", "Implementación", "Parámetros", "Pricing", "Seguimiento"])
     ap.add_argument("--tier", type=int, default=2, choices=[1, 2, 3, 4])
     ap.add_argument("--modelo", default="", choices=["", "lineal", "ml", "arbol", "acp"])
-    ap.add_argument("--enfoque", default="", choices=["", "agil", "tradicional"])
+    ap.add_argument("--enfoque", default="", choices=["", "agil", "completo", "tradicional"],
+                    help="agil: lo esencial con la profundidad mínima suficiente · completo: análisis exhaustivo (tradicional = alias de completo)")
     ap.add_argument("--codigo", default="")
     ap.add_argument("--fase", default="")
     ap.add_argument("--hash", action="store_true", help="comprueba los sha256 registrados")

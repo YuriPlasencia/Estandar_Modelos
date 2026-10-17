@@ -47,7 +47,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 | "Redacta el documento metodológico" | `python tools/documento.py nuevo REPO`; completar `docs/documento.yaml` solo con lo que sustentan los reportes (lo demás queda como «Completar»); `render`; no tocar gobierno ni aprobaciones. Ver `docs/plantillas/documento-metodologico.md` |
 | "Recalibra la PD lifetime de consumo para IFRS 9" | Seguir `docs/parametros/` (R2→R3→R6→R7→R8); respetar U-27 a U-34; nunca aprobar overlays ni la ECL: lo hace el comité de provisiones |
 | "Arma el caso de pricing de tarjeta de crédito" | Seguir `docs/pricing/` en orden P1→P9; respetar U-18 a U-26; ver los roles y límites de `docs/pricing/agentes-ia.md`. **Nunca** fijar, publicar ni aprobar precios |
-| "Estima la duración" | Aplicar el modelo de esfuerzo v2 (`tools/esfuerzo.py` con `catalogo/parametros_esfuerzo.yaml`); reportar semanas con personas y con agente, y los supuestos usados |
+| "Estima la duración" | Aplicar el modelo de esfuerzo v2 (`tools/esfuerzo.py` con `catalogo/parametros_esfuerzo.yaml`, anclado a U-40); reportar semanas con personas, días hábiles con agente, si cumple U-40 y los supuestos usados |
 
 ## Esquema de un requisito
 
@@ -58,7 +58,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
   "tarea": "Entrenamiento de modelos", "subtarea": "Optimización",
   "actividad": "Opt de HP por generación aleatoria (min 50 combinaciones)...",
   "critico": false, "eficiencia": false, "nivel_automatizacion": 2,
-  "dias_esfuerzo": {"ml": {"agil": 2.5, "tradicional": 2.5}},
+  "dias_esfuerzo": {"ml": {"agil": 2.5, "completo": 2.5}},
   "aplica_tier": {"lineal": [], "ml": [1,2,3,4], "arbol": [1,2,3,4], "acp": []},
   "entregables": [{"tipo": "Excel", "numero": 16, "descripcion": "Optimización de Hiperparámetros."}],
   "hito": null,

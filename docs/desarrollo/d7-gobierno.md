@@ -38,30 +38,30 @@ modelo está dado de alta en el inventario con su Tier.
 
 - **`DES-D7-01.01.01`** Revisar la aplicación los estándares de construcción (responsable lider del proyecto)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.1875 d ágil / 0.25 d trad. · Automatización: 1 · Crítico · Eficiencia
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.1875 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Eficiencia
 
 - **`DES-D7-01.01.02`** Evidenciar correos, actas, documentación, conformidades u otros medios
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1 · Crítico · Eficiencia
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Eficiencia
 
 - **`DES-D7-01.01.03`** Participar en la asignación de Tier de un modelo
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.185 d ágil / 0.25 d trad. · Automatización: 1
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.185 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.04`** Cooperar en el alta/ baja de un modelo (ficha de nacimiento del modelo)
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.05`** Presentaciones de aprobación/ ratificación
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.125 d ágil / 0.25 d trad. · Automatización: 1
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.125 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.06`** Evidenciar el cumpliento de la documentación y reglamentación de variables críticas
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1
 
 - **`DES-D7-01.01.07`** Obtener la aprobación previa del comité de riesgos de modelo antes de usar todo modelo nuevo, modificado o con cambio de uso (GOB-G3-01.01.01).
 
-  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d trad. · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 17.
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 1 · Crítico · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 17.
 
 <!-- CATALOGO:FIN -->

@@ -2,7 +2,7 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "generado": "2026-10-17",
   "n_requisitos": 541,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
@@ -1621,19 +1621,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "acp": {
      "agil": 2.125,
-     "tradicional": 3.5
+     "completo": 3.5
     }
    },
    "aplica_tier": {
@@ -1941,19 +1941,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -2010,19 +2010,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 5.0,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "ml": {
      "agil": 5.0,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "arbol": {
      "agil": 5.0,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "acp": {
      "agil": 5.0,
-     "tradicional": 5.0
+     "completo": 5.0
     }
    },
    "aplica_tier": {
@@ -2284,19 +2284,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -2354,19 +2354,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.5,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "ml": {
      "agil": 2.5,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "arbol": {
      "agil": 2.5,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "acp": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -2429,19 +2429,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 8.5,
-     "tradicional": 10.0
+     "completo": 10.0
     },
     "ml": {
      "agil": 8.5,
-     "tradicional": 10.0
+     "completo": 10.0
     },
     "arbol": {
      "agil": 8.5,
-     "tradicional": 10.0
+     "completo": 10.0
     },
     "acp": {
      "agil": 8.5,
-     "tradicional": 10.0
+     "completo": 10.0
     }
    },
    "aplica_tier": {
@@ -2522,19 +2522,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "nivel_automatizacion": 1,
@@ -2594,19 +2594,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 1,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "nivel_automatizacion": 3,
@@ -2643,19 +2643,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "acp": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -3065,19 +3065,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -3133,19 +3133,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -3201,19 +3201,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -3269,19 +3269,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -3317,6 +3317,9 @@
      "descripcion": "Kick off"
     }
    ],
+   "umbrales": [
+    "U-40"
+   ],
    "lecturas": [
     "LIT-003"
    ],
@@ -3337,19 +3340,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -3406,19 +3409,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 3.0,
-     "tradicional": 3.5
+     "completo": 3.5
     },
     "ml": {
      "agil": 2.975,
-     "tradicional": 3.5
+     "completo": 3.5
     },
     "arbol": {
      "agil": 2.975,
-     "tradicional": 3.5
+     "completo": 3.5
     },
     "acp": {
      "agil": 2.975,
-     "tradicional": 3.5
+     "completo": 3.5
     }
    },
    "aplica_tier": {
@@ -3628,19 +3631,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -3697,19 +3700,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -4073,15 +4076,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     }
    },
    "nivel_automatizacion": 1,
@@ -4115,15 +4118,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 5.0,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "ml": {
      "agil": 5.0,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "arbol": {
      "agil": 5.0,
-     "tradicional": 5.0
+     "completo": 5.0
     }
    },
    "aplica_tier": {
@@ -4414,15 +4417,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -4587,19 +4590,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -4655,19 +4658,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -4725,19 +4728,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -4793,19 +4796,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -4854,19 +4857,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -5205,19 +5208,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -5273,19 +5276,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -5429,19 +5432,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -5497,19 +5500,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.4875,
-     "tradicional": 1.75
+     "completo": 1.75
     },
     "ml": {
      "agil": 1.4875,
-     "tradicional": 1.75
+     "completo": 1.75
     },
     "arbol": {
      "agil": 1.4875,
-     "tradicional": 1.75
+     "completo": 1.75
     },
     "acp": {
      "agil": 1.4875,
-     "tradicional": 1.75
+     "completo": 1.75
     }
    },
    "aplica_tier": {
@@ -5557,19 +5560,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -5668,19 +5671,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 0.85,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -5738,19 +5741,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -5803,7 +5806,7 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -5843,11 +5846,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -5890,7 +5893,7 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -5930,11 +5933,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -5990,7 +5993,7 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -6041,19 +6044,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -6109,19 +6112,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -6178,15 +6181,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -6238,19 +6241,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -6306,15 +6309,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -6368,19 +6371,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -6436,19 +6439,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -6504,19 +6507,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -6592,19 +6595,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "ml": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "arbol": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "acp": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     }
    },
    "nivel_automatizacion": 3,
@@ -6634,15 +6637,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -6710,19 +6713,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "nivel_automatizacion": 3,
@@ -6778,19 +6781,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "nivel_automatizacion": 2,
@@ -6849,19 +6852,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "ml": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "arbol": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "acp": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     }
    },
    "nivel_automatizacion": 3,
@@ -6898,15 +6901,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "acp": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -6950,15 +6953,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -6994,15 +6997,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -7044,15 +7047,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "acp": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -7095,15 +7098,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -7139,15 +7142,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -7186,7 +7189,7 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -7226,7 +7229,7 @@
    "dias_esfuerzo": {
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -7261,11 +7264,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -7301,7 +7304,7 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -7348,15 +7351,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -7404,11 +7407,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -7451,15 +7454,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -7505,15 +7508,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -7558,15 +7561,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -7612,15 +7615,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 3.4,
-     "tradicional": 4.0
+     "completo": 4.0
     },
     "ml": {
      "agil": 3.4,
-     "tradicional": 4.0
+     "completo": 4.0
     },
     "acp": {
      "agil": 3.4,
-     "tradicional": 4.0
+     "completo": 4.0
     }
    },
    "aplica_tier": {
@@ -7665,15 +7668,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -7710,15 +7713,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "acp": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -7758,15 +7761,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "acp": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -7862,19 +7865,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -7931,19 +7934,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -8000,19 +8003,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -8075,15 +8078,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -8141,19 +8144,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.275,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1.275,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.275,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -8216,19 +8219,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -8291,11 +8294,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -8335,7 +8338,7 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -8375,11 +8378,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -8426,15 +8429,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -8488,15 +8491,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -8547,19 +8550,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -8638,11 +8641,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     }
    },
    "nivel_automatizacion": 2,
@@ -8697,11 +8700,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "arbol": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     }
    },
    "nivel_automatizacion": 3,
@@ -8743,11 +8746,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 3.0,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -8937,11 +8940,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -8995,11 +8998,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -9046,19 +9049,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -9121,11 +9124,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -9178,15 +9181,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -9246,15 +9249,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -9320,19 +9323,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "nivel_automatizacion": 2,
@@ -9361,19 +9364,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -9431,19 +9434,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -9503,15 +9506,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -9616,19 +9619,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.125,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "ml": {
      "agil": 2.125,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "arbol": {
      "agil": 2.125,
-     "tradicional": 2.5
+     "completo": 2.5
     },
     "acp": {
      "agil": 2.125,
-     "tradicional": 2.5
+     "completo": 2.5
     }
    },
    "aplica_tier": {
@@ -9687,7 +9690,7 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -9743,11 +9746,11 @@
    "dias_esfuerzo": {
     "ml": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "arbol": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     }
    },
    "nivel_automatizacion": 2,
@@ -9777,11 +9780,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -9833,11 +9836,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 1.7,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -9882,11 +9885,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -9926,11 +9929,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -9974,11 +9977,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -10030,11 +10033,11 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -10091,15 +10094,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -10255,19 +10258,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -10323,19 +10326,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -10436,19 +10439,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 4.25,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "ml": {
      "agil": 4.25,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "arbol": {
      "agil": 4.25,
-     "tradicional": 5.0
+     "completo": 5.0
     },
     "acp": {
      "agil": 4.25,
-     "tradicional": 5.0
+     "completo": 5.0
     }
    },
    "aplica_tier": {
@@ -10711,19 +10714,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "ml": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "arbol": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "acp": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     }
    },
    "nivel_automatizacion": 2,
@@ -10768,19 +10771,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     },
     "acp": {
      "agil": 1.5,
-     "tradicional": 2
+     "completo": 2
     }
    },
    "nivel_automatizacion": 2,
@@ -10809,19 +10812,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.275,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "ml": {
      "agil": 1.275,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "arbol": {
      "agil": 1.275,
-     "tradicional": 1.5
+     "completo": 1.5
     },
     "acp": {
      "agil": 1.275,
-     "tradicional": 1.5
+     "completo": 1.5
     }
    },
    "aplica_tier": {
@@ -10878,19 +10881,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 2.55,
-     "tradicional": 3.0
+     "completo": 3.0
     }
    },
    "aplica_tier": {
@@ -10946,19 +10949,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -11014,19 +11017,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -11075,19 +11078,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -11136,19 +11139,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -11197,19 +11200,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -11266,19 +11269,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.425,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.425,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.425,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.425,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -11314,6 +11317,9 @@
      "descripcion": "Cierre del modelo."
     }
    ],
+   "umbrales": [
+    "U-40"
+   ],
    "lecturas": [
     "LIT-001"
    ],
@@ -11334,15 +11340,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -11396,15 +11402,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -11452,15 +11458,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -11500,15 +11506,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -11548,15 +11554,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -11596,15 +11602,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -11651,19 +11657,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -11715,19 +11721,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -11807,19 +11813,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "nivel_automatizacion": 1,
@@ -11848,19 +11854,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -11910,19 +11916,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "ml": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "arbol": {
      "agil": 2.0,
-     "tradicional": 3.0
+     "completo": 3.0
     },
     "acp": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -11966,15 +11972,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -12027,19 +12033,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "ml": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "arbol": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     },
     "acp": {
      "agil": 1.5,
-     "tradicional": 2.0
+     "completo": 2.0
     }
    },
    "aplica_tier": {
@@ -12089,19 +12095,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -12159,19 +12165,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -12230,15 +12236,15 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -12291,19 +12297,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -12403,19 +12409,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.1875,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.1875,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.1875,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.1875,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -12468,19 +12474,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -12533,19 +12539,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.185,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.185,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.185,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.185,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -12598,19 +12604,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -12663,19 +12669,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.125,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.125,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.125,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.125,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -12728,19 +12734,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -12816,19 +12822,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "nivel_automatizacion": 1,
@@ -13451,19 +13457,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     },
     "ml": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     },
     "arbol": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     },
     "acp": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     }
    },
    "aplica_tier": {
@@ -13515,19 +13521,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -13571,19 +13577,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -13627,19 +13633,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -13683,19 +13689,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "ml": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "arbol": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     },
     "acp": {
      "agil": 0.0,
-     "tradicional": 0.0
+     "completo": 0.0
     }
    },
    "aplica_tier": {
@@ -13746,19 +13752,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -13802,19 +13808,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -13858,7 +13864,7 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.0,
-     "tradicional": null
+     "completo": null
     }
    },
    "aplica_tier": {
@@ -13908,19 +13914,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -13970,19 +13976,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     },
     "ml": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     },
     "arbol": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     },
     "acp": {
      "agil": 1.75,
-     "tradicional": 2.75
+     "completo": 2.75
     }
    },
    "aplica_tier": {
@@ -14033,19 +14039,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "ml": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "arbol": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "acp": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     }
    },
    "aplica_tier": {
@@ -14096,19 +14102,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "ml": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "arbol": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "acp": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     }
    },
    "aplica_tier": {
@@ -14152,19 +14158,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "ml": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "arbol": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     },
     "acp": {
      "agil": 0.8333,
-     "tradicional": 0.8333
+     "completo": 0.8333
     }
    },
    "aplica_tier": {
@@ -14208,19 +14214,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -14272,19 +14278,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -14329,19 +14335,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "ml": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "arbol": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     },
     "acp": {
      "agil": 0.5,
-     "tradicional": 0.5
+     "completo": 0.5
     }
    },
    "aplica_tier": {
@@ -14386,19 +14392,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "ml": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "arbol": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "acp": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     }
    },
    "aplica_tier": {
@@ -14442,19 +14448,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "ml": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "arbol": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "acp": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     }
    },
    "aplica_tier": {
@@ -14498,19 +14504,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "ml": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "arbol": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "acp": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     }
    },
    "aplica_tier": {
@@ -14554,19 +14560,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "ml": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "arbol": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "acp": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     }
    },
    "aplica_tier": {
@@ -14610,19 +14616,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "ml": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "arbol": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     },
     "acp": {
      "agil": 0.3,
-     "tradicional": 0.3
+     "completo": 0.3
     }
    },
    "aplica_tier": {
@@ -14666,19 +14672,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "ml": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "arbol": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     },
     "acp": {
      "agil": 1.0,
-     "tradicional": 1.0
+     "completo": 1.0
     }
    },
    "aplica_tier": {
@@ -14730,19 +14736,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1.0625,
-     "tradicional": 1.25
+     "completo": 1.25
     },
     "ml": {
      "agil": 1.0625,
-     "tradicional": 1.25
+     "completo": 1.25
     },
     "arbol": {
      "agil": 1.0625,
-     "tradicional": 1.25
+     "completo": 1.25
     },
     "acp": {
      "agil": 1.0625,
-     "tradicional": 1.25
+     "completo": 1.25
     }
    },
    "aplica_tier": {
@@ -14790,19 +14796,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -14855,19 +14861,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {
@@ -14935,19 +14941,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "ml": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "arbol": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     },
     "acp": {
      "agil": 1,
-     "tradicional": 1
+     "completo": 1
     }
    },
    "nivel_automatizacion": 2,
@@ -14998,19 +15004,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "nivel_automatizacion": 2,
@@ -15037,19 +15043,19 @@
    "dias_esfuerzo": {
     "lineal": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "ml": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "arbol": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     },
     "acp": {
      "agil": 0.25,
-     "tradicional": 0.25
+     "completo": 0.25
     }
    },
    "aplica_tier": {

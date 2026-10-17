@@ -4,6 +4,23 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.3.0] — 2026-10-17
+
+### Nuevo
+- **Plazo máximo de desarrollo (U-40):** un modelo de Desarrollo se termina con 2 personas en un máximo de 13 semanas
+  (3 meses) y, con agentes de IA, en un máximo de 15 días hábiles. Superarlo requiere sustento ante el Comité.
+- **Anclaje del modelo de esfuerzo a U-40:** los días del catálogo pasan a ser pesos relativos y el nivel absoluto se
+  fija para que el caso más exigente (Desarrollo Tier I, lineal, completo) dure exactamente la meta; el escenario base
+  pasa a 2 personas. El planificador muestra si cada caso cumple la meta y la duración con agentes en días hábiles.
+
+### Cambiado
+- El enfoque **tradicional** pasa a llamarse **completo** y se redefinen ambos: *ágil* cubre lo esencial con la
+  profundidad mínima suficiente; *completo* es el análisis exhaustivo y detallado. Los dos aplican los mismos
+  requisitos y umbrales; cambia la profundidad, no lo que se exige.
+- La clave `tradicional` de `dias_esfuerzo` se renombra a `completo` en el catálogo y en `dist/catalogo.json`.
+  `tools/verificar.py`, `tools/documento.py`, el modelo de esfuerzo y el planificador del sitio siguen aceptando
+  `tradicional` como alias.
+
 ## [2.2.0] — 2026-10-17
 
 ### Nuevo

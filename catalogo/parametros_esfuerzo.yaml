@@ -7,7 +7,7 @@ escenario_base:
   registros: 3000000          # filas de la master table de modelamiento
   columnas: 1000              # variables candidatas
   segmentos: 4                # supuesto original: máximo 4-5 segmentos
-  fte: 1.5                    # personas asignadas (supuesto original: 1.5 recursos)
+  fte: 2                      # personas asignadas (meta U-40: 2 personas)
   pct_reuniones: 0.30         # fracción del tiempo de las personas dedicada a reuniones
   horas_dia: 8
 
@@ -46,6 +46,16 @@ agente:
     gobierno: 1.00            # aprobaciones, solicitudes y evidencias formales no se aceleran
   supervision: 0.15           # tiempo extra sobre el trabajo restante para instruir y verificar al agente
   # Las reuniones con negocio, validación y comité se mantienen: mismas horas que en el escenario con personas.
+
+# Anclaje a la meta de plazo (U-40). Los días del catálogo se usan como pesos relativos entre actividades; el nivel
+# absoluto se fija para que el caso de referencia (el más exigente de Desarrollo) dure exactamente la meta con el
+# escenario base. Los demás casos y estándares se escalan con los mismos factores y quedan por debajo de la meta.
+anclaje:
+  caso_referencia: {std: Desarrollo, tier: 1, model: lineal, enf: completo}
+  fte: 2
+  meta:
+    semanas_personas: 13      # 3 meses con 2 personas
+    dias_habiles_agente: 15   # con agentes de IA: 15 días hábiles (3 semanas) con las mismas 2 personas
 
 # Escala del campo nivel_automatizacion de cada requisito.
 niveles_automatizacion:
