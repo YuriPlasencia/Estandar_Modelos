@@ -1,5 +1,9 @@
 # Estándares de Modelos en Banca
 
+[![Publicar sitio](https://github.com/YuriPlasencia/estandares-modelos/actions/workflows/pages.yml/badge.svg)](https://github.com/YuriPlasencia/estandares-modelos/actions/workflows/pages.yml)
+
+**Sitio:** https://yuriplasencia.github.io/estandares-modelos/
+
 **Un estándar abierto, versionado y legible por máquinas para el ciclo de vida completo de los modelos en banca:
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
@@ -40,9 +44,11 @@ Cada estándar distingue lo **vigente** (obligatorio), lo que está en **borrado
 
 ## Cómo usarlo
 
-**Para leer.** Abre `site/index.html` con doble clic (funciona sin servidor). Incluye buscador, panel de detalle por
+**Para leer.** Entra al [sitio publicado](https://yuriplasencia.github.io/estandares-modelos/) o abre `site/index.html` con doble clic (funciona sin servidor). Incluye buscador, panel de detalle por
 requisito con sus lecturas, planificador por estándar, Tier, tipo de modelo y enfoque, y el editor de actas.
 También puedes leer directamente `docs/` (Markdown con fórmulas en LaTeX).
+En el sitio publicado, las actas se guardan en el navegador de cada persona; para editarlas en equipo, usa el
+repositorio con `tools/acta.py` o una instancia con almacenamiento compartido.
 
 **Para trabajar un modelo.**
 

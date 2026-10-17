@@ -5812,6 +5812,10 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 
 # Estándares de Modelos en Banca
 
+[![Publicar sitio](https://github.com/YuriPlasencia/estandares-modelos/actions/workflows/pages.yml/badge.svg)](https://github.com/YuriPlasencia/estandares-modelos/actions/workflows/pages.yml)
+
+**Sitio:** https://yuriplasencia.github.io/estandares-modelos/
+
 **Un estándar abierto, versionado y legible por máquinas para el ciclo de vida completo de los modelos en banca:
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
@@ -5829,7 +5833,7 @@ para agentes de IA (JSON y `llms.txt`).
 
 | | |
 |---|---|
-| **539 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **39 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
+| **540 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **39 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
 | **103 obras** de literatura enlazadas a los requisitos que fundamentan | **27 tipos de acta**, con editor en línea y exportación a Word y Markdown |
 | Mapeo artículo por artículo a la **Res. SBS 00053-2023** y alineado con **SR 26-2**, **PRA SS1/23**, IFRS 9 y el **EU AI Act** | **Estándar operativo para agentes de IA** con verificador automático de evidencias |
 
@@ -5852,9 +5856,11 @@ Cada estándar distingue lo **vigente** (obligatorio), lo que está en **borrado
 
 ## Cómo usarlo
 
-**Para leer.** Abre `site/index.html` con doble clic (funciona sin servidor). Incluye buscador, panel de detalle por
+**Para leer.** Entra al [sitio publicado](https://yuriplasencia.github.io/estandares-modelos/) o abre `site/index.html` con doble clic (funciona sin servidor). Incluye buscador, panel de detalle por
 requisito con sus lecturas, planificador por estándar, Tier, tipo de modelo y enfoque, y el editor de actas.
 También puedes leer directamente `docs/` (Markdown con fórmulas en LaTeX).
+En el sitio publicado, las actas se guardan en el navegador de cada persona; para editarlas en equipo, usa el
+repositorio con `tools/acta.py` o una instancia con almacenamiento compartido.
 
 **Para trabajar un modelo.**
 
