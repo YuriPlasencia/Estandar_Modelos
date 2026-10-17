@@ -1,0 +1,66 @@
+# Datos del documento metodológico. Completa los bloques; lo que quede vacío aparecerá en el documento como
+# «Completar», con el requisito del estándar que lo exige. Ejemplo completo: documento-ejemplo.yaml.
+# Genera el documento con:  python tools/documento.py render docs/documento.yaml
+
+documento:
+  titulo:
+  tipo: Documento metodológico del modelo
+  version: "0.1"
+  estado: Borrador
+  fecha:
+  clasificacion: Uso interno
+  autores: []            # - {nombre: ..., rol: Desarrollo}
+
+modelo:
+  codigo:
+  nombre:
+  estandar: Desarrollo   # Desarrollo | Calibración | Parámetros | Pricing
+  tier:                  # 1 | 2 | 3 | 4
+  tipo_modelo:           # lineal | ml | arbol | acp
+  enfoque:               # agil | tradicional
+  uso:
+  proposito:
+  usos_no_permitidos: []
+  dueno:
+  reemplaza:
+
+resumen:
+
+datos:
+  fuentes: []            # - {nombre: ..., descripcion: ..., desfase: 1 mes}
+  universo:
+  ventana: {}            # train_test, meses_train_test, oot, meses_oot
+  default: {}            # definicion
+  exclusiones: []        # - {criterio: ..., registros: ..., pct: 0.05}
+  calidad:
+
+segmentacion:
+  decision:
+  sustento:
+
+variables:
+  no_anticipacion:
+  embudo: []             # - {etapa: ..., quedan: ..., motivo: ...}
+  finales: []            # - {nombre: ..., descripcion: ..., iv: ..., psi: ..., signo: "+"}
+
+metodologia: {}          # algoritmo, benchmark {algoritmo, gini_oot}, validacion_cruzada, combinaciones_hp, semilla, hiperparametros
+
+desempeno: {}            # muestras [{muestra, n, tasa, gini, ks}], mensual [{mes, gini}], vigente {gini_oot}, calibracion [{tramo, n, pd, tasa_obs}]
+
+interpretabilidad: {}    # explicacion, sensibilidad, equidad
+
+gestion: {}              # punto_corte, impactos [{indicador, actual, propuesto}], forzajes
+
+limitaciones: []
+
+seguimiento: {}          # plan
+
+gobierno: {}             # actas [{numero, hito, fecha, estado}]
+
+umbrales: {}             # valores obtenidos, p. ej. U-11: 1.9 · U-38: 0.41 · U-39: 0
+
+excepciones: []          # - {umbral: U-11, justificacion: ..., acta: ...}
+
+evidencias: null         # ruta a evidencias.yaml para la matriz de cumplimiento
+
+control_cambios: []      # - {version: "0.1", fecha: ..., autor: ..., cambio: ...}

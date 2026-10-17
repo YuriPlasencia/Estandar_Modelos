@@ -44,6 +44,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 | "¿Mi modelo puede tener 12 pts de diferencia Train–OOT?" | Responder con U-11: máximo 10 pts; si se excede, sustentar y presentar en Comité |
 | "Revisa este documento metodológico antes de validación" | Contrastar contra `val.yaml` (VAL-M) y listar requisitos sin evidencia |
 | "Redacta el acta de la reunión 5" | `python tools/acta.py nueva --tipo R5 ...`, completar desarrollo, decisiones (con ID) y acuerdos desde las notas; dejar la conformidad en *Pendiente*; `exportar --docx --md`. Ver `docs/plantillas/acta-de-reunion.md` |
+| "Redacta el documento metodológico" | `python tools/documento.py nuevo REPO`; completar `docs/documento.yaml` solo con lo que sustentan los reportes (lo demás queda como «Completar»); `render`; no tocar gobierno ni aprobaciones. Ver `docs/plantillas/documento-metodologico.md` |
 | "Recalibra la PD lifetime de consumo para IFRS 9" | Seguir `docs/parametros/` (R2→R3→R6→R7→R8); respetar U-27 a U-34; nunca aprobar overlays ni la ECL: lo hace el comité de provisiones |
 | "Arma el caso de pricing de tarjeta de crédito" | Seguir `docs/pricing/` en orden P1→P9; respetar U-18 a U-26; ver los roles y límites de `docs/pricing/agentes-ia.md`. **Nunca** fijar, publicar ni aprobar precios |
 | "Estima la duración" | Aplicar el modelo de esfuerzo v2 (`tools/esfuerzo.py` con `catalogo/parametros_esfuerzo.yaml`); reportar semanas con personas y con agente, y los supuestos usados |

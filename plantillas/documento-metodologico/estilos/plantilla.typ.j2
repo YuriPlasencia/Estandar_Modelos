@@ -1,0 +1,97 @@
+// Maquetación del PDF del documento metodológico (Typst). Generado por tools/documento.py.
+// Estándares de Modelos en Banca · {{ custodio }}
+#let tinta = rgb("#1B2A2F")
+#let sello = rgb("#7A2632")
+#let gris = rgb("#5E6B70")
+#let regla = rgb("#D5DBD8")
+#let lavado = rgb("#F1F4F2")
+
+#let conf(
+  title: none, subtitle: none, authors: (), keywords: (), date: none,
+  abstract-title: none, abstract: none, thanks: none, cols: 1,
+  margin: (x: 2cm, top: 2.6cm, bottom: 2.2cm), paper: "a4", lang: "es", region: "PE",
+  font: none, fontsize: 10pt, mathfont: none, codefont: none, linestretch: 1,
+  sectionnumbering: none, linkcolor: none, citecolor: none, filecolor: none,
+  pagenumbering: "1", doc,
+) = {
+  set document(title: title, keywords: keywords)
+  set text(lang: lang, region: region, size: fontsize, fill: tinta,
+           font: ("Segoe UI", "Calibri", "Libertinus Serif"))
+  set par(justify: true, leading: 0.62em, spacing: 0.9em)
+  set page(
+    paper: paper,
+    margin: (x: 2cm, top: 2.6cm, bottom: 2.2cm),
+    header: context {
+      if counter(page).get().first() > 1 [
+        #set text(size: 7.5pt, fill: gris)
+        #grid(columns: (1fr, auto),
+          text(fill: sello, weight: "bold", tracking: 0.04em)[ESTÁNDARES DE MODELOS EN BANCA],
+          [{{ codigo }} · {{ titulo_corto }} · v{{ version }}])
+        #v(-0.35em)
+        #line(length: 100%, stroke: 0.6pt + sello)
+      ]
+    },
+    footer: context [
+      #line(length: 100%, stroke: 0.4pt + regla)
+      #v(-0.3em)
+      #set text(size: 7.5pt, fill: gris)
+      #grid(columns: (1fr, auto),
+        [#text(weight: "bold", fill: tinta)[{{ custodio }}] · {{ clasificacion }}],
+        [Página #counter(page).display() de #counter(page).final().first()])
+    ],
+  )
+  // Títulos
+  set heading(numbering: "1.1")
+  show heading.where(level: 1): it => {
+    v(1.1em)
+    block(below: 0.7em)[
+      #set text(font: ("Georgia", "Libertinus Serif"), size: 15pt, weight: "bold", fill: sello)
+      #it
+      #v(-0.45em)
+      #line(length: 100%, stroke: 0.5pt + regla)
+    ]
+  }
+  show heading.where(level: 2): it => block(above: 1.1em, below: 0.55em)[
+    #set text(font: ("Georgia", "Libertinus Serif"), size: 11.5pt, weight: "bold", fill: tinta)
+    #it
+  ]
+  show heading.where(level: 3): set text(size: 10pt, weight: "bold", fill: gris)
+  // Tablas
+  set table(inset: (x: 6pt, y: 4.5pt), stroke: (x, y) => if y == 0 { (bottom: 0.8pt + tinta) } else { (bottom: 0.3pt + regla) },
+            fill: (x, y) => if y == 0 { lavado })
+  show table.cell.where(align: auto): set align(left)
+  show table: set text(size: 8.6pt)
+  show table: set par(justify: false)
+  show figure.where(kind: table): set block(breakable: true)
+  // Citas como avisos
+  show quote: it => block(fill: lavado, inset: 9pt, radius: 3pt, width: 100%, stroke: (left: 2.5pt + sello))[#it.body]
+  show link: set text(fill: sello)
+  show raw: set text(font: ("Cascadia Mono", "Consolas", "DejaVu Sans Mono"), size: 8.5pt)
+
+  // Portada
+  page(header: none, footer: none, margin: (x: 2.2cm, y: 2.4cm))[
+    #set par(justify: false)
+    #text(size: 8.5pt, fill: sello, weight: "bold", tracking: 0.08em)[ESTÁNDARES DE MODELOS EN BANCA]
+    #v(4.2cm)
+    #text(font: ("Georgia", "Libertinus Serif"), size: 26pt, weight: "bold", fill: tinta)[#title]
+    #v(0.4em)
+    #if subtitle != none { text(size: 13pt, fill: gris)[#subtitle] }
+    #v(1.6cm)
+    #line(length: 4cm, stroke: 2pt + sello)
+    #v(0.8cm)
+    #grid(columns: (4.2cm, 1fr), row-gutter: 0.75em,
+      text(fill: gris)[Código de modelo], [*{{ codigo }}*],
+      text(fill: gris)[Versión del documento], [{{ version }} · {{ estado }}],
+      text(fill: gris)[Fecha], [{{ fecha }}],
+      text(fill: gris)[Tier · tipo de modelo], [{{ tier }} · {{ tipo_modelo }}],
+      text(fill: gris)[Clasificación], [{{ clasificacion }}],
+    )
+    #v(1fr)
+    #line(length: 100%, stroke: 0.4pt + regla)
+    #text(size: 8pt, fill: gris)[Documento generado con la plantilla dinámica del estándar (tools/documento.py) · #text(weight: "bold", fill: tinta)[{{ custodio }}]]
+  ]
+  counter(page).update(1)
+  outline(title: [Contenido], depth: 2, indent: 1em)
+  pagebreak()
+  doc
+}

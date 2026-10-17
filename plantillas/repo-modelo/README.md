@@ -12,7 +12,9 @@ make verificar
 1. Completa `MODEL_CARD.md` (ficha de nacimiento).
 2. Trabaja fase por fase; al cerrar cada requisito, actualiza su entrada en `evidencias.yaml`.
 3. Crea las actas con `python ../estandares-modelos/tools/acta.py nueva --tipo R1 ... -o actas/acta-01.json`.
-4. Antes de cada punto de control (G0–G6), `make verificar` debe quedar sin brechas para las fases cerradas.
+4. Crea el documento metodológico con `python ../estandares-modelos/tools/documento.py nuevo .`, completa
+   `docs/documento.yaml` y genera Markdown, HTML, Word y PDF con `make documento`.
+5. Antes de cada punto de control (G0–G6), `make verificar` debe quedar sin brechas para las fases cerradas.
 
 ## Estructura
 

@@ -396,7 +396,7 @@ def main():
     for r in reqs:
         if r["fase"] != "VAL":
             r["naturaleza"] = esfuerzo.naturaleza(r)
-    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.1.0",
+    meta = {"nombre": "Estándares de Modelos en Banca", "custodio": CUSTODIO, "version": "2.2.0",
             "generado": date.today().isoformat(), "n_requisitos": len(reqs),
             "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"}
     for r in reqs:

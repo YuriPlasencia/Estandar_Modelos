@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.1.0 · 2026-10-17
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v2.2.0 · 2026-10-17
 
 
 ========== docs/index.md [Vigente] ==========
@@ -1828,7 +1828,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (96 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (97 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -2265,6 +2265,10 @@ del documento metodológico.
 - **`DES-D4-11.01.06`** Especificar las versiones y rutas de las herramientas de procesamiento estadístico usadas y la funcionalidad de estas en cuanto al uso dado, así como las rutas productivas deonde se almacenará todo el desarrollo del proyecto
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d trad. · Automatización: 1
+
+- **`DES-D4-11.01.07`** Elaborar el documento metodológico con la plantilla dinámica del estándar: registrar los datos del modelo en docs/documento.yaml y generar el documento con tools/documento.py (Markdown, HTML, Word y PDF desde la misma fuente). El documento evalúa los umbrales obtenidos, incluye la matriz de cumplimiento tomada de evidencias.yaml y no se presenta a Comité ni a Validación con secciones «Completar» pendientes.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d trad. · Automatización: 3 · Eficiencia · Entregable: Documento 11: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf). · Nota: Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos.
 
 #### 11.2 Consolidación
 
@@ -5653,6 +5657,85 @@ Hay un acta de ejemplo ya aprobada, con datos ficticios, en `ejemplos/actas/` (.
 - No se copian datos de clientes ni nombres de tablas productivas en el acta.
 
 
+========== docs/plantillas/documento-metodologico.md [Vigente] ==========
+
+# Plantilla · Documento metodológico
+
+El documento metodológico (entregable 11 de DES-D4-11) se escribe **una sola vez, como datos**, y se genera en
+todos los formatos que pide el proceso: Markdown para Git y agentes, HTML para leer en pantalla, Word para la
+revisión con control de cambios y PDF para Comité y Validación (DES-D4-11.01.07).
+
+La plantilla es **dinámica**: lo que falte no se omite, aparece como un aviso «Completar» que cita el requisito del
+estándar que lo exige. Así, un borrador muestra de un vistazo qué le falta para estar listo.
+
+## Cómo se usa
+
+```bash
+pip install pyyaml jinja2 pypandoc_binary typst
+python tools/documento.py nuevo ../MOD-ORI-001          # crea docs/documento.yaml prellenado
+python tools/documento.py render ../MOD-ORI-001/docs/documento.yaml
+python tools/documento.py render ../MOD-ORI-001/docs/documento.yaml --formatos md,pdf --salida reports/
+```
+
+`nuevo` toma el código, el Tier, el tipo de modelo y el enfoque de `MODEL_CARD.md` y de `evidencias.yaml`, y enlaza
+el manifiesto de evidencias para la matriz de cumplimiento. `render` deja los archivos en `docs/salida/`, con el
+nombre `CODIGO_documento-metodologico_vX.Y` (Markdown, HTML, Word y PDF; con `--formatos qmd`, también Quarto).
+
+En el repositorio de un modelo basta `make documento`.
+
+## Qué genera automáticamente
+
+| Elemento | Origen |
+|---|---|
+| **Evaluación de umbrales** (cumple / excepción / no cumple) | Bloque `umbrales` del YAML, con las mismas reglas que `tools/verificar.py`; U-01 se deriva de la ventana |
+| **Matriz de cumplimiento** por fase | Requisitos aplicables al estándar, Tier, tipo y enfoque; estado tomado de `evidencias.yaml` |
+| **Gráfico de estabilidad** del Gini mensual | `desempeno.mensual`, con la línea de entrenamiento y la banda de U-11 |
+| **Alertas de fuga** | Variables finales con IV mayor a 0.50 (U-38) |
+| **Desviación de calibración** por tramo | `desempeno.calibracion` |
+| **Lecturas recomendadas** | Literatura del catálogo asociada a los requisitos citados en el documento |
+| **Control del documento, portada, encabezado y pie** | Bloques `documento` y `control_cambios` |
+
+## Estructura del documento
+
+1. Control del documento y control de cambios
+2. Resumen ejecutivo
+3. Propósito, uso y alcance (usos no permitidos)
+4. Datos: fuentes y no anticipación, universo, ventana, definición de default, exclusiones y calidad
+5. Segmentación
+6. Variables: embudo de selección y variables finales
+7. Metodología: algoritmo, benchmark interpretable, validación cruzada e hiperparámetros
+8. Desempeño: muestras, comparación con el modelo vigente, estabilidad mensual y calibración
+9. Interpretabilidad, sensibilidad y equidad
+10. Integración a la gestión: punto de corte, impactos y forzajes
+11. Limitaciones
+12. Seguimiento
+13. Cumplimiento del estándar: umbrales y matriz de requisitos
+14. Gobierno y aprobaciones (actas)
+15. Referencias
+
+## Herramientas
+
+| Herramienta | Para qué |
+|---|---|
+| **Jinja2** | Plantilla `plantillas/documento-metodologico/documento.md.j2` |
+| **Pandoc** (`pypandoc_binary`) | Markdown → HTML autocontenido y Word con la plantilla de estilos `estilos/referencia.docx` |
+| **Typst** | PDF con portada, índice, encabezado, pie con número de página y sello (`estilos/plantilla.typ.j2`) |
+| **Quarto** (opcional) | Salida `.qmd` para quien quiera integrar código ejecutable al documento |
+
+Para ajustar la marca o los estilos de Word: `python tools/documento.py estilos` regenera `referencia.docx`.
+
+## Ejemplo
+
+`plantillas/documento-metodologico/documento-ejemplo.yaml` es un modelo ficticio completo (originación de tarjeta de
+crédito, Tier II, machine learning). `ejemplos/documento-metodologico/` tiene su salida en los cuatro formatos.
+
+## Para agentes de IA
+
+Un agente puede completar `docs/documento.yaml` desde los reportes del repositorio y generar el documento. No
+completa las secciones de **gobierno y aprobaciones** ni cambia el estado a *Aprobado*: eso lo hace una persona
+(AGT). Si una sección no tiene sustento en los reportes, la deja vacía para que aparezca como «Completar».
+
+
 ========== AGENTS.md [] ==========
 
 # Instrucciones para agentes de IA
@@ -5701,6 +5784,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 | "¿Mi modelo puede tener 12 pts de diferencia Train–OOT?" | Responder con U-11: máximo 10 pts; si se excede, sustentar y presentar en Comité |
 | "Revisa este documento metodológico antes de validación" | Contrastar contra `val.yaml` (VAL-M) y listar requisitos sin evidencia |
 | "Redacta el acta de la reunión 5" | `python tools/acta.py nueva --tipo R5 ...`, completar desarrollo, decisiones (con ID) y acuerdos desde las notas; dejar la conformidad en *Pendiente*; `exportar --docx --md`. Ver `docs/plantillas/acta-de-reunion.md` |
+| "Redacta el documento metodológico" | `python tools/documento.py nuevo REPO`; completar `docs/documento.yaml` solo con lo que sustentan los reportes (lo demás queda como «Completar»); `render`; no tocar gobierno ni aprobaciones. Ver `docs/plantillas/documento-metodologico.md` |
 | "Recalibra la PD lifetime de consumo para IFRS 9" | Seguir `docs/parametros/` (R2→R3→R6→R7→R8); respetar U-27 a U-34; nunca aprobar overlays ni la ECL: lo hace el comité de provisiones |
 | "Arma el caso de pricing de tarjeta de crédito" | Seguir `docs/pricing/` en orden P1→P9; respetar U-18 a U-26; ver los roles y límites de `docs/pricing/agentes-ia.md`. **Nunca** fijar, publicar ni aprobar precios |
 | "Estima la duración" | Aplicar el modelo de esfuerzo v2 (`tools/esfuerzo.py` con `catalogo/parametros_esfuerzo.yaml`); reportar semanas con personas y con agente, y los supuestos usados |
@@ -5730,6 +5814,18 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
+
+## [2.2.0] — 2026-10-17
+
+### Nuevo
+- **Plantilla dinámica del documento metodológico** (DES-D4-11.01.07): los datos del modelo se registran en
+  `docs/documento.yaml` y `tools/documento.py` genera Markdown, HTML, Word y PDF (y Quarto, opcional) desde la
+  misma fuente, con Jinja2, Pandoc y Typst.
+- El documento evalúa los umbrales obtenidos con las reglas de `tools/verificar.py`, arma la matriz de
+  cumplimiento desde `evidencias.yaml`, grafica la estabilidad del Gini, alerta variables con IV mayor a 0.50 y
+  marca como «Completar» lo que falta, citando el requisito que lo exige.
+- Página `docs/plantillas/documento-metodologico.md`, ejemplo ficticio completo y objetivo `make documento` en la
+  plantilla del repositorio de un modelo.
 
 ## [2.1.0] — 2026-10-17
 
@@ -5820,7 +5916,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.1.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.2.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 
@@ -5870,7 +5966,12 @@ python tools/verificar.py --init ../MOD-ORI-001 --estandar Desarrollo --tier 2 -
 python tools/verificar.py --plan ../MOD-ORI-001 --fase DES-D4
 python tools/acta.py nueva --tipo R5 --codigo MOD-ORI-001 --nombre "Score de originación" -o ../MOD-ORI-001/actas/acta-05.json
 python tools/acta.py exportar ../MOD-ORI-001/actas/acta-05.json --docx --md
+python tools/documento.py nuevo ../MOD-ORI-001
+python tools/documento.py render ../MOD-ORI-001/docs/documento.yaml   # .md, .html, .docx y .pdf
 ```
+
+El documento metodológico se genera desde datos (`docs/documento.yaml`) con la plantilla dinámica; requiere
+`pip install jinja2 pypandoc_binary typst`. Ver `docs/plantillas/documento-metodologico.md`.
 
 Parte de la plantilla `plantillas/repo-modelo/`.
 
@@ -5884,9 +5985,9 @@ catalogo/            Fuente de verdad: requisitos, umbrales, actas, literatura y
 docs/                Documentación por estándar (Markdown); los bloques de catálogo se generan
 dist/                Generado: JSON para agentes y llms-full.txt
 site/                Generado: sitio autocontenido (index.html)
-plantillas/          Plantilla de repositorio de un modelo
-ejemplos/            Acta de ejemplo con datos ficticios
-tools/               build.py · verificar.py · acta.py · esfuerzo.py · generadores de catálogo
+plantillas/          Plantilla de repositorio de un modelo y plantilla dinámica del documento metodológico
+ejemplos/            Acta y documento metodológico de ejemplo con datos ficticios
+tools/               build.py · verificar.py · acta.py · documento.py · esfuerzo.py · generadores de catálogo
 ```
 
 ## Contribuir

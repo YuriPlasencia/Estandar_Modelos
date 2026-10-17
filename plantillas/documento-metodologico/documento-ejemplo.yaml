@@ -1,0 +1,158 @@
+# Datos del documento metodológico · EJEMPLO CON DATOS FICTICIOS
+# Genera el documento con:  python tools/documento.py render plantillas/documento-metodologico/documento-ejemplo.yaml
+# Cada bloque alimenta una sección. Los campos vacíos o ausentes aparecen en el documento como «Completar», con el
+# requisito del estándar que los exige.
+
+documento:
+  titulo: Score de originación de tarjeta de crédito
+  tipo: Documento metodológico del modelo
+  version: "1.0"
+  estado: Para Comité de Modelos
+  fecha: 2026-10-20
+  clasificacion: Uso interno
+  autores:
+    - {nombre: Analista de modelos (ejemplo), rol: Desarrollo}
+    - {nombre: Jefe de modelos (ejemplo), rol: Revisión}
+
+modelo:
+  codigo: MOD-EJEMPLO-001
+  nombre: Score de originación TC — ejemplo
+  estandar: Desarrollo
+  tier: 2
+  tipo_modelo: ml
+  enfoque: agil
+  uso: Admisión de solicitudes de tarjeta de crédito de personas naturales
+  proposito: >-
+    Ordenar por riesgo las solicitudes de tarjeta de crédito para sustentar la decisión de aprobación y el
+    tramo de línea inicial.
+  usos_no_permitidos:
+    - Pricing individual sin un modelo de respuesta aprobado (estándar PRC).
+    - Clientes con más de 6 meses de antigüedad (corresponde el modelo de comportamiento).
+  dueno: Gerencia de producto de tarjetas (ejemplo)
+  reemplaza: MOD-EJEMPLO-000 (versión 2021)
+
+resumen: >-
+  El modelo es un gradient boosting con restricciones monotónicas sobre 24 variables de buró, de relación con el
+  banco y de la solicitud. Alcanza un Gini OOT de 52.1 (54.0 en entrenamiento; diferencia de 1.9 pts) y supera
+  en 6.4 pts al modelo vigente en las cosechas aprobadas de los últimos seis meses. Su uso propuesto reduce en
+  0.8 pp la mora a 12 meses de la cosecha manteniendo el volumen de aprobación.
+
+datos:
+  fuentes:
+    - {nombre: Buró de crédito, descripcion: Endeudamiento y comportamiento en el sistema, desfase: 1 mes}
+    - {nombre: Relación con el banco, descripcion: "Productos, saldos y comportamiento de pago interno", desfase: 0 meses}
+    - {nombre: Solicitud, descripcion: Datos declarados y del canal al momento de la solicitud, desfase: 0 meses}
+  universo: Solicitudes aprobadas de tarjeta de crédito de personas naturales, enero 2023 a diciembre 2024.
+  ventana:
+    train_test: enero 2023 a junio 2024
+    meses_train_test: 18
+    oot: julio a diciembre 2024
+    meses_oot: 6
+  default:
+    definicion: Atraso mayor a 60 días al menos una vez en los 12 meses siguientes a la originación (U-17).
+  exclusiones:
+    - {criterio: Pautas duras de política, registros: 41250, pct: 0.062}
+    - {criterio: Desempeño incompleto (menos de 12 meses), registros: 18400, pct: 0.028}
+    - {criterio: Indeterminados (atraso máximo entre 31 y 60 días), registros: 9870, pct: 0.015}
+    - {criterio: Fraude confirmado, registros: 640, pct: 0.001}
+  calidad: >-
+    Certificación de calidad aprobada (Documento 6). Sin duplicados; fill rate mínimo de las variables finales de 91 %.
+
+segmentacion:
+  decision: Modelo unisegmento.
+  sustento: >-
+    Los modelos por segmento (ingreso dependiente e independiente) no superaron al unisegmento en más de 0.6 pts de
+    Gini OOT y reducían la materialidad de defaults por segmento.
+
+variables:
+  no_anticipacion: >-
+    Las 412 variables candidatas tienen fecha de referencia y desfase documentados; la prueba automática confirmó que
+    ninguna usa información posterior a la fecha de solicitud.
+  embudo:
+    - {etapa: Variables candidatas, quedan: 412}
+    - {etapa: No anticipación (U-39), quedan: 405, motivo: 7 variables contemporáneas (saldos al cierre del mes de solicitud)}
+    - {etapa: Fill rate mínimo del plan (70 %), quedan: 351, motivo: 54 variables con bajo poblamiento}
+    - {etapa: Estabilidad PSI ≤ 10 % (U-02), quedan: 318, motivo: 33 variables inestables}
+    - {etapa: IV entre 0.02 y 0.50 (U-38), quedan: 196, motivo: 120 sin poder predictivo y 2 con sospecha de fuga}
+    - {etapa: Correlación < 60 % (U-06), quedan: 88}
+    - {etapa: Selección por gain y sentido económico, quedan: 24}
+  finales:
+    - {nombre: max_atraso_buro_6m, descripcion: Atraso máximo en el sistema en los 6 meses previos, iv: 0.41, psi: 0.03, signo: "+"}
+    - {nombre: utilizacion_lineas_buro, descripcion: Uso promedio de líneas revolventes en el sistema, iv: 0.29, psi: 0.05, signo: "+"}
+    - {nombre: antiguedad_buro_meses, descripcion: Meses desde el primer producto en el sistema, iv: 0.22, psi: 0.02, signo: "−"}
+    - {nombre: num_consultas_3m, descripcion: Consultas al buró en los 3 meses previos, iv: 0.17, psi: 0.06, signo: "+"}
+    - {nombre: ratio_cuota_ingreso, descripcion: Cuota estimada sobre ingreso declarado, iv: 0.12, psi: 0.04, signo: "+"}
+
+metodologia:
+  algoritmo: Gradient boosting (XGBoost) con restricciones monotónicas en las 24 variables.
+  benchmark: {algoritmo: Regresión logística con WOE, gini_oot: 49.3}
+  validacion_cruzada: 5 particiones temporales.
+  combinaciones_hp: 60
+  semilla: 20261017
+  hiperparametros: {max_depth: 4, eta: 0.05, n_estimators: 600, subsample: 0.8, colsample_bytree: 0.7}
+
+desempeno:
+  muestras:
+    - {muestra: Entrenamiento, n: 412300, tasa: 0.071, gini: 54.0, ks: 40.8}
+    - {muestra: Prueba, n: 103080, tasa: 0.070, gini: 52.9, ks: 39.9}
+    - {muestra: OOT, n: 96450, tasa: 0.076, gini: 52.1, ks: 39.2}
+  mensual:
+    - {mes: 2024-07, gini: 52.8}
+    - {mes: 2024-08, gini: 51.9}
+    - {mes: 2024-09, gini: 52.4}
+    - {mes: 2024-10, gini: 51.6}
+    - {mes: 2024-11, gini: 52.0}
+    - {mes: 2024-12, gini: 51.8}
+  vigente: {gini_oot: 45.7}
+  calibracion:
+    - {tramo: "1", n: 9640, pd: 0.012, tasa_obs: 0.011}
+    - {tramo: "2", n: 9650, pd: 0.024, tasa_obs: 0.026}
+    - {tramo: "3", n: 9645, pd: 0.041, tasa_obs: 0.039}
+    - {tramo: "4", n: 9640, pd: 0.068, tasa_obs: 0.071}
+    - {tramo: "5", n: 9650, pd: 0.112, tasa_obs: 0.108}
+    - {tramo: "6", n: 9645, pd: 0.198, tasa_obs: 0.204}
+
+interpretabilidad:
+  explicacion: >-
+    Las contribuciones SHAP confirman el sentido económico de las 24 variables; la estabilidad de las explicaciones
+    se verificó en 50 remuestreos y no hubo variables con contribución inestable.
+  sensibilidad: >-
+    Un deterioro de 10 % en las variables de buró aumenta la PD promedio de 7.1 % a 7.9 %; el ordenamiento se mantiene.
+  equidad: >-
+    No se usan atributos protegidos. La edad se probó como proxy: el AUC para predecirla con las variables del modelo
+    es 0.58. Las tasas de verdaderos positivos por rango de edad difieren en menos de 3 pp.
+
+gestion:
+  punto_corte: Aprobación hasta el tramo 5; el tramo 6 pasa a revisión manual.
+  impactos:
+    - {indicador: Tasa de aprobación, actual: 0.62, propuesto: 0.62}
+    - {indicador: Mora 60+ a 12 meses de la cosecha, actual: 0.071, propuesto: 0.063}
+  forzajes: Solo jefaturas de agencia, con motivo de una lista cerrada, hasta 3 % de las decisiones (U-36).
+
+limitaciones:
+  - El modelo no se validó para clientes sin historial en el buró (5 % de las solicitudes); se usa una política experta.
+  - El desempeño en el canal digital es 3 pts de Gini menor y se monitoreará por separado.
+
+seguimiento:
+  plan: Seguimiento mensual de PSI y forzajes; discriminación y calibración trimestral con cosechas maduras (SEG-S1).
+
+gobierno:
+  actas:
+    - {numero: ACTA-MOD-EJEMPLO-001-01, hito: Reunión 1, fecha: 2026-06-02, estado: Aprobada}
+    - {numero: ACTA-MOD-EJEMPLO-001-05, hito: Reunión 5 · Selección del modelo final, fecha: 2026-09-18, estado: Aprobada}
+
+umbrales:              # valores obtenidos; el documento los evalúa contra el estándar
+  U-02: 0.06           # PSI máximo de las variables finales
+  U-03: 1.01           # ratio TM/TG de la muestra
+  U-06: 0.57           # correlación máxima entre continuas
+  U-10: 60             # combinaciones de hiperparámetros
+  U-11: 1.9            # |Gini Train − Gini OOT|
+  U-38: 0.41           # IV máximo de las variables finales
+  U-39: 0              # variables con información posterior a la observación
+
+excepciones: []
+
+evidencias: null       # ruta a evidencias.yaml para la matriz de cumplimiento (opcional)
+
+control_cambios:
+  - {version: "1.0", fecha: 2026-10-20, autor: Analista de modelos (ejemplo), cambio: Versión para Comité de Modelos}

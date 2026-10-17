@@ -1261,6 +1261,24 @@ actividades:
     arbol: {agil: 0.0, tradicional: 0.0}
     acp: {agil: 0.0, tradicional: 0.0}
   aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+- id: DES-D4-11.01.07
+  tarea: Documentación Metodológica
+  subtarea: Elaboaración de la documentación
+  actividad: "Elaborar el documento metodológico con la plantilla dinámica del estándar: registrar los datos del modelo en docs/documento.yaml y generar el documento con tools/documento.py (Markdown, HTML, Word y PDF desde la misma fuente). El documento evalúa los umbrales obtenidos, incluye la matriz de cumplimiento tomada de evidencias.yaml y no se presenta a Comité ni a Validación con secciones «Completar» pendientes."
+  critico: false
+  eficiencia: true
+  nivel_automatizacion: 3
+  dias_esfuerzo:
+    lineal: {agil: 0.0, tradicional: 0.0}
+    ml: {agil: 0.0, tradicional: 0.0}
+    arbol: {agil: 0.0, tradicional: 0.0}
+    acp: {agil: 0.0, tradicional: 0.0}
+  aplica_tier: {lineal: [1, 2, 3, 4], ml: [1, 2, 3, 4], arbol: [1, 2, 3, 4], acp: [1, 2, 3, 4]}
+  entregables:
+  - tipo: Documento
+    numero: 11
+    descripcion: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf).
+  nota_origen: "Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos."
 - id: DES-D4-11.02.01
   tarea: Documentación Metodológica
   subtarea: Consolidación

@@ -4,6 +4,18 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [2.2.0] — 2026-10-17
+
+### Nuevo
+- **Plantilla dinámica del documento metodológico** (DES-D4-11.01.07): los datos del modelo se registran en
+  `docs/documento.yaml` y `tools/documento.py` genera Markdown, HTML, Word y PDF (y Quarto, opcional) desde la
+  misma fuente, con Jinja2, Pandoc y Typst.
+- El documento evalúa los umbrales obtenidos con las reglas de `tools/verificar.py`, arma la matriz de
+  cumplimiento desde `evidencias.yaml`, grafica la estabilidad del Gini, alerta variables con IV mayor a 0.50 y
+  marca como «Completar» lo que falta, citando el requisito que lo exige.
+- Página `docs/plantillas/documento-metodologico.md`, ejemplo ficticio completo y objetivo `make documento` en la
+  plantilla del repositorio de un modelo.
+
 ## [2.1.0] — 2026-10-17
 
 ### Nuevo

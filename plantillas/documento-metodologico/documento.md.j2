@@ -1,0 +1,220 @@
+---
+title: "{{ d.documento.titulo or d.modelo.nombre }}"
+subtitle: "{{ d.documento.tipo or 'Documento metodológico del modelo' }} · {{ d.modelo.codigo }}"
+{% if d.documento.autores %}author:
+{% for a in d.documento.autores %}  - "{{ a.nombre }} ({{ a.rol }})"
+{% endfor %}{% endif %}date: "{{ d.documento.fecha }}"
+lang: es-PE
+toc: true
+toc-depth: 2
+number-sections: true
+---
+
+{# Plantilla dinámica del documento metodológico. Los valores vienen de documento.yaml; las funciones (completar, pct,
+   num, umbral) y las tablas calculadas (eval_umbrales, matriz, graficos) las agrega tools/documento.py. #}
+
+# Control del documento
+
+| Campo | Valor |
+|---|---|
+| Código de modelo | {{ d.modelo.codigo }} |
+| Nombre | {{ d.modelo.nombre }} |
+| Estándar aplicado | {{ d.modelo.estandar }} · Tier {{ roman(d.modelo.tier) }}{% if d.modelo.tipo_modelo %} · {{ modelo_lbl(d.modelo.tipo_modelo) }}{% endif %}{% if d.modelo.enfoque %} · enfoque {{ d.modelo.enfoque }}{% endif %} |
+| Versión y estado | {{ d.documento.version }} · {{ d.documento.estado }} |
+| Clasificación | {{ d.documento.clasificacion or 'Uso interno' }} |
+| Versión del estándar | Estándares de Modelos en Banca v{{ version_estandar }} |
+
+{% if d.control_cambios %}
+**Control de cambios** (DES-D4-11.01.03)
+
+| Versión | Fecha | Autor | Cambio |
+|---|---|---|---|
+{% for c in d.control_cambios %}| {{ c.version }} | {{ c.fecha }} | {{ c.autor }} | {{ c.cambio }} |
+{% endfor %}
+{% else %}{{ completar("Registra el control de cambios del documento.", "DES-D4-11.01.03") }}{% endif %}
+
+# Resumen ejecutivo
+
+{{ d.resumen or completar("Resume en un párrafo: qué hace el modelo, su desempeño frente al vigente y su impacto esperado en la gestión.", "DES-D4-12.01.01") }}
+
+# Propósito, uso y alcance
+
+**Propósito.** {{ d.modelo.proposito or completar("Describe el problema de negocio y el objetivo del modelo.", "DES-D1-01.01.01") }}
+
+**Uso aprobado.** {{ d.modelo.uso or completar("Define la decisión que soporta el modelo y su población de uso.", "DES-D1-01.04.04") }}
+
+{% if d.modelo.usos_no_permitidos %}**Usos no permitidos.**
+
+{% for u in d.modelo.usos_no_permitidos %}- {{ u }}
+{% endfor %}{% else %}{{ completar("Lista los usos no permitidos del modelo; todo uso nuevo requiere aprobación previa.", "GOB-G3-01.01.01") }}{% endif %}
+
+| Atributo | Valor |
+|---|---|
+| Dueño del modelo | {{ d.modelo.dueno or '—' }} |
+| Modelo que reemplaza | {{ d.modelo.reemplaza or 'Ninguno' }} |
+| Categoría (Tier) | {{ roman(d.modelo.tier) }} — determina la profundidad de validación y seguimiento (U-35) |
+
+# Datos
+
+## Fuentes y no anticipación
+
+{% if d.datos.fuentes %}| Fuente | Contenido | Desfase de disponibilidad |
+|---|---|---|
+{% for f in d.datos.fuentes %}| {{ f.nombre }} | {{ f.descripcion }} | {{ f.desfase }} |
+{% endfor %}{% else %}{{ completar("Documenta las fuentes y el desfase de disponibilidad de cada una.", "DES-D1-01.03.05") }}{% endif %}
+
+{{ d.variables.no_anticipacion or completar("Declara el resultado de la prueba de no anticipación: ninguna variable usa información posterior a la fecha de observación.", "U-39") }}
+
+## Universo, ventana y definición de default
+
+**Universo.** {{ d.datos.universo or completar("Define la población objetivo y el universo de modelamiento.", "DES-D1-01.04.01") }}
+
+{% if d.datos.ventana %}| Muestra | Período | Meses |
+|---|---|---:|
+| Entrenamiento y prueba | {{ d.datos.ventana.train_test }} | {{ d.datos.ventana.meses_train_test }} |
+| Fuera de tiempo (OOT) | {{ d.datos.ventana.oot }} | {{ d.datos.ventana.meses_oot }} |
+
+{% else %}{{ completar("Indica la ventana de entrenamiento/prueba y OOT.", "U-01") }}{% endif %}
+**Default.** {{ (d.datos.default or {}).definicion or completar("Escribe la definición de default aplicada.", "U-17") }}
+
+## Exclusiones
+
+{% if d.datos.exclusiones %}| Criterio | Registros | % del universo |
+|---|---:|---:|
+{% for e in d.datos.exclusiones %}| {{ e.criterio }} | {{ num(e.registros) }} | {{ pct(e.pct) }} |
+{% endfor %}{% else %}{{ completar("Detalla cada exclusión con su materialidad.", "DES-D1-04.01.07") }}{% endif %}
+
+## Calidad de datos
+
+{{ d.datos.calidad or completar("Resume la certificación de calidad de datos.", "DES-D2-02.03.02") }}
+
+# Segmentación
+
+**Decisión.** {{ d.segmentacion.decision or completar("Indica la segmentación final.", "DES-D3-01.02.04") }}
+
+{{ d.segmentacion.sustento or '' }}
+
+# Variables
+
+## Embudo de variables
+
+Orden aplicado antes del entrenamiento: no anticipación, univariado, fill rate y estabilidad, bivariado (WOE/IV),
+sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
+
+{% if d.variables.embudo %}| Etapa | Variables que quedan | Motivo de las salidas |
+|--------------------------------|---------:|--------------------------------|
+{% for e in d.variables.embudo %}| {{ e.etapa }} | {{ num(e.quedan) }} | {{ e.motivo or '' }} |
+{% endfor %}{% else %}{{ completar("Reporta el embudo de variables: cuántas entran y salen en cada filtro y por qué.", "DES-D4-03.03.04") }}{% endif %}
+
+## Variables finales
+
+{% if d.variables.finales %}| Variable | Descripción | IV | PSI | Signo |
+|---------------------------|------------------------------------------|------:|------:|:----:|
+{% for v in d.variables.finales %}| `{{ v.nombre }}` | {{ v.descripcion }} | {{ dec(v.iv, 2) }} | {{ dec(v.psi, 2) }} | {{ v.signo or '' }} |
+{% endfor %}
+{% if iv_alertas %}> **Alerta de fuga.** Variables con IV mayor a 0.50: {{ iv_alertas | join(', ') }}. Requieren investigación documentada (U-38).
+{% endif %}{% else %}{{ completar("Lista las variables finales con IV, PSI y signo esperado.", "DES-D4-04.07.02") }}{% endif %}
+
+# Metodología
+
+| Elemento | Detalle |
+|---|---|
+| Algoritmo | {{ d.metodologia.algoritmo or '—' }} |
+| Benchmark interpretable | {% if d.metodologia.benchmark %}{{ d.metodologia.benchmark.algoritmo }} (Gini OOT {{ dec(d.metodologia.benchmark.gini_oot, 1) }}){% else %}—{% endif %} |
+| Validación cruzada | {{ d.metodologia.validacion_cruzada or '—' }} |
+| Combinaciones de hiperparámetros | {{ d.metodologia.combinaciones_hp or '—' }} |
+| Semilla | {{ d.metodologia.semilla or '—' }} |
+
+{% if d.metodologia.hiperparametros %}**Hiperparámetros finales:** {% for k, v in d.metodologia.hiperparametros.items() %}`{{ k }}` = {{ v }}{% if not loop.last %} · {% endif %}{% endfor %}.
+{% endif %}
+{% if not d.metodologia.benchmark and d.modelo.tipo_modelo in ['ml', 'arbol'] %}{{ completar("Los modelos de ML deben compararse con un benchmark interpretable.", "DES-D4-05.03.02") }}{% endif %}
+
+# Desempeño
+
+## Discriminación por muestra
+
+{% if d.desempeno.muestras %}| Muestra | Registros | Tasa de default | Gini | KS |
+|---|---:|---:|---:|---:|
+{% for m in d.desempeno.muestras %}| {{ m.muestra }} | {{ num(m.n) }} | {{ pct(m.tasa) }} | {{ dec(m.gini, 1) }} | {{ dec(m.ks, 1) }} |
+{% endfor %}
+{% if gini_dif is not none %}Diferencia de Gini entre entrenamiento y OOT: **{{ dec(gini_dif, 1) }} pts** — {{ 'cumple' if gini_dif <= 10 else 'NO cumple' }} U-11 (máximo 10 pts).{% endif %}
+{% if d.desempeno.vigente %} El modelo vigente tiene un Gini OOT de {{ dec(d.desempeno.vigente.gini_oot, 1) }}{% if gini_oot is not none %}: mejora de **{{ dec(gini_oot - d.desempeno.vigente.gini_oot, 1) }} pts**{% endif %}.{% endif %}
+{% else %}{{ completar("Reporta Gini y KS en entrenamiento, prueba y OOT.", "DES-D4-06.01.01") }}{% endif %}
+
+{% if graficos.gini %}
+
+## Estabilidad mensual
+
+![Gini OOT por mes frente al de construcción]({{ graficos.gini }}){ width=85% }
+{% endif %}
+
+## Calibración
+
+{% if d.desempeno.calibracion %}| Tramo | Registros | PD estimada | Tasa observada | Desvío relativo |
+|---|---:|---:|---:|---:|
+{% for c in d.desempeno.calibracion %}| {{ c.tramo }} | {{ num(c.n) }} | {{ pct(c.pd) }} | {{ pct(c.tasa_obs) }} | {{ pct((c.tasa_obs - c.pd) / c.pd, signo=True) }} |
+{% endfor %}{% else %}{{ completar("Compara la PD estimada con la tasa observada por tramo.", "DES-D4-08.01.04") }}{% endif %}
+
+# Interpretabilidad, sensibilidad y equidad
+
+**Interpretabilidad.** {{ d.interpretabilidad.explicacion or completar("Resume la interpretación del modelo y la estabilidad de sus explicaciones.", "DES-D4-07.01.02") }}
+
+**Sensibilidad.** {{ d.interpretabilidad.sensibilidad or completar("Reporta el análisis de sensibilidad.", "DES-D4-10.01.06") }}
+
+**Equidad.** {{ d.interpretabilidad.equidad or completar("Para personas naturales Tier I–II, documenta el análisis de equidad.", "DES-D4-10.01.07") }}
+
+# Integración a la gestión
+
+**Punto de corte.** {{ d.gestion.punto_corte or completar("Define el punto de corte o la estrategia de uso.", "DES-D5-01.01.01") }}
+
+{% if d.gestion.impactos %}| Indicador | Actual | Propuesto |
+|---|---:|---:|
+{% for i in d.gestion.impactos %}| {{ i.indicador }} | {{ pct(i.actual) }} | {{ pct(i.propuesto) }} |
+{% endfor %}{% else %}{{ completar("Cuantifica los impactos en la gestión.", "DES-D5-01.02.01") }}{% endif %}
+
+**Forzajes.** {{ d.gestion.forzajes or completar("Define la política de forzajes.", "DES-D5-01.01.02") }}
+
+# Limitaciones
+
+{% if d.limitaciones %}{% for l in d.limitaciones %}- {{ l }}
+{% endfor %}{% else %}{{ completar("Documenta las debilidades de discriminación, calibración y estabilidad.", "DES-D4-10.01.05") }}{% endif %}
+
+# Seguimiento
+
+{{ d.seguimiento.plan or completar("Describe indicadores, umbrales y periodicidad del seguimiento.", "SEG-S1-01.01.01") }}
+
+# Cumplimiento del estándar
+
+## Umbrales
+
+{% if eval_umbrales %}| Umbral | Tema | Valor obtenido | Regla | Resultado |
+|------|--------------------------|-------:|------------------------------------|-------------|
+{% for u in eval_umbrales %}| {{ u.id }} | {{ u.tema }} | {{ u.valor }} | {{ u.regla }} | **{{ u.resultado }}** |
+{% endfor %}
+{% if umbrales_falla %}> **Umbrales en falla:** {{ umbrales_falla | join(', ') }}. Requieren excepción documentada y, cuando el umbral lo indica, presentación en Comité.
+{% endif %}{% else %}{{ completar("Registra los valores obtenidos de los umbrales aplicables.", "MARCO-UMB") }}{% endif %}
+
+## Matriz de requisitos
+
+{{ matriz.descripcion }}
+
+| Fase | Aplicables | Cumplidos | Excepción | No aplica | Pendientes |
+|----------------------------------------|------:|------:|------:|------:|------:|
+{% for f in matriz.fases %}| {{ f.fase }} · {{ f.nombre }} | {{ f.total }} | {{ f.cumplido }} | {{ f.excepcion }} | {{ f.no_aplica }} | {{ f.pendiente }} |
+{% endfor %}| **Total** | **{{ matriz.total }}** | **{{ matriz.cumplido }}** | **{{ matriz.excepcion }}** | **{{ matriz.no_aplica }}** | **{{ matriz.pendiente }}** |
+
+# Gobierno y aprobaciones
+
+{% if d.gobierno.actas %}| Acta | Hito | Fecha | Estado |
+|---|---|---|---|
+{% for a in d.gobierno.actas %}| {{ a.numero }} | {{ a.hito }} | {{ a.fecha }} | {{ a.estado }} |
+{% endfor %}{% else %}{{ completar("Lista las actas de los hitos del desarrollo.", "VAL-M-01.03") }}{% endif %}
+
+El modelo no se usa sin la aprobación previa del comité de riesgos de modelo (GOB-G3-01.01.01).
+
+{% if lecturas %}
+# Referencias
+
+{% for o in lecturas %}- {{ o.cita }}
+{% endfor %}
+{% endif %}

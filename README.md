@@ -8,7 +8,7 @@
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.1.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **2.2.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 
@@ -58,7 +58,12 @@ python tools/verificar.py --init ../MOD-ORI-001 --estandar Desarrollo --tier 2 -
 python tools/verificar.py --plan ../MOD-ORI-001 --fase DES-D4
 python tools/acta.py nueva --tipo R5 --codigo MOD-ORI-001 --nombre "Score de originación" -o ../MOD-ORI-001/actas/acta-05.json
 python tools/acta.py exportar ../MOD-ORI-001/actas/acta-05.json --docx --md
+python tools/documento.py nuevo ../MOD-ORI-001
+python tools/documento.py render ../MOD-ORI-001/docs/documento.yaml   # .md, .html, .docx y .pdf
 ```
+
+El documento metodológico se genera desde datos (`docs/documento.yaml`) con la plantilla dinámica; requiere
+`pip install jinja2 pypandoc_binary typst`. Ver `docs/plantillas/documento-metodologico.md`.
 
 Parte de la plantilla `plantillas/repo-modelo/`.
 
@@ -72,9 +77,9 @@ catalogo/            Fuente de verdad: requisitos, umbrales, actas, literatura y
 docs/                Documentación por estándar (Markdown); los bloques de catálogo se generan
 dist/                Generado: JSON para agentes y llms-full.txt
 site/                Generado: sitio autocontenido (index.html)
-plantillas/          Plantilla de repositorio de un modelo
-ejemplos/            Acta de ejemplo con datos ficticios
-tools/               build.py · verificar.py · acta.py · esfuerzo.py · generadores de catálogo
+plantillas/          Plantilla de repositorio de un modelo y plantilla dinámica del documento metodológico
+ejemplos/            Acta y documento metodológico de ejemplo con datos ficticios
+tools/               build.py · verificar.py · acta.py · documento.py · esfuerzo.py · generadores de catálogo
 ```
 
 ## Contribuir

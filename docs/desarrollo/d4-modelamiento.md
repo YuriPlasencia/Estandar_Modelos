@@ -91,7 +91,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (96 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (97 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -528,6 +528,10 @@ del documento metodológico.
 - **`DES-D4-11.01.06`** Especificar las versiones y rutas de las herramientas de procesamiento estadístico usadas y la funcionalidad de estas en cuanto al uso dado, así como las rutas productivas deonde se almacenará todo el desarrollo del proyecto
 
   Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d trad. · Automatización: 1
+
+- **`DES-D4-11.01.07`** Elaborar el documento metodológico con la plantilla dinámica del estándar: registrar los datos del modelo en docs/documento.yaml y generar el documento con tools/documento.py (Markdown, HTML, Word y PDF desde la misma fuente). El documento evalúa los umbrales obtenidos, incluye la matriz de cumplimiento tomada de evidencias.yaml y no se presenta a Comité ni a Validación con secciones «Completar» pendientes.
+
+  Aplica: Todos los tipos, Tier I–IV · Esfuerzo: 0 d ágil / 0 d trad. · Automatización: 3 · Eficiencia · Entregable: Documento 11: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf). · Nota: Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos.
 
 #### 11.2 Consolidación
 

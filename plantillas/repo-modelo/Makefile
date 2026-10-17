@@ -9,6 +9,9 @@ modelo:
 reportes:
 	python src/reportes.py
 
+documento:
+	python $(ESTANDAR)/tools/documento.py render docs/documento.yaml
+
 verificar:
 	python $(ESTANDAR)/tools/verificar.py . --hash
 

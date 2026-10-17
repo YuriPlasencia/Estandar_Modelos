@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-PE" xml:lang="es-PE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Analista de modelos (ejemplo) (Desarrollo)" />
+  <meta name="author" content="Jefe de modelos (ejemplo) (Revisión)" />
+  <meta name="dcterms.date" content="2026-10-20" />
+  <title>Score de originación de tarjeta de crédito</title>
+  <style>
+
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">
+:root{--paper:#f5f5f7;--sheet:#fff;--ink:#1d1d1f;--ink2:#6e6e73;--rule:#d2d2d7;--seal:#7a2632;--accent:#0066cc;--wash:#f1f4f2}
+@media (prefers-color-scheme:dark){:root{--paper:#000;--sheet:#1c1c1e;--ink:#f5f5f7;--ink2:#a1a1a6;--rule:#38383a;--seal:#d9848f;--accent:#2997ff;--wash:#2c2c2e;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,sans-serif;
+padding:40px max(16px,env(safe-area-inset-left,0px));-webkit-font-smoothing:antialiased}
+body>*{max-width:860px;margin-left:auto;margin-right:auto}
+header#title-block-header{background:var(--sheet);border-radius:18px;padding:36px 40px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.06);border-top:5px solid var(--seal);margin-bottom:28px}
+header#title-block-header::before{content:"ESTÁNDARES DE MODELOS EN BANCA";display:block;font-size:12px;letter-spacing:.08em;color:var(--seal);font-weight:600;margin-bottom:18px}
+.title{font:700 clamp(30px,4.5vw,42px)/1.1 -apple-system,"SF Pro Display","Segoe UI",sans-serif;letter-spacing:-.025em;margin:0 0 8px}
+.subtitle{font-size:19px;color:var(--ink2);margin:0 0 14px}
+.author,.date{color:var(--ink2);margin:2px 0;font-size:14px}
+nav#TOC{background:var(--sheet);border-radius:18px;padding:18px 26px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 6px 24px rgba(0,0,0,.05);margin-bottom:28px}
+nav#TOC>ul{columns:2;column-gap:28px;padding-left:18px}
+nav#TOC a{color:var(--ink);text-decoration:none}
+h1{font:700 26px/1.2 -apple-system,"SF Pro Display","Segoe UI",sans-serif;letter-spacing:-.02em;margin:2.2em auto .5em;color:var(--seal)}
+h2{font:700 20px/1.25 -apple-system,"SF Pro Display","Segoe UI",sans-serif;letter-spacing:-.015em;margin:1.6em auto .45em}
+h3{font-size:15px;color:var(--ink2);margin:1.2em auto .3em}
+.header-section-number{color:var(--ink2);font-weight:500;margin-right:.35em}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--sheet);border-radius:12px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.05);margin:1em auto;display:block;overflow-x:auto}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top;font-variant-numeric:tabular-nums}
+th{color:var(--ink2);font-weight:600;font-size:13px}
+blockquote{background:var(--sheet);border-left:4px solid var(--seal);border-radius:12px;margin:1em auto;padding:10px 18px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+img{max-width:100%;background:#fff;border-radius:12px;padding:8px}
+code{font:13.5px "SF Mono",ui-monospace,Menlo,Consolas,monospace;background:var(--wash);border-radius:5px;padding:1px 5px}
+a{color:var(--accent)}
+footer.pie{margin-top:48px;padding-top:16px;border-top:1px solid var(--rule);color:var(--ink2);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Score de originación de tarjeta de crédito</h1>
+<p class="subtitle">Documento metodológico del modelo ·
+MOD-EJEMPLO-001</p>
+<p class="author">Analista de modelos (ejemplo) (Desarrollo)</p>
+<p class="author">Jefe de modelos (ejemplo) (Revisión)</p>
+<p class="date">2026-10-20</p>
+</header>
+<nav id="TOC" role="doc-toc">
+
+</nav>
+<h1 id="control-del-documento">Control del documento</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código de modelo</td>
+<td>MOD-EJEMPLO-001</td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td>Score de originación TC — ejemplo</td>
+</tr>
+<tr>
+<td>Estándar aplicado</td>
+<td>Desarrollo · Tier II · Machine learning · enfoque agil</td>
+</tr>
+<tr>
+<td>Versión y estado</td>
+<td>1.0 · Para Comité de Modelos</td>
+</tr>
+<tr>
+<td>Clasificación</td>
+<td>Uso interno</td>
+</tr>
+<tr>
+<td>Versión del estándar</td>
+<td>Estándares de Modelos en Banca v2.2.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Control de cambios</strong> (DES-D4-11.01.03)</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Versión</th>
+<th>Fecha</th>
+<th>Autor</th>
+<th>Cambio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>2026-10-20</td>
+<td>Analista de modelos (ejemplo)</td>
+<td>Versión para Comité de Modelos</td>
+</tr>
+</tbody>
+</table>
+<h1 id="resumen-ejecutivo">Resumen ejecutivo</h1>
+<p>El modelo es un gradient boosting con restricciones monotónicas sobre
+24 variables de buró, de relación con el banco y de la solicitud.
+Alcanza un Gini OOT de 52.1 (54.0 en entrenamiento; diferencia de 1.9
+pts) y supera en 6.4 pts al modelo vigente en las cosechas aprobadas de
+los últimos seis meses. Su uso propuesto reduce en 0.8 pp la mora a 12
+meses de la cosecha manteniendo el volumen de aprobación.</p>
+<h1 id="propósito-uso-y-alcance">Propósito, uso y alcance</h1>
+<p><strong>Propósito.</strong> Ordenar por riesgo las solicitudes de
+tarjeta de crédito para sustentar la decisión de aprobación y el tramo
+de línea inicial.</p>
+<p><strong>Uso aprobado.</strong> Admisión de solicitudes de tarjeta de
+crédito de personas naturales</p>
+<p><strong>Usos no permitidos.</strong></p>
+<ul>
+<li>Pricing individual sin un modelo de respuesta aprobado (estándar
+PRC).</li>
+<li>Clientes con más de 6 meses de antigüedad (corresponde el modelo de
+comportamiento).</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dueño del modelo</td>
+<td>Gerencia de producto de tarjetas (ejemplo)</td>
+</tr>
+<tr>
+<td>Modelo que reemplaza</td>
+<td>MOD-EJEMPLO-000 (versión 2021)</td>
+</tr>
+<tr>
+<td>Categoría (Tier)</td>
+<td>II — determina la profundidad de validación y seguimiento
+(U-35)</td>
+</tr>
+</tbody>
+</table>
+<h1 id="datos">Datos</h1>
+<h2 id="fuentes-y-no-anticipación">Fuentes y no anticipación</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Fuente</th>
+<th>Contenido</th>
+<th>Desfase de disponibilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Buró de crédito</td>
+<td>Endeudamiento y comportamiento en el sistema</td>
+<td>1 mes</td>
+</tr>
+<tr>
+<td>Relación con el banco</td>
+<td>Productos, saldos y comportamiento de pago interno</td>
+<td>0 meses</td>
+</tr>
+<tr>
+<td>Solicitud</td>
+<td>Datos declarados y del canal al momento de la solicitud</td>
+<td>0 meses</td>
+</tr>
+</tbody>
+</table>
+<p>Las 412 variables candidatas tienen fecha de referencia y desfase
+documentados; la prueba automática confirmó que ninguna usa información
+posterior a la fecha de solicitud.</p>
+<h2 id="universo-ventana-y-definición-de-default">Universo, ventana y
+definición de default</h2>
+<p><strong>Universo.</strong> Solicitudes aprobadas de tarjeta de
+crédito de personas naturales, enero 2023 a diciembre 2024.</p>
+<table>
+<thead>
+<tr>
+<th>Muestra</th>
+<th>Período</th>
+<th style="text-align: right;">Meses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entrenamiento y prueba</td>
+<td>enero 2023 a junio 2024</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr>
+<td>Fuera de tiempo (OOT)</td>
+<td>julio a diciembre 2024</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Default.</strong> Atraso mayor a 60 días al menos una vez en
+los 12 meses siguientes a la originación (U-17).</p>
+<h2 id="exclusiones">Exclusiones</h2>
+<table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th style="text-align: right;">Registros</th>
+<th style="text-align: right;">% del universo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pautas duras de política</td>
+<td style="text-align: right;">41 250</td>
+<td style="text-align: right;">6.2 %</td>
+</tr>
+<tr>
+<td>Desempeño incompleto (menos de 12 meses)</td>
+<td style="text-align: right;">18 400</td>
+<td style="text-align: right;">2.8 %</td>
+</tr>
+<tr>
+<td>Indeterminados (atraso máximo entre 31 y 60 días)</td>
+<td style="text-align: right;">9 870</td>
+<td style="text-align: right;">1.5 %</td>
+</tr>
+<tr>
+<td>Fraude confirmado</td>
+<td style="text-align: right;">640</td>
+<td style="text-align: right;">0.1 %</td>
+</tr>
+</tbody>
+</table>
+<h2 id="calidad-de-datos">Calidad de datos</h2>
+<p>Certificación de calidad aprobada (Documento 6). Sin duplicados; fill
+rate mínimo de las variables finales de 91 %.</p>
+<h1 id="segmentación">Segmentación</h1>
+<p><strong>Decisión.</strong> Modelo unisegmento.</p>
+<p>Los modelos por segmento (ingreso dependiente e independiente) no
+superaron al unisegmento en más de 0.6 pts de Gini OOT y reducían la
+materialidad de defaults por segmento.</p>
+<h1 id="variables">Variables</h1>
+<h2 id="embudo-de-variables">Embudo de variables</h2>
+<p>Orden aplicado antes del entrenamiento: no anticipación, univariado,
+fill rate y estabilidad, bivariado (WOE/IV), sospecha de fuga, filtro de
+confiables y correlación (DES-D4-03.03.04).</p>
+<table>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 13%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr>
+<th>Etapa</th>
+<th style="text-align: right;">Variables que quedan</th>
+<th>Motivo de las salidas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Variables candidatas</td>
+<td style="text-align: right;">412</td>
+<td></td>
+</tr>
+<tr>
+<td>No anticipación (U-39)</td>
+<td style="text-align: right;">405</td>
+<td>7 variables contemporáneas (saldos al cierre del mes de
+solicitud)</td>
+</tr>
+<tr>
+<td>Fill rate mínimo del plan (70 %)</td>
+<td style="text-align: right;">351</td>
+<td>54 variables con bajo poblamiento</td>
+</tr>
+<tr>
+<td>Estabilidad PSI ≤ 10 % (U-02)</td>
+<td style="text-align: right;">318</td>
+<td>33 variables inestables</td>
+</tr>
+<tr>
+<td>IV entre 0.02 y 0.50 (U-38)</td>
+<td style="text-align: right;">196</td>
+<td>120 sin poder predictivo y 2 con sospecha de fuga</td>
+</tr>
+<tr>
+<td>Correlación &lt; 60 % (U-06)</td>
+<td style="text-align: right;">88</td>
+<td></td>
+</tr>
+<tr>
+<td>Selección por gain y sentido económico</td>
+<td style="text-align: right;">24</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables-finales">Variables finales</h2>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 47%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 6%" />
+</colgroup>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Descripción</th>
+<th style="text-align: right;">IV</th>
+<th style="text-align: right;">PSI</th>
+<th style="text-align: center;">Signo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_atraso_buro_6m</code></td>
+<td>Atraso máximo en el sistema en los 6 meses previos</td>
+<td style="text-align: right;">0.41</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td><code>utilizacion_lineas_buro</code></td>
+<td>Uso promedio de líneas revolventes en el sistema</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">0.05</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td><code>antiguedad_buro_meses</code></td>
+<td>Meses desde el primer producto en el sistema</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: center;">−</td>
+</tr>
+<tr>
+<td><code>num_consultas_3m</code></td>
+<td>Consultas al buró en los 3 meses previos</td>
+<td style="text-align: right;">0.17</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr>
+<td><code>ratio_cuota_ingreso</code></td>
+<td>Cuota estimada sobre ingreso declarado</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: center;">+</td>
+</tr>
+</tbody>
+</table>
+<h1 id="metodología">Metodología</h1>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Elemento</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Algoritmo</td>
+<td>Gradient boosting (XGBoost) con restricciones monotónicas en las 24
+variables.</td>
+</tr>
+<tr>
+<td>Benchmark interpretable</td>
+<td>Regresión logística con WOE (Gini OOT 49.3)</td>
+</tr>
+<tr>
+<td>Validación cruzada</td>
+<td>5 particiones temporales.</td>
+</tr>
+<tr>
+<td>Combinaciones de hiperparámetros</td>
+<td>60</td>
+</tr>
+<tr>
+<td>Semilla</td>
+<td>20261017</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hiperparámetros finales:</strong> <code>max_depth</code> = 4
+· <code>eta</code> = 0.05 · <code>n_estimators</code> = 600 ·
+<code>subsample</code> = 0.8 · <code>colsample_bytree</code> = 0.7.</p>
+<h1 id="desempeño">Desempeño</h1>
+<h2 id="discriminación-por-muestra">Discriminación por muestra</h2>
+<table>
+<thead>
+<tr>
+<th>Muestra</th>
+<th style="text-align: right;">Registros</th>
+<th style="text-align: right;">Tasa de default</th>
+<th style="text-align: right;">Gini</th>
+<th style="text-align: right;">KS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entrenamiento</td>
+<td style="text-align: right;">412 300</td>
+<td style="text-align: right;">7.1 %</td>
+<td style="text-align: right;">54.0</td>
+<td style="text-align: right;">40.8</td>
+</tr>
+<tr>
+<td>Prueba</td>
+<td style="text-align: right;">103 080</td>
+<td style="text-align: right;">7.0 %</td>
+<td style="text-align: right;">52.9</td>
+<td style="text-align: right;">39.9</td>
+</tr>
+<tr>
+<td>OOT</td>
+<td style="text-align: right;">96 450</td>
+<td style="text-align: right;">7.6 %</td>
+<td style="text-align: right;">52.1</td>
+<td style="text-align: right;">39.2</td>
+</tr>
+</tbody>
+</table>
+<p>Diferencia de Gini entre entrenamiento y OOT: <strong>1.9
+pts</strong> — cumple U-11 (máximo 10 pts). El modelo vigente tiene un
+Gini OOT de 45.7: mejora de <strong>6.4 pts</strong>.</p>
+<h2 id="estabilidad-mensual">Estabilidad mensual</h2>
+<figure>
+<img role="img" aria-label="Gini OOT por mes frente al de construcción" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzAwIiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjMwMCIgZm9udC1mYW1pbHk9IlNlZ29lIFVJLCBDYWxpYnJpLCBzYW5zLXNlcmlmIj4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmZmZmYiLz4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMjIxLjciIHkyPSIyMjEuNyIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMjI1LjciIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjQ0PC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSIxODkuNCIgeTI9IjE4OS40IiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSIxOTMuNCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NDY8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjE1Ny4xIiB5Mj0iMTU3LjEiIHN0cm9rZT0iI0Q1REJEOCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KPHRleHQgeD0iNDgiIHk9IjE2MS4xIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj40ODwvdGV4dD4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMTI0LjkiIHkyPSIxMjQuOSIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMTI4LjkiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjUwPC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI5Mi42IiB5Mj0iOTIuNiIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iOTYuNiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NTI8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjYwLjMiIHkyPSI2MC4zIiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI2NC4zIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj41NDwvdGV4dD4KPHJlY3QgeD0iNTYiIHk9IjYwLjMiIHdpZHRoPSI1NjQiIGhlaWdodD0iMTYxLjQiIGZpbGw9IiM3QTI2MzIiIGZpbGwtb3BhY2l0eT0iMC4wNiIvPgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI2MC4zIiB5Mj0iNjAuMyIgc3Ryb2tlPSIjMUIyQTJGIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIHN0cm9rZS13aWR0aD0iMS4yIi8+Cjx0ZXh0IHg9IjYyMCIgeT0iNTQuMyIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzFCMkEyRiIgdGV4dC1hbmNob3I9ImVuZCI+RW50cmVuYW1pZW50byA1NC4wPC90ZXh0Pgo8dGV4dCB4PSI2MjAiIHk9IjIxNS43IiBmb250LXNpemU9IjExIiBmaWxsPSIjN0EyNjMyIiB0ZXh0LWFuY2hvcj0iZW5kIj5Mw61taXRlIFUtMTEgKOKIkjEwIHB0cyk8L3RleHQ+Cjxwb2x5bGluZSBwb2ludHM9IjU2LjAsNzkuNyAxNjguOCw5NC4yIDI4MS42LDg2LjEgMzk0LjQsOTkuMCA1MDcuMiw5Mi42IDYyMC4wLDk1LjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzdBMjYzMiIgc3Ryb2tlLXdpZHRoPSIyLjQiLz4KPGNpcmNsZSBjeD0iNTYuMCIgY3k9Ijc5LjciIHI9IjMuNiIgZmlsbD0iIzdBMjYzMiIvPgo8dGV4dCB4PSI1Ni4wIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMDc8L3RleHQ+CjxjaXJjbGUgY3g9IjE2OC44IiBjeT0iOTQuMiIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjE2OC44IiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMDg8L3RleHQ+CjxjaXJjbGUgY3g9IjI4MS42IiBjeT0iODYuMSIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjI4MS42IiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMDk8L3RleHQ+CjxjaXJjbGUgY3g9IjM5NC40IiBjeT0iOTkuMCIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjM5NC40IiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMTA8L3RleHQ+CjxjaXJjbGUgY3g9IjUwNy4yIiBjeT0iOTIuNiIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjUwNy4yIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMTE8L3RleHQ+CjxjaXJjbGUgY3g9IjYyMC4wIiBjeT0iOTUuOCIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjYyMC4wIiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjIwMjQtMTI8L3RleHQ+Cjx0ZXh0IHg9IjU2IiB5PSIxNiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iIzFCMkEyRiI+R2luaSBPT1QgcG9yIG1lczwvdGV4dD4KPC9zdmc+" style="width:85.0%" alt="Gini OOT por mes frente al de construcción" />
+<figcaption aria-hidden="true">Gini OOT por mes frente al de
+construcción</figcaption>
+</figure>
+<h2 id="calibración">Calibración</h2>
+<table>
+<thead>
+<tr>
+<th>Tramo</th>
+<th style="text-align: right;">Registros</th>
+<th style="text-align: right;">PD estimada</th>
+<th style="text-align: right;">Tasa observada</th>
+<th style="text-align: right;">Desvío relativo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align: right;">9 640</td>
+<td style="text-align: right;">1.2 %</td>
+<td style="text-align: right;">1.1 %</td>
+<td style="text-align: right;">−8.3 %</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align: right;">9 650</td>
+<td style="text-align: right;">2.4 %</td>
+<td style="text-align: right;">2.6 %</td>
+<td style="text-align: right;">+8.3 %</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align: right;">9 645</td>
+<td style="text-align: right;">4.1 %</td>
+<td style="text-align: right;">3.9 %</td>
+<td style="text-align: right;">−4.9 %</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align: right;">9 640</td>
+<td style="text-align: right;">6.8 %</td>
+<td style="text-align: right;">7.1 %</td>
+<td style="text-align: right;">+4.4 %</td>
+</tr>
+<tr>
+<td>5</td>
+<td style="text-align: right;">9 650</td>
+<td style="text-align: right;">11.2 %</td>
+<td style="text-align: right;">10.8 %</td>
+<td style="text-align: right;">−3.6 %</td>
+</tr>
+<tr>
+<td>6</td>
+<td style="text-align: right;">9 645</td>
+<td style="text-align: right;">19.8 %</td>
+<td style="text-align: right;">20.4 %</td>
+<td style="text-align: right;">+3.0 %</td>
+</tr>
+</tbody>
+</table>
+<h1 id="interpretabilidad-sensibilidad-y-equidad">Interpretabilidad,
+sensibilidad y equidad</h1>
+<p><strong>Interpretabilidad.</strong> Las contribuciones SHAP confirman
+el sentido económico de las 24 variables; la estabilidad de las
+explicaciones se verificó en 50 remuestreos y no hubo variables con
+contribución inestable.</p>
+<p><strong>Sensibilidad.</strong> Un deterioro de 10 % en las variables
+de buró aumenta la PD promedio de 7.1 % a 7.9 %; el ordenamiento se
+mantiene.</p>
+<p><strong>Equidad.</strong> No se usan atributos protegidos. La edad se
+probó como proxy: el AUC para predecirla con las variables del modelo es
+0.58. Las tasas de verdaderos positivos por rango de edad difieren en
+menos de 3 pp.</p>
+<h1 id="integración-a-la-gestión">Integración a la gestión</h1>
+<p><strong>Punto de corte.</strong> Aprobación hasta el tramo 5; el
+tramo 6 pasa a revisión manual.</p>
+<table>
+<thead>
+<tr>
+<th>Indicador</th>
+<th style="text-align: right;">Actual</th>
+<th style="text-align: right;">Propuesto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tasa de aprobación</td>
+<td style="text-align: right;">62.0 %</td>
+<td style="text-align: right;">62.0 %</td>
+</tr>
+<tr>
+<td>Mora 60+ a 12 meses de la cosecha</td>
+<td style="text-align: right;">7.1 %</td>
+<td style="text-align: right;">6.3 %</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Forzajes.</strong> Solo jefaturas de agencia, con motivo de
+una lista cerrada, hasta 3 % de las decisiones (U-36).</p>
+<h1 id="limitaciones">Limitaciones</h1>
+<ul>
+<li>El modelo no se validó para clientes sin historial en el buró (5 %
+de las solicitudes); se usa una política experta.</li>
+<li>El desempeño en el canal digital es 3 pts de Gini menor y se
+monitoreará por separado.</li>
+</ul>
+<h1 id="seguimiento">Seguimiento</h1>
+<p>Seguimiento mensual de PSI y forzajes; discriminación y calibración
+trimestral con cosechas maduras (SEG-S1).</p>
+<h1 id="cumplimiento-del-estándar">Cumplimiento del estándar</h1>
+<h2 id="umbrales">Umbrales</h2>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 29%" />
+<col style="width: 8%" />
+<col style="width: 40%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Umbral</th>
+<th>Tema</th>
+<th style="text-align: right;">Valor obtenido</th>
+<th>Regla</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U-01</td>
+<td>Ventana de modelamiento</td>
+<td style="text-align: right;">18 + 6</td>
+<td>≥ 12 meses entrenamiento/prueba y ≥ 6 OOT</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-02</td>
+<td>Estabilidad poblacional / de variables (PSI)</td>
+<td style="text-align: right;">0.06</td>
+<td>PSI máximo de las variables del modelo ≤ 0.10 (≤ 0.20 con
+excepción)</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-03</td>
+<td>Representatividad de la muestra</td>
+<td style="text-align: right;">1.01</td>
+<td>Ratio TM/TG entre 0.95 y 1.05</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-06</td>
+<td>Correlación entre variables continuas</td>
+<td style="text-align: right;">0.57</td>
+<td>Correlación máxima entre continuas &lt; 0.60 (≤ 0.95 con
+sustento)</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-10</td>
+<td>Optimización de hiperparámetros</td>
+<td style="text-align: right;">60</td>
+<td>Combinaciones de hiperparámetros probadas ≥ 50</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-11</td>
+<td>Sobreajuste Train vs OOT</td>
+<td style="text-align: right;">1.9</td>
+<td>|Gini Train − Gini OOT| ≤ 10 pts</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-38</td>
+<td>Rango de IV y sospecha de fuga</td>
+<td style="text-align: right;">0.41</td>
+<td>IV máximo de las variables del modelo ≤ 0.50 (salvo investigación de
+fuga documentada)</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-39</td>
+<td>No anticipación temporal de las variables</td>
+<td style="text-align: right;">0</td>
+<td>Variables con información posterior a la observación = 0</td>
+<td><strong>Cumple</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="matriz-de-requisitos">Matriz de requisitos</h2>
+<p>Requisitos aplicables a un modelo Desarrollo Tier II, Machine
+learning, enfoque agil. Sin manifiesto de evidencias: todos figuran como
+pendientes (ver <code>tools/verificar.py --init</code>).</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr>
+<th>Fase</th>
+<th style="text-align: right;">Aplicables</th>
+<th style="text-align: right;">Cumplidos</th>
+<th style="text-align: right;">Excepción</th>
+<th style="text-align: right;">No aplica</th>
+<th style="text-align: right;">Pendientes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DES-D1 · Definición, alcance, diseño y extracción</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">56</td>
+</tr>
+<tr>
+<td>DES-D2 · Preparación, calidad y entendimiento de los datos</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr>
+<td>DES-D3 · Segmentación</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr>
+<td>DES-D4 · Modelamiento</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">78</td>
+</tr>
+<tr>
+<td>DES-D5 · Integración a la gestión</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr>
+<td>DES-D7 · Gobierno</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr>
+<td>IMP · Implementación</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">28</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td style="text-align: right;"><strong>202</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;"><strong>0</strong></td>
+<td style="text-align: right;"><strong>202</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="gobierno-y-aprobaciones">Gobierno y aprobaciones</h1>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Acta</th>
+<th>Hito</th>
+<th>Fecha</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ACTA-MOD-EJEMPLO-001-01</td>
+<td>Reunión 1</td>
+<td>2026-06-02</td>
+<td>Aprobada</td>
+</tr>
+<tr>
+<td>ACTA-MOD-EJEMPLO-001-05</td>
+<td>Reunión 5 · Selección del modelo final</td>
+<td>2026-09-18</td>
+<td>Aprobada</td>
+</tr>
+</tbody>
+</table>
+<p>El modelo no se usa sin la aprobación previa del comité de riesgos de
+modelo (GOB-G3-01.01.01).</p>
+<h1 id="referencias">Referencias</h1>
+<ul>
+<li>Siddiqi, N. (2017). <em>Intelligent Credit Scoring: Building and
+Implementing Better Credit Risk Scorecards</em> (2.ª ed.). Wiley.</li>
+<li>Board of Governors of the Federal Reserve System, OCC y FDIC (2026).
+<em>Revised Guidance on Model Risk Management</em> (SR 26-2; OCC
+Bulletin 2026-13; FDIC FIL-15-2026).</li>
+<li>Superintendencia de Banca, Seguros y AFP (2023). <em>Reglamento de
+Gestión de Riesgos de Modelo</em> (Resolución SBS n.º 00053-2023).</li>
+</ul>
+<footer class="pie">Yuri Plasencia — Analytics Pricing &amp; Revenue Management · Estándares de Modelos en Banca v2.2.0</footer>
+</body>
+</html>
