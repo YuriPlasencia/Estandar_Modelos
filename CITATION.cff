@@ -4,6 +4,8 @@ title: "Estándares de Modelos en Banca"
 version: 2.2.0
 date-released: 2026-10-17
 license: CC-BY-4.0
+repository-code: "https://github.com/YuriPlasencia/Estandar_Modelos"
+url: "https://yuriplasencia.github.io/Estandar_Modelos/"
 authors:
   - family-names: Plasencia
     given-names: Yuri
