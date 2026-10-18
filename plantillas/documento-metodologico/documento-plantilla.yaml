@@ -43,7 +43,8 @@ variables:
   embudo: []             # - {etapa: ..., quedan: ..., motivo: ...}
   finales: []            # - {nombre: ..., descripcion: ..., iv: ..., psi: ..., signo: "+"}
 
-metodologia: {}          # algoritmo, benchmark {algoritmo, gini_oot}, validacion_cruzada, combinaciones_hp, semilla, hiperparametros
+metodologia: {}          # algoritmo, benchmark {algoritmo, gini_oot}, validacion_cruzada, combinaciones_hp, semilla, hiperparametros,
+                         # torneo [{algoritmo, gini_train, gini_validacion, gini_oot, ks_oot, brier, concentracion_max, estado}] (U-43)
 
 desempeno: {}            # muestras [{muestra, n, tasa, gini, ks}], mensual [{mes, gini}] (Train/Test por mes y el mes OOT), vigente {gini_oot}, calibracion [{tramo, n, pd, tasa_obs}]
 

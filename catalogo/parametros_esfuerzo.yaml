@@ -25,7 +25,7 @@ elasticidad:
   registros: 0.15             # más filas = más tiempo de proceso y de cuadre, efecto pequeño
 
 # Desde el entrenamiento (DES-D4 tarea 05 en adelante) se trabaja con las variables preseleccionadas (U-08).
-columnas_modelo: 150
+columnas_modelo: 100
 
 # Tiempo de máquina. Minutos por ajuste con 1 M de filas y 100 columnas, en un servidor de 16 núcleos.
 computo:

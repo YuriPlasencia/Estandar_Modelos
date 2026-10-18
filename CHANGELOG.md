@@ -4,6 +4,38 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [4.0.0] — 2026-10-17 · Lecciones de proyectos de desarrollo
+
+Enmiendas que vienen de proyectos reales, incorporadas en forma genérica, sin datos de clientes, nombres de variables
+ni cifras internas.
+
+### Nuevo
+- **Torneo de modelos (U-43, DES-D4-05.03.04):** en clasificación binaria compiten al menos cinco familias (logística
+  regularizada como línea base obligatoria, árbol podado, bagging, boosting por histogramas con monotonicidad y
+  boosting extremo regularizado) con los mismos datos, validación temporal y semilla.
+- **Tabla oficial y reglas de coronación (DES-D4-06.03.05):** descalificación por sobreajuste (U-11), concentración
+  (U-09), parsimonia (U-42: si el más simple está a menos de 1.5 pts de Gini, gana el simple) y Brier score. El OOT
+  se evalúa una sola vez, sobre los candidatos finales; no se usa para seleccionar (VAL-M-05.08 lo verifica).
+- **Selección de variables en dos fases (DES-D4-05.02.08)** y preservación de los bloques sociodemográfico y
+  financiero como línea base de control (DES-D4-05.02.09).
+- **Estabilidad de la tasa del target (U-41, DES-D1-03.01.06):** un quiebre de más de 25 % relativo entre meses por
+  causa operativa excluye los meses previos de Train.
+- **Desempeño por deciles monótono (U-44, DES-D4-06.01.04)**, distinto de la **calibración probabilística formal**
+  (DES-D4-08.01.07), y sin banderas binarias de corte duro que inviertan la monotonicidad (DES-D4-04.03.04).
+- **Punto de corte por utilidad asimétrica** y estratos de gestión (DES-D5-01.01.03).
+- **Paridad matemática en producción (IMP-01.06.07).**
+- El documento metodológico incluye la tabla del torneo, la caída relativa de Gini y los umbrales nuevos.
+- Literatura: Brier (1950) y Breiman (2001).
+
+### Cambiado (incompatible)
+- **U-38:** IV mayor a 0.50 se excluye sin excepción; un IV menor a 0.02 ya no excluye por sí solo (filtro asimétrico).
+- **U-11:** además de 10 pts, caída relativa máxima de 10 %; quien lo exceda queda descalificado, sin excepción.
+- **U-09:** concentración máxima de 40 % por variable (deseable 25 %), para todos los tipos de modelo.
+- **U-15:** la certificación de implementación exige 99.9 % de paridad (antes 95 %).
+- **U-37:** la caída del Gini en el seguimiento se mide en términos relativos (ámbar 10–15 %, rojo > 15 %); un rojo
+  exige reentrenar o recalibrar.
+- **U-08:** el ranking previo a la selección paso a paso toma hasta 100 variables (antes 150).
+
 ## [3.0.1] — 2026-10-17
 
 ### Corregido

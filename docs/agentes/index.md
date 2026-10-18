@@ -64,13 +64,13 @@ una aprobación compromete el plazo, el agente lo escala; no la omite.
 | **G3** Modelo final | D4-06 / P4 | Indicadores, Train vs. OOT, comparación con el vigente, calibración | Negocio + jefatura | R5, PRC-ELA |
 | **G4** Calibración / precio técnico | D4-08 / P3 | Calibración por tramo; piso conciliado | Negocio; Finanzas y Riesgos | R6 |
 | **G5** Aprobación | D4-14 / P5 | Documentación, limitaciones, escenarios | Comité de Modelos / Comité de Precios | CM, PRC-CP |
-| **G6** Producción | IMP / P7 | Certificación ≥ 95 %, controles, topes | Líder de implementación + usuario | Acta 10 |
+| **G6** Producción | IMP / P7 | Certificación ≥ 99.9 %, controles, topes | Líder de implementación + usuario | Acta 10 |
 
 ## Cuándo el agente se detiene y escala
 
 El agente **no sigue adelante** y pide decisión humana, por escrito, cuando:
 
-1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 > 10 pts, U-20 con elasticidad positiva, U-24 sobre el tope).
+1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 > 10 pts o caída relativa > 10 %, U-20 con elasticidad positiva, U-24 sobre el tope).
 2. Sospecha **fuga de información**: una variable posterior a la fecha de observación (U-39), una variable con IV mayor a 0.50 (U-38), un Gini OOT mayor que el de construcción, o una variable con importancia anómala.
 3. La definición de default o de target es ambigua, o difiere de U-17.
 4. Encuentra datos sensibles o atributos protegidos que no deberían estar en la base.

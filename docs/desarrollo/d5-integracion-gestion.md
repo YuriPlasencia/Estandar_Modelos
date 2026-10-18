@@ -16,6 +16,17 @@ orden: 14
 Traducir el modelo en **decisiones y valor**: puntos de corte e impacto cuantificado en el negocio, el riesgo
 y los estados financieros. Un modelo sin esta fase no está listo para comité.
 
+## Punto de corte
+
+El score se convierte en decisiones con una **función de utilidad** que refleja el costo asimétrico de los errores
+(DES-D5-01.01.03). Por ejemplo, en una campaña:
+
+$$\text{Utilidad}(c)=b\cdot\text{Aciertos}(c)-k\cdot\text{Acciones}(c)$$
+
+donde $b$ es el beneficio por acierto, $k$ el costo por acción y $c$ el punto de corte. El corte maximiza la utilidad,
+y la población se divide en **estratos de gestión**: prioridad alta, media y descarte con un canal alternativo de menor
+costo. En crédito, el mismo razonamiento usa la pérdida esperada y el margen (EMP, DES-D4-06.01.03).
+
 ## Impactos a evaluar
 
 | Impacto | Métrica típica | Evidencia |
@@ -37,7 +48,7 @@ reales por estrato necesaria para un seguimiento confiable (DES-D5-01.03.01).
 <!-- CATALOGO:INICIO DES-D5 -->
 ## Catálogo de requisitos · Integración a la gestión
 
-> Bloque generado desde `catalogo/des-d5.yaml` (11 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d5.yaml` (12 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Evaluación de Impactos
 
@@ -50,6 +61,10 @@ reales por estrato necesaria para un seguimiento confiable (DES-D5-01.03.01).
 - **`DES-D5-01.01.02`** Definir la política de forzajes (overrides): quién puede forzar, motivos válidos, registro obligatorio y límite de materialidad; el seguimiento medirá su volumen y desempeño (U-36).
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Umbrales: U-36 · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 arts. 19 y 22.
+
+- **`DES-D5-01.01.03`** Fijar el punto de corte maximizando una función de utilidad que refleje el costo asimétrico de los errores (por ejemplo, beneficio por acierto × aciertos − costo por acción × acciones) y definir estratos de gestión (prioridad alta, media y descarte con un canal alternativo de menor costo).
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.2 Evaluación de impactos en el negocio y valorización de ganancias del modelo
 

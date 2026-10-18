@@ -64,7 +64,7 @@ Este estándar lo traduce en reglas (U-31):
 
   Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R5: Motor de ECL · Hito: Sprint 6 · Umbrales: U-32
 
-- **`PAR-R8-01.01.02`** Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.
+- **`PAR-R8-01.01.02`** Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 99.9 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.
 
   Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 

@@ -49,7 +49,7 @@ Con cuadro de control de cambios. Debe contener:
 ## Certificación
 
 1. Definir las pruebas (Correo 3).
-2. Comparar modelamiento vs. implementación: **≥ 95 % de coincidencia** (U-15).
+2. Comparar modelamiento vs. implementación: **≥ 99.9 % de coincidencia** (U-15).
 3. Constancia de pruebas (Documento 14: Certificación).
 4. Conformidad del líder de implementación (o del Sub Gerente de Modelos de Riesgo si implementa el equipo modelador).
 5. Presentación al equipo usuario y acta de cierre (Acta 10).
@@ -57,7 +57,7 @@ Con cuadro de control de cambios. Debe contener:
 <!-- CATALOGO:INICIO IMP -->
 ## Catálogo de requisitos · Implementación
 
-> Bloque generado desde `catalogo/imp.yaml` (28 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
+> Bloque generado desde `catalogo/imp.yaml` (29 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
 
 ### 1 · Implementación tecnológica
 
@@ -188,7 +188,7 @@ Con cuadro de control de cambios. Debe contener:
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 3: Pruebas a realizar.
 
-- **`IMP-01.06.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)
+- **`IMP-01.06.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (99.9 % de coincidencia mínima para obtener conformidad, U-15)
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.0625 d ágil / 1.25 d completo · Automatización: 1 · Umbrales: U-15
 
@@ -207,6 +207,10 @@ Con cuadro de control de cambios. Debe contener:
 - **`IMP-01.06.06`** Registrar en cada resultado productivo la versión del modelo y del código que lo generó, para trazabilidad y seguimiento.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia; FR-07.
+
+- **`IMP-01.06.07`** Probar la paridad matemática en producción: al menos 99.9 % de los registros con el mismo score o decisión que el proceso de modelamiento, dentro de la tolerancia numérica documentada (U-15). Las diferencias se explican una a una.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Crítico · Umbrales: U-15 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.7 Presentación del proceso de implementación al equipo usuario
 

@@ -155,7 +155,7 @@ FASES = [
   ("Cálculo de la ECL", [
     ("Motor de cálculo", [
       ("Calcular la ECL por operación como la suma, período a período, de PD marginal × LGD × EAD descontada a la tasa de interés efectiva: 12 meses para Stage 1, lifetime para Stage 2 y LGD en default para Stage 3; ponderar por escenario (U-32).", T, 3, 2, "datos", True, ("Script", "R5", "Motor de ECL"), "Sprint 6"),
-      ("Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.", T, 2, 2, "datos", True, ("Documento", "14", "Certificación del modelo"), None),
+      ("Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 99.9 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.", T, 2, 2, "datos", True, ("Documento", "14", "Certificación del modelo"), None),
     ]),
     ("Análisis de resultados", [
       ("Explicar los movimientos de la ECL entre períodos (originaciones, bajas, cambios de stage, cambios de parámetros, escenarios, castigos) para Contabilidad y para las revelaciones de IFRS 7.", T, 2, 3, "datos", True, ("Excel", "R7", "Movimiento de la ECL"), None),

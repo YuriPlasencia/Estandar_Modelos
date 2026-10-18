@@ -26,7 +26,7 @@ f_i=\left(\frac{N}{N_0}\right)^{0.15}\left(\frac{C}{C_0}\right)^{e_i}$$
   volumen de referencia al que corresponden los días del catálogo.
 - $f_i$ se aplica sólo a las actividades de **datos** de D1–D4 y C1–C4. Se usa $e_i=0.5$ si la actividad es
   manual (nivel de automatización 0–2) y $e_i=0.25$ si está automatizada (3–4). En entrenamiento y calibración
-  sólo pesa el número de registros, porque se trabaja con ~150 variables preseleccionadas (U-08) o con pocos drivers.
+  sólo pesa el número de registros, porque se trabaja con ~100 variables preseleccionadas (U-08) o con pocos drivers.
 - Las actividades de **reunión** del catálogo no se suman al trabajo directo: su tiempo queda dentro del
   porcentaje de reuniones.
 
@@ -80,30 +80,30 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 |---|---|---:|---:|---:|---:|---:|
 | I | Lineal | 11.9 | 13.0 | 14 | 15 | 77% |
 | I | ML | 10.8 | 12.0 | 13 | 14 | 77% |
-| I | Árbol | 10.2 | 11.3 | 12 | 13 | 77% |
-| I | ACP | 7.9 | 8.8 | 9 | 10 | 78% |
+| I | Árbol | 10.2 | 11.4 | 12 | 13 | 77% |
+| I | ACP | 7.8 | 8.7 | 9 | 10 | 77% |
 | II | Lineal | 11.0 | 12.0 | 13 | 14 | 77% |
 | II | ML | 10.2 | 11.2 | 12 | 13 | 77% |
-| II | Árbol | 9.6 | 10.5 | 11 | 12 | 77% |
-| II | ACP | 7.5 | 8.3 | 8 | 9 | 77% |
-| III | Lineal | 9.8 | 10.6 | 11 | 12 | 77% |
-| III | ML | 9.6 | 10.5 | 11 | 12 | 77% |
-| III | Árbol | 9.0 | 9.8 | 10 | 11 | 77% |
-| III | ACP | 7.0 | 7.7 | 8 | 9 | 78% |
+| II | Árbol | 9.6 | 10.6 | 11 | 12 | 77% |
+| II | ACP | 7.4 | 8.2 | 8 | 9 | 77% |
+| III | Lineal | 9.8 | 10.7 | 11 | 12 | 77% |
+| III | ML | 9.6 | 10.6 | 11 | 12 | 77% |
+| III | Árbol | 9.1 | 9.9 | 10 | 11 | 77% |
+| III | ACP | 6.9 | 7.6 | 8 | 9 | 77% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
 | Proyecto | Personas (semanas) | Con agente (días hábiles) | Ahorro |
 |---|---:|---:|---:|
-| Calibración Tier I | 3.4 | 4 | 77% |
-| Calibración Tier II | 3.2 | 4 | 76% |
-| Calibración Tier III | 2.5 | 3 | 77% |
-| Parámetros de riesgo Tier I | 6.8 | 7 | 78% |
-| Parámetros de riesgo Tier II | 6.8 | 7 | 78% |
-| Parámetros de riesgo Tier III | 5.3 | 6 | 78% |
-| Pricing end-to-end Tier I | 6.6 | 8 | 77% |
-| Pricing end-to-end Tier II | 6.6 | 8 | 77% |
-| Pricing end-to-end Tier III | 5.2 | 6 | 77% |
+| Calibración Tier I | 3.3 | 4 | 77% |
+| Calibración Tier II | 3.1 | 4 | 76% |
+| Calibración Tier III | 2.4 | 3 | 77% |
+| Parámetros de riesgo Tier I | 6.5 | 7 | 78% |
+| Parámetros de riesgo Tier II | 6.5 | 7 | 78% |
+| Parámetros de riesgo Tier III | 5.1 | 6 | 78% |
+| Pricing end-to-end Tier I | 6.4 | 7 | 77% |
+| Pricing end-to-end Tier II | 6.4 | 7 | 77% |
+| Pricing end-to-end Tier III | 5.1 | 6 | 77% |
 | Seguimiento anual de un modelo Tier I | 0.8 | 1 | 76% |
 | Seguimiento anual de un modelo Tier III | 0.8 | 1 | 76% |
 | Implementación (proyecto independiente) | 0.9 | 1 | 74% |
@@ -112,15 +112,15 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Fase | Trabajo con personas | Trabajo con agente |
 |---|---:|---:|
-| DES-D1 · Definición, alcance, diseño y extracción | 25.5 | 3.9 |
-| DES-D2 · Preparación, calidad y entendimiento de los datos | 2.7 | 0.5 |
+| DES-D1 · Definición, alcance, diseño y extracción | 25.0 | 3.9 |
+| DES-D2 · Preparación, calidad y entendimiento de los datos | 2.6 | 0.5 |
 | DES-D3 · Segmentación | 0.9 | 0.1 |
-| DES-D4 · Modelamiento | 33.7 | 4.9 |
-| DES-D5 · Integración a la gestión | 5.4 | 1.3 |
-| DES-D7 · Gobierno | 0.6 | 0.3 |
-| IMP · Implementación | 6.1 | 1.3 |
-| Reuniones y bloqueo por tiempo de máquina (36.0 h) | 33.2 | 12.7 |
-| **Total días-persona** | **108.1** | **25.0** |
+| DES-D4 · Modelamiento | 34.4 | 5.0 |
+| DES-D5 · Integración a la gestión | 5.5 | 1.4 |
+| DES-D7 · Gobierno | 0.6 | 0.2 |
+| IMP · Implementación | 6.0 | 1.2 |
+| Reuniones y bloqueo por tiempo de máquina (24.0 h) | 32.9 | 12.7 |
+| **Total días-persona** | **107.9** | **25.0** |
 | **Duración con 2 personas** | **10.8 semanas** | **13 días hábiles** |
 
 <!-- CATALOGO:FIN -->
@@ -131,7 +131,7 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
   con ≥ 64 GB de RAM, o un motor distribuido. Para la exploración se puede trabajar sobre una muestra
   si cumple la representatividad (U-03).
 - **Tiempo de máquina:** con ML, ~120 ajustes por segmento (≥ 50 de hiperparámetros, U-10), 4 segmentos y
-  150 variables, son unas 36 horas de cómputo. Corren de noche, pero conviene planificarlas desde el inicio para no
+  100 variables, son unas 24 horas de cómputo. Corren de noche, pero conviene planificarlas desde el inicio para no
   comprometer el plazo de U-40.
 - **Cumplir 15 días con agentes exige acortar ceremonias:** actas preparadas por el agente, decisiones por escrito y
   reuniones de hito cortas. Las aprobaciones formales no se aceleran; se agendan desde el kick-off.

@@ -20,7 +20,7 @@ orden: 1
 | 3 | Segmentación | [DES-D3](../desarrollo/d3-segmentacion.md) | Segmentación final documentada (Documento 7) |
 | 4 | Modelamiento | [DES-D4](../desarrollo/d4-modelamiento.md) | Modelo final seleccionado, calibrado y documentado; presentación en Comité de Modelos |
 | 5 | Integración a la gestión | [DES-D5](../desarrollo/d5-integracion-gestion.md) | Punto de corte e impactos (riesgo, pricing, provisiones, capital, IFRS) |
-| 6 | Implementación | [IMP](../implementacion/implementacion.md) | Certificación ≥ 95 % de coincidencia y conformidad del usuario |
+| 6 | Implementación | [IMP](../implementacion/implementacion.md) | Certificación ≥ 99.9 % de coincidencia y conformidad del usuario |
 | 7 | Gobierno | [DES-D7](../desarrollo/d7-gobierno.md) | Evidencias, Tier asignado, alta en inventario |
 | — | Validación | [VAL](../validacion/validacion.md) | Dictamen de validación metodológica y de implementación |
 | — | Seguimiento | [SEG](../seguimiento/seguimiento.md) | Reportes periódicos y alertas |

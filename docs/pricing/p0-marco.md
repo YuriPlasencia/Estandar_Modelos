@@ -65,7 +65,7 @@ precio está por encima de lo que el riesgo justifica. Este estándar convierte 
 |---|---|---|
 | PD, LGD, EAD aprobadas | [Desarrollo](../desarrollo/d4-modelamiento.md) y [Calibración](../calibracion/c4-calibrado.md) | Pérdida esperada del piso técnico (PRC-P3-01.02.01) |
 | Proceso de construcción de modelos | DES-D4 (muestras, depuración, selección, documentación) | Modelo de respuesta (PRC-P4-02.01.01) |
-| Certificación ≥ 95 % (U-15) | [Implementación](../implementacion/implementacion.md) | Motor de precios (PRC-P7-02.02.01) |
+| Certificación ≥ 99.9 % (U-15) | [Implementación](../implementacion/implementacion.md) | Motor de precios (PRC-P7-02.02.01) |
 | Revisión independiente | [Validación](../validacion/validacion.md), ámbito VAL-P | Modelos de precio técnico, respuesta y optimizador |
 | Actas por hito | [Actas de reunión](../plantillas/acta-de-reunion.md) | Kick off, modelo de respuesta, Comité de Precios, piloto, revisión post-implementación |
 | Estimación de esfuerzo | [Estimación](../marco/estimacion.md) | Plazos con personas y con agentes de IA |

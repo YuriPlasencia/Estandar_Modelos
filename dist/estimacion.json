@@ -18,7 +18,7 @@
    "columnas_automatizado": 0.25,
    "registros": 0.15
   },
-  "columnas_modelo": 150,
+  "columnas_modelo": 100,
   "computo": {
    "minutos_por_ajuste_ref": {
     "lineal": 0.2,

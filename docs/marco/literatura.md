@@ -39,7 +39,7 @@ El build rechaza obras que no fundamentan ningún requisito existente. Antes de 
 edición y paginación en la fuente.
 
 <!-- CATALOGO:INICIO LITERATURA -->
-103 obras en 10 temas.
+105 obras en 10 temas.
 
 ## Riesgo de crédito y scoring
 
@@ -85,7 +85,7 @@ edición y paginación en la fuente.
 
 - **LIT-011** · *Práctica* — Hosmer, D. W., Lemeshow, S. y Sturdivant, R. X. (2013). *Applied Logistic Regression* (3.ª ed.). Wiley.
 
-  La regresión logística bien hecha: selección, bondad de ajuste e interpretación de coeficientes. Fundamenta: `DES-D4-05`, `VAL-M-03.07`, `CAL-C4-04`.
+  La regresión logística bien hecha: selección, bondad de ajuste e interpretación de coeficientes. Fundamenta: `DES-D4-05`, `VAL-M-03.07`, `CAL-C4-04`, `DES-D4-08.01.07`.
 
 - **LIT-012** · *Práctica* — Kaufman, L. y Rousseeuw, P. J. (1990). *Finding Groups in Data: An Introduction to Cluster Analysis*. Wiley.
 
@@ -93,7 +93,7 @@ edición y paginación en la fuente.
 
 - **LIT-138** · *Práctica* — Verbraken, T., Bravo, C., Weber, R. y Baesens, B. (2014). Development and application of consumer credit scoring models using profit-based classification measures. *European Journal of Operational Research*, 238(2), 505–513.
 
-  Introduce la métrica de máxima ganancia esperada (EMP) para evaluar scorecards por rentabilidad. Fundamenta: `DES-D4-06.01`, `PRC-P5`.
+  Introduce la métrica de máxima ganancia esperada (EMP) para evaluar scorecards por rentabilidad. Fundamenta: `DES-D4-06.01`, `PRC-P5`, `DES-D5-01.01.03`.
 
 - **LIT-139** · *Práctica* — Kozodoi, N., Katsas, P., Lessmann, S., Moreira-Matias, L. y Papakonstantinou, K. (2019). Shallow self-learning for reject inference in credit scoring. En *ECML PKDD 2019*. Springer.
 
@@ -107,11 +107,11 @@ edición y paginación en la fuente.
 
 - **LIT-021** · *Práctica* — Chen, T. y Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. *Proceedings of KDD '16*, 785–794.
 
-  El algoritmo de boosting de referencia en el estándar; explica sus hiperparámetros y su importancia por gain. Fundamenta: `DES-D4-05.04`, `U-08`, `U-09`.
+  El algoritmo de boosting de referencia en el estándar; explica sus hiperparámetros y su importancia por gain. Fundamenta: `DES-D4-05.04`, `U-08`, `U-09`, `U-43`, `DES-D4-05.03.04`.
 
 - **LIT-022** · *Práctica* — Ke, G. et al. (2017). LightGBM: A Highly Efficient Gradient Boosting Decision Tree. *Advances in NeurIPS 30*.
 
-  Alternativa eficiente para bases grandes (millones de filas, cientos de columnas). Fundamenta: `DES-D4-05.03`.
+  Alternativa eficiente para bases grandes (millones de filas, cientos de columnas). Fundamenta: `DES-D4-05.03`, `U-43`.
 
 - **LIT-023** · *Práctica* — Bergstra, J. y Bengio, Y. (2012). Random Search for Hyper-Parameter Optimization. *Journal of Machine Learning Research*, 13, 281–305.
 
@@ -147,7 +147,7 @@ edición y paginación en la fuente.
 
 - **LIT-031** · *Práctica* — Kapoor, S. y Narayanan, A. (2023). Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*, 4(9).
 
-  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`, `U-39`, `DES-D1-01.03`.
+  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`, `U-39`, `DES-D1-01.03`, `U-38`, `DES-D4-06.03.05`.
 
 - **LIT-135** · *Práctica* — Gunnarsson, B. R., vanden Broucke, S., Baesens, B., Óskarsdóttir, M. y Lemahieu, W. (2021). Deep learning for credit scoring: Do or don't? *European Journal of Operational Research*, 295(1), 292–305.
 
@@ -164,6 +164,10 @@ edición y paginación en la fuente.
 - **LIT-140** · *Práctica* — Dumitrescu, E., Hué, S., Hurlin, C. y Tokpavi, S. (2022). Machine learning for credit scoring: Improving logistic regression with non-linear decision-tree effects. *European Journal of Operational Research*, 297(3).
 
   Logística penalizada con efectos de árboles: mejora el desempeño sin perder interpretabilidad. Verificar paginación antes de citar. Fundamenta: `DES-D4-05.03`.
+
+- **LIT-145** · *Canon* — Breiman, L. (2001). Random Forests. *Machine Learning*, 45(1), 5–32.
+
+  Fundamento del ensamble por bagging, una de las cinco familias obligatorias del torneo de modelos. Fundamenta: `DES-D4-05.03.04`, `U-43`.
 
 ## Parámetros de riesgo e IFRS 9
 
@@ -260,6 +264,10 @@ edición y paginación en la fuente.
 - **LIT-046** · *Canon* — Vovk, V., Gammerman, A. y Shafer, G. (2005). *Algorithmic Learning in a Random World*. Springer.
 
   Fundamento teórico de la predicción conforme. Fundamenta: `U-12`.
+
+- **LIT-144** · *Canon* — Brier, G. W. (1950). Verification of forecasts expressed in terms of probability. *Monthly Weather Review*, 78(1), 1–3.
+
+  Origen del Brier score, la medida de exactitud de probabilidades que se exige reportar en el torneo y en la calibración. Fundamenta: `DES-D4-06.03.05`, `DES-D4-08.01.07`.
 
 ## Estabilidad, monitoreo y MLOps
 

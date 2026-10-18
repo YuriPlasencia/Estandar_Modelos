@@ -41,7 +41,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 | Tarea | Cómo |
 |---|---|
 | "Checklist para un modelo Tier II, ML, ágil" | Filtrar `dist/catalogo.json` por `estandar=Desarrollo`, `aplica_tier.ml` ∋ 2; agrupar por fase; listar `entregables` |
-| "¿Mi modelo puede tener 12 pts de diferencia Train–OOT?" | Responder con U-11: máximo 10 pts; si se excede, sustentar y presentar en Comité |
+| "¿Mi modelo puede tener 12 pts de diferencia Train–OOT?" | No: U-11 admite como máximo 10 pts y una caída relativa de 10 %; un candidato que lo exceda queda descalificado del torneo, sin excepción |
 | "Revisa este documento metodológico antes de validación" | Contrastar contra `val.yaml` (VAL-M) y listar requisitos sin evidencia |
 | "Redacta el acta de la reunión 5" | `python tools/acta.py nueva --tipo R5 ...`, completar desarrollo, decisiones (con ID) y acuerdos desde las notas; dejar la conformidad en *Pendiente*; `exportar --docx --md`. Ver `docs/plantillas/acta-de-reunion.md` |
 | "Redacta el documento metodológico" | `python tools/documento.py nuevo REPO`; completar `docs/documento.yaml` solo con lo que sustentan los reportes (lo demás queda como «Completar»); `render`; no tocar gobierno ni aprobaciones. Ver `docs/plantillas/documento-metodologico.md` |

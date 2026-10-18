@@ -45,7 +45,7 @@ actividades:
   tarea: Motor de precios
   subtarea: Certificación
   actividad: |-
-    Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
+    Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 99.9 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
   aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2

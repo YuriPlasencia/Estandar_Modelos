@@ -14,7 +14,7 @@ orden: 10
 ## Objetivo
 
 Entender el problema de negocio, decidir si un modelo es la solución adecuada y fijar **qué se modela, sobre
-quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.2–4.1 semanas con 2 personas<!--/DUR-->) porque aquí se
+quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.1–4.0 semanas con 2 personas<!--/DUR-->) porque aquí se
 cierran las definiciones que, si cambian después, obligan a rehacer el modelo.
 
 ## Entradas
@@ -43,7 +43,8 @@ una prueba automática verifica que ninguna usa información posterior (DES-D1-0
 
 1. **Población objetivo** y definición cosechas vs. aprobadas (Project Charter).
 2. **Ventana histórica**: mínimo 12 meses Train/Test y, como OOT, solo el **último mes con desempeño completo** (U-01);
-   estable según PSI (U-02).
+   estable según PSI (U-02) y sin quiebres de la tasa del target: si la tasa cambia más de 25 % relativo entre meses
+   por una causa operativa, los meses previos al quiebre no se usan para entrenar (U-41, DES-D1-03.01.06).
 3. **Exclusiones**: pautas duras, default en foto, desempeño incompleto, indeterminados y cambios de gestión — cada una con su análisis de materialidad (Documento 3).
 4. **Default (binario)**: se adopta la definición del estándar (U-17, ver abajo). El proyecto documenta la unidad (cliente u operación) y la materialidad (Documento 4).
 5. **Target (continuo)**, cuando aplique: altura, temporalidad y materialidad.
@@ -96,7 +97,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 <!-- CATALOGO:INICIO DES-D1 -->
 ## Catálogo de requisitos · Definición, alcance, diseño y extracción
 
-> Bloque generado desde `catalogo/des-d1.yaml` (56 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d1.yaml` (57 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Definición del objetivo del modelo
 
@@ -267,6 +268,10 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 - **`DES-D1-03.01.05`** Documentación de la generación de la población de modelamiento
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Documento 2: Pedido de datos.
+
+- **`DES-D1-03.01.06`** Antes de fijar la ventana de Train, auditar la serie mensual de la tasa del target. Si la tasa cambia más de 25 % relativo entre meses por un quiebre operativo, de política o de proceso (U-41), los meses previos al quiebre no se usan para entrenar. Si así quedan menos de 12 meses de Train/Test, es una excepción a U-01 que se sustenta y se aprueba con acta.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 3 · Crítico · Umbrales: U-41 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 ### 4 · Criterios de exclusión
 

@@ -42,7 +42,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 <!-- CATALOGO:INICIO VAL -->
 ## Catálogo de requisitos · Validación
 
-> Bloque generado desde `catalogo/val.yaml` (95 requisitos).
+> Bloque generado desde `catalogo/val.yaml` (96 requisitos).
 
 ### Validación metodológica
 
@@ -163,7 +163,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 
 #### Implementación y conducta
 
-- [ ] **`VAL-P-04.01`** **KILLER** Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 95 % (U-15).
+- [ ] **`VAL-P-04.01`** **KILLER** Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 99.9 % (U-15).
 - [ ] **`VAL-P-04.02`** Análisis de equidad del precio y de proxies de atributos protegidos (PRC-P9-02.02.01).
 - [ ] **`VAL-P-04.03`** Registro y log de los agentes de IA usados en el ciclo de pricing, sin facultad para fijar ni aprobar precios (PRC-P9-03.01.01).
 
@@ -194,7 +194,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 #### ECL y gobierno
 
 - [ ] **`VAL-R-04.01`** **KILLER** Overlays con causa, cuantificación, expiración y aprobación (U-31), y plan de absorción en el modelo.
-- [ ] **`VAL-R-04.02`** **KILLER** Motor de ECL certificado con coincidencia ≥ 95 % (U-15) y conciliado con contabilidad.
+- [ ] **`VAL-R-04.02`** **KILLER** Motor de ECL certificado con coincidencia ≥ 99.9 % (U-15) y conciliado con contabilidad.
 - [ ] **`VAL-R-04.03`** Backtesting anual de PD, LGD, CCF, staging y ECL, con acciones documentadas.
 
 ### Validación metodológica
@@ -208,6 +208,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 - [ ] **`VAL-M-05.05`** Para modelos de IA: evaluación de interpretabilidad (incluida la estabilidad de las explicaciones), optimización de hiperparámetros, validación cruzada y nivel de sobreajuste.
 - [ ] **`VAL-M-05.06`** Modelos de terceros: réplica o, si la propiedad intelectual lo impide, benchmarking u otra técnica alternativa documentada.
 - [ ] **`VAL-M-05.07`** **KILLER** Verificación independiente de la no anticipación temporal de las variables (U-39) y de la ausencia de fuga de información: revisión de variables con IV mayor a 0.50 (U-38) y del embudo de filtros previo al entrenamiento.
+- [ ] **`VAL-M-05.08`** **KILLER** Verificación del torneo de modelos: al menos cinco familias (U-43), tabla oficial completa, reglas de descalificación y parsimonia (U-11, U-42) y evidencia de que el OOT no se usó para seleccionar variables ni hiperparámetros.
 
 
 <!-- CATALOGO:FIN -->

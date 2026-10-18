@@ -161,7 +161,7 @@ tipos:
   decisiones:
   - texto: Modelo final seleccionado
     ref: DES-D4-06.03.01
-  - texto: Diferencia de Gini Train–OOT ≤ 10 pts (o excepción sustentada)
+  - texto: Diferencia de Gini Train–OOT ≤ 10 pts y caída relativa ≤ 10 % (sin excepción)
     ref: U-11
   - texto: Variables finales con sentido económico validado
     ref: DES-D4-05.02.02
@@ -301,11 +301,11 @@ tipos:
   requisito: IMP-01.07.01
   objetivo: Presentar el proceso implementado al equipo usuario y dejar constancia de la certificación.
   agenda:
-  - Resultado de las pruebas de certificación (≥ 95 % de coincidencia)
+  - Resultado de las pruebas de certificación (≥ 99.9 % de coincidencia)
   - Tabla productiva, controles de calidad y logs
   - Plan de contingencia y responsables de ejecución
   decisiones:
-  - texto: Certificación con coincidencia ≥ 95 %
+  - texto: Certificación con coincidencia ≥ 99.9 %
     ref: U-15
   - texto: Conformidad del líder de implementación
     ref: IMP-01.06.04

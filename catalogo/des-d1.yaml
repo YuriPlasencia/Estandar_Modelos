@@ -514,6 +514,20 @@ actividades:
   - tipo: Documento
     numero: 2
     descripcion: Pedido de datos.
+- id: DES-D1-03.01.06
+  tarea: "Definición de ventana de modelación"
+  subtarea: "Ventana Modelamiento - Definición de la ventana histórica de modelación"
+  actividad: "Antes de fijar la ventana de Train, auditar la serie mensual de la tasa del target. Si la tasa cambia más de 25 % relativo entre meses por un quiebre operativo, de política o de proceso (U-41), los meses previos al quiebre no se usan para entrenar. Si así quedan menos de 12 meses de Train/Test, es una excepción a U-01 que se sustenta y se aprueba con acta."
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3], acp: [1, 2, 3]}
+  dias_esfuerzo:
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  critico: true
+  nota_origen: "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG."
 - id: DES-D1-04.01.01
   tarea: Criterios de exclusión
   subtarea: Definición de exclusiones

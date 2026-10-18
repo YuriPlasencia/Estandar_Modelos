@@ -21,7 +21,7 @@ orden: 35
 | Familia | Indicador | Periodicidad | Umbral |
 |---|---|---|---|
 | Estabilidad | PSI del score y de cada variable | Mensual | U-37 (verde ≤ 10 %, rojo > 25 %) |
-| Discriminación | Gini y KS por cosecha madura, global y por segmento | Mensual o trimestral | U-37 (rojo: caída > 10 pts) |
+| Discriminación | Gini y KS por cosecha madura, global y por segmento | Mensual o trimestral | U-37 (rojo: caída relativa > 15 %) |
 | Calibración | Tasa observada vs. PD por tramo (binomial o Jeffreys); estimadores con ±25 %/±50 % | Trimestral | U-37, U-12 |
 | Uso | Volumen y desempeño de los forzajes; uso solo para el propósito aprobado | Mensual | U-36 |
 | IA | Sobreajuste en producción (construcción vs. meses recientes) | Trimestral | Según el plan aprobado |

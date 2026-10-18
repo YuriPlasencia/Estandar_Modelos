@@ -20,7 +20,7 @@ actividades:
 - id: PAR-R8-01.01.02
   tarea: "Cálculo de la ECL"
   subtarea: "Motor de cálculo"
-  actividad: "Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad."
+  actividad: "Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 99.9 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad."
   aplica_tier: [1, 2, 3]
   dias_esfuerzo: 2
   nivel_automatizacion: 2

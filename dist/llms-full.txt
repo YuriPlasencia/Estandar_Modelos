@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v3.0.1 · 2026-10-17
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v4.0.0 · 2026-10-17
 
 
 ========== docs/index.md [Vigente] ==========
@@ -77,7 +77,7 @@ que pueden consultar tanto los analistas como los agentes de IA.
 | 3 | Segmentación | [DES-D3](../desarrollo/d3-segmentacion.md) | Segmentación final documentada (Documento 7) |
 | 4 | Modelamiento | [DES-D4](../desarrollo/d4-modelamiento.md) | Modelo final seleccionado, calibrado y documentado; presentación en Comité de Modelos |
 | 5 | Integración a la gestión | [DES-D5](../desarrollo/d5-integracion-gestion.md) | Punto de corte e impactos (riesgo, pricing, provisiones, capital, IFRS) |
-| 6 | Implementación | [IMP](../implementacion/implementacion.md) | Certificación ≥ 95 % de coincidencia y conformidad del usuario |
+| 6 | Implementación | [IMP](../implementacion/implementacion.md) | Certificación ≥ 99.9 % de coincidencia y conformidad del usuario |
 | 7 | Gobierno | [DES-D7](../desarrollo/d7-gobierno.md) | Evidencias, Tier asignado, alta en inventario |
 | — | Validación | [VAL](../validacion/validacion.md) | Dictamen de validación metodológica y de implementación |
 | — | Seguimiento | [SEG](../seguimiento/seguimiento.md) | Reportes periódicos y alertas |
@@ -511,14 +511,14 @@ Las desviaciones se sustentan por escrito; cuando el requisito lo indica (p.ej. 
 | **U-05** | Imputación simple de missings | Imputación por media/mediana sólo para variables con materialidad de missing < 1 % o < 30 casos / defaults. | [`DES-D4-04.04.02`](../desarrollo/d4-modelamiento.md) |
 | **U-06** | Correlación entre variables continuas | Preselección con correlación < 60 % (tolerancia hasta < 95 % evaluando el tradeoff con el poder predictivo). | [`DES-D4-04.05.01`](../desarrollo/d4-modelamiento.md), [`DES-D4-04.05.02`](../desarrollo/d4-modelamiento.md) |
 | **U-07** | Asociación entre variables categóricas | Se aceptan variables categóricas si el p-valor de la prueba chi-cuadrado ≥ 0.0001 o la V de Cramér < 0.4. | [`DES-D4-04.05.03`](../desarrollo/d4-modelamiento.md) |
-| **U-08** | Selección de variables en ML | Top 150 variables o las que acumulen el 80 % del gain. | [`DES-D4-05.02.05`](../desarrollo/d4-modelamiento.md) |
-| **U-09** | Concentración de pesos de variables | Modelos tradicionales — peso máximo recomendado 25 % por variable (toolkit). Modelos ML — peso por gain, máximo recomendado 10 %. Calibraciones — métrica Chi-Wald. | [`DES-D4-05.02.06`](../desarrollo/d4-modelamiento.md) |
+| **U-08** | Selección de variables en ML | Top 100 variables sin fuga, o las que acumulen el 80 % del gain, como entrada de la selección paso a paso. | [`DES-D4-05.02.05`](../desarrollo/d4-modelamiento.md), [`DES-D4-05.02.08`](../desarrollo/d4-modelamiento.md) |
+| **U-09** | Concentración de importancia de variables | Ninguna variable concentra más del 40 % de la importancia relativa (peso en lineales, gain en ML); lo deseable es no más de 25 %. Si se excede, en árboles se fuerza colsample_bytree ≤ 0.60 y penalización L2. Calibraciones: métrica Chi-Wald. | [`DES-D4-05.02.06`](../desarrollo/d4-modelamiento.md), [`DES-D4-06.03.05`](../desarrollo/d4-modelamiento.md) |
 | **U-10** | Optimización de hiperparámetros | Mínimo 50 combinaciones en búsqueda aleatoria; si no se completa, sustentar. Fijar semilla para replicabilidad. | [`DES-D4-05.04.01`](../desarrollo/d4-modelamiento.md) |
-| **U-11** | Sobreajuste Train vs OOT | Diferencia máxima de 10 puntos de performance (Gini) entre Train y OOT. Si es mayor, sustentar en la documentación y presentar el caso en Comité de Modelos. | [`DES-D4-06.03.02`](../desarrollo/d4-modelamiento.md) |
+| **U-11** | Sobreajuste Train vs OOT | Diferencia de Gini entre Train y OOT de 10 puntos como máximo y caída relativa (Gini Train − Gini OOT) / Gini Train de 10 % como máximo. Un candidato que exceda cualquiera de los dos queda descalificado del torneo; no admite excepción. | [`DES-D4-06.03.02`](../desarrollo/d4-modelamiento.md), [`DES-D4-06.03.05`](../desarrollo/d4-modelamiento.md) |
 | **U-12** | Precisión de estimadores (target continuo) | Reportar R², % de casos con real dentro de ±25 % y ±50 % del proyectado, y error cuadrático medio, en construcción y meses recientes. | [`DES-D4-06.01.02`](../desarrollo/d4-modelamiento.md) |
 | **U-13** | Materialidad de ejes de segmentación (calibración) | Si un eje de segmentación no tiene materialidad superior al 5 %, revisar su inclusión con usuarios de negocio y gerencia. | [`CAL-C4-03.01.06`](../calibracion/c4-calibrado.md) |
 | **U-14** | Precisión por bucket (calibración) | Evaluar la precisión de cada tramo del driver con intervalos de Vasicek. Buckets en semáforo rojo deben incluirse en la calibración; los que estén dentro de límites rojos se evalúan y aprueban por gerencia. | [`CAL-C4-03.01.04`](../calibracion/c4-calibrado.md) |
-| **U-15** | Certificación de implementación | Coincidencia mínima del 95 % entre el proceso de modelamiento y el implementado para obtener conformidad. | [`IMP-01.06.02`](../implementacion/implementacion.md), [`CAL-C5-01.04.02`](../calibracion/c5-implementacion.md) |
+| **U-15** | Certificación de implementación | Paridad matemática: al menos 99.9 % de los registros con el mismo score o decisión entre el proceso de modelamiento y el implementado, dentro de la tolerancia numérica documentada, para obtener conformidad. | [`IMP-01.06.02`](../implementacion/implementacion.md), [`IMP-01.06.07`](../implementacion/implementacion.md), [`CAL-C5-01.04.02`](../calibracion/c5-implementacion.md) |
 | **U-16** | Certificación con datos de proveedor externo | Si el modelo consume datos de un proveedor externo, la certificación debe ser integral y cubrir un periodo mínimo de 3 meses. | [`VAL-I-01.09`](../validacion/validacion.md) |
 | **U-17** | Definición de default | Un cliente/operación es default (malo) si registra un atraso mayor a 60 días al menos una vez en los 12 meses siguientes a la fecha de observación. Aplica a modelos de admisión (la fecha de observación es la originación del crédito) y a modelos de buró (clientes activos en la fecha de observación). *Nota: Las operaciones que no completan los 12 meses de desempeño se excluyen (DES-D1-04.01.03, DES-D1-04.01.04). Los indeterminados, con mora menor a la altura de default pero cercana a ella, se analizan y excluyen según DES-D1-04.01.05. El rango exacto se sustenta con roll rates (DES-D1-05.02.02). La materialidad (monto mínimo vencido) se fija en el Documento 4.* | [`DES-D1-05.01.01`](../desarrollo/d1-definicion.md), [`DES-D1-05.02.01`](../desarrollo/d1-definicion.md), [`DES-D1-05.04.01`](../desarrollo/d1-definicion.md) |
 | **U-18** | Precio piso técnico (pricing) | Ninguna oferta por debajo del precio técnico mínimo, definido como la tasa con RAROC igual al hurdle de la entidad. Las excepciones solo se otorgan dentro de la matriz de facultades y por debajo del piso requieren Comité de Precios. | [`PRC-P3-02.01.01`](../pricing/p3-precio-tecnico.md), [`PRC-P7-01.02.01`](../pricing/p6-experimentacion-implementacion.md) |
@@ -540,10 +540,14 @@ Las desviaciones se sustentan por escrito; cuando el requisito lo indica (p.ej. 
 | **U-34** | Cálculo de la LGD workout | Las recuperaciones se descuentan a la tasa de interés efectiva, netas de costos directos e indirectos, y los procesos incompletos se incluyen con un método documentado (no se excluyen). | [`PAR-R4-01.01.01`](../parametros/r4-lgd-ead.md), [`PAR-R4-01.01.02`](../parametros/r4-lgd-ead.md) |
 | **U-35** | Frecuencia de validación por categoría | Validación periódica completa al menos cada año para Tier I, cada dos años para Tier II y cada tres años para Tier III, además de la validación inicial antes del uso. Réplica completa obligatoria en Tier I. *Nota: Valor de referencia de la línea base; el comité de riesgos de modelo aprueba la periodicidad definitiva.* | [`VAL-M-05.03`](../validacion/validacion.md), [`VAL-M-05.01`](../validacion/validacion.md), [`GOB-G2-02.01.01`](../marco/gobierno-mrm.md) |
 | **U-36** | Forzajes (overrides) | Alerta si los forzajes superan el 5 % de las decisiones del período o si los casos forzados tienen una tasa de default significativamente mayor que los no forzados del mismo tramo. *Nota: Valor de referencia inicial; calibrar por producto en el primer ciclo.* | [`DES-D5-01.01.02`](../desarrollo/d5-integracion-gestion.md), [`SEG-S2-01.03.01`](../seguimiento/seguimiento.md) |
-| **U-37** | Semáforo de seguimiento | PSI del score: verde ≤ 10 %, ámbar entre 10 % y 25 %, rojo > 25 %. Discriminación: rojo si el Gini cae más de 10 pts frente a construcción. Calibración: rojo si un tramo sale del intervalo al 99 %. *Nota: Valor de referencia de la línea base; el comité aprueba los umbrales por modelo.* | [`SEG-S1-01.01.01`](../seguimiento/seguimiento.md), [`SEG-S2-01.02.01`](../seguimiento/seguimiento.md) |
-| **U-38** | Rango de IV y sospecha de fuga | IV menor a 0.02: la variable no aporta poder predictivo y se excluye salvo sustento de negocio. IV mayor a 0.50: sospecha de fuga de información; se excluye salvo una investigación documentada que la descarte. | [`DES-D4-03.03.03`](../desarrollo/d4-modelamiento.md), [`DES-D4-03.03.04`](../desarrollo/d4-modelamiento.md) |
+| **U-37** | Semáforo de seguimiento | PSI del score: verde < 10 %, ámbar entre 10 % y 25 %, rojo > 25 %. Discriminación (caída relativa del Gini frente al OOT de construcción): verde < 10 %, ámbar entre 10 % y 15 %, rojo > 15 %. Calibración: rojo si un tramo sale del intervalo al 99 %. Un rojo exige reentrenar o recalibrar, con aprobación del comité. *Nota: Valor de referencia de la línea base; el comité aprueba los umbrales por modelo.* | [`SEG-S1-01.01.01`](../seguimiento/seguimiento.md), [`SEG-S2-01.02.01`](../seguimiento/seguimiento.md) |
+| **U-38** | Rango de IV y sospecha de fuga | IV mayor a 0.50: la variable se excluye por sospecha de fuga de información (cuasi-determinismo); no entra al modelo. IV menor a 0.02: no se excluye de forma automática; pasa a la etapa multivariada, y los bloques estructurales de negocio se preservan como control (DES-D4-05.02.09). | [`DES-D4-03.03.03`](../desarrollo/d4-modelamiento.md), [`DES-D4-03.03.04`](../desarrollo/d4-modelamiento.md), [`DES-D4-05.02.09`](../desarrollo/d4-modelamiento.md) |
 | **U-39** | No anticipación temporal de las variables | Cero variables contemporáneas o futuras: cada variable se mide con información disponible antes de la fecha de observación menos el desfase de su fuente. | [`DES-D1-01.03.04`](../desarrollo/d1-definicion.md), [`DES-D1-01.03.05`](../desarrollo/d1-definicion.md), [`DES-D4-03.03.04`](../desarrollo/d4-modelamiento.md) |
 | **U-40** | Plazo máximo de desarrollo de un modelo | Un modelo de Desarrollo, de cualquier Tier, tipo y enfoque, se termina con 2 personas en un máximo de 13 semanas (3 meses) desde el kick-off hasta la presentación al Comité de Modelos. Con agentes de IA, en un máximo de 15 días hábiles. Superar el plazo requiere sustento y su presentación al Comité. *Nota: El modelo de esfuerzo (catalogo/parametros_esfuerzo.yaml, bloque anclaje) se calibra con esta meta.* | [`DES-D1-02.01.01`](../desarrollo/d1-definicion.md), [`DES-D4-11.02.01`](../desarrollo/d4-modelamiento.md) |
+| **U-41** | Estabilidad de la tasa del target en la ventana | La tasa del target no cambia más de 25 % relativo entre meses consecutivos de la ventana de Train. Un quiebre mayor por causa operativa, de política o de proceso excluye los meses previos al quiebre. | [`DES-D1-03.01.06`](../desarrollo/d1-definicion.md) |
+| **U-42** | Parsimonia en la elección del campeón | Si un algoritmo más simple y explicable queda a menos de 1.5 puntos de Gini del más complejo, se elige el más simple. | [`DES-D4-06.03.05`](../desarrollo/d4-modelamiento.md) |
+| **U-43** | Torneo de modelos (champion–challenger) | En clasificación binaria, al menos cinco familias de algoritmos compiten con los mismos datos, la misma validación temporal y la misma semilla, con una regresión logística regularizada como línea base obligatoria. | [`DES-D4-05.03.04`](../desarrollo/d4-modelamiento.md), [`DES-D4-06.03.05`](../desarrollo/d4-modelamiento.md) |
+| **U-44** | Monotonicidad del desempeño por deciles | La tasa observada por decil de score es monótona en el OOT: cero inversiones entre deciles. | [`DES-D4-06.01.04`](../desarrollo/d4-modelamiento.md), [`DES-D4-04.03.04`](../desarrollo/d4-modelamiento.md) |
 
 <!-- CATALOGO:FIN -->
 
@@ -567,7 +571,7 @@ f_i=\left(\frac{N}{N_0}\right)^{0.15}\left(\frac{C}{C_0}\right)^{e_i}$$
   volumen de referencia al que corresponden los días del catálogo.
 - $f_i$ se aplica sólo a las actividades de **datos** de D1–D4 y C1–C4. Se usa $e_i=0.5$ si la actividad es
   manual (nivel de automatización 0–2) y $e_i=0.25$ si está automatizada (3–4). En entrenamiento y calibración
-  sólo pesa el número de registros, porque se trabaja con ~150 variables preseleccionadas (U-08) o con pocos drivers.
+  sólo pesa el número de registros, porque se trabaja con ~100 variables preseleccionadas (U-08) o con pocos drivers.
 - Las actividades de **reunión** del catálogo no se suman al trabajo directo: su tiempo queda dentro del
   porcentaje de reuniones.
 
@@ -621,30 +625,30 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 |---|---|---:|---:|---:|---:|---:|
 | I | Lineal | 11.9 | 13.0 | 14 | 15 | 77% |
 | I | ML | 10.8 | 12.0 | 13 | 14 | 77% |
-| I | Árbol | 10.2 | 11.3 | 12 | 13 | 77% |
-| I | ACP | 7.9 | 8.8 | 9 | 10 | 78% |
+| I | Árbol | 10.2 | 11.4 | 12 | 13 | 77% |
+| I | ACP | 7.8 | 8.7 | 9 | 10 | 77% |
 | II | Lineal | 11.0 | 12.0 | 13 | 14 | 77% |
 | II | ML | 10.2 | 11.2 | 12 | 13 | 77% |
-| II | Árbol | 9.6 | 10.5 | 11 | 12 | 77% |
-| II | ACP | 7.5 | 8.3 | 8 | 9 | 77% |
-| III | Lineal | 9.8 | 10.6 | 11 | 12 | 77% |
-| III | ML | 9.6 | 10.5 | 11 | 12 | 77% |
-| III | Árbol | 9.0 | 9.8 | 10 | 11 | 77% |
-| III | ACP | 7.0 | 7.7 | 8 | 9 | 78% |
+| II | Árbol | 9.6 | 10.6 | 11 | 12 | 77% |
+| II | ACP | 7.4 | 8.2 | 8 | 9 | 77% |
+| III | Lineal | 9.8 | 10.7 | 11 | 12 | 77% |
+| III | ML | 9.6 | 10.6 | 11 | 12 | 77% |
+| III | Árbol | 9.1 | 9.9 | 10 | 11 | 77% |
+| III | ACP | 6.9 | 7.6 | 8 | 9 | 77% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
 | Proyecto | Personas (semanas) | Con agente (días hábiles) | Ahorro |
 |---|---:|---:|---:|
-| Calibración Tier I | 3.4 | 4 | 77% |
-| Calibración Tier II | 3.2 | 4 | 76% |
-| Calibración Tier III | 2.5 | 3 | 77% |
-| Parámetros de riesgo Tier I | 6.8 | 7 | 78% |
-| Parámetros de riesgo Tier II | 6.8 | 7 | 78% |
-| Parámetros de riesgo Tier III | 5.3 | 6 | 78% |
-| Pricing end-to-end Tier I | 6.6 | 8 | 77% |
-| Pricing end-to-end Tier II | 6.6 | 8 | 77% |
-| Pricing end-to-end Tier III | 5.2 | 6 | 77% |
+| Calibración Tier I | 3.3 | 4 | 77% |
+| Calibración Tier II | 3.1 | 4 | 76% |
+| Calibración Tier III | 2.4 | 3 | 77% |
+| Parámetros de riesgo Tier I | 6.5 | 7 | 78% |
+| Parámetros de riesgo Tier II | 6.5 | 7 | 78% |
+| Parámetros de riesgo Tier III | 5.1 | 6 | 78% |
+| Pricing end-to-end Tier I | 6.4 | 7 | 77% |
+| Pricing end-to-end Tier II | 6.4 | 7 | 77% |
+| Pricing end-to-end Tier III | 5.1 | 6 | 77% |
 | Seguimiento anual de un modelo Tier I | 0.8 | 1 | 76% |
 | Seguimiento anual de un modelo Tier III | 0.8 | 1 | 76% |
 | Implementación (proyecto independiente) | 0.9 | 1 | 74% |
@@ -653,15 +657,15 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Fase | Trabajo con personas | Trabajo con agente |
 |---|---:|---:|
-| DES-D1 · Definición, alcance, diseño y extracción | 25.5 | 3.9 |
-| DES-D2 · Preparación, calidad y entendimiento de los datos | 2.7 | 0.5 |
+| DES-D1 · Definición, alcance, diseño y extracción | 25.0 | 3.9 |
+| DES-D2 · Preparación, calidad y entendimiento de los datos | 2.6 | 0.5 |
 | DES-D3 · Segmentación | 0.9 | 0.1 |
-| DES-D4 · Modelamiento | 33.7 | 4.9 |
-| DES-D5 · Integración a la gestión | 5.4 | 1.3 |
-| DES-D7 · Gobierno | 0.6 | 0.3 |
-| IMP · Implementación | 6.1 | 1.3 |
-| Reuniones y bloqueo por tiempo de máquina (36.0 h) | 33.2 | 12.7 |
-| **Total días-persona** | **108.1** | **25.0** |
+| DES-D4 · Modelamiento | 34.4 | 5.0 |
+| DES-D5 · Integración a la gestión | 5.5 | 1.4 |
+| DES-D7 · Gobierno | 0.6 | 0.2 |
+| IMP · Implementación | 6.0 | 1.2 |
+| Reuniones y bloqueo por tiempo de máquina (24.0 h) | 32.9 | 12.7 |
+| **Total días-persona** | **107.9** | **25.0** |
 | **Duración con 2 personas** | **10.8 semanas** | **13 días hábiles** |
 
 <!-- CATALOGO:FIN -->
@@ -672,7 +676,7 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
   con ≥ 64 GB de RAM, o un motor distribuido. Para la exploración se puede trabajar sobre una muestra
   si cumple la representatividad (U-03).
 - **Tiempo de máquina:** con ML, ~120 ajustes por segmento (≥ 50 de hiperparámetros, U-10), 4 segmentos y
-  150 variables, son unas 36 horas de cómputo. Corren de noche, pero conviene planificarlas desde el inicio para no
+  100 variables, son unas 24 horas de cómputo. Corren de noche, pero conviene planificarlas desde el inicio para no
   comprometer el plazo de U-40.
 - **Cumplir 15 días con agentes exige acortar ceremonias:** actas preparadas por el agente, decisiones por escrito y
   reuniones de hito cortas. Las aprobaciones formales no se aceleran; se agendan desde el kick-off.
@@ -691,6 +695,9 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | **Target** | Variable objetivo. Binaria (default) o continua (p.ej. ingreso estimado). |
 | **Default** | Evento de incumplimiento definido por altura (días de atraso), temporalidad (ventana de desempeño) y materialidad (monto mínimo). |
 | **Indeterminado** | Operación con mora menor a la altura de default al cierre de la ventana; se excluye del entrenamiento. |
+| **Torneo (champion–challenger)** | Competencia de al menos cinco familias de algoritmos con los mismos datos y validación; el campeón sale de la tabla oficial y sus reglas (U-43, U-42, U-11). |
+| **Desempeño por deciles** | Tasa observada por decil de score; mide el ordenamiento y se exige monótona (U-44). No es una calibración. |
+| **Paridad matemática** | Porcentaje de registros con el mismo score o decisión entre modelamiento y producción (U-15: ≥ 99.9 %). |
 | **Train / Test / OOT** | Muestra de entrenamiento, de prueba (mismo periodo) y *out-of-time*: el último mes con desempeño completo, posterior al periodo de entrenamiento (U-01). |
 | **Roll rate** | Probabilidad de transitar de un tramo de mora al siguiente; sustenta la altura de default. |
 | **Driver** | Variable explicativa, en especial las usadas para calibrar. |
@@ -768,7 +775,7 @@ El build rechaza obras que no fundamentan ningún requisito existente. Antes de 
 edición y paginación en la fuente.
 
 <!-- CATALOGO:INICIO LITERATURA -->
-103 obras en 10 temas.
+105 obras en 10 temas.
 
 ## Riesgo de crédito y scoring
 
@@ -814,7 +821,7 @@ edición y paginación en la fuente.
 
 - **LIT-011** · *Práctica* — Hosmer, D. W., Lemeshow, S. y Sturdivant, R. X. (2013). *Applied Logistic Regression* (3.ª ed.). Wiley.
 
-  La regresión logística bien hecha: selección, bondad de ajuste e interpretación de coeficientes. Fundamenta: `DES-D4-05`, `VAL-M-03.07`, `CAL-C4-04`.
+  La regresión logística bien hecha: selección, bondad de ajuste e interpretación de coeficientes. Fundamenta: `DES-D4-05`, `VAL-M-03.07`, `CAL-C4-04`, `DES-D4-08.01.07`.
 
 - **LIT-012** · *Práctica* — Kaufman, L. y Rousseeuw, P. J. (1990). *Finding Groups in Data: An Introduction to Cluster Analysis*. Wiley.
 
@@ -822,7 +829,7 @@ edición y paginación en la fuente.
 
 - **LIT-138** · *Práctica* — Verbraken, T., Bravo, C., Weber, R. y Baesens, B. (2014). Development and application of consumer credit scoring models using profit-based classification measures. *European Journal of Operational Research*, 238(2), 505–513.
 
-  Introduce la métrica de máxima ganancia esperada (EMP) para evaluar scorecards por rentabilidad. Fundamenta: `DES-D4-06.01`, `PRC-P5`.
+  Introduce la métrica de máxima ganancia esperada (EMP) para evaluar scorecards por rentabilidad. Fundamenta: `DES-D4-06.01`, `PRC-P5`, `DES-D5-01.01.03`.
 
 - **LIT-139** · *Práctica* — Kozodoi, N., Katsas, P., Lessmann, S., Moreira-Matias, L. y Papakonstantinou, K. (2019). Shallow self-learning for reject inference in credit scoring. En *ECML PKDD 2019*. Springer.
 
@@ -836,11 +843,11 @@ edición y paginación en la fuente.
 
 - **LIT-021** · *Práctica* — Chen, T. y Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System. *Proceedings of KDD '16*, 785–794.
 
-  El algoritmo de boosting de referencia en el estándar; explica sus hiperparámetros y su importancia por gain. Fundamenta: `DES-D4-05.04`, `U-08`, `U-09`.
+  El algoritmo de boosting de referencia en el estándar; explica sus hiperparámetros y su importancia por gain. Fundamenta: `DES-D4-05.04`, `U-08`, `U-09`, `U-43`, `DES-D4-05.03.04`.
 
 - **LIT-022** · *Práctica* — Ke, G. et al. (2017). LightGBM: A Highly Efficient Gradient Boosting Decision Tree. *Advances in NeurIPS 30*.
 
-  Alternativa eficiente para bases grandes (millones de filas, cientos de columnas). Fundamenta: `DES-D4-05.03`.
+  Alternativa eficiente para bases grandes (millones de filas, cientos de columnas). Fundamenta: `DES-D4-05.03`, `U-43`.
 
 - **LIT-023** · *Práctica* — Bergstra, J. y Bengio, Y. (2012). Random Search for Hyper-Parameter Optimization. *Journal of Machine Learning Research*, 13, 281–305.
 
@@ -876,7 +883,7 @@ edición y paginación en la fuente.
 
 - **LIT-031** · *Práctica* — Kapoor, S. y Narayanan, A. (2023). Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*, 4(9).
 
-  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`, `U-39`, `DES-D1-01.03`.
+  Taxonomía de fugas de información (data leakage) que explica muchos Gini "demasiado buenos". Fundamenta: `DES-D4-02`, `DES-D4-06.03.02`, `U-11`, `U-39`, `DES-D1-01.03`, `U-38`, `DES-D4-06.03.05`.
 
 - **LIT-135** · *Práctica* — Gunnarsson, B. R., vanden Broucke, S., Baesens, B., Óskarsdóttir, M. y Lemahieu, W. (2021). Deep learning for credit scoring: Do or don't? *European Journal of Operational Research*, 295(1), 292–305.
 
@@ -893,6 +900,10 @@ edición y paginación en la fuente.
 - **LIT-140** · *Práctica* — Dumitrescu, E., Hué, S., Hurlin, C. y Tokpavi, S. (2022). Machine learning for credit scoring: Improving logistic regression with non-linear decision-tree effects. *European Journal of Operational Research*, 297(3).
 
   Logística penalizada con efectos de árboles: mejora el desempeño sin perder interpretabilidad. Verificar paginación antes de citar. Fundamenta: `DES-D4-05.03`.
+
+- **LIT-145** · *Canon* — Breiman, L. (2001). Random Forests. *Machine Learning*, 45(1), 5–32.
+
+  Fundamento del ensamble por bagging, una de las cinco familias obligatorias del torneo de modelos. Fundamenta: `DES-D4-05.03.04`, `U-43`.
 
 ## Parámetros de riesgo e IFRS 9
 
@@ -989,6 +1000,10 @@ edición y paginación en la fuente.
 - **LIT-046** · *Canon* — Vovk, V., Gammerman, A. y Shafer, G. (2005). *Algorithmic Learning in a Random World*. Springer.
 
   Fundamento teórico de la predicción conforme. Fundamenta: `U-12`.
+
+- **LIT-144** · *Canon* — Brier, G. W. (1950). Verification of forecasts expressed in terms of probability. *Monthly Weather Review*, 78(1), 1–3.
+
+  Origen del Brier score, la medida de exactitud de probabilidades que se exige reportar en el torneo y en la calibración. Fundamenta: `DES-D4-06.03.05`, `DES-D4-08.01.07`.
 
 ## Estabilidad, monitoreo y MLOps
 
@@ -1213,7 +1228,7 @@ edición y paginación en la fuente.
 ## Objetivo
 
 Entender el problema de negocio, decidir si un modelo es la solución adecuada y fijar **qué se modela, sobre
-quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.2–4.1 semanas con 2 personas<!--/DUR-->) porque aquí se
+quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.1–4.0 semanas con 2 personas<!--/DUR-->) porque aquí se
 cierran las definiciones que, si cambian después, obligan a rehacer el modelo.
 
 ## Entradas
@@ -1242,7 +1257,8 @@ una prueba automática verifica que ninguna usa información posterior (DES-D1-0
 
 1. **Población objetivo** y definición cosechas vs. aprobadas (Project Charter).
 2. **Ventana histórica**: mínimo 12 meses Train/Test y, como OOT, solo el **último mes con desempeño completo** (U-01);
-   estable según PSI (U-02).
+   estable según PSI (U-02) y sin quiebres de la tasa del target: si la tasa cambia más de 25 % relativo entre meses
+   por una causa operativa, los meses previos al quiebre no se usan para entrenar (U-41, DES-D1-03.01.06).
 3. **Exclusiones**: pautas duras, default en foto, desempeño incompleto, indeterminados y cambios de gestión — cada una con su análisis de materialidad (Documento 3).
 4. **Default (binario)**: se adopta la definición del estándar (U-17, ver abajo). El proyecto documenta la unidad (cliente u operación) y la materialidad (Documento 4).
 5. **Target (continuo)**, cuando aplique: altura, temporalidad y materialidad.
@@ -1295,7 +1311,7 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 <!-- CATALOGO:INICIO DES-D1 -->
 ## Catálogo de requisitos · Definición, alcance, diseño y extracción
 
-> Bloque generado desde `catalogo/des-d1.yaml` (56 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d1.yaml` (57 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Definición del objetivo del modelo
 
@@ -1466,6 +1482,10 @@ para la altura (30-60-90-120 días), **curva acumulada de defaults** para la tem
 - **`DES-D1-03.01.05`** Documentación de la generación de la población de modelamiento
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Entregable: Documento 2: Pedido de datos.
+
+- **`DES-D1-03.01.06`** Antes de fijar la ventana de Train, auditar la serie mensual de la tasa del target. Si la tasa cambia más de 25 % relativo entre meses por un quiebre operativo, de política o de proceso (U-41), los meses previos al quiebre no se usan para entrenar. Si así quedan menos de 12 meses de Train/Test, es una excepción a U-01 que se sustenta y se aprueba con acta.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 3 · Crítico · Umbrales: U-41 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 ### 4 · Criterios de exclusión
 
@@ -1788,7 +1808,7 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 ## Objetivo
 
 Construir, seleccionar, calibrar y documentar el modelo final, y llevarlo a aprobación del Comité de Modelos.
-Es la fase con más requisitos del estándar (<!--DUR:fase:DES-D4-->≈ 2.9–5.5 semanas con 2 personas<!--/DUR-->).
+Es la fase con más requisitos del estándar (<!--DUR:fase:DES-D4-->≈ 2.8–5.7 semanas con 2 personas<!--/DUR-->).
 
 ## Flujo
 
@@ -1809,8 +1829,8 @@ Ningún modelo se entrena sobre variables que no hayan pasado, en este orden, po
  2 Univariado             distribución, faltantes, especiales, categorías raras, extremos   DES-D4-03.02.02
  3 Fill rate y PSI        poblamiento global y mensual; estabilidad temporal                DES-D4-03.02.01 · U-02
  4 Bivariado              WOE e IV por tramo, tendencia y monotonicidad del riesgo          DES-D4-03.03.02
- 5 Sospecha de fuga       IV > 0.50 no entra salvo investigación que descarte leakage       U-38 · DES-D4-03.03.03
- 6 Filtro de confiables   IV entre 0.02 y 0.50, fill rate del plan, PSI; luego correlación  DES-D4-03.03.04 · U-06 · U-07
+ 5 Sospecha de fuga       IV > 0.50 se excluye (cuasi-determinismo)                         U-38 · DES-D4-03.03.03
+ 6 Filtro de confiables   IV ≤ 0.50, fill rate del plan, PSI; luego correlación             DES-D4-03.03.04 · U-06 · U-07
  ──────────────────────────────────────────────────────────────────────────────────────────────────────────
  Embudo de variables documentado ─▶ Feature engineering ─▶ Entrenamiento
 ```
@@ -1823,23 +1843,69 @@ referencia y el desfase de su fuente (DES-D1-01.03.05).
 
 **Por qué un IV demasiado alto es una alarma.** En crédito, un IV mayor a 0.50 casi siempre indica que la variable
 contiene información del target (fuga) y no poder predictivo genuino. Es la regla clásica de la práctica de scoring
-(LIT-001). Antes de usarla hay que demostrar lo contrario.
+(LIT-001), y la experiencia lo confirma: una sola variable de este tipo puede concentrar casi toda la importancia del
+modelo y abrir una brecha Train–OOT de más de 10 pts, que se cierra al excluirla. Por eso se excluye sin excepción.
+
+**Por qué el filtro de IV es asimétrico.** El límite superior (0.50) protege contra la fuga; el inferior (0.02) no se
+aplica a ciegas. Un filtro univariado que descarta todo lo que tiene IV bajo puede eliminar los bloques
+sociodemográficos y financieros y dejar un modelo apoyado en dos o tres variables operativas. Esos bloques se
+preservan como línea base de control (DES-D4-05.02.09) y es el análisis multivariado el que decide si aportan.
 
 ## Reglas clave (resumen de umbrales)
 
 | Tema | Regla | Umbral |
 |---|---|---|
 | No anticipación | Cero variables contemporáneas o futuras | U-39 |
-| Poder predictivo y fuga | IV entre 0.02 y 0.50; IV > 0.50 solo con investigación de fuga | U-38 |
+| Fuga por IV | IV > 0.50 se excluye; IV < 0.02 no excluye por sí solo | U-38 |
 | Representatividad | $0.95 \le TM/TG \le 1.05$; si no, ponderar | U-03 |
 | Estabilidad de variables | PSI ≤ 10 % (≤ 20 % excepción) | U-02 |
 | Outliers | Percentiles 1-5-95-99 | U-04 |
 | Correlación continuas | < 60 % (hasta < 95 % por tradeoff) | U-06 |
 | Asociación categóricas | p-valor χ² ≥ 0.0001 o V de Cramér < 0.4 | U-07 |
-| Selección ML | Top 150 variables / 80 % del gain | U-08 |
-| Concentración de pesos | ≤ 25 % (tradicional) · ≤ 10 % (ML, gain) | U-09 |
+| Selección de variables | Top 100 sin fuga / 80 % del gain, luego paso a paso | U-08 |
+| Concentración de importancia | Máximo 40 % por variable (deseable ≤ 25 %) | U-09 |
 | Hiperparámetros | ≥ 50 combinaciones, semilla fija | U-10 |
-| Sobreajuste | \|Gini Train − Gini OOT\| ≤ 10 pts | U-11 |
+| Sobreajuste | \|Gini Train − Gini OOT\| ≤ 10 pts y caída relativa ≤ 10 %; si no, descalifica | U-11 |
+| Torneo | Al menos 5 familias de algoritmos en clasificación binaria | U-43 |
+| Parsimonia | Si el más simple está a < 1.5 pts de Gini, gana el más simple | U-42 |
+| Desempeño por deciles | Cero inversiones de la tasa observada en el OOT | U-44 |
+
+## Torneo de modelos (champion–challenger)
+
+En clasificación binaria (admisión, comportamiento, propensión, contactabilidad, fraude) **no se elige un algoritmo
+a criterio**. Compiten al menos cinco familias con los mismos datos, la misma validación temporal y la misma semilla
+(DES-D4-05.03.04, U-43):
+
+| Familia | Ejemplo | Para qué está en el torneo |
+|---|---|---|
+| Lineal regularizada (**línea base obligatoria**) | Regresión logística L2 o ElasticNet | Piso de defensibilidad e interpretabilidad |
+| Árbol simple podado | CART con profundidad 4 a 6 | Ganancia no lineal básica, explicable |
+| Ensamble por bagging | Random forest | Estabilidad ante la varianza de la muestra |
+| Boosting por histogramas | HistGradientBoosting / LightGBM con **restricciones de monotonicidad** | Discriminación con sentido económico |
+| Boosting extremo regularizado | XGBoost con γ, α y λ | Referencia de frontera en discriminación |
+
+**Selección de variables en dos fases** (DES-D4-05.02.08): un ranking automatizado de todas las variables que pasaron
+el filtro previo (hasta el tope de U-08) y luego una selección paso a paso con una función objetivo compuesta
+(discriminación, error por decil y violaciones de monotonicidad). Partir de un puñado de variables elegidas a criterio
+pone un techo artificial al modelo.
+
+**Tabla oficial y reglas de coronación** (DES-D4-06.03.05). Cada candidato reporta Gini de entrenamiento, Gini, KS y
+AUC en validación y en OOT, brecha absoluta y relativa, Brier score y concentración máxima de importancia. Gana quien
+cumple las reglas, en este orden:
+
+1. **Descalificación por sobreajuste:** brecha Train–OOT mayor a 10 pts o caída relativa mayor a 10 % (U-11).
+2. **Concentración:** ninguna variable con más del 40 % de la importancia (U-09).
+3. **Parsimonia:** si un modelo más simple queda a menos de 1.5 pts de Gini del más complejo, se elige el simple (U-42).
+4. **Calibración:** el Brier score se reporta y se compara; la calibración formal se prueba aparte (DES-D4-08.01.07).
+
+> **El OOT no se usa para elegir.** Variables, hiperparámetros y función objetivo se optimizan en Train/Test con
+> validación temporal. El OOT se evalúa **una sola vez**, sobre los candidatos finales, para confirmar. Si se itera
+> mirando el OOT, deja de ser una prueba independiente y el Gini reportado sobrestima el que se verá en producción.
+
+**Desempeño por deciles no es calibración.** La curva de tasa observada por decil mide el **ordenamiento** y se exige
+monótona en el OOT (U-44, DES-D4-06.01.04). La **calibración probabilística** compara la probabilidad estimada con la
+observada mediante una prueba formal, como Hosmer-Lemeshow o binomial por tramo (DES-D4-08.01.07). Son dos reportes
+distintos y se nombran así.
 
 ## Selección del modelo final
 
@@ -1865,7 +1931,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (97 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (104 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -1925,11 +1991,11 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
-- **`DES-D4-03.03.03`** Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38).
+- **`DES-D4-03.03.03`** Excluir por sospecha de fuga de información (cuasi-determinismo) toda variable con IV mayor a 0.50: no entra al modelamiento (U-38). Se documenta la investigación de su origen como aprendizaje del proyecto.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Crítico · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-38 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
-- **`DES-D4-03.03.04`** Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).
+- **`DES-D4-03.03.04`** Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV no mayor a 0.50 (U-38; un IV menor a 0.02 no excluye por sí solo); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Tabla 1: Base de variables finalistas. · Umbrales: U-38, U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
@@ -1976,6 +2042,10 @@ del documento metodológico.
 - **`DES-D4-04.03.03`** Tranformación WOE
 
   Aplica: Lineal/ACP III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1
+
+- **`DES-D4-04.03.04`** No usar banderas binarias de corte duro (por ejemplo, «sin historia» o «saturado») cuando invierten la monotonicidad del riesgo en la validación temporal; priorizar ratios continuos acumulados, que degradan con suavidad. La prueba de monotonicidad por deciles (U-44) se aplica antes de aceptar la variable.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 2 · Umbrales: U-44 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 4.4 Imputación de missings
 
@@ -2067,7 +2137,7 @@ del documento metodológico.
 
   Aplica: ML/Árbol II · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 3
 
-- **`DES-D4-05.02.05`** Selección de variables: Top 150 variables / 80% del gain.
+- **`DES-D4-05.02.05`** Selección de variables: Top 100 variables sin fuga / 80% del gain (U-08).
 
   Aplica: ML III · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Umbrales: U-08
 
@@ -2079,6 +2149,14 @@ del documento metodológico.
   Sin embargo en el caso de que las variables cuyos indicadores no sean estables , no será determinante para su exclusión. Llevar discusion a gerencia.
 
   Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1–2 d completo · Automatización: 3
+
+- **`DES-D4-05.02.08`** Seleccionar variables en dos fases: (1) ranking automatizado de todas las variables que pasaron el filtro previo, hasta el tope de U-08; (2) selección paso a paso hacia adelante y hacia atrás con una función objetivo compuesta (discriminación, error absoluto por decil y violaciones de monotonicidad), evaluada en la validación temporal. El OOT no interviene en la selección: se reserva para la confirmación final (DES-D4-06.03.05).
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1.25 d completo · Automatización: 3 · Umbrales: U-08 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
+
+- **`DES-D4-05.02.09`** Preservar como línea base de control los bloques estructurales de negocio (sociodemográfico y financiero, incluido el endeudamiento en el sistema): un IV bajo no los excluye por sí solo (U-38). Si el modelo final los descarta, se documenta la evidencia multivariada que lo justifica.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 2 · Umbrales: U-38 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 5.3 Entrenamiento
 
@@ -2093,6 +2171,10 @@ del documento metodológico.
 - **`DES-D4-05.03.03`** Ajustar los modelos de ML con validación cruzada (temporal cuando exista dependencia en el tiempo) y reportar la brecha esperada entre entrenamiento y validación.
 
   Aplica: ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Excel 16: Optimización de Hiperparámetros. · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16; EBA/REP/2023/28.
+
+- **`DES-D4-05.03.04`** En clasificación binaria, enfrentar al menos cinco familias de algoritmos con los mismos datos, la misma validación temporal y la misma semilla (U-43): (1) regresión logística regularizada (L2 o ElasticNet) como línea base obligatoria; (2) árbol de decisión podado; (3) ensamble por bagging (random forest); (4) boosting por histogramas con restricciones de monotonicidad; (5) boosting extremo regularizado. No se elige un algoritmo sin torneo.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1.5 d ágil / 2 d completo · Automatización: 3 · Crítico · Entregable: Excel: Tabla del torneo de modelos (leaderboard). · Umbrales: U-43 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 5.4 Optimización
 
@@ -2147,6 +2229,10 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–II · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Verbraken et al. (2014).
 
+- **`DES-D4-06.01.04`** Reportar el desempeño por deciles de score (ordenamiento y tasa observada por decil) con su prueba de monotonicidad: cero inversiones en el OOT (U-44). Este reporte se llama «desempeño por deciles», no «calibración»: la calibración probabilística es un análisis distinto (DES-D4-08.01.07).
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Umbrales: U-44 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
+
 #### 6.2 Comparación con modelo vigente
 
 - **`DES-D4-06.02.01`** Comparación con modelo vigente en cosechas / solicitudes aprobadas (por mes).
@@ -2170,6 +2256,10 @@ del documento metodológico.
 - **`DES-D4-06.03.04`** Documentación del modelo final
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.125 d ágil / 2.5 d completo · Automatización: 1 · Entregable: Documento 9: Entrenamiento y selección de modelos.
+
+- **`DES-D4-06.03.05`** Elegir el campeón con la tabla oficial del torneo: por candidato, Gini de entrenamiento, Gini, KS y AUC en validación y en OOT, brecha absoluta y relativa, Brier score y concentración máxima de importancia. Reglas: (1) queda descalificado quien incumpla U-11; (2) si uno más simple está a menos de 1.5 pts de Gini del más complejo, se elige el más simple (U-42); (3) nadie supera U-09; (4) el Brier score se reporta y se compara. El OOT se evalúa una sola vez, sobre los candidatos finales.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Crítico · Umbrales: U-09, U-11, U-42, U-43 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 ### 7 · Interpretación del modelo de ordenamiento
 
@@ -2210,6 +2300,10 @@ del documento metodológico.
 - **`DES-D4-08.01.06`** Puntuación de base calibrada
 
   Aplica: Lineal/ML I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 14: Implementación del calibrado.; Tabla 6: Base puntuada (oracle). · Hito: Sprint 15
+
+- **`DES-D4-08.01.07`** Evaluar la calibración probabilística con una prueba formal (Hosmer-Lemeshow, o binomial o Jeffreys por tramo) y el Brier score. Una curva de tasa observada por decil sin bandas de confianza ni prueba no es una calibración.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 8.2 Análisis de transición applicant-behavior
 
@@ -2351,7 +2445,7 @@ del documento metodológico.
 
 #### 14.1 Presentación
 
-- **`DES-D4-14.01.01`** Presentación en Reunión de Aprobación
+- **`DES-D4-14.01.01`** El modelo elegido no supera 10 puntos de diferencia de Gini entre Train y OOT ni una caída relativa de 10 % (U-11). Un candidato que exceda cualquiera de los dos queda descalificado; no admite excepción.
 
   Aplica: Lineal/ML/Árbol I–III · ACP I–II · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Acta 8: Acta del comité de modelos. · Hito: Comité de modelos
 
@@ -2366,6 +2460,17 @@ del documento metodológico.
 
 Traducir el modelo en **decisiones y valor**: puntos de corte e impacto cuantificado en el negocio, el riesgo
 y los estados financieros. Un modelo sin esta fase no está listo para comité.
+
+## Punto de corte
+
+El score se convierte en decisiones con una **función de utilidad** que refleja el costo asimétrico de los errores
+(DES-D5-01.01.03). Por ejemplo, en una campaña:
+
+$$\text{Utilidad}(c)=b\cdot\text{Aciertos}(c)-k\cdot\text{Acciones}(c)$$
+
+donde $b$ es el beneficio por acierto, $k$ el costo por acción y $c$ el punto de corte. El corte maximiza la utilidad,
+y la población se divide en **estratos de gestión**: prioridad alta, media y descarte con un canal alternativo de menor
+costo. En crédito, el mismo razonamiento usa la pérdida esperada y el margen (EMP, DES-D4-06.01.03).
 
 ## Impactos a evaluar
 
@@ -2388,7 +2493,7 @@ reales por estrato necesaria para un seguimiento confiable (DES-D5-01.03.01).
 <!-- CATALOGO:INICIO DES-D5 -->
 ## Catálogo de requisitos · Integración a la gestión
 
-> Bloque generado desde `catalogo/des-d5.yaml` (11 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d5.yaml` (12 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Evaluación de Impactos
 
@@ -2401,6 +2506,10 @@ reales por estrato necesaria para un seguimiento confiable (DES-D5-01.03.01).
 - **`DES-D5-01.01.02`** Definir la política de forzajes (overrides): quién puede forzar, motivos válidos, registro obligatorio y límite de materialidad; el seguimiento medirá su volumen y desempeño (U-36).
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 1 · Crítico · Umbrales: U-36 · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 arts. 19 y 22.
+
+- **`DES-D5-01.01.03`** Fijar el punto de corte maximizando una función de utilidad que refleje el costo asimétrico de los errores (por ejemplo, beneficio por acierto × aciertos − costo por acción × acciones) y definir estratos de gestión (prioridad alta, media y descarte con un canal alternativo de menor costo).
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.2 Evaluación de impactos en el negocio y valorización de ganancias del modelo
 
@@ -2516,7 +2625,7 @@ cuando el seguimiento muestra **descalibración** pero el poder discriminante si
 ordenamiento se ha degradado, corresponde **redesarrollar** (estándar de Desarrollo).
 
 Supuesto de la estimación de esfuerzo: se usa la **base de seguimiento como base de calibración**.
-Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.4 semanas (Tier I), ≈ 3.2 semanas (Tier II), ≈ 2.5 semanas (Tier III) con 2 personas<!--/DUR-->.
+Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.3 semanas (Tier I), ≈ 3.1 semanas (Tier II), ≈ 2.4 semanas (Tier III) con 2 personas<!--/DUR-->.
 
 ## C1 · Entendimiento
 
@@ -2894,12 +3003,12 @@ de lo contrario se documenta como **limitación** (CAL-C4-03.01.03).
 # Calibración · C5 Implementación del calibrado
 
 La implementación de un calibrado sigue el estándar transversal de [Implementación](../implementacion/implementacion.md)
-(documento de implementación, lineamientos, calidad de datos, entorno tecnológico y certificación ≥ 95 %).
+(documento de implementación, lineamientos, calidad de datos, entorno tecnológico y certificación ≥ 99.9 %).
 Las actividades específicas del calibrado son:
 
 - **Manual metodológico del calibrado** y **manual de implementación**.
 - Envío del manual al equipo implementador, revisión conjunta y **acta de entrega**.
-- Certificación con **≥ 95 % de coincidencia** (U-15) y conformidad del líder de implementación
+- Certificación con **≥ 99.9 % de coincidencia** (U-15) y conformidad del líder de implementación
   (o del Sub Gerente de Modelos de Riesgo si implementa el equipo modelador).
 - Presentación al equipo usuario con acta.
 
@@ -2950,7 +3059,7 @@ Las actividades específicas del calibrado son:
 
   Aplica: Tier I–III · Esfuerzo: 1 d
 
-- **`CAL-C5-01.04.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)
+- **`CAL-C5-01.04.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (99.9 % de coincidencia mínima para obtener conformidad, U-15)
 
   Aplica: Tier I–III · Esfuerzo: 1.25 d · Umbrales: U-15
 
@@ -3029,7 +3138,7 @@ precio está por encima de lo que el riesgo justifica. Este estándar convierte 
 |---|---|---|
 | PD, LGD, EAD aprobadas | [Desarrollo](../desarrollo/d4-modelamiento.md) y [Calibración](../calibracion/c4-calibrado.md) | Pérdida esperada del piso técnico (PRC-P3-01.02.01) |
 | Proceso de construcción de modelos | DES-D4 (muestras, depuración, selección, documentación) | Modelo de respuesta (PRC-P4-02.01.01) |
-| Certificación ≥ 95 % (U-15) | [Implementación](../implementacion/implementacion.md) | Motor de precios (PRC-P7-02.02.01) |
+| Certificación ≥ 99.9 % (U-15) | [Implementación](../implementacion/implementacion.md) | Motor de precios (PRC-P7-02.02.01) |
 | Revisión independiente | [Validación](../validacion/validacion.md), ámbito VAL-P | Modelos de precio técnico, respuesta y optimizador |
 | Actas por hito | [Actas de reunión](../plantillas/acta-de-reunion.md) | Kick off, modelo de respuesta, Comité de Precios, piloto, revisión post-implementación |
 | Estimación de esfuerzo | [Estimación](../marco/estimacion.md) | Plazos con personas y con agentes de IA |
@@ -3594,7 +3703,7 @@ desactualizados en un canal o descuentos acumulados. P7 cierra esa brecha con tr
 
 #### 2.2 Certificación
 
-- **`PRC-P7-02.02.01`** Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
+- **`PRC-P7-02.02.01`** Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 99.9 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
 
   Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 
@@ -3799,7 +3908,7 @@ Con cuadro de control de cambios. Debe contener:
 ## Certificación
 
 1. Definir las pruebas (Correo 3).
-2. Comparar modelamiento vs. implementación: **≥ 95 % de coincidencia** (U-15).
+2. Comparar modelamiento vs. implementación: **≥ 99.9 % de coincidencia** (U-15).
 3. Constancia de pruebas (Documento 14: Certificación).
 4. Conformidad del líder de implementación (o del Sub Gerente de Modelos de Riesgo si implementa el equipo modelador).
 5. Presentación al equipo usuario y acta de cierre (Acta 10).
@@ -3807,7 +3916,7 @@ Con cuadro de control de cambios. Debe contener:
 <!-- CATALOGO:INICIO IMP -->
 ## Catálogo de requisitos · Implementación
 
-> Bloque generado desde `catalogo/imp.yaml` (28 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
+> Bloque generado desde `catalogo/imp.yaml` (29 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
 
 ### 1 · Implementación tecnológica
 
@@ -3938,7 +4047,7 @@ Con cuadro de control de cambios. Debe contener:
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Correo 3: Pruebas a realizar.
 
-- **`IMP-01.06.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)
+- **`IMP-01.06.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (99.9 % de coincidencia mínima para obtener conformidad, U-15)
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.0625 d ágil / 1.25 d completo · Automatización: 1 · Umbrales: U-15
 
@@ -3957,6 +4066,10 @@ Con cuadro de control de cambios. Debe contener:
 - **`IMP-01.06.06`** Registrar en cada resultado productivo la versión del modelo y del código que lo generó, para trazabilidad y seguimiento.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Práctica de bancos de referencia; FR-07.
+
+- **`IMP-01.06.07`** Probar la paridad matemática en producción: al menos 99.9 % de los registros con el mismo score o decisión que el proceso de modelamiento, dentro de la tolerancia numérica documentada (U-15). Las diferencias se explican una a una.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Crítico · Umbrales: U-15 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.7 Presentación del proceso de implementación al equipo usuario
 
@@ -4558,7 +4671,7 @@ son demasiado laxos.
 | Familia | Indicador | Periodicidad | Umbral |
 |---|---|---|---|
 | Estabilidad | PSI del score y de cada variable | Mensual | U-37 (verde ≤ 10 %, rojo > 25 %) |
-| Discriminación | Gini y KS por cosecha madura, global y por segmento | Mensual o trimestral | U-37 (rojo: caída > 10 pts) |
+| Discriminación | Gini y KS por cosecha madura, global y por segmento | Mensual o trimestral | U-37 (rojo: caída relativa > 15 %) |
 | Calibración | Tasa observada vs. PD por tramo (binomial o Jeffreys); estimadores con ±25 %/±50 % | Trimestral | U-37, U-12 |
 | Uso | Volumen y desempeño de los forzajes; uso solo para el propósito aprobado | Mensual | U-36 |
 | IA | Sobreajuste en producción (construcción vs. meses recientes) | Trimestral | Según el plan aprobado |
@@ -4749,7 +4862,7 @@ Este estándar lo traduce en reglas (U-31):
 
   Aplica: Tier I–III · Esfuerzo: 3 d · Automatización: 2 · Crítico · Entregable: Script R5: Motor de ECL · Hito: Sprint 6 · Umbrales: U-32
 
-- **`PAR-R8-01.01.02`** Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.
+- **`PAR-R8-01.01.02`** Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 99.9 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.
 
   Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 
@@ -4923,7 +5036,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 <!-- CATALOGO:INICIO VAL -->
 ## Catálogo de requisitos · Validación
 
-> Bloque generado desde `catalogo/val.yaml` (95 requisitos).
+> Bloque generado desde `catalogo/val.yaml` (96 requisitos).
 
 ### Validación metodológica
 
@@ -5044,7 +5157,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 
 #### Implementación y conducta
 
-- [ ] **`VAL-P-04.01`** **KILLER** Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 95 % (U-15).
+- [ ] **`VAL-P-04.01`** **KILLER** Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 99.9 % (U-15).
 - [ ] **`VAL-P-04.02`** Análisis de equidad del precio y de proxies de atributos protegidos (PRC-P9-02.02.01).
 - [ ] **`VAL-P-04.03`** Registro y log de los agentes de IA usados en el ciclo de pricing, sin facultad para fijar ni aprobar precios (PRC-P9-03.01.01).
 
@@ -5075,7 +5188,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 #### ECL y gobierno
 
 - [ ] **`VAL-R-04.01`** **KILLER** Overlays con causa, cuantificación, expiración y aprobación (U-31), y plan de absorción en el modelo.
-- [ ] **`VAL-R-04.02`** **KILLER** Motor de ECL certificado con coincidencia ≥ 95 % (U-15) y conciliado con contabilidad.
+- [ ] **`VAL-R-04.02`** **KILLER** Motor de ECL certificado con coincidencia ≥ 99.9 % (U-15) y conciliado con contabilidad.
 - [ ] **`VAL-R-04.03`** Backtesting anual de PD, LGD, CCF, staging y ECL, con acciones documentadas.
 
 ### Validación metodológica
@@ -5089,6 +5202,7 @@ Las observaciones más frecuentes en validación de implementación suelen ser:
 - [ ] **`VAL-M-05.05`** Para modelos de IA: evaluación de interpretabilidad (incluida la estabilidad de las explicaciones), optimización de hiperparámetros, validación cruzada y nivel de sobreajuste.
 - [ ] **`VAL-M-05.06`** Modelos de terceros: réplica o, si la propiedad intelectual lo impide, benchmarking u otra técnica alternativa documentada.
 - [ ] **`VAL-M-05.07`** **KILLER** Verificación independiente de la no anticipación temporal de las variables (U-39) y de la ausencia de fuga de información: revisión de variables con IV mayor a 0.50 (U-38) y del embudo de filtros previo al entrenamiento.
+- [ ] **`VAL-M-05.08`** **KILLER** Verificación del torneo de modelos: al menos cinco familias (U-43), tabla oficial completa, reglas de descalificación y parsimonia (U-11, U-42) y evidencia de que el OOT no se usó para seleccionar variables ni hiperparámetros.
 
 
 <!-- CATALOGO:FIN -->
@@ -5151,13 +5265,13 @@ una aprobación compromete el plazo, el agente lo escala; no la omite.
 | **G3** Modelo final | D4-06 / P4 | Indicadores, Train vs. OOT, comparación con el vigente, calibración | Negocio + jefatura | R5, PRC-ELA |
 | **G4** Calibración / precio técnico | D4-08 / P3 | Calibración por tramo; piso conciliado | Negocio; Finanzas y Riesgos | R6 |
 | **G5** Aprobación | D4-14 / P5 | Documentación, limitaciones, escenarios | Comité de Modelos / Comité de Precios | CM, PRC-CP |
-| **G6** Producción | IMP / P7 | Certificación ≥ 95 %, controles, topes | Líder de implementación + usuario | Acta 10 |
+| **G6** Producción | IMP / P7 | Certificación ≥ 99.9 %, controles, topes | Líder de implementación + usuario | Acta 10 |
 
 ## Cuándo el agente se detiene y escala
 
 El agente **no sigue adelante** y pide decisión humana, por escrito, cuando:
 
-1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 > 10 pts, U-20 con elasticidad positiva, U-24 sobre el tope).
+1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 > 10 pts o caída relativa > 10 %, U-20 con elasticidad positiva, U-24 sobre el tope).
 2. Sospecha **fuga de información**: una variable posterior a la fecha de observación (U-39), una variable con IV mayor a 0.50 (U-38), un Gini OOT mayor que el de construcción, o una variable con importancia anómala.
 3. La definición de default o de target es ambigua, o difiere de U-17.
 4. Encuentra datos sensibles o atributos protegidos que no deberían estar en la base.
@@ -5487,7 +5601,7 @@ La disponibilidad legal de atributos sensibles varía por jurisdicción; coordin
 
 # FR-07 · Reproducibilidad y MLOps
 
-**Hoy:** se exige guardar Train/Test/OOT, fijar semilla, documentar versiones y rutas, y certificar ≥ 95 % de
+**Hoy:** se exige guardar Train/Test/OOT, fijar semilla, documentar versiones y rutas, y certificar ≥ 99.9 % de
 coincidencia en implementación. La validación de implementación pide capturas de pantalla de rutas.
 
 **Propuesta: reemplazar evidencia manual por evidencia automática.**
@@ -5498,7 +5612,7 @@ coincidencia en implementación. La validación de implementación pide capturas
 | **Entorno fijado** (`requirements.txt`/`environment.yml`, contenedor) | "Versiones de herramientas" en Word | Reproducir el modelo en otra máquina |
 | **Versionado de datos** (hash de Train/Test/OOT, snapshot o DVC) | Copias de tablas | Probar que el modelo validado usa exactamente esos datos |
 | **Registro de modelos** (artefacto + métricas + código de inventario) | Ficha técnica manual | Registro y baja automáticos en el inventario |
-| **Pruebas automáticas** en CI: unicidad, missing, PSI, coincidencia vs. modelo de referencia | Certificación manual | La certificación del 95 % (U-15) se ejecuta en cada cambio |
+| **Pruebas automáticas** en CI: unicidad, missing, PSI, coincidencia vs. modelo de referencia | Certificación manual | La certificación del 99.9 % (U-15) se ejecuta en cada cambio |
 | **Champion / challenger** en producción | Comparación puntual con modelo vigente | Evidencia continua para recalibrar o redesarrollar |
 
 **Requisito candidato:** `IMP-01.06.05 — La certificación se ejecuta como prueba automatizada versionada y
@@ -5830,7 +5944,7 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 | Tarea | Cómo |
 |---|---|
 | "Checklist para un modelo Tier II, ML, ágil" | Filtrar `dist/catalogo.json` por `estandar=Desarrollo`, `aplica_tier.ml` ∋ 2; agrupar por fase; listar `entregables` |
-| "¿Mi modelo puede tener 12 pts de diferencia Train–OOT?" | Responder con U-11: máximo 10 pts; si se excede, sustentar y presentar en Comité |
+| "¿Mi modelo puede tener 12 pts de diferencia Train–OOT?" | No: U-11 admite como máximo 10 pts y una caída relativa de 10 %; un candidato que lo exceda queda descalificado del torneo, sin excepción |
 | "Revisa este documento metodológico antes de validación" | Contrastar contra `val.yaml` (VAL-M) y listar requisitos sin evidencia |
 | "Redacta el acta de la reunión 5" | `python tools/acta.py nueva --tipo R5 ...`, completar desarrollo, decisiones (con ID) y acuerdos desde las notas; dejar la conformidad en *Pendiente*; `exportar --docx --md`. Ver `docs/plantillas/acta-de-reunion.md` |
 | "Redacta el documento metodológico" | `python tools/documento.py nuevo REPO`; completar `docs/documento.yaml` solo con lo que sustentan los reportes (lo demás queda como «Completar»); `render`; no tocar gobierno ni aprobaciones. Ver `docs/plantillas/documento-metodologico.md` |
@@ -5863,6 +5977,38 @@ Un modelo nuevo, modificado o recalibrado **no se usa sin aprobación previa del
 Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
+
+## [4.0.0] — 2026-10-17 · Lecciones de proyectos de desarrollo
+
+Enmiendas que vienen de proyectos reales, incorporadas en forma genérica, sin datos de clientes, nombres de variables
+ni cifras internas.
+
+### Nuevo
+- **Torneo de modelos (U-43, DES-D4-05.03.04):** en clasificación binaria compiten al menos cinco familias (logística
+  regularizada como línea base obligatoria, árbol podado, bagging, boosting por histogramas con monotonicidad y
+  boosting extremo regularizado) con los mismos datos, validación temporal y semilla.
+- **Tabla oficial y reglas de coronación (DES-D4-06.03.05):** descalificación por sobreajuste (U-11), concentración
+  (U-09), parsimonia (U-42: si el más simple está a menos de 1.5 pts de Gini, gana el simple) y Brier score. El OOT
+  se evalúa una sola vez, sobre los candidatos finales; no se usa para seleccionar (VAL-M-05.08 lo verifica).
+- **Selección de variables en dos fases (DES-D4-05.02.08)** y preservación de los bloques sociodemográfico y
+  financiero como línea base de control (DES-D4-05.02.09).
+- **Estabilidad de la tasa del target (U-41, DES-D1-03.01.06):** un quiebre de más de 25 % relativo entre meses por
+  causa operativa excluye los meses previos de Train.
+- **Desempeño por deciles monótono (U-44, DES-D4-06.01.04)**, distinto de la **calibración probabilística formal**
+  (DES-D4-08.01.07), y sin banderas binarias de corte duro que inviertan la monotonicidad (DES-D4-04.03.04).
+- **Punto de corte por utilidad asimétrica** y estratos de gestión (DES-D5-01.01.03).
+- **Paridad matemática en producción (IMP-01.06.07).**
+- El documento metodológico incluye la tabla del torneo, la caída relativa de Gini y los umbrales nuevos.
+- Literatura: Brier (1950) y Breiman (2001).
+
+### Cambiado (incompatible)
+- **U-38:** IV mayor a 0.50 se excluye sin excepción; un IV menor a 0.02 ya no excluye por sí solo (filtro asimétrico).
+- **U-11:** además de 10 pts, caída relativa máxima de 10 %; quien lo exceda queda descalificado, sin excepción.
+- **U-09:** concentración máxima de 40 % por variable (deseable 25 %), para todos los tipos de modelo.
+- **U-15:** la certificación de implementación exige 99.9 % de paridad (antes 95 %).
+- **U-37:** la caída del Gini en el seguimiento se mide en términos relativos (ámbar 10–15 %, rojo > 15 %); un rojo
+  exige reentrenar o recalibrar.
+- **U-08:** el ranking previo a la selección paso a paso toma hasta 100 variables (antes 150).
 
 ## [3.0.1] — 2026-10-17
 
@@ -6024,7 +6170,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **3.0.1** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **4.0.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 
@@ -6037,7 +6183,7 @@ para agentes de IA (JSON y `llms.txt`).
 
 | | |
 |---|---|
-| **541 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **40 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
+| **552 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **44 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
 | **103 obras** de literatura enlazadas a los requisitos que fundamentan | **27 tipos de acta**, con editor en línea y exportación a Word y Markdown |
 | Mapeo artículo por artículo a la **Res. SBS 00053-2023** y alineado con **SR 26-2**, **PRA SS1/23**, IFRS 9 y el **EU AI Act** | **Estándar operativo para agentes de IA** con verificador automático de evidencias |
 

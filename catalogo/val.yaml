@@ -374,7 +374,7 @@ requisitos:
   ambito: VAL-P
   bloque: Implementación y conducta
   killer: true
-  requisito: "Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 95 % (U-15)."
+  requisito: "Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 99.9 % (U-15)."
 - id: VAL-P-04.02
   ambito: VAL-P
   bloque: Implementación y conducta
@@ -430,7 +430,7 @@ requisitos:
   ambito: VAL-R
   bloque: ECL y gobierno
   killer: true
-  requisito: "Motor de ECL certificado con coincidencia ≥ 95 % (U-15) y conciliado con contabilidad."
+  requisito: "Motor de ECL certificado con coincidencia ≥ 99.9 % (U-15) y conciliado con contabilidad."
 - id: VAL-R-04.03
   ambito: VAL-R
   bloque: ECL y gobierno
@@ -472,3 +472,8 @@ requisitos:
   bloque: Alcance y profundidad de la validación
   killer: true
   requisito: "Verificación independiente de la no anticipación temporal de las variables (U-39) y de la ausencia de fuga de información: revisión de variables con IV mayor a 0.50 (U-38) y del embudo de filtros previo al entrenamiento."
+- id: VAL-M-05.08
+  ambito: VAL-M
+  bloque: Alcance y profundidad de la validación
+  killer: true
+  requisito: "Verificación del torneo de modelos: al menos cinco familias (U-43), tabla oficial completa, reglas de descalificación y parsimonia (U-11, U-42) y evidencia de que el OOT no se usó para seleccionar variables ni hiperparámetros."

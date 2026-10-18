@@ -11,7 +11,7 @@ orden: 57
 
 # FR-07 · Reproducibilidad y MLOps
 
-**Hoy:** se exige guardar Train/Test/OOT, fijar semilla, documentar versiones y rutas, y certificar ≥ 95 % de
+**Hoy:** se exige guardar Train/Test/OOT, fijar semilla, documentar versiones y rutas, y certificar ≥ 99.9 % de
 coincidencia en implementación. La validación de implementación pide capturas de pantalla de rutas.
 
 **Propuesta: reemplazar evidencia manual por evidencia automática.**
@@ -22,7 +22,7 @@ coincidencia en implementación. La validación de implementación pide capturas
 | **Entorno fijado** (`requirements.txt`/`environment.yml`, contenedor) | "Versiones de herramientas" en Word | Reproducir el modelo en otra máquina |
 | **Versionado de datos** (hash de Train/Test/OOT, snapshot o DVC) | Copias de tablas | Probar que el modelo validado usa exactamente esos datos |
 | **Registro de modelos** (artefacto + métricas + código de inventario) | Ficha técnica manual | Registro y baja automáticos en el inventario |
-| **Pruebas automáticas** en CI: unicidad, missing, PSI, coincidencia vs. modelo de referencia | Certificación manual | La certificación del 95 % (U-15) se ejecuta en cada cambio |
+| **Pruebas automáticas** en CI: unicidad, missing, PSI, coincidencia vs. modelo de referencia | Certificación manual | La certificación del 99.9 % (U-15) se ejecuta en cada cambio |
 | **Champion / challenger** en producción | Comparación puntual con modelo vigente | Evidencia continua para recalibrar o redesarrollar |
 
 **Requisito candidato:** `IMP-01.06.05 — La certificación se ejecuta como prueba automatizada versionada y

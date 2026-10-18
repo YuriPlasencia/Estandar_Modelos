@@ -2,9 +2,9 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "generado": "2026-10-17",
-  "n_requisitos": 541,
+  "n_requisitos": 552,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
  },
  "fases": [
@@ -1496,7 +1496,7 @@
    "fase_nombre": "Implementación del calibrado",
    "tarea": "Implementación",
    "subtarea": "Pruebas de certificación",
-   "actividad": "Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)",
+   "actividad": "Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (99.9 % de coincidencia mínima para obtener conformidad, U-15)",
    "dias_esfuerzo": 1.25,
    "aplica_tier": [
     1,
@@ -3493,6 +3493,67 @@
     "LIT-003"
    ],
    "naturaleza": "documentacion",
+   "doc": "docs/desarrollo/d1-definicion.md"
+  },
+  {
+   "id": "DES-D1-03.01.06",
+   "estandar": "Desarrollo",
+   "fase": "DES-D1",
+   "fase_nombre": "Definición, alcance, diseño y extracción",
+   "tarea": "Definición de ventana de modelación",
+   "subtarea": "Ventana Modelamiento - Definición de la ventana histórica de modelación",
+   "actividad": "Antes de fijar la ventana de Train, auditar la serie mensual de la tasa del target. Si la tasa cambia más de 25 % relativo entre meses por un quiebre operativo, de política o de proceso (U-41), los meses previos al quiebre no se usan para entrenar. Si así quedan menos de 12 meses de Train/Test, es una excepción a U-01 que se sustenta y se aprueba con acta.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "ml": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "arbol": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "acp": {
+     "agil": 0.5,
+     "completo": 0.5
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "critico": true,
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-41"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-003"
+   ],
    "doc": "docs/desarrollo/d1-definicion.md"
   },
   {
@@ -6410,7 +6471,7 @@
    "fase_nombre": "Modelamiento",
    "tarea": "Depuración de variables",
    "subtarea": "Gini por variables",
-   "actividad": "Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38).",
+   "actividad": "Excluir por sospecha de fuga de información (cuasi-determinismo) toda variable con IV mayor a 0.50: no entra al modelamiento (U-38). Se documenta la investigación de su origen como aprendizaje del proyecto.",
    "aplica_tier": {
     "lineal": [
      1,
@@ -6477,7 +6538,7 @@
    "fase_nombre": "Modelamiento",
    "tarea": "Depuración de variables",
    "subtarea": "Gini por variables",
-   "actividad": "Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).",
+   "actividad": "Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV no mayor a 0.50 (U-38; un IV menor a 0.02 no excluye por sí solo); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).",
    "aplica_tier": {
     "lineal": [
      1,
@@ -6930,6 +6991,66 @@
     "LIT-020"
    ],
    "naturaleza": "datos",
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
+   "id": "DES-D4-04.03.04",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Feature engineering",
+   "subtarea": "Transformación de variables continuas",
+   "actividad": "No usar banderas binarias de corte duro (por ejemplo, «sin historia» o «saturado») cuando invierten la monotonicidad del riesgo en la validación temporal; priorizar ratios continuos acumulados, que degradan con suavidad. La prueba de monotonicidad por deciles (U-44) se aplica antes de aceptar la variable.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0,
+     "completo": 0
+    },
+    "ml": {
+     "agil": 0,
+     "completo": 0
+    },
+    "arbol": {
+     "agil": 0,
+     "completo": 0
+    },
+    "acp": {
+     "agil": 0,
+     "completo": 0
+    }
+   },
+   "nivel_automatizacion": 2,
+   "naturaleza": "analisis",
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-44"
+   ],
+   "lecturas": [
+    "LIT-001",
+    "LIT-020"
+   ],
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
   {
@@ -7968,7 +8089,7 @@
    "fase_nombre": "Modelamiento",
    "tarea": "Entrenamiento de modelos",
    "subtarea": "Selección de variables",
-   "actividad": "Selección de variables: Top 150 variables / 80% del gain.",
+   "actividad": "Selección de variables: Top 100 variables sin fuga / 80% del gain (U-08).",
    "critico": false,
    "eficiencia": false,
    "nivel_automatizacion": 3,
@@ -8123,6 +8244,122 @@
     "LIT-135"
    ],
    "naturaleza": "datos",
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
+   "id": "DES-D4-05.02.08",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Entrenamiento de modelos",
+   "subtarea": "Selección de variables",
+   "actividad": "Seleccionar variables en dos fases: (1) ranking automatizado de todas las variables que pasaron el filtro previo, hasta el tope de U-08; (2) selección paso a paso hacia adelante y hacia atrás con una función objetivo compuesta (discriminación, error absoluto por decil y violaciones de monotonicidad), evaluada en la validación temporal. El OOT no interviene en la selección: se reserva para la confirmación final (DES-D4-06.03.05).",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": []
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 1,
+     "completo": 1.25
+    },
+    "ml": {
+     "agil": 1,
+     "completo": 1.25
+    },
+    "arbol": {
+     "agil": 1,
+     "completo": 1.25
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-08"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-009",
+    "LIT-010",
+    "LIT-011",
+    "LIT-020",
+    "LIT-024",
+    "LIT-132",
+    "LIT-135"
+   ],
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
+   "id": "DES-D4-05.02.09",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Entrenamiento de modelos",
+   "subtarea": "Selección de variables",
+   "actividad": "Preservar como línea base de control los bloques estructurales de negocio (sociodemográfico y financiero, incluido el endeudamiento en el sistema): un IV bajo no los excluye por sí solo (U-38). Si el modelo final los descarta, se documenta la evidencia multivariada que lo justifica.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": []
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0,
+     "completo": 0
+    },
+    "ml": {
+     "agil": 0,
+     "completo": 0
+    },
+    "arbol": {
+     "agil": 0,
+     "completo": 0
+    }
+   },
+   "nivel_automatizacion": 2,
+   "naturaleza": "analisis",
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-38"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-009",
+    "LIT-010",
+    "LIT-011",
+    "LIT-020",
+    "LIT-024",
+    "LIT-132",
+    "LIT-135"
+   ],
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
   {
@@ -8310,6 +8547,76 @@
     "LIT-135",
     "LIT-137",
     "LIT-140"
+   ],
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
+   "id": "DES-D4-05.03.04",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Entrenamiento de modelos",
+   "subtarea": "Entrenamiento",
+   "actividad": "En clasificación binaria, enfrentar al menos cinco familias de algoritmos con los mismos datos, la misma validación temporal y la misma semilla (U-43): (1) regresión logística regularizada (L2 o ElasticNet) como línea base obligatoria; (2) árbol de decisión podado; (3) ensamble por bagging (random forest); (4) boosting por histogramas con restricciones de monotonicidad; (5) boosting extremo regularizado. No se elige un algoritmo sin torneo.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": []
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 1.5,
+     "completo": 2
+    },
+    "ml": {
+     "agil": 1.5,
+     "completo": 2
+    },
+    "arbol": {
+     "agil": 1.5,
+     "completo": 2
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "critico": true,
+   "entregables": [
+    {
+     "tipo": "Excel",
+     "numero": null,
+     "descripcion": "Tabla del torneo de modelos (leaderboard)."
+    }
+   ],
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-43"
+   ],
+   "lecturas": [
+    "LIT-002",
+    "LIT-009",
+    "LIT-010",
+    "LIT-011",
+    "LIT-020",
+    "LIT-021",
+    "LIT-022",
+    "LIT-132",
+    "LIT-135",
+    "LIT-137",
+    "LIT-140",
+    "LIT-145"
    ],
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
@@ -8905,6 +9212,69 @@
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
   {
+   "id": "DES-D4-06.01.04",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Selección del modelo final",
+   "subtarea": "Análisis de métricas y tendencia en las diferentes muestras (cosechas, solicitudes, etc).",
+   "actividad": "Reportar el desempeño por deciles de score (ordenamiento y tasa observada por decil) con su prueba de monotonicidad: cero inversiones en el OOT (U-44). Este reporte se llama «desempeño por deciles», no «calibración»: la calibración probabilística es un análisis distinto (DES-D4-08.01.07).",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "ml": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "arbol": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "acp": {
+     "agil": 0.25,
+     "completo": 0.25
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-44"
+   ],
+   "lecturas": [
+    "LIT-008",
+    "LIT-010",
+    "LIT-027",
+    "LIT-044",
+    "LIT-138"
+   ],
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
    "id": "DES-D4-06.02.01",
    "estandar": "Desarrollo",
    "fase": "DES-D4",
@@ -9209,6 +9579,66 @@
     "LIT-030"
    ],
    "naturaleza": "documentacion",
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
+   "id": "DES-D4-06.03.05",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Selección del modelo final",
+   "subtarea": "Selección del modelo final",
+   "actividad": "Elegir el campeón con la tabla oficial del torneo: por candidato, Gini de entrenamiento, Gini, KS y AUC en validación y en OOT, brecha absoluta y relativa, Brier score y concentración máxima de importancia. Reglas: (1) queda descalificado quien incumpla U-11; (2) si uno más simple está a menos de 1.5 pts de Gini del más complejo, se elige el más simple (U-42); (3) nadie supera U-09; (4) el Brier score se reporta y se compara. El OOT se evalúa una sola vez, sobre los candidatos finales.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": []
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "ml": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "arbol": {
+     "agil": 0.5,
+     "completo": 0.5
+    }
+   },
+   "nivel_automatizacion": 2,
+   "naturaleza": "analisis",
+   "critico": true,
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-09",
+    "U-11",
+    "U-42",
+    "U-43"
+   ],
+   "lecturas": [
+    "LIT-008",
+    "LIT-010",
+    "LIT-027",
+    "LIT-030",
+    "LIT-031",
+    "LIT-144"
+   ],
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
   {
@@ -9601,6 +10031,69 @@
     "LIT-104"
    ],
    "naturaleza": "datos",
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
+   "id": "DES-D4-08.01.07",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Calibración y regla de transición de scores",
+   "subtarea": "Calibración",
+   "actividad": "Evaluar la calibración probabilística con una prueba formal (Hosmer-Lemeshow, o binomial o Jeffreys por tramo) y el Brier score. Una curva de tasa observada por decil sin bandas de confianza ni prueba no es una calibración.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "ml": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "arbol": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "acp": {
+     "agil": 0.25,
+     "completo": 0.25
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "lecturas": [
+    "LIT-004",
+    "LIT-006",
+    "LIT-011",
+    "LIT-040",
+    "LIT-041",
+    "LIT-042",
+    "LIT-104",
+    "LIT-144"
+   ],
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
   {
@@ -11085,7 +11578,7 @@
    "fase_nombre": "Modelamiento",
    "tarea": "Presentación en CM",
    "subtarea": "Presentación",
-   "actividad": "Presentación en Reunión de Aprobación",
+   "actividad": "El modelo elegido no supera 10 puntos de diferencia de Gini entre Train y OOT ni una caída relativa de 10 % (U-11). Un candidato que exceda cualquiera de los dos queda descalificado; no admite excepción.",
    "critico": false,
    "eficiencia": false,
    "nivel_automatizacion": 1,
@@ -11136,7 +11629,7 @@
     }
    ],
    "hito": "Comité de modelos",
-   "naturaleza": "reunion",
+   "naturaleza": "datos",
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
   {
@@ -11261,6 +11754,63 @@
    ],
    "lecturas": [
     "LIT-003"
+   ],
+   "doc": "docs/desarrollo/d5-integracion-gestion.md"
+  },
+  {
+   "id": "DES-D5-01.01.03",
+   "estandar": "Desarrollo",
+   "fase": "DES-D5",
+   "fase_nombre": "Integración a la gestión",
+   "tarea": "Evaluación de Impactos",
+   "subtarea": "Definición de punto de corte teórico",
+   "actividad": "Fijar el punto de corte maximizando una función de utilidad que refleje el costo asimétrico de los errores (por ejemplo, beneficio por acierto × aciertos − costo por acción × acciones) y definir estratos de gestión (prioridad alta, media y descarte con un canal alternativo de menor costo).",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "ml": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "arbol": {
+     "agil": 0.5,
+     "completo": 0.5
+    },
+    "acp": {
+     "agil": 0.5,
+     "completo": 0.5
+    }
+   },
+   "nivel_automatizacion": 2,
+   "naturaleza": "analisis",
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "lecturas": [
+    "LIT-003",
+    "LIT-138"
    ],
    "doc": "docs/desarrollo/d5-integracion-gestion.md"
   },
@@ -14016,7 +14566,7 @@
    "fase_nombre": "Implementación",
    "tarea": "Implementación tecnológica",
    "subtarea": "Pruebas de certificación",
-   "actividad": "Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)",
+   "actividad": "Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (99.9 % de coincidencia mínima para obtener conformidad, U-15)",
    "critico": false,
    "eficiencia": false,
    "nivel_automatizacion": 1,
@@ -14292,6 +14842,68 @@
    "nivel_automatizacion": 2,
    "naturaleza": "datos",
    "nota_origen": "Línea base 2.0 (2026-10-17). Práctica de bancos de referencia; FR-07.",
+   "lecturas": [
+    "LIT-003",
+    "LIT-053",
+    "LIT-054"
+   ],
+   "doc": "docs/implementacion/implementacion.md"
+  },
+  {
+   "id": "IMP-01.06.07",
+   "estandar": "Implementación",
+   "fase": "IMP",
+   "fase_nombre": "Implementación",
+   "tarea": "Implementación tecnológica",
+   "subtarea": "Pruebas de certificación",
+   "actividad": "Probar la paridad matemática en producción: al menos 99.9 % de los registros con el mismo score o decisión que el proceso de modelamiento, dentro de la tolerancia numérica documentada (U-15). Las diferencias se explican una a una.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "ml": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "arbol": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "acp": {
+     "agil": 0.25,
+     "completo": 0.25
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "critico": true,
+   "nota_origen": "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "umbrales": [
+    "U-15"
+   ],
    "lecturas": [
     "LIT-003",
     "LIT-053",
@@ -15812,7 +16424,7 @@
    "fase_nombre": "Pérdida crediticia esperada (ECL) y overlays",
    "tarea": "Cálculo de la ECL",
    "subtarea": "Motor de cálculo",
-   "actividad": "Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 95 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.",
+   "actividad": "Certificar el motor de ECL con el estándar IMP (coincidencia ≥ 99.9 % con el cálculo de modelamiento, U-15) y conciliar la ECL con contabilidad.",
    "aplica_tier": [
     1,
     2,
@@ -17707,7 +18319,7 @@
    "fase_nombre": "Implementación en el motor de precios",
    "tarea": "Motor de precios",
    "subtarea": "Certificación",
-   "actividad": "Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.",
+   "actividad": "Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 99.9 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.",
    "aplica_tier": [
     1,
     2,
@@ -20232,7 +20844,7 @@
    "fase_nombre": "Validación",
    "tarea": "Validación de modelos de pricing",
    "subtarea": "Implementación y conducta",
-   "actividad": "Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 95 % (U-15).",
+   "actividad": "Control preventivo de topes regulatorios en el motor de precios con 100 % de cumplimiento en las pruebas (U-24) y certificación ≥ 99.9 % (U-15).",
    "killer": true,
    "aplica_tier": [
     1,
@@ -20475,7 +21087,7 @@
    "fase_nombre": "Validación",
    "tarea": "Validación de parámetros de riesgo",
    "subtarea": "ECL y gobierno",
-   "actividad": "Motor de ECL certificado con coincidencia ≥ 95 % (U-15) y conciliado con contabilidad.",
+   "actividad": "Motor de ECL certificado con coincidencia ≥ 99.9 % (U-15) y conciliado con contabilidad.",
    "killer": true,
    "aplica_tier": [
     1,
@@ -20666,6 +21278,29 @@
    "tarea": "Validación metodológica",
    "subtarea": "Alcance y profundidad de la validación",
    "actividad": "Verificación independiente de la no anticipación temporal de las variables (U-39) y de la ausencia de fuga de información: revisión de variables con IV mayor a 0.50 (U-38) y del embudo de filtros previo al entrenamiento.",
+   "killer": true,
+   "aplica_tier": [
+    1,
+    2,
+    3
+   ],
+   "lecturas": [
+    "LIT-100",
+    "LIT-101",
+    "LIT-107",
+    "LIT-130",
+    "LIT-131"
+   ],
+   "doc": "docs/validacion/validacion.md"
+  },
+  {
+   "id": "VAL-M-05.08",
+   "estandar": "Validación",
+   "fase": "VAL",
+   "fase_nombre": "Validación",
+   "tarea": "Validación metodológica",
+   "subtarea": "Alcance y profundidad de la validación",
+   "actividad": "Verificación del torneo de modelos: al menos cinco familias (U-43), tabla oficial completa, reglas de descalificación y parsimonia (U-11, U-42) y evidencia de que el OOT no se usó para seleccionar variables ni hiperparámetros.",
    "killer": true,
    "aplica_tier": [
     1,

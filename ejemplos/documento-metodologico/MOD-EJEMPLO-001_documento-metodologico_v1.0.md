@@ -20,7 +20,7 @@ number-sections: true
 | Estándar aplicado | Desarrollo · Tier II · Machine learning · enfoque ágil |
 | Versión y estado | 1.0 · Para Comité de Modelos |
 | Clasificación | Uso interno |
-| Versión del estándar | Estándares de Modelos en Banca v3.0.0 |
+| Versión del estándar | Estándares de Modelos en Banca v4.0.0 |
 
 **Control de cambios** (DES-D4-11.01.03)
 
@@ -104,9 +104,10 @@ sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
 | No anticipación (U-39) | 405 | 7 variables contemporáneas (saldos al cierre del mes de solicitud) |
 | Fill rate mínimo del plan (70 %) | 351 | 54 variables con bajo poblamiento |
 | Estabilidad PSI ≤ 10 % (U-02) | 318 | 33 variables inestables |
-| IV entre 0.02 y 0.50 (U-38) | 196 | 120 sin poder predictivo y 2 con sospecha de fuga |
-| Correlación < 60 % (U-06) | 88 |  |
-| Selección por gain y sentido económico | 24 |  |
+| IV ≤ 0.50 (U-38) | 316 | 2 con sospecha de fuga |
+| Correlación < 60 % (U-06) | 141 |  |
+| Ranking automatizado (U-08) | 100 |  |
+| Selección paso a paso y sentido económico | 24 | Se preservan los bloques sociodemográfico y financiero |
 
 ## Variables finales
 
@@ -130,6 +131,18 @@ sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
 
 **Hiperparámetros finales:** `max_depth` = 4 · `eta` = 0.05 · `n_estimators` = 600 · `subsample` = 0.8 · `colsample_bytree` = 0.7.
 
+## Torneo de modelos
+
+| Algoritmo | Gini Train | Gini validación | Gini OOT | KS OOT | Brecha | Caída rel. | Brier | Conc. máx. | Estado |
+|---------------------|-----:|-----:|-----:|-----:|-----:|-----:|------:|-----:|------------|
+| Regresión logística L2 (línea base) | 50.2 | 49.6 | 49.3 | 36.0 | 0.9 | 1.8 % | 0.0645 | 22.0 % | Línea base |
+| Árbol de decisión podado | 44.8 | 43.1 | 42.5 | 31.2 | 2.3 | 5.1 % | 0.0671 | 31.0 % | Conforme |
+| Random forest | 55.9 | 51.8 | 50.6 | 37.4 | 5.3 | 9.5 % | 0.0638 | 27.0 % | Conforme |
+| LightGBM monotónico | 54.6 | 52.3 | 51.9 | 38.8 | 2.7 | 4.9 % | 0.0629 | 24.0 % | Challenger |
+| XGBoost regularizado monotónico | 54.0 | 52.6 | 52.1 | 39.2 | 1.9 | 3.5 % | 0.0627 | 21.0 % | Campeón |
+
+Reglas aplicadas: descalificación por sobreajuste (U-11), concentración máxima (U-09) y parsimonia (U-42). El OOT se evaluó una sola vez, sobre los candidatos finales.
+
 # Desempeño
 
 ## Discriminación por muestra
@@ -139,7 +152,7 @@ sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
 | Entrenamiento | 412 300 | 7.1 % | 54.0 | 40.8 |
 | Prueba | 103 080 | 7.0 % | 52.9 | 39.9 |
 | OOT | 16 080 | 7.6 % | 52.1 | 39.2 |
-Diferencia de Gini entre entrenamiento y OOT: **1.9 pts** — cumple U-11 (máximo 10 pts). El modelo vigente tiene un Gini OOT de 45.7: mejora de **6.4 pts**.
+Diferencia de Gini entre entrenamiento y OOT: **1.9 pts** y caída relativa de **3.5 %** — cumple U-11 (máximo 10 pts y 10 %). El modelo vigente tiene un Gini OOT de 45.7: mejora de **6.4 pts**.
 
 ## Estabilidad mensual
 
@@ -194,11 +207,15 @@ Seguimiento mensual de PSI y forzajes; discriminación y calibración trimestral
 | U-02 | Estabilidad poblacional / de variables (PSI) | 0.06 | PSI máximo de las variables del modelo ≤ 0.10 (≤ 0.20 con excepción) | **Cumple** |
 | U-03 | Representatividad de la muestra | 1.01 | Ratio TM/TG entre 0.95 y 1.05 | **Cumple** |
 | U-06 | Correlación entre variables continuas | 0.57 | Correlación máxima entre continuas < 0.60 (≤ 0.95 con sustento) | **Cumple** |
+| U-09 | Concentración de importancia de variables | 0.21 | Concentración máxima de importancia de una variable ≤ 40 % | **Cumple** |
 | U-10 | Optimización de hiperparámetros | 60 | Combinaciones de hiperparámetros probadas ≥ 50 | **Cumple** |
-| U-11 | Sobreajuste Train vs OOT | 1.9 | \|Gini Train − Gini OOT\| ≤ 10 pts | **Cumple** |
-| U-38 | Rango de IV y sospecha de fuga | 0.41 | IV máximo de las variables del modelo ≤ 0.50 (salvo investigación de fuga documentada) | **Cumple** |
+| U-11 | Sobreajuste Train vs OOT | 1.9 | \|Gini Train − Gini OOT\| ≤ 10 pts (y caída relativa ≤ 10 %) | **Cumple** |
+| U-38 | Rango de IV y sospecha de fuga | 0.41 | IV máximo de las variables del modelo ≤ 0.50 (sin excepción) | **Cumple** |
 | U-39 | No anticipación temporal de las variables | 0 | Variables con información posterior a la observación = 0 | **Cumple** |
 | U-40 | Plazo máximo de desarrollo de un modelo | 11 | Duración del desarrollo con 2 personas ≤ 13 semanas (con agentes de IA ≤ 15 días hábiles) | **Cumple** |
+| U-41 | Estabilidad de la tasa del target en la ventana | 0.12 | Variación relativa mensual de la tasa del target ≤ 25 % | **Cumple** |
+| U-43 | Torneo de modelos (champion–challenger) | 5 | Familias de algoritmos en el torneo ≥ 5 | **Cumple** |
+| U-44 | Monotonicidad del desempeño por deciles | 0 | Inversiones de la tasa observada por decil en el OOT = 0 | **Cumple** |
 
 ## Matriz de requisitos
 
@@ -206,14 +223,14 @@ Requisitos aplicables a un modelo Desarrollo Tier II, Machine learning, enfoque 
 
 | Fase | Aplicables | Cumplidos | Excepción | No aplica | Pendientes |
 |----------------------------------------|------:|------:|------:|------:|------:|
-| DES-D1 · Definición, alcance, diseño y extracción | 56 | 0 | 0 | 0 | 56 |
+| DES-D1 · Definición, alcance, diseño y extracción | 57 | 0 | 0 | 0 | 57 |
 | DES-D2 · Preparación, calidad y entendimiento de los datos | 18 | 0 | 0 | 0 | 18 |
 | DES-D3 · Segmentación | 6 | 0 | 0 | 0 | 6 |
-| DES-D4 · Modelamiento | 78 | 0 | 0 | 0 | 78 |
-| DES-D5 · Integración a la gestión | 9 | 0 | 0 | 0 | 9 |
+| DES-D4 · Modelamiento | 85 | 0 | 0 | 0 | 85 |
+| DES-D5 · Integración a la gestión | 10 | 0 | 0 | 0 | 10 |
 | DES-D7 · Gobierno | 7 | 0 | 0 | 0 | 7 |
-| IMP · Implementación | 28 | 0 | 0 | 0 | 28 |
-| **Total** | **202** | **0** | **0** | **0** | **202** |
+| IMP · Implementación | 29 | 0 | 0 | 0 | 29 |
+| **Total** | **212** | **0** | **0** | **0** | **212** |
 
 # Gobierno y aprobaciones
 
@@ -229,3 +246,4 @@ El modelo no se usa sin la aprobación previa del comité de riesgos de modelo (
 - Siddiqi, N. (2017). *Intelligent Credit Scoring: Building and Implementing Better Credit Risk Scorecards* (2.ª ed.). Wiley.
 - Board of Governors of the Federal Reserve System, OCC y FDIC (2026). *Revised Guidance on Model Risk Management* (SR 26-2; OCC Bulletin 2026-13; FDIC FIL-15-2026).
 - Superintendencia de Banca, Seguros y AFP (2023). *Reglamento de Gestión de Riesgos de Modelo* (Resolución SBS n.º 00053-2023).
+- Breiman, L. (2001). Random Forests. *Machine Learning*, 45(1), 5–32.

@@ -122,7 +122,7 @@ desactualizados en un canal o descuentos acumulados. P7 cierra esa brecha con tr
 
 #### 2.2 Certificación
 
-- **`PRC-P7-02.02.01`** Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 95 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
+- **`PRC-P7-02.02.01`** Certificar la implementación con el estándar IMP: los precios que calcula el motor coinciden con los del modelo aprobado en ≥ 99.9 % de casos de prueba (U-15) y el 100 % de las restricciones regulatorias se cumplen.
 
   Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Documento 14: Certificación del modelo
 

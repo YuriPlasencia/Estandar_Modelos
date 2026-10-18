@@ -59,8 +59,7 @@ actividades:
 - id: CAL-C5-01.04.02
   tarea: Implementación
   subtarea: Pruebas de certificación
-  actividad: Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia
-    mínima para obtener conformidad)
+  actividad: Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (99.9 % de coincidencia mínima para obtener conformidad, U-15)
   dias_esfuerzo: 1.25
   aplica_tier: [1, 2, 3]
 - id: CAL-C5-01.04.03

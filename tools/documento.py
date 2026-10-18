@@ -217,6 +217,7 @@ def renderizar_md(datos: Path, carpeta: Path) -> tuple[str, dict]:
         "matriz": matriz_cumplimiento(d, datos.parent),
         "graficos": {"gini": grafico_gini(d, carpeta / "grafico-gini.svg")},
         "gini_dif": abs(g_tr - g_oot) if g_tr is not None and g_oot is not None else None, "gini_oot": g_oot,
+        "gini_rel": (g_tr - g_oot) / g_tr if g_tr and g_oot is not None else None,
         "iv_alertas": [v["nombre"] for v in d["variables"].get("finales") or [] if (v.get("iv") or 0) > 0.5],
         "roman": lambda t: ROMAN.get(esfuerzo.tier(t), t) if t else "—", "modelo_lbl": lambda m: MODELOS.get(m, m),
         "enfoque_lbl": lambda e: {"agil": "ágil", "completo": "completo", "tradicional": "completo"}.get(e, e),

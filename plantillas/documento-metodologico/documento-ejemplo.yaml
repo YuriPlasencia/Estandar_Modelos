@@ -73,9 +73,10 @@ variables:
     - {etapa: No anticipación (U-39), quedan: 405, motivo: 7 variables contemporáneas (saldos al cierre del mes de solicitud)}
     - {etapa: Fill rate mínimo del plan (70 %), quedan: 351, motivo: 54 variables con bajo poblamiento}
     - {etapa: Estabilidad PSI ≤ 10 % (U-02), quedan: 318, motivo: 33 variables inestables}
-    - {etapa: IV entre 0.02 y 0.50 (U-38), quedan: 196, motivo: 120 sin poder predictivo y 2 con sospecha de fuga}
-    - {etapa: Correlación < 60 % (U-06), quedan: 88}
-    - {etapa: Selección por gain y sentido económico, quedan: 24}
+    - {etapa: IV ≤ 0.50 (U-38), quedan: 316, motivo: 2 con sospecha de fuga}
+    - {etapa: Correlación < 60 % (U-06), quedan: 141}
+    - {etapa: Ranking automatizado (U-08), quedan: 100}
+    - {etapa: Selección paso a paso y sentido económico, quedan: 24, motivo: Se preservan los bloques sociodemográfico y financiero}
   finales:
     - {nombre: max_atraso_buro_6m, descripcion: Atraso máximo en el sistema en los 6 meses previos, iv: 0.41, psi: 0.03, signo: "+"}
     - {nombre: utilizacion_lineas_buro, descripcion: Uso promedio de líneas revolventes en el sistema, iv: 0.29, psi: 0.05, signo: "+"}
@@ -90,6 +91,12 @@ metodologia:
   combinaciones_hp: 60
   semilla: 20261017
   hiperparametros: {max_depth: 4, eta: 0.05, n_estimators: 600, subsample: 0.8, colsample_bytree: 0.7}
+  torneo:
+    - {algoritmo: Regresión logística L2 (línea base), gini_train: 50.2, gini_validacion: 49.6, gini_oot: 49.3, ks_oot: 36.0, brier: 0.0645, concentracion_max: 0.22, estado: Línea base}
+    - {algoritmo: Árbol de decisión podado, gini_train: 44.8, gini_validacion: 43.1, gini_oot: 42.5, ks_oot: 31.2, brier: 0.0671, concentracion_max: 0.31, estado: Conforme}
+    - {algoritmo: Random forest, gini_train: 55.9, gini_validacion: 51.8, gini_oot: 50.6, ks_oot: 37.4, brier: 0.0638, concentracion_max: 0.27, estado: Conforme}
+    - {algoritmo: LightGBM monotónico, gini_train: 54.6, gini_validacion: 52.3, gini_oot: 51.9, ks_oot: 38.8, brier: 0.0629, concentracion_max: 0.24, estado: Challenger}
+    - {algoritmo: XGBoost regularizado monotónico, gini_train: 54.0, gini_validacion: 52.6, gini_oot: 52.1, ks_oot: 39.2, brier: 0.0627, concentracion_max: 0.21, estado: Campeón}
 
 desempeno:
   muestras:
@@ -146,10 +153,14 @@ umbrales:              # valores obtenidos; el documento los evalúa contra el e
   U-02: 0.06           # PSI máximo de las variables finales
   U-03: 1.01           # ratio TM/TG de la muestra
   U-06: 0.57           # correlación máxima entre continuas
+  U-09: 0.21           # concentración máxima de importancia de una variable
   U-10: 60             # combinaciones de hiperparámetros
   U-11: 1.9            # |Gini Train − Gini OOT|
   U-38: 0.41           # IV máximo de las variables finales
   U-39: 0              # variables con información posterior a la observación
+  U-41: 0.12           # variación relativa mensual máxima de la tasa del target en Train
+  U-43: 5              # familias de algoritmos en el torneo
+  U-44: 0              # inversiones de la tasa observada por decil en el OOT
   U-40: 11             # semanas de desarrollo con 2 personas, del kick-off al Comité
 
 excepciones: []

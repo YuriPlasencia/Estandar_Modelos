@@ -100,7 +100,7 @@ MOD-EJEMPLO-001</p>
 </tr>
 <tr>
 <td>Versión del estándar</td>
-<td>Estándares de Modelos en Banca v3.0.0</td>
+<td>Estándares de Modelos en Banca v4.0.0</td>
 </tr>
 </tbody>
 </table>
@@ -325,19 +325,24 @@ solicitud)</td>
 <td>33 variables inestables</td>
 </tr>
 <tr>
-<td>IV entre 0.02 y 0.50 (U-38)</td>
-<td style="text-align: right;">196</td>
-<td>120 sin poder predictivo y 2 con sospecha de fuga</td>
+<td>IV ≤ 0.50 (U-38)</td>
+<td style="text-align: right;">316</td>
+<td>2 con sospecha de fuga</td>
 </tr>
 <tr>
 <td>Correlación &lt; 60 % (U-06)</td>
-<td style="text-align: right;">88</td>
+<td style="text-align: right;">141</td>
 <td></td>
 </tr>
 <tr>
-<td>Selección por gain y sentido económico</td>
-<td style="text-align: right;">24</td>
+<td>Ranking automatizado (U-08)</td>
+<td style="text-align: right;">100</td>
 <td></td>
+</tr>
+<tr>
+<td>Selección paso a paso y sentido económico</td>
+<td style="text-align: right;">24</td>
+<td>Se preservan los bloques sociodemográfico y financiero</td>
 </tr>
 </tbody>
 </table>
@@ -436,6 +441,100 @@ variables.</td>
 <p><strong>Hiperparámetros finales:</strong> <code>max_depth</code> = 4
 · <code>eta</code> = 0.05 · <code>n_estimators</code> = 600 ·
 <code>subsample</code> = 0.8 · <code>colsample_bytree</code> = 0.7.</p>
+<h2 id="torneo-de-modelos">Torneo de modelos</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 8%" />
+<col style="width: 7%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th>Algoritmo</th>
+<th style="text-align: right;">Gini Train</th>
+<th style="text-align: right;">Gini validación</th>
+<th style="text-align: right;">Gini OOT</th>
+<th style="text-align: right;">KS OOT</th>
+<th style="text-align: right;">Brecha</th>
+<th style="text-align: right;">Caída rel.</th>
+<th style="text-align: right;">Brier</th>
+<th style="text-align: right;">Conc. máx.</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Regresión logística L2 (línea base)</td>
+<td style="text-align: right;">50.2</td>
+<td style="text-align: right;">49.6</td>
+<td style="text-align: right;">49.3</td>
+<td style="text-align: right;">36.0</td>
+<td style="text-align: right;">0.9</td>
+<td style="text-align: right;">1.8 %</td>
+<td style="text-align: right;">0.0645</td>
+<td style="text-align: right;">22.0 %</td>
+<td>Línea base</td>
+</tr>
+<tr>
+<td>Árbol de decisión podado</td>
+<td style="text-align: right;">44.8</td>
+<td style="text-align: right;">43.1</td>
+<td style="text-align: right;">42.5</td>
+<td style="text-align: right;">31.2</td>
+<td style="text-align: right;">2.3</td>
+<td style="text-align: right;">5.1 %</td>
+<td style="text-align: right;">0.0671</td>
+<td style="text-align: right;">31.0 %</td>
+<td>Conforme</td>
+</tr>
+<tr>
+<td>Random forest</td>
+<td style="text-align: right;">55.9</td>
+<td style="text-align: right;">51.8</td>
+<td style="text-align: right;">50.6</td>
+<td style="text-align: right;">37.4</td>
+<td style="text-align: right;">5.3</td>
+<td style="text-align: right;">9.5 %</td>
+<td style="text-align: right;">0.0638</td>
+<td style="text-align: right;">27.0 %</td>
+<td>Conforme</td>
+</tr>
+<tr>
+<td>LightGBM monotónico</td>
+<td style="text-align: right;">54.6</td>
+<td style="text-align: right;">52.3</td>
+<td style="text-align: right;">51.9</td>
+<td style="text-align: right;">38.8</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">4.9 %</td>
+<td style="text-align: right;">0.0629</td>
+<td style="text-align: right;">24.0 %</td>
+<td>Challenger</td>
+</tr>
+<tr>
+<td>XGBoost regularizado monotónico</td>
+<td style="text-align: right;">54.0</td>
+<td style="text-align: right;">52.6</td>
+<td style="text-align: right;">52.1</td>
+<td style="text-align: right;">39.2</td>
+<td style="text-align: right;">1.9</td>
+<td style="text-align: right;">3.5 %</td>
+<td style="text-align: right;">0.0627</td>
+<td style="text-align: right;">21.0 %</td>
+<td>Campeón</td>
+</tr>
+</tbody>
+</table>
+<p>Reglas aplicadas: descalificación por sobreajuste (U-11),
+concentración máxima (U-09) y parsimonia (U-42). El OOT se evaluó una
+sola vez, sobre los candidatos finales.</p>
 <h1 id="desempeño">Desempeño</h1>
 <h2 id="discriminación-por-muestra">Discriminación por muestra</h2>
 <table>
@@ -473,8 +572,9 @@ variables.</td>
 </tbody>
 </table>
 <p>Diferencia de Gini entre entrenamiento y OOT: <strong>1.9
-pts</strong> — cumple U-11 (máximo 10 pts). El modelo vigente tiene un
-Gini OOT de 45.7: mejora de <strong>6.4 pts</strong>.</p>
+pts</strong> y caída relativa de <strong>3.5 %</strong> — cumple U-11
+(máximo 10 pts y 10 %). El modelo vigente tiene un Gini OOT de 45.7:
+mejora de <strong>6.4 pts</strong>.</p>
 <h2 id="estabilidad-mensual">Estabilidad mensual</h2>
 <figure>
 <img role="img" aria-label="Gini por mes del periodo de construcción y del mes OOT, frente al de entrenamiento" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgMzAwIiB3aWR0aD0iNjQwIiBoZWlnaHQ9IjMwMCIgZm9udC1mYW1pbHk9IlNlZ29lIFVJLCBDYWxpYnJpLCBzYW5zLXNlcmlmIj4KPHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmZmZmZmYiLz4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMjIxLjciIHkyPSIyMjEuNyIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMjI1LjciIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjQ0PC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSIxODkuNCIgeTI9IjE4OS40IiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSIxOTMuNCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NDY8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjE1Ny4xIiB5Mj0iMTU3LjEiIHN0cm9rZT0iI0Q1REJEOCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KPHRleHQgeD0iNDgiIHk9IjE2MS4xIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj40ODwvdGV4dD4KPGxpbmUgeDE9IjU2IiB4Mj0iNjIwIiB5MT0iMTI0LjkiIHkyPSIxMjQuOSIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iMTI4LjkiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM1RTZCNzAiIHRleHQtYW5jaG9yPSJlbmQiPjUwPC90ZXh0Pgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI5Mi42IiB5Mj0iOTIuNiIgc3Ryb2tlPSIjRDVEQkQ4IiBzdHJva2Utd2lkdGg9IjAuOCIvPgo8dGV4dCB4PSI0OCIgeT0iOTYuNiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9ImVuZCI+NTI8L3RleHQ+CjxsaW5lIHgxPSI1NiIgeDI9IjYyMCIgeTE9IjYwLjMiIHkyPSI2MC4zIiBzdHJva2U9IiNENURCRDgiIHN0cm9rZS13aWR0aD0iMC44Ii8+Cjx0ZXh0IHg9IjQ4IiB5PSI2NC4zIiBmb250LXNpemU9IjExIiBmaWxsPSIjNUU2QjcwIiB0ZXh0LWFuY2hvcj0iZW5kIj41NDwvdGV4dD4KPHJlY3QgeD0iNTYiIHk9IjYwLjMiIHdpZHRoPSI1NjQiIGhlaWdodD0iMTYxLjQiIGZpbGw9IiM3QTI2MzIiIGZpbGwtb3BhY2l0eT0iMC4wNiIvPgo8bGluZSB4MT0iNTYiIHgyPSI2MjAiIHkxPSI2MC4zIiB5Mj0iNjAuMyIgc3Ryb2tlPSIjMUIyQTJGIiBzdHJva2UtZGFzaGFycmF5PSI1IDQiIHN0cm9rZS13aWR0aD0iMS4yIi8+Cjx0ZXh0IHg9IjYyMCIgeT0iNTQuMyIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzFCMkEyRiIgdGV4dC1hbmNob3I9ImVuZCI+RW50cmVuYW1pZW50byA1NC4wPC90ZXh0Pgo8dGV4dCB4PSI2MjAiIHk9IjIxNS43IiBmb250LXNpemU9IjExIiBmaWxsPSIjN0EyNjMyIiB0ZXh0LWFuY2hvcj0iZW5kIj5Mw61taXRlIFUtMTEgKOKIkjEwIHB0cyk8L3RleHQ+Cjxwb2x5bGluZSBwb2ludHM9IjU2LjAsNjYuNyAxNTAuMCw3OC4wIDI0NC4wLDcwLjAgMzM4LjAsODIuOSA0MzIuMCw3NC44IDUyNi4wLDc5LjcgNjIwLjAsOTEuMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN0EyNjMyIiBzdHJva2Utd2lkdGg9IjIuNCIvPgo8Y2lyY2xlIGN4PSI1Ni4wIiBjeT0iNjYuNyIgcj0iMy42IiBmaWxsPSIjN0EyNjMyIi8+Cjx0ZXh0IHg9IjU2LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wMTwvdGV4dD4KPGNpcmNsZSBjeD0iMTUwLjAiIGN5PSI3OC4wIiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iMTUwLjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wMjwvdGV4dD4KPGNpcmNsZSBjeD0iMjQ0LjAiIGN5PSI3MC4wIiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iMjQ0LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wMzwvdGV4dD4KPGNpcmNsZSBjeD0iMzM4LjAiIGN5PSI4Mi45IiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iMzM4LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNDwvdGV4dD4KPGNpcmNsZSBjeD0iNDMyLjAiIGN5PSI3NC44IiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iNDMyLjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNTwvdGV4dD4KPGNpcmNsZSBjeD0iNTI2LjAiIGN5PSI3OS43IiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iNTI2LjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNjwvdGV4dD4KPGNpcmNsZSBjeD0iNjIwLjAiIGN5PSI5MS4wIiByPSIzLjYiIGZpbGw9IiM3QTI2MzIiLz4KPHRleHQgeD0iNjIwLjAiIHk9IjI3MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzVFNkI3MCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MjAyNC0wNyAoT09UKTwvdGV4dD4KPHRleHQgeD0iNTYiIHk9IjE2IiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjMUIyQTJGIj5HaW5pIHBvciBtZXM6IGNvbnN0cnVjY2nDs24geSBtZXMgT09UPC90ZXh0Pgo8L3N2Zz4=" style="width:85.0%" alt="Gini por mes del periodo de construcción y del mes OOT, frente al de entrenamiento" />
@@ -638,6 +738,13 @@ sustento)</td>
 <td><strong>Cumple</strong></td>
 </tr>
 <tr>
+<td>U-09</td>
+<td>Concentración de importancia de variables</td>
+<td style="text-align: right;">0.21</td>
+<td>Concentración máxima de importancia de una variable ≤ 40 %</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
 <td>U-10</td>
 <td>Optimización de hiperparámetros</td>
 <td style="text-align: right;">60</td>
@@ -648,15 +755,14 @@ sustento)</td>
 <td>U-11</td>
 <td>Sobreajuste Train vs OOT</td>
 <td style="text-align: right;">1.9</td>
-<td>|Gini Train − Gini OOT| ≤ 10 pts</td>
+<td>|Gini Train − Gini OOT| ≤ 10 pts (y caída relativa ≤ 10 %)</td>
 <td><strong>Cumple</strong></td>
 </tr>
 <tr>
 <td>U-38</td>
 <td>Rango de IV y sospecha de fuga</td>
 <td style="text-align: right;">0.41</td>
-<td>IV máximo de las variables del modelo ≤ 0.50 (salvo investigación de
-fuga documentada)</td>
+<td>IV máximo de las variables del modelo ≤ 0.50 (sin excepción)</td>
 <td><strong>Cumple</strong></td>
 </tr>
 <tr>
@@ -672,6 +778,27 @@ fuga documentada)</td>
 <td style="text-align: right;">11</td>
 <td>Duración del desarrollo con 2 personas ≤ 13 semanas (con agentes de
 IA ≤ 15 días hábiles)</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-41</td>
+<td>Estabilidad de la tasa del target en la ventana</td>
+<td style="text-align: right;">0.12</td>
+<td>Variación relativa mensual de la tasa del target ≤ 25 %</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-43</td>
+<td>Torneo de modelos (champion–challenger)</td>
+<td style="text-align: right;">5</td>
+<td>Familias de algoritmos en el torneo ≥ 5</td>
+<td><strong>Cumple</strong></td>
+</tr>
+<tr>
+<td>U-44</td>
+<td>Monotonicidad del desempeño por deciles</td>
+<td style="text-align: right;">0</td>
+<td>Inversiones de la tasa observada por decil en el OOT = 0</td>
 <td><strong>Cumple</strong></td>
 </tr>
 </tbody>
@@ -702,11 +829,11 @@ pendientes (ver <code>tools/verificar.py --init</code>).</p>
 <tbody>
 <tr>
 <td>DES-D1 · Definición, alcance, diseño y extracción</td>
-<td style="text-align: right;">56</td>
+<td style="text-align: right;">57</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">56</td>
+<td style="text-align: right;">57</td>
 </tr>
 <tr>
 <td>DES-D2 · Preparación, calidad y entendimiento de los datos</td>
@@ -726,19 +853,19 @@ pendientes (ver <code>tools/verificar.py --init</code>).</p>
 </tr>
 <tr>
 <td>DES-D4 · Modelamiento</td>
-<td style="text-align: right;">78</td>
+<td style="text-align: right;">85</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">78</td>
+<td style="text-align: right;">85</td>
 </tr>
 <tr>
 <td>DES-D5 · Integración a la gestión</td>
-<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">9</td>
+<td style="text-align: right;">10</td>
 </tr>
 <tr>
 <td>DES-D7 · Gobierno</td>
@@ -750,19 +877,19 @@ pendientes (ver <code>tools/verificar.py --init</code>).</p>
 </tr>
 <tr>
 <td>IMP · Implementación</td>
-<td style="text-align: right;">28</td>
+<td style="text-align: right;">29</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">0</td>
-<td style="text-align: right;">28</td>
+<td style="text-align: right;">29</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
-<td style="text-align: right;"><strong>202</strong></td>
+<td style="text-align: right;"><strong>212</strong></td>
 <td style="text-align: right;"><strong>0</strong></td>
 <td style="text-align: right;"><strong>0</strong></td>
 <td style="text-align: right;"><strong>0</strong></td>
-<td style="text-align: right;"><strong>202</strong></td>
+<td style="text-align: right;"><strong>212</strong></td>
 </tr>
 </tbody>
 </table>
@@ -808,7 +935,9 @@ Implementing Better Credit Risk Scorecards</em> (2.ª ed.). Wiley.</li>
 Bulletin 2026-13; FDIC FIL-15-2026).</li>
 <li>Superintendencia de Banca, Seguros y AFP (2023). <em>Reglamento de
 Gestión de Riesgos de Modelo</em> (Resolución SBS n.º 00053-2023).</li>
+<li>Breiman, L. (2001). Random Forests. <em>Machine Learning</em>,
+45(1), 5–32.</li>
 </ul>
-<footer class="pie">Yuri Plasencia — Analytics Pricing &amp; Revenue Management · Estándares de Modelos en Banca v3.0.0</footer>
+<footer class="pie">Yuri Plasencia — Analytics Pricing &amp; Revenue Management · Estándares de Modelos en Banca v4.0.0</footer>
 </body>
 </html>

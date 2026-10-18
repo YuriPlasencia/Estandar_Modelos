@@ -14,7 +14,7 @@ orden: 13
 ## Objetivo
 
 Construir, seleccionar, calibrar y documentar el modelo final, y llevarlo a aprobación del Comité de Modelos.
-Es la fase con más requisitos del estándar (<!--DUR:fase:DES-D4-->≈ 2.9–5.5 semanas con 2 personas<!--/DUR-->).
+Es la fase con más requisitos del estándar (<!--DUR:fase:DES-D4-->≈ 2.8–5.7 semanas con 2 personas<!--/DUR-->).
 
 ## Flujo
 
@@ -35,8 +35,8 @@ Ningún modelo se entrena sobre variables que no hayan pasado, en este orden, po
  2 Univariado             distribución, faltantes, especiales, categorías raras, extremos   DES-D4-03.02.02
  3 Fill rate y PSI        poblamiento global y mensual; estabilidad temporal                DES-D4-03.02.01 · U-02
  4 Bivariado              WOE e IV por tramo, tendencia y monotonicidad del riesgo          DES-D4-03.03.02
- 5 Sospecha de fuga       IV > 0.50 no entra salvo investigación que descarte leakage       U-38 · DES-D4-03.03.03
- 6 Filtro de confiables   IV entre 0.02 y 0.50, fill rate del plan, PSI; luego correlación  DES-D4-03.03.04 · U-06 · U-07
+ 5 Sospecha de fuga       IV > 0.50 se excluye (cuasi-determinismo)                         U-38 · DES-D4-03.03.03
+ 6 Filtro de confiables   IV ≤ 0.50, fill rate del plan, PSI; luego correlación             DES-D4-03.03.04 · U-06 · U-07
  ──────────────────────────────────────────────────────────────────────────────────────────────────────────
  Embudo de variables documentado ─▶ Feature engineering ─▶ Entrenamiento
 ```
@@ -49,23 +49,69 @@ referencia y el desfase de su fuente (DES-D1-01.03.05).
 
 **Por qué un IV demasiado alto es una alarma.** En crédito, un IV mayor a 0.50 casi siempre indica que la variable
 contiene información del target (fuga) y no poder predictivo genuino. Es la regla clásica de la práctica de scoring
-(LIT-001). Antes de usarla hay que demostrar lo contrario.
+(LIT-001), y la experiencia lo confirma: una sola variable de este tipo puede concentrar casi toda la importancia del
+modelo y abrir una brecha Train–OOT de más de 10 pts, que se cierra al excluirla. Por eso se excluye sin excepción.
+
+**Por qué el filtro de IV es asimétrico.** El límite superior (0.50) protege contra la fuga; el inferior (0.02) no se
+aplica a ciegas. Un filtro univariado que descarta todo lo que tiene IV bajo puede eliminar los bloques
+sociodemográficos y financieros y dejar un modelo apoyado en dos o tres variables operativas. Esos bloques se
+preservan como línea base de control (DES-D4-05.02.09) y es el análisis multivariado el que decide si aportan.
 
 ## Reglas clave (resumen de umbrales)
 
 | Tema | Regla | Umbral |
 |---|---|---|
 | No anticipación | Cero variables contemporáneas o futuras | U-39 |
-| Poder predictivo y fuga | IV entre 0.02 y 0.50; IV > 0.50 solo con investigación de fuga | U-38 |
+| Fuga por IV | IV > 0.50 se excluye; IV < 0.02 no excluye por sí solo | U-38 |
 | Representatividad | $0.95 \le TM/TG \le 1.05$; si no, ponderar | U-03 |
 | Estabilidad de variables | PSI ≤ 10 % (≤ 20 % excepción) | U-02 |
 | Outliers | Percentiles 1-5-95-99 | U-04 |
 | Correlación continuas | < 60 % (hasta < 95 % por tradeoff) | U-06 |
 | Asociación categóricas | p-valor χ² ≥ 0.0001 o V de Cramér < 0.4 | U-07 |
-| Selección ML | Top 150 variables / 80 % del gain | U-08 |
-| Concentración de pesos | ≤ 25 % (tradicional) · ≤ 10 % (ML, gain) | U-09 |
+| Selección de variables | Top 100 sin fuga / 80 % del gain, luego paso a paso | U-08 |
+| Concentración de importancia | Máximo 40 % por variable (deseable ≤ 25 %) | U-09 |
 | Hiperparámetros | ≥ 50 combinaciones, semilla fija | U-10 |
-| Sobreajuste | \|Gini Train − Gini OOT\| ≤ 10 pts | U-11 |
+| Sobreajuste | \|Gini Train − Gini OOT\| ≤ 10 pts y caída relativa ≤ 10 %; si no, descalifica | U-11 |
+| Torneo | Al menos 5 familias de algoritmos en clasificación binaria | U-43 |
+| Parsimonia | Si el más simple está a < 1.5 pts de Gini, gana el más simple | U-42 |
+| Desempeño por deciles | Cero inversiones de la tasa observada en el OOT | U-44 |
+
+## Torneo de modelos (champion–challenger)
+
+En clasificación binaria (admisión, comportamiento, propensión, contactabilidad, fraude) **no se elige un algoritmo
+a criterio**. Compiten al menos cinco familias con los mismos datos, la misma validación temporal y la misma semilla
+(DES-D4-05.03.04, U-43):
+
+| Familia | Ejemplo | Para qué está en el torneo |
+|---|---|---|
+| Lineal regularizada (**línea base obligatoria**) | Regresión logística L2 o ElasticNet | Piso de defensibilidad e interpretabilidad |
+| Árbol simple podado | CART con profundidad 4 a 6 | Ganancia no lineal básica, explicable |
+| Ensamble por bagging | Random forest | Estabilidad ante la varianza de la muestra |
+| Boosting por histogramas | HistGradientBoosting / LightGBM con **restricciones de monotonicidad** | Discriminación con sentido económico |
+| Boosting extremo regularizado | XGBoost con γ, α y λ | Referencia de frontera en discriminación |
+
+**Selección de variables en dos fases** (DES-D4-05.02.08): un ranking automatizado de todas las variables que pasaron
+el filtro previo (hasta el tope de U-08) y luego una selección paso a paso con una función objetivo compuesta
+(discriminación, error por decil y violaciones de monotonicidad). Partir de un puñado de variables elegidas a criterio
+pone un techo artificial al modelo.
+
+**Tabla oficial y reglas de coronación** (DES-D4-06.03.05). Cada candidato reporta Gini de entrenamiento, Gini, KS y
+AUC en validación y en OOT, brecha absoluta y relativa, Brier score y concentración máxima de importancia. Gana quien
+cumple las reglas, en este orden:
+
+1. **Descalificación por sobreajuste:** brecha Train–OOT mayor a 10 pts o caída relativa mayor a 10 % (U-11).
+2. **Concentración:** ninguna variable con más del 40 % de la importancia (U-09).
+3. **Parsimonia:** si un modelo más simple queda a menos de 1.5 pts de Gini del más complejo, se elige el simple (U-42).
+4. **Calibración:** el Brier score se reporta y se compara; la calibración formal se prueba aparte (DES-D4-08.01.07).
+
+> **El OOT no se usa para elegir.** Variables, hiperparámetros y función objetivo se optimizan en Train/Test con
+> validación temporal. El OOT se evalúa **una sola vez**, sobre los candidatos finales, para confirmar. Si se itera
+> mirando el OOT, deja de ser una prueba independiente y el Gini reportado sobrestima el que se verá en producción.
+
+**Desempeño por deciles no es calibración.** La curva de tasa observada por decil mide el **ordenamiento** y se exige
+monótona en el OOT (U-44, DES-D4-06.01.04). La **calibración probabilística** compara la probabilidad estimada con la
+observada mediante una prueba formal, como Hosmer-Lemeshow o binomial por tramo (DES-D4-08.01.07). Son dos reportes
+distintos y se nombran así.
 
 ## Selección del modelo final
 
@@ -91,7 +137,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (97 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (104 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -151,11 +197,11 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1.5 d ágil / 1.5 d completo · Automatización: 3 · Crítico · Entregable: Excel 10: Univariate analysis I · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
-- **`DES-D4-03.03.03`** Tratar como sospecha de fuga de información (leakage) toda variable con IV mayor a 0.50: no entra al modelamiento salvo una investigación documentada que descarte que contiene información del target o posterior a la observación (U-38).
+- **`DES-D4-03.03.03`** Excluir por sospecha de fuga de información (cuasi-determinismo) toda variable con IV mayor a 0.50: no entra al modelamiento (U-38). Se documenta la investigación de su origen como aprendizaje del proyecto.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Crítico · Entregable: Excel 9: Resultados del test de estabilidad · Umbrales: U-38 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
-- **`DES-D4-03.03.04`** Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV entre 0.02 y 0.50 (U-38); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).
+- **`DES-D4-03.03.04`** Filtro de variables confiables antes del entrenamiento: solo pasan las variables que cumplen no anticipación (U-39), fill rate mínimo del plan del modelo, estabilidad (U-02) e IV no mayor a 0.50 (U-38; un IV menor a 0.02 no excluye por sí solo); después se aplican las reglas de correlación (U-06, U-07). Se reporta el embudo de variables (cuántas entran y salen en cada filtro y por qué).
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Tabla 1: Base de variables finalistas. · Umbrales: U-38, U-39 · Nota: Línea base 2.1 (2026-10-17): criterio del custodio.
 
@@ -202,6 +248,10 @@ del documento metodológico.
 - **`DES-D4-04.03.03`** Tranformación WOE
 
   Aplica: Lineal/ACP III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1
+
+- **`DES-D4-04.03.04`** No usar banderas binarias de corte duro (por ejemplo, «sin historia» o «saturado») cuando invierten la monotonicidad del riesgo en la validación temporal; priorizar ratios continuos acumulados, que degradan con suavidad. La prueba de monotonicidad por deciles (U-44) se aplica antes de aceptar la variable.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 2 · Umbrales: U-44 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 4.4 Imputación de missings
 
@@ -293,7 +343,7 @@ del documento metodológico.
 
   Aplica: ML/Árbol II · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 3
 
-- **`DES-D4-05.02.05`** Selección de variables: Top 150 variables / 80% del gain.
+- **`DES-D4-05.02.05`** Selección de variables: Top 100 variables sin fuga / 80% del gain (U-08).
 
   Aplica: ML III · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Umbrales: U-08
 
@@ -305,6 +355,14 @@ del documento metodológico.
   Sin embargo en el caso de que las variables cuyos indicadores no sean estables , no será determinante para su exclusión. Llevar discusion a gerencia.
 
   Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1–2 d completo · Automatización: 3
+
+- **`DES-D4-05.02.08`** Seleccionar variables en dos fases: (1) ranking automatizado de todas las variables que pasaron el filtro previo, hasta el tope de U-08; (2) selección paso a paso hacia adelante y hacia atrás con una función objetivo compuesta (discriminación, error absoluto por decil y violaciones de monotonicidad), evaluada en la validación temporal. El OOT no interviene en la selección: se reserva para la confirmación final (DES-D4-06.03.05).
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1 d ágil / 1.25 d completo · Automatización: 3 · Umbrales: U-08 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
+
+- **`DES-D4-05.02.09`** Preservar como línea base de control los bloques estructurales de negocio (sociodemográfico y financiero, incluido el endeudamiento en el sistema): un IV bajo no los excluye por sí solo (U-38). Si el modelo final los descarta, se documenta la evidencia multivariada que lo justifica.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 2 · Umbrales: U-38 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 5.3 Entrenamiento
 
@@ -319,6 +377,10 @@ del documento metodológico.
 - **`DES-D4-05.03.03`** Ajustar los modelos de ML con validación cruzada (temporal cuando exista dependencia en el tiempo) y reportar la brecha esperada entre entrenamiento y validación.
 
   Aplica: ML/Árbol I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 3 · Crítico · Entregable: Excel 16: Optimización de Hiperparámetros. · Nota: Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 art. 16; EBA/REP/2023/28.
+
+- **`DES-D4-05.03.04`** En clasificación binaria, enfrentar al menos cinco familias de algoritmos con los mismos datos, la misma validación temporal y la misma semilla (U-43): (1) regresión logística regularizada (L2 o ElasticNet) como línea base obligatoria; (2) árbol de decisión podado; (3) ensamble por bagging (random forest); (4) boosting por histogramas con restricciones de monotonicidad; (5) boosting extremo regularizado. No se elige un algoritmo sin torneo.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 1.5 d ágil / 2 d completo · Automatización: 3 · Crítico · Entregable: Excel: Tabla del torneo de modelos (leaderboard). · Umbrales: U-43 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 5.4 Optimización
 
@@ -373,6 +435,10 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–II · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Nota: Línea base 2.0 (2026-10-17). Verbraken et al. (2014).
 
+- **`DES-D4-06.01.04`** Reportar el desempeño por deciles de score (ordenamiento y tasa observada por decil) con su prueba de monotonicidad: cero inversiones en el OOT (U-44). Este reporte se llama «desempeño por deciles», no «calibración»: la calibración probabilística es un análisis distinto (DES-D4-08.01.07).
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Umbrales: U-44 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
+
 #### 6.2 Comparación con modelo vigente
 
 - **`DES-D4-06.02.01`** Comparación con modelo vigente en cosechas / solicitudes aprobadas (por mes).
@@ -396,6 +462,10 @@ del documento metodológico.
 - **`DES-D4-06.03.04`** Documentación del modelo final
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 2.125 d ágil / 2.5 d completo · Automatización: 1 · Entregable: Documento 9: Entrenamiento y selección de modelos.
+
+- **`DES-D4-06.03.05`** Elegir el campeón con la tabla oficial del torneo: por candidato, Gini de entrenamiento, Gini, KS y AUC en validación y en OOT, brecha absoluta y relativa, Brier score y concentración máxima de importancia. Reglas: (1) queda descalificado quien incumpla U-11; (2) si uno más simple está a menos de 1.5 pts de Gini del más complejo, se elige el más simple (U-42); (3) nadie supera U-09; (4) el Brier score se reporta y se compara. El OOT se evalúa una sola vez, sobre los candidatos finales.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 0.5 d completo · Automatización: 2 · Crítico · Umbrales: U-09, U-11, U-42, U-43 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 ### 7 · Interpretación del modelo de ordenamiento
 
@@ -436,6 +506,10 @@ del documento metodológico.
 - **`DES-D4-08.01.06`** Puntuación de base calibrada
 
   Aplica: Lineal/ML I–III · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Script 14: Implementación del calibrado.; Tabla 6: Base puntuada (oracle). · Hito: Sprint 15
+
+- **`DES-D4-08.01.07`** Evaluar la calibración probabilística con una prueba formal (Hosmer-Lemeshow, o binomial o Jeffreys por tramo) y el Brier score. Una curva de tasa observada por decil sin bandas de confianza ni prueba no es una calibración.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 8.2 Análisis de transición applicant-behavior
 
@@ -577,7 +651,7 @@ del documento metodológico.
 
 #### 14.1 Presentación
 
-- **`DES-D4-14.01.01`** Presentación en Reunión de Aprobación
+- **`DES-D4-14.01.01`** El modelo elegido no supera 10 puntos de diferencia de Gini entre Train y OOT ni una caída relativa de 10 % (U-11). Un candidato que exceda cualquiera de los dos queda descalificado; no admite excepción.
 
   Aplica: Lineal/ML/Árbol I–III · ACP I–II · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Acta 8: Acta del comité de modelos. · Hito: Comité de modelos
 

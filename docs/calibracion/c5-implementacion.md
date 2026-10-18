@@ -12,12 +12,12 @@ orden: 22
 # Calibración · C5 Implementación del calibrado
 
 La implementación de un calibrado sigue el estándar transversal de [Implementación](../implementacion/implementacion.md)
-(documento de implementación, lineamientos, calidad de datos, entorno tecnológico y certificación ≥ 95 %).
+(documento de implementación, lineamientos, calidad de datos, entorno tecnológico y certificación ≥ 99.9 %).
 Las actividades específicas del calibrado son:
 
 - **Manual metodológico del calibrado** y **manual de implementación**.
 - Envío del manual al equipo implementador, revisión conjunta y **acta de entrega**.
-- Certificación con **≥ 95 % de coincidencia** (U-15) y conformidad del líder de implementación
+- Certificación con **≥ 99.9 % de coincidencia** (U-15) y conformidad del líder de implementación
   (o del Sub Gerente de Modelos de Riesgo si implementa el equipo modelador).
 - Presentación al equipo usuario con acta.
 
@@ -68,7 +68,7 @@ Las actividades específicas del calibrado son:
 
   Aplica: Tier I–III · Esfuerzo: 1 d
 
-- **`CAL-C5-01.04.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (95% de coincidencia mínima para obtener conformidad)
+- **`CAL-C5-01.04.02`** Revisión de diferencias entre proceso de modelamiento vs proceso de implementación (99.9 % de coincidencia mínima para obtener conformidad, U-15)
 
   Aplica: Tier I–III · Esfuerzo: 1.25 d · Umbrales: U-15
 

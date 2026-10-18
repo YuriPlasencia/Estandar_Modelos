@@ -37,6 +37,19 @@ actividades:
   naturaleza: gobierno
   critico: true
   nota_origen: "Línea base 2.0 (2026-10-17). Res. SBS 00053-2023 arts. 19 y 22."
+- id: DES-D5-01.01.03
+  tarea: "Evaluación de Impactos"
+  subtarea: "Definición de punto de corte teórico"
+  actividad: "Fijar el punto de corte maximizando una función de utilidad que refleje el costo asimétrico de los errores (por ejemplo, beneficio por acierto × aciertos − costo por acción × acciones) y definir estratos de gestión (prioridad alta, media y descarte con un canal alternativo de menor costo)."
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3], acp: [1, 2, 3]}
+  dias_esfuerzo:
+    lineal: {agil: 0.5, completo: 0.5}
+    ml: {agil: 0.5, completo: 0.5}
+    arbol: {agil: 0.5, completo: 0.5}
+    acp: {agil: 0.5, completo: 0.5}
+  nivel_automatizacion: 2
+  naturaleza: analisis
+  nota_origen: "Versión 4.0.0 (2026-10-17). Lecciones de proyectos de desarrollo; ver CHANGELOG."
 - id: DES-D5-01.02.01
   tarea: Evaluación de Impactos
   subtarea: Evaluación de impactos en el negocio y valorización de ganancias del modelo

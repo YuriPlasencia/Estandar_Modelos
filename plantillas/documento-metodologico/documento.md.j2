@@ -112,7 +112,7 @@ sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
 |---------------------------|------------------------------------------|------:|------:|:----:|
 {% for v in d.variables.finales %}| `{{ v.nombre }}` | {{ v.descripcion }} | {{ dec(v.iv, 2) }} | {{ dec(v.psi, 2) }} | {{ v.signo or '' }} |
 {% endfor %}
-{% if iv_alertas %}> **Alerta de fuga.** Variables con IV mayor a 0.50: {{ iv_alertas | join(', ') }}. Requieren investigación documentada (U-38).
+{% if iv_alertas %}> **Alerta de fuga.** Variables con IV mayor a 0.50: {{ iv_alertas | join(', ') }}. Se excluyen sin excepción por sospecha de fuga (U-38).
 {% endif %}{% else %}{{ completar("Lista las variables finales con IV, PSI y signo esperado.", "DES-D4-04.07.02") }}{% endif %}
 
 # Metodología
@@ -129,6 +129,18 @@ sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
 {% endif %}
 {% if not d.metodologia.benchmark and d.modelo.tipo_modelo in ['ml', 'arbol'] %}{{ completar("Los modelos de ML deben compararse con un benchmark interpretable.", "DES-D4-05.03.02") }}{% endif %}
 
+## Torneo de modelos
+
+{% if d.metodologia.torneo %}| Algoritmo | Gini Train | Gini validación | Gini OOT | KS OOT | Brecha | Caída rel. | Brier | Conc. máx. | Estado |
+|---------------------|-----:|-----:|-----:|-----:|-----:|-----:|------:|-----:|------------|
+{% for t in d.metodologia.torneo %}| {{ t.algoritmo }} | {{ dec(t.gini_train, 1) }} | {{ dec(t.gini_validacion, 1) }} | {{ dec(t.gini_oot, 1) }} | {{ dec(t.ks_oot, 1) }} | {{ dec(t.gini_train - t.gini_oot, 1) }} | {{ pct((t.gini_train - t.gini_oot) / t.gini_train) }} | {{ dec(t.brier, 4) }} | {{ pct(t.concentracion_max) }} | {{ t.estado }} |
+{% endfor %}
+
+Reglas aplicadas: descalificación por sobreajuste (U-11), concentración máxima (U-09) y parsimonia (U-42). El OOT se evaluó una sola vez, sobre los candidatos finales.
+{% if d.metodologia.torneo | length < 5 %}
+> **El torneo tiene {{ d.metodologia.torneo | length }} familias; U-43 exige al menos cinco.**
+{% endif %}{% elif d.modelo.tipo_modelo in ['lineal', 'ml', 'arbol'] %}{{ completar("Reporta la tabla del torneo con al menos cinco familias de algoritmos.", "DES-D4-05.03.04") }}{% endif %}
+
 # Desempeño
 
 ## Discriminación por muestra
@@ -137,7 +149,7 @@ sospecha de fuga, filtro de confiables y correlación (DES-D4-03.03.04).
 |---|---:|---:|---:|---:|
 {% for m in d.desempeno.muestras %}| {{ m.muestra }} | {{ num(m.n) }} | {{ pct(m.tasa) }} | {{ dec(m.gini, 1) }} | {{ dec(m.ks, 1) }} |
 {% endfor %}
-{% if gini_dif is not none %}Diferencia de Gini entre entrenamiento y OOT: **{{ dec(gini_dif, 1) }} pts** — {{ 'cumple' if gini_dif <= 10 else 'NO cumple' }} U-11 (máximo 10 pts).{% endif %}
+{% if gini_dif is not none %}Diferencia de Gini entre entrenamiento y OOT: **{{ dec(gini_dif, 1) }} pts** y caída relativa de **{{ pct(gini_rel) }}** — {{ 'cumple' if gini_dif <= 10 and gini_rel <= 0.10 else 'NO cumple' }} U-11 (máximo 10 pts y 10 %).{% endif %}
 {% if d.desempeno.vigente %} El modelo vigente tiene un Gini OOT de {{ dec(d.desempeno.vigente.gini_oot, 1) }}{% if gini_oot is not none %}: mejora de **{{ dec(gini_oot - d.desempeno.vigente.gini_oot, 1) }} pts**{% endif %}.{% endif %}
 {% else %}{{ completar("Reporta Gini y KS en entrenamiento, prueba y OOT.", "DES-D4-06.01.01") }}{% endif %}
 

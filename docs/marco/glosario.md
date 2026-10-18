@@ -20,6 +20,9 @@ orden: 5
 | **Target** | Variable objetivo. Binaria (default) o continua (p.ej. ingreso estimado). |
 | **Default** | Evento de incumplimiento definido por altura (días de atraso), temporalidad (ventana de desempeño) y materialidad (monto mínimo). |
 | **Indeterminado** | Operación con mora menor a la altura de default al cierre de la ventana; se excluye del entrenamiento. |
+| **Torneo (champion–challenger)** | Competencia de al menos cinco familias de algoritmos con los mismos datos y validación; el campeón sale de la tabla oficial y sus reglas (U-43, U-42, U-11). |
+| **Desempeño por deciles** | Tasa observada por decil de score; mide el ordenamiento y se exige monótona (U-44). No es una calibración. |
+| **Paridad matemática** | Porcentaje de registros con el mismo score o decisión entre modelamiento y producción (U-15: ≥ 99.9 %). |
 | **Train / Test / OOT** | Muestra de entrenamiento, de prueba (mismo periodo) y *out-of-time*: el último mes con desempeño completo, posterior al periodo de entrenamiento (U-01). |
 | **Roll rate** | Probabilidad de transitar de un tramo de mora al siguiente; sustenta la altura de default. |
 | **Driver** | Variable explicativa, en especial las usadas para calibrar. |
