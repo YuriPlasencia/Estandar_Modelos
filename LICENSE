@@ -7,7 +7,7 @@ Este repositorio usa dos licencias, según el tipo de contenido.
    SPDX-License-Identifier: CC-BY-4.0
 
    Aplica a todo el contenido salvo lo indicado en el punto 2, en particular:
-     catalogo/, docs/, dist/, site/, plantillas/, ejemplos/, llms.txt,
+     catalogo/, docs/, dist/, site/, plantillas/, ejemplos/, skills/ (salvo skills/*/scripts/), llms.txt,
      README.md, AGENTS.md, CONTRIBUTING.md, CHANGELOG.md y CITATION.cff.
 
    Puedes compartir y adaptar este material para cualquier fin, incluso comercial, siempre que
@@ -22,7 +22,8 @@ Este repositorio usa dos licencias, según el tipo de contenido.
 2. Código — MIT License
    SPDX-License-Identifier: MIT
 
-   Aplica al código fuente de tools/ (scripts de Python, plantilla y recursos del sitio).
+   Aplica al código fuente de tools/ (scripts de Python, plantilla y recursos del sitio) y de
+   skills/*/scripts/.
    Texto completo en tools/LICENSE.
 
 Las normas, guías y publicaciones de terceros citadas en el estándar pertenecen a sus respectivos

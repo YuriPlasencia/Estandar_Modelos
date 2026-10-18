@@ -79,6 +79,7 @@ dist/                Generado: JSON para agentes y llms-full.txt
 site/                Generado: sitio autocontenido (index.html)
 plantillas/          Plantilla de repositorio de un modelo y plantilla dinámica del documento metodológico
 ejemplos/            Acta y documento metodológico de ejemplo con datos ficticios
+skills/              Skills para agentes de IA (npx skills add YuriPlasencia/Estandar_Modelos)
 tools/               build.py · verificar.py · acta.py · documento.py · esfuerzo.py · generadores de catálogo
 ```
 

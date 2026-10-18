@@ -4,6 +4,15 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [Sin publicar]
+
+### Nuevo
+- **Skill `desarrollo-modelo-binario` (`skills/`):** procedimiento para que un agente de IA desarrolle un modelo de
+  clasificación binaria por las fases DES-D1 a DES-D7, con los puntos de control G0–G5 y las condiciones para detenerse
+  y escalar. Incluye `scripts/pruebas_umbrales.py` (numpy y pandas), que implementa como pruebas U-02, U-03, U-09,
+  U-10, U-11, U-38, U-41, U-42, U-43 y U-44, además de la tabla oficial del torneo. Se instala con
+  `npx skills add YuriPlasencia/Estandar_Modelos`. No cambia requisitos ni umbrales.
+
 ## [5.0.0] — 2026-10-17
 
 ### Cambiado (incompatible)
