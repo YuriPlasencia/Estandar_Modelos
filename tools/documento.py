@@ -106,13 +106,19 @@ def evaluar_umbrales(d, umbrales_cat):
         if uid == "U-01" and v:
             ok = (v.get("meses_train_test") or 0) >= 12 and v.get("meses_oot") == 1
             regla = "≥ 12 meses entrenamiento/prueba; OOT = último mes con desempeño (1 mes)"
+        elif uid == "U-11" and isinstance(val, (int, float)):
+            muestras = {x["muestra"].lower(): x for x in (d.get("desempeno") or {}).get("muestras") or []}
+            g_tr = next((x["gini"] for k, x in muestras.items() if k.startswith("entren")), None)
+            ok = abs(val) <= 5 or bool(g_tr and abs(val) / g_tr <= 0.10)
+            regla = "|Gini Train − Gini OOT| ≤ 5 pts o caída relativa ≤ 10 %" + (f" (caída relativa: {abs(val) / g_tr * 100:.1f} %)" if g_tr else "")
         elif uid in verificar.REGLAS and isinstance(val, (int, float)):
             regla, f = verificar.REGLAS[uid]
             ok = f(val)
         else:
             out.append({"id": uid, "tema": u["tema"], "valor": val, "regla": "Revisión manual", "resultado": "Revisar"})
             continue
-        exc = any(e.get("umbral") == uid for e in (d.get("excepciones") or []))
+        # U-11 y U-38 no admiten excepción (versión 4.0.0)
+        exc = uid not in ("U-11", "U-38") and any(e.get("umbral") == uid for e in (d.get("excepciones") or []))
         res = "Cumple" if ok else ("Excepción aprobada" if exc else "No cumple")
         if not ok and not exc:
             fallas.append(uid)
@@ -161,7 +167,8 @@ def grafico_gini(d, destino: Path):
         return None
     train = next((x["gini"] for k, x in muestras.items() if k.startswith("entren")), None)
     W, H, L, R, T, B = 640, 300, 56, 20, 28, 46
-    ys = [x["gini"] for x in meses] + ([train, train - 10] if train else [])
+    lim = train - max(5, 0.10 * train) if train else None   # U-11: cumple con ≤ 5 pts o ≤ 10 % relativo
+    ys = [x["gini"] for x in meses] + ([train, lim] if train else [])
     lo, hi = min(ys) - 2, max(ys) + 2
     sx = lambda i: L + i * (W - L - R) / (len(meses) - 1)
     sy = lambda v: T + (hi - v) * (H - T - B) / (hi - lo)
@@ -176,10 +183,10 @@ def grafico_gini(d, destino: Path):
                   f'<text x="{L - 8}" y="{sy(v) + 4:.1f}" font-size="11" fill="#{MUTED}" text-anchor="end">{v}</text>']
         v += 1
     if train:
-        s += [f'<rect x="{L}" y="{sy(train):.1f}" width="{W - L - R}" height="{sy(train - 10) - sy(train):.1f}" fill="#{SEAL}" fill-opacity="0.06"/>',
+        s += [f'<rect x="{L}" y="{sy(train):.1f}" width="{W - L - R}" height="{sy(lim) - sy(train):.1f}" fill="#{SEAL}" fill-opacity="0.06"/>',
               f'<line x1="{L}" x2="{W - R}" y1="{sy(train):.1f}" y2="{sy(train):.1f}" stroke="#{INK}" stroke-dasharray="5 4" stroke-width="1.2"/>',
               f'<text x="{W - R}" y="{sy(train) - 6:.1f}" font-size="11" fill="#{INK}" text-anchor="end">Entrenamiento {train:.1f}</text>',
-              f'<text x="{W - R}" y="{sy(train - 10) - 6:.1f}" font-size="11" fill="#{SEAL}" text-anchor="end">Límite U-11 (−10 pts)</text>']
+              f'<text x="{W - R}" y="{sy(lim) - 6:.1f}" font-size="11" fill="#{SEAL}" text-anchor="end">Límite U-11 (−{train - lim:.1f} pts)</text>']
     s.append(f'<polyline points="{pts}" fill="none" stroke="#{SEAL}" stroke-width="2.4"/>')
     for i, x in enumerate(meses):
         s += [f'<circle cx="{sx(i):.1f}" cy="{sy(x["gini"]):.1f}" r="3.6" fill="#{SEAL}"/>',

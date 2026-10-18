@@ -56,8 +56,8 @@ umbrales:
   refs: [DES-D4-05.04.01]
 - id: U-11
   tema: Sobreajuste Train vs OOT
-  regla: "Diferencia de Gini entre Train y OOT de 10 puntos como máximo y caída relativa (Gini Train − Gini OOT) / Gini Train de 10 % como máximo. Un candidato que exceda cualquiera de los dos queda descalificado del torneo; no admite excepción."
-  valor: {"dif_gini_max_pts": 10, "caida_relativa_max": 0.1}
+  regla: "Cumple si la diferencia de Gini entre Train y OOT es de 5 puntos como máximo, o si la caída relativa (Gini Train − Gini OOT) / Gini Train es de 10 % como máximo. Un candidato que no cumpla ninguna de las dos condiciones queda descalificado del torneo; no admite excepción."
+  valor: {"dif_gini_max_pts": 5, "caida_relativa_max": 0.1, "criterio": "cumple_una_de_las_dos"}
   refs: ["DES-D4-06.03.02", "DES-D4-06.03.05"]
 - id: U-12
   tema: Precisión de estimadores (target continuo)

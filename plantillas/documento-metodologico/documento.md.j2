@@ -149,7 +149,7 @@ Reglas aplicadas: descalificación por sobreajuste (U-11), concentración máxim
 |---|---:|---:|---:|---:|
 {% for m in d.desempeno.muestras %}| {{ m.muestra }} | {{ num(m.n) }} | {{ pct(m.tasa) }} | {{ dec(m.gini, 1) }} | {{ dec(m.ks, 1) }} |
 {% endfor %}
-{% if gini_dif is not none %}Diferencia de Gini entre entrenamiento y OOT: **{{ dec(gini_dif, 1) }} pts** y caída relativa de **{{ pct(gini_rel) }}** — {{ 'cumple' if gini_dif <= 10 and gini_rel <= 0.10 else 'NO cumple' }} U-11 (máximo 10 pts y 10 %).{% endif %}
+{% if gini_dif is not none %}Diferencia de Gini entre entrenamiento y OOT: **{{ dec(gini_dif, 1) }} pts** y caída relativa de **{{ pct(gini_rel) }}** — {{ 'cumple' if gini_dif <= 5 or gini_rel <= 0.10 else 'NO cumple' }} U-11 (máximo 5 pts o 10 % de caída relativa).{% endif %}
 {% if d.desempeno.vigente %} El modelo vigente tiene un Gini OOT de {{ dec(d.desempeno.vigente.gini_oot, 1) }}{% if gini_oot is not none %}: mejora de **{{ dec(gini_oot - d.desempeno.vigente.gini_oot, 1) }} pts**{% endif %}.{% endif %}
 {% else %}{{ completar("Reporta Gini y KS en entrenamiento, prueba y OOT.", "DES-D4-06.01.01") }}{% endif %}
 

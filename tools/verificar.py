@@ -38,7 +38,7 @@ REGLAS = {
     "U-07": ("V de Cramér máxima entre categóricas < 0.4", lambda v: v < 0.4),
     "U-10": ("Combinaciones de hiperparámetros probadas ≥ 50", lambda v: v >= 50),
     "U-09": ("Concentración máxima de importancia de una variable ≤ 40 %", lambda v: v <= 0.40),
-    "U-11": ("|Gini Train − Gini OOT| ≤ 10 pts (y caída relativa ≤ 10 %)", lambda v: abs(v) <= 10),
+    "U-11": ("|Gini Train − Gini OOT| ≤ 5 pts (o caída relativa ≤ 10 %)", lambda v: abs(v) <= 5),
     "U-15": ("Paridad matemática en producción ≥ 99.9 %", lambda v: v >= 0.999),
     "U-41": ("Variación relativa mensual de la tasa del target ≤ 25 %", lambda v: v <= 0.25),
     "U-43": ("Familias de algoritmos en el torneo ≥ 5", lambda v: v >= 5),

@@ -20,7 +20,7 @@ number-sections: true
 | Estándar aplicado | Desarrollo · Tier II · Machine learning · enfoque ágil |
 | Versión y estado | 1.0 · Para Comité de Modelos |
 | Clasificación | Uso interno |
-| Versión del estándar | Estándares de Modelos en Banca v4.0.0 |
+| Versión del estándar | Estándares de Modelos en Banca v5.0.0 |
 
 **Control de cambios** (DES-D4-11.01.03)
 
@@ -152,7 +152,7 @@ Reglas aplicadas: descalificación por sobreajuste (U-11), concentración máxim
 | Entrenamiento | 412 300 | 7.1 % | 54.0 | 40.8 |
 | Prueba | 103 080 | 7.0 % | 52.9 | 39.9 |
 | OOT | 16 080 | 7.6 % | 52.1 | 39.2 |
-Diferencia de Gini entre entrenamiento y OOT: **1.9 pts** y caída relativa de **3.5 %** — cumple U-11 (máximo 10 pts y 10 %). El modelo vigente tiene un Gini OOT de 45.7: mejora de **6.4 pts**.
+Diferencia de Gini entre entrenamiento y OOT: **1.9 pts** y caída relativa de **3.5 %** — cumple U-11 (máximo 5 pts o 10 % de caída relativa). El modelo vigente tiene un Gini OOT de 45.7: mejora de **6.4 pts**.
 
 ## Estabilidad mensual
 
@@ -209,7 +209,7 @@ Seguimiento mensual de PSI y forzajes; discriminación y calibración trimestral
 | U-06 | Correlación entre variables continuas | 0.57 | Correlación máxima entre continuas < 0.60 (≤ 0.95 con sustento) | **Cumple** |
 | U-09 | Concentración de importancia de variables | 0.21 | Concentración máxima de importancia de una variable ≤ 40 % | **Cumple** |
 | U-10 | Optimización de hiperparámetros | 60 | Combinaciones de hiperparámetros probadas ≥ 50 | **Cumple** |
-| U-11 | Sobreajuste Train vs OOT | 1.9 | \|Gini Train − Gini OOT\| ≤ 10 pts (y caída relativa ≤ 10 %) | **Cumple** |
+| U-11 | Sobreajuste Train vs OOT | 1.9 | \|Gini Train − Gini OOT\| ≤ 5 pts o caída relativa ≤ 10 % (caída relativa: 3.5 %) | **Cumple** |
 | U-38 | Rango de IV y sospecha de fuga | 0.41 | IV máximo de las variables del modelo ≤ 0.50 (sin excepción) | **Cumple** |
 | U-39 | No anticipación temporal de las variables | 0 | Variables con información posterior a la observación = 0 | **Cumple** |
 | U-40 | Plazo máximo de desarrollo de un modelo | 11 | Duración del desarrollo con 2 personas ≤ 13 semanas (con agentes de IA ≤ 15 días hábiles) | **Cumple** |

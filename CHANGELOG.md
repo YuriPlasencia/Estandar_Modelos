@@ -4,6 +4,18 @@ Yuri Plasencia — Analytics Pricing & Revenue Management
 
 El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBUTING.md`).
 
+## [5.0.0] — 2026-10-17
+
+### Cambiado (incompatible)
+- **U-11 (sobreajuste):** un candidato cumple si la diferencia de Gini Train–OOT es de **5 pts como máximo, o** si la
+  caída relativa es de **10 % como máximo**. Si no cumple ninguna de las dos, queda descalificado, sin excepción.
+  El documento metodológico, el gráfico de estabilidad y `tools/verificar.py` aplican la nueva regla.
+
+### Corregido
+- En 4.0.0, un reemplazo de texto sobrescribió por error DES-D4-14.01.01 («Presentación en Reunión de Aprobación»)
+  y dejó sin actualizar DES-D4-05.02.06 (concentración, U-09) y DES-D4-06.03.02 (sobreajuste, U-11). Los tres quedan
+  correctos; el resto del catálogo se verificó contra 3.0.1 y no tiene otros cambios no previstos.
+
 ## [4.0.0] — 2026-10-17 · Lecciones de proyectos de desarrollo
 
 Enmiendas que vienen de proyectos reales, incorporadas en forma genérica, sin datos de clientes, nombres de variables

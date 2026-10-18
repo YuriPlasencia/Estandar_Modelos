@@ -249,7 +249,7 @@
      "ref": "DES-D4-06.03.01"
     },
     {
-     "texto": "Diferencia de Gini Train–OOT ≤ 10 pts y caída relativa ≤ 10 % (sin excepción)",
+     "texto": "Diferencia de Gini Train–OOT ≤ 5 pts o caída relativa ≤ 10 % (sin excepción)",
      "ref": "U-11"
     },
     {

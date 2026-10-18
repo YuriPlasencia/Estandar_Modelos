@@ -50,7 +50,7 @@ referencia y el desfase de su fuente (DES-D1-01.03.05).
 **Por qué un IV demasiado alto es una alarma.** En crédito, un IV mayor a 0.50 casi siempre indica que la variable
 contiene información del target (fuga) y no poder predictivo genuino. Es la regla clásica de la práctica de scoring
 (LIT-001), y la experiencia lo confirma: una sola variable de este tipo puede concentrar casi toda la importancia del
-modelo y abrir una brecha Train–OOT de más de 10 pts, que se cierra al excluirla. Por eso se excluye sin excepción.
+modelo y abrir una brecha Train–OOT de más de 10 pts, muy por encima de U-11, que se cierra al excluirla. Por eso se excluye sin excepción.
 
 **Por qué el filtro de IV es asimétrico.** El límite superior (0.50) protege contra la fuga; el inferior (0.02) no se
 aplica a ciegas. Un filtro univariado que descarta todo lo que tiene IV bajo puede eliminar los bloques
@@ -71,7 +71,7 @@ preservan como línea base de control (DES-D4-05.02.09) y es el análisis multiv
 | Selección de variables | Top 100 sin fuga / 80 % del gain, luego paso a paso | U-08 |
 | Concentración de importancia | Máximo 40 % por variable (deseable ≤ 25 %) | U-09 |
 | Hiperparámetros | ≥ 50 combinaciones, semilla fija | U-10 |
-| Sobreajuste | \|Gini Train − Gini OOT\| ≤ 10 pts y caída relativa ≤ 10 %; si no, descalifica | U-11 |
+| Sobreajuste | \|Gini Train − Gini OOT\| ≤ 5 pts o caída relativa ≤ 10 %; si no, descalifica | U-11 |
 | Torneo | Al menos 5 familias de algoritmos en clasificación binaria | U-43 |
 | Parsimonia | Si el más simple está a < 1.5 pts de Gini, gana el más simple | U-42 |
 | Desempeño por deciles | Cero inversiones de la tasa observada en el OOT | U-44 |
@@ -99,7 +99,8 @@ pone un techo artificial al modelo.
 AUC en validación y en OOT, brecha absoluta y relativa, Brier score y concentración máxima de importancia. Gana quien
 cumple las reglas, en este orden:
 
-1. **Descalificación por sobreajuste:** brecha Train–OOT mayor a 10 pts o caída relativa mayor a 10 % (U-11).
+1. **Descalificación por sobreajuste:** queda fuera quien tenga a la vez una brecha Train–OOT mayor a 5 pts y una
+   caída relativa mayor a 10 % (U-11).
 2. **Concentración:** ninguna variable con más del 40 % de la importancia (U-09).
 3. **Parsimonia:** si un modelo más simple queda a menos de 1.5 pts de Gini del más complejo, se elige el simple (U-42).
 4. **Calibración:** el Brier score se reporta y se compara; la calibración formal se prueba aparte (DES-D4-08.01.07).
@@ -347,7 +348,7 @@ del documento metodológico.
 
   Aplica: ML III · Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Umbrales: U-08
 
-- **`DES-D4-05.02.06`** Los pesos de las variables en la construcción de modelos tradicionales se calcularán según la lógica de la herramienta estandarizada: toolkit de modelamiento, con un peso maximo recomendado del 25%. En la construcción de modelos machine learning utilizarán para el cálculo de pesos el gain, con un peso recomendado del 10%. Para calibraciones se utiliza la métrica de Chi-Wald
+- **`DES-D4-05.02.06`** Ninguna variable concentra más del 40 % de la importancia relativa del modelo (peso en modelos lineales, gain en ML); lo deseable es no más de 25 % (U-09). Si se excede, en árboles se fuerza colsample_bytree ≤ 0.60 y penalización L2; en lineales se revisa la variable. En calibraciones se usa la métrica de Chi-Wald.
 
   Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 2 · Umbrales: U-09
 
@@ -451,7 +452,7 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 0 · Entregable: Acta 5: Selección del modelo final. · Hito: Reunión 5
 
-- **`DES-D4-06.03.02`** El modelo elegido debe tener una diferencia máxima de 10 puntos de performance entre la base de Train y OOT. En caso se tenga una diferencia mayor, se deberá sustentar en la documentación y presentar el caso en comité de modelos.
+- **`DES-D4-06.03.02`** El modelo elegido cumple U-11: una diferencia de Gini entre Train y OOT de 5 puntos como máximo, o una caída relativa de 10 % como máximo. Un candidato que no cumpla ninguna de las dos queda descalificado; no admite excepción.
 
   Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 0 · Entregable: Documento 9: Entrenamiento y selección de modelos. · Hito: Sprint 13 · Umbrales: U-11
 
@@ -651,7 +652,7 @@ del documento metodológico.
 
 #### 14.1 Presentación
 
-- **`DES-D4-14.01.01`** El modelo elegido no supera 10 puntos de diferencia de Gini entre Train y OOT ni una caída relativa de 10 % (U-11). Un candidato que exceda cualquiera de los dos queda descalificado; no admite excepción.
+- **`DES-D4-14.01.01`** Presentación en Reunión de Aprobación
 
   Aplica: Lineal/ML/Árbol I–III · ACP I–II · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 1 · Entregable: Acta 8: Acta del comité de modelos. · Hito: Comité de modelos
 

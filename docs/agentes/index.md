@@ -70,7 +70,7 @@ una aprobación compromete el plazo, el agente lo escala; no la omite.
 
 El agente **no sigue adelante** y pide decisión humana, por escrito, cuando:
 
-1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 > 10 pts o caída relativa > 10 %, U-20 con elasticidad positiva, U-24 sobre el tope).
+1. Un umbral falla y no existe una excepción aprobada (por ejemplo, U-11 con más de 5 pts y más de 10 % de caída relativa, U-20 con elasticidad positiva, U-24 sobre el tope).
 2. Sospecha **fuga de información**: una variable posterior a la fecha de observación (U-39), una variable con IV mayor a 0.50 (U-38), un Gini OOT mayor que el de construcción, o una variable con importancia anómala.
 3. La definición de default o de target es ambigua, o difiere de U-17.
 4. Encuentra datos sensibles o atributos protegidos que no deberían estar en la base.

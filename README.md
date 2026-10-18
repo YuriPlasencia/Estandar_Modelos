@@ -8,7 +8,7 @@
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **4.0.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **5.0.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 

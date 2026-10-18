@@ -606,10 +606,7 @@ actividades:
 - id: DES-D4-05.02.06
   tarea: Entrenamiento de modelos
   subtarea: Selección de variables
-  actividad: 'Los pesos de las variables en la construcción de modelos tradicionales se calcularán según la lógica
-    de la herramienta estandarizada: toolkit de modelamiento, con un peso maximo recomendado del 25%. En la construcción
-    de modelos machine learning utilizarán para el cálculo de pesos el gain, con un peso recomendado del 10%. Para
-    calibraciones se utiliza la métrica de Chi-Wald'
+  actividad: "Ninguna variable concentra más del 40 % de la importancia relativa del modelo (peso en modelos lineales, gain en ML); lo deseable es no más de 25 % (U-09). Si se excede, en árboles se fuerza colsample_bytree ≤ 0.60 y penalización L2; en lineales se revisa la variable. En calibraciones se usa la métrica de Chi-Wald."
   critico: false
   eficiencia: false
   nivel_automatizacion: 2
@@ -915,9 +912,7 @@ actividades:
 - id: DES-D4-06.03.02
   tarea: Selección del modelo final
   subtarea: Selección del modelo final
-  actividad: El modelo elegido debe tener una diferencia máxima de 10 puntos de performance entre la base de Train
-    y OOT. En caso se tenga una diferencia mayor, se deberá sustentar en la documentación y presentar el caso en
-    comité de modelos.
+  actividad: "El modelo elegido cumple U-11: una diferencia de Gini entre Train y OOT de 5 puntos como máximo, o una caída relativa de 10 % como máximo. Un candidato que no cumpla ninguna de las dos queda descalificado; no admite excepción."
   critico: false
   eficiencia: false
   nivel_automatizacion: 0
@@ -1476,7 +1471,7 @@ actividades:
 - id: DES-D4-14.01.01
   tarea: Presentación en CM
   subtarea: Presentación
-  actividad: "El modelo elegido no supera 10 puntos de diferencia de Gini entre Train y OOT ni una caída relativa de 10 % (U-11). Un candidato que exceda cualquiera de los dos queda descalificado; no admite excepción."
+  actividad: "Presentación en Reunión de Aprobación"
   critico: false
   eficiencia: false
   nivel_automatizacion: 1
