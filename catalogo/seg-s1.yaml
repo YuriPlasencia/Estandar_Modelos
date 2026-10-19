@@ -38,3 +38,14 @@ actividades:
   critico: true
   entregables:
   - {tipo: Tabla, numero: "S1", descripcion: "Base de seguimiento"}
+- id: SEG-S1-01.01.04
+  tarea: "Plan de seguimiento"
+  subtarea: "Indicadores y umbrales"
+  actividad: "Entregar la consulta de seguimiento multimes como un único conjunto de resultados normalizado, listo para tablas dinámicas: una fila por mes, segmento y decil, con asignados, gestionados, eventos del target, tasa observada y tasa estimada. No se mezclan filas de resumen sin decil con filas por decil; los totales se calculan en la herramienta de consumo."
+  aplica_tier: [1, 2, 3]
+  dias_esfuerzo: 0.5
+  nivel_automatizacion: 3
+  naturaleza: datos
+  entregables:
+  - {tipo: Tabla, numero: "S1", descripcion: "Base de seguimiento"}
+  nota_origen: "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG."

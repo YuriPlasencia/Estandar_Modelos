@@ -3,9 +3,9 @@ id: IMP
 titulo: "Implementación"
 estandar: Implementación
 estado: Vigente
-version: 1.0.0
+version: 1.1.0
 custodio: Yuri Plasencia — Analytics Pricing & Revenue Management
-actualizado: 2026-10-17
+actualizado: 2026-10-19
 orden: 30
 ---
 
@@ -45,6 +45,11 @@ Con cuadro de control de cambios. Debe contener:
 - Controles de calidad sobre input y output: evolutivos y **PSI** contra un periodo de referencia, unicidad, missing;
   umbrales de PSI definidos; si hay proveedor externo, exigir sus logs, estabilidad, unicidad y fechas de actualización.
 - Ruta productiva definida y respaldada, **código único** del modelo, listado de usuarios con acceso.
+- **Manifiesto de metadatos** con esquema único y versionado, validado al cargarse; ante una clave o un segmento
+  faltante, el proceso se detiene con error explícito en lugar de usar un valor por defecto (IMP-01.03.04).
+- **Carga masiva por bloques**, con commit y conciliación por bloque e índices creados al final (IMP-01.03.05). Como
+  referencia práctica, no como umbral, en cargas de cientos de miles de registros o más funcionan bien bloques del
+  orden de 200 000 registros.
 
 ## Certificación
 
@@ -57,7 +62,7 @@ Con cuadro de control de cambios. Debe contener:
 <!-- CATALOGO:INICIO IMP -->
 ## Catálogo de requisitos · Implementación
 
-> Bloque generado desde `catalogo/imp.yaml` (29 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
+> Bloque generado desde `catalogo/imp.yaml` (31 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
 
 ### 1 · Implementación tecnológica
 
@@ -138,6 +143,14 @@ Con cuadro de control de cambios. Debe contener:
 - **`IMP-01.03.03`** Garantizar que la información final se encuentre resguardada y en caso contrario generar un archivo plano y almacenar en la ruta productiva del modelo
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1
+
+- **`IMP-01.03.04`** Guardar los metadatos del modelo (versión, variables, cortes, métricas por segmento) en un manifiesto con un esquema único y versionado. El código de inferencia y de seguimiento valida el manifiesto al cargarlo y, si falta un segmento o una clave obligatoria, se detiene con un error explícito; no sustituye en silencio un valor por defecto.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
+
+- **`IMP-01.03.05`** En la carga masiva de scores a la base productiva, insertar por bloques de tamaño controlado con confirmación (commit) por bloque y conciliación de registros cargados contra los esperados; crear los índices de la tabla al terminar la carga, no antes.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.4 Calidad de datos
 

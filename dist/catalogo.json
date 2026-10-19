@@ -2,9 +2,9 @@
  "meta": {
   "nombre": "Estándares de Modelos en Banca",
   "custodio": "Yuri Plasencia — Analytics Pricing & Revenue Management",
-  "version": "5.0.0",
-  "generado": "2026-10-18",
-  "n_requisitos": 552,
+  "version": "6.0.0",
+  "generado": "2026-10-19",
+  "n_requisitos": 557,
   "licencia": "CC-BY-4.0 (contenido) · MIT (código en tools/)"
  },
  "fases": [
@@ -5688,6 +5688,62 @@
    "doc": "docs/desarrollo/d3-segmentacion.md"
   },
   {
+   "id": "DES-D3-01.01.06",
+   "estandar": "Desarrollo",
+   "fase": "DES-D3",
+   "fase_nombre": "Segmentación",
+   "tarea": "Segmentación",
+   "subtarea": "Brainstorming sobre propuestas de segmentación y análisis",
+   "actividad": "Si el universo mezcla subpoblaciones con densidad de información dispar (por ejemplo, clientes con historial crediticio en el sistema, clientes con historial de gestión propia y prospectos sin historial), evaluar modelos especializados por densidad de información frente al unisegmento: cada segmento usa los drivers que tiene disponibles (financieros, de gestión reciente o sociodemográficos y geográficos previos a la campaña) y una complejidad acorde a su información. Se adopta solo si supera al unisegmento y evita scores planos o idénticos en el segmento con menos información.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": []
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.5,
+     "completo": 1
+    },
+    "ml": {
+     "agil": 0.5,
+     "completo": 1
+    },
+    "arbol": {
+     "agil": 0.5,
+     "completo": 1
+    }
+   },
+   "nivel_automatizacion": 2,
+   "naturaleza": "analisis",
+   "entregables": [
+    {
+     "tipo": "Excel",
+     "numero": 8,
+     "descripcion": "Analisis comparativo entre modelos."
+    }
+   ],
+   "nota_origen": "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "lecturas": [
+    "LIT-001",
+    "LIT-012"
+   ],
+   "doc": "docs/desarrollo/d3-segmentacion.md"
+  },
+  {
    "id": "DES-D3-01.02.01",
    "estandar": "Desarrollo",
    "fase": "DES-D3",
@@ -11202,6 +11258,62 @@
    "doc": "docs/desarrollo/d4-modelamiento.md"
   },
   {
+   "id": "DES-D4-11.01.08",
+   "estandar": "Desarrollo",
+   "fase": "DES-D4",
+   "fase_nombre": "Modelamiento",
+   "tarea": "Documentación Metodológica",
+   "subtarea": "Elaboaración de la documentación",
+   "actividad": "Asegurar la reproducibilidad del código de modelamiento: el cuaderno o script corre de principio a fin en un entorno limpio y da los mismos resultados; la primera celda o módulo declara la semilla, las rutas, las versiones y las constantes del proyecto, y ninguna celda depende de variables creadas por otra ejecutada fuera de orden. Complementa DES-D4-11.01.06 y la semilla de U-10.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "ml": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "arbol": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "acp": {
+     "agil": 0.25,
+     "completo": 0.25
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "nota_origen": "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "lecturas": [
+    "LIT-001"
+   ],
+   "doc": "docs/desarrollo/d4-modelamiento.md"
+  },
+  {
    "id": "DES-D4-11.02.01",
    "estandar": "Desarrollo",
    "fase": "DES-D4",
@@ -14062,6 +14174,120 @@
     "LIT-053"
    ],
    "naturaleza": "analisis",
+   "doc": "docs/implementacion/implementacion.md"
+  },
+  {
+   "id": "IMP-01.03.04",
+   "estandar": "Implementación",
+   "fase": "IMP",
+   "fase_nombre": "Implementación",
+   "tarea": "Implementación tecnológica",
+   "subtarea": "Desarrollo de implementación",
+   "actividad": "Guardar los metadatos del modelo (versión, variables, cortes, métricas por segmento) en un manifiesto con un esquema único y versionado. El código de inferencia y de seguimiento valida el manifiesto al cargarlo y, si falta un segmento o una clave obligatoria, se detiene con un error explícito; no sustituye en silencio un valor por defecto.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "ml": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "arbol": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "acp": {
+     "agil": 0.25,
+     "completo": 0.25
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "nota_origen": "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "lecturas": [
+    "LIT-003",
+    "LIT-053"
+   ],
+   "doc": "docs/implementacion/implementacion.md"
+  },
+  {
+   "id": "IMP-01.03.05",
+   "estandar": "Implementación",
+   "fase": "IMP",
+   "fase_nombre": "Implementación",
+   "tarea": "Implementación tecnológica",
+   "subtarea": "Desarrollo de implementación",
+   "actividad": "En la carga masiva de scores a la base productiva, insertar por bloques de tamaño controlado con confirmación (commit) por bloque y conciliación de registros cargados contra los esperados; crear los índices de la tabla al terminar la carga, no antes.",
+   "aplica_tier": {
+    "lineal": [
+     1,
+     2,
+     3
+    ],
+    "ml": [
+     1,
+     2,
+     3
+    ],
+    "arbol": [
+     1,
+     2,
+     3
+    ],
+    "acp": [
+     1,
+     2,
+     3
+    ]
+   },
+   "dias_esfuerzo": {
+    "lineal": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "ml": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "arbol": {
+     "agil": 0.25,
+     "completo": 0.25
+    },
+    "acp": {
+     "agil": 0.25,
+     "completo": 0.25
+    }
+   },
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "nota_origen": "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
+   "lecturas": [
+    "LIT-003",
+    "LIT-053"
+   ],
    "doc": "docs/implementacion/implementacion.md"
   },
   {
@@ -18850,6 +19076,35 @@
      "descripcion": "Base de seguimiento"
     }
    ],
+   "lecturas": [
+    "LIT-131"
+   ],
+   "doc": "docs/seguimiento/seguimiento.md"
+  },
+  {
+   "id": "SEG-S1-01.01.04",
+   "estandar": "Seguimiento",
+   "fase": "SEG-S1",
+   "fase_nombre": "Diseño del seguimiento",
+   "tarea": "Plan de seguimiento",
+   "subtarea": "Indicadores y umbrales",
+   "actividad": "Entregar la consulta de seguimiento multimes como un único conjunto de resultados normalizado, listo para tablas dinámicas: una fila por mes, segmento y decil, con asignados, gestionados, eventos del target, tasa observada y tasa estimada. No se mezclan filas de resumen sin decil con filas por decil; los totales se calculan en la herramienta de consumo.",
+   "aplica_tier": [
+    1,
+    2,
+    3
+   ],
+   "dias_esfuerzo": 0.5,
+   "nivel_automatizacion": 3,
+   "naturaleza": "datos",
+   "entregables": [
+    {
+     "tipo": "Tabla",
+     "numero": "S1",
+     "descripcion": "Base de seguimiento"
+    }
+   ],
+   "nota_origen": "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.",
    "lecturas": [
     "LIT-131"
    ],

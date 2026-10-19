@@ -1365,6 +1365,19 @@ actividades:
     numero: 11
     descripcion: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf).
   nota_origen: "Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos."
+- id: DES-D4-11.01.08
+  tarea: Documentación Metodológica
+  subtarea: Elaboaración de la documentación
+  actividad: "Asegurar la reproducibilidad del código de modelamiento: el cuaderno o script corre de principio a fin en un entorno limpio y da los mismos resultados; la primera celda o módulo declara la semilla, las rutas, las versiones y las constantes del proyecto, y ninguna celda depende de variables creadas por otra ejecutada fuera de orden. Complementa DES-D4-11.01.06 y la semilla de U-10."
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3], acp: [1, 2, 3]}
+  dias_esfuerzo:
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  nota_origen: "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG."
 - id: DES-D4-11.02.01
   tarea: Documentación Metodológica
   subtarea: Consolidación

@@ -212,6 +212,32 @@ actividades:
     arbol: {agil: 0.8333, completo: 0.8333}
     acp: {agil: 0.8333, completo: 0.8333}
   aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3]}
+- id: IMP-01.03.04
+  tarea: "Implementación tecnológica"
+  subtarea: "Desarrollo de implementación"
+  actividad: "Guardar los metadatos del modelo (versión, variables, cortes, métricas por segmento) en un manifiesto con un esquema único y versionado. El código de inferencia y de seguimiento valida el manifiesto al cargarlo y, si falta un segmento o una clave obligatoria, se detiene con un error explícito; no sustituye en silencio un valor por defecto."
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3], acp: [1, 2, 3]}
+  dias_esfuerzo:
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  nota_origen: "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG."
+- id: IMP-01.03.05
+  tarea: "Implementación tecnológica"
+  subtarea: "Desarrollo de implementación"
+  actividad: "En la carga masiva de scores a la base productiva, insertar por bloques de tamaño controlado con confirmación (commit) por bloque y conciliación de registros cargados contra los esperados; crear los índices de la tabla al terminar la carga, no antes."
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3], acp: [1, 2, 3]}
+  dias_esfuerzo:
+    lineal: {agil: 0.25, completo: 0.25}
+    ml: {agil: 0.25, completo: 0.25}
+    arbol: {agil: 0.25, completo: 0.25}
+    acp: {agil: 0.25, completo: 0.25}
+  nivel_automatizacion: 3
+  naturaleza: datos
+  nota_origen: "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG."
 - id: IMP-01.04.01
   tarea: Implementación tecnológica
   subtarea: Calidad de datos

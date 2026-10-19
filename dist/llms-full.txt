@@ -1,5 +1,5 @@
 # Estándares de Modelos en Banca — texto completo para LLMs
-# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v5.0.0 · 2026-10-18
+# Custodio: Yuri Plasencia — Analytics Pricing & Revenue Management · v6.0.0 · 2026-10-19
 
 
 ========== docs/index.md [Vigente] ==========
@@ -624,7 +624,7 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | Tier | Modelo | Personas ágil (sem.) | Personas completo (sem.) | Agente ágil (días) | Agente completo (días) | Ahorro |
 |---|---|---:|---:|---:|---:|---:|
 | I | Lineal | 11.9 | 13.0 | 14 | 15 | 77% |
-| I | ML | 10.8 | 12.0 | 13 | 14 | 77% |
+| I | ML | 10.8 | 12.0 | 12 | 14 | 77% |
 | I | Árbol | 10.2 | 11.4 | 12 | 13 | 77% |
 | I | ACP | 7.8 | 8.7 | 9 | 10 | 77% |
 | II | Lineal | 11.0 | 12.0 | 13 | 14 | 77% |
@@ -633,22 +633,22 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | II | ACP | 7.4 | 8.2 | 8 | 9 | 77% |
 | III | Lineal | 9.8 | 10.7 | 11 | 12 | 77% |
 | III | ML | 9.6 | 10.6 | 11 | 12 | 77% |
-| III | Árbol | 9.1 | 9.9 | 10 | 11 | 77% |
-| III | ACP | 6.9 | 7.6 | 8 | 9 | 77% |
+| III | Árbol | 9.1 | 10.0 | 10 | 12 | 77% |
+| III | ACP | 6.9 | 7.6 | 8 | 9 | 78% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
 | Proyecto | Personas (semanas) | Con agente (días hábiles) | Ahorro |
 |---|---:|---:|---:|
 | Calibración Tier I | 3.3 | 4 | 77% |
-| Calibración Tier II | 3.1 | 4 | 76% |
+| Calibración Tier II | 3.0 | 4 | 76% |
 | Calibración Tier III | 2.4 | 3 | 77% |
 | Parámetros de riesgo Tier I | 6.5 | 7 | 78% |
 | Parámetros de riesgo Tier II | 6.5 | 7 | 78% |
-| Parámetros de riesgo Tier III | 5.1 | 6 | 78% |
+| Parámetros de riesgo Tier III | 5.1 | 5 | 78% |
 | Pricing end-to-end Tier I | 6.4 | 7 | 77% |
 | Pricing end-to-end Tier II | 6.4 | 7 | 77% |
-| Pricing end-to-end Tier III | 5.1 | 6 | 77% |
+| Pricing end-to-end Tier III | 5.0 | 6 | 77% |
 | Seguimiento anual de un modelo Tier I | 0.8 | 1 | 76% |
 | Seguimiento anual de un modelo Tier III | 0.8 | 1 | 76% |
 | Implementación (proyecto independiente) | 0.9 | 1 | 74% |
@@ -657,16 +657,16 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Fase | Trabajo con personas | Trabajo con agente |
 |---|---:|---:|
-| DES-D1 · Definición, alcance, diseño y extracción | 25.0 | 3.9 |
+| DES-D1 · Definición, alcance, diseño y extracción | 24.8 | 3.8 |
 | DES-D2 · Preparación, calidad y entendimiento de los datos | 2.6 | 0.5 |
-| DES-D3 · Segmentación | 0.9 | 0.1 |
-| DES-D4 · Modelamiento | 34.4 | 5.0 |
-| DES-D5 · Integración a la gestión | 5.5 | 1.4 |
+| DES-D3 · Segmentación | 1.1 | 0.2 |
+| DES-D4 · Modelamiento | 34.3 | 5.0 |
+| DES-D5 · Integración a la gestión | 5.4 | 1.4 |
 | DES-D7 · Gobierno | 0.6 | 0.2 |
-| IMP · Implementación | 6.0 | 1.2 |
-| Reuniones y bloqueo por tiempo de máquina (24.0 h) | 32.9 | 12.7 |
-| **Total días-persona** | **107.9** | **25.0** |
-| **Duración con 2 personas** | **10.8 semanas** | **13 días hábiles** |
+| IMP · Implementación | 6.2 | 1.2 |
+| Reuniones y bloqueo por tiempo de máquina (24.0 h) | 32.8 | 12.7 |
+| **Total días-persona** | **107.8** | **25.0** |
+| **Duración con 2 personas** | **10.8 semanas** | **12 días hábiles** |
 
 <!-- CATALOGO:FIN -->
 
@@ -1228,7 +1228,7 @@ edición y paginación en la fuente.
 ## Objetivo
 
 Entender el problema de negocio, decidir si un modelo es la solución adecuada y fijar **qué se modela, sobre
-quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.1–4.0 semanas con 2 personas<!--/DUR-->) porque aquí se
+quién y con qué datos**. Es, después de Modelamiento, la fase de mayor esfuerzo (<!--DUR:fase:DES-D1-->≈ 3.1–3.9 semanas con 2 personas<!--/DUR-->) porque aquí se
 cierran las definiciones que, si cambian después, obligan a rehacer el modelo.
 
 ## Entradas
@@ -1743,6 +1743,10 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 4. **Segmentación no supervisada** (opcional): k-medias, k-modas, k-medoides, jerárquico, CLARA, PAM; número
    de clusters por gráfico de sedimentación (codo).
 5. **Contraste estadístico** de homogeneidad intra-segmento y heterogeneidad entre segmentos, y contraste con el negocio.
+6. **Densidad de información** (DES-D3-01.01.06): si el universo mezcla clientes con historial crediticio, clientes con
+   historial de gestión propia y prospectos sin historial, un modelo único deja que los segmentos con más información
+   dominen la importancia y entrega scores planos al resto. Se evalúan modelos especializados por densidad, cada uno con
+   los drivers que tiene, frente al unisegmento.
 
 ## Criterios de aceptación
 
@@ -1754,7 +1758,7 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 <!-- CATALOGO:INICIO DES-D3 -->
 ## Catálogo de requisitos · Segmentación
 
-> Bloque generado desde `catalogo/des-d3.yaml` (9 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d3.yaml` (10 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Segmentación
 
@@ -1779,6 +1783,10 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 - **`DES-D3-01.01.05`** Segmentación por metodología no supervisada (opcional): Evaluar diversos tipos de clustering de acuerdo con el tipo de datos utilizados (k-medias, k-modas, k-medoids, clustering jerárquico, CLARA, PAM). Definir el número óptimo de clusters mediante gráfico de sedimentación.
 
   Aplica: Lineal I–II · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Tabla 3: Master table por segmento.
+
+- **`DES-D3-01.01.06`** Si el universo mezcla subpoblaciones con densidad de información dispar (por ejemplo, clientes con historial crediticio en el sistema, clientes con historial de gestión propia y prospectos sin historial), evaluar modelos especializados por densidad de información frente al unisegmento: cada segmento usa los drivers que tiene disponibles (financieros, de gestión reciente o sociodemográficos y geográficos previos a la campaña) y una complejidad acorde a su información. Se adopta solo si supera al unisegmento y evita scores planos o idénticos en el segmento con menos información.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 1 d completo · Automatización: 2 · Entregable: Excel 8: Analisis comparativo entre modelos. · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.2 Análisis final y Documentación
 
@@ -1865,6 +1873,7 @@ preservan como línea base de control (DES-D4-05.02.09) y es el análisis multiv
 | Selección de variables | Top 100 sin fuga / 80 % del gain, luego paso a paso | U-08 |
 | Concentración de importancia | Máximo 40 % por variable (deseable ≤ 25 %) | U-09 |
 | Hiperparámetros | ≥ 50 combinaciones, semilla fija | U-10 |
+| Reproducibilidad | El código corre de principio a fin en entorno limpio; semilla y constantes al inicio | DES-D4-11.01.08 |
 | Sobreajuste | \|Gini Train − Gini OOT\| ≤ 5 pts o caída relativa ≤ 10 %; si no, descalifica | U-11 |
 | Torneo | Al menos 5 familias de algoritmos en clasificación binaria | U-43 |
 | Parsimonia | Si el más simple está a < 1.5 pts de Gini, gana el más simple | U-42 |
@@ -1932,7 +1941,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (104 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (105 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -2402,6 +2411,10 @@ del documento metodológico.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 3 · Eficiencia · Entregable: Documento 11: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf). · Nota: Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos.
 
+- **`DES-D4-11.01.08`** Asegurar la reproducibilidad del código de modelamiento: el cuaderno o script corre de principio a fin en un entorno limpio y da los mismos resultados; la primera celda o módulo declara la semilla, las rutas, las versiones y las constantes del proyecto, y ninguna celda depende de variables creadas por otra ejecutada fuera de orden. Complementa DES-D4-11.01.06 y la semilla de U-10.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
+
 #### 11.2 Consolidación
 
 - **`DES-D4-11.02.01`** Documentación consolidada
@@ -2626,7 +2639,7 @@ cuando el seguimiento muestra **descalibración** pero el poder discriminante si
 ordenamiento se ha degradado, corresponde **redesarrollar** (estándar de Desarrollo).
 
 Supuesto de la estimación de esfuerzo: se usa la **base de seguimiento como base de calibración**.
-Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.3 semanas (Tier I), ≈ 3.1 semanas (Tier II), ≈ 2.4 semanas (Tier III) con 2 personas<!--/DUR-->.
+Duración de referencia del proyecto de calibración: <!--DUR:proyecto:Calibración-->≈ 3.3 semanas (Tier I), ≈ 3.0 semanas (Tier II), ≈ 2.4 semanas (Tier III) con 2 personas<!--/DUR-->.
 
 ## C1 · Entendimiento
 
@@ -3905,6 +3918,11 @@ Con cuadro de control de cambios. Debe contener:
 - Controles de calidad sobre input y output: evolutivos y **PSI** contra un periodo de referencia, unicidad, missing;
   umbrales de PSI definidos; si hay proveedor externo, exigir sus logs, estabilidad, unicidad y fechas de actualización.
 - Ruta productiva definida y respaldada, **código único** del modelo, listado de usuarios con acceso.
+- **Manifiesto de metadatos** con esquema único y versionado, validado al cargarse; ante una clave o un segmento
+  faltante, el proceso se detiene con error explícito en lugar de usar un valor por defecto (IMP-01.03.04).
+- **Carga masiva por bloques**, con commit y conciliación por bloque e índices creados al final (IMP-01.03.05). Como
+  referencia práctica, no como umbral, en cargas de cientos de miles de registros o más funcionan bien bloques del
+  orden de 200 000 registros.
 
 ## Certificación
 
@@ -3917,7 +3935,7 @@ Con cuadro de control de cambios. Debe contener:
 <!-- CATALOGO:INICIO IMP -->
 ## Catálogo de requisitos · Implementación
 
-> Bloque generado desde `catalogo/imp.yaml` (29 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
+> Bloque generado desde `catalogo/imp.yaml` (31 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Implementación v1.0.
 
 ### 1 · Implementación tecnológica
 
@@ -3998,6 +4016,14 @@ Con cuadro de control de cambios. Debe contener:
 - **`IMP-01.03.03`** Garantizar que la información final se encuentre resguardada y en caso contrario generar un archivo plano y almacenar en la ruta productiva del modelo
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.8333 d ágil / 0.8333 d completo · Automatización: 1
+
+- **`IMP-01.03.04`** Guardar los metadatos del modelo (versión, variables, cortes, métricas por segmento) en un manifiesto con un esquema único y versionado. El código de inferencia y de seguimiento valida el manifiesto al cargarlo y, si falta un segmento o una clave obligatoria, se detiene con un error explícito; no sustituye en silencio un valor por defecto.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
+
+- **`IMP-01.03.05`** En la carga masiva de scores a la base productiva, insertar por bloques de tamaño controlado con confirmación (commit) por bloque y conciliación de registros cargados contra los esperados; crear los índices de la tabla al terminar la carga, no antes.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.4 Calidad de datos
 
@@ -4678,6 +4704,10 @@ son demasiado laxos.
 | IA | Sobreajuste en producción (construcción vs. meses recientes) | Trimestral | Según el plan aprobado |
 | Datos | Fill rate, duplicados, frescura de fuentes externas | Cada ejecución | Cualquier fallo es rojo |
 
+La consulta de seguimiento multimes se entrega como **un único conjunto de resultados normalizado** (mes, segmento,
+decil, asignados, gestionados, eventos, tasa observada y tasa estimada), sin filas de resumen mezcladas con filas por
+decil, para que se pueda comparar mes a mes en una tabla dinámica (SEG-S1-01.01.04).
+
 ## Qué se hace ante una alerta
 
 ```text
@@ -4698,12 +4728,13 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 | Política de forzajes definida antes del uso | DES-D5-01.01.02 |
 | Controles de PSI, unicidad y missing en producción | IMP-01.04.01, IMP-01.04.02 |
 | Versión del modelo registrada en cada resultado | IMP-01.06.06 |
+| Manifiesto de metadatos validado al cargar | IMP-01.03.04 |
 | La calibración parte de la base de seguimiento | CAL-C1-01.02.01, CAL-C1-01.02.02 |
 
 <!-- CATALOGO:INICIO SEG-S1 -->
 ## Catálogo de requisitos · Diseño del seguimiento
 
-> Bloque generado desde `catalogo/seg-s1.yaml` (3 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Línea base 2.0 (2026-10-17): consolidación de requisitos vigentes, Res. SBS 00053-2023 y práctica de bancos de referencia.
+> Bloque generado desde `catalogo/seg-s1.yaml` (4 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Línea base 2.0 (2026-10-17): consolidación de requisitos vigentes, Res. SBS 00053-2023 y práctica de bancos de referencia.
 
 ### 1 · Plan de seguimiento
 
@@ -4720,6 +4751,10 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 - **`SEG-S1-01.01.03`** Asegurar los datos de seguimiento: tabla productiva con versión del modelo, scores, decisiones, forzajes y desempeño posterior; para estimadores, la muestra mínima acordada en DES-D5-01.03.01.
 
   Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Tabla S1: Base de seguimiento
+
+- **`SEG-S1-01.01.04`** Entregar la consulta de seguimiento multimes como un único conjunto de resultados normalizado, listo para tablas dinámicas: una fila por mes, segmento y decil, con asignados, gestionados, eventos del target, tasa observada y tasa estimada. No se mezclan filas de resumen sin decil con filas por decil; los totales se calculan en la herramienta de consumo.
+
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Tabla S1: Base de seguimiento · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 <!-- CATALOGO:FIN -->
 
@@ -5988,6 +6023,24 @@ El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBU
   U-10, U-11, U-38, U-41, U-42, U-43 y U-44, además de la tabla oficial del torneo. Se instala con
   `npx skills add YuriPlasencia/Estandar_Modelos`. No cambia requisitos ni umbrales.
 
+## [6.0.0] — 2026-10-19 · Lecciones de proyectos de desarrollo (segunda entrega)
+
+Se agregan las enmiendas que faltaban de la revisión de lecciones de proyectos, en forma genérica y sin datos de
+clientes, nombres de variables ni cifras internas. No se retira ni se cambia ningún requisito ni umbral existente.
+Es versión mayor porque agrega obligaciones para todos los Tier (ver `CONTRIBUTING.md`).
+
+### Nuevo
+- **Segmentación por densidad de información (DES-D3-01.01.06):** si el universo mezcla subpoblaciones con historial
+  crediticio, con historial de gestión y sin historial, se evalúan modelos especializados por densidad frente al
+  unisegmento, para evitar scores planos en el segmento con menos información.
+- **Reproducibilidad del código de modelamiento (DES-D4-11.01.08):** corre de principio a fin en un entorno limpio;
+  semilla, rutas, versiones y constantes declaradas al inicio; sin dependencia del orden de ejecución de celdas.
+- **Manifiesto de metadatos con esquema versionado (IMP-01.03.04):** se valida al cargar y falla con error explícito
+  ante claves o segmentos faltantes, en lugar de sustituir valores por defecto en silencio.
+- **Carga masiva por bloques (IMP-01.03.05):** commit y conciliación por bloque; índices creados al final de la carga.
+- **Entrega normalizada del seguimiento multimes (SEG-S1-01.01.04):** un único conjunto de resultados por mes,
+  segmento y decil, listo para tablas dinámicas, sin filas de resumen mezcladas.
+
 ## [5.0.0] — 2026-10-17
 
 ### Cambiado (incompatible)
@@ -6192,7 +6245,7 @@ queda reservado para la trazabilidad histórica de modelos ya aprobados.
 desarrollo, calibración, implementación, seguimiento, validación, parámetros de riesgo (IFRS 9), pricing analítico
 y trabajo con agentes de IA.**
 
-Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **5.0.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
+Autor y custodio: **Yuri Plasencia — Analytics Pricing & Revenue Management** · Versión **6.0.0** (sobre la línea base 2.0) · Octubre 2026 · Licencia CC BY 4.0 (contenido) y MIT (código)
 
 ---
 
@@ -6205,7 +6258,7 @@ para agentes de IA (JSON y `llms.txt`).
 
 | | |
 |---|---|
-| **552 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **44 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
+| **557 requisitos** con ID estable, aplicabilidad por Tier y tipo de modelo, esfuerzo, entregables e hitos | **44 umbrales** cuantitativos, cada uno enlazado a los requisitos que lo establecen |
 | **103 obras** de literatura enlazadas a los requisitos que fundamentan | **27 tipos de acta**, con editor en línea y exportación a Word y Markdown |
 | Mapeo artículo por artículo a la **Res. SBS 00053-2023** y alineado con **SR 26-2**, **PRA SS1/23**, IFRS 9 y el **EU AI Act** | **Estándar operativo para agentes de IA** con verificador automático de evidencias |
 

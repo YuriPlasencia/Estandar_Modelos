@@ -79,7 +79,7 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | Tier | Modelo | Personas ágil (sem.) | Personas completo (sem.) | Agente ágil (días) | Agente completo (días) | Ahorro |
 |---|---|---:|---:|---:|---:|---:|
 | I | Lineal | 11.9 | 13.0 | 14 | 15 | 77% |
-| I | ML | 10.8 | 12.0 | 13 | 14 | 77% |
+| I | ML | 10.8 | 12.0 | 12 | 14 | 77% |
 | I | Árbol | 10.2 | 11.4 | 12 | 13 | 77% |
 | I | ACP | 7.8 | 8.7 | 9 | 10 | 77% |
 | II | Lineal | 11.0 | 12.0 | 13 | 14 | 77% |
@@ -88,22 +88,22 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 | II | ACP | 7.4 | 8.2 | 8 | 9 | 77% |
 | III | Lineal | 9.8 | 10.7 | 11 | 12 | 77% |
 | III | ML | 9.6 | 10.6 | 11 | 12 | 77% |
-| III | Árbol | 9.1 | 9.9 | 10 | 11 | 77% |
-| III | ACP | 6.9 | 7.6 | 8 | 9 | 77% |
+| III | Árbol | 9.1 | 10.0 | 10 | 12 | 77% |
+| III | ACP | 6.9 | 7.6 | 8 | 9 | 78% |
 
 ### Calibración, Parámetros, Pricing, Seguimiento e Implementación
 
 | Proyecto | Personas (semanas) | Con agente (días hábiles) | Ahorro |
 |---|---:|---:|---:|
 | Calibración Tier I | 3.3 | 4 | 77% |
-| Calibración Tier II | 3.1 | 4 | 76% |
+| Calibración Tier II | 3.0 | 4 | 76% |
 | Calibración Tier III | 2.4 | 3 | 77% |
 | Parámetros de riesgo Tier I | 6.5 | 7 | 78% |
 | Parámetros de riesgo Tier II | 6.5 | 7 | 78% |
-| Parámetros de riesgo Tier III | 5.1 | 6 | 78% |
+| Parámetros de riesgo Tier III | 5.1 | 5 | 78% |
 | Pricing end-to-end Tier I | 6.4 | 7 | 77% |
 | Pricing end-to-end Tier II | 6.4 | 7 | 77% |
-| Pricing end-to-end Tier III | 5.1 | 6 | 77% |
+| Pricing end-to-end Tier III | 5.0 | 6 | 77% |
 | Seguimiento anual de un modelo Tier I | 0.8 | 1 | 76% |
 | Seguimiento anual de un modelo Tier III | 0.8 | 1 | 76% |
 | Implementación (proyecto independiente) | 0.9 | 1 | 74% |
@@ -112,16 +112,16 @@ No incluye esperas que no son esfuerzo, como la agenda del Comité de Modelos o 
 
 | Fase | Trabajo con personas | Trabajo con agente |
 |---|---:|---:|
-| DES-D1 · Definición, alcance, diseño y extracción | 25.0 | 3.9 |
+| DES-D1 · Definición, alcance, diseño y extracción | 24.8 | 3.8 |
 | DES-D2 · Preparación, calidad y entendimiento de los datos | 2.6 | 0.5 |
-| DES-D3 · Segmentación | 0.9 | 0.1 |
-| DES-D4 · Modelamiento | 34.4 | 5.0 |
-| DES-D5 · Integración a la gestión | 5.5 | 1.4 |
+| DES-D3 · Segmentación | 1.1 | 0.2 |
+| DES-D4 · Modelamiento | 34.3 | 5.0 |
+| DES-D5 · Integración a la gestión | 5.4 | 1.4 |
 | DES-D7 · Gobierno | 0.6 | 0.2 |
-| IMP · Implementación | 6.0 | 1.2 |
-| Reuniones y bloqueo por tiempo de máquina (24.0 h) | 32.9 | 12.7 |
-| **Total días-persona** | **107.9** | **25.0** |
-| **Duración con 2 personas** | **10.8 semanas** | **13 días hábiles** |
+| IMP · Implementación | 6.2 | 1.2 |
+| Reuniones y bloqueo por tiempo de máquina (24.0 h) | 32.8 | 12.7 |
+| **Total días-persona** | **107.8** | **25.0** |
+| **Duración con 2 personas** | **10.8 semanas** | **12 días hábiles** |
 
 <!-- CATALOGO:FIN -->
 

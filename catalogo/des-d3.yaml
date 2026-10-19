@@ -88,6 +88,20 @@ actividades:
   - tipo: Tabla
     numero: 3
     descripcion: Master table por segmento.
+- id: DES-D3-01.01.06
+  tarea: Segmentación
+  subtarea: Brainstorming sobre propuestas de segmentación y análisis
+  actividad: "Si el universo mezcla subpoblaciones con densidad de información dispar (por ejemplo, clientes con historial crediticio en el sistema, clientes con historial de gestión propia y prospectos sin historial), evaluar modelos especializados por densidad de información frente al unisegmento: cada segmento usa los drivers que tiene disponibles (financieros, de gestión reciente o sociodemográficos y geográficos previos a la campaña) y una complejidad acorde a su información. Se adopta solo si supera al unisegmento y evita scores planos o idénticos en el segmento con menos información."
+  aplica_tier: {lineal: [1, 2, 3], ml: [1, 2, 3], arbol: [1, 2, 3], acp: []}
+  dias_esfuerzo:
+    lineal: {agil: 0.5, completo: 1}
+    ml: {agil: 0.5, completo: 1}
+    arbol: {agil: 0.5, completo: 1}
+  nivel_automatizacion: 2
+  naturaleza: analisis
+  entregables:
+  - {tipo: Excel, numero: 8, descripcion: "Analisis comparativo entre modelos."}
+  nota_origen: "Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG."
 - id: DES-D3-01.02.01
   tarea: Segmentación
   subtarea: Análisis final y Documentación

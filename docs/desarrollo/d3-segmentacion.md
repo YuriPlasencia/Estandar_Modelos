@@ -3,9 +3,9 @@ id: DES-D3
 titulo: "D3 · Segmentación"
 estandar: Desarrollo
 estado: Vigente
-version: 1.0.0
+version: 1.1.0
 custodio: Yuri Plasencia — Analytics Pricing & Revenue Management
-actualizado: 2026-10-17
+actualizado: 2026-10-19
 orden: 12
 ---
 
@@ -25,6 +25,10 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 4. **Segmentación no supervisada** (opcional): k-medias, k-modas, k-medoides, jerárquico, CLARA, PAM; número
    de clusters por gráfico de sedimentación (codo).
 5. **Contraste estadístico** de homogeneidad intra-segmento y heterogeneidad entre segmentos, y contraste con el negocio.
+6. **Densidad de información** (DES-D3-01.01.06): si el universo mezcla clientes con historial crediticio, clientes con
+   historial de gestión propia y prospectos sin historial, un modelo único deja que los segmentos con más información
+   dominen la importancia y entrega scores planos al resto. Se evalúan modelos especializados por densidad, cada uno con
+   los drivers que tiene, frente al unisegmento.
 
 ## Criterios de aceptación
 
@@ -36,7 +40,7 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 <!-- CATALOGO:INICIO DES-D3 -->
 ## Catálogo de requisitos · Segmentación
 
-> Bloque generado desde `catalogo/des-d3.yaml` (9 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d3.yaml` (10 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Segmentación
 
@@ -61,6 +65,10 @@ se justifica sólo si mejora el desempeño frente al modelo unisegmento y es est
 - **`DES-D3-01.01.05`** Segmentación por metodología no supervisada (opcional): Evaluar diversos tipos de clustering de acuerdo con el tipo de datos utilizados (k-medias, k-modas, k-medoids, clustering jerárquico, CLARA, PAM). Definir el número óptimo de clusters mediante gráfico de sedimentación.
 
   Aplica: Lineal I–II · Esfuerzo: 1 d ágil / 1 d completo · Automatización: 1 · Entregable: Tabla 3: Master table por segmento.
+
+- **`DES-D3-01.01.06`** Si el universo mezcla subpoblaciones con densidad de información dispar (por ejemplo, clientes con historial crediticio en el sistema, clientes con historial de gestión propia y prospectos sin historial), evaluar modelos especializados por densidad de información frente al unisegmento: cada segmento usa los drivers que tiene disponibles (financieros, de gestión reciente o sociodemográficos y geográficos previos a la campaña) y una complejidad acorde a su información. Se adopta solo si supera al unisegmento y evita scores planos o idénticos en el segmento con menos información.
+
+  Aplica: Lineal/ML/Árbol I–III · Esfuerzo: 0.5 d ágil / 1 d completo · Automatización: 2 · Entregable: Excel 8: Analisis comparativo entre modelos. · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 1.2 Análisis final y Documentación
 

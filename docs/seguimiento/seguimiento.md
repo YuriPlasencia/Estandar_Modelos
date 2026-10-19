@@ -3,9 +3,9 @@ id: SEG
 titulo: "Seguimiento (monitoreo) de modelos"
 estandar: Seguimiento
 estado: Vigente
-version: 1.0.0
+version: 1.1.0
 custodio: Yuri Plasencia — Analytics Pricing & Revenue Management
-actualizado: 2026-10-17
+actualizado: 2026-10-19
 orden: 35
 ---
 
@@ -27,6 +27,10 @@ orden: 35
 | IA | Sobreajuste en producción (construcción vs. meses recientes) | Trimestral | Según el plan aprobado |
 | Datos | Fill rate, duplicados, frescura de fuentes externas | Cada ejecución | Cualquier fallo es rojo |
 
+La consulta de seguimiento multimes se entrega como **un único conjunto de resultados normalizado** (mes, segmento,
+decil, asignados, gestionados, eventos, tasa observada y tasa estimada), sin filas de resumen mezcladas con filas por
+decil, para que se pueda comparar mes a mes en una tabla dinámica (SEG-S1-01.01.04).
+
 ## Qué se hace ante una alerta
 
 ```text
@@ -47,12 +51,13 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 | Política de forzajes definida antes del uso | DES-D5-01.01.02 |
 | Controles de PSI, unicidad y missing en producción | IMP-01.04.01, IMP-01.04.02 |
 | Versión del modelo registrada en cada resultado | IMP-01.06.06 |
+| Manifiesto de metadatos validado al cargar | IMP-01.03.04 |
 | La calibración parte de la base de seguimiento | CAL-C1-01.02.01, CAL-C1-01.02.02 |
 
 <!-- CATALOGO:INICIO SEG-S1 -->
 ## Catálogo de requisitos · Diseño del seguimiento
 
-> Bloque generado desde `catalogo/seg-s1.yaml` (3 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Línea base 2.0 (2026-10-17): consolidación de requisitos vigentes, Res. SBS 00053-2023 y práctica de bancos de referencia.
+> Bloque generado desde `catalogo/seg-s1.yaml` (4 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Línea base 2.0 (2026-10-17): consolidación de requisitos vigentes, Res. SBS 00053-2023 y práctica de bancos de referencia.
 
 ### 1 · Plan de seguimiento
 
@@ -69,6 +74,10 @@ Rojo persistente 3 períodos o cambio material de política/población ─▶ co
 - **`SEG-S1-01.01.03`** Asegurar los datos de seguimiento: tabla productiva con versión del modelo, scores, decisiones, forzajes y desempeño posterior; para estimadores, la muestra mínima acordada en DES-D5-01.03.01.
 
   Aplica: Tier I–III · Esfuerzo: 2 d · Automatización: 2 · Crítico · Entregable: Tabla S1: Base de seguimiento
+
+- **`SEG-S1-01.01.04`** Entregar la consulta de seguimiento multimes como un único conjunto de resultados normalizado, listo para tablas dinámicas: una fila por mes, segmento y decil, con asignados, gestionados, eventos del target, tasa observada y tasa estimada. No se mezclan filas de resumen sin decil con filas por decil; los totales se calculan en la herramienta de consumo.
+
+  Aplica: Tier I–III · Esfuerzo: 0.5 d · Automatización: 3 · Entregable: Tabla S1: Base de seguimiento · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 <!-- CATALOGO:FIN -->
 

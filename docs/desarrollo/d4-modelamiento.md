@@ -3,9 +3,9 @@ id: DES-D4
 titulo: "D4 · Modelamiento"
 estandar: Desarrollo
 estado: Vigente
-version: 1.0.0
+version: 1.1.0
 custodio: Yuri Plasencia — Analytics Pricing & Revenue Management
-actualizado: 2026-10-17
+actualizado: 2026-10-19
 orden: 13
 ---
 
@@ -71,6 +71,7 @@ preservan como línea base de control (DES-D4-05.02.09) y es el análisis multiv
 | Selección de variables | Top 100 sin fuga / 80 % del gain, luego paso a paso | U-08 |
 | Concentración de importancia | Máximo 40 % por variable (deseable ≤ 25 %) | U-09 |
 | Hiperparámetros | ≥ 50 combinaciones, semilla fija | U-10 |
+| Reproducibilidad | El código corre de principio a fin en entorno limpio; semilla y constantes al inicio | DES-D4-11.01.08 |
 | Sobreajuste | \|Gini Train − Gini OOT\| ≤ 5 pts o caída relativa ≤ 10 %; si no, descalifica | U-11 |
 | Torneo | Al menos 5 familias de algoritmos en clasificación binaria | U-43 |
 | Parsimonia | Si el más simple está a < 1.5 pts de Gini, gana el más simple | U-42 |
@@ -138,7 +139,7 @@ del documento metodológico.
 <!-- CATALOGO:INICIO DES-D4 -->
 ## Catálogo de requisitos · Modelamiento
 
-> Bloque generado desde `catalogo/des-d4.yaml` (104 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
+> Bloque generado desde `catalogo/des-d4.yaml` (105 requisitos). Para modificarlo, edita el YAML y ejecuta `python tools/build.py`. Fuente: Estándar de Desarrollo v1.0.
 
 ### 1 · Exclusiones del target (contínuo)
 
@@ -607,6 +608,10 @@ del documento metodológico.
 - **`DES-D4-11.01.07`** Elaborar el documento metodológico con la plantilla dinámica del estándar: registrar los datos del modelo en docs/documento.yaml y generar el documento con tools/documento.py (Markdown, HTML, Word y PDF desde la misma fuente). El documento evalúa los umbrales obtenidos, incluye la matriz de cumplimiento tomada de evidencias.yaml y no se presenta a Comité ni a Validación con secciones «Completar» pendientes.
 
   Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0 d ágil / 0 d completo · Automatización: 3 · Eficiencia · Entregable: Documento 11: Documento metodológico generado desde docs/documento.yaml (.md, .html, .docx y .pdf). · Nota: Versión 2.2.0 (2026-10-17). Documentación como código: una sola fuente versionada para todos los formatos.
+
+- **`DES-D4-11.01.08`** Asegurar la reproducibilidad del código de modelamiento: el cuaderno o script corre de principio a fin en un entorno limpio y da los mismos resultados; la primera celda o módulo declara la semilla, las rutas, las versiones y las constantes del proyecto, y ninguna celda depende de variables creadas por otra ejecutada fuera de orden. Complementa DES-D4-11.01.06 y la semilla de U-10.
+
+  Aplica: Todos los tipos, Tier I–III · Esfuerzo: 0.25 d ágil / 0.25 d completo · Automatización: 3 · Nota: Versión 6.0.0 (2026-10-19). Lecciones de proyectos de desarrollo; ver CHANGELOG.
 
 #### 11.2 Consolidación
 

@@ -13,6 +13,24 @@ El proyecto usa versionado semántico sobre el estándar completo (ver `CONTRIBU
   U-10, U-11, U-38, U-41, U-42, U-43 y U-44, además de la tabla oficial del torneo. Se instala con
   `npx skills add YuriPlasencia/Estandar_Modelos`. No cambia requisitos ni umbrales.
 
+## [6.0.0] — 2026-10-19 · Lecciones de proyectos de desarrollo (segunda entrega)
+
+Se agregan las enmiendas que faltaban de la revisión de lecciones de proyectos, en forma genérica y sin datos de
+clientes, nombres de variables ni cifras internas. No se retira ni se cambia ningún requisito ni umbral existente.
+Es versión mayor porque agrega obligaciones para todos los Tier (ver `CONTRIBUTING.md`).
+
+### Nuevo
+- **Segmentación por densidad de información (DES-D3-01.01.06):** si el universo mezcla subpoblaciones con historial
+  crediticio, con historial de gestión y sin historial, se evalúan modelos especializados por densidad frente al
+  unisegmento, para evitar scores planos en el segmento con menos información.
+- **Reproducibilidad del código de modelamiento (DES-D4-11.01.08):** corre de principio a fin en un entorno limpio;
+  semilla, rutas, versiones y constantes declaradas al inicio; sin dependencia del orden de ejecución de celdas.
+- **Manifiesto de metadatos con esquema versionado (IMP-01.03.04):** se valida al cargar y falla con error explícito
+  ante claves o segmentos faltantes, en lugar de sustituir valores por defecto en silencio.
+- **Carga masiva por bloques (IMP-01.03.05):** commit y conciliación por bloque; índices creados al final de la carga.
+- **Entrega normalizada del seguimiento multimes (SEG-S1-01.01.04):** un único conjunto de resultados por mes,
+  segmento y decil, listo para tablas dinámicas, sin filas de resumen mezcladas.
+
 ## [5.0.0] — 2026-10-17
 
 ### Cambiado (incompatible)
